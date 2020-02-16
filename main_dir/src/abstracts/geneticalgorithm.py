@@ -50,7 +50,7 @@ class SNPGeneticAlgo:
             self.pop.append({
                 'system': system,
                 'fitness': 0,
-                'out_pairs': []
+                'out_pairs': [[]]
             })
 
         return self.pop
@@ -158,25 +158,28 @@ class SNPGeneticAlgo:
         1: Longest Common Subsequence
         2: Hamming Distance (must be same length)
         '''
-        chromosome['out_pairs'] = []
-        chromosome['fitness'] = 0
+        index = 0
+        for pair in self.inout_pairs:
+            chromosome['out_pairs'][index] = []
+            chromosome['fitness'][index] = 0
 
         # Compute for the total output bits
         total_length = 0
         for spike_train in self.inout_pairs:
             total_length += len(spike_train['output'])
-
+        index = 0
         for pair in self.inout_pairs:
             maxSteps = 3*len(pair['output'])
             chromosome['system'].in_spiketrain = pair['inputs']
-            # print(chromosome['system'].in_spiketrain)
+            print(chromosome['system'].in_spiketrain)
             chromosome['system'].out_spiketrain = []
             config = deepcopy(chromosome['system'].configuration_init)
             
             # simulate the rssnp
-            chromosome['out_pairs'].append((chromosome['system'].main((config, chromosome['system'].ruleStatus), maxSteps), pair['output']))
-            chromosome['fitness'] += int(assign_fitness(chromosome['system'].out_spiketrain, pair['output'], function)/len(pair['output'])*100)
-        chromosome['fitness'] = int(chromosome['fitness']/len(self.inout_pairs))
+            chromosome['out_pairs'][index].append((chromosome['system'].main((config, chromosome['system'].ruleStatus), maxSteps), pair['output']))
+            chromosome['fitness'][index] += int(assign_fitness(chromosome['system'].out_spiketrain, pair['output'], function)/len(pair['output'])*100)
+            index += 1
+        chromosome['fitness'][index] = int(chromosome['fitness'][index]/len(self.inout_pairs))
 
         # print(chromosome)
 
