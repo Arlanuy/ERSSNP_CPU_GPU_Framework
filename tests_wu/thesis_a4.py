@@ -98,6 +98,10 @@ LCS(a_gpu,b_gpu,res_gpu,LCSuff_gpu, numpy.int32(a.size+1),numpy.int32(b.size+1),
 drv.memcpy_dtoh(LCSuff, LCSuff_gpu)
 drv.memcpy_dtoh(res, res_gpu)
 
+
+print "input 1 ",a
+print "input 2 ",b
+
 print(LCSuff)
 print(res)
 print(LCSubStr(a, b, len(a), len(b))) 

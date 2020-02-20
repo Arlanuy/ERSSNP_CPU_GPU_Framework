@@ -4,7 +4,7 @@ import numpy
 
 from pycuda.compiler import SourceModule
 
-def lcs(X , Y): #geeksforgeeks.org/longest-common-substring-dp-29/
+def lcs(X , Y): 
     # find the length of the strings 
     m = len(X) 
     n = len(Y) 
@@ -40,7 +40,7 @@ __device__ int max1(int a,int b){
     }
 }
 
-__global__ void lc_subsequence(int *X,int *Y,int *res, int *LCSuff,int row_width,int col_width){
+__global__ void lc_substring(int *X,int *Y,int *res, int *LCSuff,int row_width,int col_width){
    int j = blockIdx.x * blockDim.x + threadIdx.x;
    if (j < col_width){
         for (int i = 1; i < row_width; i++) {
@@ -56,7 +56,6 @@ __global__ void lc_subsequence(int *X,int *Y,int *res, int *LCSuff,int row_width
                 
             } 
             else{
-                printf("\\n");
                 LCSuff[i*col_width+j] = max1(LCSuff[(i-1)*col_width+j],LCSuff[i*col_width+j-1]);
                 __syncthreads();
             }
@@ -68,34 +67,33 @@ __global__ void lc_subsequence(int *X,int *Y,int *res, int *LCSuff,int row_width
 
 
 """)
-LCS = mod.get_function("lc_subsequence")
-
-a = numpy.array([0,1,1,1,1],dtype=numpy.int32) #row the width
-b = numpy.array([0,1,0,1,0,1,0,1],dtype=numpy.int32) #col
+LCS = mod.get_function("lc_substring")
+test = [[1,0,0,1],[1,0,1,1]]
+a = numpy.array(test,dtype=numpy.int32) #row the width
+b = numpy.array([0,0,0,1],dtype=numpy.int32) #col
 res = numpy.array([0],dtype=numpy.int32)
-LCSuff = numpy.zeros((a.size+1,b.size+1),dtype=numpy.int32)
+LCSuff = numpy.zeros((a[1].size+1,b.size+1),dtype=numpy.int32)
 
-a_gpu = drv.mem_alloc(a.size * a.dtype.itemsize)
+print(LCSuff[0])
+
+a_gpu = drv.mem_alloc(a[1].size * a[1].dtype.itemsize)
 b_gpu = drv.mem_alloc(b.size * b.dtype.itemsize)
 LCSuff_gpu = drv.mem_alloc(LCSuff.size * LCSuff.dtype.itemsize)
 res_gpu = drv.mem_alloc(res.size * res.dtype.itemsize)
 
-drv.memcpy_htod(a_gpu, a)
+drv.memcpy_htod(a_gpu, a[1])
 drv.memcpy_htod(b_gpu, b)
 drv.memcpy_htod(LCSuff_gpu, LCSuff)
 drv.memcpy_htod(res_gpu, res)
 
 
-LCS(a_gpu,b_gpu,res_gpu,LCSuff_gpu, numpy.int32(a.size+1),numpy.int32(b.size+1), block=(10,10,1),grid=(1,1,1))
+LCS(a_gpu,b_gpu,res_gpu,LCSuff_gpu, numpy.int32(a[1].size+1),numpy.int32(b.size+1), block=(10,10,1),grid=(1,1,1))
 drv.memcpy_dtoh(res, res_gpu)
 drv.memcpy_dtoh(LCSuff, LCSuff_gpu)
 
-print "input 1 ",a
-print "input 2 ",b
-
 print(LCSuff)
-print(LCSuff[a.size][b.size])
+print(LCSuff[a[1].size][b.size])
 print(res)
 
-print lcs(a, b) 
+print lcs(a[1], b) 
 

@@ -77,17 +77,19 @@ def conf_load(filename):
 		try:
 			ga_params = yaml.safe_load(stream)
 
-			#getting generation zero from run zero
-			generation_zero = ga_params['runs'][0]['generations'][0]
-			print(generation_zero)
+			for run in ga_params['runs']:
+				print(run)
+				for generation in ga_params['runs'][run]['generations']:
+				#getting generation zero from run zero
+					print(generation)
 
-			#getting rssnp index 0 in generation zero
-			rssnp_zero = generation_zero['rssnp_chromosomes'][0]
-			print(rssnp_zero) 
+				#getting rssnp index 0 in generation zero
+					for rssnp in ga_params['runs'][run]['generations'][generation]['rssnp_chromosomes']:
+						print(rssnp) 
 
-			#getting out_pairs indexed 0 at rssnp indexed 0 in generation zero
-			out_pairs_zero = rssnp_zero['out_pairs'][0]
-			print(out_pairs_zero)
+				#getting out_pairs indexed 0 at rssnp indexed 0 in generation zero
+						for out_pairs in ga_params['runs'][run]['generations'][generation]['rssnp_chromosomes'][rssnp]['out_pairs']:
+							print(out_pairs)
 		except yaml.YAMLError as exc:
 			print(exc)
 
