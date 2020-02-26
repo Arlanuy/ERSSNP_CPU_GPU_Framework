@@ -1,6 +1,7 @@
 import pycuda.autoinit
 import pycuda.driver as drv
 import numpy
+import time
 
 from pycuda.compiler import SourceModule
 def editDistDP(str1, str2, m, n): 
@@ -32,8 +33,8 @@ def editDistDP(str1, str2, m, n):
                 dp[i][j] = 1 + min(dp[i][j-1],   # Insert 
                                 dp[i-1][j],  # Remove 
                                 dp[i-1][j-1]) # Replace 
-    for a in dp:
-        print(a)
+    # for a in dp:
+    #     print(a)
 
     return dp[m][n] 
 
@@ -41,7 +42,7 @@ mod = SourceModule("""
 #include <stdlib.h>
 __device__ int min1(int a,int b){
 
-    if(a<b && != 0){
+    if(a<b && a != 0){
         return a;
     }
     else{
@@ -49,35 +50,31 @@ __device__ int min1(int a,int b){
     }
 }
 
-__global__ void lc_substring(int *X,int *Y,int *res, int *LCSuff,int row_width,int col_width){
-   int j = blockIdx.x * blockDim.x + threadIdx.x;
-   if (j < col_width){
-        for (int i = 0; i < row_width; i++) {
+__global__ void lc_substring(int j,int *X,int *Y, int *LCSuff,int row_width,int col_width){
+   int i = blockIdx.x * blockDim.x + threadIdx.x;
+   int temp;
+   if (i < row_width){
             if (i == 0){
-                LCSuff[i*col_width+j] = j;
+                temp = j;
                 __syncthreads();
+                LCSuff[i*col_width+j] = temp; 
             }
             else if (j == 0){
-
-                LCSuff[i*col_width+j] = i;
-                //printf("A %d B %d LC %d\\n", i,j,LCSuff[i*col_width+j]);
+                temp = i;
                 __syncthreads();
+                LCSuff[i*col_width+j] = temp;
             }
             else if (X[i-1] == Y[j-1]) {  
-                LCSuff[i*col_width+j] = LCSuff[((i-1)*col_width)+j-1];
+                temp = LCSuff[((i-1)*col_width)+j-1];
                 __syncthreads();
-                //printf("compare %d %d\\n",res[0],LCSuff[i*col_width+j]);
-                //printf("res %d %d %d\\n",res[0],i,j);
-                
+                LCSuff[i*col_width+j] = temp;
             } 
             else{
-            	
-                LCSuff[i*col_width+j] = 1+min1(min1(LCSuff[((i-1)*col_width)+j],LCSuff[i*col_width+j-1]),LCSuff[((i-1)*col_width)+j-1]);
+                temp = 1+min1(min1(LCSuff[((i-1)*col_width)+j],LCSuff[i*col_width+j-1]),LCSuff[((i-1)*col_width)+j-1]);
                 __syncthreads();
-            }
-            
-        }
-
+                LCSuff[i*col_width+j] = temp;
+                
+            }            
     } 
 }
 
@@ -86,15 +83,15 @@ __global__ void lc_substring(int *X,int *Y,int *res, int *LCSuff,int row_width,i
 LCS = mod.get_function("lc_substring")
 
 a = numpy.array([1,1,1,1],dtype=numpy.int32) #row the width
-b = numpy.array([0,0,0,0,0],dtype=numpy.int32) #col
+b = numpy.array([0,1,0,1,0,1,0,1],dtype=numpy.int32) #col
 res = numpy.array([0],dtype=numpy.int32)
 LCSuff = numpy.zeros((a.size+1,b.size+1),dtype=numpy.int32)
 
 
 # for i in range(b.size+1):
-# 	LCSuff[0][i]=i
+#     LCSuff[0][i]=i
 # for i in range(a.size+1):
-# 	LCSuff[i][0]=i
+#     LCSuff[i][0]=i
 # print(LCSuff)
 
 a_gpu = drv.mem_alloc(a.size * a.dtype.itemsize)
@@ -107,13 +104,18 @@ drv.memcpy_htod(b_gpu, b)
 drv.memcpy_htod(LCSuff_gpu, LCSuff)
 drv.memcpy_htod(res_gpu, res)
 
+start_time = time.time()
 
-LCS(a_gpu,b_gpu,res_gpu,LCSuff_gpu, numpy.int32(a.size+1),numpy.int32(b.size+1), block=(10,10,1),grid=(10,10,1))
-drv.memcpy_dtoh(res, res_gpu)
+for i in range(b.size+1):
+    LCS(numpy.int32(i),a_gpu,b_gpu,LCSuff_gpu,numpy.int32(a.size+1),numpy.int32(b.size+1) , block=(10,1,1),grid=(1,1,1))
+print("--- %s seconds ---" % (time.time() - start_time))
+
 drv.memcpy_dtoh(LCSuff, LCSuff_gpu)
 
 print(LCSuff)
 print(LCSuff[a.size][b.size])
-print(res)
 
-print("CPU", editDistDP(a, b, len(a), len(b))) 
+start_time = time.time()
+pop = editDistDP(a, b, len(a), len(b))
+print("--- %s seconds ---" % (time.time() - start_time))
+print("CPU", pop) 

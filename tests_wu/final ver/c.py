@@ -41,7 +41,7 @@ mod = SourceModule("""
 #include <stdlib.h>
 __device__ int min1(int a,int b){
 
-    if(a<b && != 0){
+    if(a<b && a != 0){
         return a;
     }
     else{
@@ -49,31 +49,37 @@ __device__ int min1(int a,int b){
     }
 }
 
-__global__ void lc_substring(int *X,int *Y,int *res, int *LCSuff,int row_width,int col_width){
+__global__ void lc_substring(int *X,int *Y,int *res, int *LCSuff,int width){
    int j = blockIdx.x * blockDim.x + threadIdx.x;
-   if (j < col_width){
-        for (int i = 0; i < row_width; i++) {
+   int temp;
+   if (j < width){
+        for (int i = 0; i < width; i++) {
             if (i == 0){
-                LCSuff[i*col_width+j] = j;
+                temp = j;
                 __syncthreads();
+                LCSuff[i*width+j] = temp;
             }
             else if (j == 0){
-
-                LCSuff[i*col_width+j] = i;
-                //printf("A %d B %d LC %d\\n", i,j,LCSuff[i*col_width+j]);
+                temp = i;
                 __syncthreads();
+                LCSuff[i*width+j] = temp;
+                //printf("A %d B %d LC %d\\n", i,j,LCSuff[i*width+j]);
+                
             }
-            else if (X[i-1] == Y[j-1]) {  
-                LCSuff[i*col_width+j] = LCSuff[((i-1)*col_width)+j-1];
-                __syncthreads();
-                //printf("compare %d %d\\n",res[0],LCSuff[i*col_width+j]);
+            else if (X[i-1] == Y[j-1]) {
+                temp = LCSuff[((i-1)*width)+j-1];
+                __syncthreads();  
+                LCSuff[i*width+j] = temp;
+                
+                //printf("compare %d %d\\n",res[0],LCSuff[i*width+j]);
                 //printf("res %d %d %d\\n",res[0],i,j);
                 
             } 
             else{
-            	
-                LCSuff[i*col_width+j] = 1+min1(min1(LCSuff[((i-1)*col_width)+j],LCSuff[i*col_width+j-1]),LCSuff[((i-1)*col_width)+j-1]);
+            	temp = 1+min1(min1(LCSuff[((i-1)*width)+j],LCSuff[i*width+j-1]),LCSuff[((i-1)*width)+j-1]);
                 __syncthreads();
+                LCSuff[i*width+j] = temp;
+                
             }
             
         }
@@ -86,7 +92,7 @@ __global__ void lc_substring(int *X,int *Y,int *res, int *LCSuff,int row_width,i
 LCS = mod.get_function("lc_substring")
 
 a = numpy.array([1,1,1,1],dtype=numpy.int32) #row the width
-b = numpy.array([0,0,0,0,0],dtype=numpy.int32) #col
+b = numpy.array([1,0,0,0],dtype=numpy.int32) #col
 res = numpy.array([0],dtype=numpy.int32)
 LCSuff = numpy.zeros((a.size+1,b.size+1),dtype=numpy.int32)
 
@@ -108,7 +114,7 @@ drv.memcpy_htod(LCSuff_gpu, LCSuff)
 drv.memcpy_htod(res_gpu, res)
 
 
-LCS(a_gpu,b_gpu,res_gpu,LCSuff_gpu, numpy.int32(a.size+1),numpy.int32(b.size+1), block=(10,10,1),grid=(10,10,1))
+LCS(a_gpu,b_gpu,res_gpu,LCSuff_gpu, numpy.int32(max(a.size,b.size)+1), block=(10,1,1),grid=(1,1,1))
 drv.memcpy_dtoh(res, res_gpu)
 drv.memcpy_dtoh(LCSuff, LCSuff_gpu)
 

@@ -50,54 +50,62 @@ def conf_load(filename):
 	with open(filename, 'r') as stream:
 		try:
 			ga_params = yaml.safe_load(stream)
-
-			#getting generation zero from run zero
-			generation_zero = ga_params['runs'][0]['generations'][0]
-			# print(generation_zero)
-
-			#getting rssnp index 0 in generation zero
-			rssnp_zero = generation_zero['rssnp_chromosomes'][0]
-			# print(rssnp_zero) 
-
-			#getting out_pairs indexed 0 at rssnp indexed 0 in generation zero
-			out_pairs_zero = rssnp_zero['out_pairs'][0]
-			# print(out_pairs_zero)
-			return generation_zero, rssnp_zero, out_pairs_zero
+			g = []
+			r = []
+			o = []
+			for run in ga_params['runs']:
+				print(run)
+				for generation in ga_params['runs'][run]['generations']:
+				#getting generation zero from run zero
+					#print(generation)
+					g.append(ga_params['runs'][run]['generations'][generation])
+				#getting rssnp index 0 in generation zero
+					for rssnp in ga_params['runs'][run]['generations'][generation]['rssnp_chromosomes']:
+						#print(rssnp) 
+						r.append(ga_params['runs'][run]['generations'][generation]['rssnp_chromosomes'][rssnp])
+				#getting out_pairs indexed 0 at rssnp indexed 0 in generation zero
+						for out_pairs in ga_params['runs'][run]['generations'][generation]['rssnp_chromosomes'][rssnp]['out_pairs']:
+							#print(out_pairs)
+							o.append([out_pairs])
+			return g , r, o
 		except yaml.YAMLError as exc:
 			print(exc)
 
-filename = 'ga_conf_out.yaml'
+filename = 'ga_conf_out2.yaml'
 generation ,rssnp , out_pairs = conf_load(filename)
 
 print(generation)
-print('\nrssnp')
+print('\n')
 print(rssnp)
-print("\nout_pairs")
+print("out")
 print(out_pairs)
 
 for a in rssnp:
 	print(a)
 
+for a in out_pairs:
+	print(a)
+
 output1 = []
 output2 = []
-for a in out_pairs:
-	output1.append(a[0])
-for a in out_pairs:
-	output2.append(a[1])
+# for a in out_pairs:
+# 	output1.append(a[0])
+# for a in out_pairs:
+# 	output2.append(a[1])
 
-print(output1)
-print(output2)
+# print(output1)
+# print(output2)
 
 
-output1arr = np.asarray(output1)
+# output1arr = np.asarray(output1)
 
-LCS = mod.get_function("lc_substring")
+# LCS = mod.get_function("lc_substring")
 
-a = np.array(output1[0],dtype=np.int32) #row the width
-b = np.array([0,0,0,1],dtype=np.int32) #col
+# a = np.array(output1[0],dtype=np.int32) #row the width
+# b = np.array([0,0,0,1],dtype=np.int32) #col
 
-print(a)
-# res = np.array([0],dtype=np.int32)
+# print(a)
+# # res = np.array([0],dtype=np.int32)
 # LCSuff = np.zeros((a.size+1,b.size+1),dtype=np.int32)
 
 # print(LCSuff[0])
