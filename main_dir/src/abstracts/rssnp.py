@@ -93,7 +93,7 @@ class RSSNPSystem:
     ruleStatus = []
     synapseDict = {}  # Dictionary of Synapse
     inputs = []
-    outputs = None  # neuron which contains the output of the system (environment) / must not fire rules
+    outputs = []  # neurons which contains the output of the system (environment) / must not fire rules
     in_spiketrain = []  # input spike trains (Example: {'index': 0, 'input': '010101'})
     out_spiketrain = []
 
@@ -365,8 +365,11 @@ class RSSNPSystem:
 
             for row in range(0, len(ruleStatusMatrix)):
                 nextSystemState = (configurationMatrix[row],nextRuleStatusMatrix[row])
-                self.out_spiketrain.append(nextSystemState[0][self.outputs])
-                nextSystemState[0][self.outputs] = 0
+                for output_neuron in self.out_spiketrain:
+                    print(output_neuron['index'])
+                    output_state = nextSystemState[0][output_neuron['index']]
+                    output_neuron['output'].append(output_state)
+                    nextSystemState[0][output_neuron['index']] = 0
                 if step <= max_input_bits:
                     # Add input spike train to neurons
                     for input_neuron in self.in_spiketrain:
@@ -397,7 +400,7 @@ class RSSNPSystem:
                 continue
 
             # Do not change the output neuron
-            if self.rule[i][0] == self.outputs or self.rule[i][1] == self.outputs:
+            if self.rule[i][0] in self.outputs or self.rule[i][1] in self.outputs:
                 continue
 
             # Small chance to delete rule
@@ -409,7 +412,7 @@ class RSSNPSystem:
             if randint(0, mutation_rate-1) == 0:
                 # Cannot change input and output neurons connection
                 self.rule[i][randint(0, 1)] = randint(0, self.n - 1)
-                while self.rule[i][0] == self.outputs:  # Cannot have the environment fire spikes
+                while self.rule[i][0] in self.outputs:  # Cannot have the environment fire spikes
                     self.rule[i][randint(0, 1)] = randint(0, self.n - 1)
 
                 # cannot have synapse pointing to the same neuron
@@ -530,7 +533,7 @@ class RSSNPSystem:
         while unexploredEdges != []:
             curr_edge = unexploredEdges.pop(0)
             
-            if curr_edge[1] == self.outputs:
+            if curr_edge[1] in self.outputs:
                 return True
             
             for index, edge in enumerate(edges):
@@ -576,6 +579,6 @@ def assign_rssnp(rssnp):
     system.configuration_init = rssnp['init_config']    # starting configuration (number of spikes per neuron)
     system.ruleStatus = rssnp['rule_status']            # initial status of each rule (set to -1)
     system.inputs = rssnp['input_neurons']
-    system.outputs = rssnp['output_neuron']
+    system.outputs = rssnp['output_neurons']
 
     return system

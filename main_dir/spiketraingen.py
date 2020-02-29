@@ -84,6 +84,53 @@ def sub_gen(padding=0):
             num1 = diff*'0' + num1
         print(num1[::-1] + ',' + num2[::-1] + ',' + padding*'0' + num3[::-1], file=open('test cases/sub_test_cases.txt','a'))
 
+def swap(num1, num2):
+    temp = num2
+    num2 = num1
+    num1 = temp
+
+def bitonic_gen(sort_nums, padding=0):
+    for i in range(50):
+        orig = []
+        tobesorted = []
+        for j in range(sort_nums):
+            random_num = random.randint(0, 500)
+            orig.append(random_num)
+            tobesorted.append(random_num)
+        print(orig)
+        #generates a sorted list with the help of a bubble sort algorithm
+        len_list = len(tobesorted)
+        h = 1
+        while h < len_list:
+            k = 0
+            while k < len_list - h:
+                if  tobesorted[k] > tobesorted[k + 1]:
+                    #swap(tobesorted[k], tobesorted[k+1])
+                    temp = tobesorted[k+1]
+                    tobesorted[k + 1] = tobesorted[k]
+                    tobesorted[k] = temp
+                k += 1
+            h += 1
+        print(tobesorted)
+        k = 0
+        while k < len(orig):
+            input_string = ""
+            temp = orig[k]
+            while temp > 0:
+                input_string += "1"
+                temp -= 1
+            print(input_string + ',', file=open('test_cases/bitonic_gen_test_cases.txt','a'))
+            k += 1
+        k = 0
+        while k < len(tobesorted):
+            output_string = ""
+            temp = orig[k]
+            while temp > 0:
+                output_string += "1"
+                temp -= 1
+            print(padding*'0' + output_string + ',', file=open('test_cases/bitonic_gen_test_cases.txt','a'))
+            k += 1
+
 if not os.path.exists('test cases'):
     os.makedirs('test cases')
 
@@ -95,6 +142,7 @@ while True:
     print("[3] Sub")
     print("[4] And")
     print("[5] Or")
+    print("[6] Bitonic")
 
     answer = input()
     if answer == "":
@@ -122,6 +170,9 @@ while True:
         and_gen(padding)
     elif answer == 5:
         or_gen(padding)
+    elif answer == 6:
+        sort_nums = int(input("How many numbers would you like to sort: "))
+        bitonic_gen(sort_nums, padding)
 
     print("Done!")
 

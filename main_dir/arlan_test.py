@@ -1,4 +1,4 @@
-from src.abstracts.rssnp import assign_rssnp, main
+from src.abstracts.rssnp import assign_rssnp
 from src.abstracts.grapher import draw
 
 and_rssnp = assign_rssnp({
@@ -13,7 +13,7 @@ and_rssnp = assign_rssnp({
     'init_config': [0, 0, 0, 0],
     'rule_status': [-1 for x in range(4)],
     'input_neurons': [0, 1],
-    'output_neuron': 3
+    'output_neurons': 3
 })
 
 and_rssnp.in_spiketrain = [
@@ -30,7 +30,7 @@ and_rssnp.in_spiketrain = [
 
 system_state = (and_rssnp.configuration_init, and_rssnp.ruleStatus) # the initial configuration
 maxSteps = 9 # the max number of steps before halting the simulation (this is just a safety net)
-print(main(system_state, maxSteps))
+print(and_rssnp.main(system_state, maxSteps))
 
 '''
  0. The index of the source neuron
