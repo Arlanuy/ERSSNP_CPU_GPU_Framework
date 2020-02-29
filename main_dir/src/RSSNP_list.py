@@ -344,7 +344,7 @@ sub_rssnp_extra_rules = {
 }
 
 # BITONIC
-bitonic_rssnp_minimal = assign_rssnp({
+bitonic_rssnp_minimal = {
     'neurons': 28,
     'synapses': 42,
     'rules': [
@@ -413,4 +413,4 @@ bitonic_rssnp_minimal = assign_rssnp({
     'rule_status': [-1 for x in range(60)],
     'input_neurons': [0, 1, 2, 3],
     'output_neurons': [24, 25, 26, 27]
-})
+}
