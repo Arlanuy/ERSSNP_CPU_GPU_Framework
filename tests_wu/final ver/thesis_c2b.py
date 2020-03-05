@@ -1,7 +1,7 @@
 import pycuda.autoinit
 import pycuda.driver as drv
 import numpy
-import time
+from timeit import default_timer as timer
 
 from pycuda.compiler import SourceModule
 def editDistDP(str1, str2, m, n): 
@@ -104,18 +104,20 @@ drv.memcpy_htod(b_gpu, b)
 drv.memcpy_htod(LCSuff_gpu, LCSuff)
 drv.memcpy_htod(res_gpu, res)
 
-start_time = time.time()
+start = timer()
 
 for i in range(b.size+1):
     LCS(numpy.int32(i),a_gpu,b_gpu,LCSuff_gpu,numpy.int32(a.size+1),numpy.int32(b.size+1) , block=(10,1,1),grid=(1,1,1))
-print("--- %s seconds ---" % (time.time() - start_time))
+total = timer() - start
+print("--- %s seconds ---" % (total))
 
 drv.memcpy_dtoh(LCSuff, LCSuff_gpu)
 
 print(LCSuff)
 print(LCSuff[a.size][b.size])
 
-start_time = time.time()
+start = timer()
 pop = editDistDP(a, b, len(a), len(b))
-print("--- %s seconds ---" % (time.time() - start_time))
+total = timer() - start
+print("--- %s seconds ---" % (total))
 print("CPU", pop) 

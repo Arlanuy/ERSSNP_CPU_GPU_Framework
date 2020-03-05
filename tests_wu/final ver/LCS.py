@@ -4,6 +4,8 @@ import numpy
 
 from pycuda.compiler import SourceModule
 
+dev = pycuda.autoinit.device
+
 def LCSubStr(X, Y, m, n): 
     
     # Create a table to store lengths of 
@@ -75,14 +77,13 @@ __global__ void lc_substring(int j,int *X,int *Y, int *LCSuff,int row_width,int 
 
 """)
 
-dev = pycuda.autoinit.device
-print(dev.get_attribute(pycuda.driver.device_attribute.WARP_SIZE))
-print(dev.get_attribute(pycuda.driver.device_attribute.MAX_BLOCK))
+
+print(dev.get_attribute(pycuda.driver.device_attribute.MAX_BLOCK_DIM_X))
 
 LCS = mod.get_function("lc_substring")
 no = [1,1,1,0,0,1,1,1]
 a = numpy.array(no,dtype=numpy.int32) #row the width
-b = numpy.array([0,1,1,1,1,1,0,1],dtype=numpy.int32) #col
+b = numpy.array([1,2,3,1,1,1,0,1],dtype=numpy.int32) #col
 res = numpy.array([0],dtype=numpy.int32)
 LCSuff = numpy.zeros((a.size+1,b.size+1),dtype=numpy.int32)
 
