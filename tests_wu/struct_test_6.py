@@ -196,14 +196,29 @@ def get_every_rule(size_rssnp, rssnp_id): #size = the number of rules #rssnp_id 
     return list_poss
 
 
-def get_param(array,limit):
+def get_param(array,limit):             #limit - number of params to get array-the list of all possible params
     param = []
+    # print(len(array),array)
+    while(len(param)<limit):
+        r = []
+        j = 0
+        temp = random.choice(array)
+        # print("temp",temp)
+        # f.write("temp "+ str(temp)+ '\n')
+        for i in array:
+            if((i[0] == temp[0] and i[1] == temp[1]) or (i[0] == temp[1] and i[1] == temp[0])):
+                r.append(i)
+                # f.write("remove " +str(i)+ '\n')
+        
+        for i in r:
+            array.remove(i)
+        print(len(array))
+        # f.write(str(len(array)) + str(array) + '\n')
+        param.append(temp)
+        print(param)
+        # f.write(str(param)+ '\n')
 
-    while(len(param)<=limit):
-        param.append(random.choice(array))
-        for x in param:
-            if()
-
+    return param
 
 
 if __name__ == "__main__":
@@ -211,13 +226,15 @@ if __name__ == "__main__":
     # test.change()
     # test.run()
     test = []
+    # f= open("text.txt","w+")
+
 
     source = []
     sink = []
     prod = []
     con = []
     delay = []
-    size_rssnp = [1,1,1,1]
+    size_rssnp = [20,20,20,20]
 
     for i in range(0,len(size_rssnp)):
         for i in range(0,size_rssnp[i]):
@@ -249,17 +266,10 @@ if __name__ == "__main__":
 
     #print(test_list)
 
-    print(test_list_rule)
+    # print(test_list_rule)
 
-    param = []
-    param.append(random.choice(test_list_rule))
+    param = get_param(test_list_rule,4)
     print(param)
-    test_list_rule = [x for x in test_list_rule if (x[0] != param[0][0] or x[0] != param[0][1])]
-    print(test_list_rule)
-    param.append(random.choice(test_list_rule))
-    param.append(random.choice(test_list_rule))
-    param.append(random.choice(test_list_rule))
-    
     # print(param)
     # for x in param:
     #     print(x[0])
