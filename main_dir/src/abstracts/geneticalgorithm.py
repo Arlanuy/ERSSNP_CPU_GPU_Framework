@@ -34,7 +34,7 @@ class SNPGeneticAlgo:
         # Flush population and insert the original RSSNP
         self.pop = [{'system': initsystem, 'fitness': 0, 'out_pairs': []}]
 
-        for _ in range(0, count - 1):
+        for i in range(0, count - 1):
             # Create a random network.
             system = deepcopy(initsystem)
             system = system.randomize()
@@ -167,7 +167,7 @@ class SNPGeneticAlgo:
         total_length = 0
         for spike_train in self.inout_pairs:
             total_length += len(spike_train['output'])
-        index = 0
+        index = 0e
         for pair in self.inout_pairs:
             maxSteps = 3*len(pair['output'])
             chromosome['system'].in_spiketrain = pair['inputs']
