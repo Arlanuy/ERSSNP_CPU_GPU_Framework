@@ -38,6 +38,7 @@ class SNPGeneticAlgoEval:
             if fitness >= self.opt_fitness: no_of_opt_run += 1
         
         # Get average optimal runs
+        print("opt runs is " + str(no_of_opt_run / self.no_of_run))
         return no_of_opt_run / self.no_of_run
 
     def avgFitnessValue(self):
@@ -50,7 +51,8 @@ class SNPGeneticAlgoEval:
             # Add highest fitness to the sum of fitness for all runs
             fitness_sum += fitness
         
-        # Get average fitness 
+        # Get average fitness
+        print("avg fitness is " + str(fitness_sum / (self.no_of_run * self.max_fitness))) 
         return fitness_sum / (self.no_of_run * self.max_fitness)
 
     def likelihoodOfEvolLeap(self):
@@ -70,6 +72,7 @@ class SNPGeneticAlgoEval:
             
             # Get summation of the average no of leaps of all runs
             evol_leap += (leaps / self.no_of_gen)
+            print("evol leap is "  + str(evol_leap))
 
         # Return summatoon of the average no of leaps of all runs
         return evol_leap / self.no_of_run
@@ -82,5 +85,6 @@ class SNPGeneticAlgoEval:
                 # Get the highest fitness of every generation
                 if line.startswith("0"):
                     array.append(line[2:])
+                    #print("fitness is " + line[2:])
         
         self.list_of_runs.append(array)
