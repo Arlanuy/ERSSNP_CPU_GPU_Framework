@@ -109,6 +109,7 @@ def set_bounds():
         rssnp = assign_rssnp(rssnp_dict)
 
         exit_flag = rssnp.isValid()
+
     
     return rssnp
 

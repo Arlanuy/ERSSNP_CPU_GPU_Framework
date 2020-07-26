@@ -579,3 +579,4 @@ def assign_rssnp(rssnp):
     system.outputs = rssnp['output_neuron']
 
     return system
+ 
