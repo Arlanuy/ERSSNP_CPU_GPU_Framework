@@ -86,10 +86,15 @@ for a in rssnp:
 for a in out_pairs:
 	print(a)
 
+
 output1 = []
 output2 = []
-# for a in out_pairs:
-# 	output1.append(a[0])
+for a in out_pairs:
+	output1.append(a[0][0])
+	output1.append(a[0][1])
+
+print("o1\n")
+print(output1)
 # for a in out_pairs:
 # 	output2.append(a[1])
 
