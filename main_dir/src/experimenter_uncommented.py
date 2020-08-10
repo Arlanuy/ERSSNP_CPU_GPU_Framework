@@ -26,13 +26,14 @@ def gaframework(rssnp_string, path_to_io_spike_trains, stats):
     execute_experiment(dir, rssnp, ga, gaeval, stats, name)
 
 def execute_experiment(results_dir, rssnp, ga, gaeval, stats, experiment_name):
-    gaeval.no_of_gen = stats['generations']
-    gaeval.no_of_run = stats['runs']
+    gaeval.no_of_gen = stats['gen_total']
+    gaeval.no_of_run = stats['run_total']
     gaeval.opt_fitness = 50
     gaeval.max_fitness = 100
     gaeval.list_of_runs = []
     print("Now executing", experiment_name)
-    gaeval.run(ga, rssnp, stats['population_size'], stats['fitness_function'], gaeval.no_of_gen, stats['mutation_rate'], results_dir, experiment_name, stats['selection_func'])
+    stats_run = stats['runs'][0]
+    gaeval.run(ga, rssnp, stats_run['population_size'], stats_run['fitness_function'], gaeval.no_of_gen, stats_run['mutation_rate'], results_dir, experiment_name, stats_run['selection_func'])
 
 # results_directory = input("Where would you like to put the results(Directory name): ")
 
