@@ -91,9 +91,9 @@ def assign_yaml(ga_params, rssnp, run_index, chrom_index):
     current_rssnp['init_config'] = rssnp['init_config']
     current_rssnp['rule_status'] = rssnp['rule_status']
     current_rssnp['input_neurons']  = rssnp['input_neurons']
-    current_rssnp['output_neurons'] = rssnp['output_neuron'] 
+    current_rssnp['output_neuron'] = rssnp['output_neuron'] 
 
-def set_bounds(ga_eval, runs, population):
+def set_bounds(ga_eval, runs, population, mutation_rate, selection_func, fitness_func):
     # Ask user for the upper bounds of desired rssnp
     print("Max number of...")
     neurons = int(input("neurons: "))
@@ -117,7 +117,10 @@ def set_bounds(ga_eval, runs, population):
     print("Creating RSSNP...")
  
     for run in range(runs):
-        population_count = 0
+        ga_eval['runs'][run]['population_size'] = population
+        ga_eval['runs'][run]['mutation_rate'] = mutation_rate
+        ga_eval['runs'][run]['selection_func'] = selection_func
+        ga_eval['runs'][run]['fitness_function'] = fitness_func
         for population_count in range(population):
             exit_flag = False
             while not exit_flag:
