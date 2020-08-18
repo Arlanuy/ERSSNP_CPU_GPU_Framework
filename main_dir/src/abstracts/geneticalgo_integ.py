@@ -178,6 +178,7 @@ class SNPGeneticAlgo:
         for spike_train in self.inout_pairs:
             total_length += len(spike_train['output'])
 
+        #chromosome['system'] = {}
         for pair in self.inout_pairs:
             maxSteps = 3*len(pair['output'])
             chromosome['system'].in_spiketrain = pair['inputs']
@@ -192,61 +193,6 @@ class SNPGeneticAlgo:
 
         # print(chromosome)
 
-    def old_simulate(self, system, size, function, generations, mutation_rate, path_name, run_index, selection_func):
-        '''
-            Performs a complete run of the genetic algorithm framework
-        '''
-
-        if not os.path.exists(path_name):
-            os.makedirs(path_name)
-
-        # Generate initial population
-        copy_sys = deepcopy(system)
-        self.create_population(size, copy_sys)
-        file = open(path_name + "/" + "Run" + str(run_index) + "/run.txt", "w+")
-        file.close()
-        print(
-            "Population size: " + str(size) +
-            "\nMutation rate: " + str(mutation_rate) +
-            "\nFitness function: " + str(function) +
-            "\nSelection function: " + str(selection_func)
-        , file=open(path_name + "/" + "Run" + str(run_index) + '/run.txt', "w+"))
-
-
-        for generation in range(0, generations):
-            print(
-                "Generation",
-                generation,
-                file=open(path_name + "/" + "Run" + str(run_index) + '/run.txt', "a"))
-
-            # # Create folder
-            # folder = path_name + "/" + "Run" + str(run_index) + "/" + "Generation" + str(generation) + "/"
-            # if not os.path.exists(folder):
-            #     os.makedirs(folder)
-
-            print("Evaluating Gen "+str(generation)+"...")
-            
-            # Calculate fitness of each element
-            i = 0
-            for chrom in self.pop:
-                #print("Chromosome:",i)
-                i += 1
-                self.evaluate(chrom, function)
-            
-            # Sort population acc. to fitness level
-            self.pop = sorted(self.pop, key=lambda k: k['fitness'], reverse=True)
-            
-            ctr = 0
-            for chrom in self.pop:
-                # file_name = folder + str(ctr)
-                # draw(chrom['system'], file_name)
-                print(ctr, chrom, file=open(path_name + "/" + "Run" + str(run_index) + '/run.txt', "a"))
-                ctr += 1
-                
-            # Crossover and mutation
-            #print("Crossover:",generation)
-            self.crossover(mutation_rate, selection_func)
-
     def simulate(self, system, size, function, generations, mutation_rate, path_name, run_index, selection_func):
         '''
             Performs a complete run of the genetic algorithm framework
@@ -258,7 +204,7 @@ class SNPGeneticAlgo:
         # Generate initial population
         copy_sys = deepcopy(system)
         self.create_population(size, copy_sys)
-        filename = path_name + "/" + "Run" + str(run_index) + "/run.txt"
+        filename = path_name
         ga_params = conf_load(filename);
   
         ga_params["population_size"] = str(size)
@@ -268,7 +214,7 @@ class SNPGeneticAlgo:
 
 
         for generation in range(0, generations):
-            current_gen = ga_params["generations"][generation]
+            current_gen = ga_params["runs"][run_index]["generations"][generation]
             # # Create folder
             # folder = path_name + "/" + "Run" + str(run_index) + "/" + "Generation" + str(generation) + "/"
             # if not os.path.exists(folder):
@@ -283,15 +229,15 @@ class SNPGeneticAlgo:
             for chrom in self.pop:
                 #print("Chromosome:",i)
                 i += 1
-                self.evaluate(current_gen["rssnp_chromosomes"][i], function)
-                result_fitness = current_gen["rssnp_chromosomes"][i]['fitness']
+                self.evaluate(chrom, function)
+                result_fitness = chrom['fitness']
                 if  result_fitness >= max_fitness:
                     max_fitness = result_fitness 
                     if result_fitness  == max_fitness:
-                        chromosome_index.insert(i)
+                        chromosome_index.append(i)
                     else:
                         chromosome_index = []
-                        chromosome_index.insert(i)
+                        chromosome_index.append(i)
 
 
             current_gen['best_fitness_result'] = max_fitness
@@ -304,5 +250,7 @@ class SNPGeneticAlgo:
             #print("Crossover:",generation)
             self.crossover(mutation_rate, selection_func)
         conf_save(filename, ga_params)
+
+        return current_gen['best_fitness_result']
 
             

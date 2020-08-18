@@ -18,28 +18,26 @@ class SNPGeneticAlgoEval:
     no_of_gen = 0
     no_of_run = 0
     list_of_runs = []
-
-    def run(self, genetic_algo, system, size, function, generations, mutation_rate, results_dir, path_name, selection_func):
-        current_gen = ga_params["generations"][generation]
-        path_name = results_dir + "/" + path_name
-        if not os.path.exists(path_name):
-            os.makedirs(path_name)
-
+    ga_params = None
+    file_name = None
+    #path name is now loadfile_name
+    def run(self, genetic_algo, system, size, function, generations, mutation_rate, path_name, selection_func):
+        max_fitness_in_run = 0
         for run in range(self.no_of_run):
-            # Create folder for each run of a GA (all generations)
-            folder = path_name + "/Run" + str(run) + "/"
 
-            if not os.path.exists(folder):
-                os.makedirs(folder)
-            
-            print("Run:",run)
             # Perform a single run of the GA framework
-            genetic_algo.simulate(system, size, function, generations, mutation_rate, path_name, run, selection_func)
+            run_fitness = genetic_algo.simulate(system, size, function, generations, mutation_rate, path_name, run, selection_func)
             self.updateRuns(path_name, run)
+
+            if  run_fitness > max_fitness_in_run:
+                max_fitness_in_run = run_fitness
+
+        self.ga_params['runs'][run]['max_fitness_in_run'] = max_fitness_in_run
+        conf_save(self.file_name, self.ga_params)
 
         # print("Likelihood of Evolution Leap: ", self.likelihoodOfEvolLeap(), file=open(path_name + "/Run" + str(run) + "/run.txt","a"))
         # print("Likelihood of Optimality: ", self.likelihoodOfOptimality(), file=open(path_name + "/Run" + str(run) + "/run.txt","a"))
-        print("Average Fitness Value: ", self.avgFitnessValue(), file=open(path_name + "/Run" + str(run) + "/run.txt","a"))
+        print("Average Fitness Value: ", self.avgFitnessValue(max_fitness_in_run))#, file=open(path_name + "/Run" + str(run) + "/run.txt","a"))
 
     def likelihoodOfOptimality(self):
         no_of_opt_run = 0
@@ -54,13 +52,16 @@ class SNPGeneticAlgoEval:
         # Get average optimal runs
         return no_of_opt_run / self.no_of_run
 
-    def avgFitnessValue(self):
+    def avgFitnessValue(self, max_fitness_in_run):
         fitness_sum = 0
 
         # Iterate through all runs
-        for run in self.list_of_runs:
+        run_index = 0
+        for run in self.ga_params['runs']:
             # Get highest fitness for that run
-            fitness = int(re.search('\'fitness\': (.*), \'out', run[-1]).group(1))
+            #fitness = int(re.search('\'fitness\': (.*), \'out', run[-1]).group(1))
+            fitness = max_fitness_in_run
+            run_index += 1
             # Add highest fitness to the sum of fitness for all runs
             fitness_sum += fitness
         
@@ -92,6 +93,7 @@ class SNPGeneticAlgoEval:
     def updateRuns(self, file_name, run_index):
         array = []
         # Open a run
-        ga_params = conf_load(file_name + "/Run" + str(run_index) + "/run.txt", "r");
-        array.append(ga_params["generations"][0])
+        self.ga_params = conf_load(file_name)
+        self.file_name = file_name
+        array.append(self.ga_params["runs"][run_index]["generations"])
         self.list_of_runs.append(array)
