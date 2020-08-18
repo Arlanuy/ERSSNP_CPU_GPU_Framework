@@ -14,11 +14,10 @@ def conf_save(filename, ga_params):
     with open(filename, 'w+') as out:
         doc = yaml.safe_dump(ga_params, out)
 
-def create_empty_yaml(runs, generations, population_size):
-	new_file = open("temp.yaml", 'w+')
+def create_empty_yaml(runs, generations, population_size, savefile_name):
 	empty_dict = {}
-	conf_save("temp_dont_overwrite.yaml", empty_dict)
-	ga_params = conf_load("temp_dont_overwrite.yaml")
+	conf_save(savefile_name, empty_dict)
+	ga_params = conf_load(savefile_name)
 	ga_params['run_total'] = runs
 	ga_params['gen_total'] = generations
 	ga_params['runs'] = {}
@@ -30,7 +29,7 @@ def create_empty_yaml(runs, generations, population_size):
 			ga_params['runs'][i]['generations'][j]['rssnp_chromosomes'] = {}
 			for k in range(population_size):
 				ga_params['runs'][i]['generations'][j]['rssnp_chromosomes'][k] = {} 
-
+	conf_save(savefile_name, ga_params)
 	return ga_params
 
 
@@ -44,7 +43,7 @@ def program_main():
 		answer = int(input("What kind of system would you like to evolve: "))
 		save_directory = os.path.join(home, "load_directory")
 		#save_directory = input("Which directory would you like to save (.yaml) the evolutionary process: ")
-		savefile_name = save_directory + '\\' + input("What will be the name of this savefile: ")
+		savefile_name = save_directory + '\\' + input("What will be the name of this savefile: ") + ".yaml"
 		runs = int(input("How many runs would you like to do (min of 1): "))
 		generations = int(input("How many generation would you like to do (min of 1): "))
 		population_size = int(input("How many RSSNP should be in the population? "))
@@ -53,7 +52,7 @@ def program_main():
 		selection_func = int(input("Which would you use?"))
 		print("Of the Fitness Selection methods:\n 0. Longest Common Subsequence\n1. Longest Common Substring\n2. Edit Distance Method")
 		fitness_func = int(input("Which would you use?"))
-		ga_params = create_empty_yaml(runs, generations, population_size)
+		ga_params = create_empty_yaml(runs, generations, population_size, savefile_name)
 		ga_params = set_bounds(ga_params, runs, population_size, mutation_rate, selection_func, fitness_func)
 
 
@@ -62,20 +61,20 @@ def program_main():
 		#AND gate
 		if answer == 1:
 			and_path = os.path.join(home, "test cases", "and_test_cases.txt")
-			gaframework(ga_params['runs'][0]['generations'][0]['rssnp_chromosomes'][0], and_path, ga_params)
+			gaframework(ga_params['runs'][0]['generations'][0]['rssnp_chromosomes'][0], and_path, ga_params, savefile_name)
 		if answer == 2:
 			or_path = os.path.join(home, "test cases", "or_test_cases.txt")
-			gaframework(ga_params['runs'][0]['generations'][0]['rssnp_chromosomes'][0], or_path, ga_params)
+			gaframework(ga_params['runs'][0]['generations'][0]['rssnp_chromosomes'][0], or_path, ga_params, savefile_name)
 		if answer == 3:
 			not_path = os.path.join(home, "test cases", "not_test_cases.txt")
-			gaframework(ga_params['runs'][0]['generations'][0]['rssnp_chromosomes'][0], not_path, ga_params)
+			gaframework(ga_params['runs'][0]['generations'][0]['rssnp_chromosomes'][0], not_path, ga_params, savefile_name)
 		if answer == 4:
 			add_path = os.path.join(home, "test cases", "add_test_cases.txt")
-			gaframework(ga_params['runs'][0]['generations'][0]['rssnp_chromosomes'][0], add_path, ga_params)
+			gaframework(ga_params['runs'][0]['generations'][0]['rssnp_chromosomes'][0], add_path, ga_params, savefile_name)
 		if answer == 5:
 			sub_path = os.path.join(home, "test cases", "sub_test_cases.txt")
-			gaframework(ga_params['runs'][0]['generations'][0]['rssnp_chromosomes'][0], sub_path, ga_params)
-		savefile = conf_save(savefile_name + ".yaml", ga_params)
+			gaframework(ga_params['runs'][0]['generations'][0]['rssnp_chromosomes'][0], sub_path, ga_params, savefile_name)
+		conf_save(savefile_name, ga_params)
 		if not os.path.exists(save_directory):
 		    os.makedirs(save_directory)
 
