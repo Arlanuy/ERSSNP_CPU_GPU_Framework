@@ -6,7 +6,8 @@ from src.abstracts.grapher import draw
 from src.abstracts.parsers import spike_train_parser
 from src.abstracts.rssnp import assign_rssnp
 
-# from RSSNP_list import *    # contains list of sample rssnps
+
+#from RSSNP_list import *    # contains list of sample rssnps
 
 import os
 
@@ -33,7 +34,7 @@ def execute_experiment(rssnp, ga, gaeval, stats, loadfile_name):
     gaeval.list_of_runs = []
     print("Now executing experiment involving", loadfile_name)
     stats_run = stats['runs'][0]
-    gaeval.run(ga, rssnp, stats_run['population_size'], stats_run['fitness_function'], gaeval.no_of_gen, stats_run['mutation_rate'], loadfile_name, stats_run['selection_func'])
+    gaeval.run(ga, rssnp, stats_run['population_size'], stats_run['fitness_function'],  gaeval.no_of_run, gaeval.no_of_gen, stats_run['mutation_rate'], loadfile_name, stats_run['selection_func'])
 
 # results_directory = input("Where would you like to put the results(Directory name): ")
 

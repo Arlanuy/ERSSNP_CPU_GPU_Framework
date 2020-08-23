@@ -17,6 +17,16 @@ def conf_save(filename, ga_params):
     with open(filename, 'w+') as out:
         doc = yaml.safe_dump(ga_params, out)
 
+def class_yaml(ga_params_rssnp, rssnp):
+    ga_params_rssnp['neurons'] = rssnp['system'].n
+    ga_params_rssnp['synapses'] = rssnp['system'].l 
+    ga_params_rssnp['rules'] = rssnp['system'].rule
+    ga_params_rssnp['init_config'] = rssnp['system'].configuration_init
+    ga_params_rssnp['rule_status'] = rssnp['system'].ruleStatus
+    ga_params_rssnp['input_neurons']  = rssnp['system'].inputs
+    ga_params_rssnp['output_neuron'] = rssnp['system'].outputs
+
+
 def string_format(bitstring):
     return str(bitstring)[1:-1].translate(dict.fromkeys(map(ord, ', '), None))
 
@@ -193,6 +203,7 @@ class SNPGeneticAlgo:
 
         # print(chromosome)
 
+
     def simulate(self, system, size, function, generations, mutation_rate, path_name, run_index, selection_func):
         '''
             Performs a complete run of the genetic algorithm framework
@@ -206,14 +217,10 @@ class SNPGeneticAlgo:
         self.create_population(size, copy_sys)
         filename = path_name
         ga_params = conf_load(filename);
-  
-        ga_params["population_size"] = str(size)
-        ga_params["mutation_rate"] = str(mutation_rate)
-        ga_params["fitness_function"] = str(function)
-        ga_params["selection_function"] = str(selection_func)
 
 
         for generation in range(0, generations):
+            print("gen baby gen " + str(generation))
             current_gen = ga_params["runs"][run_index]["generations"][generation]
             # # Create folder
             # folder = path_name + "/" + "Run" + str(run_index) + "/" + "Generation" + str(generation) + "/"
@@ -223,33 +230,42 @@ class SNPGeneticAlgo:
             print("Evaluating Gen "+str(generation)+"...")
             
             # Calculate fitness of each element
-            i = 0
+            chrom_index = 0
             max_fitness = 0
-            chromosome_index = []
+            chromosome_indexes = []
             for chrom in self.pop:
                 #print("Chromosome:",i)
-                i += 1
+
                 self.evaluate(chrom, function)
+                
                 result_fitness = chrom['fitness']
                 if  result_fitness >= max_fitness:
                     max_fitness = result_fitness 
                     if result_fitness  == max_fitness:
-                        chromosome_index.append(i)
+                        chromosome_indexes.append(chrom_index)
                     else:
-                        chromosome_index = []
-                        chromosome_index.append(i)
+                        chromosome_indexes = []
+                        chromosome_indexes.append(chrom_index)
+                #current_gen['rssnp_chromosomes'][i] = chrom['system']
+                ga_params_chrom = ga_params['runs'][run_index]['generations'][generation]['rssnp_chromosomes'][chrom_index]
+                class_yaml(ga_params_chrom, chrom)
+                chrom_index += 1
+
 
 
             current_gen['best_fitness_result'] = max_fitness
-            current_gen['best_chromosome_indexes'] = chromosome_index
-            
+            print("fitness got is " + str(current_gen['best_fitness_result']))
+            current_gen['best_chromosome_indexes'] = chromosome_indexes
+            print("best chromosome indexes are  " + str(current_gen['best_chromosome_indexes']))
+            print("ga_params at gen " + str(generation) + " is " + str(ga_params))
+            conf_save(filename, ga_params)
             # Sort population acc. to fitness level
             self.pop = sorted(self.pop, key=lambda k: k['fitness'], reverse=True)
                 
             # Crossover and mutation
             #print("Crossover:",generation)
             self.crossover(mutation_rate, selection_func)
-        conf_save(filename, ga_params)
+
 
         return current_gen['best_fitness_result']
 

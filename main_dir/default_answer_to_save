@@ -1,12 +1,16 @@
 C:\Users\Arvy\Documents\cs 199 docs\RSSNP_CPU_GPU_Framework\main_dir\load_directory
+1
+1
+1
 test
-1
-1
-12
+2
+2
+4
 1
 1
 1
 
+(only if u chose type_answer = 4 or random)
 4
 0
 3
@@ -19,3 +23,24 @@ test
 3
 Y
 
+(only if u chose type_answer = 5 or user-defined)
+initial_spikes: 0
+rules: 4 (number of rule_status)
+init_config: 0
+rule_status: -1
+
+
+and_rssnp_minimal = {
+    'neurons': 4,
+    'synapses': 3,
+    'rules': [
+        [0, 2, (1, 0), 1, 1, 0],
+        [1, 2, (1, 0), 1, 1, 0],
+        [2, 3, (2, 0), 2, 1, 0],
+        [2, 3, (1, 0), 1, 0, 0], 
+    ],
+    'init_config': [0, 0, 0, 0],
+    'rule_status': [-1 for x in range(4)],
+    'input_neurons': [0, 1],
+    'output_neuron': 3
+}
