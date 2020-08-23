@@ -82,18 +82,7 @@ def create_rssnp(neurons, init_spikes, synapses, rules, i, j, consumed, produced
     return rssnp
 
 
-
-def assign_yaml(ga_params, rssnp, run_index, chrom_index):
-    current_rssnp = ga_params['runs'][run_index]['generations'][0]['rssnp_chromosomes'][chrom_index]
-    current_rssnp['neurons'] = rssnp['neurons']
-    current_rssnp['synapses'] = rssnp['synapses'] 
-    current_rssnp['rules'] = rssnp['rules']
-    current_rssnp['init_config'] = rssnp['init_config']
-    current_rssnp['rule_status'] = rssnp['rule_status']
-    current_rssnp['input_neurons']  = rssnp['input_neurons']
-    current_rssnp['output_neuron'] = rssnp['output_neuron'] 
-
-def set_bounds(ga_eval, runs, population, mutation_rate, selection_func, fitness_func):
+def set_bounds(ga_eval, runs):
     # Ask user for the upper bounds of desired rssnp
     print("Max number of...")
     neurons = int(input("neurons: "))
@@ -116,24 +105,77 @@ def set_bounds(ga_eval, runs, population, mutation_rate, selection_func, fitness
     
     print("Creating RSSNP...")
  
-    for run in range(runs):
-        ga_eval['runs'][run]['population_size'] = population
-        ga_eval['runs'][run]['mutation_rate'] = mutation_rate
-        ga_eval['runs'][run]['selection_func'] = selection_func
-        ga_eval['runs'][run]['fitness_function'] = fitness_func
-        for population_count in range(population):
-            exit_flag = False
-            while not exit_flag:
-                # Make that rssnp based on the user's specifications
-                rssnp_dict = create_rssnp_dict(neurons, spikes, synapses, rules, i, j, consumed, produced, inputs=input_neurons, output=output_neuron, fixed=fixed)
-                rssnp = assign_rssnp(rssnp_dict)
-                exit_flag = rssnp.isValid()
 
-            assign_yaml(ga_eval, rssnp_dict, run, population_count)
+    exit_flag = False
+    while not exit_flag:
+        # Make that rssnp based on the user's specifications
+        rssnp_dict = create_rssnp_dict(neurons, spikes, synapses, rules, i, j, consumed, produced, input_neurons, output_neuron, fixed)
+        rssnp = assign_rssnp(rssnp_dict)
+        exit_flag = rssnp.isValid()
+
+    return rssnp_dict
+
+def set_values(ga_eval, runs):
+    print("Exact number of...")
+    neurons = int(input("neurons: "))
+    spikes = int(input("initial spikes: "))
+    synapses = int(input("synapses: "))
+    rules = int(input("rules: "))
+    init_config = int(input("shall be the constant init_config: "))
+    rule_status = int(input("shall be the constant rule_status: "))
+    print("Write the rules (comma-separated) in the order of source neuron, sink neuron, grammar multiplicity(a+, a*), consumed spikes, produced spikes, delay") 
+    rule_in_csv = []
+    rule_mat = []
+    rule_content = 7 
+    for rule in range(rules):
+        rule_vec = []
+        rule_in_csv = input("Enter a rule: ")
+        grammar = []
+        for index in range(0, rule_content):
+            element = rule_in_csv[2 * index]
+            if index == 2:
+                grammar.append(element)
+
+            if index == 3:
+                grammar.append(element)
+                rule_mat.append(grammar)
+            else:
+                rule_vec.append(element)
+                rule_mat.append(rule_vec)
+
+    input_neurons = input("\nInput neurons (comma-separated): ")
+    input_neurons = [int(x) for x in input_neurons.split(",")]
+
+    output_neuron = int(input("\nOutput neuron: "))
+
+    # Make that rssnp based on the user's specifications
+    rssnp_dict = {'neurons': neurons, 'synapses': synapses, 'rules': rule_mat, 'init_config': init_config, 'rule_status': rule_status, 'input_neurons': input_neurons, 'output_neuron': output_neuron}
+    rssnp = assign_rssnp(rssnp_dict)
+
+    if rssnp.isValid():
+        return rssnp_dict
+    else:
+        return None
+
     
-    print("Successfully created ga_eval")
-    return ga_eval
+
+and_rssnp_minimal = {
+    'neurons': 4,
+    'synapses': 3,
+    'rules': [
+        [0, 2, (1, 0), 1, 1, 0],
+        [1, 2, (1, 0), 1, 1, 0],
+        [2, 3, (2, 0), 2, 1, 0],
+        [2, 3, (1, 0), 1, 0, 0], 
+    ],
+    'init_config': [0, 0, 0, 0],
+    'rule_status': [-1 for x in range(4)],
+    'input_neurons': [0, 1],
+    'output_neuron': 3
+}
+
+
     
-    return rssnp
+
 
 

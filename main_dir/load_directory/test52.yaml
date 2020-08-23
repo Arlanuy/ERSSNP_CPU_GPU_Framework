@@ -1,0 +1,36 @@
+fitness_function: '1'
+gen_total: 2
+mutation_rate: '100'
+population_size: '3'
+run_total: 2
+runs:
+  0:
+    generations:
+      0:
+        best_chromosome_indexes:
+        - 1
+        - 2
+        - 3
+        best_fitness_result: 83
+        rssnp_chromosomes:
+          0: {}
+          1: {}
+          2: {}
+      1:
+        rssnp_chromosomes:
+          0: {}
+          1: {}
+          2: {}
+  1:
+    generations:
+      0:
+        rssnp_chromosomes:
+          0: {}
+          1: {}
+          2: {}
+      1:
+        rssnp_chromosomes:
+          0: {}
+          1: {}
+          2: {}
+selection_function: '1'
