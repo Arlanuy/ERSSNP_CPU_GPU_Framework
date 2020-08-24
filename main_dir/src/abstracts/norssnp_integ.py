@@ -122,7 +122,9 @@ def set_values(ga_eval, runs):
     synapses = int(input("synapses: "))
     rules = int(input("rules: "))
     init_config = int(input("shall be the constant init_config: "))
+    init_config_list = [init_config for i in range(neurons)]
     rule_status = int(input("shall be the constant rule_status: "))
+    rule_status_list = [rule_status for i in range(rules)]
     print("Write the rules (comma-separated) in the order of source neuron, sink neuron, grammar multiplicity(a+, a*), consumed spikes, produced spikes, delay") 
     rule_in_csv = []
     rule_mat = []
@@ -132,16 +134,17 @@ def set_values(ga_eval, runs):
         rule_in_csv = input("Enter a rule: ")
         grammar = []
         for index in range(0, rule_content):
-            element = rule_in_csv[2 * index]
+            element = int(rule_in_csv[2 * index])
             if index == 2:
                 grammar.append(element)
 
-            if index == 3:
+            elif index == 3:
                 grammar.append(element)
-                rule_mat.append(grammar)
+                rule_vec.append(grammar)
             else:
                 rule_vec.append(element)
-                rule_mat.append(rule_vec)
+        rule_mat.append(rule_vec)
+    #print(rule_mat)
 
     input_neurons = input("\nInput neurons (comma-separated): ")
     input_neurons = [int(x) for x in input_neurons.split(",")]
@@ -149,7 +152,8 @@ def set_values(ga_eval, runs):
     output_neuron = int(input("\nOutput neuron: "))
 
     # Make that rssnp based on the user's specifications
-    rssnp_dict = {'neurons': neurons, 'synapses': synapses, 'rules': rule_mat, 'init_config': init_config, 'rule_status': rule_status, 'input_neurons': input_neurons, 'output_neuron': output_neuron}
+    rssnp_dict = {'neurons': neurons, 'synapses': synapses, 'rules': rule_mat, 'init_config': init_config_list, 'rule_status': rule_status_list, 'input_neurons': input_neurons, 'output_neuron': output_neuron}
+    print(rssnp_dict)
     rssnp = assign_rssnp(rssnp_dict)
 
     if rssnp.isValid():
