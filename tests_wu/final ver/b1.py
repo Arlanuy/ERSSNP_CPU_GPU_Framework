@@ -95,5 +95,5 @@ print(LCSuff)
 print(LCSuff[a.size][b.size])
 print(res)
 
-print lcs(a, b) 
+print (lcs(a, b)) 
 
