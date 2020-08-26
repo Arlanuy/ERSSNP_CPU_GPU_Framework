@@ -1,7 +1,7 @@
 # This is the main script for running experiments - use CAREFULLY!!
 
 from src.abstracts.geneticalgo_integ import SNPGeneticAlgo
-from src.abstracts.GAevaluator_integ import SNPGeneticAlgoEval
+from src.abstracts.GAevaluator_integ import SNPGeneticAlgoEval, conf_load
 from src.abstracts.grapher import draw
 from src.abstracts.parsers import spike_train_parser
 from src.abstracts.rssnp import assign_rssnp
@@ -12,29 +12,38 @@ from src.abstracts.rssnp import assign_rssnp
 import os
 
 # stats = {'population_size': 12, 'mutation_rate': 100, 'fitness_function': 1, 'generations': 5, 'runs': 1, 'selection_func': 1},
-def gaframework(rssnp_string, path_to_io_spike_trains, stats, loadfile_name):
+def gaframework(rssnp_string, path_to_io_spike_trains, stats, loadfile_name, start_new = True):
     #name = input("Enter a label for this run: ")
     #dir = input("Where would you like to put the results(Directory name): ")
     #if not os.path.exists(dir):
         #os.makedirs(dir)
 
-    rssnp = assign_rssnp(rssnp_string)
     ga = SNPGeneticAlgo()
     gaeval = SNPGeneticAlgoEval()
-
-    ga.inout_pairs = spike_train_parser(path_to_io_spike_trains,rssnp.inputs)        
+    ga_params = conf_load(loadfile_name)
+    if start_new == True:
+        rssnp = assign_rssnp(rssnp_string)
+        ga.inout_pairs = spike_train_parser(path_to_io_spike_trains,rssnp.inputs)
+    else:
+        rssnp = None
+        ga.inout_pairs = spike_train_parser(path_to_io_spike_trains,ga_params['runs'][0]['generations'][0]['rssnp_chromosomes'][0]['input_neurons'])     
     
-    execute_experiment(rssnp, ga, gaeval, stats, loadfile_name)
+    execute_experiment(rssnp, ga, gaeval, stats, loadfile_name, start_new)
 
-def execute_experiment(rssnp, ga, gaeval, stats, loadfile_name):
-    gaeval.no_of_gen = stats['gen_total']
-    gaeval.no_of_run = stats['run_total']
+def execute_experiment(rssnp, ga, gaeval, stats, loadfile_name, start_new = True):
+    if start_new == True:
+        gaeval.no_of_gen = stats['gen_total']
+        gaeval.no_of_run = stats['run_total']
+    else:
+        gaeval.no_of_gen = stats['gens_pending']
+        gaeval.no_of_run = stats['runs_pending']
+
     gaeval.opt_fitness = 50
     gaeval.max_fitness = 100
     gaeval.list_of_runs = []
     print("Now executing experiment involving", loadfile_name)
     stats_run = stats['runs'][0]
-    gaeval.run(ga, rssnp, stats_run['population_size'], stats_run['fitness_function'],  gaeval.no_of_run, gaeval.no_of_gen, stats_run['mutation_rate'], loadfile_name, stats_run['selection_func'])
+    gaeval.run(ga, rssnp, stats_run['population_size'], stats_run['fitness_function'],  gaeval.no_of_run, gaeval.no_of_gen, stats_run['mutation_rate'], loadfile_name, stats_run['selection_func'], start_new)
 
 # results_directory = input("Where would you like to put the results(Directory name): ")
 

@@ -41,6 +41,7 @@ def spike_train_parser(filename, input_list):
 
             # then add the pair to the list of pairs
             inout_pairs.append(pair)
+        #print("inout pairs is " + str(inout_pairs))
 
         file.close()
         return inout_pairs
