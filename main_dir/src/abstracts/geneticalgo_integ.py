@@ -4,6 +4,7 @@ import random
 
 from .fitness import *
 from .grapher import draw
+from .rssnp import assign_rssnp
 import yaml
 
 def conf_load(filename):
@@ -17,7 +18,7 @@ def conf_save(filename, ga_params):
     with open(filename, 'w+') as out:
         doc = yaml.safe_dump(ga_params, out)
 
-def class_yaml(ga_params_rssnp, rssnp):
+def class_to_yaml(ga_params_rssnp, rssnp):
     ga_params_rssnp['neurons'] = rssnp['system'].n
     ga_params_rssnp['synapses'] = rssnp['system'].l 
     ga_params_rssnp['rules'] = rssnp['system'].rule
@@ -76,6 +77,25 @@ class SNPGeneticAlgo:
             })
 
         return self.pop
+
+    def use_population(self, count, last_gen_chromosomes):
+        # Flush population and insert the original RSSNP
+        #self.pop = [{'system': initsystem, 'fitness': 0, 'out_pairs': []}]
+        self.pop = []
+        for chromosome in range(0, count):
+            # Create a network from previous generation.
+            system = assign_rssnp(last_gen_chromosomes[chromosome])
+            system.out_spiketrain = []
+
+            # Add the network to our population.
+            self.pop.append({
+                'system': system,
+                'fitness': 0,
+                'out_pairs': []
+            })
+
+        return self.pop
+
 
     def selection(self, selection_func):
         parents = []
@@ -204,7 +224,7 @@ class SNPGeneticAlgo:
         # print(chromosome)
 
 
-    def simulate(self, system, size, function, generations, mutation_rate, path_name, run_index, selection_func):
+    def simulate(self, system, size, function, generations, mutation_rate, path_name, run_index, selection_func, start_new = True):
         '''
             Performs a complete run of the genetic algorithm framework
         '''
@@ -212,14 +232,28 @@ class SNPGeneticAlgo:
         if not os.path.exists(path_name):
             os.makedirs(path_name)
 
-        # Generate initial population
-        copy_sys = deepcopy(system)
-        self.create_population(size, copy_sys)
         filename = path_name
-        ga_params = conf_load(filename);
+        ga_params = conf_load(filename)
+            
+
+        # Generate initial population
+        if start_new == True:
+            copy_sys = deepcopy(system)
+            self.create_population(size, copy_sys)
+            start = 0
+
+        else:
+            print("Continuing using the previous generation population")
+            start = ga_params['gen_total']  - 1
+            print("using run index " + str((run_index)) + "and generation index " + str((start)))
+
+            self.use_population(ga_params['runs'][run_index]['population_size'], ga_params['runs'][run_index]['generations'][start]['rssnp_chromosomes'] )
+
+            #generations = ga_params['gens_pending']
 
 
-        for generation in range(0, generations):
+        whole_run_best_fitness = 0
+        for generation in range(start, start + generations):
             print("gen baby gen " + str(generation))
             current_gen = ga_params["runs"][run_index]["generations"][generation]
             # # Create folder
@@ -239,25 +273,28 @@ class SNPGeneticAlgo:
                 self.evaluate(chrom, function)
                 
                 result_fitness = chrom['fitness']
-                if  result_fitness >= max_fitness:
-                    max_fitness = result_fitness 
+                ga_params['runs'][run_index]['generations'][generation]['rssnp_chromosomes'][chrom_index]['chrom_fitness'] = result_fitness
+                if  result_fitness >= max_fitness:   
                     if result_fitness  == max_fitness:
                         chromosome_indexes.append(chrom_index)
                     else:
                         chromosome_indexes = []
                         chromosome_indexes.append(chrom_index)
+                    max_fitness = result_fitness 
                 #current_gen['rssnp_chromosomes'][i] = chrom['system']
                 ga_params_chrom = ga_params['runs'][run_index]['generations'][generation]['rssnp_chromosomes'][chrom_index]
-                class_yaml(ga_params_chrom, chrom)
+                class_to_yaml(ga_params_chrom, chrom)
                 chrom_index += 1
 
 
 
             current_gen['best_fitness_result'] = max_fitness
+            if current_gen['best_fitness_result'] > whole_run_best_fitness:
+                whole_run_best_fitness = max_fitness
             print("fitness got is " + str(current_gen['best_fitness_result']))
             current_gen['best_chromosome_indexes'] = chromosome_indexes
             print("best chromosome indexes are  " + str(current_gen['best_chromosome_indexes']))
-            print("ga_params at gen " + str(generation) + " is " + str(ga_params))
+            #print("ga_params at gen " + str(generation) + " is " + str(ga_params))
             conf_save(filename, ga_params)
             # Sort population acc. to fitness level
             self.pop = sorted(self.pop, key=lambda k: k['fitness'], reverse=True)
@@ -266,7 +303,9 @@ class SNPGeneticAlgo:
             #print("Crossover:",generation)
             self.crossover(mutation_rate, selection_func)
 
-
-        return current_gen['best_fitness_result']
+        ga_params['runs'][run_index]['max_fitness_in_run'] = whole_run_best_fitness
+        print("whole run fitness is " + str(whole_run_best_fitness))
+        conf_save(filename, ga_params)
+        return whole_run_best_fitness
 
             

@@ -47,7 +47,7 @@ def program_main():
 		#save_directory = input("Which directory would you like to save (.yaml) the evolutionary process: ")
 		#if not os.path.exists(save_directory):
 		  #  os.makedirs(save_directory)
-		savefile_name = save_directory + '\\' + input("What will be the name of this savefile: ") + ".yaml"
+		savefile_name = os.path.join(save_directory, input("What will be the name of this savefile: ") + ".yaml")
 		runs = int(input("How many runs would you like to do (min of 1): "))
 		generations = int(input("How many generation would you like to do (min of 1): "))
 		population_size = int(input("How many RSSNP should be in the population? "))
@@ -58,14 +58,15 @@ def program_main():
 		fitness_func = int(input("Which would you use?"))
 
 		ga_params = create_empty_yaml(runs, generations, population_size, savefile_name)
-		
+
 		for run in range(runs):
+			ga_params['runs'][run]['max_fitness_in_run'] = 0
 			ga_params['runs'][run]['population_size'] = population_size
 			ga_params['runs'][run]['mutation_rate'] = mutation_rate
 			ga_params['runs'][run]['selection_func'] = selection_func
 			ga_params['runs'][run]['fitness_function'] = fitness_func
 
-		conf_save(savefile_name, ga_params)
+
 
 		#building the test_cases_path
 		and_path = os.path.join(home, "test cases", "and_test_cases.txt")
@@ -74,11 +75,12 @@ def program_main():
 		add_path = os.path.join(home, "test cases", "add_test_cases.txt")
 		sub_path = os.path.join(home, "test cases", "sub_test_cases.txt")
 
+
 		#Default or made or random system to initially evolve
 		#for the different kind of evolutionary process (logic gates), we evolve
 		system = None
 		test_cases_path = None
-
+		ga_params['test_cases_path'] = None
 
 		if answer == 1:
 			if type_answer == 1:
@@ -88,6 +90,7 @@ def program_main():
 			if type_answer == 3:
 				system = and_rssnp_extra_rules
 			test_cases_path = and_path
+			ga_params['test_cases_path'] = and_path
 
 		if answer == 2:
 			if type_answer == 1:
@@ -97,6 +100,7 @@ def program_main():
 			if type_answer == 3:
 				system = or_rssnp_extra_rules
 			test_cases_path = or_path
+			ga_params['test_cases_path'] = or_path
 
 		if answer == 3:
 			if type_answer == 1:
@@ -106,6 +110,7 @@ def program_main():
 			if type_answer == 3:
 				system = not_rssnp_extra_rules
 			test_cases_path = not_path
+			ga_params['test_cases_path'] = not_path
 
 		if answer == 4:
 			if type_answer == 1:
@@ -115,6 +120,7 @@ def program_main():
 			if type_answer == 3:
 				system = add_rssnp_extra_rules
 			test_cases_path = add_path
+			ga_params['test_cases_path'] = add_path
 
 		if answer == 5:
 			if type_answer == 1:
@@ -124,6 +130,7 @@ def program_main():
 			if type_answer == 3:
 				system = sub_rssnp_extra_rules
 			test_cases_path = sub_path
+			ga_params['test_cases_path'] = sub_path
 
 		if type_answer == 4:
 			system = set_bounds(ga_params, runs)
@@ -134,7 +141,7 @@ def program_main():
 				print("Rssnp given is invalid")
 				exit()
 
-
+		conf_save(savefile_name, ga_params)
 		if system == None or test_cases_path == None:
 			print("Illegal system chosen or wrong direction for evolution")
 		else:
@@ -145,10 +152,63 @@ def program_main():
 	if int(menu_choice) == 2:
 		load_directory = os.path.join(home, "load_directory")
 		#load_directory = input("Which load directory would you like to load (.yaml) an evolutionary process from: ")
-		loadfile_name = load_directory +'\\' + input("What is the name of this loadfile : ")
+		loadfile_name = os.path.join(load_directory, input("What is the name of this loadfile (append a yaml extension) : "))
 		ga_params = conf_load(loadfile_name)
-		print(ga_params)
-	#gaframework(rssnp_string, path_to_io_spike_trains, stats)
+		print("Load function starting")
+		
+		choice = input("Would you like to add a stopping criterion that will be processed from the loaded savefile (Y/N): ")
+
+		choice = True if choice == 'Y' else False
+
+		if choice == True:
+			sub_choice = int(input("Would you either add  (1) more runs/generations or (2) a goal fitness of any chromosome in the evolutionary process: "))
+			if sub_choice == 1:
+				add_runs = int(input("How many runs would you like to add (minimum of 1): "))
+				add_gens = int(input("How many generations would you like to add (minimum of 0): "))
+			elif sub_choice == 2:
+				print("Notice that the evolutionary process wont stop till a chromosome reached the desired goal fitness\n")
+				print("Or till you exit the program itself (make sure its after a cycle in a GA) and the autosave will record only up to the point of termination\n")
+				add_goal_fitness = int(input("What is the desired goal fitness: (minimum of 50 and maximum of 100): "))
+
+
+		execution_choice = int(input("Where do you want your experiment to be executed (1) CPU or (2) GPU: "))
+
+		if choice == True:
+			if sub_choice == 1:
+				ga_params['runs_pending'] = add_runs
+				ga_params['gens_pending'] = add_gens
+			elif sub_choice == 2:
+				#-1 denotes an unending condition no matter how many runs or generations
+				ga_params['runs_pending'] = -1
+				ga_params['gens_pending'] = -1
+				ga_params['goal_fitness'] = add_goal_fitness
+
+		newfile_choice = input("Would you like to use another savefile or use the existing savefile (Y/N): ")
+
+		newfile_choice = True if newfile_choice == 'Y' else False
+
+		newloadfile_name = None
+
+		if newfile_choice == True:
+			newsavefile_name = os.path.join(load_directory, input("What is the name of the new savefile: "))
+			newloadfile_name = newsavefile_name
+			conf_save(newsavefile_name, ga_params)
+			print(ga_params)
+
+		else:
+			conf_save(loadfile_name, ga_params)
+			newloadfile_name = loadfile_name
+
+		ga_params = conf_load(newloadfile_name)
+		start_new = False
+		if execution_choice == 1:
+			print("Running GA in CPU: ")
+			rssnp_string = None
+			gaframework(rssnp_string, ga_params['test_cases_path'] , ga_params, newloadfile_name, start_new)
+
+		else:
+			print("Running GA in GPU: ")	
+
 
 # ga_params = {
 #     'population_size': 12,
