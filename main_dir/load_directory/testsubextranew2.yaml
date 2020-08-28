@@ -8436,11 +8436,11 @@ runs:
             synapses: 18
       2:
         best_chromosome_indexes:
-        - 0
-        best_fitness_result: 96
+        - 2
+        best_fitness_result: 94
         rssnp_chromosomes:
           0:
-            chrom_fitness: 96
+            chrom_fitness: 82
             init_config: *id081
             input_neurons: *id082
             neurons: 11
@@ -8500,7 +8500,7 @@ runs:
             rules: *id111
             synapses: 18
           2:
-            chrom_fitness: 87
+            chrom_fitness: 94
             init_config: *id084
             input_neurons: *id085
             neurons: 11
@@ -8537,7 +8537,7 @@ runs:
             rules: *id086
             synapses: 18
           3:
-            chrom_fitness: 82
+            chrom_fitness: 79
             init_config: *id087
             input_neurons: *id088
             neurons: 11
@@ -8568,7 +8568,7 @@ runs:
             rules: *id089
             synapses: 18
           4:
-            chrom_fitness: 77
+            chrom_fitness: 72
             init_config:
             - 0
             - 0
@@ -8737,7 +8737,7 @@ runs:
               - 0
             synapses: 18
           5:
-            chrom_fitness: 52
+            chrom_fitness: 49
             init_config:
             - 0
             - 0
@@ -8899,7 +8899,7 @@ runs:
               - 0
             synapses: 18
           6:
-            chrom_fitness: 52
+            chrom_fitness: 49
             init_config:
             - 0
             - 0
@@ -9062,7 +9062,7 @@ runs:
               - 0
             synapses: 18
           7:
-            chrom_fitness: 82
+            chrom_fitness: 79
             init_config:
             - 0
             - 0
@@ -9235,7 +9235,6 @@ runs:
     population_size: 8
     selection_func: 1
   3:
-    fitness_function: 1
     generations:
       0:
         rssnp_chromosomes:
@@ -9321,12 +9320,7 @@ runs:
           7: {}
           8: {}
           9: {}
-    max_fitness_in_run: 0
-    mutation_rate: 100
-    population_size: 10
-    selection_func: 1
   4:
-    fitness_function: 1
     generations:
       0:
         rssnp_chromosomes:
@@ -9412,10 +9406,6 @@ runs:
           7: {}
           8: {}
           9: {}
-    max_fitness_in_run: 0
-    mutation_rate: 100
-    population_size: 10
-    selection_func: 1
 runs_pending: 2
 test_cases_path: C:\Users\Arvy\Documents\cs 199 docs\RSSNP_CPU_GPU_Framework\main_dir\test
   cases\sub_test_cases.txt

@@ -224,7 +224,7 @@ class SNPGeneticAlgo:
         # print(chromosome)
 
 
-    def simulate(self, system, size, function, generations, mutation_rate, path_name, run_index, selection_func, start_new = True):
+    def simulate(self, system, size, function, generations, mutation_rate, path_name, run_index, selection_func):
         '''
             Performs a complete run of the genetic algorithm framework
         '''
@@ -237,24 +237,30 @@ class SNPGeneticAlgo:
             
 
         # Generate initial population
-        if start_new == True:
-            copy_sys = deepcopy(system)
-            self.create_population(size, copy_sys)
-            start = 0
+        #if start_new == True:
+        copy_sys = deepcopy(system)
+        self.create_population(size, copy_sys)
+        start = 0
 
-        else:
-            print("Continuing using the previous generation population")
-            start = ga_params['gen_total']  - 1
-            print("using run index " + str((run_index)) + "and generation index " + str((start)))
+        # else:
+        #     print("Continuing using the previous generation population")
+        #     start = ga_params['gen_total']
+        #     print("using run index " + str((run_index)) + "and generation index " + str((start)))
 
-            self.use_population(ga_params['runs'][run_index]['population_size'], ga_params['runs'][run_index]['generations'][start]['rssnp_chromosomes'] )
+        #     self.use_population(ga_params['runs'][run_index]['population_size'], ga_params['runs'][run_index]['generations'][start]['rssnp_chromosomes'] )
 
             #generations = ga_params['gens_pending']
 
 
         whole_run_best_fitness = 0
-        for generation in range(start, start + generations):
+        escaped_gen = False
+        chrom_index = 0
+        max_fitness = 0
+        chromosome_indexes = []
+        current_gen = None
+        for generation in range(start, start + generations + ga_params['gens_pending']):
             print("gen baby gen " + str(generation))
+            print("run index is " + str(run_index) + " gen index is " + str(generation))
             current_gen = ga_params["runs"][run_index]["generations"][generation]
             # # Create folder
             # folder = path_name + "/" + "Run" + str(run_index) + "/" + "Generation" + str(generation) + "/"
@@ -274,6 +280,7 @@ class SNPGeneticAlgo:
                 
                 result_fitness = chrom['fitness']
                 ga_params['runs'][run_index]['generations'][generation]['rssnp_chromosomes'][chrom_index]['chrom_fitness'] = result_fitness
+                print("result fitness is " + str(result_fitness))
                 if  result_fitness >= max_fitness:   
                     if result_fitness  == max_fitness:
                         chromosome_indexes.append(chrom_index)
@@ -291,6 +298,9 @@ class SNPGeneticAlgo:
             current_gen['best_fitness_result'] = max_fitness
             if current_gen['best_fitness_result'] > whole_run_best_fitness:
                 whole_run_best_fitness = max_fitness
+                if whole_run_best_fitness > ga_params['goal_fitness']:
+                    escaped_gen = True
+                    break
             print("fitness got is " + str(current_gen['best_fitness_result']))
             current_gen['best_chromosome_indexes'] = chromosome_indexes
             print("best chromosome indexes are  " + str(current_gen['best_chromosome_indexes']))
@@ -302,6 +312,12 @@ class SNPGeneticAlgo:
             # Crossover and mutation
             #print("Crossover:",generation)
             self.crossover(mutation_rate, selection_func)
+        if escaped_gen == True:
+            print("fitness got is " + str(current_gen['best_fitness_result']))
+            current_gen['best_chromosome_indexes'] = chromosome_indexes
+            print("best chromosome indexes are  " + str(current_gen['best_chromosome_indexes']))
+            #print("ga_params at gen " + str(generation) + " is " + str(ga_params))
+            conf_save(filename, ga_params)
 
         ga_params['runs'][run_index]['max_fitness_in_run'] = whole_run_best_fitness
         print("whole run fitness is " + str(whole_run_best_fitness))

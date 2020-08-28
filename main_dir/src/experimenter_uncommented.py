@@ -21,28 +21,31 @@ def gaframework(rssnp_string, path_to_io_spike_trains, stats, loadfile_name, sta
     ga = SNPGeneticAlgo()
     gaeval = SNPGeneticAlgoEval()
     ga_params = conf_load(loadfile_name)
-    if start_new == True:
-        rssnp = assign_rssnp(rssnp_string)
-        ga.inout_pairs = spike_train_parser(path_to_io_spike_trains,rssnp.inputs)
-    else:
-        rssnp = None
-        ga.inout_pairs = spike_train_parser(path_to_io_spike_trains,ga_params['runs'][0]['generations'][0]['rssnp_chromosomes'][0]['input_neurons'])     
+    #if start_new == True:
+    rssnp = assign_rssnp(rssnp_string)
+    ga.inout_pairs = spike_train_parser(path_to_io_spike_trains,rssnp.inputs)
+    # else:
+    #     rssnp = None
+    #     ga.inout_pairs = spike_train_parser(path_to_io_spike_trains,ga_params['runs'][0]['generations'][0]['rssnp_chromosomes'][0]['input_neurons'])     
     
     execute_experiment(rssnp, ga, gaeval, stats, loadfile_name, start_new)
 
 def execute_experiment(rssnp, ga, gaeval, stats, loadfile_name, start_new = True):
-    if start_new == True:
-        gaeval.no_of_gen = stats['gen_total']
-        gaeval.no_of_run = stats['run_total']
-    else:
-        gaeval.no_of_gen = stats['gens_pending']
-        gaeval.no_of_run = stats['runs_pending']
+    
+    gaeval.no_of_gen = stats['gen_total']
+    gaeval.no_of_run = stats['run_total']
+    # else:
+    #     gaeval.no_of_gen = stats['gens_pending']
+    #     gaeval.no_of_run = stats['runs_pending']
 
     gaeval.opt_fitness = 50
     gaeval.max_fitness = 100
     gaeval.list_of_runs = []
     print("Now executing experiment involving", loadfile_name)
-    stats_run = stats['runs'][0]
+    if start_new == True:
+        stats_run = stats['runs'][0]
+    else:
+        stats_run = stats['runs'][stats['run_total']]
     gaeval.run(ga, rssnp, stats_run['population_size'], stats_run['fitness_function'],  gaeval.no_of_run, gaeval.no_of_gen, stats_run['mutation_rate'], loadfile_name, stats_run['selection_func'], start_new)
 
 # results_directory = input("Where would you like to put the results(Directory name): ")
