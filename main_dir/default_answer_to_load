@@ -1,2 +1,20 @@
-C:\Users\Arvy\Documents\cs 199 docs\RSSNP_CPU_GPU_Framework\main_dir\load_directory
-test
+when u want to increase the runs/generation/population
+2
+testandextra1.yaml
+Y
+1
+2
+2
+4
+Y
+testandextra1new.yaml
+
+when u want to have a maximum fitness goal
+2
+Y
+2
+99 or 100 for perfect but hard if not possible
+Y
+testandextra1new.yaml
+
+
