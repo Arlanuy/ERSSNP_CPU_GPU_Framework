@@ -48,6 +48,23 @@ def continue_create_empty_yaml(savefile_name):
 	return ga_params
 
 
+def prompt_make_newsavefile(ga_params, loadfile_name, load_directory):
+	newfile_choice = input("Would you like to use another savefile or use the existing savefile (Y/N): ")
+
+	newfile_choice = True if newfile_choice == 'Y' else False
+
+	newloadfile_name = None
+
+	if newfile_choice == True:
+		newsavefile_name = os.path.join(load_directory, input("What is the name of the new savefile: "))
+		newloadfile_name = newsavefile_name
+		conf_save(newsavefile_name, ga_params)
+		#print(ga_params)
+
+	else:
+		conf_save(loadfile_name, ga_params)
+		newloadfile_name = loadfile_name
+	return newloadfile_name
 
 def program_main():
 	print("Menu\n Enter a number of your choice: (1) Create a new evolutionary process w/ autosave\n (2) Load an evolutionary process from a configuration file: ")
@@ -76,6 +93,7 @@ def program_main():
 		ga_params['runs_pending'] = 0
 		ga_params['gens_pending'] = 0
 		ga_params['populations_pending'] = 0
+		ga_params['goal_fitness'] = 101
 		for run in range(runs):
 			ga_params['runs'][run]['max_fitness_in_run'] = 0
 			ga_params['runs'][run]['population_size'] = population_size
@@ -172,72 +190,56 @@ def program_main():
 		loadfile_name = os.path.join(load_directory, input("What is the name of this loadfile (append a yaml extension) : "))
 		ga_params = conf_load(loadfile_name)
 		print("Load function starting")
-		
-		choice = input("Would you like to add a stopping criterion that will be processed from the loaded savefile (Y/N): ")
 
-		choice = True if choice == 'Y' else False
+		execution_choice = int(input("Where do you want your experiment to be executed (1) CPU or (2) GPU: "))
 
-		#get the information from console
-		if choice == True:
-			sub_choice = int(input("Would you either increase (1) runs/generations/population_size or (2) a goal fitness of any chromosome in the evolutionary process: "))
+		if execution_choice == 1:
+
+			#get the information from console
+			print("Menu: Would you either increase (1) runs/generations/population_size or (2) a goal fitness of any chromosome in the evolutionary process: or (3) just maintain the current number of generation/population_size but extend it further using an initial population from any generation number ")
+			print("Note that for this program the GPU can also do option 3 but not the others ")
+			sub_choice = int(input())
 			if sub_choice == 1:
 				add_runs = int(input("How many runs would you like to add (minimum of 1 and maximum of 100): "))
 				add_gens = int(input("How many generations would you like to add (minimum of 0 and maximum of 100): "))
 				add_populations = int(input("How many individuals would you like to add to the population (minimum of 0): "))
-			elif sub_choice == 2:
-				print("Notice that the evolutionary process wont stop till a chromosome reached the desired goal fitness\n")
-				print("Or till you exit the program itself (make sure its after a cycle in a GA) and the autosave will record only up to the point of termination\n")
-				add_goal_fitness = int(input("What is the desired goal fitness: (minimum of 50 and maximum of 100): "))
-
-
-		execution_choice = int(input("Where do you want your experiment to be executed (1) CPU or (2) GPU: "))
-
-		#revise the GA parameters according to the information given
-		if choice == True:
-			if sub_choice == 1:
 				ga_params['runs_pending'] = add_runs
 				ga_params['gens_pending'] = add_gens
 				ga_params['populations_pending'] = add_populations
 				ga_params['goal_fitness'] = 101
 			elif sub_choice == 2:
-				#100 denotes an unending condition no matter how many runs or generations are reported
+				print("Notice that the evolutionary process wont stop till a chromosome reached the desired goal fitness\n")
+				print("Or till you exit the program itself (make sure its after a run in a GA) and the autosave will record only up to the point of termination\n")
+				add_goal_fitness = int(input("What is the desired goal fitness: (minimum of 50 and maximum of 100): "))
+				#101 denotes an unending condition no matter how many runs or generations are reported
 				ga_params['runs_pending'] = 101
 				ga_params['gens_pending'] = 101
 				ga_params['populations_pending'] = 0
 				ga_params['goal_fitness'] = add_goal_fitness
+			elif sub_choice == 3:					
+				print("Maintaining current number of generation and population_size")
+				add_runs = int(input("How many runs would you like to add (minimum of 1 and maximum of 100): "))
+				ga_params['runs_pending'] = add_runs
+				generation_index = int(input("Which run and generation would you like to use as the starting parents of the succeeding runs? "))
+				
 
-		
-
-		newfile_choice = input("Would you like to use another savefile or use the existing savefile (Y/N): ")
-
-		newfile_choice = True if newfile_choice == 'Y' else False
-
-		newloadfile_name = None
-
-		if newfile_choice == True:
-			newsavefile_name = os.path.join(load_directory, input("What is the name of the new savefile: "))
-			newloadfile_name = newsavefile_name
-			conf_save(newsavefile_name, ga_params)
-			#print(ga_params)
-
-		else:
-			conf_save(loadfile_name, ga_params)
-			newloadfile_name = loadfile_name
-
-		continue_create_empty_yaml(newloadfile_name)
-		ga_params = conf_load(newloadfile_name)
-		run_total = ga_params['run_total'] + ga_params['runs_pending']
-		for run in range(ga_params['run_total'], run_total):
-			ga_params['runs'][run]['max_fitness_in_run'] = 0
-			ga_params['runs'][run]['population_size'] = ga_params['runs'][0]['population_size'] + ga_params['populations_pending']
-			ga_params['runs'][run]['mutation_rate'] = ga_params['runs'][0]['mutation_rate']
-			ga_params['runs'][run]['selection_func'] = ga_params['runs'][0]['selection_func']
-			ga_params['runs'][run]['fitness_function'] = ga_params['runs'][0]['fitness_function']
-		conf_save(newloadfile_name, ga_params)
-		
-		start_new = False
-		if execution_choice == 1:
+			
+			newloadfile_name = prompt_make_newsavefile(ga_params, loadfile_name, load_directory)
+			continue_create_empty_yaml(newloadfile_name)
+			ga_params = conf_load(newloadfile_name)
+			run_total = ga_params['run_total'] + ga_params['runs_pending']
+			for run in range(ga_params['run_total'], run_total):
+				ga_params['runs'][run]['max_fitness_in_run'] = 0
+				ga_params['runs'][run]['population_size'] = ga_params['runs'][0]['population_size'] + ga_params['populations_pending']
+				ga_params['runs'][run]['mutation_rate'] = ga_params['runs'][0]['mutation_rate']
+				ga_params['runs'][run]['selection_func'] = ga_params['runs'][0]['selection_func']
+				ga_params['runs'][run]['fitness_function'] = ga_params['runs'][0]['fitness_function']
+			conf_save(newloadfile_name, ga_params)
+			
+			start_new = False
 			print("Running GA in CPU: ")
+			#The system that will be parent0 is the first rssnp chromosome in the ga_params
+			#change the value of this into a system in RSSNP_list in order to change it
 			rssnp_string = ga_params['runs'][0]['generations'][0]['rssnp_chromosomes'][0]
 			
 			print("rssnp string is " + str(rssnp_string))
@@ -248,10 +250,18 @@ def program_main():
 			ga_params['gen_total'] += ga_params['gens_pending']
 			ga_params['gens_pending'] = 0
 			ga_params['populations_pending'] = 0
-			conf_save(newloadfile_name, ga_params)
-		else:
-			print("Running GA in GPU: ")	
 
+			conf_save(newloadfile_name, ga_params)
+		
+		else:
+			print("Running GA in GPU: ")
+			
+			print("Maintaining current number of generation and population_size")
+			add_runs = int(input("How many runs would you like to add (minimum of 1 and maximum of 100): "))
+			ga_params['runs_pending'] = add_runs
+			generation_index = int(input("Which run and generation would you like to use as the starting parents of the succeeding runs? "))
+			newloadfile_name =  prompt_make_newsavefile(ga_params, loadfile_name, load_directory)
+			continue_create_empty_yaml(newloadfile_name)
 
 # ga_params = {
 #     'population_size': 12,

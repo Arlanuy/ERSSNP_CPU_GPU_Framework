@@ -1,8 +1,11 @@
-when u want to increase the runs/generation/population
 2
+
+1 for CPU or 2 for GPU execution choice
 testandextra1.yaml
-Y
+
+when u want to increase the runs/generation/population
 1
+
 2
 2
 4
@@ -11,10 +14,15 @@ testandextra1new.yaml
 
 when u want to have a maximum fitness goal
 2
-Y
 2
 99 or 100 for perfect but hard if not possible
 Y
 testandextra1new.yaml
 
+
+
+when you just want to maintain current number of generations and population_size
+3
+Y
+testandextra1new.yaml
 
