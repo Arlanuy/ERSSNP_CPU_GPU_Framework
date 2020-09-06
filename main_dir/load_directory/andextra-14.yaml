@@ -1,0 +1,8803 @@
+gen_total: 8
+gens_pending: 0
+goal_fitness: 101
+max_fitness_in_runs: 100
+populations_pending: 0
+run_total: 4
+runs:
+  0:
+    fitness_function: 1
+    generations:
+      0:
+        best_chromosome_indexes:
+        - 0
+        - 1
+        - 2
+        - 3
+        - 4
+        - 5
+        - 6
+        - 7
+        best_fitness_result: 100
+        rssnp_chromosomes:
+          0:
+            chrom_fitness: 100
+            init_config: &id003
+            - 0
+            - 0
+            - 0
+            - 0
+            input_neurons: &id004
+            - 0
+            - 1
+            neurons: 4
+            output_neuron: 3
+            rule_status:
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            rules: &id005
+            - - 0
+              - 2
+              - &id001
+                - 2
+                - 0
+              - 2
+              - 1
+              - 0
+            - - 0
+              - 2
+              - &id002
+                - 1
+                - 0
+              - 1
+              - 1
+              - 0
+            - - 1
+              - 2
+              - *id001
+              - 2
+              - 1
+              - 0
+            - - 1
+              - 2
+              - *id002
+              - 1
+              - 1
+              - 0
+            - - 2
+              - 3
+              - *id001
+              - 2
+              - 1
+              - 0
+            - - 2
+              - 3
+              - *id002
+              - 1
+              - 0
+              - 0
+            synapses: 3
+          1:
+            chrom_fitness: 100
+            init_config: &id006
+            - 0
+            - 0
+            - 0
+            - 0
+            input_neurons: &id007
+            - 0
+            - 1
+            neurons: 4
+            output_neuron: 3
+            rule_status:
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            rules: &id008
+            - - 0
+              - 2
+              - *id001
+              - 2
+              - 1
+              - 0
+            - - 0
+              - 2
+              - *id002
+              - 1
+              - 1
+              - 0
+            - - 1
+              - 2
+              - *id001
+              - 2
+              - 1
+              - 0
+            - - 1
+              - 2
+              - *id002
+              - 1
+              - 1
+              - 0
+            - - 2
+              - 3
+              - *id001
+              - 2
+              - 1
+              - 0
+            - - 2
+              - 3
+              - *id002
+              - 1
+              - 0
+              - 0
+            synapses: 3
+          2:
+            chrom_fitness: 100
+            init_config: &id009
+            - 0
+            - 0
+            - 0
+            - 0
+            input_neurons: &id010
+            - 0
+            - 1
+            neurons: 4
+            output_neuron: 3
+            rule_status:
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            rules: &id011
+            - - 0
+              - 2
+              - *id001
+              - 2
+              - 1
+              - 0
+            - - 0
+              - 2
+              - *id002
+              - 1
+              - 1
+              - 0
+            - - 1
+              - 2
+              - *id001
+              - 2
+              - 1
+              - 0
+            - - 1
+              - 2
+              - *id002
+              - 1
+              - 1
+              - 0
+            - - 2
+              - 3
+              - *id001
+              - 2
+              - 1
+              - 0
+            - - 2
+              - 3
+              - *id002
+              - 1
+              - 0
+              - 0
+            synapses: 3
+          3:
+            chrom_fitness: 100
+            init_config: &id012
+            - 0
+            - 0
+            - 0
+            - 0
+            input_neurons: &id013
+            - 0
+            - 1
+            neurons: 4
+            output_neuron: 3
+            rule_status:
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            rules: &id014
+            - - 0
+              - 2
+              - *id001
+              - 2
+              - 1
+              - 0
+            - - 0
+              - 2
+              - *id002
+              - 1
+              - 1
+              - 0
+            - - 1
+              - 2
+              - *id001
+              - 2
+              - 1
+              - 0
+            - - 1
+              - 2
+              - *id002
+              - 1
+              - 1
+              - 0
+            - - 2
+              - 3
+              - *id001
+              - 2
+              - 1
+              - 0
+            - - 2
+              - 3
+              - *id002
+              - 1
+              - 0
+              - 0
+            synapses: 3
+          4:
+            chrom_fitness: 100
+            init_config:
+            - 0
+            - 0
+            - 0
+            - 0
+            input_neurons:
+            - 0
+            - 1
+            neurons: 4
+            output_neuron: 3
+            rule_status:
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            rules:
+            - - 0
+              - 2
+              - *id001
+              - 2
+              - 1
+              - 0
+            - - 0
+              - 2
+              - *id002
+              - 1
+              - 1
+              - 0
+            - - 1
+              - 2
+              - *id001
+              - 2
+              - 1
+              - 0
+            - - 1
+              - 2
+              - *id002
+              - 1
+              - 1
+              - 0
+            - - 2
+              - 3
+              - *id001
+              - 2
+              - 1
+              - 0
+            - - 2
+              - 3
+              - *id002
+              - 1
+              - 0
+              - 0
+            synapses: 3
+          5:
+            chrom_fitness: 100
+            init_config:
+            - 0
+            - 0
+            - 0
+            - 0
+            input_neurons:
+            - 0
+            - 1
+            neurons: 4
+            output_neuron: 3
+            rule_status:
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            rules:
+            - - 0
+              - 2
+              - *id001
+              - 2
+              - 1
+              - 0
+            - - 0
+              - 2
+              - *id002
+              - 1
+              - 1
+              - 0
+            - - 1
+              - 2
+              - *id001
+              - 2
+              - 1
+              - 0
+            - - 1
+              - 2
+              - *id002
+              - 1
+              - 1
+              - 0
+            - - 2
+              - 3
+              - *id001
+              - 2
+              - 1
+              - 0
+            - - 2
+              - 3
+              - *id002
+              - 1
+              - 0
+              - 0
+            synapses: 3
+          6:
+            chrom_fitness: 100
+            init_config:
+            - 0
+            - 0
+            - 0
+            - 0
+            input_neurons:
+            - 0
+            - 1
+            neurons: 4
+            output_neuron: 3
+            rule_status:
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            rules:
+            - - 0
+              - 2
+              - *id001
+              - 2
+              - 1
+              - 0
+            - - 0
+              - 2
+              - *id002
+              - 1
+              - 1
+              - 0
+            - - 1
+              - 2
+              - *id001
+              - 2
+              - 1
+              - 0
+            - - 1
+              - 2
+              - *id002
+              - 1
+              - 1
+              - 0
+            - - 2
+              - 3
+              - *id001
+              - 2
+              - 1
+              - 0
+            - - 2
+              - 3
+              - *id002
+              - 1
+              - 0
+              - 0
+            synapses: 3
+          7:
+            chrom_fitness: 100
+            init_config:
+            - 0
+            - 0
+            - 0
+            - 0
+            input_neurons:
+            - 0
+            - 1
+            neurons: 4
+            output_neuron: 3
+            rule_status:
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            rules:
+            - - 0
+              - 2
+              - *id001
+              - 2
+              - 1
+              - 0
+            - - 0
+              - 2
+              - *id002
+              - 1
+              - 1
+              - 0
+            - - 1
+              - 2
+              - *id001
+              - 2
+              - 1
+              - 0
+            - - 1
+              - 2
+              - *id002
+              - 1
+              - 1
+              - 0
+            - - 2
+              - 3
+              - *id001
+              - 2
+              - 1
+              - 0
+            - - 2
+              - 3
+              - *id002
+              - 1
+              - 0
+              - 0
+            synapses: 3
+      1:
+        best_chromosome_indexes:
+        - 0
+        - 1
+        - 2
+        - 3
+        - 4
+        best_fitness_result: 100
+        rssnp_chromosomes:
+          0:
+            chrom_fitness: 100
+            init_config: *id003
+            input_neurons: *id004
+            neurons: 4
+            output_neuron: 3
+            rule_status:
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            rules: *id005
+            synapses: 3
+          1:
+            chrom_fitness: 100
+            init_config: *id006
+            input_neurons: *id007
+            neurons: 4
+            output_neuron: 3
+            rule_status:
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            rules: *id008
+            synapses: 3
+          2:
+            chrom_fitness: 100
+            init_config: *id009
+            input_neurons: *id010
+            neurons: 4
+            output_neuron: 3
+            rule_status:
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            rules: *id011
+            synapses: 3
+          3:
+            chrom_fitness: 100
+            init_config: *id012
+            input_neurons: *id013
+            neurons: 4
+            output_neuron: 3
+            rule_status:
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            rules: *id014
+            synapses: 3
+          4:
+            chrom_fitness: 100
+            init_config:
+            - 0
+            - 0
+            - 0
+            - 0
+            input_neurons:
+            - 0
+            - 1
+            neurons: 4
+            output_neuron: 3
+            rule_status:
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            rules:
+            - - 0
+              - 2
+              - *id001
+              - 2
+              - 1
+              - 0
+            - - 0
+              - 2
+              - *id002
+              - 1
+              - 1
+              - 0
+            - - 1
+              - 2
+              - *id002
+              - 1
+              - 1
+              - 0
+            - - 2
+              - 3
+              - *id001
+              - 2
+              - 1
+              - 0
+            - - 2
+              - 3
+              - *id002
+              - 1
+              - 0
+              - 0
+            synapses: 3
+          5:
+            chrom_fitness: 85
+            init_config:
+            - 0
+            - 0
+            - 0
+            - 0
+            input_neurons:
+            - 0
+            - 1
+            neurons: 4
+            output_neuron: 3
+            rule_status:
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            rules:
+            - - 0
+              - 2
+              - *id001
+              - 2
+              - 1
+              - 0
+            - - 0
+              - 2
+              - *id002
+              - 1
+              - 1
+              - 0
+            - - 1
+              - 2
+              - *id001
+              - 2
+              - 1
+              - 0
+            - - 2
+              - 3
+              - *id001
+              - 2
+              - 1
+              - 0
+            - - 2
+              - 3
+              - *id002
+              - 1
+              - 0
+              - 0
+            synapses: 3
+          6:
+            chrom_fitness: 74
+            init_config:
+            - 0
+            - 0
+            - 0
+            - 0
+            input_neurons:
+            - 0
+            - 1
+            neurons: 4
+            output_neuron: 3
+            rule_status:
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            rules:
+            - - 0
+              - 2
+              - *id001
+              - 2
+              - 1
+              - 0
+            - - 0
+              - 2
+              - *id002
+              - 1
+              - 1
+              - 0
+            - - 1
+              - 2
+              - *id001
+              - 2
+              - 1
+              - 0
+            - - 1
+              - 2
+              - *id002
+              - 1
+              - 1
+              - 0
+            - - 2
+              - 3
+              - *id002
+              - 1
+              - 0
+              - 0
+            synapses: 3
+          7:
+            chrom_fitness: 85
+            init_config:
+            - 0
+            - 0
+            - 0
+            - 0
+            input_neurons:
+            - 0
+            - 1
+            neurons: 4
+            output_neuron: 3
+            rule_status:
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            rules:
+            - - 0
+              - 2
+              - *id001
+              - 2
+              - 1
+              - 0
+            - - 0
+              - 2
+              - *id002
+              - 1
+              - 1
+              - 0
+            - - 1
+              - 2
+              - *id001
+              - 2
+              - 1
+              - 0
+            - - 2
+              - 3
+              - *id001
+              - 2
+              - 1
+              - 0
+            - - 2
+              - 3
+              - *id002
+              - 1
+              - 0
+              - 0
+            synapses: 3
+      2:
+        best_chromosome_indexes:
+        - 0
+        - 1
+        - 2
+        - 3
+        - 7
+        best_fitness_result: 100
+        rssnp_chromosomes:
+          0:
+            chrom_fitness: 100
+            init_config: *id003
+            input_neurons: *id004
+            neurons: 4
+            output_neuron: 3
+            rule_status:
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            rules: *id005
+            synapses: 3
+          1:
+            chrom_fitness: 100
+            init_config: *id006
+            input_neurons: *id007
+            neurons: 4
+            output_neuron: 3
+            rule_status:
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            rules: *id008
+            synapses: 3
+          2:
+            chrom_fitness: 100
+            init_config: *id009
+            input_neurons: *id010
+            neurons: 4
+            output_neuron: 3
+            rule_status:
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            rules: *id011
+            synapses: 3
+          3:
+            chrom_fitness: 100
+            init_config: *id012
+            input_neurons: *id013
+            neurons: 4
+            output_neuron: 3
+            rule_status:
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            rules: *id014
+            synapses: 3
+          4:
+            chrom_fitness: 85
+            init_config:
+            - 0
+            - 0
+            - 0
+            - 0
+            input_neurons:
+            - 0
+            - 1
+            neurons: 4
+            output_neuron: 3
+            rule_status:
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            rules:
+            - - 0
+              - 2
+              - *id001
+              - 2
+              - 1
+              - 0
+            - - 2
+              - 3
+              - *id002
+              - 1
+              - 0
+              - 0
+            - - 1
+              - 2
+              - *id001
+              - 2
+              - 1
+              - 0
+            - - 1
+              - 2
+              - *id002
+              - 1
+              - 1
+              - 0
+            - - 2
+              - 3
+              - *id001
+              - 2
+              - 1
+              - 0
+            synapses: 3
+          5:
+            chrom_fitness: 86
+            init_config:
+            - 0
+            - 0
+            - 0
+            - 0
+            input_neurons:
+            - 0
+            - 1
+            neurons: 4
+            output_neuron: 3
+            rule_status:
+            - -1
+            - -1
+            - -1
+            - -1
+            rules:
+            - - 0
+              - 2
+              - *id001
+              - 2
+              - 1
+              - 0
+            - - 0
+              - 2
+              - *id002
+              - 1
+              - 1
+              - 0
+            - - 1
+              - 2
+              - *id001
+              - 2
+              - 1
+              - 0
+            - - 2
+              - 3
+              - *id001
+              - 2
+              - 1
+              - 0
+            synapses: 3
+          6:
+            chrom_fitness: 85
+            init_config:
+            - 0
+            - 0
+            - 0
+            - 0
+            input_neurons:
+            - 0
+            - 1
+            neurons: 4
+            output_neuron: 3
+            rule_status:
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            rules:
+            - - 0
+              - 2
+              - *id001
+              - 2
+              - 1
+              - 0
+            - - 0
+              - 2
+              - *id002
+              - 1
+              - 1
+              - 0
+            - - 1
+              - 2
+              - *id001
+              - 2
+              - 1
+              - 0
+            - - 2
+              - 3
+              - *id001
+              - 2
+              - 1
+              - 0
+            - - 2
+              - 3
+              - *id002
+              - 1
+              - 0
+              - 0
+            synapses: 3
+          7:
+            chrom_fitness: 100
+            init_config:
+            - 0
+            - 0
+            - 0
+            - 0
+            input_neurons:
+            - 0
+            - 1
+            neurons: 4
+            output_neuron: 3
+            rule_status:
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            rules:
+            - - 0
+              - 2
+              - *id001
+              - 2
+              - 1
+              - 0
+            - - 0
+              - 2
+              - *id002
+              - 1
+              - 1
+              - 0
+            - - 1
+              - 2
+              - *id001
+              - 2
+              - 1
+              - 0
+            - - 1
+              - 2
+              - *id002
+              - 1
+              - 1
+              - 0
+            - - 2
+              - 3
+              - *id001
+              - 2
+              - 1
+              - 0
+            - - 2
+              - 3
+              - *id002
+              - 1
+              - 0
+              - 0
+            synapses: 3
+      3:
+        best_chromosome_indexes:
+        - 0
+        - 1
+        - 2
+        - 3
+        - 6
+        - 7
+        best_fitness_result: 100
+        rssnp_chromosomes:
+          0:
+            chrom_fitness: 100
+            init_config: *id003
+            input_neurons: *id004
+            neurons: 4
+            output_neuron: 3
+            rule_status:
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            rules: *id005
+            synapses: 3
+          1:
+            chrom_fitness: 100
+            init_config: *id006
+            input_neurons: *id007
+            neurons: 4
+            output_neuron: 3
+            rule_status:
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            rules: *id008
+            synapses: 3
+          2:
+            chrom_fitness: 100
+            init_config: *id009
+            input_neurons: *id010
+            neurons: 4
+            output_neuron: 3
+            rule_status:
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            rules: *id011
+            synapses: 3
+          3:
+            chrom_fitness: 100
+            init_config: *id012
+            input_neurons: *id013
+            neurons: 4
+            output_neuron: 3
+            rule_status:
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            rules: *id014
+            synapses: 3
+          4:
+            chrom_fitness: 82
+            init_config:
+            - 0
+            - 0
+            - 0
+            - 0
+            input_neurons:
+            - 0
+            - 1
+            neurons: 4
+            output_neuron: 3
+            rule_status:
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            rules:
+            - - 0
+              - 2
+              - *id001
+              - 2
+              - 1
+              - 0
+            - - 0
+              - 2
+              - *id002
+              - 1
+              - 1
+              - 0
+            - - 1
+              - 2
+              - *id001
+              - 2
+              - 1
+              - 0
+            - - 1
+              - 2
+              - *id002
+              - 1
+              - 1
+              - 0
+            - - 2
+              - 3
+              - *id001
+              - 2
+              - 1
+              - 0
+            synapses: 3
+          5:
+            chrom_fitness: 74
+            init_config:
+            - 0
+            - 0
+            - 0
+            - 0
+            input_neurons:
+            - 0
+            - 1
+            neurons: 4
+            output_neuron: 3
+            rule_status:
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            rules:
+            - - 0
+              - 2
+              - *id001
+              - 2
+              - 1
+              - 0
+            - - 0
+              - 2
+              - *id002
+              - 1
+              - 1
+              - 0
+            - - 1
+              - 2
+              - *id001
+              - 2
+              - 1
+              - 0
+            - - 1
+              - 2
+              - *id002
+              - 1
+              - 1
+              - 0
+            - - 2
+              - 3
+              - *id002
+              - 1
+              - 0
+              - 0
+            synapses: 3
+          6:
+            chrom_fitness: 100
+            init_config:
+            - 0
+            - 0
+            - 0
+            - 0
+            input_neurons:
+            - 0
+            - 1
+            neurons: 4
+            output_neuron: 3
+            rule_status:
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            rules:
+            - - 0
+              - 2
+              - *id001
+              - 2
+              - 1
+              - 0
+            - - 0
+              - 2
+              - *id002
+              - 1
+              - 1
+              - 0
+            - - 1
+              - 2
+              - *id001
+              - 2
+              - 1
+              - 0
+            - - 1
+              - 2
+              - *id002
+              - 1
+              - 1
+              - 0
+            - - 2
+              - 3
+              - *id001
+              - 2
+              - 1
+              - 0
+            - - 2
+              - 3
+              - *id002
+              - 1
+              - 0
+              - 0
+            synapses: 3
+          7:
+            chrom_fitness: 100
+            init_config:
+            - 0
+            - 0
+            - 0
+            - 0
+            input_neurons:
+            - 0
+            - 1
+            neurons: 4
+            output_neuron: 3
+            rule_status:
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            rules:
+            - - 0
+              - 2
+              - *id001
+              - 2
+              - 1
+              - 0
+            - - 0
+              - 2
+              - *id002
+              - 1
+              - 1
+              - 0
+            - - 1
+              - 2
+              - *id001
+              - 2
+              - 1
+              - 0
+            - - 1
+              - 2
+              - *id002
+              - 1
+              - 1
+              - 0
+            - - 2
+              - 3
+              - *id001
+              - 2
+              - 1
+              - 0
+            - - 2
+              - 3
+              - *id002
+              - 1
+              - 0
+              - 0
+            synapses: 3
+    max_fitness_in_run: 100
+    mutation_rate: 100
+    population_size: 8
+    selection_func: 1
+  1:
+    fitness_function: 1
+    generations:
+      0:
+        best_chromosome_indexes:
+        - 0
+        - 1
+        - 2
+        - 3
+        - 4
+        - 5
+        - 6
+        - 7
+        best_fitness_result: 100
+        rssnp_chromosomes:
+          0:
+            chrom_fitness: 100
+            init_config: &id017
+            - 0
+            - 0
+            - 0
+            - 0
+            input_neurons: &id018
+            - 0
+            - 1
+            neurons: 4
+            output_neuron: 3
+            rule_status:
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            rules: &id019
+            - - 0
+              - 2
+              - &id015
+                - 2
+                - 0
+              - 2
+              - 1
+              - 0
+            - - 0
+              - 2
+              - &id016
+                - 1
+                - 0
+              - 1
+              - 1
+              - 0
+            - - 1
+              - 2
+              - *id015
+              - 2
+              - 1
+              - 0
+            - - 1
+              - 2
+              - *id016
+              - 1
+              - 1
+              - 0
+            - - 2
+              - 3
+              - *id015
+              - 2
+              - 1
+              - 0
+            - - 2
+              - 3
+              - *id016
+              - 1
+              - 0
+              - 0
+            synapses: 3
+          1:
+            chrom_fitness: 100
+            init_config: &id020
+            - 0
+            - 0
+            - 0
+            - 0
+            input_neurons: &id021
+            - 0
+            - 1
+            neurons: 4
+            output_neuron: 3
+            rule_status:
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            rules: &id022
+            - - 0
+              - 2
+              - *id015
+              - 2
+              - 1
+              - 0
+            - - 0
+              - 2
+              - *id016
+              - 1
+              - 1
+              - 0
+            - - 1
+              - 2
+              - *id015
+              - 2
+              - 1
+              - 0
+            - - 1
+              - 2
+              - *id016
+              - 1
+              - 1
+              - 0
+            - - 2
+              - 3
+              - *id015
+              - 2
+              - 1
+              - 0
+            - - 2
+              - 3
+              - *id016
+              - 1
+              - 0
+              - 0
+            synapses: 3
+          2:
+            chrom_fitness: 100
+            init_config: &id023
+            - 0
+            - 0
+            - 0
+            - 0
+            input_neurons: &id024
+            - 0
+            - 1
+            neurons: 4
+            output_neuron: 3
+            rule_status:
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            rules: &id025
+            - - 0
+              - 2
+              - *id015
+              - 2
+              - 1
+              - 0
+            - - 0
+              - 2
+              - *id016
+              - 1
+              - 1
+              - 0
+            - - 1
+              - 2
+              - *id015
+              - 2
+              - 1
+              - 0
+            - - 1
+              - 2
+              - *id016
+              - 1
+              - 1
+              - 0
+            - - 2
+              - 3
+              - *id015
+              - 2
+              - 1
+              - 0
+            - - 2
+              - 3
+              - *id016
+              - 1
+              - 0
+              - 0
+            synapses: 3
+          3:
+            chrom_fitness: 100
+            init_config: &id026
+            - 0
+            - 0
+            - 0
+            - 0
+            input_neurons: &id027
+            - 0
+            - 1
+            neurons: 4
+            output_neuron: 3
+            rule_status:
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            rules: &id028
+            - - 0
+              - 2
+              - *id015
+              - 2
+              - 1
+              - 0
+            - - 0
+              - 2
+              - *id016
+              - 1
+              - 1
+              - 0
+            - - 1
+              - 2
+              - *id015
+              - 2
+              - 1
+              - 0
+            - - 1
+              - 2
+              - *id016
+              - 1
+              - 1
+              - 0
+            - - 2
+              - 3
+              - *id015
+              - 2
+              - 1
+              - 0
+            - - 2
+              - 3
+              - *id016
+              - 1
+              - 0
+              - 0
+            synapses: 3
+          4:
+            chrom_fitness: 100
+            init_config:
+            - 0
+            - 0
+            - 0
+            - 0
+            input_neurons:
+            - 0
+            - 1
+            neurons: 4
+            output_neuron: 3
+            rule_status:
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            rules:
+            - - 0
+              - 2
+              - *id015
+              - 2
+              - 1
+              - 0
+            - - 0
+              - 2
+              - *id016
+              - 1
+              - 1
+              - 0
+            - - 1
+              - 2
+              - *id015
+              - 2
+              - 1
+              - 0
+            - - 1
+              - 2
+              - *id016
+              - 1
+              - 1
+              - 0
+            - - 2
+              - 3
+              - *id015
+              - 2
+              - 1
+              - 0
+            - - 2
+              - 3
+              - *id016
+              - 1
+              - 0
+              - 0
+            synapses: 3
+          5:
+            chrom_fitness: 100
+            init_config:
+            - 0
+            - 0
+            - 0
+            - 0
+            input_neurons:
+            - 0
+            - 1
+            neurons: 4
+            output_neuron: 3
+            rule_status:
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            rules:
+            - - 0
+              - 2
+              - *id015
+              - 2
+              - 1
+              - 0
+            - - 0
+              - 2
+              - *id016
+              - 1
+              - 1
+              - 0
+            - - 1
+              - 2
+              - *id015
+              - 2
+              - 1
+              - 0
+            - - 1
+              - 2
+              - *id016
+              - 1
+              - 1
+              - 0
+            - - 2
+              - 3
+              - *id015
+              - 2
+              - 1
+              - 0
+            - - 2
+              - 3
+              - *id016
+              - 1
+              - 0
+              - 0
+            synapses: 3
+          6:
+            chrom_fitness: 100
+            init_config:
+            - 0
+            - 0
+            - 0
+            - 0
+            input_neurons:
+            - 0
+            - 1
+            neurons: 4
+            output_neuron: 3
+            rule_status:
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            rules:
+            - - 0
+              - 2
+              - *id015
+              - 2
+              - 1
+              - 0
+            - - 0
+              - 2
+              - *id016
+              - 1
+              - 1
+              - 0
+            - - 1
+              - 2
+              - *id015
+              - 2
+              - 1
+              - 0
+            - - 1
+              - 2
+              - *id016
+              - 1
+              - 1
+              - 0
+            - - 2
+              - 3
+              - *id015
+              - 2
+              - 1
+              - 0
+            - - 2
+              - 3
+              - *id016
+              - 1
+              - 0
+              - 0
+            synapses: 3
+          7:
+            chrom_fitness: 100
+            init_config:
+            - 0
+            - 0
+            - 0
+            - 0
+            input_neurons:
+            - 0
+            - 1
+            neurons: 4
+            output_neuron: 3
+            rule_status:
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            rules:
+            - - 0
+              - 2
+              - *id015
+              - 2
+              - 1
+              - 0
+            - - 0
+              - 2
+              - *id016
+              - 1
+              - 1
+              - 0
+            - - 1
+              - 2
+              - *id015
+              - 2
+              - 1
+              - 0
+            - - 1
+              - 2
+              - *id016
+              - 1
+              - 1
+              - 0
+            - - 2
+              - 3
+              - *id015
+              - 2
+              - 1
+              - 0
+            - - 2
+              - 3
+              - *id016
+              - 1
+              - 0
+              - 0
+            synapses: 3
+      1:
+        best_chromosome_indexes:
+        - 0
+        - 1
+        - 2
+        - 3
+        - 7
+        best_fitness_result: 100
+        rssnp_chromosomes:
+          0:
+            chrom_fitness: 100
+            init_config: *id017
+            input_neurons: *id018
+            neurons: 4
+            output_neuron: 3
+            rule_status:
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            rules: *id019
+            synapses: 3
+          1:
+            chrom_fitness: 100
+            init_config: *id020
+            input_neurons: *id021
+            neurons: 4
+            output_neuron: 3
+            rule_status:
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            rules: *id022
+            synapses: 3
+          2:
+            chrom_fitness: 100
+            init_config: *id023
+            input_neurons: *id024
+            neurons: 4
+            output_neuron: 3
+            rule_status:
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            rules: *id025
+            synapses: 3
+          3:
+            chrom_fitness: 100
+            init_config: *id026
+            input_neurons: *id027
+            neurons: 4
+            output_neuron: 3
+            rule_status:
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            rules: *id028
+            synapses: 3
+          4:
+            chrom_fitness: 74
+            init_config:
+            - 0
+            - 0
+            - 0
+            - 0
+            input_neurons:
+            - 0
+            - 1
+            neurons: 4
+            output_neuron: 3
+            rule_status:
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            rules:
+            - - 0
+              - 2
+              - *id015
+              - 2
+              - 1
+              - 0
+            - - 0
+              - 2
+              - *id016
+              - 1
+              - 1
+              - 0
+            - - 1
+              - 2
+              - *id015
+              - 2
+              - 1
+              - 0
+            - - 1
+              - 2
+              - *id016
+              - 1
+              - 1
+              - 0
+            - - 2
+              - 3
+              - *id016
+              - 1
+              - 0
+              - 0
+            synapses: 3
+          5:
+            chrom_fitness: 85
+            init_config:
+            - 0
+            - 0
+            - 0
+            - 0
+            input_neurons:
+            - 0
+            - 1
+            neurons: 4
+            output_neuron: 3
+            rule_status:
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            rules:
+            - - 0
+              - 2
+              - *id015
+              - 2
+              - 1
+              - 0
+            - - 0
+              - 2
+              - *id016
+              - 1
+              - 1
+              - 0
+            - - 1
+              - 2
+              - *id015
+              - 2
+              - 1
+              - 0
+            - - 2
+              - 3
+              - *id015
+              - 2
+              - 1
+              - 0
+            - - 2
+              - 3
+              - *id016
+              - 1
+              - 0
+              - 0
+            synapses: 3
+          6:
+            chrom_fitness: 74
+            init_config:
+            - 0
+            - 0
+            - 0
+            - 0
+            input_neurons:
+            - 0
+            - 1
+            neurons: 4
+            output_neuron: 3
+            rule_status:
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            rules:
+            - - 0
+              - 2
+              - *id015
+              - 2
+              - 1
+              - 0
+            - - 0
+              - 2
+              - *id016
+              - 1
+              - 1
+              - 0
+            - - 1
+              - 2
+              - *id015
+              - 2
+              - 1
+              - 0
+            - - 1
+              - 2
+              - *id016
+              - 1
+              - 1
+              - 0
+            - - 2
+              - 3
+              - *id016
+              - 1
+              - 0
+              - 0
+            synapses: 3
+          7:
+            chrom_fitness: 100
+            init_config:
+            - 0
+            - 0
+            - 0
+            - 0
+            input_neurons:
+            - 0
+            - 1
+            neurons: 4
+            output_neuron: 3
+            rule_status:
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            rules:
+            - - 0
+              - 2
+              - *id015
+              - 2
+              - 1
+              - 0
+            - - 0
+              - 2
+              - *id016
+              - 1
+              - 1
+              - 0
+            - - 2
+              - 3
+              - *id015
+              - 2
+              - 1
+              - 0
+            - - 1
+              - 2
+              - *id016
+              - 1
+              - 1
+              - 0
+            - - 2
+              - 3
+              - *id016
+              - 1
+              - 0
+              - 0
+            synapses: 3
+      2:
+        best_chromosome_indexes:
+        - 0
+        - 1
+        - 2
+        - 3
+        best_fitness_result: 100
+        rssnp_chromosomes:
+          0:
+            chrom_fitness: 100
+            init_config: *id017
+            input_neurons: *id018
+            neurons: 4
+            output_neuron: 3
+            rule_status:
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            rules: *id019
+            synapses: 3
+          1:
+            chrom_fitness: 100
+            init_config: *id020
+            input_neurons: *id021
+            neurons: 4
+            output_neuron: 3
+            rule_status:
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            rules: *id022
+            synapses: 3
+          2:
+            chrom_fitness: 100
+            init_config: *id023
+            input_neurons: *id024
+            neurons: 4
+            output_neuron: 3
+            rule_status:
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            rules: *id025
+            synapses: 3
+          3:
+            chrom_fitness: 100
+            init_config: *id026
+            input_neurons: *id027
+            neurons: 4
+            output_neuron: 3
+            rule_status:
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            rules: *id028
+            synapses: 3
+          4:
+            chrom_fitness: 74
+            init_config:
+            - 0
+            - 0
+            - 0
+            - 0
+            input_neurons:
+            - 0
+            - 1
+            neurons: 4
+            output_neuron: 3
+            rule_status:
+            - -1
+            - -1
+            - -1
+            - -1
+            rules:
+            - - 0
+              - 2
+              - *id015
+              - 2
+              - 1
+              - 0
+            - - 1
+              - 2
+              - *id016
+              - 1
+              - 1
+              - 0
+            - - 1
+              - 2
+              - *id015
+              - 2
+              - 1
+              - 0
+            - - 2
+              - 3
+              - *id016
+              - 1
+              - 0
+              - 0
+            synapses: 3
+          5:
+            chrom_fitness: 74
+            init_config:
+            - 0
+            - 0
+            - 0
+            - 0
+            input_neurons:
+            - 0
+            - 1
+            neurons: 4
+            output_neuron: 3
+            rule_status:
+            - -1
+            - -1
+            - -1
+            - -1
+            rules:
+            - - 0
+              - 2
+              - *id015
+              - 2
+              - 1
+              - 0
+            - - 0
+              - 2
+              - *id016
+              - 1
+              - 1
+              - 0
+            - - 1
+              - 2
+              - *id015
+              - 2
+              - 1
+              - 0
+            - - 2
+              - 3
+              - *id016
+              - 1
+              - 0
+              - 0
+            synapses: 3
+          6:
+            chrom_fitness: 74
+            init_config:
+            - 0
+            - 0
+            - 0
+            - 0
+            input_neurons:
+            - 0
+            - 1
+            neurons: 4
+            output_neuron: 3
+            rule_status:
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            rules:
+            - - 0
+              - 2
+              - *id015
+              - 2
+              - 1
+              - 0
+            - - 0
+              - 2
+              - *id016
+              - 1
+              - 1
+              - 0
+            - - 1
+              - 2
+              - *id015
+              - 2
+              - 1
+              - 0
+            - - 1
+              - 2
+              - *id016
+              - 1
+              - 1
+              - 0
+            - - 2
+              - 3
+              - *id016
+              - 1
+              - 0
+              - 0
+            synapses: 3
+          7:
+            chrom_fitness: 74
+            init_config:
+            - 0
+            - 0
+            - 0
+            - 0
+            input_neurons:
+            - 0
+            - 1
+            neurons: 4
+            output_neuron: 3
+            rule_status:
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            rules:
+            - - 0
+              - 2
+              - *id015
+              - 2
+              - 1
+              - 0
+            - - 0
+              - 2
+              - *id016
+              - 1
+              - 1
+              - 0
+            - - 1
+              - 2
+              - *id015
+              - 2
+              - 1
+              - 0
+            - - 1
+              - 2
+              - *id016
+              - 1
+              - 1
+              - 0
+            - - 2
+              - 3
+              - *id016
+              - 1
+              - 0
+              - 0
+            synapses: 3
+      3:
+        best_chromosome_indexes:
+        - 0
+        - 1
+        - 2
+        - 3
+        - 6
+        best_fitness_result: 100
+        rssnp_chromosomes:
+          0:
+            chrom_fitness: 100
+            init_config: *id017
+            input_neurons: *id018
+            neurons: 4
+            output_neuron: 3
+            rule_status:
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            rules: *id019
+            synapses: 3
+          1:
+            chrom_fitness: 100
+            init_config: *id020
+            input_neurons: *id021
+            neurons: 4
+            output_neuron: 3
+            rule_status:
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            rules: *id022
+            synapses: 3
+          2:
+            chrom_fitness: 100
+            init_config: *id023
+            input_neurons: *id024
+            neurons: 4
+            output_neuron: 3
+            rule_status:
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            rules: *id025
+            synapses: 3
+          3:
+            chrom_fitness: 100
+            init_config: *id026
+            input_neurons: *id027
+            neurons: 4
+            output_neuron: 3
+            rule_status:
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            rules: *id028
+            synapses: 3
+          4:
+            chrom_fitness: 85
+            init_config:
+            - 0
+            - 0
+            - 0
+            - 0
+            input_neurons:
+            - 0
+            - 1
+            neurons: 4
+            output_neuron: 3
+            rule_status:
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            rules:
+            - - 0
+              - 2
+              - *id015
+              - 2
+              - 1
+              - 0
+            - - 0
+              - 2
+              - *id016
+              - 1
+              - 1
+              - 0
+            - - 1
+              - 2
+              - *id015
+              - 2
+              - 1
+              - 0
+            - - 2
+              - 3
+              - *id015
+              - 2
+              - 1
+              - 0
+            - - 2
+              - 3
+              - *id016
+              - 1
+              - 0
+              - 0
+            synapses: 3
+          5:
+            chrom_fitness: 74
+            init_config:
+            - 0
+            - 0
+            - 0
+            - 0
+            input_neurons:
+            - 0
+            - 1
+            neurons: 4
+            output_neuron: 3
+            rule_status:
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            rules:
+            - - 0
+              - 2
+              - *id015
+              - 2
+              - 1
+              - 0
+            - - 0
+              - 2
+              - *id016
+              - 1
+              - 1
+              - 0
+            - - 1
+              - 2
+              - *id015
+              - 2
+              - 1
+              - 0
+            - - 1
+              - 2
+              - *id016
+              - 1
+              - 1
+              - 0
+            - - 2
+              - 3
+              - *id016
+              - 1
+              - 0
+              - 0
+            synapses: 3
+          6:
+            chrom_fitness: 100
+            init_config:
+            - 0
+            - 0
+            - 0
+            - 0
+            input_neurons:
+            - 0
+            - 1
+            neurons: 4
+            output_neuron: 3
+            rule_status:
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            rules:
+            - - 0
+              - 2
+              - *id015
+              - 2
+              - 1
+              - 0
+            - - 0
+              - 2
+              - *id016
+              - 1
+              - 1
+              - 0
+            - - 1
+              - 2
+              - *id016
+              - 1
+              - 1
+              - 0
+            - - 2
+              - 3
+              - *id015
+              - 2
+              - 1
+              - 0
+            - - 2
+              - 3
+              - *id016
+              - 1
+              - 0
+              - 0
+            synapses: 3
+          7:
+            chrom_fitness: 85
+            init_config:
+            - 0
+            - 0
+            - 0
+            - 0
+            input_neurons:
+            - 0
+            - 1
+            neurons: 4
+            output_neuron: 3
+            rule_status:
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            rules:
+            - - 0
+              - 2
+              - *id015
+              - 2
+              - 1
+              - 0
+            - - 1
+              - 2
+              - *id015
+              - 2
+              - 1
+              - 0
+            - - 1
+              - 2
+              - *id016
+              - 1
+              - 1
+              - 0
+            - - 2
+              - 3
+              - *id015
+              - 2
+              - 1
+              - 0
+            - - 2
+              - 3
+              - *id016
+              - 1
+              - 0
+              - 0
+            synapses: 3
+    max_fitness_in_run: 100
+    mutation_rate: 100
+    population_size: 8
+    selection_func: 1
+  2:
+    fitness_function: 1
+    generations:
+      0:
+        best_chromosome_indexes:
+        - 0
+        - 1
+        - 2
+        - 3
+        - 4
+        - 5
+        - 6
+        - 7
+        - 8
+        - 9
+        best_fitness_result: 100
+        rssnp_chromosomes:
+          0:
+            chrom_fitness: 100
+            init_config: &id049
+            - 0
+            - 0
+            - 0
+            - 0
+            input_neurons: &id050
+            - 0
+            - 1
+            neurons: 4
+            output_neuron: 3
+            rule_status:
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            rules: &id051
+            - - 0
+              - 2
+              - &id029
+                - 2
+                - 0
+              - 2
+              - 1
+              - 0
+            - - 0
+              - 2
+              - &id030
+                - 1
+                - 0
+              - 1
+              - 1
+              - 0
+            - - 1
+              - 2
+              - *id029
+              - 2
+              - 1
+              - 0
+            - - 1
+              - 2
+              - *id030
+              - 1
+              - 1
+              - 0
+            - - 2
+              - 3
+              - *id029
+              - 2
+              - 1
+              - 0
+            - - 2
+              - 3
+              - *id030
+              - 1
+              - 0
+              - 0
+            synapses: 3
+          1:
+            chrom_fitness: 100
+            init_config: &id052
+            - 0
+            - 0
+            - 0
+            - 0
+            input_neurons: &id053
+            - 0
+            - 1
+            neurons: 4
+            output_neuron: 3
+            rule_status:
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            rules: &id054
+            - - 0
+              - 2
+              - &id031
+                - 2
+                - 0
+              - 2
+              - 1
+              - 0
+            - - 0
+              - 2
+              - &id032
+                - 1
+                - 0
+              - 1
+              - 1
+              - 0
+            - - 1
+              - 2
+              - *id031
+              - 2
+              - 1
+              - 0
+            - - 1
+              - 2
+              - *id032
+              - 1
+              - 1
+              - 0
+            - - 2
+              - 3
+              - *id031
+              - 2
+              - 1
+              - 0
+            - - 2
+              - 3
+              - *id032
+              - 1
+              - 0
+              - 0
+            synapses: 3
+          2:
+            chrom_fitness: 100
+            init_config: &id055
+            - 0
+            - 0
+            - 0
+            - 0
+            input_neurons: &id056
+            - 0
+            - 1
+            neurons: 4
+            output_neuron: 3
+            rule_status:
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            rules: &id057
+            - - 0
+              - 2
+              - &id033
+                - 2
+                - 0
+              - 2
+              - 1
+              - 0
+            - - 0
+              - 2
+              - &id034
+                - 1
+                - 0
+              - 1
+              - 1
+              - 0
+            - - 1
+              - 2
+              - *id033
+              - 2
+              - 1
+              - 0
+            - - 1
+              - 2
+              - *id034
+              - 1
+              - 1
+              - 0
+            - - 2
+              - 3
+              - *id033
+              - 2
+              - 1
+              - 0
+            - - 2
+              - 3
+              - *id034
+              - 1
+              - 0
+              - 0
+            synapses: 3
+          3:
+            chrom_fitness: 100
+            init_config: &id058
+            - 0
+            - 0
+            - 0
+            - 0
+            input_neurons: &id059
+            - 0
+            - 1
+            neurons: 4
+            output_neuron: 3
+            rule_status:
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            rules: &id060
+            - - 0
+              - 2
+              - &id035
+                - 2
+                - 0
+              - 2
+              - 1
+              - 0
+            - - 0
+              - 2
+              - &id036
+                - 1
+                - 0
+              - 1
+              - 1
+              - 0
+            - - 1
+              - 2
+              - *id035
+              - 2
+              - 1
+              - 0
+            - - 1
+              - 2
+              - *id036
+              - 1
+              - 1
+              - 0
+            - - 2
+              - 3
+              - *id035
+              - 2
+              - 1
+              - 0
+            - - 2
+              - 3
+              - *id036
+              - 1
+              - 0
+              - 0
+            synapses: 3
+          4:
+            chrom_fitness: 100
+            init_config: &id061
+            - 0
+            - 0
+            - 0
+            - 0
+            input_neurons: &id062
+            - 0
+            - 1
+            neurons: 4
+            output_neuron: 3
+            rule_status:
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            rules: &id063
+            - - 0
+              - 2
+              - &id037
+                - 2
+                - 0
+              - 2
+              - 1
+              - 0
+            - - 0
+              - 2
+              - &id038
+                - 1
+                - 0
+              - 1
+              - 1
+              - 0
+            - - 1
+              - 2
+              - *id037
+              - 2
+              - 1
+              - 0
+            - - 1
+              - 2
+              - *id038
+              - 1
+              - 1
+              - 0
+            - - 2
+              - 3
+              - *id037
+              - 2
+              - 1
+              - 0
+            - - 2
+              - 3
+              - *id038
+              - 1
+              - 0
+              - 0
+            synapses: 3
+          5:
+            chrom_fitness: 100
+            init_config:
+            - 0
+            - 0
+            - 0
+            - 0
+            input_neurons:
+            - 0
+            - 1
+            neurons: 4
+            output_neuron: 3
+            rule_status:
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            rules:
+            - - 0
+              - 2
+              - &id039
+                - 2
+                - 0
+              - 2
+              - 1
+              - 0
+            - - 0
+              - 2
+              - &id040
+                - 1
+                - 0
+              - 1
+              - 1
+              - 0
+            - - 1
+              - 2
+              - *id039
+              - 2
+              - 1
+              - 0
+            - - 1
+              - 2
+              - *id040
+              - 1
+              - 1
+              - 0
+            - - 2
+              - 3
+              - *id039
+              - 2
+              - 1
+              - 0
+            - - 2
+              - 3
+              - *id040
+              - 1
+              - 0
+              - 0
+            synapses: 3
+          6:
+            chrom_fitness: 100
+            init_config:
+            - 0
+            - 0
+            - 0
+            - 0
+            input_neurons:
+            - 0
+            - 1
+            neurons: 4
+            output_neuron: 3
+            rule_status:
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            rules:
+            - - 0
+              - 2
+              - &id041
+                - 2
+                - 0
+              - 2
+              - 1
+              - 0
+            - - 0
+              - 2
+              - &id042
+                - 1
+                - 0
+              - 1
+              - 1
+              - 0
+            - - 1
+              - 2
+              - *id041
+              - 2
+              - 1
+              - 0
+            - - 1
+              - 2
+              - *id042
+              - 1
+              - 1
+              - 0
+            - - 2
+              - 3
+              - *id041
+              - 2
+              - 1
+              - 0
+            - - 2
+              - 3
+              - *id042
+              - 1
+              - 0
+              - 0
+            synapses: 3
+          7:
+            chrom_fitness: 100
+            init_config:
+            - 0
+            - 0
+            - 0
+            - 0
+            input_neurons:
+            - 0
+            - 1
+            neurons: 4
+            output_neuron: 3
+            rule_status:
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            rules:
+            - - 0
+              - 2
+              - &id043
+                - 2
+                - 0
+              - 2
+              - 1
+              - 0
+            - - 0
+              - 2
+              - &id044
+                - 1
+                - 0
+              - 1
+              - 1
+              - 0
+            - - 1
+              - 2
+              - *id043
+              - 2
+              - 1
+              - 0
+            - - 1
+              - 2
+              - *id044
+              - 1
+              - 1
+              - 0
+            - - 2
+              - 3
+              - *id043
+              - 2
+              - 1
+              - 0
+            - - 2
+              - 3
+              - *id044
+              - 1
+              - 0
+              - 0
+            synapses: 3
+          8:
+            chrom_fitness: 100
+            init_config:
+            - 0
+            - 0
+            - 0
+            - 0
+            input_neurons:
+            - 0
+            - 1
+            neurons: 4
+            output_neuron: 3
+            rule_status:
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            rules:
+            - - 0
+              - 2
+              - &id045
+                - 2
+                - 0
+              - 2
+              - 1
+              - 0
+            - - 0
+              - 2
+              - &id046
+                - 1
+                - 0
+              - 1
+              - 1
+              - 0
+            - - 1
+              - 2
+              - *id045
+              - 2
+              - 1
+              - 0
+            - - 1
+              - 2
+              - *id046
+              - 1
+              - 1
+              - 0
+            - - 2
+              - 3
+              - *id045
+              - 2
+              - 1
+              - 0
+            - - 2
+              - 3
+              - *id046
+              - 1
+              - 0
+              - 0
+            synapses: 3
+          9:
+            chrom_fitness: 100
+            init_config:
+            - 0
+            - 0
+            - 0
+            - 0
+            input_neurons:
+            - 0
+            - 1
+            neurons: 4
+            output_neuron: 3
+            rule_status:
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            rules:
+            - - 0
+              - 2
+              - &id047
+                - 2
+                - 0
+              - 2
+              - 1
+              - 0
+            - - 0
+              - 2
+              - &id048
+                - 1
+                - 0
+              - 1
+              - 1
+              - 0
+            - - 1
+              - 2
+              - *id047
+              - 2
+              - 1
+              - 0
+            - - 1
+              - 2
+              - *id048
+              - 1
+              - 1
+              - 0
+            - - 2
+              - 3
+              - *id047
+              - 2
+              - 1
+              - 0
+            - - 2
+              - 3
+              - *id048
+              - 1
+              - 0
+              - 0
+            synapses: 3
+      1:
+        best_chromosome_indexes:
+        - 0
+        - 1
+        - 2
+        - 3
+        - 4
+        - 5
+        best_fitness_result: 100
+        rssnp_chromosomes:
+          0:
+            chrom_fitness: 100
+            init_config: *id049
+            input_neurons: *id050
+            neurons: 4
+            output_neuron: 3
+            rule_status:
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            rules: *id051
+            synapses: 3
+          1:
+            chrom_fitness: 100
+            init_config: *id052
+            input_neurons: *id053
+            neurons: 4
+            output_neuron: 3
+            rule_status:
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            rules: *id054
+            synapses: 3
+          2:
+            chrom_fitness: 100
+            init_config: *id055
+            input_neurons: *id056
+            neurons: 4
+            output_neuron: 3
+            rule_status:
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            rules: *id057
+            synapses: 3
+          3:
+            chrom_fitness: 100
+            init_config: *id058
+            input_neurons: *id059
+            neurons: 4
+            output_neuron: 3
+            rule_status:
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            rules: *id060
+            synapses: 3
+          4:
+            chrom_fitness: 100
+            init_config: *id061
+            input_neurons: *id062
+            neurons: 4
+            output_neuron: 3
+            rule_status:
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            rules: *id063
+            synapses: 3
+          5:
+            chrom_fitness: 100
+            init_config:
+            - 0
+            - 0
+            - 0
+            - 0
+            input_neurons:
+            - 0
+            - 1
+            neurons: 4
+            output_neuron: 3
+            rule_status:
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            rules:
+            - - 0
+              - 2
+              - &id064
+                - 2
+                - 0
+              - 2
+              - 1
+              - 0
+            - - 0
+              - 2
+              - &id065
+                - 1
+                - 0
+              - 1
+              - 1
+              - 0
+            - - 1
+              - 2
+              - &id066
+                - 1
+                - 0
+              - 1
+              - 1
+              - 0
+            - - 2
+              - 3
+              - *id064
+              - 2
+              - 1
+              - 0
+            - - 2
+              - 3
+              - *id065
+              - 1
+              - 0
+              - 0
+            synapses: 3
+          6:
+            chrom_fitness: 85
+            init_config:
+            - 0
+            - 0
+            - 0
+            - 0
+            input_neurons:
+            - 0
+            - 1
+            neurons: 4
+            output_neuron: 3
+            rule_status:
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            rules:
+            - - 0
+              - 2
+              - &id067
+                - 2
+                - 0
+              - 2
+              - 1
+              - 0
+            - - 0
+              - 2
+              - *id066
+              - 1
+              - 1
+              - 0
+            - - 1
+              - 2
+              - *id067
+              - 2
+              - 1
+              - 0
+            - - 2
+              - 3
+              - *id067
+              - 2
+              - 1
+              - 0
+            - - 2
+              - 3
+              - *id066
+              - 1
+              - 0
+              - 0
+            synapses: 3
+          7:
+            chrom_fitness: 85
+            init_config:
+            - 0
+            - 0
+            - 0
+            - 0
+            input_neurons:
+            - 0
+            - 1
+            neurons: 4
+            output_neuron: 3
+            rule_status:
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            rules:
+            - - 0
+              - 2
+              - &id068
+                - 2
+                - 0
+              - 2
+              - 1
+              - 0
+            - - 2
+              - 3
+              - &id069
+                - 1
+                - 0
+              - 1
+              - 0
+              - 0
+            - - 1
+              - 2
+              - *id068
+              - 2
+              - 1
+              - 0
+            - - 1
+              - 2
+              - - 1
+                - 0
+              - 1
+              - 1
+              - 0
+            - - 2
+              - 3
+              - *id068
+              - 2
+              - 1
+              - 0
+            synapses: 3
+          8:
+            chrom_fitness: 82
+            init_config:
+            - 0
+            - 0
+            - 0
+            - 0
+            input_neurons:
+            - 0
+            - 1
+            neurons: 4
+            output_neuron: 3
+            rule_status:
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            rules:
+            - - 0
+              - 2
+              - &id070
+                - 2
+                - 0
+              - 2
+              - 1
+              - 0
+            - - 0
+              - 2
+              - *id069
+              - 1
+              - 1
+              - 0
+            - - 1
+              - 2
+              - *id070
+              - 2
+              - 1
+              - 0
+            - - 1
+              - 2
+              - *id069
+              - 1
+              - 1
+              - 0
+            - - 2
+              - 3
+              - *id070
+              - 2
+              - 1
+              - 0
+            synapses: 3
+          9:
+            chrom_fitness: 85
+            init_config:
+            - 0
+            - 0
+            - 0
+            - 0
+            input_neurons:
+            - 0
+            - 1
+            neurons: 4
+            output_neuron: 3
+            rule_status:
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            rules:
+            - - 0
+              - 2
+              - &id071
+                - 2
+                - 0
+              - 2
+              - 1
+              - 0
+            - - 1
+              - 2
+              - - 2
+                - 0
+              - 2
+              - 1
+              - 0
+            - - 1
+              - 2
+              - &id072
+                - 1
+                - 0
+              - 1
+              - 1
+              - 0
+            - - 2
+              - 3
+              - *id071
+              - 2
+              - 1
+              - 0
+            - - 2
+              - 3
+              - *id072
+              - 1
+              - 0
+              - 0
+            synapses: 3
+      2:
+        best_chromosome_indexes:
+        - 0
+        - 1
+        - 2
+        - 3
+        - 4
+        - 6
+        - 8
+        best_fitness_result: 100
+        rssnp_chromosomes:
+          0:
+            chrom_fitness: 100
+            init_config: *id049
+            input_neurons: *id050
+            neurons: 4
+            output_neuron: 3
+            rule_status:
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            rules: *id051
+            synapses: 3
+          1:
+            chrom_fitness: 100
+            init_config: *id052
+            input_neurons: *id053
+            neurons: 4
+            output_neuron: 3
+            rule_status:
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            rules: *id054
+            synapses: 3
+          2:
+            chrom_fitness: 100
+            init_config: *id055
+            input_neurons: *id056
+            neurons: 4
+            output_neuron: 3
+            rule_status:
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            rules: *id057
+            synapses: 3
+          3:
+            chrom_fitness: 100
+            init_config: *id058
+            input_neurons: *id059
+            neurons: 4
+            output_neuron: 3
+            rule_status:
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            rules: *id060
+            synapses: 3
+          4:
+            chrom_fitness: 100
+            init_config: *id061
+            input_neurons: *id062
+            neurons: 4
+            output_neuron: 3
+            rule_status:
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            rules: *id063
+            synapses: 3
+          5:
+            chrom_fitness: 82
+            init_config:
+            - 0
+            - 0
+            - 0
+            - 0
+            input_neurons:
+            - 0
+            - 1
+            neurons: 4
+            output_neuron: 3
+            rule_status:
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            rules:
+            - - 0
+              - 2
+              - &id073
+                - 2
+                - 0
+              - 2
+              - 1
+              - 0
+            - - 0
+              - 2
+              - &id076
+                - 1
+                - 0
+              - 1
+              - 1
+              - 0
+            - - 1
+              - 2
+              - *id073
+              - 2
+              - 1
+              - 0
+            - - 1
+              - 2
+              - &id074
+                - 1
+                - 0
+              - 1
+              - 1
+              - 0
+            - - 2
+              - 3
+              - *id073
+              - 2
+              - 1
+              - 0
+            synapses: 3
+          6:
+            chrom_fitness: 100
+            init_config:
+            - 0
+            - 0
+            - 0
+            - 0
+            input_neurons:
+            - 0
+            - 1
+            neurons: 4
+            output_neuron: 3
+            rule_status:
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            rules:
+            - - 0
+              - 2
+              - &id075
+                - 2
+                - 0
+              - 2
+              - 1
+              - 0
+            - - 0
+              - 2
+              - *id074
+              - 1
+              - 1
+              - 0
+            - - 1
+              - 2
+              - *id075
+              - 2
+              - 1
+              - 0
+            - - 1
+              - 2
+              - *id076
+              - 1
+              - 1
+              - 0
+            - - 2
+              - 3
+              - *id075
+              - 2
+              - 1
+              - 0
+            - - 2
+              - 3
+              - *id074
+              - 1
+              - 0
+              - 0
+            synapses: 3
+          7:
+            chrom_fitness: 82
+            init_config:
+            - 0
+            - 0
+            - 0
+            - 0
+            input_neurons:
+            - 0
+            - 1
+            neurons: 4
+            output_neuron: 3
+            rule_status:
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            rules:
+            - - 0
+              - 2
+              - &id077
+                - 2
+                - 0
+              - 2
+              - 1
+              - 0
+            - - 0
+              - 2
+              - &id078
+                - 1
+                - 0
+              - 1
+              - 1
+              - 0
+            - - 1
+              - 2
+              - *id077
+              - 2
+              - 1
+              - 0
+            - - 1
+              - 2
+              - *id078
+              - 1
+              - 1
+              - 0
+            - - 2
+              - 3
+              - *id077
+              - 2
+              - 1
+              - 0
+            synapses: 3
+          8:
+            chrom_fitness: 100
+            init_config:
+            - 0
+            - 0
+            - 0
+            - 0
+            input_neurons:
+            - 0
+            - 1
+            neurons: 4
+            output_neuron: 3
+            rule_status:
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            rules:
+            - - 2
+              - 3
+              - *id078
+              - 1
+              - 0
+              - 0
+            - - 0
+              - 2
+              - &id079
+                - 1
+                - 0
+              - 1
+              - 1
+              - 0
+            - - 1
+              - 2
+              - &id080
+                - 2
+                - 0
+              - 2
+              - 1
+              - 0
+            - - 1
+              - 2
+              - *id079
+              - 1
+              - 1
+              - 0
+            - - 2
+              - 3
+              - *id080
+              - 2
+              - 1
+              - 0
+            synapses: 3
+          9:
+            chrom_fitness: 86
+            init_config:
+            - 0
+            - 0
+            - 0
+            - 0
+            input_neurons:
+            - 0
+            - 1
+            neurons: 4
+            output_neuron: 3
+            rule_status:
+            - -1
+            - -1
+            - -1
+            - -1
+            rules:
+            - - 0
+              - 2
+              - &id081
+                - 2
+                - 0
+              - 2
+              - 1
+              - 0
+            - - 0
+              - 2
+              - - 1
+                - 0
+              - 1
+              - 1
+              - 0
+            - - 1
+              - 2
+              - *id081
+              - 2
+              - 1
+              - 0
+            - - 2
+              - 3
+              - *id081
+              - 2
+              - 1
+              - 0
+            synapses: 3
+      3:
+        best_chromosome_indexes:
+        - 0
+        - 1
+        - 2
+        - 3
+        - 4
+        - 5
+        - 8
+        - 9
+        best_fitness_result: 100
+        rssnp_chromosomes:
+          0:
+            chrom_fitness: 100
+            init_config: *id049
+            input_neurons: *id050
+            neurons: 4
+            output_neuron: 3
+            rule_status:
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            rules: *id051
+            synapses: 3
+          1:
+            chrom_fitness: 100
+            init_config: *id052
+            input_neurons: *id053
+            neurons: 4
+            output_neuron: 3
+            rule_status:
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            rules: *id054
+            synapses: 3
+          2:
+            chrom_fitness: 100
+            init_config: *id055
+            input_neurons: *id056
+            neurons: 4
+            output_neuron: 3
+            rule_status:
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            rules: *id057
+            synapses: 3
+          3:
+            chrom_fitness: 100
+            init_config: *id058
+            input_neurons: *id059
+            neurons: 4
+            output_neuron: 3
+            rule_status:
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            rules: *id060
+            synapses: 3
+          4:
+            chrom_fitness: 100
+            init_config: *id061
+            input_neurons: *id062
+            neurons: 4
+            output_neuron: 3
+            rule_status:
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            rules: *id063
+            synapses: 3
+          5:
+            chrom_fitness: 100
+            init_config:
+            - 0
+            - 0
+            - 0
+            - 0
+            input_neurons:
+            - 0
+            - 1
+            neurons: 4
+            output_neuron: 3
+            rule_status:
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            rules:
+            - - 1
+              - 2
+              - &id084
+                - 1
+                - 0
+              - 1
+              - 1
+              - 0
+            - - 0
+              - 2
+              - &id083
+                - 1
+                - 0
+              - 1
+              - 1
+              - 0
+            - - 1
+              - 2
+              - &id082
+                - 2
+                - 0
+              - 2
+              - 1
+              - 0
+            - - 2
+              - 3
+              - *id082
+              - 2
+              - 1
+              - 0
+            - - 2
+              - 3
+              - *id083
+              - 1
+              - 0
+              - 0
+            synapses: 3
+          6:
+            chrom_fitness: 85
+            init_config:
+            - 0
+            - 0
+            - 0
+            - 0
+            input_neurons:
+            - 0
+            - 1
+            neurons: 4
+            output_neuron: 3
+            rule_status:
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            rules:
+            - - 2
+              - 3
+              - - 1
+                - 0
+              - 1
+              - 0
+              - 0
+            - - 0
+              - 2
+              - *id084
+              - 1
+              - 1
+              - 0
+            - - 1
+              - 2
+              - &id085
+                - 2
+                - 0
+              - 2
+              - 1
+              - 0
+            - - 0
+              - 2
+              - *id082
+              - 2
+              - 1
+              - 0
+            - - 2
+              - 3
+              - *id085
+              - 2
+              - 1
+              - 0
+            synapses: 3
+          7:
+            chrom_fitness: 85
+            init_config:
+            - 0
+            - 0
+            - 0
+            - 0
+            input_neurons:
+            - 0
+            - 1
+            neurons: 4
+            output_neuron: 3
+            rule_status:
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            rules:
+            - - 2
+              - 3
+              - - 1
+                - 0
+              - 1
+              - 0
+              - 0
+            - - 0
+              - 2
+              - &id087
+                - 1
+                - 0
+              - 1
+              - 1
+              - 0
+            - - 1
+              - 2
+              - &id086
+                - 2
+                - 0
+              - 2
+              - 1
+              - 0
+            - - 0
+              - 2
+              - &id088
+                - 2
+                - 0
+              - 2
+              - 1
+              - 0
+            - - 2
+              - 3
+              - *id086
+              - 2
+              - 1
+              - 0
+            synapses: 3
+          8:
+            chrom_fitness: 100
+            init_config:
+            - 0
+            - 0
+            - 0
+            - 0
+            input_neurons:
+            - 0
+            - 1
+            neurons: 4
+            output_neuron: 3
+            rule_status:
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            rules:
+            - - 1
+              - 2
+              - *id087
+              - 1
+              - 1
+              - 0
+            - - 0
+              - 2
+              - &id089
+                - 1
+                - 0
+              - 1
+              - 1
+              - 0
+            - - 1
+              - 2
+              - *id088
+              - 2
+              - 1
+              - 0
+            - - 2
+              - 3
+              - *id088
+              - 2
+              - 1
+              - 0
+            - - 2
+              - 3
+              - *id089
+              - 1
+              - 0
+              - 0
+            synapses: 3
+          9:
+            chrom_fitness: 100
+            init_config:
+            - 0
+            - 0
+            - 0
+            - 0
+            input_neurons:
+            - 0
+            - 1
+            neurons: 4
+            output_neuron: 3
+            rule_status:
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            rules:
+            - - 1
+              - 2
+              - - 1
+                - 0
+              - 1
+              - 1
+              - 0
+            - - 0
+              - 2
+              - &id091
+                - 1
+                - 0
+              - 1
+              - 1
+              - 0
+            - - 1
+              - 2
+              - &id090
+                - 2
+                - 0
+              - 2
+              - 1
+              - 0
+            - - 2
+              - 3
+              - *id090
+              - 2
+              - 1
+              - 0
+            - - 2
+              - 3
+              - *id091
+              - 1
+              - 0
+              - 0
+            synapses: 3
+      4:
+        best_chromosome_indexes:
+        - 0
+        - 1
+        - 2
+        - 3
+        - 4
+        - 5
+        - 6
+        - 7
+        best_fitness_result: 100
+        rssnp_chromosomes:
+          0:
+            chrom_fitness: 100
+            init_config: *id049
+            input_neurons: *id050
+            neurons: 4
+            output_neuron: 3
+            rule_status:
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            rules: *id051
+            synapses: 3
+          1:
+            chrom_fitness: 100
+            init_config: *id052
+            input_neurons: *id053
+            neurons: 4
+            output_neuron: 3
+            rule_status:
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            rules: *id054
+            synapses: 3
+          2:
+            chrom_fitness: 100
+            init_config: *id055
+            input_neurons: *id056
+            neurons: 4
+            output_neuron: 3
+            rule_status:
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            rules: *id057
+            synapses: 3
+          3:
+            chrom_fitness: 100
+            init_config: *id058
+            input_neurons: *id059
+            neurons: 4
+            output_neuron: 3
+            rule_status:
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            rules: *id060
+            synapses: 3
+          4:
+            chrom_fitness: 100
+            init_config: *id061
+            input_neurons: *id062
+            neurons: 4
+            output_neuron: 3
+            rule_status:
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            rules: *id063
+            synapses: 3
+          5:
+            chrom_fitness: 100
+            init_config:
+            - 0
+            - 0
+            - 0
+            - 0
+            input_neurons:
+            - 0
+            - 1
+            neurons: 4
+            output_neuron: 3
+            rule_status:
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            rules:
+            - - 1
+              - 2
+              - &id093
+                - 2
+                - 0
+              - 2
+              - 1
+              - 0
+            - - 0
+              - 2
+              - &id092
+                - 1
+                - 0
+              - 1
+              - 1
+              - 0
+            - - 1
+              - 2
+              - *id092
+              - 1
+              - 1
+              - 0
+            - - 2
+              - 3
+              - - 2
+                - 0
+              - 2
+              - 1
+              - 0
+            - - 2
+              - 3
+              - *id092
+              - 1
+              - 0
+              - 0
+            synapses: 3
+          6:
+            chrom_fitness: 100
+            init_config:
+            - 0
+            - 0
+            - 0
+            - 0
+            input_neurons:
+            - 0
+            - 1
+            neurons: 4
+            output_neuron: 3
+            rule_status:
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            rules:
+            - - 0
+              - 2
+              - *id093
+              - 2
+              - 1
+              - 0
+            - - 0
+              - 2
+              - &id094
+                - 1
+                - 0
+              - 1
+              - 1
+              - 0
+            - - 1
+              - 2
+              - *id094
+              - 1
+              - 1
+              - 0
+            - - 2
+              - 3
+              - *id093
+              - 2
+              - 1
+              - 0
+            - - 2
+              - 3
+              - *id094
+              - 1
+              - 0
+              - 0
+            synapses: 3
+          7:
+            chrom_fitness: 100
+            init_config:
+            - 0
+            - 0
+            - 0
+            - 0
+            input_neurons:
+            - 0
+            - 1
+            neurons: 4
+            output_neuron: 3
+            rule_status:
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            rules:
+            - - 0
+              - 2
+              - &id095
+                - 2
+                - 0
+              - 2
+              - 1
+              - 0
+            - - 0
+              - 2
+              - &id096
+                - 1
+                - 0
+              - 1
+              - 1
+              - 0
+            - - 1
+              - 2
+              - &id097
+                - 1
+                - 0
+              - 1
+              - 1
+              - 0
+            - - 2
+              - 3
+              - *id095
+              - 2
+              - 1
+              - 0
+            - - 2
+              - 3
+              - *id096
+              - 1
+              - 0
+              - 0
+            synapses: 3
+          8:
+            chrom_fitness: 85
+            init_config:
+            - 0
+            - 0
+            - 0
+            - 0
+            input_neurons:
+            - 0
+            - 1
+            neurons: 4
+            output_neuron: 3
+            rule_status:
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            rules:
+            - - 0
+              - 2
+              - &id098
+                - 2
+                - 0
+              - 2
+              - 1
+              - 0
+            - - 0
+              - 2
+              - *id097
+              - 1
+              - 1
+              - 0
+            - - 1
+              - 2
+              - *id098
+              - 2
+              - 1
+              - 0
+            - - 2
+              - 3
+              - *id098
+              - 2
+              - 1
+              - 0
+            - - 2
+              - 3
+              - *id097
+              - 1
+              - 0
+              - 0
+            synapses: 3
+          9:
+            chrom_fitness: 74
+            init_config:
+            - 0
+            - 0
+            - 0
+            - 0
+            input_neurons:
+            - 0
+            - 1
+            neurons: 4
+            output_neuron: 3
+            rule_status:
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            rules:
+            - - 0
+              - 2
+              - &id099
+                - 2
+                - 0
+              - 2
+              - 1
+              - 0
+            - - 0
+              - 2
+              - &id100
+                - 1
+                - 0
+              - 1
+              - 1
+              - 0
+            - - 1
+              - 2
+              - *id099
+              - 2
+              - 1
+              - 0
+            - - 1
+              - 2
+              - *id100
+              - 1
+              - 1
+              - 0
+            - - 2
+              - 3
+              - *id100
+              - 1
+              - 0
+              - 0
+            synapses: 3
+      5:
+        best_chromosome_indexes:
+        - 0
+        - 1
+        - 2
+        - 3
+        - 4
+        - 6
+        - 8
+        - 9
+        best_fitness_result: 100
+        rssnp_chromosomes:
+          0:
+            chrom_fitness: 100
+            init_config: *id049
+            input_neurons: *id050
+            neurons: 4
+            output_neuron: 3
+            rule_status:
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            rules: *id051
+            synapses: 3
+          1:
+            chrom_fitness: 100
+            init_config: *id052
+            input_neurons: *id053
+            neurons: 4
+            output_neuron: 3
+            rule_status:
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            rules: *id054
+            synapses: 3
+          2:
+            chrom_fitness: 100
+            init_config: *id055
+            input_neurons: *id056
+            neurons: 4
+            output_neuron: 3
+            rule_status:
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            rules: *id057
+            synapses: 3
+          3:
+            chrom_fitness: 100
+            init_config: *id058
+            input_neurons: *id059
+            neurons: 4
+            output_neuron: 3
+            rule_status:
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            rules: *id060
+            synapses: 3
+          4:
+            chrom_fitness: 100
+            init_config: *id061
+            input_neurons: *id062
+            neurons: 4
+            output_neuron: 3
+            rule_status:
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            rules: *id063
+            synapses: 3
+          5:
+            chrom_fitness: 85
+            init_config:
+            - 0
+            - 0
+            - 0
+            - 0
+            input_neurons:
+            - 0
+            - 1
+            neurons: 4
+            output_neuron: 3
+            rule_status:
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            rules:
+            - - 0
+              - 2
+              - &id101
+                - 2
+                - 0
+              - 2
+              - 1
+              - 0
+            - - 1
+              - 2
+              - - 2
+                - 0
+              - 2
+              - 1
+              - 0
+            - - 1
+              - 2
+              - &id102
+                - 1
+                - 0
+              - 1
+              - 1
+              - 0
+            - - 2
+              - 3
+              - *id101
+              - 2
+              - 1
+              - 0
+            - - 2
+              - 3
+              - *id102
+              - 1
+              - 0
+              - 0
+            synapses: 3
+          6:
+            chrom_fitness: 100
+            init_config:
+            - 0
+            - 0
+            - 0
+            - 0
+            input_neurons:
+            - 0
+            - 1
+            neurons: 4
+            output_neuron: 3
+            rule_status:
+            - -1
+            - -1
+            - -1
+            - -1
+            rules:
+            - - 0
+              - 2
+              - *id102
+              - 1
+              - 1
+              - 0
+            - - 1
+              - 2
+              - &id103
+                - 1
+                - 0
+              - 1
+              - 1
+              - 0
+            - - 2
+              - 3
+              - - 2
+                - 0
+              - 2
+              - 1
+              - 0
+            - - 2
+              - 3
+              - *id103
+              - 1
+              - 0
+              - 0
+            synapses: 3
+          7:
+            chrom_fitness: 82
+            init_config:
+            - 0
+            - 0
+            - 0
+            - 0
+            input_neurons:
+            - 0
+            - 1
+            neurons: 4
+            output_neuron: 3
+            rule_status:
+            - -1
+            - -1
+            - -1
+            - -1
+            rules:
+            - - 1
+              - 2
+              - - 2
+                - 0
+              - 2
+              - 1
+              - 0
+            - - 0
+              - 2
+              - &id104
+                - 1
+                - 0
+              - 1
+              - 1
+              - 0
+            - - 1
+              - 2
+              - *id104
+              - 1
+              - 1
+              - 0
+            - - 2
+              - 3
+              - - 2
+                - 0
+              - 2
+              - 1
+              - 0
+            synapses: 3
+          8:
+            chrom_fitness: 100
+            init_config:
+            - 0
+            - 0
+            - 0
+            - 0
+            input_neurons:
+            - 0
+            - 1
+            neurons: 4
+            output_neuron: 3
+            rule_status:
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            rules:
+            - - 0
+              - 2
+              - &id106
+                - 2
+                - 0
+              - 2
+              - 1
+              - 0
+            - - 0
+              - 2
+              - &id105
+                - 1
+                - 0
+              - 1
+              - 1
+              - 0
+            - - 2
+              - 3
+              - *id104
+              - 1
+              - 0
+              - 0
+            - - 1
+              - 2
+              - *id105
+              - 1
+              - 1
+              - 0
+            - - 2
+              - 3
+              - *id106
+              - 2
+              - 1
+              - 0
+            synapses: 3
+          9:
+            chrom_fitness: 100
+            init_config:
+            - 0
+            - 0
+            - 0
+            - 0
+            input_neurons:
+            - 0
+            - 1
+            neurons: 4
+            output_neuron: 3
+            rule_status:
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            rules:
+            - - 0
+              - 2
+              - - 2
+                - 0
+              - 2
+              - 1
+              - 0
+            - - 0
+              - 2
+              - &id107
+                - 1
+                - 0
+              - 1
+              - 1
+              - 0
+            - - 2
+              - 3
+              - - 2
+                - 0
+              - 2
+              - 1
+              - 0
+            - - 1
+              - 2
+              - *id107
+              - 1
+              - 1
+              - 0
+            - - 2
+              - 3
+              - *id107
+              - 1
+              - 0
+              - 0
+            synapses: 3
+      6:
+        best_chromosome_indexes:
+        - 0
+        - 1
+        - 2
+        - 3
+        - 4
+        - 7
+        - 9
+        best_fitness_result: 100
+        rssnp_chromosomes:
+          0:
+            chrom_fitness: 100
+            init_config: *id049
+            input_neurons: *id050
+            neurons: 4
+            output_neuron: 3
+            rule_status:
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            rules: *id051
+            synapses: 3
+          1:
+            chrom_fitness: 100
+            init_config: *id052
+            input_neurons: *id053
+            neurons: 4
+            output_neuron: 3
+            rule_status:
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            rules: *id054
+            synapses: 3
+          2:
+            chrom_fitness: 100
+            init_config: *id055
+            input_neurons: *id056
+            neurons: 4
+            output_neuron: 3
+            rule_status:
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            rules: *id057
+            synapses: 3
+          3:
+            chrom_fitness: 100
+            init_config: *id058
+            input_neurons: *id059
+            neurons: 4
+            output_neuron: 3
+            rule_status:
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            rules: *id060
+            synapses: 3
+          4:
+            chrom_fitness: 100
+            init_config: *id061
+            input_neurons: *id062
+            neurons: 4
+            output_neuron: 3
+            rule_status:
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            rules: *id063
+            synapses: 3
+          5:
+            chrom_fitness: 85
+            init_config:
+            - 0
+            - 0
+            - 0
+            - 0
+            input_neurons:
+            - 0
+            - 1
+            neurons: 4
+            output_neuron: 3
+            rule_status:
+            - -1
+            - -1
+            - -1
+            - -1
+            rules:
+            - - 0
+              - 2
+              - - 2
+                - 0
+              - 2
+              - 1
+              - 0
+            - - 2
+              - 3
+              - &id108
+                - 2
+                - 0
+              - 2
+              - 1
+              - 0
+            - - 2
+              - 3
+              - - 1
+                - 0
+              - 1
+              - 0
+              - 0
+            - - 1
+              - 2
+              - - 1
+                - 0
+              - 1
+              - 1
+              - 0
+            synapses: 3
+          6:
+            chrom_fitness: 74
+            init_config:
+            - 0
+            - 0
+            - 0
+            - 0
+            input_neurons:
+            - 0
+            - 1
+            neurons: 4
+            output_neuron: 3
+            rule_status:
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            rules:
+            - - 0
+              - 2
+              - *id108
+              - 2
+              - 1
+              - 0
+            - - 0
+              - 2
+              - &id109
+                - 1
+                - 0
+              - 1
+              - 1
+              - 0
+            - - 1
+              - 2
+              - *id108
+              - 2
+              - 1
+              - 0
+            - - 1
+              - 2
+              - *id109
+              - 1
+              - 1
+              - 0
+            - - 2
+              - 3
+              - *id109
+              - 1
+              - 0
+              - 0
+            synapses: 3
+          7:
+            chrom_fitness: 100
+            init_config:
+            - 0
+            - 0
+            - 0
+            - 0
+            input_neurons:
+            - 0
+            - 1
+            neurons: 4
+            output_neuron: 3
+            rule_status:
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            rules:
+            - - 0
+              - 2
+              - &id111
+                - 2
+                - 0
+              - 2
+              - 1
+              - 0
+            - - 0
+              - 2
+              - &id110
+                - 1
+                - 0
+              - 1
+              - 1
+              - 0
+            - - 2
+              - 3
+              - - 1
+                - 0
+              - 1
+              - 0
+              - 0
+            - - 1
+              - 2
+              - *id110
+              - 1
+              - 1
+              - 0
+            - - 2
+              - 3
+              - *id111
+              - 2
+              - 1
+              - 0
+            synapses: 3
+          8:
+            chrom_fitness: 82
+            init_config:
+            - 0
+            - 0
+            - 0
+            - 0
+            input_neurons:
+            - 0
+            - 1
+            neurons: 4
+            output_neuron: 3
+            rule_status:
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            rules:
+            - - 0
+              - 2
+              - &id113
+                - 2
+                - 0
+              - 2
+              - 1
+              - 0
+            - - 0
+              - 2
+              - &id112
+                - 1
+                - 0
+              - 1
+              - 1
+              - 0
+            - - 1
+              - 2
+              - *id111
+              - 2
+              - 1
+              - 0
+            - - 1
+              - 2
+              - *id112
+              - 1
+              - 1
+              - 0
+            - - 2
+              - 3
+              - *id113
+              - 2
+              - 1
+              - 0
+            synapses: 3
+          9:
+            chrom_fitness: 100
+            init_config:
+            - 0
+            - 0
+            - 0
+            - 0
+            input_neurons:
+            - 0
+            - 1
+            neurons: 4
+            output_neuron: 3
+            rule_status:
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            rules:
+            - - 0
+              - 2
+              - - 2
+                - 0
+              - 2
+              - 1
+              - 0
+            - - 0
+              - 2
+              - &id114
+                - 1
+                - 0
+              - 1
+              - 1
+              - 0
+            - - 2
+              - 3
+              - - 1
+                - 0
+              - 1
+              - 0
+              - 0
+            - - 1
+              - 2
+              - *id114
+              - 1
+              - 1
+              - 0
+            - - 2
+              - 3
+              - - 2
+                - 0
+              - 2
+              - 1
+              - 0
+            synapses: 3
+      7:
+        best_chromosome_indexes:
+        - 0
+        - 1
+        - 2
+        - 3
+        - 4
+        - 6
+        best_fitness_result: 100
+        rssnp_chromosomes:
+          0:
+            chrom_fitness: 100
+            init_config: *id049
+            input_neurons: *id050
+            neurons: 4
+            output_neuron: 3
+            rule_status:
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            rules: *id051
+            synapses: 3
+          1:
+            chrom_fitness: 100
+            init_config: *id052
+            input_neurons: *id053
+            neurons: 4
+            output_neuron: 3
+            rule_status:
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            rules: *id054
+            synapses: 3
+          2:
+            chrom_fitness: 100
+            init_config: *id055
+            input_neurons: *id056
+            neurons: 4
+            output_neuron: 3
+            rule_status:
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            rules: *id057
+            synapses: 3
+          3:
+            chrom_fitness: 100
+            init_config: *id058
+            input_neurons: *id059
+            neurons: 4
+            output_neuron: 3
+            rule_status:
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            rules: *id060
+            synapses: 3
+          4:
+            chrom_fitness: 100
+            init_config: *id061
+            input_neurons: *id062
+            neurons: 4
+            output_neuron: 3
+            rule_status:
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            rules: *id063
+            synapses: 3
+          5:
+            chrom_fitness: 74
+            init_config:
+            - 0
+            - 0
+            - 0
+            - 0
+            input_neurons:
+            - 0
+            - 1
+            neurons: 4
+            output_neuron: 3
+            rule_status:
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            rules:
+            - - 0
+              - 2
+              - &id115
+                - 2
+                - 0
+              - 2
+              - 1
+              - 0
+            - - 0
+              - 2
+              - &id116
+                - 1
+                - 0
+              - 1
+              - 1
+              - 0
+            - - 1
+              - 2
+              - *id115
+              - 2
+              - 1
+              - 0
+            - - 1
+              - 2
+              - &id117
+                - 1
+                - 0
+              - 1
+              - 1
+              - 0
+            - - 2
+              - 3
+              - *id116
+              - 1
+              - 0
+              - 0
+            synapses: 3
+          6:
+            chrom_fitness: 100
+            init_config:
+            - 0
+            - 0
+            - 0
+            - 0
+            input_neurons:
+            - 0
+            - 1
+            neurons: 4
+            output_neuron: 3
+            rule_status:
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            rules:
+            - - 0
+              - 2
+              - &id118
+                - 2
+                - 0
+              - 2
+              - 1
+              - 0
+            - - 0
+              - 2
+              - *id117
+              - 1
+              - 1
+              - 0
+            - - 1
+              - 2
+              - *id118
+              - 2
+              - 1
+              - 0
+            - - 1
+              - 2
+              - *id116
+              - 1
+              - 1
+              - 0
+            - - 2
+              - 3
+              - *id118
+              - 2
+              - 1
+              - 0
+            - - 2
+              - 3
+              - *id117
+              - 1
+              - 0
+              - 0
+            synapses: 3
+          7:
+            chrom_fitness: 74
+            init_config:
+            - 0
+            - 0
+            - 0
+            - 0
+            input_neurons:
+            - 0
+            - 1
+            neurons: 4
+            output_neuron: 3
+            rule_status:
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            rules:
+            - - 0
+              - 2
+              - &id119
+                - 2
+                - 0
+              - 2
+              - 1
+              - 0
+            - - 0
+              - 2
+              - &id120
+                - 1
+                - 0
+              - 1
+              - 1
+              - 0
+            - - 1
+              - 2
+              - *id119
+              - 2
+              - 1
+              - 0
+            - - 1
+              - 2
+              - *id120
+              - 1
+              - 1
+              - 0
+            - - 2
+              - 3
+              - &id121
+                - 1
+                - 0
+              - 1
+              - 0
+              - 0
+            synapses: 3
+          8:
+            chrom_fitness: 82
+            init_config:
+            - 0
+            - 0
+            - 0
+            - 0
+            input_neurons:
+            - 0
+            - 1
+            neurons: 4
+            output_neuron: 3
+            rule_status:
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            rules:
+            - - 0
+              - 2
+              - &id122
+                - 2
+                - 0
+              - 2
+              - 1
+              - 0
+            - - 0
+              - 2
+              - *id121
+              - 1
+              - 1
+              - 0
+            - - 1
+              - 2
+              - *id122
+              - 2
+              - 1
+              - 0
+            - - 1
+              - 2
+              - *id121
+              - 1
+              - 1
+              - 0
+            - - 2
+              - 3
+              - *id119
+              - 2
+              - 1
+              - 0
+            synapses: 3
+          9:
+            chrom_fitness: 74
+            init_config:
+            - 0
+            - 0
+            - 0
+            - 0
+            input_neurons:
+            - 0
+            - 1
+            neurons: 4
+            output_neuron: 3
+            rule_status:
+            - -1
+            - -1
+            - -1
+            - -1
+            rules:
+            - - 0
+              - 2
+              - &id123
+                - 2
+                - 0
+              - 2
+              - 1
+              - 0
+            - - 2
+              - 3
+              - - 1
+                - 0
+              - 1
+              - 0
+              - 0
+            - - 1
+              - 2
+              - *id123
+              - 2
+              - 1
+              - 0
+            - - 1
+              - 2
+              - - 1
+                - 0
+              - 1
+              - 1
+              - 0
+            synapses: 3
+    max_fitness_in_run: 100
+    mutation_rate: 100
+    population_size: 10
+    selection_func: 1
+  3:
+    fitness_function: 1
+    generations:
+      0:
+        best_chromosome_indexes:
+        - 0
+        - 1
+        - 2
+        - 3
+        - 4
+        - 5
+        - 6
+        - 7
+        - 8
+        - 9
+        best_fitness_result: 100
+        rssnp_chromosomes:
+          0:
+            chrom_fitness: 100
+            init_config: &id144
+            - 0
+            - 0
+            - 0
+            - 0
+            input_neurons: &id145
+            - 0
+            - 1
+            neurons: 4
+            output_neuron: 3
+            rule_status:
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            rules: &id146
+            - - 0
+              - 2
+              - &id124
+                - 2
+                - 0
+              - 2
+              - 1
+              - 0
+            - - 0
+              - 2
+              - &id125
+                - 1
+                - 0
+              - 1
+              - 1
+              - 0
+            - - 1
+              - 2
+              - *id124
+              - 2
+              - 1
+              - 0
+            - - 1
+              - 2
+              - *id125
+              - 1
+              - 1
+              - 0
+            - - 2
+              - 3
+              - *id124
+              - 2
+              - 1
+              - 0
+            - - 2
+              - 3
+              - *id125
+              - 1
+              - 0
+              - 0
+            synapses: 3
+          1:
+            chrom_fitness: 100
+            init_config: &id147
+            - 0
+            - 0
+            - 0
+            - 0
+            input_neurons: &id148
+            - 0
+            - 1
+            neurons: 4
+            output_neuron: 3
+            rule_status:
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            rules: &id149
+            - - 0
+              - 2
+              - &id126
+                - 2
+                - 0
+              - 2
+              - 1
+              - 0
+            - - 0
+              - 2
+              - &id127
+                - 1
+                - 0
+              - 1
+              - 1
+              - 0
+            - - 1
+              - 2
+              - *id126
+              - 2
+              - 1
+              - 0
+            - - 1
+              - 2
+              - *id127
+              - 1
+              - 1
+              - 0
+            - - 2
+              - 3
+              - *id126
+              - 2
+              - 1
+              - 0
+            - - 2
+              - 3
+              - *id127
+              - 1
+              - 0
+              - 0
+            synapses: 3
+          2:
+            chrom_fitness: 100
+            init_config: &id150
+            - 0
+            - 0
+            - 0
+            - 0
+            input_neurons: &id151
+            - 0
+            - 1
+            neurons: 4
+            output_neuron: 3
+            rule_status:
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            rules: &id152
+            - - 0
+              - 2
+              - &id128
+                - 2
+                - 0
+              - 2
+              - 1
+              - 0
+            - - 0
+              - 2
+              - &id129
+                - 1
+                - 0
+              - 1
+              - 1
+              - 0
+            - - 1
+              - 2
+              - *id128
+              - 2
+              - 1
+              - 0
+            - - 1
+              - 2
+              - *id129
+              - 1
+              - 1
+              - 0
+            - - 2
+              - 3
+              - *id128
+              - 2
+              - 1
+              - 0
+            - - 2
+              - 3
+              - *id129
+              - 1
+              - 0
+              - 0
+            synapses: 3
+          3:
+            chrom_fitness: 100
+            init_config: &id153
+            - 0
+            - 0
+            - 0
+            - 0
+            input_neurons: &id154
+            - 0
+            - 1
+            neurons: 4
+            output_neuron: 3
+            rule_status:
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            rules: &id155
+            - - 0
+              - 2
+              - &id130
+                - 2
+                - 0
+              - 2
+              - 1
+              - 0
+            - - 0
+              - 2
+              - &id131
+                - 1
+                - 0
+              - 1
+              - 1
+              - 0
+            - - 1
+              - 2
+              - *id130
+              - 2
+              - 1
+              - 0
+            - - 1
+              - 2
+              - *id131
+              - 1
+              - 1
+              - 0
+            - - 2
+              - 3
+              - *id130
+              - 2
+              - 1
+              - 0
+            - - 2
+              - 3
+              - *id131
+              - 1
+              - 0
+              - 0
+            synapses: 3
+          4:
+            chrom_fitness: 100
+            init_config: &id156
+            - 0
+            - 0
+            - 0
+            - 0
+            input_neurons: &id157
+            - 0
+            - 1
+            neurons: 4
+            output_neuron: 3
+            rule_status:
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            rules: &id158
+            - - 0
+              - 2
+              - &id132
+                - 2
+                - 0
+              - 2
+              - 1
+              - 0
+            - - 0
+              - 2
+              - &id133
+                - 1
+                - 0
+              - 1
+              - 1
+              - 0
+            - - 1
+              - 2
+              - *id132
+              - 2
+              - 1
+              - 0
+            - - 1
+              - 2
+              - *id133
+              - 1
+              - 1
+              - 0
+            - - 2
+              - 3
+              - *id132
+              - 2
+              - 1
+              - 0
+            - - 2
+              - 3
+              - *id133
+              - 1
+              - 0
+              - 0
+            synapses: 3
+          5:
+            chrom_fitness: 100
+            init_config:
+            - 0
+            - 0
+            - 0
+            - 0
+            input_neurons:
+            - 0
+            - 1
+            neurons: 4
+            output_neuron: 3
+            rule_status:
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            rules:
+            - - 0
+              - 2
+              - &id134
+                - 2
+                - 0
+              - 2
+              - 1
+              - 0
+            - - 0
+              - 2
+              - &id135
+                - 1
+                - 0
+              - 1
+              - 1
+              - 0
+            - - 1
+              - 2
+              - *id134
+              - 2
+              - 1
+              - 0
+            - - 1
+              - 2
+              - *id135
+              - 1
+              - 1
+              - 0
+            - - 2
+              - 3
+              - *id134
+              - 2
+              - 1
+              - 0
+            - - 2
+              - 3
+              - *id135
+              - 1
+              - 0
+              - 0
+            synapses: 3
+          6:
+            chrom_fitness: 100
+            init_config:
+            - 0
+            - 0
+            - 0
+            - 0
+            input_neurons:
+            - 0
+            - 1
+            neurons: 4
+            output_neuron: 3
+            rule_status:
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            rules:
+            - - 0
+              - 2
+              - &id136
+                - 2
+                - 0
+              - 2
+              - 1
+              - 0
+            - - 0
+              - 2
+              - &id137
+                - 1
+                - 0
+              - 1
+              - 1
+              - 0
+            - - 1
+              - 2
+              - *id136
+              - 2
+              - 1
+              - 0
+            - - 1
+              - 2
+              - *id137
+              - 1
+              - 1
+              - 0
+            - - 2
+              - 3
+              - *id136
+              - 2
+              - 1
+              - 0
+            - - 2
+              - 3
+              - *id137
+              - 1
+              - 0
+              - 0
+            synapses: 3
+          7:
+            chrom_fitness: 100
+            init_config:
+            - 0
+            - 0
+            - 0
+            - 0
+            input_neurons:
+            - 0
+            - 1
+            neurons: 4
+            output_neuron: 3
+            rule_status:
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            rules:
+            - - 0
+              - 2
+              - &id138
+                - 2
+                - 0
+              - 2
+              - 1
+              - 0
+            - - 0
+              - 2
+              - &id139
+                - 1
+                - 0
+              - 1
+              - 1
+              - 0
+            - - 1
+              - 2
+              - *id138
+              - 2
+              - 1
+              - 0
+            - - 1
+              - 2
+              - *id139
+              - 1
+              - 1
+              - 0
+            - - 2
+              - 3
+              - *id138
+              - 2
+              - 1
+              - 0
+            - - 2
+              - 3
+              - *id139
+              - 1
+              - 0
+              - 0
+            synapses: 3
+          8:
+            chrom_fitness: 100
+            init_config:
+            - 0
+            - 0
+            - 0
+            - 0
+            input_neurons:
+            - 0
+            - 1
+            neurons: 4
+            output_neuron: 3
+            rule_status:
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            rules:
+            - - 0
+              - 2
+              - &id140
+                - 2
+                - 0
+              - 2
+              - 1
+              - 0
+            - - 0
+              - 2
+              - &id141
+                - 1
+                - 0
+              - 1
+              - 1
+              - 0
+            - - 1
+              - 2
+              - *id140
+              - 2
+              - 1
+              - 0
+            - - 1
+              - 2
+              - *id141
+              - 1
+              - 1
+              - 0
+            - - 2
+              - 3
+              - *id140
+              - 2
+              - 1
+              - 0
+            - - 2
+              - 3
+              - *id141
+              - 1
+              - 0
+              - 0
+            synapses: 3
+          9:
+            chrom_fitness: 100
+            init_config:
+            - 0
+            - 0
+            - 0
+            - 0
+            input_neurons:
+            - 0
+            - 1
+            neurons: 4
+            output_neuron: 3
+            rule_status:
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            rules:
+            - - 0
+              - 2
+              - &id142
+                - 2
+                - 0
+              - 2
+              - 1
+              - 0
+            - - 0
+              - 2
+              - &id143
+                - 1
+                - 0
+              - 1
+              - 1
+              - 0
+            - - 1
+              - 2
+              - *id142
+              - 2
+              - 1
+              - 0
+            - - 1
+              - 2
+              - *id143
+              - 1
+              - 1
+              - 0
+            - - 2
+              - 3
+              - *id142
+              - 2
+              - 1
+              - 0
+            - - 2
+              - 3
+              - *id143
+              - 1
+              - 0
+              - 0
+            synapses: 3
+      1:
+        best_chromosome_indexes:
+        - 0
+        - 1
+        - 2
+        - 3
+        - 4
+        - 9
+        best_fitness_result: 100
+        rssnp_chromosomes:
+          0:
+            chrom_fitness: 100
+            init_config: *id144
+            input_neurons: *id145
+            neurons: 4
+            output_neuron: 3
+            rule_status:
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            rules: *id146
+            synapses: 3
+          1:
+            chrom_fitness: 100
+            init_config: *id147
+            input_neurons: *id148
+            neurons: 4
+            output_neuron: 3
+            rule_status:
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            rules: *id149
+            synapses: 3
+          2:
+            chrom_fitness: 100
+            init_config: *id150
+            input_neurons: *id151
+            neurons: 4
+            output_neuron: 3
+            rule_status:
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            rules: *id152
+            synapses: 3
+          3:
+            chrom_fitness: 100
+            init_config: *id153
+            input_neurons: *id154
+            neurons: 4
+            output_neuron: 3
+            rule_status:
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            rules: *id155
+            synapses: 3
+          4:
+            chrom_fitness: 100
+            init_config: *id156
+            input_neurons: *id157
+            neurons: 4
+            output_neuron: 3
+            rule_status:
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            rules: *id158
+            synapses: 3
+          5:
+            chrom_fitness: 85
+            init_config:
+            - 0
+            - 0
+            - 0
+            - 0
+            input_neurons:
+            - 0
+            - 1
+            neurons: 4
+            output_neuron: 3
+            rule_status:
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            rules:
+            - - 0
+              - 2
+              - &id159
+                - 2
+                - 0
+              - 2
+              - 1
+              - 0
+            - - 0
+              - 2
+              - &id160
+                - 1
+                - 0
+              - 1
+              - 1
+              - 0
+            - - 1
+              - 2
+              - *id159
+              - 2
+              - 1
+              - 0
+            - - 2
+              - 3
+              - *id159
+              - 2
+              - 1
+              - 0
+            - - 2
+              - 3
+              - *id160
+              - 1
+              - 0
+              - 0
+            synapses: 3
+          6:
+            chrom_fitness: 85
+            init_config:
+            - 0
+            - 0
+            - 0
+            - 0
+            input_neurons:
+            - 0
+            - 1
+            neurons: 4
+            output_neuron: 3
+            rule_status:
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            rules:
+            - - 0
+              - 2
+              - &id161
+                - 2
+                - 0
+              - 2
+              - 1
+              - 0
+            - - 1
+              - 2
+              - *id160
+              - 1
+              - 1
+              - 0
+            - - 1
+              - 2
+              - *id161
+              - 2
+              - 1
+              - 0
+            - - 2
+              - 3
+              - *id161
+              - 2
+              - 1
+              - 0
+            - - 2
+              - 3
+              - - 1
+                - 0
+              - 1
+              - 0
+              - 0
+            synapses: 3
+          7:
+            chrom_fitness: 82
+            init_config:
+            - 0
+            - 0
+            - 0
+            - 0
+            input_neurons:
+            - 0
+            - 1
+            neurons: 4
+            output_neuron: 3
+            rule_status:
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            rules:
+            - - 0
+              - 2
+              - &id162
+                - 2
+                - 0
+              - 2
+              - 1
+              - 0
+            - - 0
+              - 2
+              - &id163
+                - 1
+                - 0
+              - 1
+              - 1
+              - 0
+            - - 1
+              - 2
+              - *id162
+              - 2
+              - 1
+              - 0
+            - - 1
+              - 2
+              - *id163
+              - 1
+              - 1
+              - 0
+            - - 2
+              - 3
+              - *id162
+              - 2
+              - 1
+              - 0
+            synapses: 3
+          8:
+            chrom_fitness: 74
+            init_config:
+            - 0
+            - 0
+            - 0
+            - 0
+            input_neurons:
+            - 0
+            - 1
+            neurons: 4
+            output_neuron: 3
+            rule_status:
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            rules:
+            - - 0
+              - 2
+              - &id164
+                - 2
+                - 0
+              - 2
+              - 1
+              - 0
+            - - 0
+              - 2
+              - &id165
+                - 1
+                - 0
+              - 1
+              - 1
+              - 0
+            - - 1
+              - 2
+              - *id164
+              - 2
+              - 1
+              - 0
+            - - 1
+              - 2
+              - *id165
+              - 1
+              - 1
+              - 0
+            - - 2
+              - 3
+              - *id163
+              - 1
+              - 0
+              - 0
+            synapses: 3
+          9:
+            chrom_fitness: 100
+            init_config:
+            - 0
+            - 0
+            - 0
+            - 0
+            input_neurons:
+            - 0
+            - 1
+            neurons: 4
+            output_neuron: 3
+            rule_status:
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            rules:
+            - - 0
+              - 2
+              - &id166
+                - 2
+                - 0
+              - 2
+              - 1
+              - 0
+            - - 0
+              - 2
+              - &id167
+                - 1
+                - 0
+              - 1
+              - 1
+              - 0
+            - - 1
+              - 2
+              - *id166
+              - 2
+              - 1
+              - 0
+            - - 1
+              - 2
+              - - 1
+                - 0
+              - 1
+              - 1
+              - 0
+            - - 2
+              - 3
+              - *id166
+              - 2
+              - 1
+              - 0
+            - - 2
+              - 3
+              - *id167
+              - 1
+              - 0
+              - 0
+            synapses: 3
+      2:
+        best_chromosome_indexes:
+        - 0
+        - 1
+        - 2
+        - 3
+        - 4
+        - 5
+        - 8
+        best_fitness_result: 100
+        rssnp_chromosomes:
+          0:
+            chrom_fitness: 100
+            init_config: *id144
+            input_neurons: *id145
+            neurons: 4
+            output_neuron: 3
+            rule_status:
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            rules: *id146
+            synapses: 3
+          1:
+            chrom_fitness: 100
+            init_config: *id147
+            input_neurons: *id148
+            neurons: 4
+            output_neuron: 3
+            rule_status:
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            rules: *id149
+            synapses: 3
+          2:
+            chrom_fitness: 100
+            init_config: *id150
+            input_neurons: *id151
+            neurons: 4
+            output_neuron: 3
+            rule_status:
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            rules: *id152
+            synapses: 3
+          3:
+            chrom_fitness: 100
+            init_config: *id153
+            input_neurons: *id154
+            neurons: 4
+            output_neuron: 3
+            rule_status:
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            rules: *id155
+            synapses: 3
+          4:
+            chrom_fitness: 100
+            init_config: *id156
+            input_neurons: *id157
+            neurons: 4
+            output_neuron: 3
+            rule_status:
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            rules: *id158
+            synapses: 3
+          5:
+            chrom_fitness: 100
+            init_config:
+            - 0
+            - 0
+            - 0
+            - 0
+            input_neurons:
+            - 0
+            - 1
+            neurons: 4
+            output_neuron: 3
+            rule_status:
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            rules:
+            - - 0
+              - 2
+              - &id168
+                - 2
+                - 0
+              - 2
+              - 1
+              - 0
+            - - 0
+              - 2
+              - &id171
+                - 1
+                - 0
+              - 1
+              - 1
+              - 0
+            - - 1
+              - 2
+              - *id168
+              - 2
+              - 1
+              - 0
+            - - 1
+              - 2
+              - - 1
+                - 0
+              - 1
+              - 1
+              - 0
+            - - 2
+              - 3
+              - *id168
+              - 2
+              - 1
+              - 0
+            - - 2
+              - 3
+              - &id169
+                - 1
+                - 0
+              - 1
+              - 0
+              - 0
+            synapses: 3
+          6:
+            chrom_fitness: 82
+            init_config:
+            - 0
+            - 0
+            - 0
+            - 0
+            input_neurons:
+            - 0
+            - 1
+            neurons: 4
+            output_neuron: 3
+            rule_status:
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            rules:
+            - - 0
+              - 2
+              - &id170
+                - 2
+                - 0
+              - 2
+              - 1
+              - 0
+            - - 0
+              - 2
+              - *id169
+              - 1
+              - 1
+              - 0
+            - - 1
+              - 2
+              - *id170
+              - 2
+              - 1
+              - 0
+            - - 1
+              - 2
+              - *id171
+              - 1
+              - 1
+              - 0
+            - - 2
+              - 3
+              - *id170
+              - 2
+              - 1
+              - 0
+            synapses: 3
+          7:
+            chrom_fitness: 82
+            init_config:
+            - 0
+            - 0
+            - 0
+            - 0
+            input_neurons:
+            - 0
+            - 1
+            neurons: 4
+            output_neuron: 3
+            rule_status:
+            - -1
+            - -1
+            - -1
+            - -1
+            rules:
+            - - 1
+              - 2
+              - &id173
+                - 2
+                - 0
+              - 2
+              - 1
+              - 0
+            - - 0
+              - 2
+              - &id172
+                - 1
+                - 0
+              - 1
+              - 1
+              - 0
+            - - 1
+              - 2
+              - *id172
+              - 1
+              - 1
+              - 0
+            - - 2
+              - 3
+              - - 2
+                - 0
+              - 2
+              - 1
+              - 0
+            synapses: 3
+          8:
+            chrom_fitness: 100
+            init_config:
+            - 0
+            - 0
+            - 0
+            - 0
+            input_neurons:
+            - 0
+            - 1
+            neurons: 4
+            output_neuron: 3
+            rule_status:
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            rules:
+            - - 0
+              - 2
+              - *id173
+              - 2
+              - 1
+              - 0
+            - - 0
+              - 2
+              - &id174
+                - 1
+                - 0
+              - 1
+              - 1
+              - 0
+            - - 1
+              - 2
+              - - 1
+                - 0
+              - 1
+              - 1
+              - 0
+            - - 2
+              - 3
+              - *id173
+              - 2
+              - 1
+              - 0
+            - - 2
+              - 3
+              - *id174
+              - 1
+              - 0
+              - 0
+            synapses: 3
+          9:
+            chrom_fitness: 82
+            init_config:
+            - 0
+            - 0
+            - 0
+            - 0
+            input_neurons:
+            - 0
+            - 1
+            neurons: 4
+            output_neuron: 3
+            rule_status:
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            rules:
+            - - 0
+              - 2
+              - &id175
+                - 2
+                - 0
+              - 2
+              - 1
+              - 0
+            - - 0
+              - 2
+              - - 1
+                - 0
+              - 1
+              - 1
+              - 0
+            - - 1
+              - 2
+              - *id175
+              - 2
+              - 1
+              - 0
+            - - 1
+              - 2
+              - - 1
+                - 0
+              - 1
+              - 1
+              - 0
+            - - 2
+              - 3
+              - *id175
+              - 2
+              - 1
+              - 0
+            synapses: 3
+      3:
+        best_chromosome_indexes:
+        - 0
+        - 1
+        - 2
+        - 3
+        - 4
+        - 7
+        - 9
+        best_fitness_result: 100
+        rssnp_chromosomes:
+          0:
+            chrom_fitness: 100
+            init_config: *id144
+            input_neurons: *id145
+            neurons: 4
+            output_neuron: 3
+            rule_status:
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            rules: *id146
+            synapses: 3
+          1:
+            chrom_fitness: 100
+            init_config: *id147
+            input_neurons: *id148
+            neurons: 4
+            output_neuron: 3
+            rule_status:
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            rules: *id149
+            synapses: 3
+          2:
+            chrom_fitness: 100
+            init_config: *id150
+            input_neurons: *id151
+            neurons: 4
+            output_neuron: 3
+            rule_status:
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            rules: *id152
+            synapses: 3
+          3:
+            chrom_fitness: 100
+            init_config: *id153
+            input_neurons: *id154
+            neurons: 4
+            output_neuron: 3
+            rule_status:
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            rules: *id155
+            synapses: 3
+          4:
+            chrom_fitness: 100
+            init_config: *id156
+            input_neurons: *id157
+            neurons: 4
+            output_neuron: 3
+            rule_status:
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            rules: *id158
+            synapses: 3
+          5:
+            chrom_fitness: 85
+            init_config:
+            - 0
+            - 0
+            - 0
+            - 0
+            input_neurons:
+            - 0
+            - 1
+            neurons: 4
+            output_neuron: 3
+            rule_status:
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            rules:
+            - - 0
+              - 2
+              - &id176
+                - 2
+                - 0
+              - 2
+              - 1
+              - 0
+            - - 0
+              - 2
+              - - 1
+                - 0
+              - 1
+              - 1
+              - 0
+            - - 1
+              - 2
+              - *id176
+              - 2
+              - 1
+              - 0
+            - - 2
+              - 3
+              - &id177
+                - 1
+                - 0
+              - 1
+              - 0
+              - 0
+            - - 2
+              - 3
+              - *id176
+              - 2
+              - 1
+              - 0
+            synapses: 3
+          6:
+            chrom_fitness: 82
+            init_config:
+            - 0
+            - 0
+            - 0
+            - 0
+            input_neurons:
+            - 0
+            - 1
+            neurons: 4
+            output_neuron: 3
+            rule_status:
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            rules:
+            - - 0
+              - 2
+              - &id178
+                - 2
+                - 0
+              - 2
+              - 1
+              - 0
+            - - 0
+              - 2
+              - *id177
+              - 1
+              - 1
+              - 0
+            - - 1
+              - 2
+              - *id178
+              - 2
+              - 1
+              - 0
+            - - 1
+              - 2
+              - *id177
+              - 1
+              - 1
+              - 0
+            - - 2
+              - 3
+              - *id178
+              - 2
+              - 1
+              - 0
+            synapses: 3
+          7:
+            chrom_fitness: 100
+            init_config:
+            - 0
+            - 0
+            - 0
+            - 0
+            input_neurons:
+            - 0
+            - 1
+            neurons: 4
+            output_neuron: 3
+            rule_status:
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            rules:
+            - - 2
+              - 3
+              - &id181
+                - 1
+                - 0
+              - 1
+              - 0
+              - 0
+            - - 0
+              - 2
+              - &id179
+                - 1
+                - 0
+              - 1
+              - 1
+              - 0
+            - - 1
+              - 2
+              - &id180
+                - 2
+                - 0
+              - 2
+              - 1
+              - 0
+            - - 1
+              - 2
+              - *id179
+              - 1
+              - 1
+              - 0
+            - - 2
+              - 3
+              - *id180
+              - 2
+              - 1
+              - 0
+            synapses: 3
+          8:
+            chrom_fitness: 82
+            init_config:
+            - 0
+            - 0
+            - 0
+            - 0
+            input_neurons:
+            - 0
+            - 1
+            neurons: 4
+            output_neuron: 3
+            rule_status:
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            rules:
+            - - 0
+              - 2
+              - &id182
+                - 2
+                - 0
+              - 2
+              - 1
+              - 0
+            - - 0
+              - 2
+              - *id181
+              - 1
+              - 1
+              - 0
+            - - 1
+              - 2
+              - *id182
+              - 2
+              - 1
+              - 0
+            - - 1
+              - 2
+              - *id181
+              - 1
+              - 1
+              - 0
+            - - 2
+              - 3
+              - *id182
+              - 2
+              - 1
+              - 0
+            synapses: 3
+          9:
+            chrom_fitness: 100
+            init_config:
+            - 0
+            - 0
+            - 0
+            - 0
+            input_neurons:
+            - 0
+            - 1
+            neurons: 4
+            output_neuron: 3
+            rule_status:
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            rules:
+            - - 2
+              - 3
+              - - 2
+                - 0
+              - 2
+              - 1
+              - 0
+            - - 0
+              - 2
+              - &id183
+                - 1
+                - 0
+              - 1
+              - 1
+              - 0
+            - - 1
+              - 2
+              - - 2
+                - 0
+              - 2
+              - 1
+              - 0
+            - - 1
+              - 2
+              - *id183
+              - 1
+              - 1
+              - 0
+            - - 2
+              - 3
+              - *id183
+              - 1
+              - 0
+              - 0
+            synapses: 3
+      4:
+        best_chromosome_indexes:
+        - 0
+        - 1
+        - 2
+        - 3
+        - 4
+        best_fitness_result: 100
+        rssnp_chromosomes:
+          0:
+            chrom_fitness: 100
+            init_config: *id144
+            input_neurons: *id145
+            neurons: 4
+            output_neuron: 3
+            rule_status:
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            rules: *id146
+            synapses: 3
+          1:
+            chrom_fitness: 100
+            init_config: *id147
+            input_neurons: *id148
+            neurons: 4
+            output_neuron: 3
+            rule_status:
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            rules: *id149
+            synapses: 3
+          2:
+            chrom_fitness: 100
+            init_config: *id150
+            input_neurons: *id151
+            neurons: 4
+            output_neuron: 3
+            rule_status:
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            rules: *id152
+            synapses: 3
+          3:
+            chrom_fitness: 100
+            init_config: *id153
+            input_neurons: *id154
+            neurons: 4
+            output_neuron: 3
+            rule_status:
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            rules: *id155
+            synapses: 3
+          4:
+            chrom_fitness: 100
+            init_config: *id156
+            input_neurons: *id157
+            neurons: 4
+            output_neuron: 3
+            rule_status:
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            rules: *id158
+            synapses: 3
+          5:
+            chrom_fitness: 85
+            init_config:
+            - 0
+            - 0
+            - 0
+            - 0
+            input_neurons:
+            - 0
+            - 1
+            neurons: 4
+            output_neuron: 3
+            rule_status:
+            - -1
+            - -1
+            - -1
+            - -1
+            rules:
+            - - 0
+              - 2
+              - &id184
+                - 2
+                - 0
+              - 2
+              - 1
+              - 0
+            - - 1
+              - 2
+              - &id185
+                - 1
+                - 0
+              - 1
+              - 1
+              - 0
+            - - 1
+              - 2
+              - *id184
+              - 2
+              - 1
+              - 0
+            - - 2
+              - 3
+              - *id184
+              - 2
+              - 1
+              - 0
+            synapses: 3
+          6:
+            chrom_fitness: 85
+            init_config:
+            - 0
+            - 0
+            - 0
+            - 0
+            input_neurons:
+            - 0
+            - 1
+            neurons: 4
+            output_neuron: 3
+            rule_status:
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            rules:
+            - - 0
+              - 2
+              - &id186
+                - 2
+                - 0
+              - 2
+              - 1
+              - 0
+            - - 0
+              - 2
+              - *id185
+              - 1
+              - 1
+              - 0
+            - - 1
+              - 2
+              - *id186
+              - 2
+              - 1
+              - 0
+            - - 2
+              - 3
+              - *id186
+              - 2
+              - 1
+              - 0
+            - - 2
+              - 3
+              - *id185
+              - 1
+              - 0
+              - 0
+            synapses: 3
+          7:
+            chrom_fitness: 85
+            init_config:
+            - 0
+            - 0
+            - 0
+            - 0
+            input_neurons:
+            - 0
+            - 1
+            neurons: 4
+            output_neuron: 3
+            rule_status:
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            rules:
+            - - 0
+              - 2
+              - &id187
+                - 2
+                - 0
+              - 2
+              - 1
+              - 0
+            - - 0
+              - 2
+              - &id188
+                - 1
+                - 0
+              - 1
+              - 1
+              - 0
+            - - 1
+              - 2
+              - *id187
+              - 2
+              - 1
+              - 0
+            - - 2
+              - 3
+              - *id187
+              - 2
+              - 1
+              - 0
+            - - 2
+              - 3
+              - *id188
+              - 1
+              - 0
+              - 0
+            synapses: 3
+          8:
+            chrom_fitness: 85
+            init_config:
+            - 0
+            - 0
+            - 0
+            - 0
+            input_neurons:
+            - 0
+            - 1
+            neurons: 4
+            output_neuron: 3
+            rule_status:
+            - -1
+            - -1
+            - -1
+            - -1
+            rules:
+            - - 0
+              - 2
+              - &id189
+                - 2
+                - 0
+              - 2
+              - 1
+              - 0
+            - - 1
+              - 2
+              - *id188
+              - 1
+              - 1
+              - 0
+            - - 1
+              - 2
+              - *id189
+              - 2
+              - 1
+              - 0
+            - - 2
+              - 3
+              - *id189
+              - 2
+              - 1
+              - 0
+            synapses: 3
+          9:
+            chrom_fitness: 82
+            init_config:
+            - 0
+            - 0
+            - 0
+            - 0
+            input_neurons:
+            - 0
+            - 1
+            neurons: 4
+            output_neuron: 3
+            rule_status:
+            - -1
+            - -1
+            - -1
+            - -1
+            rules:
+            - - 1
+              - 2
+              - - 1
+                - 0
+              - 1
+              - 1
+              - 0
+            - - 0
+              - 2
+              - - 1
+                - 0
+              - 1
+              - 1
+              - 0
+            - - 1
+              - 2
+              - &id190
+                - 2
+                - 0
+              - 2
+              - 1
+              - 0
+            - - 2
+              - 3
+              - *id190
+              - 2
+              - 1
+              - 0
+            synapses: 3
+      5:
+        best_chromosome_indexes:
+        - 0
+        - 1
+        - 2
+        - 3
+        - 4
+        - 8
+        best_fitness_result: 100
+        rssnp_chromosomes:
+          0:
+            chrom_fitness: 100
+            init_config: *id144
+            input_neurons: *id145
+            neurons: 4
+            output_neuron: 3
+            rule_status:
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            rules: *id146
+            synapses: 3
+          1:
+            chrom_fitness: 100
+            init_config: *id147
+            input_neurons: *id148
+            neurons: 4
+            output_neuron: 3
+            rule_status:
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            rules: *id149
+            synapses: 3
+          2:
+            chrom_fitness: 100
+            init_config: *id150
+            input_neurons: *id151
+            neurons: 4
+            output_neuron: 3
+            rule_status:
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            rules: *id152
+            synapses: 3
+          3:
+            chrom_fitness: 100
+            init_config: *id153
+            input_neurons: *id154
+            neurons: 4
+            output_neuron: 3
+            rule_status:
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            rules: *id155
+            synapses: 3
+          4:
+            chrom_fitness: 100
+            init_config: *id156
+            input_neurons: *id157
+            neurons: 4
+            output_neuron: 3
+            rule_status:
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            rules: *id158
+            synapses: 3
+          5:
+            chrom_fitness: 82
+            init_config:
+            - 0
+            - 0
+            - 0
+            - 0
+            input_neurons:
+            - 0
+            - 1
+            neurons: 4
+            output_neuron: 3
+            rule_status:
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            rules:
+            - - 0
+              - 2
+              - &id191
+                - 2
+                - 0
+              - 2
+              - 1
+              - 0
+            - - 0
+              - 2
+              - &id192
+                - 1
+                - 0
+              - 1
+              - 1
+              - 0
+            - - 1
+              - 2
+              - *id191
+              - 2
+              - 1
+              - 0
+            - - 1
+              - 2
+              - *id192
+              - 1
+              - 1
+              - 0
+            - - 2
+              - 3
+              - *id191
+              - 2
+              - 1
+              - 0
+            synapses: 3
+          6:
+            chrom_fitness: 74
+            init_config:
+            - 0
+            - 0
+            - 0
+            - 0
+            input_neurons:
+            - 0
+            - 1
+            neurons: 4
+            output_neuron: 3
+            rule_status:
+            - -1
+            - -1
+            - -1
+            - -1
+            rules:
+            - - 0
+              - 2
+              - &id193
+                - 2
+                - 0
+              - 2
+              - 1
+              - 0
+            - - 0
+              - 2
+              - - 1
+                - 0
+              - 1
+              - 1
+              - 0
+            - - 1
+              - 2
+              - *id193
+              - 2
+              - 1
+              - 0
+            - - 2
+              - 3
+              - *id192
+              - 1
+              - 0
+              - 0
+            synapses: 3
+          7:
+            chrom_fitness: 85
+            init_config:
+            - 0
+            - 0
+            - 0
+            - 0
+            input_neurons:
+            - 0
+            - 1
+            neurons: 4
+            output_neuron: 3
+            rule_status:
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            rules:
+            - - 0
+              - 2
+              - &id194
+                - 2
+                - 0
+              - 2
+              - 1
+              - 0
+            - - 0
+              - 2
+              - &id195
+                - 1
+                - 0
+              - 1
+              - 1
+              - 0
+            - - 1
+              - 2
+              - *id194
+              - 2
+              - 1
+              - 0
+            - - 2
+              - 3
+              - &id196
+                - 2
+                - 0
+              - 2
+              - 1
+              - 0
+            - - 2
+              - 3
+              - *id195
+              - 1
+              - 0
+              - 0
+            synapses: 3
+          8:
+            chrom_fitness: 100
+            init_config:
+            - 0
+            - 0
+            - 0
+            - 0
+            input_neurons:
+            - 0
+            - 1
+            neurons: 4
+            output_neuron: 3
+            rule_status:
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            rules:
+            - - 0
+              - 2
+              - *id196
+              - 2
+              - 1
+              - 0
+            - - 0
+              - 2
+              - &id197
+                - 1
+                - 0
+              - 1
+              - 1
+              - 0
+            - - 1
+              - 2
+              - *id196
+              - 2
+              - 1
+              - 0
+            - - 1
+              - 2
+              - *id197
+              - 1
+              - 1
+              - 0
+            - - 2
+              - 3
+              - *id194
+              - 2
+              - 1
+              - 0
+            - - 2
+              - 3
+              - *id197
+              - 1
+              - 0
+              - 0
+            synapses: 3
+          9:
+            chrom_fitness: 82
+            init_config:
+            - 0
+            - 0
+            - 0
+            - 0
+            input_neurons:
+            - 0
+            - 1
+            neurons: 4
+            output_neuron: 3
+            rule_status:
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            rules:
+            - - 0
+              - 2
+              - &id198
+                - 2
+                - 0
+              - 2
+              - 1
+              - 0
+            - - 0
+              - 2
+              - &id199
+                - 1
+                - 0
+              - 1
+              - 1
+              - 0
+            - - 1
+              - 2
+              - *id198
+              - 2
+              - 1
+              - 0
+            - - 1
+              - 2
+              - *id199
+              - 1
+              - 1
+              - 0
+            - - 2
+              - 3
+              - *id198
+              - 2
+              - 1
+              - 0
+            synapses: 3
+      6:
+        best_chromosome_indexes:
+        - 0
+        - 1
+        - 2
+        - 3
+        - 4
+        - 6
+        - 9
+        best_fitness_result: 100
+        rssnp_chromosomes:
+          0:
+            chrom_fitness: 100
+            init_config: *id144
+            input_neurons: *id145
+            neurons: 4
+            output_neuron: 3
+            rule_status:
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            rules: *id146
+            synapses: 3
+          1:
+            chrom_fitness: 100
+            init_config: *id147
+            input_neurons: *id148
+            neurons: 4
+            output_neuron: 3
+            rule_status:
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            rules: *id149
+            synapses: 3
+          2:
+            chrom_fitness: 100
+            init_config: *id150
+            input_neurons: *id151
+            neurons: 4
+            output_neuron: 3
+            rule_status:
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            rules: *id152
+            synapses: 3
+          3:
+            chrom_fitness: 100
+            init_config: *id153
+            input_neurons: *id154
+            neurons: 4
+            output_neuron: 3
+            rule_status:
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            rules: *id155
+            synapses: 3
+          4:
+            chrom_fitness: 100
+            init_config: *id156
+            input_neurons: *id157
+            neurons: 4
+            output_neuron: 3
+            rule_status:
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            rules: *id158
+            synapses: 3
+          5:
+            chrom_fitness: 74
+            init_config:
+            - 0
+            - 0
+            - 0
+            - 0
+            input_neurons:
+            - 0
+            - 1
+            neurons: 4
+            output_neuron: 3
+            rule_status:
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            rules:
+            - - 0
+              - 2
+              - &id200
+                - 2
+                - 0
+              - 2
+              - 1
+              - 0
+            - - 0
+              - 2
+              - &id201
+                - 1
+                - 0
+              - 1
+              - 1
+              - 0
+            - - 1
+              - 2
+              - *id200
+              - 2
+              - 1
+              - 0
+            - - 1
+              - 2
+              - *id201
+              - 1
+              - 1
+              - 0
+            - - 2
+              - 3
+              - *id201
+              - 1
+              - 0
+              - 0
+            synapses: 3
+          6:
+            chrom_fitness: 100
+            init_config:
+            - 0
+            - 0
+            - 0
+            - 0
+            input_neurons:
+            - 0
+            - 1
+            neurons: 4
+            output_neuron: 3
+            rule_status:
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            rules:
+            - - 2
+              - 3
+              - *id200
+              - 2
+              - 1
+              - 0
+            - - 0
+              - 2
+              - &id202
+                - 1
+                - 0
+              - 1
+              - 1
+              - 0
+            - - 1
+              - 2
+              - - 2
+                - 0
+              - 2
+              - 1
+              - 0
+            - - 1
+              - 2
+              - *id202
+              - 1
+              - 1
+              - 0
+            - - 2
+              - 3
+              - *id202
+              - 1
+              - 0
+              - 0
+            synapses: 3
+          7:
+            chrom_fitness: 74
+            init_config:
+            - 0
+            - 0
+            - 0
+            - 0
+            input_neurons:
+            - 0
+            - 1
+            neurons: 4
+            output_neuron: 3
+            rule_status:
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            rules:
+            - - 0
+              - 2
+              - &id203
+                - 2
+                - 0
+              - 2
+              - 1
+              - 0
+            - - 0
+              - 2
+              - &id204
+                - 1
+                - 0
+              - 1
+              - 1
+              - 0
+            - - 1
+              - 2
+              - *id203
+              - 2
+              - 1
+              - 0
+            - - 1
+              - 2
+              - *id204
+              - 1
+              - 1
+              - 0
+            - - 2
+              - 3
+              - &id205
+                - 1
+                - 0
+              - 1
+              - 0
+              - 0
+            synapses: 3
+          8:
+            chrom_fitness: 82
+            init_config:
+            - 0
+            - 0
+            - 0
+            - 0
+            input_neurons:
+            - 0
+            - 1
+            neurons: 4
+            output_neuron: 3
+            rule_status:
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            rules:
+            - - 0
+              - 2
+              - &id206
+                - 2
+                - 0
+              - 2
+              - 1
+              - 0
+            - - 0
+              - 2
+              - *id205
+              - 1
+              - 1
+              - 0
+            - - 1
+              - 2
+              - *id206
+              - 2
+              - 1
+              - 0
+            - - 1
+              - 2
+              - *id205
+              - 1
+              - 1
+              - 0
+            - - 2
+              - 3
+              - *id206
+              - 2
+              - 1
+              - 0
+            synapses: 3
+          9:
+            chrom_fitness: 100
+            init_config:
+            - 0
+            - 0
+            - 0
+            - 0
+            input_neurons:
+            - 0
+            - 1
+            neurons: 4
+            output_neuron: 3
+            rule_status:
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            rules:
+            - - 0
+              - 2
+              - &id207
+                - 2
+                - 0
+              - 2
+              - 1
+              - 0
+            - - 0
+              - 2
+              - &id208
+                - 1
+                - 0
+              - 1
+              - 1
+              - 0
+            - - 1
+              - 2
+              - *id207
+              - 2
+              - 1
+              - 0
+            - - 1
+              - 2
+              - - 1
+                - 0
+              - 1
+              - 1
+              - 0
+            - - 2
+              - 3
+              - *id207
+              - 2
+              - 1
+              - 0
+            - - 2
+              - 3
+              - *id208
+              - 1
+              - 0
+              - 0
+            synapses: 3
+      7:
+        best_chromosome_indexes:
+        - 0
+        - 1
+        - 2
+        - 3
+        - 4
+        - 6
+        - 7
+        - 9
+        best_fitness_result: 100
+        rssnp_chromosomes:
+          0:
+            chrom_fitness: 100
+            init_config: *id144
+            input_neurons: *id145
+            neurons: 4
+            output_neuron: 3
+            rule_status:
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            rules: *id146
+            synapses: 3
+          1:
+            chrom_fitness: 100
+            init_config: *id147
+            input_neurons: *id148
+            neurons: 4
+            output_neuron: 3
+            rule_status:
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            rules: *id149
+            synapses: 3
+          2:
+            chrom_fitness: 100
+            init_config: *id150
+            input_neurons: *id151
+            neurons: 4
+            output_neuron: 3
+            rule_status:
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            rules: *id152
+            synapses: 3
+          3:
+            chrom_fitness: 100
+            init_config: *id153
+            input_neurons: *id154
+            neurons: 4
+            output_neuron: 3
+            rule_status:
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            rules: *id155
+            synapses: 3
+          4:
+            chrom_fitness: 100
+            init_config: *id156
+            input_neurons: *id157
+            neurons: 4
+            output_neuron: 3
+            rule_status:
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            rules: *id158
+            synapses: 3
+          5:
+            chrom_fitness: 74
+            init_config:
+            - 0
+            - 0
+            - 0
+            - 0
+            input_neurons:
+            - 0
+            - 1
+            neurons: 4
+            output_neuron: 3
+            rule_status:
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            rules:
+            - - 0
+              - 2
+              - &id209
+                - 2
+                - 0
+              - 2
+              - 1
+              - 0
+            - - 0
+              - 2
+              - &id210
+                - 1
+                - 0
+              - 1
+              - 1
+              - 0
+            - - 1
+              - 2
+              - *id209
+              - 2
+              - 1
+              - 0
+            - - 1
+              - 2
+              - *id210
+              - 1
+              - 1
+              - 0
+            - - 2
+              - 3
+              - *id210
+              - 1
+              - 0
+              - 0
+            synapses: 3
+          6:
+            chrom_fitness: 100
+            init_config:
+            - 0
+            - 0
+            - 0
+            - 0
+            input_neurons:
+            - 0
+            - 1
+            neurons: 4
+            output_neuron: 3
+            rule_status:
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            rules:
+            - - 0
+              - 2
+              - - 2
+                - 0
+              - 2
+              - 1
+              - 0
+            - - 0
+              - 2
+              - &id211
+                - 1
+                - 0
+              - 1
+              - 1
+              - 0
+            - - 2
+              - 3
+              - *id209
+              - 2
+              - 1
+              - 0
+            - - 1
+              - 2
+              - - 1
+                - 0
+              - 1
+              - 1
+              - 0
+            - - 2
+              - 3
+              - *id211
+              - 1
+              - 0
+              - 0
+            synapses: 3
+          7:
+            chrom_fitness: 100
+            init_config:
+            - 0
+            - 0
+            - 0
+            - 0
+            input_neurons:
+            - 0
+            - 1
+            neurons: 4
+            output_neuron: 3
+            rule_status:
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            rules:
+            - - 0
+              - 2
+              - &id212
+                - 2
+                - 0
+              - 2
+              - 1
+              - 0
+            - - 0
+              - 2
+              - &id213
+                - 1
+                - 0
+              - 1
+              - 1
+              - 0
+            - - 1
+              - 2
+              - &id214
+                - 1
+                - 0
+              - 1
+              - 1
+              - 0
+            - - 2
+              - 3
+              - *id212
+              - 2
+              - 1
+              - 0
+            - - 2
+              - 3
+              - *id213
+              - 1
+              - 0
+              - 0
+            synapses: 3
+          8:
+            chrom_fitness: 85
+            init_config:
+            - 0
+            - 0
+            - 0
+            - 0
+            input_neurons:
+            - 0
+            - 1
+            neurons: 4
+            output_neuron: 3
+            rule_status:
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            rules:
+            - - 0
+              - 2
+              - &id215
+                - 2
+                - 0
+              - 2
+              - 1
+              - 0
+            - - 0
+              - 2
+              - *id214
+              - 1
+              - 1
+              - 0
+            - - 1
+              - 2
+              - *id215
+              - 2
+              - 1
+              - 0
+            - - 2
+              - 3
+              - *id215
+              - 2
+              - 1
+              - 0
+            - - 2
+              - 3
+              - *id214
+              - 1
+              - 0
+              - 0
+            synapses: 3
+          9:
+            chrom_fitness: 100
+            init_config:
+            - 0
+            - 0
+            - 0
+            - 0
+            input_neurons:
+            - 0
+            - 1
+            neurons: 4
+            output_neuron: 3
+            rule_status:
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            rules:
+            - - 0
+              - 2
+              - &id216
+                - 2
+                - 0
+              - 2
+              - 1
+              - 0
+            - - 0
+              - 2
+              - &id217
+                - 1
+                - 0
+              - 1
+              - 1
+              - 0
+            - - 1
+              - 2
+              - *id216
+              - 2
+              - 1
+              - 0
+            - - 1
+              - 2
+              - *id217
+              - 1
+              - 1
+              - 0
+            - - 2
+              - 3
+              - - 2
+                - 0
+              - 2
+              - 1
+              - 0
+            - - 2
+              - 3
+              - *id217
+              - 1
+              - 0
+              - 0
+            synapses: 3
+    max_fitness_in_run: 100
+    mutation_rate: 100
+    population_size: 10
+    selection_func: 1
+runs_pending: 0
+test_cases_path: C:\Users\Arvy\Documents\cs 199 docs\RSSNP_CPU_GPU_Framework\main_dir\test
+  cases\and_test_cases.txt

@@ -150,8 +150,11 @@ class SNPGeneticAlgo:
         i = 0
         while True:
             cross_counter = 0
+            print("passed outer loop here")
+
             while True:
                 # Get parents
+                print("passed inner loop here")
                 parent1 = deepcopy(parents[i % len(parents)])  # best parent
                 parent2 = deepcopy(parents[(i + 1) % len(parents)]) # 2nd best
                 
@@ -172,9 +175,14 @@ class SNPGeneticAlgo:
                     parent1['system'].out_spiketrain = []
                     parent2['system'].out_spiketrain = []
                     self.pop.extend([parent1,parent2])
+                    print("passed first")
+                    if len(self.pop) > population_size:
+                        while len(self.pop) > population_size:
+                            self.pop = self.pop[:-1]
+                        return
                     break
                 elif cross_counter < 10:
-                    #print("Mutation failed")
+                    print("Mutation failed")
                     cross_counter += 1
                     parent1 = deepcopy(backup1)
                     parent2 = deepcopy(backup2)
@@ -187,10 +195,12 @@ class SNPGeneticAlgo:
                     self.pop.extend([parent1,parent2])
                     break
 
-            if len(self.pop) == population_size:
+            print("comparing", len(self.pop), population_size)
+            if len(self.pop) == population_size and not i == 0:
                 return
 
             i += 1
+        print("finished crossover here")
 
     def evaluate(self, chromosome, function):
         '''
@@ -253,10 +263,6 @@ class SNPGeneticAlgo:
 
 
         whole_run_best_fitness = 0
-        escaped_gen = False
-        chrom_index = 0
-        max_fitness = 0
-        chromosome_indexes = []
         current_gen = None
         for generation in range(start, start + generations + ga_params['gens_pending']):
             print("gen baby gen " + str(generation))
@@ -298,9 +304,7 @@ class SNPGeneticAlgo:
             current_gen['best_fitness_result'] = max_fitness
             if current_gen['best_fitness_result'] > whole_run_best_fitness:
                 whole_run_best_fitness = max_fitness
-                if whole_run_best_fitness > ga_params['goal_fitness']:
-                    escaped_gen = True
-                    break
+
             print("fitness got is " + str(current_gen['best_fitness_result']))
             current_gen['best_chromosome_indexes'] = chromosome_indexes
             print("best chromosome indexes are  " + str(current_gen['best_chromosome_indexes']))
@@ -310,18 +314,13 @@ class SNPGeneticAlgo:
             self.pop = sorted(self.pop, key=lambda k: k['fitness'], reverse=True)
                 
             # Crossover and mutation
-            #print("Crossover:",generation)
+            print("Crossover:",generation)
             self.crossover(mutation_rate, selection_func)
-        if escaped_gen == True:
-            print("fitness got is " + str(current_gen['best_fitness_result']))
-            current_gen['best_chromosome_indexes'] = chromosome_indexes
-            print("best chromosome indexes are  " + str(current_gen['best_chromosome_indexes']))
-            #print("ga_params at gen " + str(generation) + " is " + str(ga_params))
-            conf_save(filename, ga_params)
 
         ga_params['runs'][run_index]['max_fitness_in_run'] = whole_run_best_fitness
         print("whole run fitness is " + str(whole_run_best_fitness))
         conf_save(filename, ga_params)
+        print("went here")
         return whole_run_best_fitness
 
             
