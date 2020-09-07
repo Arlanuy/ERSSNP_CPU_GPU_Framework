@@ -192,11 +192,11 @@ def program_main():
 		print("Load function starting")
 
 		execution_choice = int(input("Where do you want your experiment to be executed (1) CPU or (2) GPU: "))
-
+		start_from_a_gen = False
 		if execution_choice == 1:
 
 			#get the information from console
-			print("Menu: Would you either increase (1) runs/generations/population_size or (2) a goal fitness of any chromosome in the evolutionary process: or (3) just maintain the current number of generation/population_size but extend it further using an initial population from any generation number ")
+			print("Menu: Would you either increase (1) runs/generations/population_size or (2) a goal fitness of any chromosome in the evolutionary process: or (3) just maintain the current number of generation/population_size but extend runs further using an initial population from any generation number ")
 			print("Note that for this program the GPU can also do option 3 but not the others ")
 			sub_choice = int(input())
 			if sub_choice == 1:
@@ -220,8 +220,8 @@ def program_main():
 				print("Maintaining current number of generation and population_size")
 				add_runs = int(input("How many runs would you like to add (minimum of 1 and maximum of 100): "))
 				ga_params['runs_pending'] = add_runs
-				generation_index = int(input("Which run and generation would you like to use as the starting parents of the succeeding runs? "))
-				
+				ga_params['generation_index_continue'] = input("Which run and generation would you like to use as the starting parents of the succeeding runs (separate by comma)? ")
+				start_from_a_gen = True
 
 			
 			newloadfile_name = prompt_make_newsavefile(ga_params, loadfile_name, load_directory)
@@ -237,13 +237,15 @@ def program_main():
 			conf_save(newloadfile_name, ga_params)
 			
 			start_new = False
+
 			print("Running GA in CPU: ")
 			#The system that will be parent0 is the first rssnp chromosome in the ga_params
 			#change the value of this into a system in RSSNP_list in order to change it
+			#for subchoice 3, rssnp string is used only in order to acquire the input neuron indexes for spike_train_parser function
 			rssnp_string = ga_params['runs'][0]['generations'][0]['rssnp_chromosomes'][0]
 			
 			print("rssnp string is " + str(rssnp_string))
-			gaframework(rssnp_string, ga_params['test_cases_path'] , ga_params, newloadfile_name, start_new)
+			gaframework(rssnp_string, ga_params['test_cases_path'] , ga_params, newloadfile_name, start_new, start_from_a_gen)
 			ga_params = conf_load(newloadfile_name)
 			ga_params['run_total'] += ga_params['runs_pending']
 			ga_params['runs_pending'] = 0
@@ -259,7 +261,8 @@ def program_main():
 			print("Maintaining current number of generation and population_size")
 			add_runs = int(input("How many runs would you like to add (minimum of 1 and maximum of 100): "))
 			ga_params['runs_pending'] = add_runs
-			generation_index = int(input("Which run and generation would you like to use as the starting parents of the succeeding runs? "))
+			generation_index = input("Which run and generation would you like to use as the starting parents of the succeeding runs (separate by comma)? ")
+			ga_params['generation_index_continue'] = int(input("Which run and generation would you like to use as the starting parents of the succeeding runs? "))
 			newloadfile_name =  prompt_make_newsavefile(ga_params, loadfile_name, load_directory)
 			continue_create_empty_yaml(newloadfile_name)
 

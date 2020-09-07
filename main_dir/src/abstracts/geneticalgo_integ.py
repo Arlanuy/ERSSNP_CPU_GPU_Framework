@@ -234,7 +234,7 @@ class SNPGeneticAlgo:
         # print(chromosome)
 
 
-    def simulate(self, system, size, function, generations, mutation_rate, path_name, run_index, selection_func):
+    def simulate(self, system, size, function, generations, mutation_rate, path_name, run_index, selection_func, start_from_gen = False):
         '''
             Performs a complete run of the genetic algorithm framework
         '''
@@ -245,22 +245,20 @@ class SNPGeneticAlgo:
         filename = path_name
         ga_params = conf_load(filename)
             
-
-        # Generate initial population
-        #if start_new == True:
-        copy_sys = deepcopy(system)
-        self.create_population(size, copy_sys)
         start = 0
+        # Generate initial population
+        if start_from_gen == False:
+            copy_sys = deepcopy(system)
+            self.create_population(size, copy_sys)
+            
 
-        # else:
-        #     print("Continuing using the previous generation population")
-        #     start = ga_params['gen_total']
-        #     print("using run index " + str((run_index)) + "and generation index " + str((start)))
-
-        #     self.use_population(ga_params['runs'][run_index]['population_size'], ga_params['runs'][run_index]['generations'][start]['rssnp_chromosomes'] )
-
-            #generations = ga_params['gens_pending']
-
+        else:
+            print("Continuing using the run,generation number ", ga_params['generation_index_continue'])
+            run_gen_array = ga_params['generation_index_continue'].split(',')
+            run_start = int(run_gen_array[0])
+            generation_start = int(run_gen_array[1])
+            print(" run-gen ", run_start, generation_start)
+            self.use_population(ga_params['runs'][run_start]['population_size'], ga_params['runs'][run_start]['generations'][generation_start]['rssnp_chromosomes'] )
 
         whole_run_best_fitness = 0
         current_gen = None
