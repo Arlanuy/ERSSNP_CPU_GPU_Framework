@@ -21,7 +21,7 @@ class SNPGeneticAlgoEval:
     # file_name = None
     # ga_params = None
     #path name is now loadfile_name
-    def run(self, genetic_algo, system, size, function, runs, generations, mutation_rate, path_name, selection_func, start_new = True):
+    def run(self, genetic_algo, system, size, function, runs, generations, mutation_rate, path_name, selection_func, start_new = True, start_from_gen = False):
         max_fitness_in_run = 0
         self.ga_params = conf_load(path_name)
         self.no_of_run = self.ga_params['run_total'] + self.ga_params['runs_pending']
@@ -37,12 +37,12 @@ class SNPGeneticAlgoEval:
         for run in range(start, start + middle + self.ga_params['runs_pending']):
             print("run run baby # " + str(run))
             # Perform a single run of the GA framework
-            run_fitness = genetic_algo.simulate(system, size, function, generations, mutation_rate, path_name, run, selection_func)
+            run_fitness = genetic_algo.simulate(system, size, function, generations, mutation_rate, path_name, run, selection_func, start_from_gen)
             #self.updateRuns(run)
 
             if  run_fitness > max_fitness_in_run:
                 max_fitness_in_run = run_fitness
-                if max_fitness_in_run > self.ga_params['goal_fitness']:
+                if max_fitness_in_run >= self.ga_params['goal_fitness']:
                     break
 
         print("max fit is " + str(max_fitness_in_run))
