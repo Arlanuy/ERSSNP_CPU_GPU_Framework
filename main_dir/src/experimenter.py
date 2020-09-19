@@ -25,6 +25,7 @@ def gaframework(rssnp_string, path_to_io_spike_trains, stats):
     
     execute_experiment(dir, rssnp, ga, gaeval, stats, name)
 
+
 def execute_experiment(results_dir, rssnp, ga, gaeval, stats, experiment_name):
     gaeval.no_of_gen = stats['generations']
     gaeval.no_of_run = stats['runs']

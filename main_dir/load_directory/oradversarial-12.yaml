@@ -1,0 +1,1931 @@
+gen_total: 4
+generation_index_continue: 0,2
+gens_pending: 0
+goal_fitness: 101
+max_fitness_in_runs: 0
+populations_pending: 0
+run_total: 2
+runs:
+  0:
+    fitness_function: 1
+    generations:
+      0:
+        best_chromosome_indexes:
+        - 0
+        - 1
+        - 2
+        - 3
+        - 4
+        - 5
+        - 6
+        - 7
+        best_fitness_result: 0
+        rssnp_chromosomes:
+          0:
+            chrom_fitness: 0
+            init_config: &id007
+            - 0
+            - 0
+            - 0
+            - 0
+            - 0
+            - 0
+            - 0
+            input_neurons: &id008
+            - 0
+            - 1
+            neurons: 7
+            output_neuron: 6
+            rule_status: &id009
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            rules: &id010
+            - - 0
+              - 2
+              - &id001
+                - 1
+                - 0
+              - 1
+              - 1
+              - 0
+            - - 0
+              - 3
+              - &id002
+                - 1
+                - 1
+              - 1
+              - 1
+              - 0
+            - - 1
+              - 2
+              - *id001
+              - 1
+              - 1
+              - 0
+            - - 1
+              - 5
+              - *id002
+              - 1
+              - 1
+              - 0
+            - - 0
+              - 4
+              - &id003
+                - 1
+                - 1
+              - 1
+              - 1
+              - 0
+            - - 2
+              - 6
+              - *id001
+              - 1
+              - 1
+              - 0
+            - - 2
+              - 6
+              - &id004
+                - 2
+                - 0
+              - 2
+              - 1
+              - 0
+            synapses: 11
+          1:
+            chrom_fitness: 0
+            init_config: &id011
+            - 0
+            - 0
+            - 0
+            - 0
+            - 0
+            - 0
+            - 0
+            input_neurons: &id012
+            - 0
+            - 1
+            neurons: 7
+            output_neuron: 6
+            rule_status: &id013
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            rules: &id014
+            - - 0
+              - 2
+              - *id001
+              - 1
+              - 1
+              - 0
+            - - 0
+              - 3
+              - *id002
+              - 1
+              - 1
+              - 0
+            - - 1
+              - 2
+              - *id001
+              - 1
+              - 1
+              - 0
+            - - 1
+              - 5
+              - *id002
+              - 1
+              - 1
+              - 0
+            - - 3
+              - 4
+              - &id005
+                - 1
+                - 0
+              - 1
+              - 1
+              - 0
+            - - 3
+              - 0
+              - &id006
+                - 1
+                - 1
+              - 1
+              - 1
+              - 0
+            - - 4
+              - 3
+              - *id002
+              - 1
+              - 1
+              - 0
+            - - 5
+              - 4
+              - *id002
+              - 1
+              - 1
+              - 0
+            - - 5
+              - 1
+              - *id002
+              - 1
+              - 1
+              - 0
+            - - 0
+              - 4
+              - *id003
+              - 1
+              - 1
+              - 0
+            - - 2
+              - 6
+              - *id004
+              - 2
+              - 1
+              - 0
+            synapses: 11
+          2:
+            chrom_fitness: 0
+            init_config: &id015
+            - 0
+            - 0
+            - 0
+            - 0
+            - 0
+            - 0
+            - 0
+            input_neurons: &id016
+            - 0
+            - 1
+            neurons: 7
+            output_neuron: 6
+            rule_status: &id017
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            rules: &id018
+            - - 0
+              - 2
+              - *id001
+              - 1
+              - 1
+              - 0
+            - - 0
+              - 3
+              - *id002
+              - 1
+              - 1
+              - 0
+            - - 1
+              - 2
+              - *id001
+              - 1
+              - 1
+              - 0
+            - - 1
+              - 5
+              - *id002
+              - 1
+              - 1
+              - 0
+            - - 0
+              - 4
+              - *id003
+              - 1
+              - 1
+              - 0
+            - - 5
+              - 1
+              - *id002
+              - 1
+              - 1
+              - 0
+            - - 2
+              - 6
+              - *id001
+              - 1
+              - 1
+              - 0
+            - - 2
+              - 6
+              - *id004
+              - 2
+              - 1
+              - 0
+            synapses: 11
+          3:
+            chrom_fitness: 0
+            init_config: &id019
+            - 0
+            - 0
+            - 0
+            - 0
+            - 0
+            - 0
+            - 0
+            input_neurons: &id020
+            - 0
+            - 1
+            neurons: 7
+            output_neuron: 6
+            rule_status: &id021
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            rules: &id022
+            - - 0
+              - 2
+              - *id001
+              - 1
+              - 1
+              - 0
+            - - 0
+              - 3
+              - *id002
+              - 1
+              - 1
+              - 0
+            - - 1
+              - 2
+              - *id001
+              - 1
+              - 1
+              - 0
+            - - 1
+              - 5
+              - *id002
+              - 1
+              - 1
+              - 0
+            - - 3
+              - 4
+              - - 1
+                - 0
+              - 1
+              - 1
+              - 0
+            - - 5
+              - 3
+              - - 1
+                - 0
+              - 1
+              - 1
+              - 0
+            - - 5
+              - 1
+              - *id002
+              - 1
+              - 1
+              - 0
+            - - 2
+              - 6
+              - *id001
+              - 1
+              - 1
+              - 0
+            - - 2
+              - 6
+              - *id004
+              - 2
+              - 1
+              - 0
+            synapses: 11
+          4:
+            chrom_fitness: 0
+            init_config: &id023
+            - 0
+            - 0
+            - 0
+            - 0
+            - 0
+            - 0
+            - 0
+            input_neurons: &id024
+            - 0
+            - 1
+            neurons: 7
+            output_neuron: 6
+            rule_status: &id025
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            rules: &id026
+            - - 0
+              - 2
+              - *id001
+              - 1
+              - 1
+              - 0
+            - - 0
+              - 3
+              - *id002
+              - 1
+              - 1
+              - 0
+            - - 1
+              - 2
+              - *id001
+              - 1
+              - 1
+              - 0
+            - - 1
+              - 5
+              - *id002
+              - 1
+              - 1
+              - 0
+            - - 2
+              - 6
+              - *id001
+              - 1
+              - 1
+              - 0
+            - - 3
+              - 4
+              - *id005
+              - 1
+              - 1
+              - 0
+            - - 2
+              - 6
+              - *id004
+              - 2
+              - 1
+              - 0
+            synapses: 11
+          5:
+            chrom_fitness: 0
+            init_config: &id027
+            - 0
+            - 0
+            - 0
+            - 0
+            - 0
+            - 0
+            - 0
+            input_neurons: &id028
+            - 0
+            - 1
+            neurons: 7
+            output_neuron: 6
+            rule_status: &id029
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            rules: &id030
+            - - 0
+              - 2
+              - *id001
+              - 1
+              - 1
+              - 0
+            - - 0
+              - 3
+              - *id002
+              - 1
+              - 1
+              - 0
+            - - 1
+              - 2
+              - *id001
+              - 1
+              - 1
+              - 0
+            - - 1
+              - 5
+              - *id002
+              - 1
+              - 1
+              - 0
+            - - 5
+              - 1
+              - *id002
+              - 1
+              - 1
+              - 0
+            - - 3
+              - 0
+              - *id006
+              - 1
+              - 1
+              - 0
+            - - 4
+              - 3
+              - *id002
+              - 1
+              - 1
+              - 0
+            - - 5
+              - 4
+              - *id002
+              - 1
+              - 1
+              - 0
+            - - 2
+              - 6
+              - *id004
+              - 2
+              - 1
+              - 0
+            synapses: 11
+          6:
+            chrom_fitness: 0
+            init_config: &id031
+            - 0
+            - 0
+            - 0
+            - 0
+            - 0
+            - 0
+            - 0
+            input_neurons: &id032
+            - 0
+            - 1
+            neurons: 7
+            output_neuron: 6
+            rule_status: &id033
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            rules: &id034
+            - - 0
+              - 2
+              - *id001
+              - 1
+              - 1
+              - 0
+            - - 5
+              - 1
+              - *id002
+              - 1
+              - 1
+              - 0
+            - - 1
+              - 2
+              - *id001
+              - 1
+              - 1
+              - 0
+            - - 1
+              - 5
+              - *id002
+              - 1
+              - 1
+              - 0
+            - - 3
+              - 4
+              - *id005
+              - 1
+              - 1
+              - 0
+            - - 3
+              - 0
+              - *id006
+              - 1
+              - 1
+              - 0
+            - - 4
+              - 3
+              - *id002
+              - 1
+              - 1
+              - 0
+            - - 5
+              - 4
+              - *id002
+              - 1
+              - 1
+              - 0
+            - - 2
+              - 6
+              - *id004
+              - 2
+              - 1
+              - 0
+            synapses: 11
+          7:
+            chrom_fitness: 0
+            init_config: &id035
+            - 0
+            - 0
+            - 0
+            - 0
+            - 0
+            - 0
+            - 0
+            input_neurons: &id036
+            - 0
+            - 1
+            neurons: 7
+            output_neuron: 6
+            rule_status: &id037
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            rules: &id038
+            - - 0
+              - 2
+              - *id001
+              - 1
+              - 1
+              - 0
+            - - 0
+              - 3
+              - *id002
+              - 1
+              - 1
+              - 0
+            - - 1
+              - 2
+              - *id001
+              - 1
+              - 1
+              - 0
+            - - 1
+              - 5
+              - *id002
+              - 1
+              - 1
+              - 0
+            - - 2
+              - 6
+              - *id001
+              - 1
+              - 1
+              - 0
+            - - 2
+              - 6
+              - *id004
+              - 2
+              - 1
+              - 0
+            synapses: 11
+      1:
+        best_chromosome_indexes:
+        - 0
+        - 1
+        - 2
+        - 3
+        - 4
+        - 5
+        - 6
+        - 7
+        best_fitness_result: 0
+        rssnp_chromosomes:
+          0:
+            chrom_fitness: 0
+            init_config: *id007
+            input_neurons: *id008
+            neurons: 7
+            output_neuron: 6
+            rule_status: *id009
+            rules: *id010
+            synapses: 11
+          1:
+            chrom_fitness: 0
+            init_config: *id011
+            input_neurons: *id012
+            neurons: 7
+            output_neuron: 6
+            rule_status: *id013
+            rules: *id014
+            synapses: 11
+          2:
+            chrom_fitness: 0
+            init_config: *id015
+            input_neurons: *id016
+            neurons: 7
+            output_neuron: 6
+            rule_status: *id017
+            rules: *id018
+            synapses: 11
+          3:
+            chrom_fitness: 0
+            init_config: *id019
+            input_neurons: *id020
+            neurons: 7
+            output_neuron: 6
+            rule_status: *id021
+            rules: *id022
+            synapses: 11
+          4:
+            chrom_fitness: 0
+            init_config: *id023
+            input_neurons: *id024
+            neurons: 7
+            output_neuron: 6
+            rule_status: *id025
+            rules: *id026
+            synapses: 11
+          5:
+            chrom_fitness: 0
+            init_config: *id027
+            input_neurons: *id028
+            neurons: 7
+            output_neuron: 6
+            rule_status: *id029
+            rules: *id030
+            synapses: 11
+          6:
+            chrom_fitness: 0
+            init_config: *id031
+            input_neurons: *id032
+            neurons: 7
+            output_neuron: 6
+            rule_status: *id033
+            rules: *id034
+            synapses: 11
+          7:
+            chrom_fitness: 0
+            init_config: *id035
+            input_neurons: *id036
+            neurons: 7
+            output_neuron: 6
+            rule_status: *id037
+            rules: *id038
+            synapses: 11
+      2:
+        best_chromosome_indexes:
+        - 0
+        - 1
+        - 2
+        - 3
+        - 4
+        - 5
+        - 6
+        - 7
+        best_fitness_result: 0
+        rssnp_chromosomes:
+          0:
+            chrom_fitness: 0
+            init_config: *id007
+            input_neurons: *id008
+            neurons: 7
+            output_neuron: 6
+            rule_status: *id009
+            rules: *id010
+            synapses: 11
+          1:
+            chrom_fitness: 0
+            init_config: *id011
+            input_neurons: *id012
+            neurons: 7
+            output_neuron: 6
+            rule_status: *id013
+            rules: *id014
+            synapses: 11
+          2:
+            chrom_fitness: 0
+            init_config: *id015
+            input_neurons: *id016
+            neurons: 7
+            output_neuron: 6
+            rule_status: *id017
+            rules: *id018
+            synapses: 11
+          3:
+            chrom_fitness: 0
+            init_config: *id019
+            input_neurons: *id020
+            neurons: 7
+            output_neuron: 6
+            rule_status: *id021
+            rules: *id022
+            synapses: 11
+          4:
+            chrom_fitness: 0
+            init_config: *id023
+            input_neurons: *id024
+            neurons: 7
+            output_neuron: 6
+            rule_status: *id025
+            rules: *id026
+            synapses: 11
+          5:
+            chrom_fitness: 0
+            init_config: *id027
+            input_neurons: *id028
+            neurons: 7
+            output_neuron: 6
+            rule_status: *id029
+            rules: *id030
+            synapses: 11
+          6:
+            chrom_fitness: 0
+            init_config: *id031
+            input_neurons: *id032
+            neurons: 7
+            output_neuron: 6
+            rule_status: *id033
+            rules: *id034
+            synapses: 11
+          7:
+            chrom_fitness: 0
+            init_config: *id035
+            input_neurons: *id036
+            neurons: 7
+            output_neuron: 6
+            rule_status: *id037
+            rules: *id038
+            synapses: 11
+      3:
+        best_chromosome_indexes:
+        - 0
+        - 1
+        - 2
+        - 3
+        - 4
+        - 5
+        - 6
+        - 7
+        best_fitness_result: 0
+        rssnp_chromosomes:
+          0:
+            chrom_fitness: 0
+            init_config: *id007
+            input_neurons: *id008
+            neurons: 7
+            output_neuron: 6
+            rule_status: *id009
+            rules: *id010
+            synapses: 11
+          1:
+            chrom_fitness: 0
+            init_config: *id011
+            input_neurons: *id012
+            neurons: 7
+            output_neuron: 6
+            rule_status: *id013
+            rules: *id014
+            synapses: 11
+          2:
+            chrom_fitness: 0
+            init_config: *id015
+            input_neurons: *id016
+            neurons: 7
+            output_neuron: 6
+            rule_status: *id017
+            rules: *id018
+            synapses: 11
+          3:
+            chrom_fitness: 0
+            init_config: *id019
+            input_neurons: *id020
+            neurons: 7
+            output_neuron: 6
+            rule_status: *id021
+            rules: *id022
+            synapses: 11
+          4:
+            chrom_fitness: 0
+            init_config: *id023
+            input_neurons: *id024
+            neurons: 7
+            output_neuron: 6
+            rule_status: *id025
+            rules: *id026
+            synapses: 11
+          5:
+            chrom_fitness: 0
+            init_config: *id027
+            input_neurons: *id028
+            neurons: 7
+            output_neuron: 6
+            rule_status: *id029
+            rules: *id030
+            synapses: 11
+          6:
+            chrom_fitness: 0
+            init_config: *id031
+            input_neurons: *id032
+            neurons: 7
+            output_neuron: 6
+            rule_status: *id033
+            rules: *id034
+            synapses: 11
+          7:
+            chrom_fitness: 0
+            init_config: *id035
+            input_neurons: *id036
+            neurons: 7
+            output_neuron: 6
+            rule_status: *id037
+            rules: *id038
+            synapses: 11
+    max_fitness_in_run: 0
+    mutation_rate: 100
+    population_size: 8
+    selection_func: 1
+  1:
+    fitness_function: 1
+    generations:
+      0:
+        best_chromosome_indexes:
+        - 0
+        - 1
+        - 2
+        - 3
+        - 4
+        - 5
+        - 6
+        - 7
+        best_fitness_result: 0
+        rssnp_chromosomes:
+          0:
+            chrom_fitness: 0
+            init_config: *id007
+            input_neurons: *id008
+            neurons: 7
+            output_neuron: 6
+            rule_status: *id009
+            rules: *id010
+            synapses: 11
+          1:
+            chrom_fitness: 0
+            init_config: *id011
+            input_neurons: *id012
+            neurons: 7
+            output_neuron: 6
+            rule_status: *id013
+            rules: *id014
+            synapses: 11
+          2:
+            chrom_fitness: 0
+            init_config: *id015
+            input_neurons: *id016
+            neurons: 7
+            output_neuron: 6
+            rule_status: *id017
+            rules: *id018
+            synapses: 11
+          3:
+            chrom_fitness: 0
+            init_config: *id019
+            input_neurons: *id020
+            neurons: 7
+            output_neuron: 6
+            rule_status: *id021
+            rules: *id022
+            synapses: 11
+          4:
+            chrom_fitness: 0
+            init_config: *id023
+            input_neurons: *id024
+            neurons: 7
+            output_neuron: 6
+            rule_status: *id025
+            rules: *id026
+            synapses: 11
+          5:
+            chrom_fitness: 0
+            init_config: *id027
+            input_neurons: *id028
+            neurons: 7
+            output_neuron: 6
+            rule_status: *id029
+            rules: *id030
+            synapses: 11
+          6:
+            chrom_fitness: 0
+            init_config: *id031
+            input_neurons: *id032
+            neurons: 7
+            output_neuron: 6
+            rule_status: *id033
+            rules: *id034
+            synapses: 11
+          7:
+            chrom_fitness: 0
+            init_config: *id035
+            input_neurons: *id036
+            neurons: 7
+            output_neuron: 6
+            rule_status: *id037
+            rules: *id038
+            synapses: 11
+      1:
+        best_chromosome_indexes:
+        - 0
+        - 1
+        - 2
+        - 3
+        - 4
+        - 5
+        - 6
+        - 7
+        best_fitness_result: 0
+        rssnp_chromosomes:
+          0:
+            chrom_fitness: 0
+            init_config: *id007
+            input_neurons: *id008
+            neurons: 7
+            output_neuron: 6
+            rule_status: *id009
+            rules: *id010
+            synapses: 11
+          1:
+            chrom_fitness: 0
+            init_config: *id011
+            input_neurons: *id012
+            neurons: 7
+            output_neuron: 6
+            rule_status: *id013
+            rules: *id014
+            synapses: 11
+          2:
+            chrom_fitness: 0
+            init_config: *id015
+            input_neurons: *id016
+            neurons: 7
+            output_neuron: 6
+            rule_status: *id017
+            rules: *id018
+            synapses: 11
+          3:
+            chrom_fitness: 0
+            init_config: *id019
+            input_neurons: *id020
+            neurons: 7
+            output_neuron: 6
+            rule_status: *id021
+            rules: *id022
+            synapses: 11
+          4:
+            chrom_fitness: 0
+            init_config: *id023
+            input_neurons: *id024
+            neurons: 7
+            output_neuron: 6
+            rule_status: *id025
+            rules: *id026
+            synapses: 11
+          5:
+            chrom_fitness: 0
+            init_config: *id027
+            input_neurons: *id028
+            neurons: 7
+            output_neuron: 6
+            rule_status: *id029
+            rules: *id030
+            synapses: 11
+          6:
+            chrom_fitness: 0
+            init_config: *id031
+            input_neurons: *id032
+            neurons: 7
+            output_neuron: 6
+            rule_status: *id033
+            rules: *id034
+            synapses: 11
+          7:
+            chrom_fitness: 0
+            init_config: *id035
+            input_neurons: *id036
+            neurons: 7
+            output_neuron: 6
+            rule_status: *id037
+            rules: *id038
+            synapses: 11
+      2:
+        best_chromosome_indexes:
+        - 0
+        - 1
+        - 2
+        - 3
+        - 4
+        - 5
+        - 6
+        - 7
+        best_fitness_result: 0
+        rssnp_chromosomes:
+          0:
+            chrom_fitness: 0
+            init_config: *id007
+            input_neurons: *id008
+            neurons: 7
+            output_neuron: 6
+            rule_status: *id009
+            rules: *id010
+            synapses: 11
+          1:
+            chrom_fitness: 0
+            init_config: *id011
+            input_neurons: *id012
+            neurons: 7
+            output_neuron: 6
+            rule_status: *id013
+            rules: *id014
+            synapses: 11
+          2:
+            chrom_fitness: 0
+            init_config: *id015
+            input_neurons: *id016
+            neurons: 7
+            output_neuron: 6
+            rule_status: *id017
+            rules: *id018
+            synapses: 11
+          3:
+            chrom_fitness: 0
+            init_config: *id019
+            input_neurons: *id020
+            neurons: 7
+            output_neuron: 6
+            rule_status: *id021
+            rules: *id022
+            synapses: 11
+          4:
+            chrom_fitness: 0
+            init_config: *id023
+            input_neurons: *id024
+            neurons: 7
+            output_neuron: 6
+            rule_status: *id025
+            rules: *id026
+            synapses: 11
+          5:
+            chrom_fitness: 0
+            init_config: *id027
+            input_neurons: *id028
+            neurons: 7
+            output_neuron: 6
+            rule_status: *id029
+            rules: *id030
+            synapses: 11
+          6:
+            chrom_fitness: 0
+            init_config: *id031
+            input_neurons: *id032
+            neurons: 7
+            output_neuron: 6
+            rule_status: *id033
+            rules: *id034
+            synapses: 11
+          7:
+            chrom_fitness: 0
+            init_config: *id035
+            input_neurons: *id036
+            neurons: 7
+            output_neuron: 6
+            rule_status: *id037
+            rules: *id038
+            synapses: 11
+      3:
+        best_chromosome_indexes:
+        - 0
+        - 1
+        - 2
+        - 3
+        - 4
+        - 5
+        - 6
+        - 7
+        best_fitness_result: 0
+        rssnp_chromosomes:
+          0:
+            chrom_fitness: 0
+            init_config: *id007
+            input_neurons: *id008
+            neurons: 7
+            output_neuron: 6
+            rule_status: *id009
+            rules: *id010
+            synapses: 11
+          1:
+            chrom_fitness: 0
+            init_config: *id011
+            input_neurons: *id012
+            neurons: 7
+            output_neuron: 6
+            rule_status: *id013
+            rules: *id014
+            synapses: 11
+          2:
+            chrom_fitness: 0
+            init_config: *id015
+            input_neurons: *id016
+            neurons: 7
+            output_neuron: 6
+            rule_status: *id017
+            rules: *id018
+            synapses: 11
+          3:
+            chrom_fitness: 0
+            init_config: *id019
+            input_neurons: *id020
+            neurons: 7
+            output_neuron: 6
+            rule_status: *id021
+            rules: *id022
+            synapses: 11
+          4:
+            chrom_fitness: 0
+            init_config: *id023
+            input_neurons: *id024
+            neurons: 7
+            output_neuron: 6
+            rule_status: *id025
+            rules: *id026
+            synapses: 11
+          5:
+            chrom_fitness: 0
+            init_config: *id027
+            input_neurons: *id028
+            neurons: 7
+            output_neuron: 6
+            rule_status: *id029
+            rules: *id030
+            synapses: 11
+          6:
+            chrom_fitness: 0
+            init_config: *id031
+            input_neurons: *id032
+            neurons: 7
+            output_neuron: 6
+            rule_status: *id033
+            rules: *id034
+            synapses: 11
+          7:
+            chrom_fitness: 0
+            init_config: *id035
+            input_neurons: *id036
+            neurons: 7
+            output_neuron: 6
+            rule_status: *id037
+            rules: *id038
+            synapses: 11
+    max_fitness_in_run: 0
+    mutation_rate: 100
+    population_size: 8
+    selection_func: 1
+  2:
+    fitness_function: 1
+    generations:
+      0:
+        best_chromosome_indexes:
+        - 0
+        - 1
+        - 2
+        - 3
+        - 4
+        - 5
+        - 6
+        - 7
+        best_fitness_result: 0
+        rssnp_chromosomes:
+          0:
+            chrom_fitness: 0
+            init_config: *id007
+            input_neurons: *id008
+            neurons: 7
+            output_neuron: 6
+            rule_status: *id009
+            rules: *id010
+            synapses: 11
+          1:
+            chrom_fitness: 0
+            init_config: *id011
+            input_neurons: *id012
+            neurons: 7
+            output_neuron: 6
+            rule_status: *id013
+            rules: *id014
+            synapses: 11
+          2:
+            chrom_fitness: 0
+            init_config: *id015
+            input_neurons: *id016
+            neurons: 7
+            output_neuron: 6
+            rule_status: *id017
+            rules: *id018
+            synapses: 11
+          3:
+            chrom_fitness: 0
+            init_config: *id019
+            input_neurons: *id020
+            neurons: 7
+            output_neuron: 6
+            rule_status: *id021
+            rules: *id022
+            synapses: 11
+          4:
+            chrom_fitness: 0
+            init_config: *id023
+            input_neurons: *id024
+            neurons: 7
+            output_neuron: 6
+            rule_status: *id025
+            rules: *id026
+            synapses: 11
+          5:
+            chrom_fitness: 0
+            init_config: *id027
+            input_neurons: *id028
+            neurons: 7
+            output_neuron: 6
+            rule_status: *id029
+            rules: *id030
+            synapses: 11
+          6:
+            chrom_fitness: 0
+            init_config: *id031
+            input_neurons: *id032
+            neurons: 7
+            output_neuron: 6
+            rule_status: *id033
+            rules: *id034
+            synapses: 11
+          7:
+            chrom_fitness: 0
+            init_config: *id035
+            input_neurons: *id036
+            neurons: 7
+            output_neuron: 6
+            rule_status: *id037
+            rules: *id038
+            synapses: 11
+      1:
+        best_chromosome_indexes:
+        - 0
+        - 1
+        - 2
+        - 3
+        - 4
+        - 5
+        - 6
+        - 7
+        best_fitness_result: 0
+        rssnp_chromosomes:
+          0:
+            chrom_fitness: 0
+            init_config: *id007
+            input_neurons: *id008
+            neurons: 7
+            output_neuron: 6
+            rule_status: *id009
+            rules: *id010
+            synapses: 11
+          1:
+            chrom_fitness: 0
+            init_config: *id011
+            input_neurons: *id012
+            neurons: 7
+            output_neuron: 6
+            rule_status: *id013
+            rules: *id014
+            synapses: 11
+          2:
+            chrom_fitness: 0
+            init_config: *id015
+            input_neurons: *id016
+            neurons: 7
+            output_neuron: 6
+            rule_status: *id017
+            rules: *id018
+            synapses: 11
+          3:
+            chrom_fitness: 0
+            init_config: *id019
+            input_neurons: *id020
+            neurons: 7
+            output_neuron: 6
+            rule_status: *id021
+            rules: *id022
+            synapses: 11
+          4:
+            chrom_fitness: 0
+            init_config: *id023
+            input_neurons: *id024
+            neurons: 7
+            output_neuron: 6
+            rule_status: *id025
+            rules: *id026
+            synapses: 11
+          5:
+            chrom_fitness: 0
+            init_config: *id027
+            input_neurons: *id028
+            neurons: 7
+            output_neuron: 6
+            rule_status: *id029
+            rules: *id030
+            synapses: 11
+          6:
+            chrom_fitness: 0
+            init_config: *id031
+            input_neurons: *id032
+            neurons: 7
+            output_neuron: 6
+            rule_status: *id033
+            rules: *id034
+            synapses: 11
+          7:
+            chrom_fitness: 0
+            init_config: *id035
+            input_neurons: *id036
+            neurons: 7
+            output_neuron: 6
+            rule_status: *id037
+            rules: *id038
+            synapses: 11
+      2:
+        best_chromosome_indexes:
+        - 0
+        - 1
+        - 2
+        - 3
+        - 4
+        - 5
+        - 6
+        - 7
+        best_fitness_result: 0
+        rssnp_chromosomes:
+          0:
+            chrom_fitness: 0
+            init_config: *id007
+            input_neurons: *id008
+            neurons: 7
+            output_neuron: 6
+            rule_status: *id009
+            rules: *id010
+            synapses: 11
+          1:
+            chrom_fitness: 0
+            init_config: *id011
+            input_neurons: *id012
+            neurons: 7
+            output_neuron: 6
+            rule_status: *id013
+            rules: *id014
+            synapses: 11
+          2:
+            chrom_fitness: 0
+            init_config: *id015
+            input_neurons: *id016
+            neurons: 7
+            output_neuron: 6
+            rule_status: *id017
+            rules: *id018
+            synapses: 11
+          3:
+            chrom_fitness: 0
+            init_config: *id019
+            input_neurons: *id020
+            neurons: 7
+            output_neuron: 6
+            rule_status: *id021
+            rules: *id022
+            synapses: 11
+          4:
+            chrom_fitness: 0
+            init_config: *id023
+            input_neurons: *id024
+            neurons: 7
+            output_neuron: 6
+            rule_status: *id025
+            rules: *id026
+            synapses: 11
+          5:
+            chrom_fitness: 0
+            init_config: *id027
+            input_neurons: *id028
+            neurons: 7
+            output_neuron: 6
+            rule_status: *id029
+            rules: *id030
+            synapses: 11
+          6:
+            chrom_fitness: 0
+            init_config: *id031
+            input_neurons: *id032
+            neurons: 7
+            output_neuron: 6
+            rule_status: *id033
+            rules: *id034
+            synapses: 11
+          7:
+            chrom_fitness: 0
+            init_config: *id035
+            input_neurons: *id036
+            neurons: 7
+            output_neuron: 6
+            rule_status: *id037
+            rules: *id038
+            synapses: 11
+      3:
+        best_chromosome_indexes:
+        - 0
+        - 1
+        - 2
+        - 3
+        - 4
+        - 5
+        - 6
+        - 7
+        best_fitness_result: 0
+        rssnp_chromosomes:
+          0:
+            chrom_fitness: 0
+            init_config: *id007
+            input_neurons: *id008
+            neurons: 7
+            output_neuron: 6
+            rule_status: *id009
+            rules: *id010
+            synapses: 11
+          1:
+            chrom_fitness: 0
+            init_config: *id011
+            input_neurons: *id012
+            neurons: 7
+            output_neuron: 6
+            rule_status: *id013
+            rules: *id014
+            synapses: 11
+          2:
+            chrom_fitness: 0
+            init_config: *id015
+            input_neurons: *id016
+            neurons: 7
+            output_neuron: 6
+            rule_status: *id017
+            rules: *id018
+            synapses: 11
+          3:
+            chrom_fitness: 0
+            init_config: *id019
+            input_neurons: *id020
+            neurons: 7
+            output_neuron: 6
+            rule_status: *id021
+            rules: *id022
+            synapses: 11
+          4:
+            chrom_fitness: 0
+            init_config: *id023
+            input_neurons: *id024
+            neurons: 7
+            output_neuron: 6
+            rule_status: *id025
+            rules: *id026
+            synapses: 11
+          5:
+            chrom_fitness: 0
+            init_config: *id027
+            input_neurons: *id028
+            neurons: 7
+            output_neuron: 6
+            rule_status: *id029
+            rules: *id030
+            synapses: 11
+          6:
+            chrom_fitness: 0
+            init_config: *id031
+            input_neurons: *id032
+            neurons: 7
+            output_neuron: 6
+            rule_status: *id033
+            rules: *id034
+            synapses: 11
+          7:
+            chrom_fitness: 0
+            init_config: *id035
+            input_neurons: *id036
+            neurons: 7
+            output_neuron: 6
+            rule_status: *id037
+            rules: *id038
+            synapses: 11
+    max_fitness_in_run: 0
+    mutation_rate: 100
+    population_size: 8
+    selection_func: 1
+  3:
+    fitness_function: 1
+    generations:
+      0:
+        best_chromosome_indexes:
+        - 0
+        - 1
+        - 2
+        - 3
+        - 4
+        - 5
+        - 6
+        - 7
+        best_fitness_result: 0
+        rssnp_chromosomes:
+          0:
+            chrom_fitness: 0
+            init_config: *id007
+            input_neurons: *id008
+            neurons: 7
+            output_neuron: 6
+            rule_status: *id009
+            rules: *id010
+            synapses: 11
+          1:
+            chrom_fitness: 0
+            init_config: *id011
+            input_neurons: *id012
+            neurons: 7
+            output_neuron: 6
+            rule_status: *id013
+            rules: *id014
+            synapses: 11
+          2:
+            chrom_fitness: 0
+            init_config: *id015
+            input_neurons: *id016
+            neurons: 7
+            output_neuron: 6
+            rule_status: *id017
+            rules: *id018
+            synapses: 11
+          3:
+            chrom_fitness: 0
+            init_config: *id019
+            input_neurons: *id020
+            neurons: 7
+            output_neuron: 6
+            rule_status: *id021
+            rules: *id022
+            synapses: 11
+          4:
+            chrom_fitness: 0
+            init_config: *id023
+            input_neurons: *id024
+            neurons: 7
+            output_neuron: 6
+            rule_status: *id025
+            rules: *id026
+            synapses: 11
+          5:
+            chrom_fitness: 0
+            init_config: *id027
+            input_neurons: *id028
+            neurons: 7
+            output_neuron: 6
+            rule_status: *id029
+            rules: *id030
+            synapses: 11
+          6:
+            chrom_fitness: 0
+            init_config: *id031
+            input_neurons: *id032
+            neurons: 7
+            output_neuron: 6
+            rule_status: *id033
+            rules: *id034
+            synapses: 11
+          7:
+            chrom_fitness: 0
+            init_config: *id035
+            input_neurons: *id036
+            neurons: 7
+            output_neuron: 6
+            rule_status: *id037
+            rules: *id038
+            synapses: 11
+      1:
+        best_chromosome_indexes:
+        - 0
+        - 1
+        - 2
+        - 3
+        - 4
+        - 5
+        - 6
+        - 7
+        best_fitness_result: 0
+        rssnp_chromosomes:
+          0:
+            chrom_fitness: 0
+            init_config: *id007
+            input_neurons: *id008
+            neurons: 7
+            output_neuron: 6
+            rule_status: *id009
+            rules: *id010
+            synapses: 11
+          1:
+            chrom_fitness: 0
+            init_config: *id011
+            input_neurons: *id012
+            neurons: 7
+            output_neuron: 6
+            rule_status: *id013
+            rules: *id014
+            synapses: 11
+          2:
+            chrom_fitness: 0
+            init_config: *id015
+            input_neurons: *id016
+            neurons: 7
+            output_neuron: 6
+            rule_status: *id017
+            rules: *id018
+            synapses: 11
+          3:
+            chrom_fitness: 0
+            init_config: *id019
+            input_neurons: *id020
+            neurons: 7
+            output_neuron: 6
+            rule_status: *id021
+            rules: *id022
+            synapses: 11
+          4:
+            chrom_fitness: 0
+            init_config: *id023
+            input_neurons: *id024
+            neurons: 7
+            output_neuron: 6
+            rule_status: *id025
+            rules: *id026
+            synapses: 11
+          5:
+            chrom_fitness: 0
+            init_config: *id027
+            input_neurons: *id028
+            neurons: 7
+            output_neuron: 6
+            rule_status: *id029
+            rules: *id030
+            synapses: 11
+          6:
+            chrom_fitness: 0
+            init_config: *id031
+            input_neurons: *id032
+            neurons: 7
+            output_neuron: 6
+            rule_status: *id033
+            rules: *id034
+            synapses: 11
+          7:
+            chrom_fitness: 0
+            init_config: *id035
+            input_neurons: *id036
+            neurons: 7
+            output_neuron: 6
+            rule_status: *id037
+            rules: *id038
+            synapses: 11
+      2:
+        best_chromosome_indexes:
+        - 0
+        - 1
+        - 2
+        - 3
+        - 4
+        - 5
+        - 6
+        - 7
+        best_fitness_result: 0
+        rssnp_chromosomes:
+          0:
+            chrom_fitness: 0
+            init_config: *id007
+            input_neurons: *id008
+            neurons: 7
+            output_neuron: 6
+            rule_status: *id009
+            rules: *id010
+            synapses: 11
+          1:
+            chrom_fitness: 0
+            init_config: *id011
+            input_neurons: *id012
+            neurons: 7
+            output_neuron: 6
+            rule_status: *id013
+            rules: *id014
+            synapses: 11
+          2:
+            chrom_fitness: 0
+            init_config: *id015
+            input_neurons: *id016
+            neurons: 7
+            output_neuron: 6
+            rule_status: *id017
+            rules: *id018
+            synapses: 11
+          3:
+            chrom_fitness: 0
+            init_config: *id019
+            input_neurons: *id020
+            neurons: 7
+            output_neuron: 6
+            rule_status: *id021
+            rules: *id022
+            synapses: 11
+          4:
+            chrom_fitness: 0
+            init_config: *id023
+            input_neurons: *id024
+            neurons: 7
+            output_neuron: 6
+            rule_status: *id025
+            rules: *id026
+            synapses: 11
+          5:
+            chrom_fitness: 0
+            init_config: *id027
+            input_neurons: *id028
+            neurons: 7
+            output_neuron: 6
+            rule_status: *id029
+            rules: *id030
+            synapses: 11
+          6:
+            chrom_fitness: 0
+            init_config: *id031
+            input_neurons: *id032
+            neurons: 7
+            output_neuron: 6
+            rule_status: *id033
+            rules: *id034
+            synapses: 11
+          7:
+            chrom_fitness: 0
+            init_config: *id035
+            input_neurons: *id036
+            neurons: 7
+            output_neuron: 6
+            rule_status: *id037
+            rules: *id038
+            synapses: 11
+      3:
+        best_chromosome_indexes:
+        - 0
+        - 1
+        - 2
+        - 3
+        - 4
+        - 5
+        - 6
+        - 7
+        best_fitness_result: 0
+        rssnp_chromosomes:
+          0:
+            chrom_fitness: 0
+            init_config: *id007
+            input_neurons: *id008
+            neurons: 7
+            output_neuron: 6
+            rule_status: *id009
+            rules: *id010
+            synapses: 11
+          1:
+            chrom_fitness: 0
+            init_config: *id011
+            input_neurons: *id012
+            neurons: 7
+            output_neuron: 6
+            rule_status: *id013
+            rules: *id014
+            synapses: 11
+          2:
+            chrom_fitness: 0
+            init_config: *id015
+            input_neurons: *id016
+            neurons: 7
+            output_neuron: 6
+            rule_status: *id017
+            rules: *id018
+            synapses: 11
+          3:
+            chrom_fitness: 0
+            init_config: *id019
+            input_neurons: *id020
+            neurons: 7
+            output_neuron: 6
+            rule_status: *id021
+            rules: *id022
+            synapses: 11
+          4:
+            chrom_fitness: 0
+            init_config: *id023
+            input_neurons: *id024
+            neurons: 7
+            output_neuron: 6
+            rule_status: *id025
+            rules: *id026
+            synapses: 11
+          5:
+            chrom_fitness: 0
+            init_config: *id027
+            input_neurons: *id028
+            neurons: 7
+            output_neuron: 6
+            rule_status: *id029
+            rules: *id030
+            synapses: 11
+          6:
+            chrom_fitness: 0
+            init_config: *id031
+            input_neurons: *id032
+            neurons: 7
+            output_neuron: 6
+            rule_status: *id033
+            rules: *id034
+            synapses: 11
+          7:
+            chrom_fitness: 0
+            init_config: *id035
+            input_neurons: *id036
+            neurons: 7
+            output_neuron: 6
+            rule_status: *id037
+            rules: *id038
+            synapses: 11
+    max_fitness_in_run: 0
+    mutation_rate: 100
+    population_size: 8
+    selection_func: 1
+runs_pending: 2
+test_cases_path: C:\Users\Arvy\Documents\cs 199 docs\RSSNP_CPU_GPU_Framework\main_dir\test
+  cases\or_test_cases.txt

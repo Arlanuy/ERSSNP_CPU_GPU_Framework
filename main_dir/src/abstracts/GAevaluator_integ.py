@@ -37,9 +37,7 @@ class SNPGeneticAlgoEval:
         for run in range(start, start + middle + self.ga_params['runs_pending']):
             print("run run baby # " + str(run))
             # Perform a single run of the GA framework
-            run_fitness = genetic_algo.simulate(system, size, function, generations, mutation_rate, path_name, run, selection_func, start_from_gen)
-            #self.updateRuns(run)
-
+            run_fitness = genetic_algo.simulate(system, size, function, generations, mutation_rate, path_name, run, selection_func, start_from_gen)            
             if  run_fitness > max_fitness_in_run:
                 max_fitness_in_run = run_fitness
                 if max_fitness_in_run >= self.ga_params['goal_fitness']:
@@ -106,10 +104,3 @@ class SNPGeneticAlgoEval:
         print('no of run is ' + str(self.no_of_run))
         # Return summatoon of the average no of leaps of all runs
         return evol_leap / self.no_of_run
-
-    def updateRuns(self,  run_index):
-        #array = []
-        # Open a run
-        self.ga_params = conf_load(self.file_name)
-        #array.append(ga_params["runs"][run_index]["generations"])
-        #self.list_of_runs.append(array)
