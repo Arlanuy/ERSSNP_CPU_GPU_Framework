@@ -1,10 +1,13 @@
 # This is the main script for running experiments - use CAREFULLY!!
-
+#for CPU
 from src.abstracts.geneticalgo_integ import SNPGeneticAlgo
 from src.abstracts.GAevaluator_integ import SNPGeneticAlgoEval, conf_load
 from src.abstracts.grapher import draw
 from src.abstracts.parsers import spike_train_parser
 from src.abstracts.rssnp import assign_rssnp
+
+#for GPU
+from src.abstracts.geneticalgo_integ_gpu import SNPGeneticAlgoGPU
 
 
 #from RSSNP_list import *    # contains list of sample rssnps
@@ -12,12 +15,7 @@ from src.abstracts.rssnp import assign_rssnp
 import os
 
 # stats = {'population_size': 12, 'mutation_rate': 100, 'fitness_function': 1, 'generations': 5, 'runs': 1, 'selection_func': 1},
-def gaframework(rssnp_string, path_to_io_spike_trains, stats, loadfile_name, start_new = True, start_from_gen = False):
-    #name = input("Enter a label for this run: ")
-    #dir = input("Where would you like to put the results(Directory name): ")
-    #if not os.path.exists(dir):
-        #os.makedirs(dir)
-
+def gaframework(rssnp_string, path_to_io_spike_trains, loadfile_name, start_new = True, start_from_gen = False):
     ga = SNPGeneticAlgo()
     gaeval = SNPGeneticAlgoEval()
     ga_params = conf_load(loadfile_name)
@@ -25,7 +23,14 @@ def gaframework(rssnp_string, path_to_io_spike_trains, stats, loadfile_name, sta
     rssnp = assign_rssnp(rssnp_string)
     ga.inout_pairs = spike_train_parser(path_to_io_spike_trains,rssnp.inputs)
 
-    execute_experiment(rssnp, ga, gaeval, stats, loadfile_name, start_new, start_from_gen)
+    execute_experiment(rssnp, ga, gaeval, ga_params, loadfile_name, start_new, start_from_gen)
+
+def gaframework_gpu(loadfile_name):
+    ga = SNPGeneticAlgoGPU()
+    gaeval = SNPGeneticAlgoEval ()
+    ga_params = conf_load(loadfile_name)
+    #ga.inout_pairs = spike_train_parser(path_to_io_spike_trains,rssnp.inputs)
+    execute_experiment_gpu(ga, gaeval, ga_params, loadfile_name)
 
 def execute_experiment(rssnp, ga, gaeval, stats, loadfile_name, start_new = True, start_from_gen = False):
     
@@ -42,10 +47,19 @@ def execute_experiment(rssnp, ga, gaeval, stats, loadfile_name, start_new = True
         stats_run = stats['runs'][stats['run_total']]
     gaeval.run(ga, rssnp, stats_run['population_size'], stats_run['fitness_function'],  gaeval.no_of_run, gaeval.no_of_gen, stats_run['mutation_rate'], loadfile_name, stats_run['selection_func'], start_new, start_from_gen)
 
-# results_directory = input("Where would you like to put the results(Directory name): ")
+def execute_experiment_gpu(ga, gaeval, stats, loadfile_name):
+    gaeval.no_of_gen = stats['gen_total']
+    gaeval.no_of_run = stats['run_total']
 
-# if not os.path.exists(results_directory):
-#     os.makedirs(results_directory)
+    gaeval.opt_fitness = 50
+    gaeval.max_fitness = 100
+    gaeval.list_of_runs = []
+    print("Now executing experiment involving", loadfile_name)
+    stats_run = stats['runs'][gaeval.no_of_run]
+    start_new = False
+    start_from_gen = True
+    rssnp = None
+    gaeval.run(ga, rssnp, stats_run['population_size'], stats_run['fitness_function'],  gaeval.no_of_run, gaeval.no_of_gen, stats_run['mutation_rate'], loadfile_name, stats_run['selection_func'], start_from_gen)
 
 def setup_sample():
 

@@ -1,4 +1,4 @@
-from src.experimenter_uncommented import gaframework
+from src.experimenter_uncommented import gaframework, gaframework_gpu
 from src.abstracts.norssnp_integ import set_bounds, set_values
 from src.RSSNP_list import *
 import yaml, os
@@ -86,7 +86,7 @@ def program_main():
 		mutation_rate = int((input("How likely should it mutate in percentage? "))) * 100
 		print("Of the Parent Selection methods:\n 0. **Top 50% of the population**\n1. **25% of the population based on fitness**\n2. **Top 25% + 25% of the population based on fitness**")
 		selection_func = int(input("Which would you use?"))
-		print("Of the Fitness Selection methods:\n 0. Longest Common Subsequence\n1. Longest Common Substring\n2. Edit Distance Method")
+		print("Of the Fitness Selection methods:\n 0. Longest Common Subsequence\n1. Longest Common Substring\n2. Hamming Distance (CPU)/ Edit Distance Method (GPU)")
 		fitness_func = int(input("Which would you use?"))
 
 		ga_params = create_empty_yaml(runs, generations, population_size, savefile_name)
@@ -180,7 +180,7 @@ def program_main():
 		if system == None or test_cases_path == None:
 			print("Illegal system chosen or wrong direction for evolution")
 		else:
-			gaframework(system, test_cases_path, ga_params, savefile_name)
+			gaframework(system, test_cases_path, savefile_name)
 
 
 
@@ -245,7 +245,7 @@ def program_main():
 			rssnp_string = ga_params['runs'][0]['generations'][0]['rssnp_chromosomes'][0]
 			
 			print("rssnp string is " + str(rssnp_string))
-			gaframework(rssnp_string, ga_params['test_cases_path'] , ga_params, newloadfile_name, start_new, start_from_a_gen)
+			gaframework(rssnp_string, ga_params['test_cases_path'] , newloadfile_name, start_new, start_from_a_gen)
 			ga_params = conf_load(newloadfile_name)
 			ga_params['run_total'] += ga_params['runs_pending']
 			ga_params['runs_pending'] = 0
@@ -261,10 +261,28 @@ def program_main():
 			print("Maintaining current number of generation and population_size")
 			add_runs = int(input("How many runs would you like to add (minimum of 1 and maximum of 100): "))
 			ga_params['runs_pending'] = add_runs
-			generation_index = input("Which run and generation would you like to use as the starting parents of the succeeding runs (separate by comma)? ")
-			ga_params['generation_index_continue'] = int(input("Which run and generation would you like to use as the starting parents of the succeeding runs? "))
+			ga_params['generation_index_continue'] = input("Which run and generation would you like to use as the starting parents of the succeeding runs (separate by comma)? ")
 			newloadfile_name =  prompt_make_newsavefile(ga_params, loadfile_name, load_directory)
 			continue_create_empty_yaml(newloadfile_name)
+			ga_params = conf_load(newloadfile_name)
+			run_total = ga_params['run_total'] + ga_params['runs_pending']
+			for run in range(ga_params['run_total'], run_total):
+				ga_params['runs'][run]['max_fitness_in_run'] = 0
+				ga_params['runs'][run]['population_size'] = ga_params['runs'][0]['population_size'] + ga_params['populations_pending']
+				ga_params['runs'][run]['mutation_rate'] = ga_params['runs'][0]['mutation_rate']
+				ga_params['runs'][run]['selection_func'] = ga_params['runs'][0]['selection_func']
+				ga_params['runs'][run]['fitness_function'] = ga_params['runs'][0]['fitness_function']
+			conf_save(newloadfile_name, ga_params)
+			#rssnp_string = ga_params['runs'][0]['generations'][0]['rssnp_chromosomes'][0]
+			gaframework_gpu(newloadfile_name)
+			ga_params = conf_load(newloadfile_name)
+			ga_params['run_total'] += ga_params['runs_pending']
+			ga_params['runs_pending'] = 0
+			ga_params['gen_total'] += ga_params['gens_pending']
+			ga_params['gens_pending'] = 0
+			ga_params['populations_pending'] = 0
+
+			conf_save(newloadfile_name, ga_params)
 
 # ga_params = {
 #     'population_size': 12,

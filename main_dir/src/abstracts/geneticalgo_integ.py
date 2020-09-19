@@ -238,9 +238,6 @@ class SNPGeneticAlgo:
         '''
             Performs a complete run of the genetic algorithm framework
         '''
-        
-        if not os.path.exists(path_name):
-            os.makedirs(path_name)
 
         filename = path_name
         ga_params = conf_load(filename)
