@@ -1,7 +1,7 @@
 from src.abstracts.rssnp import *
 from src.abstracts.gpu_fitness import *
 
-import yaml, numpy
+import yaml, numpy, random
 
 def conf_load(filename):
     with open(filename, 'r') as stream:
@@ -29,7 +29,7 @@ class SNPGeneticAlgoGPU:
 	pop = None
 
 	def assign_fitness(self, output_dataset, output_spike_train, function):
-	    result = 1
+	    result = 0
 	    print("output_dataset ", output_dataset, " ost ", output_spike_train)
 	    if function == 0:
 	    	result = GPUlcs(output_dataset, output_spike_train)        
@@ -44,8 +44,57 @@ class SNPGeneticAlgoGPU:
 	    # print(result)
 	    return result
 
+	def selection(self, selection_func):
+		parents = []
+		if selection_func == 0:
+		    # Get top 50%
+		    parents = self.pop[:int(len(self.pop)/2)]
+		elif selection_func == 1:
+		    # Get random 25%
+		    total_fitness = 0
+		    for chrom in self.pop:
+		        total_fitness += chrom['fitness']
+
+		    if total_fitness != 0:
+		        i = 0
+		        while len(parents) != int(len(self.pop)/4):
+		            if random.randint(0,total_fitness) <= self.pop[-i]['fitness'] and not (self.pop[-i] in parents):    # chance to become parent is fitness/total fitness
+		                parents.insert(0,self.pop[-i])
+		            i = (i + 1) % len(self.pop)
+		    else:
+		        parents = self.pop[:int(len(self.pop)/4)]
+		elif selection_func == 2:
+		    # Get random 25% and top 25%
+		    total_fitness = 0
+
+		    parents = self.pop[:int(len(self.pop)/4)]
+		    for chrom in self.pop:
+		        if chrom not in parents:
+		            total_fitness += chrom['fitness']
+
+		    if total_fitness != 0:
+		        i = 0
+		        while len(parents) != int(len(self.pop)/4):
+		            if random.randint(0,total_fitness) <= self.pop[-i]['fitness'] and not (self.pop[-i] in parents):    # chance to become parent is fitness/total fitness
+		                parents.insert(0,self.pop[-i])
+		            i = (i + 1) % len(self.pop)
+		    else:
+		        parents = self.pop[:int(len(self.pop)/2)]
+
+		return parents
+
 	def crossover(self, mutation_rate, selection_func):
-		pass
+		population_size = len(self.pop)
+		# Get only parents
+		parents = self.selection(selection_func)
+		# delete half of the population
+		self.pop = self.pop[:(int(len(self.pop)/2))]
+
+		i = 0
+		#rand_rule = random.randint(0,total_fitness)		
+		#mutate_rand = random.randint()
+		#rand_changed_to = random.randint()
+		#pass
 
 	def dataset_arrange(self, test_case_name):
 	    input = open(test_case_name, 'r')
@@ -73,14 +122,15 @@ class SNPGeneticAlgoGPU:
 			b = numpy.broadcast(i, j)
 			inout_pairs_view.append((i + j))
 			#print(inout_pairs_view)
-			print("datasub input 1 ", dataset[z][inout_pairs_view[z][0][0][0]:inout_pairs_view[z][single_length - 1][0][0]])
-			print("datasub input 2 ", dataset[z][inout_pairs_view[z][0][0][1]:inout_pairs_view[z][single_length - 1][0][1]])
-			print("minuend ", len(dataset[z]), " subtrahend ", inout_pairs_view[z][0][0][-1], "datasub output", dataset[z][inout_pairs_view[z][0][0][-1]:inout_pairs_view[z][single_length - 1][0][-1]])
+			#print("datasub input 1 ", dataset[z][inout_pairs_view[z][0][0][0]:inout_pairs_view[z][single_length - 1][0][0]])
+			#print("datasub input 2 ", dataset[z][inout_pairs_view[z][0][0][1]:inout_pairs_view[z][single_length - 1][0][1]])
+			#print("minuend ", len(dataset[z]), " subtrahend ", inout_pairs_view[z][0][0][-1], "datasub output", dataset[z][inout_pairs_view[z][0][0][-1]:inout_pairs_view[z][single_length - 1][0][-1]])
 			maxSteps = 3*(len(dataset[z]) - inout_pairs_view[z][0][0][-1])  
-			print("maxsteps ", maxSteps)
+			#print("maxsteps ", maxSteps)
 			output_dataset = dataset[z][inout_pairs_view[z][0][0][-1]:inout_pairs_view[z][single_length - 1][0][-1]] 	
 			output_dataset = [int(x) for x in list(output_dataset)]
 			input_length = (bitstring_length - single_length)/single_length
+			chromosome['system'].in_spiketrain = []
 			for index in range(int(input_length)):
 				chromosome['system'].in_spiketrain.append({
                     'index': chromosome['system'].inputs[index],
@@ -89,6 +139,7 @@ class SNPGeneticAlgoGPU:
 				#print("chrom in spike ", chromosome['system'].in_spiketrain)
 			chromosome['system'].out_spiketrain = []
 			config = deepcopy(chromosome['system'].configuration_init)
+			#print("config is ", config)
 			chromosome['out_pairs'].append((chromosome['system'].main((config, chromosome['system'].ruleStatus), maxSteps), output_dataset))
 			chromosome['fitness'] += int(self.assign_fitness(output_dataset, chromosome['out_pairs'][z][0], function)/len(chromosome['out_pairs'][z][0])*100)
 		chromosome['fitness'] = int(chromosome['fitness']/len(dataset))

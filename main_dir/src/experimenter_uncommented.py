@@ -59,7 +59,7 @@ def execute_experiment_gpu(ga, gaeval, stats, loadfile_name):
     start_new = False
     start_from_gen = True
     rssnp = None
-    gaeval.run(ga, rssnp, stats_run['population_size'], stats_run['fitness_function'],  gaeval.no_of_run, gaeval.no_of_gen, stats_run['mutation_rate'], loadfile_name, stats_run['selection_func'], start_from_gen)
+    gaeval.run(ga, rssnp, stats_run['population_size'], stats_run['fitness_function'],  gaeval.no_of_run, gaeval.no_of_gen, stats_run['mutation_rate'], loadfile_name, stats_run['selection_func'], start_new, start_from_gen)
 
 def setup_sample():
 

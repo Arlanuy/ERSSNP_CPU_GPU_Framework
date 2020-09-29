@@ -166,9 +166,9 @@ def GPULCSubStr(output_dataset, output_spike_train):
     #print ("input 2 ", b)
 
     #print(LCSuff)
-    #print(res)
+    
     #print(LCSubStr(a, b, len(a), len(b)))
-
+    print("res substr", res)
     return res[0] 
 
 def GPUlcs(output_dataset, output_spike_train):
@@ -219,7 +219,7 @@ def GPUlcs(output_dataset, output_spike_train):
     res = numpy.array([0],dtype=numpy.int32)
     LCSuff = numpy.zeros((a[1].size+1,b.size+1),dtype=numpy.int32)
 
-    print(LCSuff[0])
+    #print(LCSuff[0])
 
     a_gpu = drv.mem_alloc(a[1].size * a[1].dtype.itemsize)
     b_gpu = drv.mem_alloc(b.size * b.dtype.itemsize)
@@ -238,7 +238,7 @@ def GPUlcs(output_dataset, output_spike_train):
 
     #print(LCSuff)
     #print(LCSuff[a[1].size][b.size])
-    #print(res)
+    print("res lcs", res)
 
     #print (lcs(a[1], b)) 
 
@@ -316,7 +316,7 @@ def GPUeditDistDP(output_dataset, output_spike_train):
     drv.memcpy_htod(res_gpu, res)
 
     for i in range(b.size+1):
-        print(i)
+        print("at index ", i)
         LCS(numpy.int32(i),a_gpu,b_gpu,LCSuff_gpu,numpy.int32(a.size+1),numpy.int32(b.size+1) , block=(10,10,1),grid=(1,1,1))
 
 
@@ -325,7 +325,7 @@ def GPUeditDistDP(output_dataset, output_spike_train):
     #print(LCSuff)
     #print(LCSuff[a.size][b.size])
     #print(res)
-
+    print("res editdist", res)
     #print("CPU", editDistDP(a, b, len(a), len(b))) 
 
     return res[0]
