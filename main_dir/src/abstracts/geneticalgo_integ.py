@@ -33,6 +33,7 @@ def string_format(bitstring):
 
 def assign_fitness(generated, actual, function):
     result = 0
+    print("generated ", string_format(generated), "actual ", string_format(actual))
     if function == 0:
         result = lc_substring(string_format(generated), string_format(actual), len(generated), len(actual))
     elif function == 1:
@@ -45,7 +46,7 @@ def assign_fitness(generated, actual, function):
         while len(a_copy) < len(g_copy):
             a_copy.insert(0, 0)
         result = hamming_distance(string_format(g_copy), string_format(a_copy))
-    # print(result)
+    print("result ", result)
     return result
 
 class SNPGeneticAlgo:

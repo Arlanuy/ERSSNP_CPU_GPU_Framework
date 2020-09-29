@@ -193,6 +193,7 @@ def program_main():
 
 		execution_choice = int(input("Where do you want your experiment to be executed (1) CPU or (2) GPU: "))
 		start_from_a_gen = False
+		ga_params['goal_fitness'] = 101
 		if execution_choice == 1:
 
 			#get the information from console
@@ -206,7 +207,7 @@ def program_main():
 				ga_params['runs_pending'] = add_runs
 				ga_params['gens_pending'] = add_gens
 				ga_params['populations_pending'] = add_populations
-				ga_params['goal_fitness'] = 101
+				
 			elif sub_choice == 2:
 				print("Notice that the evolutionary process wont stop till a chromosome reached the desired goal fitness\n")
 				print("Or till you exit the program itself (make sure its after a run in a GA) and the autosave will record only up to the point of termination\n")
@@ -219,6 +220,8 @@ def program_main():
 			elif sub_choice == 3:					
 				print("Maintaining current number of generation and population_size")
 				add_runs = int(input("How many runs would you like to add (minimum of 1 and maximum of 100): "))
+				ga_params['gens_pending'] = 0
+				ga_params['populations_pending'] = 0
 				ga_params['runs_pending'] = add_runs
 				ga_params['generation_index_continue'] = input("Which run and generation would you like to use as the starting parents of the succeeding runs (separate by comma)? ")
 				start_from_a_gen = True
@@ -259,7 +262,9 @@ def program_main():
 			print("Running GA in GPU: ")
 			
 			print("Maintaining current number of generation and population_size")
-			add_runs = int(input("How many runs would you like to add (minimum of 1 and maximum of 100): "))
+			add_runs = int(input("How many runs would you like to add (minimum of 1 and maximum of 100): "))	
+			ga_params['gens_pending'] = 0
+			ga_params['populations_pending'] = 0
 			ga_params['runs_pending'] = add_runs
 			ga_params['generation_index_continue'] = input("Which run and generation would you like to use as the starting parents of the succeeding runs (separate by comma)? ")
 			newloadfile_name =  prompt_make_newsavefile(ga_params, loadfile_name, load_directory)
