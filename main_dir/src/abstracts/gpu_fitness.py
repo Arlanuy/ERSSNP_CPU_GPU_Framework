@@ -4,98 +4,77 @@ import numpy
 
 from pycuda.compiler import SourceModule
 
-def LCSubStr(X, Y, m, n): 
+def GPUlcs(output_dataset, output_spike_train):
+    mod = SourceModule("""
+    #include <stdlib.h>
+    __device__ int max1(int a,int b){
+        if(a>b){
+            return a;
+        }
+        else{
+            return b;
+        }
+    }
+
+    __global__ void lc_subsequence(int *X,int *Y,int *res, int *LCSuff,int row_width,int col_width){
+       int j = blockIdx.x * blockDim.x + threadIdx.x;
+       if (j < col_width){
+            for (int i = 1; i < row_width; i++) {
+                if (i == 0 || j == 0){
+                    LCSuff[i*col_width+j] = 0;
+                    __syncthreads();
+                }
+                else if (X[i-1] == Y[j-1]) {  
+                    LCSuff[i*col_width+j] = LCSuff[((i-1)*col_width)+j-1] + 1;
+                    __syncthreads();
+                    //printf("compare %d %d\\n",res[0],LCSuff[i*col_width+j]);
+                    //printf("res %d %d %d\\n",res[0],i,j);
+                    
+                } 
+                else{
+                    LCSuff[i*col_width+j] = max1(LCSuff[(i-1)*col_width+j],LCSuff[i*col_width+j-1]);
+                    __syncthreads();
+                }
+                
+            }
+
+        } 
+    }
+
+
+    """)
+    LCSQ = mod.get_function("lc_subsequence")
     
-    # Create a table to store lengths of 
-    # longest common suffixes of substrings. 
-    # Note that LCSuff[i][j] contains the 
-    # length of longest common suffix of 
-    # X[0...i-1] and Y[0...j-1]. The first 
-    # row and first column entries have no 
-    # logical meaning, they are used only 
-    # for simplicity of the program. 
-    
-    # LCSuff is the table with zero 
-    # value initially in each cell 
-    LCSuff = [[0 for k in range(n+1)] for l in range(m+1)] 
-    
-    # To store the length of 
-    # longest common substring 
-    result = 0
+    #a = numpy.array(test,dtype=numpy.int32) #row the width
+    #b = numpy.array([0,0,0,1],dtype=numpy.int32) #col
+    a = numpy.array(output_spike_train,dtype=numpy.int32)
+    b = numpy.array(output_dataset,dtype=numpy.int32)
+    res = numpy.array([0],dtype=numpy.int32)
+    LCSuff = numpy.zeros((a.size+1,b.size+1),dtype=numpy.int32)
 
-    # Following steps to build 
-    # LCSuff[m+1][n+1] in bottom up fashion 
-    for i in range(m + 1): 
-        for j in range(n + 1): 
-            if (i == 0 or j == 0): 
-                LCSuff[i][j] = 0
-            elif (X[i-1] == Y[j-1]): 
-                LCSuff[i][j] = LCSuff[i-1][j-1] + 1
-                result = max(result, LCSuff[i][j]) 
-            else: 
-                LCSuff[i][j] = 0
-    for a in LCSuff:
-        print(a)
-    return result
 
-def lcs(X , Y): 
-    # find the length of the strings 
-    m = len(X) 
-    n = len(Y) 
-  
-    # declaring the array for storing the dp values 
-    L = [[None]*(n+1) for i in xrange(m+1)] 
-  
-    """Following steps build L[m+1][n+1] in bottom up fashion 
-    Note: L[i][j] contains length of LCS of X[0..i-1] 
-    and Y[0..j-1]"""
-    for i in range(m+1): 
-        for j in range(n+1): 
-            if i == 0 or j == 0 : 
-                L[i][j] = 0
-            elif X[i-1] == Y[j-1]: 
-                L[i][j] = L[i-1][j-1]+1
-            else: 
-                L[i][j] = max(L[i-1][j] , L[i][j-1]) 
-  
-    # L[m][n] contains the length of LCS of X[0..n-1] & Y[0..m-1]
-    for a in L:
-        print(a) 
-    return "CPU",L[m][n]
+    a_gpu = drv.mem_alloc(a.size * a.dtype.itemsize)
+    b_gpu = drv.mem_alloc(b.size * b.dtype.itemsize)
+    LCSuff_gpu = drv.mem_alloc(LCSuff.size * LCSuff.dtype.itemsize)
+    res_gpu = drv.mem_alloc(res.size * res.dtype.itemsize)
 
-def editDistDP(str1, str2, m, n): 
-    # Create a table to store results of subproblems 
-    dp = [[0 for x in range(n + 1)] for x in range(m + 1)] 
+    drv.memcpy_htod(a_gpu, a)
+    drv.memcpy_htod(b_gpu, b)
+    drv.memcpy_htod(LCSuff_gpu, LCSuff)
+    drv.memcpy_htod(res_gpu, res)
 
-    # Fill d[][] in bottom up manner 
-    for i in range(m + 1): 
-        for j in range(n + 1): 
 
-            # If first string is empty, only option is to 
-            # insert all characters of second string 
-            if i == 0: 
-                dp[i][j] = j # Min. operations = j 
+    LCSQ(a_gpu,b_gpu,res_gpu,LCSuff_gpu, numpy.int32(a.size+1),numpy.int32(b.size+1), block=(10,10,1),grid=(1,1,1))
+    drv.memcpy_dtoh(res, res_gpu)
+    drv.memcpy_dtoh(LCSuff, LCSuff_gpu)
+    #print(LCSuff)
+    #print(LCSuff[a[1].size][b.size])
+    return LCSuff[a.size][b.size]
+    #print("res lcs", res)
 
-            # If second string is empty, only option is to 
-            # remove all characters of second string 
-            elif j == 0: 
-                dp[i][j] = i # Min. operations = i 
+    #print (lcs(a[1], b)) 
 
-            # If last characters are same, ignore last char 
-            # and recur for remaining string 
-            elif str1[i-1] == str2[j-1]: 
-                dp[i][j] = dp[i-1][j-1] 
-
-            # If last character are different, consider all 
-            # possibilities and find minimum 
-            else: 
-                dp[i][j] = 1 + min(dp[i][j-1],   # Insert 
-                                dp[i-1][j],  # Remove 
-                                dp[i-1][j-1]) # Replace 
-    for a in dp:
-        print(a)
-
-    return dp[m][n]  
+    #return res[0]  
 
 def GPULCSubStr(output_dataset, output_spike_train): 
 
@@ -167,85 +146,11 @@ def GPULCSubStr(output_dataset, output_spike_train):
 
     #print(LCSuff)
     
-    #print(LCSubStr(a, b, len(a), len(b)))
-    print("res substr", res)
+    #print("cpu res substr ", LCS(a, b, len(a), len(b)))
+    #print("res substr", res)
     return res[0] 
 
-def GPUlcs(output_dataset, output_spike_train):
-    mod = SourceModule("""
-    #include <stdlib.h>
-    __device__ int max1(int a,int b){
-        if(a>b){
-            return a;
-        }
-        else{
-            return b;
-        }
-    }
-
-    __global__ void lc_substring(int *X,int *Y,int *res, int *LCSuff,int row_width,int col_width){
-       int j = blockIdx.x * blockDim.x + threadIdx.x;
-       if (j < col_width){
-            for (int i = 1; i < row_width; i++) {
-                if (i == 0 || j == 0){
-                    LCSuff[i*col_width+j] = 0;
-                    __syncthreads();
-                }
-                else if (X[i-1] == Y[j-1]) {  
-                    LCSuff[i*col_width+j] = LCSuff[((i-1)*col_width)+j-1] + 1;
-                    __syncthreads();
-                    //printf("compare %d %d\\n",res[0],LCSuff[i*col_width+j]);
-                    //printf("res %d %d %d\\n",res[0],i,j);
-                    
-                } 
-                else{
-                    LCSuff[i*col_width+j] = max1(LCSuff[(i-1)*col_width+j],LCSuff[i*col_width+j-1]);
-                    __syncthreads();
-                }
-                
-            }
-
-        } 
-    }
-
-
-    """)
-    LCS = mod.get_function("lc_substring")
-    test = [[1,0,0,1],[1,0,1,1]]
-    #a = numpy.array(test,dtype=numpy.int32) #row the width
-    #b = numpy.array([0,0,0,1],dtype=numpy.int32) #col
-    a = numpy.array(output_spike_train,dtype=numpy.int32)
-    b = numpy.array(output_dataset,dtype=numpy.int32)
-    res = numpy.array([0],dtype=numpy.int32)
-    LCSuff = numpy.zeros((a[1].size+1,b.size+1),dtype=numpy.int32)
-
-    #print(LCSuff[0])
-
-    a_gpu = drv.mem_alloc(a[1].size * a[1].dtype.itemsize)
-    b_gpu = drv.mem_alloc(b.size * b.dtype.itemsize)
-    LCSuff_gpu = drv.mem_alloc(LCSuff.size * LCSuff.dtype.itemsize)
-    res_gpu = drv.mem_alloc(res.size * res.dtype.itemsize)
-
-    drv.memcpy_htod(a_gpu, a[1])
-    drv.memcpy_htod(b_gpu, b)
-    drv.memcpy_htod(LCSuff_gpu, LCSuff)
-    drv.memcpy_htod(res_gpu, res)
-
-
-    LCS(a_gpu,b_gpu,res_gpu,LCSuff_gpu, numpy.int32(a[1].size+1),numpy.int32(b.size+1), block=(10,10,1),grid=(1,1,1))
-    drv.memcpy_dtoh(res, res_gpu)
-    drv.memcpy_dtoh(LCSuff, LCSuff_gpu)
-
-    #print(LCSuff)
-    #print(LCSuff[a[1].size][b.size])
-    print("res lcs", res)
-
-    #print (lcs(a[1], b)) 
-
-    return res[0]
-
-
-def GPUeditDistDP(output_dataset, output_spike_train):
+def GPUeditDistDP(output_dataset, output_spike_train, max_row_width, max_col_width, len_dataset, output_rssnp_lengths, output_dataset_lengths):
     mod = SourceModule("""
     #include <stdlib.h>
     __device__ int min1(int a,int b){
@@ -258,7 +163,109 @@ def GPUeditDistDP(output_dataset, output_spike_train):
         }
     }
 
-    __global__ void lc_substring(int j,int *X,int *Y, int *LCSuff,int row_width,int col_width){
+    __global__ void edit_distDP(int* result_mat_gpu, int *dataset_gpu, int *output_gpu, int row_width, int col_width, int len_dataset, int *LCSuff){
+       const int z = threadIdx.x + blockDim.x * blockIdx.x;
+       int max_val = 0;
+       //printf("row width is %d col width is %d", row_width, col_width);
+       for (int j = 0; j < col_width; j++) {
+           for (int i = 0; i < row_width; i++){
+                int* LCSuff_base = &LCSuff[(z*len_dataset*col_width*len_dataset*row_width) + (j*len_dataset*row_width + i*row_width + i)];
+                if (i == 0){
+                    //printf("A %d B %d LC %d\\n", i,j,*LCSuff_base);          
+                    *LCSuff_base = j;
+                    __syncthreads();
+                }
+                else if (j == 0){
+                    *LCSuff_base = i;
+                    //printf("A %d B %d LC %d\\n", i,j,*LCSuff_base);
+                    __syncthreads();
+                }
+
+                else{
+                    int delt = 1;
+                    if (dataset_gpu[z * row_width + (i-1)] == output_gpu[z * col_width + (j-1)]) {  
+                        delt = 0;
+                    }
+                    int* LCSuff_col_decrem = &LCSuff[(z*len_dataset*col_width*len_dataset*row_width) + ((j-1)*len_dataset*row_width + i*row_width + i)];
+                    int* LCSuff_row_decrem = &LCSuff[(z*len_dataset*col_width*len_dataset*row_width) + (j*len_dataset*row_width + (i-1)*row_width + i-1)];
+                    int* LCSuff_both_decrem = &LCSuff[(z*len_dataset*col_width*len_dataset*row_width) + ((j-1)*len_dataset*row_width + (i-1)*row_width + i-1)];
+                    //printf(" gpu %d %d %d\\n", * LCSuff_col_decrem, *LCSuff_row_decrem, * LCSuff_both_decrem);
+                    *LCSuff_base = min1(min1(*LCSuff_col_decrem + 1, *LCSuff_row_decrem + 1), *LCSuff_both_decrem + delt);
+                    __syncthreads();
+                }
+                
+                if (*LCSuff_base > max_val) {
+                    max_val = *LCSuff_base;
+                    printf("z at %d and pointing at %p and passed here %d", z, LCSuff_base, max_val);  
+                }            
+            }
+        }
+        result_mat_gpu[z] = max_val; 
+    }
+
+
+    """)
+    ED = mod.get_function("edit_distDP")
+    print("legendary shape is ", output_spike_train.shape, " with content ", output_dataset)
+    a = numpy.ndarray(shape= output_dataset.shape, buffer =  output_dataset, dtype=numpy.int64) 
+    b = numpy.ndarray(shape= output_spike_train.shape, buffer =  output_spike_train, dtype=numpy.int64) 
+    #a = numpy.array(output_dataset, dtype=numpy.int32)
+    #b = numpy.array(output_spike_train, dtype=numpy.int32)
+    print("a strides and at index 0", a.strides, a[0].strides)
+    print("b strides", b.strides)
+
+    print("a size is ", a.size, " while b size is ", b.size)
+
+
+    LCSuff = numpy.zeros((len_dataset, a.size+1,b.size+1),dtype=numpy.int32)
+
+    row_width = numpy.int32(max_row_width)
+    col_width = numpy.int32(max_col_width)
+    result_mat = numpy.zeros((len_dataset),dtype=numpy.int32)
+    #LCSuff = LCSuff.flatten()
+
+        #print("LCSuff line is ", LCSuff[z][0])
+    #print("LCSuff orig is ", LCSuff)
+
+
+
+    #inout_pairs_view_gpu = drv.mem_alloc(inout_pairs_view.size * inout_pairs_view.dtype.itemsize)
+    a_gpu = drv.mem_alloc(a.size * a.dtype.itemsize)
+    b_gpu = drv.mem_alloc(b.size * b.dtype.itemsize)
+    result_mat_gpu = drv.mem_alloc(result_mat.size * result_mat.dtype.itemsize)
+    print("LCSuff size is ", LCSuff.size)
+    LCSuff_gpu = drv.mem_alloc(LCSuff.size * LCSuff.dtype.itemsize)
+
+    drv.memcpy_htod(a_gpu, a)
+    drv.memcpy_htod(b_gpu, b)
+    drv.memcpy_htod(LCSuff_gpu, LCSuff)
+
+
+    ED(result_mat_gpu, a_gpu,b_gpu, row_width, col_width, len_dataset, LCSuff_gpu, block=(10,32,1),grid=(1,1,1))
+
+
+    drv.memcpy_dtoh(LCSuff, LCSuff_gpu)
+    drv.memcpy_dtoh(result_mat, result_mat_gpu)
+    print("result mat is ", result_mat)
+    sum = 0
+    for integer in result_mat:
+        sum += integer
+    return sum
+
+def GPUeditDistDP2(output_dataset, output_spike_train):
+    mod = SourceModule("""
+    #include <stdlib.h>
+    __device__ int min1(int a,int b){
+
+        if(a<b){
+            return a;
+        }
+        else{
+            return b;
+        }
+    }
+
+    __global__ void edit_distDP(int j,int *X,int *Y, int *LCSuff,int row_width,int col_width){
        int i = blockIdx.x * blockDim.x + threadIdx.x;
        if (i < row_width){
                 if (i == 0){
@@ -273,23 +280,24 @@ def GPUeditDistDP(output_dataset, output_spike_train):
                 }
                 else if (X[i-1] == Y[j-1]) {  
                     LCSuff[i*col_width+j] = LCSuff[((i-1)*col_width)+j-1];
-                    printf("true");
+                    //printf("true");
                     __syncthreads();
                     //printf("compare %d %d\\n",res[0],LCSuff[i*col_width+j]);
                     //printf("res %d %d %d\\n",res[0],i,j);
                     
                 } 
                 else{
-                    printf("%d %d %d\\n",LCSuff[((i-1)*col_width)+j],LCSuff[i*col_width+j-1],LCSuff[((i-1)*col_width)+j-1]);
+                    //printf("%d %d %d\\n",LCSuff[((i-1)*col_width)+j],LCSuff[i*col_width+j-1],LCSuff[((i-1)*col_width)+j-1]);
                     LCSuff[i*col_width+j] = 1+min1(min1(LCSuff[((i-1)*col_width)+j],LCSuff[i*col_width+j-1]),LCSuff[((i-1)*col_width)+j-1]);
                     __syncthreads();
-                }            
+                }
+
         } 
     }
 
 
     """)
-    LCS = mod.get_function("lc_substring")
+    ED = mod.get_function("edit_distDP")
 
     #a = numpy.array([1,1,1,1,1],dtype=numpy.int32) #row the width
     #b = numpy.array([0,0,0,0,0],dtype=numpy.int32) #col
@@ -315,17 +323,17 @@ def GPUeditDistDP(output_dataset, output_spike_train):
     drv.memcpy_htod(LCSuff_gpu, LCSuff)
     drv.memcpy_htod(res_gpu, res)
 
-    for i in range(b.size+1):
-        print("at index ", i)
-        LCS(numpy.int32(i),a_gpu,b_gpu,LCSuff_gpu,numpy.int32(a.size+1),numpy.int32(b.size+1) , block=(10,10,1),grid=(1,1,1))
+    for j in range(b.size+1):
+        print("at index ", j)
+        ED(numpy.int32(j),a_gpu,b_gpu,LCSuff_gpu,numpy.int32(a.size+1),numpy.int32(b.size+1) , block=(10,10,1),grid=(1,1,1))
 
 
     drv.memcpy_dtoh(LCSuff, LCSuff_gpu)
-
+    drv.memcpy_dtoh(res, res_gpu)
     #print(LCSuff)
-    #print(LCSuff[a.size][b.size])
+    print(LCSuff[a.size][b.size])
     #print(res)
-    print("res editdist", res)
+    #print("res editdist", res)
     #print("CPU", editDistDP(a, b, len(a), len(b))) 
 
-    return res[0]
+    return (LCSuff[a.size][b.size])

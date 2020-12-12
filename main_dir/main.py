@@ -56,9 +56,8 @@ def prompt_make_newsavefile(ga_params, loadfile_name, load_directory):
 	newloadfile_name = None
 
 	if newfile_choice == True:
-		newsavefile_name = os.path.join(load_directory, input("What is the name of the new savefile: "))
-		newloadfile_name = newsavefile_name
-		conf_save(newsavefile_name, ga_params)
+		newloadfile_name = os.path.join(load_directory, input("What is the name of the new savefile: "))
+		conf_save(newloadfile_name, ga_params)
 		#print(ga_params)
 
 	else:
@@ -86,7 +85,7 @@ def program_main():
 		mutation_rate = int((input("How likely should it mutate in percentage? "))) * 100
 		print("Of the Parent Selection methods:\n 0. **Top 50% of the population**\n1. **25% of the population based on fitness**\n2. **Top 25% + 25% of the population based on fitness**")
 		selection_func = int(input("Which would you use?"))
-		print("Of the Fitness Selection methods:\n 0. Longest Common Subsequence\n1. Longest Common Substring\n2. Hamming Distance (CPU)/ Edit Distance Method (GPU)")
+		print("Of the Fitness Selection methods:\n 0. Longest Common Subsequence\n1. Longest Common Substring\n2. Edit Distance Method")
 		fitness_func = int(input("Which would you use?"))
 
 		ga_params = create_empty_yaml(runs, generations, population_size, savefile_name)
@@ -268,6 +267,7 @@ def program_main():
 			ga_params['runs_pending'] = add_runs
 			ga_params['generation_index_continue'] = input("Which run and generation would you like to use as the starting parents of the succeeding runs (separate by comma)? ")
 			newloadfile_name =  prompt_make_newsavefile(ga_params, loadfile_name, load_directory)
+			print("rewriting to 1", newloadfile_name)
 			continue_create_empty_yaml(newloadfile_name)
 			ga_params = conf_load(newloadfile_name)
 			run_total = ga_params['run_total'] + ga_params['runs_pending']
@@ -277,6 +277,7 @@ def program_main():
 				ga_params['runs'][run]['mutation_rate'] = ga_params['runs'][0]['mutation_rate']
 				ga_params['runs'][run]['selection_func'] = ga_params['runs'][0]['selection_func']
 				ga_params['runs'][run]['fitness_function'] = ga_params['runs'][0]['fitness_function']
+			print("rewriting to 2", newloadfile_name)
 			conf_save(newloadfile_name, ga_params)
 			#rssnp_string = ga_params['runs'][0]['generations'][0]['rssnp_chromosomes'][0]
 			gaframework_gpu(newloadfile_name)
@@ -287,6 +288,7 @@ def program_main():
 			ga_params['gens_pending'] = 0
 			ga_params['populations_pending'] = 0
 
+			print("rewriting to 3", newloadfile_name)
 			conf_save(newloadfile_name, ga_params)
 
 # ga_params = {

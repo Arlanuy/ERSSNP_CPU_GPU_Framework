@@ -23,14 +23,20 @@ def class_to_yaml(ga_params_rssnp, rssnp):
     ga_params_rssnp['input_neurons']  = rssnp['system'].inputs
     ga_params_rssnp['output_neuron'] = rssnp['system'].outputs
 
+def based_init(a,N):
+	b = numpy.zeros((a.shape[0] + N))
+	b[0:a.shape[0]] = a
+	return b
+
 
 class SNPGeneticAlgoGPU:	
 
 	pop = None
 
-	def assign_fitness(self, output_dataset, output_spike_train, function):
+	def assign_fitness(self, output_dataset, output_spike_train, function, max_row_width = 0, max_col_width = 0, len_dataset = 0, output_rssnp_lengths = None, output_dataset_lengths = None):
 	    result = 0
-	    print("output_dataset ", output_dataset, " ost ", output_spike_train)
+	    #print("output_dataset ", output_dataset, " ost ", output_spike_train)
+	    
 	    if function == 0:
 	    	result = GPUlcs(output_dataset, output_spike_train)        
 	    	#pass
@@ -38,11 +44,13 @@ class SNPGeneticAlgoGPU:
 	        result = GPULCSubStr(output_dataset, output_spike_train)
 	    	#pass
 	    elif function == 2:
-	    	result = GPUeditDistDP(output_dataset, output_spike_train)
+	    	result = GPUeditDistDP(output_dataset, output_spike_train, max_row_width, max_col_width, len_dataset, output_rssnp_lengths, output_dataset_lengths)
 	    	#pass
 
 	    # print(result)
 	    return result
+
+
 
 	def selection(self, selection_func):
 		parents = []
@@ -110,39 +118,147 @@ class SNPGeneticAlgoGPU:
 
 	    return dataset
 
-	def evaluate(self, chromosome, ga_params, function):
+	def dataset_arrange2(self, dataset_size, filename, max_spike_size = 10):
+		dataset = numpy.zeros(shape=(dataset_size, max_spike_size), dtype=numpy.int64)
+		line_index = 0
+		max_row_width = 0
+		max_col_width = 0
+		input = open(filename, 'r')
+		for line in input:
+		    numbers = line.strip('\n').split(',')
+		    print("numbers is ", numbers)
+		    spike_index = 0
+		    for number in numbers[-1]:
+		        dataset[line_index][spike_index] = int(number)
+		        spike_index += 1
+		    if max_row_width < spike_index:
+		        max_row_width = spike_index
+		    if max_col_width < spike_index:
+		        max_col_width = spike_index
+		    line_index += 1
+		return numpy.array(dataset), max_row_width, max_col_width
+
+	def dataset_arrange3(self, dataset_size, filename, max_spike_size = 10):
+		max_numpy_arraylen = 32
+		dataset = numpy.zeros(shape=(int(dataset_size/max_numpy_arraylen) + 1, max_numpy_arraylen, max_spike_size), dtype=numpy.int64)
+		line_index = 0
+		max_row_width = 0
+		max_col_width = 0
+		input = open(filename, 'r')
+		for line in input:
+		    numbers = line.strip('\n').split(',')
+		    #print("numbers is ", numbers)
+		    spike_index = 0
+		    for number in numbers[-1]:
+		        dataset[int(line_index/max_numpy_arraylen)][int(line_index%max_numpy_arraylen)][spike_index] = int(number)
+		        spike_index += 1
+		    #print("numbers array is ", dataset[int(line_index/max_numpy_arraylen)])
+		    if max_row_width < spike_index:
+		        max_row_width = spike_index
+		    if max_col_width < spike_index:
+		        max_col_width = spike_index
+		    line_index += 1
+		return numpy.array(dataset), max_row_width, max_col_width
+
+
+
+	def evaluate(self, chromosome, ga_params, fitness_func, selection_func):
 		inout_pairs_view = []
+		row_width = 0
+		col_width = 0
 		dataset = self.dataset_arrange(ga_params['test_cases_path'])
+		if fitness_func == 2:
+			test_case_file = open(ga_params['test_cases_path'], 'r')
+			len_dataset = len(list(test_case_file))
+			len_dataset_numpy = numpy.int32(len_dataset)
+			dataset2, row_width, col_width = self.dataset_arrange3(len_dataset, ga_params['test_cases_path'])
+			output_dataset_lengths = numpy.zeros(len_dataset)
+			for z in range(0, len_dataset):
+				bitstring_length = len(dataset[z])
+				single_length = int(bitstring_length / 3)
+				i = numpy.arange(0, bitstring_length).reshape(bitstring_length, 1, 1)
+				j = numpy.arange(0, bitstring_length, single_length)
+				b = numpy.broadcast(i, j)
+				inout_pairs_view.append((i + j))
+				#print(inout_pairs_view)
+				#print("datasub input 1 ", dataset[z][inout_pairs_view[z][0][0][0]:inout_pairs_view[z][single_length - 1][0][0]])
+				#print("datasub input 2 ", dataset[z][inout_pairs_view[z][0][0][1]:inout_pairs_view[z][single_length - 1][0][1]])
+				#print("minuend ", len(dataset[z]), " subtrahend ", inout_pairs_view[z][0][0][-1], "datasub output", dataset[z][inout_pairs_view[z][0][0][-1]:inout_pairs_view[z][single_length - 1][0][-1]])
+				output_dataset_lengths[z] = len(dataset[z]) - inout_pairs_view[z][0][0][-1]
+				maxSteps = 3 * output_dataset_lengths[z]  
+				#print("maxsteps ", maxSteps)
+				output_dataset = dataset[z][inout_pairs_view[z][0][0][-1]:inout_pairs_view[z][single_length - 1][0][-1]] 	
+				output_dataset = [int(x) for x in list(output_dataset)]
+				input_length = (bitstring_length - single_length)/single_length
+				chromosome['system'].in_spiketrain = []
+				for index in range(len(chromosome['system'].inputs)):
+					chromosome['system'].in_spiketrain.append({
+	                    'index': chromosome['system'].inputs[index],
+	                    'input': [int(x) for x in list(dataset[z][inout_pairs_view[z][0][0][index]:inout_pairs_view[z][single_length - 1][0][index]])]
+	                })
+					#print("chrom in spike ", chromosome['system'].in_spiketrain)
+				chromosome['system'].out_spiketrain = []
+				config = deepcopy(chromosome['system'].configuration_init)
+				#print("config is ", config)
+				chromosome['out_pairs'].append((chromosome['system'].main((config, chromosome['system'].ruleStatus), maxSteps), output_dataset))
+			
+			o = 0
+			output_rssnp_lengths = numpy.zeros(len_dataset)
+			output_rssnp_numpy = None
+			max_spike_size = 20
+			n = None
+			for m in list(chromosome['out_pairs']):
+				n = numpy.asarray(m[0], dtype=numpy.int64)
+				#numpy.lib.pad(n, ((0,0),(0,max_spike_size - len(m[0]))), 'constant', constant_values=(0))
+				print("n shape is ", n.shape, " compared to ", max_spike_size - len(m[0]))
+				#numpy.concatenate((n,np.zeros((n.shape[0], max_spike_size - len(m[0])))), axis=0)
+				#numpy.hstack([n,np.zeros([n.shape[0], max_spike_size - len(m[0])])])
+				n = based_init(n, max_spike_size - len(m[0]))
+				print("numpy n is ", n)
+				output_rssnp_lengths[o] = len(n)
+				if o == 0:
+					output_rssnp_numpy = n 
+				else:
+					print("shapes of orn and n respectively are ", output_rssnp_numpy.shape, n.shape)
+					numpy.stack((output_rssnp_numpy, n), axis=1)
+				o += 1
+			print("orn is ", output_rssnp_numpy)
+
+
+			#print("chromosome out pairs is ", chromosome['out_pairs'])
+			chromosome['fitness'] = int(self.assign_fitness(dataset2, output_rssnp_numpy, fitness_func, row_width, col_width, len_dataset_numpy)/len(dataset), output_rssnp_lengths, output_dataset_lengths)
 		
-		for z in range(0, len(dataset)):
-			bitstring_length = len(dataset[z])
-			single_length = int(bitstring_length / 3)
-			i = numpy.arange(0, bitstring_length).reshape(bitstring_length, 1, 1)
-			j = numpy.arange(0, bitstring_length, single_length)
-			b = numpy.broadcast(i, j)
-			inout_pairs_view.append((i + j))
-			#print(inout_pairs_view)
-			#print("datasub input 1 ", dataset[z][inout_pairs_view[z][0][0][0]:inout_pairs_view[z][single_length - 1][0][0]])
-			#print("datasub input 2 ", dataset[z][inout_pairs_view[z][0][0][1]:inout_pairs_view[z][single_length - 1][0][1]])
-			#print("minuend ", len(dataset[z]), " subtrahend ", inout_pairs_view[z][0][0][-1], "datasub output", dataset[z][inout_pairs_view[z][0][0][-1]:inout_pairs_view[z][single_length - 1][0][-1]])
-			maxSteps = 3*(len(dataset[z]) - inout_pairs_view[z][0][0][-1])  
-			#print("maxsteps ", maxSteps)
-			output_dataset = dataset[z][inout_pairs_view[z][0][0][-1]:inout_pairs_view[z][single_length - 1][0][-1]] 	
-			output_dataset = [int(x) for x in list(output_dataset)]
-			input_length = (bitstring_length - single_length)/single_length
-			chromosome['system'].in_spiketrain = []
-			for index in range(int(input_length)):
-				chromosome['system'].in_spiketrain.append({
-                    'index': chromosome['system'].inputs[index],
-                    'input': [int(x) for x in list(dataset[z][inout_pairs_view[z][0][0][index]:inout_pairs_view[z][single_length - 1][0][index]])]
-                })
-				#print("chrom in spike ", chromosome['system'].in_spiketrain)
-			chromosome['system'].out_spiketrain = []
-			config = deepcopy(chromosome['system'].configuration_init)
-			#print("config is ", config)
-			chromosome['out_pairs'].append((chromosome['system'].main((config, chromosome['system'].ruleStatus), maxSteps), output_dataset))
-			chromosome['fitness'] += int(self.assign_fitness(output_dataset, chromosome['out_pairs'][z][0], function)/len(chromosome['out_pairs'][z][0])*100)
-		chromosome['fitness'] = int(chromosome['fitness']/len(dataset))
+		else:	
+			for z in range(0, len(dataset)):
+				bitstring_length = len(dataset[z])
+				single_length = int(bitstring_length / 3)
+				i = numpy.arange(0, bitstring_length).reshape(bitstring_length, 1, 1)
+				j = numpy.arange(0, bitstring_length, single_length)
+				b = numpy.broadcast(i, j)
+				inout_pairs_view.append((i + j))
+				#print(inout_pairs_view)
+				#print("datasub input 1 ", dataset[z][inout_pairs_view[z][0][0][0]:inout_pairs_view[z][single_length - 1][0][0]])
+				#print("datasub input 2 ", dataset[z][inout_pairs_view[z][0][0][1]:inout_pairs_view[z][single_length - 1][0][1]])
+				#print("minuend ", len(dataset[z]), " subtrahend ", inout_pairs_view[z][0][0][-1], "datasub output", dataset[z][inout_pairs_view[z][0][0][-1]:inout_pairs_view[z][single_length - 1][0][-1]])
+				dataset_len = len(dataset[z]) - inout_pairs_view[z][0][0][-1]
+				maxSteps = 3*dataset_len  
+				#print("maxsteps ", maxSteps)
+				output_dataset = dataset[z][inout_pairs_view[z][0][0][-1]:inout_pairs_view[z][single_length - 1][0][-1]] 	
+				output_dataset = [int(x) for x in list(output_dataset)]
+				input_length = (bitstring_length - single_length)/single_length
+				chromosome['system'].in_spiketrain = []
+				for index in range(len(chromosome['system'].inputs)):
+					chromosome['system'].in_spiketrain.append({
+	                    'index': chromosome['system'].inputs[index],
+	                    'input': [int(x) for x in list(dataset[z][inout_pairs_view[z][0][0][index]:inout_pairs_view[z][single_length - 1][0][index]])]
+	                })
+					#print("chrom in spike ", chromosome['system'].in_spiketrain)
+				chromosome['system'].out_spiketrain = []
+				config = deepcopy(chromosome['system'].configuration_init)
+				#print("config is ", config)
+				chromosome['out_pairs'].append((chromosome['system'].main((config, chromosome['system'].ruleStatus), maxSteps), output_dataset))
+				chromosome['fitness'] += int((self.assign_fitness(chromosome['out_pairs'][z][1], chromosome['out_pairs'][z][0], fitness_func)/dataset_len)*100)
+			chromosome['fitness'] = int(chromosome['fitness']/len(dataset))
 
 	def use_population(self, count, last_gen_chromosomes):
         # Flush population and insert the original RSSNP
@@ -194,10 +310,10 @@ class SNPGeneticAlgoGPU:
 			for chrom in self.pop:
 				#print("Chromosome:",i)
 
-				function = ga_params['runs'][run_index]['selection_func']
-				
+				fitness_func = ga_params['runs'][run_index]['fitness_function']
+				selection_func = ga_params['runs'][run_index]['selection_func']
 				#print("len of inout", self.inout_pairs)
-				self.evaluate(chrom, ga_params, function)
+				self.evaluate(chrom, ga_params, fitness_func, selection_func)
 
 
 				result_fitness = chrom['fitness']

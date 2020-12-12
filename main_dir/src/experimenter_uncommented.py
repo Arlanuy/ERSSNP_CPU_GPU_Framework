@@ -28,6 +28,7 @@ def gaframework(rssnp_string, path_to_io_spike_trains, loadfile_name, start_new 
 def gaframework_gpu(loadfile_name):
     ga = SNPGeneticAlgoGPU()
     gaeval = SNPGeneticAlgoEval ()
+    print("entering to 1", loadfile_name)
     ga_params = conf_load(loadfile_name)
     #ga.inout_pairs = spike_train_parser(path_to_io_spike_trains,rssnp.inputs)
     execute_experiment_gpu(ga, gaeval, ga_params, loadfile_name)
