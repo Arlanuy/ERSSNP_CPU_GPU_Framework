@@ -2,6 +2,7 @@ from src.abstracts.rssnp import *
 from src.abstracts.gpu_fitness import *
 
 import yaml, numpy, random
+max_numpy_arraylen = 32
 
 def conf_load(filename):
     with open(filename, 'r') as stream:
@@ -33,7 +34,7 @@ class SNPGeneticAlgoGPU:
 
 	pop = None
 
-	def assign_fitness(self, output_dataset, output_spike_train, function, max_row_width = 0, max_col_width = 0, len_dataset = 0, output_rssnp_lengths = None, output_dataset_lengths = None):
+	def assign_fitness(self, output_dataset, output_spike_train, function, max_row_width = 0, max_col_width = 0, len_dataset = 0, output_dataset_lengths = None, output_rssnp_lengths = None):
 	    result = 0
 	    #print("output_dataset ", output_dataset, " ost ", output_spike_train)
 	    
@@ -44,7 +45,7 @@ class SNPGeneticAlgoGPU:
 	        result = GPULCSubStr(output_dataset, output_spike_train)
 	    	#pass
 	    elif function == 2:
-	    	result = GPUeditDistDP(output_dataset, output_spike_train, max_row_width, max_col_width, len_dataset, output_rssnp_lengths, output_dataset_lengths)
+	    	result = GPUeditDistDP(output_dataset, output_spike_train, max_row_width, max_col_width, len_dataset, output_dataset_lengths, output_rssnp_lengths)
 	    	#pass
 
 	    # print(result)
@@ -119,7 +120,7 @@ class SNPGeneticAlgoGPU:
 	    return dataset
 
 	def dataset_arrange2(self, dataset_size, filename, max_spike_size = 10):
-		dataset = numpy.zeros(shape=(dataset_size, max_spike_size), dtype=numpy.int64)
+		dataset = numpy.zeros(shape=(dataset_size, max_spike_size), dtype=numpy.int32)
 		line_index = 0
 		max_row_width = 0
 		max_col_width = 0
@@ -139,8 +140,8 @@ class SNPGeneticAlgoGPU:
 		return numpy.array(dataset), max_row_width, max_col_width
 
 	def dataset_arrange3(self, dataset_size, filename, max_spike_size = 10):
-		max_numpy_arraylen = 32
-		dataset = numpy.zeros(shape=(int(dataset_size/max_numpy_arraylen) + 1, max_numpy_arraylen, max_spike_size), dtype=numpy.int64)
+		
+		dataset = numpy.zeros(shape=(int(dataset_size/max_numpy_arraylen) + 1, max_numpy_arraylen, max_spike_size), dtype=numpy.int32)
 		line_index = 0
 		max_row_width = 0
 		max_col_width = 0
@@ -202,31 +203,36 @@ class SNPGeneticAlgoGPU:
 				#print("config is ", config)
 				chromosome['out_pairs'].append((chromosome['system'].main((config, chromosome['system'].ruleStatus), maxSteps), output_dataset))
 			
-			o = 0
+			line_index = 0
 			output_rssnp_lengths = numpy.zeros(len_dataset)
-			output_rssnp_numpy = None
 			max_spike_size = 20
+			output_rssnp_numpy = numpy.zeros(shape=(int(len_dataset/max_numpy_arraylen) + 1, max_numpy_arraylen, max_spike_size), dtype=numpy.int32)
+			
 			n = None
 			for m in list(chromosome['out_pairs']):
-				n = numpy.asarray(m[0], dtype=numpy.int64)
+				n = numpy.asarray(m[0], dtype=numpy.int32)
 				#numpy.lib.pad(n, ((0,0),(0,max_spike_size - len(m[0]))), 'constant', constant_values=(0))
 				print("n shape is ", n.shape, " compared to ", max_spike_size - len(m[0]))
 				#numpy.concatenate((n,np.zeros((n.shape[0], max_spike_size - len(m[0])))), axis=0)
 				#numpy.hstack([n,np.zeros([n.shape[0], max_spike_size - len(m[0])])])
+				output_rssnp_lengths[line_index] = len(n)
 				n = based_init(n, max_spike_size - len(m[0]))
 				print("numpy n is ", n)
-				output_rssnp_lengths[o] = len(n)
-				if o == 0:
-					output_rssnp_numpy = n 
-				else:
-					print("shapes of orn and n respectively are ", output_rssnp_numpy.shape, n.shape)
-					numpy.stack((output_rssnp_numpy, n), axis=1)
-				o += 1
+				for index_value in range(max_spike_size):
+					output_rssnp_numpy[int(line_index/max_numpy_arraylen)][int(line_index%max_numpy_arraylen)][index_value] = n[index_value]
+
+				# if line_index == 0:
+				# 	output_rssnp_numpy = n 
+				# else:
+				# 	print("shapes of orn and n respectively are ", output_rssnp_numpy.shape, n.shape)
+				# 	numpy.stack((output_rssnp_numpy, n), axis=1)
+				line_index += 1
 			print("orn is ", output_rssnp_numpy)
 
 
 			#print("chromosome out pairs is ", chromosome['out_pairs'])
-			chromosome['fitness'] = int(self.assign_fitness(dataset2, output_rssnp_numpy, fitness_func, row_width, col_width, len_dataset_numpy)/len(dataset), output_rssnp_lengths, output_dataset_lengths)
+			print("EXITED with ", output_rssnp_lengths, " and ", output_dataset_lengths)
+			chromosome['fitness'] = int(self.assign_fitness(dataset2, output_rssnp_numpy, fitness_func, row_width, col_width, len_dataset_numpy, output_dataset_lengths, output_rssnp_lengths)/len(dataset))
 		
 		else:	
 			for z in range(0, len(dataset)):
@@ -234,7 +240,7 @@ class SNPGeneticAlgoGPU:
 				single_length = int(bitstring_length / 3)
 				i = numpy.arange(0, bitstring_length).reshape(bitstring_length, 1, 1)
 				j = numpy.arange(0, bitstring_length, single_length)
-				b = numpy.broadcast(i, j)
+				b = numpy.broadcast(i, j) 
 				inout_pairs_view.append((i + j))
 				#print(inout_pairs_view)
 				#print("datasub input 1 ", dataset[z][inout_pairs_view[z][0][0][0]:inout_pairs_view[z][single_length - 1][0][0]])
