@@ -3,6 +3,17 @@ import pycuda.driver as drv
 import numpy
 
 from pycuda.compiler import SourceModule
+from pycuda.gpuarray import GPUArray as pg
+
+from pycuda import gpuarray
+
+#Source whn in Stackoverflow with question how to properly copy a gpuarray (longstanding bug)
+def gpuarray_copy(array: gpuarray.GPUArray):
+    array_copy = array.copy()
+    array_copy.strides = array.strides
+    array_copy.flags.f_contiguous = array.flags.f_contiguous
+    array_copy.flags.c_contiguous = array.flags.c_contiguous
+    array_copy.flags.forc = array.flags.forc
 
 def GPUlcs(output_dataset, output_spike_train):
     mod = SourceModule("""
@@ -150,7 +161,8 @@ def GPULCSubStr(output_dataset, output_spike_train):
     #print("res substr", res)
     return res[0] 
 
-def GPUeditDistDP(output_dataset, output_spike_train, max_row_width, max_col_width, len_dataset, output_rssnp_lengths, output_dataset_lengths):
+
+def GPUeditDistDP(output_dataset, output_spike_train, max_row_width, max_col_width, len_dataset, output_dataset_lengths, output_rssnp_lengths):
     mod = SourceModule("""
     #include <stdlib.h>
     __device__ int min1(int a,int b){
@@ -163,52 +175,63 @@ def GPUeditDistDP(output_dataset, output_spike_train, max_row_width, max_col_wid
         }
     }
 
-    __global__ void edit_distDP(int* result_mat_gpu, int *dataset_gpu, int *output_gpu, int row_width, int col_width, int len_dataset, int *LCSuff){
+    __global__ void edit_distDP(int* result_mat_gpu, int *dataset_gpu, int *output_gpu, int row_width, int col_width, int len_dataset, int *LCSuff, int *output_dataset_lengths, int *output_rssnp_lengths){
        const int z = threadIdx.x + blockDim.x * blockIdx.x;
-       int max_val = 0;
-       //printf("row width is %d col width is %d", row_width, col_width);
-       for (int j = 0; j < col_width; j++) {
-           for (int i = 0; i < row_width; i++){
-                int* LCSuff_base = &LCSuff[(z*len_dataset*col_width*len_dataset*row_width) + (j*len_dataset*row_width + i*row_width + i)];
-                if (i == 0){
-                    //printf("A %d B %d LC %d\\n", i,j,*LCSuff_base);          
-                    *LCSuff_base = j;
-                    __syncthreads();
-                }
-                else if (j == 0){
-                    *LCSuff_base = i;
-                    //printf("A %d B %d LC %d\\n", i,j,*LCSuff_base);
-                    __syncthreads();
-                }
-
-                else{
-                    int delt = 1;
-                    if (dataset_gpu[z * row_width + (i-1)] == output_gpu[z * col_width + (j-1)]) {  
-                        delt = 0;
-                    }
-                    int* LCSuff_col_decrem = &LCSuff[(z*len_dataset*col_width*len_dataset*row_width) + ((j-1)*len_dataset*row_width + i*row_width + i)];
-                    int* LCSuff_row_decrem = &LCSuff[(z*len_dataset*col_width*len_dataset*row_width) + (j*len_dataset*row_width + (i-1)*row_width + i-1)];
-                    int* LCSuff_both_decrem = &LCSuff[(z*len_dataset*col_width*len_dataset*row_width) + ((j-1)*len_dataset*row_width + (i-1)*row_width + i-1)];
-                    //printf(" gpu %d %d %d\\n", * LCSuff_col_decrem, *LCSuff_row_decrem, * LCSuff_both_decrem);
-                    *LCSuff_base = min1(min1(*LCSuff_col_decrem + 1, *LCSuff_row_decrem + 1), *LCSuff_both_decrem + delt);
-                    __syncthreads();
-                }
+       if (z < len_dataset) {
+           int max_val = 0;
+           printf("on thread %d i constrained by %d j constrained by %d", z, output_rssnp_lengths[z], output_dataset_lengths[z]);
+           //printf("with content %d", result_mat_gpu[z]);
+           //printf("row width is %d col width is %d", row_width, col_width);
+           int j_constraint = 10;// output_dataset_lengths[z];
+           int i_constraint = 10;// output_rssnp_lengths[z];
+           for (int j = 0; j < j_constraint; j++) {
                 
-                if (*LCSuff_base > max_val) {
-                    max_val = *LCSuff_base;
-                    printf("z at %d and pointing at %p and passed here %d", z, LCSuff_base, max_val);  
-                }            
+                for (int i = 0; i <  i_constraint; i++){
+                    printf("computed value is %d", (z*len_dataset*col_width*len_dataset*row_width) + (j*len_dataset*row_width + i*row_width + i));
+                    int* LCSuff_base = &LCSuff[(z*len_dataset*col_width*len_dataset*row_width) + (j*len_dataset*row_width + i*row_width + i)];
+                    __syncthreads();
+                    if (i == 0){
+                        *LCSuff_base = j;
+                        printf("A %d B %d LC %d\\n", i,j,*LCSuff_base);          
+                        __syncthreads();
+                    }
+                    else if (j == 0){
+                        *LCSuff_base = i;
+                        printf("A %d B %d LC %d\\n", i,j,*LCSuff_base);
+                        __syncthreads();
+                    }
+
+                    else{
+                        int delt = 1;
+                        if (dataset_gpu[z * row_width + (i-1)] == output_gpu[z * col_width + (j-1)]) {  
+                            delt = 0;
+                        }
+                        int* LCSuff_col_decrem = &LCSuff[(z*len_dataset*col_width*len_dataset*row_width) + ((j-1)*len_dataset*row_width + i*row_width + i)];
+                        int* LCSuff_row_decrem = &LCSuff[(z*len_dataset*col_width*len_dataset*row_width) + (j*len_dataset*row_width + (i-1)*row_width + i-1)];
+                        int* LCSuff_both_decrem = &LCSuff[(z*len_dataset*col_width*len_dataset*row_width) + ((j-1)*len_dataset*row_width + (i-1)*row_width + i-1)];
+                        printf(" gpu %d %d %d\\n", * LCSuff_col_decrem, *LCSuff_row_decrem, * LCSuff_both_decrem);
+                        *LCSuff_base = min1(min1(*LCSuff_col_decrem + 1, *LCSuff_row_decrem + 1), *LCSuff_both_decrem + delt);
+                        __syncthreads();
+                    }
+                    
+                    if (*LCSuff_base > max_val) {
+                    //if (max_val > 0) {
+                        max_val = *LCSuff_base;
+                        printf("z at %d and pointing at %p and passed here %d", z, LCSuff_base, max_val);
+                        __syncthreads();  
+                    }            
+                }
             }
-        }
-        result_mat_gpu[z] = max_val; 
+            result_mat_gpu[z] = max_val;
+        } 
     }
 
 
     """)
     ED = mod.get_function("edit_distDP")
     print("legendary shape is ", output_spike_train.shape, " with content ", output_dataset)
-    a = numpy.ndarray(shape= output_dataset.shape, buffer =  output_dataset, dtype=numpy.int64) 
-    b = numpy.ndarray(shape= output_spike_train.shape, buffer =  output_spike_train, dtype=numpy.int64) 
+    a = numpy.ndarray(shape= output_dataset.shape, buffer =  output_dataset, dtype=numpy.int32) 
+    b = numpy.ndarray(shape= output_spike_train.shape, buffer =  output_spike_train, dtype=numpy.int32) 
     #a = numpy.array(output_dataset, dtype=numpy.int32)
     #b = numpy.array(output_spike_train, dtype=numpy.int32)
     print("a strides and at index 0", a.strides, a[0].strides)
@@ -218,7 +241,7 @@ def GPUeditDistDP(output_dataset, output_spike_train, max_row_width, max_col_wid
 
 
     LCSuff = numpy.zeros((len_dataset, a.size+1,b.size+1),dtype=numpy.int32)
-
+    print("LCSuff shape is ", LCSuff.shape)
     row_width = numpy.int32(max_row_width)
     col_width = numpy.int32(max_col_width)
     result_mat = numpy.zeros((len_dataset),dtype=numpy.int32)
@@ -227,26 +250,44 @@ def GPUeditDistDP(output_dataset, output_spike_train, max_row_width, max_col_wid
         #print("LCSuff line is ", LCSuff[z][0])
     #print("LCSuff orig is ", LCSuff)
 
+    #c = numpy.ndarray(shape= output_dataset_lengths.shape, buffer =  output_dataset_lengths, dtype=numpy.int32) 
+    #d = numpy.ndarray(shape= output_rssnp_lengths.shape, buffer =  output_rssnp_lengths, dtype=numpy.int32) 
+    c = pg.get(output_dataset_lengths)
+    d = pg.get(output_rssnp_lengths)
 
-
+    #print("c and d are magically ", c, " and ",  d, " with type ", type(c))
     #inout_pairs_view_gpu = drv.mem_alloc(inout_pairs_view.size * inout_pairs_view.dtype.itemsize)
     a_gpu = drv.mem_alloc(a.size * a.dtype.itemsize)
     b_gpu = drv.mem_alloc(b.size * b.dtype.itemsize)
     result_mat_gpu = drv.mem_alloc(result_mat.size * result_mat.dtype.itemsize)
     print("LCSuff size is ", LCSuff.size)
     LCSuff_gpu = drv.mem_alloc(LCSuff.size * LCSuff.dtype.itemsize)
+  
+    #func(drv.In(a), drv.InOut(e), np.int32(N), block=block_size, grid=grid_size)
+    #c_gpu = drv.mem_alloc(c.size * c.dtype.itemsize)
+    #d_gpu = drv.mem_alloc(d.size * d.dtype.itemsize)
+    c_gpu = drv.mem_alloc(c.nbytes)
+    d_gpu = drv.mem_alloc(d.nbytes)
+    #c_gpu = gpuarray.to_gpu(output_dataset_lengths)
+    #d_gpu = gpuarray.to_gpu(output_rssnp_lengths)
 
     drv.memcpy_htod(a_gpu, a)
     drv.memcpy_htod(b_gpu, b)
     drv.memcpy_htod(LCSuff_gpu, LCSuff)
+    drv.memcpy_htod(c_gpu, c)
+    drv.memcpy_htod(d_gpu, d)
+    #print("FINALLY entered with values ", c, " and ", d)
+    ED(result_mat_gpu, a_gpu,b_gpu, row_width, col_width, len_dataset, LCSuff_gpu, c_gpu, d_gpu, block=(10,10,1),grid=(10,10,1))
 
-
-    ED(result_mat_gpu, a_gpu,b_gpu, row_width, col_width, len_dataset, LCSuff_gpu, block=(10,32,1),grid=(1,1,1))
-
-
-    drv.memcpy_dtoh(LCSuff, LCSuff_gpu)
+  
+    
+    drv.memcpy_dtoh(c, c_gpu)
+    drv.memcpy_dtoh(d, d_gpu)
     drv.memcpy_dtoh(result_mat, result_mat_gpu)
+    drv.memcpy_dtoh(LCSuff, LCSuff_gpu)
     print("result mat is ", result_mat)
+    print("FINALLY 2 entered with values ", c, " and ", d)
+   
     sum = 0
     for integer in result_mat:
         sum += integer
