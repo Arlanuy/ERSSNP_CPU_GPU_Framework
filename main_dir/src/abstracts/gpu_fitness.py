@@ -178,26 +178,27 @@ def GPUeditDistDP(output_dataset, output_spike_train, max_row_width, max_col_wid
     __global__ void edit_distDP(int* result_mat_gpu, int *dataset_gpu, int *output_gpu, int row_width, int col_width, int len_dataset, int *LCSuff, int *output_dataset_lengths, int *output_rssnp_lengths){
        const int z = threadIdx.x + blockDim.x * blockIdx.x;
        if (z < len_dataset) {
-           int max_val = 0;
-           printf("on thread %d i constrained by %d j constrained by %d", z, output_rssnp_lengths[z], output_dataset_lengths[z]);
+           //int max_val = 0;
+           //printf("on thread %d i constrained by %d j constrained by %d", z, output_rssnp_lengths[z], output_dataset_lengths[z]);
            //printf("with content %d", result_mat_gpu[z]);
            //printf("row width is %d col width is %d", row_width, col_width);
-           int j_constraint = 10;// output_dataset_lengths[z];
-           int i_constraint = 10;// output_rssnp_lengths[z];
+           int j_constraint = 8;//output_dataset_lengths[z];
+           int i_constraint = 9;//output_rssnp_lengths[z];
+           int* max_val = 0;
            for (int j = 0; j < j_constraint; j++) {
                 
                 for (int i = 0; i <  i_constraint; i++){
-                    printf("computed value is %d", (z*len_dataset*col_width*len_dataset*row_width) + (j*len_dataset*row_width + i*row_width + i));
+                    //printf("computed value is %d", (z*len_dataset*col_width*len_dataset*row_width) + (j*len_dataset*row_width + i*row_width + i));
                     int* LCSuff_base = &LCSuff[(z*len_dataset*col_width*len_dataset*row_width) + (j*len_dataset*row_width + i*row_width + i)];
                     __syncthreads();
                     if (i == 0){
                         *LCSuff_base = j;
-                        printf("A %d B %d LC %d\\n", i,j,*LCSuff_base);          
+                        //printf("A %d B %d LC %d\\n", i,j,*LCSuff_base);          
                         __syncthreads();
                     }
                     else if (j == 0){
                         *LCSuff_base = i;
-                        printf("A %d B %d LC %d\\n", i,j,*LCSuff_base);
+                        //printf("A %d B %d LC %d\\n", i,j,*LCSuff_base);
                         __syncthreads();
                     }
 
@@ -209,20 +210,18 @@ def GPUeditDistDP(output_dataset, output_spike_train, max_row_width, max_col_wid
                         int* LCSuff_col_decrem = &LCSuff[(z*len_dataset*col_width*len_dataset*row_width) + ((j-1)*len_dataset*row_width + i*row_width + i)];
                         int* LCSuff_row_decrem = &LCSuff[(z*len_dataset*col_width*len_dataset*row_width) + (j*len_dataset*row_width + (i-1)*row_width + i-1)];
                         int* LCSuff_both_decrem = &LCSuff[(z*len_dataset*col_width*len_dataset*row_width) + ((j-1)*len_dataset*row_width + (i-1)*row_width + i-1)];
-                        printf(" gpu %d %d %d\\n", * LCSuff_col_decrem, *LCSuff_row_decrem, * LCSuff_both_decrem);
+                        printf(" gpu %d %d %d with %d and %d compared\\n", * LCSuff_col_decrem, *LCSuff_row_decrem, * LCSuff_both_decrem, dataset_gpu[z * row_width + (i-1)], output_gpu[z * col_width + (j-1)]);
                         *LCSuff_base = min1(min1(*LCSuff_col_decrem + 1, *LCSuff_row_decrem + 1), *LCSuff_both_decrem + delt);
+                        max_val = LCSuff_base;
                         __syncthreads();
                     }
-                    
-                    if (*LCSuff_base > max_val) {
-                    //if (max_val > 0) {
-                        max_val = *LCSuff_base;
-                        printf("z at %d and pointing at %p and passed here %d", z, LCSuff_base, max_val);
-                        __syncthreads();  
-                    }            
+                       
                 }
             }
-            result_mat_gpu[z] = max_val;
+            if (max_val != 0) {
+                //result_mat_gpu[z] = LCSuff[(z*len_dataset*col_width*len_dataset*row_width) + (j_constraint*len_dataset*row_width + i_constraint*row_width + i_constraint)];
+                result_mat_gpu[z] = *max_val;
+            }
         } 
     }
 
@@ -277,20 +276,19 @@ def GPUeditDistDP(output_dataset, output_spike_train, max_row_width, max_col_wid
     drv.memcpy_htod(c_gpu, c)
     drv.memcpy_htod(d_gpu, d)
     #print("FINALLY entered with values ", c, " and ", d)
-    ED(result_mat_gpu, a_gpu,b_gpu, row_width, col_width, len_dataset, LCSuff_gpu, c_gpu, d_gpu, block=(10,10,1),grid=(10,10,1))
+    ED(result_mat_gpu, a_gpu,b_gpu, row_width, col_width, len_dataset, LCSuff_gpu, c_gpu, d_gpu, block=(10,1,1),grid=(10,1,1))
 
   
-    
-    drv.memcpy_dtoh(c, c_gpu)
     drv.memcpy_dtoh(d, d_gpu)
+    drv.memcpy_dtoh(c, c_gpu)
     drv.memcpy_dtoh(result_mat, result_mat_gpu)
     drv.memcpy_dtoh(LCSuff, LCSuff_gpu)
     print("result mat is ", result_mat)
     print("FINALLY 2 entered with values ", c, " and ", d)
    
     sum = 0
-    for integer in result_mat:
-        sum += integer
+    for index in range(len(result_mat)):
+        sum += (result_mat[index]/output_dataset_lengths[index]) * 100
     return sum
 
 def GPUeditDistDP2(output_dataset, output_spike_train):
