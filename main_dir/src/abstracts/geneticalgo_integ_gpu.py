@@ -1,5 +1,6 @@
 from src.abstracts.rssnp import *
 from src.abstracts.gpu_fitness import *
+from src.abstracts.gpu_crossover import *
 
 import yaml, numpy, random
 max_numpy_arraylen = 32
@@ -28,6 +29,30 @@ def based_init(a,N):
 	b = numpy.zeros((a.shape[0] + N))
 	b[0:a.shape[0]] = a
 	return b
+
+def get_param(array,limit):             #limit - number of params to get array-the list of all possible params
+    param = []
+    # print(len(array),array)
+    while(len(param)<limit):
+        r = []
+        j = 0
+        temp = random.choice(array)
+        # print("temp",temp)
+        # f.write("temp "+ str(temp)+ '\n')
+        for i in array:
+            if((i[0] == temp[0] and i[1] == temp[1]) or (i[0] == temp[1] and i[1] == temp[0])):
+                r.append(i)
+                # f.write("remove " +str(i)+ '\n')
+        
+        for i in r:
+            array.remove(i)
+        #print(len(array))
+        # f.write(str(len(array)) + str(array) + '\n')
+        param.append(temp)
+        print(param)
+        # f.write(str(param)+ '\n')
+
+    return param
 
 
 class SNPGeneticAlgoGPU:	
@@ -92,6 +117,8 @@ class SNPGeneticAlgoGPU:
 
 		return parents
 
+
+
 	def crossover(self, mutation_rate, selection_func):
 		population_size = len(self.pop)
 		# Get only parents
@@ -99,11 +126,59 @@ class SNPGeneticAlgoGPU:
 		# delete half of the population
 		self.pop = self.pop[:(int(len(self.pop)/2))]
 
-		i = 0
+		
 		#rand_rule = random.randint(0,total_fitness)		
 		#mutate_rand = random.randint()
 		#rand_changed_to = random.randint()
 		#pass
+		i = 0
+		while True:
+			cross_counter = 0
+			
+			crossover_indexes = crossover_gpu_defined(population size, parents, self.pop)
+			crossover_indexes = get_param(crossover_indexes, population_size)
+			size_tuple = 4
+
+			for j in range(0, len(crossover_indexes)):
+				rssnp1 = crossover_indexes[j][0]
+				rssnp2 = crossover_indexes[j][1]
+				rule1 = crossover_indexes[j][2]
+				rule2 = crossover_indexes[j][3]
+				
+
+			parent1 = parents[0]
+			parent2 = parents[1]
+			if parent1['system'].isValid() and parent2['system'].isValid():
+	                    parent1['system'].out_spiketrain = []
+	                    parent2['system'].out_spiketrain = []
+	                    self.pop.extend([parent1,parent2])
+	                    print("passed first")
+                    if len(self.pop) > population_size:
+                        while len(self.pop) > population_size:
+                            self.pop = self.pop[:-1]
+                        return
+                    break
+                elif cross_counter < 10:
+                    print("Mutation failed")
+                    cross_counter += 1
+                    parent1 = deepcopy(backup1)
+                    parent2 = deepcopy(backup2)
+                elif cross_counter == 10:   # crossover wont work anymore - just copy the parents' original elements
+                    print("Stopping crossover -- Copying parents instead")
+                    parent1 = deepcopy(backup1)
+                    parent2 = deepcopy(backup2)
+                    parent1['system'].out_spiketrain = []
+                    parent2['system'].out_spiketrain = []
+                    self.pop.extend([parent1,parent2])
+                    break
+
+            print("comparing", len(self.pop), population_size)
+            if len(self.pop) == population_size and not i == 0:
+                return
+
+            i += 1
+
+		
 
 	def dataset_arrange(self, test_case_name):
 	    input = open(test_case_name, 'r')
