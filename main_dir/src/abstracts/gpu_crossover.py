@@ -56,7 +56,7 @@ mod = SourceModule("""
         t->source[idy] = temp_source;
         t->sink[idy]   = temp_sink;
         t->prod[idy]   = temp_prod;
-        t->con[idy]    = temrp_con;
+        t->con[idy]    = temp_con;
         t->delay[idy]  = temp_delay;
     }
     //1d grid of 2d blocks of size 4 x 4 blocks in a grid and 20 threads in both x and y dimension 
@@ -117,7 +117,7 @@ class rule:
             (np.int32,'*size_rssnp',self.size_rssnp_array)
             ])
 
-    def run(self):
+    def print_rule(self):
         func = mod.get_function('print_struct')
 
         self.ftmp_gpu.copy_to_gpu()
@@ -203,14 +203,16 @@ def swap (rssnp_1, rssnp_2, rule_1, rule_2,t):
 
 
 
-def crossover_gpu_defined(population_size, parents, prev_offspring):
-	max_rules = 20
-    res = numpy.zeros((population_size * population_size, max_rules * max_rules),dtype=numpy.int32)
-    res_gpu = drv.mem_alloc(res.size * res.dtype.itemsize)
-    drv.memcpy_htod(res_gpu, res)
-    cross = mod.get_function(get_every_poss_of_ruleswap)
-    cross(res_gpu, , block=(max_rules, max_rules,1),grid=(population_size, population_size,1))
-    drv.memcpy_dtoh(res, res_gpu)
+def crossover_gpu_defined(parents_size, parents, prev_offspring):
+    max_rules = 20
+    print("num parents is ", parents_size)
+    res = np.zeros((parents_size * parents_size, max_rules * max_rules),dtype=np.int32)
+    res_gpu = cuda.mem_alloc(res.size * res.dtype.itemsize)
+    cuda.memcpy_htod(res_gpu, res)
+    cross = mod.get_function("get_every_poss_of_ruleswap")
+    cross(res_gpu, block=(max_rules, max_rules,1), grid=(parents_size, parents_size,1))
+    cuda.memcpy_dtoh(res, res_gpu)
+    
     print("res in crossover is ", res)
     return res
 

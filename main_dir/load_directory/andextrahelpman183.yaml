@@ -4,7 +4,7 @@ gens_pending: 0
 goal_fitness: 101
 max_fitness_in_runs: 81
 populations_pending: 0
-run_total: 1
+run_total: 2
 runs:
   0:
     fitness_function: 2
@@ -262,10 +262,10 @@ runs:
         - 1
         - 2
         - 3
-        best_fitness_result: 24
+        best_fitness_result: 81
         rssnp_chromosomes:
           0:
-            chrom_fitness: 24
+            chrom_fitness: 81
             init_config: *id003
             input_neurons: *id004
             neurons: 4
@@ -280,7 +280,7 @@ runs:
             rules: *id005
             synapses: 3
           1:
-            chrom_fitness: 24
+            chrom_fitness: 81
             init_config: *id006
             input_neurons: *id007
             neurons: 4
@@ -295,7 +295,7 @@ runs:
             rules: *id008
             synapses: 3
           2:
-            chrom_fitness: 24
+            chrom_fitness: 81
             init_config: *id009
             input_neurons: *id010
             neurons: 4
@@ -310,7 +310,7 @@ runs:
             rules: *id011
             synapses: 3
           3:
-            chrom_fitness: 24
+            chrom_fitness: 81
             init_config: *id012
             input_neurons: *id013
             neurons: 4
@@ -324,10 +324,10 @@ runs:
             - -1
             rules: *id014
             synapses: 3
-    max_fitness_in_run: 0
+    max_fitness_in_run: 81
     mutation_rate: 100
     population_size: 4
     selection_func: 1
-runs_pending: 1
+runs_pending: 0
 test_cases_path: C:\Users\Arvy\Documents\cs 199 docs\RSSNP_CPU_GPU_Framework\main_dir\test
   cases\and_test_cases.txt

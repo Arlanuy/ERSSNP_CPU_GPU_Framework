@@ -111,6 +111,7 @@ class SNPGeneticAlgo:
                     i = (i + 1) % len(self.pop)
             else:
                 parents = self.pop[:int(len(self.pop)/4)]
+            print("chose this selection 1")
         elif selection_func == 2:
             # Get random 25% and top 25%
             total_fitness = 0
@@ -128,7 +129,9 @@ class SNPGeneticAlgo:
                     i = (i + 1) % len(self.pop)
             else:
                 parents = self.pop[:int(len(self.pop)/2)]
-
+            print("chose this selection 2")
+        print("parents returned by selection are ", parents)
+                
         return parents
 
     def crossover(self, mutation_rate, selection_func):
@@ -139,9 +142,10 @@ class SNPGeneticAlgo:
         population_size = len(self.pop)
         # Get only parents
         parents = self.selection(selection_func)
+        
         # delete half of the population
         self.pop = self.pop[:(int(len(self.pop)/2))]
-
+        #print("parent 2 is ", parents[1])
         i = 0
         while True:
             cross_counter = 0
@@ -152,7 +156,8 @@ class SNPGeneticAlgo:
                 print("passed inner loop here")
                 parent1 = deepcopy(parents[i % len(parents)])  # best parent
                 parent2 = deepcopy(parents[(i + 1) % len(parents)]) # 2nd best
-                
+                print("parent 1 is ", parent1)
+                print("parent 2 is ", parent2)
                 # Choose random rule to swap
                 index1 = random.randint(0, parent1['system'].m - 1)
                 index2 = random.randint(0, parent2['system'].m - 1)
