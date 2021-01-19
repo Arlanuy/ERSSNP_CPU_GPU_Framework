@@ -97,6 +97,7 @@ class SNPGeneticAlgoGPU:
 		            i = (i + 1) % len(self.pop)
 		    else:
 		        parents = self.pop[:int(len(self.pop)/4)]
+		    print("chose this selection 1")
 		elif selection_func == 2:
 		    # Get random 25% and top 25%
 		    total_fitness = 0
@@ -114,7 +115,8 @@ class SNPGeneticAlgoGPU:
 		            i = (i + 1) % len(self.pop)
 		    else:
 		        parents = self.pop[:int(len(self.pop)/2)]
-
+		    print("chose this selection 2")
+		print("parents returned by selection are ", parents)
 		return parents
 
 
@@ -126,7 +128,7 @@ class SNPGeneticAlgoGPU:
 		# delete half of the population
 		self.pop = self.pop[:(int(len(self.pop)/2))]
 
-		
+		print("parent 2 is ", parents[1])
 		#rand_rule = random.randint(0,total_fitness)		
 		#mutate_rand = random.randint()
 		#rand_changed_to = random.randint()
@@ -135,48 +137,55 @@ class SNPGeneticAlgoGPU:
 		while True:
 			cross_counter = 0
 			
-			crossover_indexes = crossover_gpu_defined(population size, parents, self.pop)
-			crossover_indexes = get_param(crossover_indexes, population_size)
+			crossover_indexes = crossover_gpu_defined(len(parents), parents, self.pop)
+			#crossover_indexes = get_param(crossover_indexes, population_size)
 			size_tuple = 4
 
 			for j in range(0, len(crossover_indexes)):
-				rssnp1 = crossover_indexes[j][0]
-				rssnp2 = crossover_indexes[j][1]
-				rule1 = crossover_indexes[j][2]
-				rule2 = crossover_indexes[j][3]
+				parent1 = self.pop[int(crossover_indexes[j][0])]
+				parent2 = self.pop[int(crossover_indexes[j][1])]
+				rule1 = int(crossover_indexes[j][2])
+				print("rule 1 is ", rule1)
+				rule2 = int(crossover_indexes[j][3])
+
+				 # Choose random rule to swap
 				
+				backup1 = deepcopy(parent1)
+				backup2 = deepcopy(parent2)
+				# Swap rules
+				parent1['system'].rule[rule1], parent2['system'].rule[rule2] = parent2['system'].rule[rule2], parent1['system'].rule[rule1]
+				# Mutate
+				parent1['system'].randomize(mutation_rate)
+				parent2['system'].randomize(mutation_rate)
 
-			parent1 = parents[0]
-			parent2 = parents[1]
-			if parent1['system'].isValid() and parent2['system'].isValid():
-	                    parent1['system'].out_spiketrain = []
-	                    parent2['system'].out_spiketrain = []
-	                    self.pop.extend([parent1,parent2])
-	                    print("passed first")
-                    if len(self.pop) > population_size:
-                        while len(self.pop) > population_size:
-                            self.pop = self.pop[:-1]
-                        return
-                    break
-                elif cross_counter < 10:
-                    print("Mutation failed")
-                    cross_counter += 1
-                    parent1 = deepcopy(backup1)
-                    parent2 = deepcopy(backup2)
-                elif cross_counter == 10:   # crossover wont work anymore - just copy the parents' original elements
-                    print("Stopping crossover -- Copying parents instead")
-                    parent1 = deepcopy(backup1)
-                    parent2 = deepcopy(backup2)
-                    parent1['system'].out_spiketrain = []
-                    parent2['system'].out_spiketrain = []
-                    self.pop.extend([parent1,parent2])
-                    break
+				if parent1['system'].isValid() and parent2['system'].isValid():
+					parent1['system'].out_spiketrain = []
+					parent2['system'].out_spiketrain = []
+					self.pop.extend([parent1,parent2])
+					print("passed first")
+					if len(self.pop) > population_size:
+						while len(self.pop) > population_size:
+							self.pop = self.pop[:-1]
+						return
+				elif cross_counter < 10:
+				    print("Mutation failed")
+				    cross_counter += 1
+				    parent1 = deepcopy(backup1)
+				    parent2 = deepcopy(backup2)
+				elif cross_counter == 10:   # crossover wont work anymore - just copy the parents' original elements
+				    print("Stopping crossover -- Copying parents instead")
+				    parent1 = deepcopy(backup1)
+				    parent2 = deepcopy(backup2)
+				    parent1['system'].out_spiketrain = []
+				    parent2['system'].out_spiketrain = []
+				    self.pop.extend([parent1,parent2])
+				    break
 
-            print("comparing", len(self.pop), population_size)
-            if len(self.pop) == population_size and not i == 0:
-                return
+			print("comparing", len(self.pop), population_size)
+			if len(self.pop) == population_size and not i == 0:
+				return
 
-            i += 1
+			i += 1
 
 		
 
@@ -279,12 +288,14 @@ class SNPGeneticAlgoGPU:
 				chromosome['out_pairs'].append((chromosome['system'].main((config, chromosome['system'].ruleStatus), maxSteps), output_dataset))
 			
 			line_index = 0
-			output_rssnp_lengths = numpy.zeros(len_dataset)
+			output_rssnp_lengths = numpy.zeros(len(list(chromosome['out_pairs'])))
 			max_spike_size = 20
 			output_rssnp_numpy = numpy.zeros(shape=(int(len_dataset/max_numpy_arraylen) + 1, max_numpy_arraylen, max_spike_size), dtype=numpy.int32)
 			
 			n = None
+			print("the length of out_pairs is ", len(list(chromosome['out_pairs'])))
 			for m in list(chromosome['out_pairs']):
+			
 				n = numpy.asarray(m[0], dtype=numpy.int32)
 				#numpy.lib.pad(n, ((0,0),(0,max_spike_size - len(m[0]))), 'constant', constant_values=(0))
 				print("n shape is ", n.shape, " compared to ", max_spike_size - len(m[0]))
@@ -394,6 +405,7 @@ class SNPGeneticAlgoGPU:
 				fitness_func = ga_params['runs'][run_index]['fitness_function']
 				selection_func = ga_params['runs'][run_index]['selection_func']
 				#print("len of inout", self.inout_pairs)
+				chrom['out_pairs'] = []
 				self.evaluate(chrom, ga_params, fitness_func, selection_func)
 
 

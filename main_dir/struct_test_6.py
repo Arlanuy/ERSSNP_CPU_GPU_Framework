@@ -260,6 +260,7 @@ if __name__ == "__main__":
 
     param = get_param(test_list_rule,4)
     print("param is ", param)
+    
     # print(param)
     # for x in param:
     #     print(x[0])

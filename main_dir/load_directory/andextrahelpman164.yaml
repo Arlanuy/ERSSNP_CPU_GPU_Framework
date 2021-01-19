@@ -252,7 +252,7 @@ runs:
     max_fitness_in_run: 81
     mutation_rate: 100
     population_size: 4
-    selection_func: 1
+    selection_func: 2
   1:
     fitness_function: 2
     generations:
@@ -327,7 +327,7 @@ runs:
     max_fitness_in_run: 0
     mutation_rate: 100
     population_size: 4
-    selection_func: 1
+    selection_func: 2
 runs_pending: 1
 test_cases_path: C:\Users\Arvy\Documents\cs 199 docs\RSSNP_CPU_GPU_Framework\main_dir\test
   cases\and_test_cases.txt
