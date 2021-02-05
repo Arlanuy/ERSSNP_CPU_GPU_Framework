@@ -1,6 +1,7 @@
 import pycuda.autoinit
 import pycuda.driver as drv
 import numpy
+import math
 
 from pycuda.compiler import SourceModule
 from pycuda.gpuarray import GPUArray as pg
@@ -15,7 +16,7 @@ def gpuarray_copy(array: gpuarray.GPUArray):
     array_copy.flags.c_contiguous = array.flags.c_contiguous
     array_copy.flags.forc = array.flags.forc
 
-def GPUlcs(output_dataset, output_spike_train):
+def GPUlcs(output_dataset, output_spike_train, len_dataset):
     mod = SourceModule("""
     #include <stdlib.h>
     __device__ int max1(int a,int b){
@@ -74,8 +75,11 @@ def GPUlcs(output_dataset, output_spike_train):
     drv.memcpy_htod(LCSuff_gpu, LCSuff)
     drv.memcpy_htod(res_gpu, res)
 
+    root_num = math.ceil(math.sqrt(len_dataset))
+    thread_num = root_num % 1024
+    grid_num = math.ceil(root_num / 1024)
 
-    LCSQ(a_gpu,b_gpu,res_gpu,LCSuff_gpu, numpy.int32(a.size+1),numpy.int32(b.size+1), block=(10,10,1),grid=(1,1,1))
+    LCSQ(a_gpu,b_gpu,res_gpu,LCSuff_gpu, numpy.int32(a.size+1),numpy.int32(b.size+1), block=(thread_num,1,1),grid=(thread_num,1,1))
     drv.memcpy_dtoh(res, res_gpu)
     drv.memcpy_dtoh(LCSuff, LCSuff_gpu)
     #print(LCSuff)
@@ -87,7 +91,7 @@ def GPUlcs(output_dataset, output_spike_train):
 
     #return res[0]  
 
-def GPULCSubStr(output_dataset, output_spike_train): 
+def GPULCSubStr(output_dataset, output_spike_train, len_dataset): 
 
     mod = SourceModule("""
     #include <stdlib.h>
@@ -146,19 +150,22 @@ def GPULCSubStr(output_dataset, output_spike_train):
     drv.memcpy_htod(LCSuff_gpu, LCSuff)
     drv.memcpy_htod(res_gpu, res)
 
+    root_num = math.ceil(math.sqrt(len_dataset))
+    thread_num = root_num % 1024
+    grid_num = math.ceil(root_num / 1024)
 
-    LCS(a_gpu,b_gpu,res_gpu,LCSuff_gpu, numpy.int32(a.size+1),numpy.int32(b.size+1), block=(10,10,1),grid=(1,1,1))
+    LCS(a_gpu,b_gpu,res_gpu,LCSuff_gpu, numpy.int32(a.size+1),numpy.int32(b.size+1), block=(thread_num,1,1),grid=(thread_num,1,1))
     drv.memcpy_dtoh(LCSuff, LCSuff_gpu)
     drv.memcpy_dtoh(res, res_gpu)
 
 
-    #print ("input 1 ", a)
-    #print ("input 2 ", b)
+    print ("input 1 ", a)
+    print ("input 2 ", b)
 
     #print(LCSuff)
     
     #print("cpu res substr ", LCS(a, b, len(a), len(b)))
-    #print("res substr", res)
+    print("res substr", res)
     return res[0] 
 
 
@@ -276,7 +283,11 @@ def GPUeditDistDP(output_dataset, output_spike_train, max_row_width, max_col_wid
     drv.memcpy_htod(c_gpu, c)
     drv.memcpy_htod(d_gpu, d)
     #print("FINALLY entered with values ", c, " and ", d)
-    ED(result_mat_gpu, a_gpu,b_gpu, row_width, col_width, len_dataset, LCSuff_gpu, c_gpu, d_gpu, block=(10,1,1),grid=(10,1,1))
+    root_num = math.ceil(math.sqrt(len_dataset))
+    thread_num = root_num % 1024
+    grid_num = math.ceil(root_num / 1024)
+
+    ED(result_mat_gpu, a_gpu,b_gpu, row_width, col_width, len_dataset, LCSuff_gpu, c_gpu, d_gpu, block=(thread_num,1,1),grid=(thread_num,1,1))
 
   
     drv.memcpy_dtoh(d, d_gpu)
