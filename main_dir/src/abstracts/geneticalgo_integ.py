@@ -228,7 +228,9 @@ class SNPGeneticAlgo:
             
             # simulate the rssnp
             chromosome['out_pairs'].append((chromosome['system'].main((config, chromosome['system'].ruleStatus), maxSteps), pair['output']))
-            chromosome['fitness'] += int(assign_fitness(chromosome['system'].out_spiketrain, pair['output'], function)/len(pair['output'])*100)
+            value = int(assign_fitness(chromosome['system'].out_spiketrain, pair['output'], function))
+            print("add value is ", value)
+            chromosome['fitness'] += (value/len(pair['output']))*100
         chromosome['fitness'] = int(chromosome['fitness']/len(self.inout_pairs))
 
         # print(chromosome)
