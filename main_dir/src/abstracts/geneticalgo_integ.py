@@ -33,14 +33,14 @@ def string_format(bitstring):
 
 def assign_fitness(generated, actual, function):
     result = 0
-    print("generated ", string_format(generated), "actual ", string_format(actual))
+    #print("generated ", string_format(generated), "actual ", string_format(actual))
     if function == 0:
         result = lc_subsequence(string_format(generated), string_format(actual))      
     elif function == 1:
         result = lc_substring(string_format(generated), string_format(actual), len(generated), len(actual))
     elif function == 2:
         result = edit_distance(string_format(generated), string_format(actual), len(generated), len(actual))
-    print("result ", result)
+    #print("result ", result)
     return result
 
 class SNPGeneticAlgo:
@@ -130,7 +130,7 @@ class SNPGeneticAlgo:
             else:
                 parents = self.pop[:int(len(self.pop)/2)]
             print("chose this selection 2")
-        print("parents returned by selection are ", parents)
+        #print("parents returned by selection are ", parents)
                 
         return parents
 
@@ -156,8 +156,8 @@ class SNPGeneticAlgo:
                 print("passed inner loop here")
                 parent1 = deepcopy(parents[i % len(parents)])  # best parent
                 parent2 = deepcopy(parents[(i + 1) % len(parents)]) # 2nd best
-                print("parent 1 is ", parent1)
-                print("parent 2 is ", parent2)
+                #print("parent 1 is ", parent1)
+                #print("parent 2 is ", parent2)
                 # Choose random rule to swap
                 index1 = random.randint(0, parent1['system'].m - 1)
                 index2 = random.randint(0, parent2['system'].m - 1)
@@ -229,7 +229,7 @@ class SNPGeneticAlgo:
             # simulate the rssnp
             chromosome['out_pairs'].append((chromosome['system'].main((config, chromosome['system'].ruleStatus), maxSteps), pair['output']))
             value = int(assign_fitness(chromosome['system'].out_spiketrain, pair['output'], function))
-            print("add value is ", value)
+            #print("add value is ", value)
             chromosome['fitness'] += (value/len(pair['output']))*100
         chromosome['fitness'] = int(chromosome['fitness']/len(self.inout_pairs))
 
@@ -243,7 +243,7 @@ class SNPGeneticAlgo:
 
         filename = path_name
         ga_params = conf_load(filename)
-            
+        print("run index at ", run_index)
         start = 0
         # Generate initial population
         if start_from_gen == False:
@@ -315,7 +315,7 @@ class SNPGeneticAlgo:
             self.crossover(mutation_rate, selection_func)
 
         ga_params['runs'][run_index]['max_fitness_in_run'] = whole_run_best_fitness
-        print("whole run fitness is " + str(whole_run_best_fitness))
+        print("whole run fitness is ", str(whole_run_best_fitness), " at index ", run_index)
         conf_save(filename, ga_params)
         print("went here")
         return whole_run_best_fitness

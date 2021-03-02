@@ -29,6 +29,7 @@ class SNPGeneticAlgoEval:
         self.file_name = path_name
         #print("ga params in run is " + str(ga_params))
         if start_new == True:
+            print("Starting anew")
             start = 0
             middle = self.ga_params['run_total']
         else:
