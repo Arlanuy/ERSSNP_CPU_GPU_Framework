@@ -287,7 +287,7 @@ def GPUeditDistDP(output_dataset, output_spike_train, max_row_width, max_col_wid
     thread_num = root_num % 1024
     grid_num = math.ceil(root_num / 1024)
 
-    ED(result_mat_gpu, a_gpu,b_gpu, row_width, col_width, len_dataset, LCSuff_gpu, c_gpu, d_gpu, block=(thread_num,1,1),grid=(thread_num,1,1))
+    ED(result_mat_gpu, a_gpu,b_gpu, numpy.int32(row_width), numpy.int32(col_width), numpy.int32(len_dataset), LCSuff_gpu, c_gpu, d_gpu, block=(thread_num,1,1),grid=(thread_num,1,1))
 
   
     drv.memcpy_dtoh(d, d_gpu)
