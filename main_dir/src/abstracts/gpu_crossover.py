@@ -61,17 +61,19 @@ mod = SourceModule("""
     }
     //1d grid of 2d blocks of size 4 x 4 blocks in a grid and 20 threads in both x and y dimension 
     __global__ void get_every_poss_of_ruleswap(int* res) {
-         int tidx = (blockIdx.x * blockDim.x * blockDim.y) + (threadIdx.y * blockDim.x) + threadIdx.x;
-         if (blockDim.x != blockDim.y) {
-            int size_tuple = 4;
-            
-            res[tidx * size_tuple] = blockDim.x;
-            res[tidx * size_tuple + 1] = blockDim.y;
+        int tidx = (blockIdx.x * blockDim.x * blockDim.y) + (threadIdx.y * blockDim.x) + threadIdx.x;
+        int size_tuple = 4;
+        if (blockIdx.x != blockIdx.y) {
+            printf("dimensions are %d %d %d %d", blockIdx.x, blockIdx.y, threadIdx.x, threadIdx.y);
+            res[tidx * size_tuple] = blockIdx.x;
+            res[tidx * size_tuple + 1] = blockIdx.y;
             res[tidx * size_tuple + 2] = threadIdx.x;
             res[tidx * size_tuple + 3] = threadIdx.y;
-         
-         }
-
+            printf("passed here with parents %d %d", res[tidx * size_tuple], res[tidx * size_tuple + 1]);            
+            printf("passed here with rules %d %d", res[tidx * size_tuple + 2], res[tidx * size_tuple + 3]);
+     
+        }
+       
 
     }
 
@@ -205,7 +207,7 @@ def swap (rssnp_1, rssnp_2, rule_1, rule_2,t):
 
 def crossover_gpu_defined(parents_size, parents, prev_offspring):
     max_rules = 20
-    print("num parents is ", parents_size)
+    print("num parents is ", parents_size, " while max rules is ", max_rules)
     res = np.zeros((parents_size * parents_size, max_rules * max_rules),dtype=np.int32)
     res_gpu = cuda.mem_alloc(res.size * res.dtype.itemsize)
     cuda.memcpy_htod(res_gpu, res)

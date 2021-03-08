@@ -84,14 +84,14 @@ class SNPGeneticAlgoGPU:
 		    # Get top 50%
 		    parents = self.pop[:int(len(self.pop)/2)]
 		elif selection_func == 1:
-		    # Get random 25%
+		    # Get random 50%
 		    total_fitness = 0
 		    for chrom in self.pop:
 		        total_fitness += chrom['fitness']
 
 		    if total_fitness != 0:
 		        i = 0
-		        while len(parents) != int(len(self.pop)/4):
+		        while len(parents) != int(len(self.pop)/2):
 		            if random.randint(0,total_fitness) <= self.pop[-i]['fitness'] and not (self.pop[-i] in parents):    # chance to become parent is fitness/total fitness
 		                parents.insert(0,self.pop[-i])
 		            i = (i + 1) % len(self.pop)
@@ -116,7 +116,7 @@ class SNPGeneticAlgoGPU:
 		    else:
 		        parents = self.pop[:int(len(self.pop)/2)]
 		    print("chose this selection 2")
-		#print("parents returned by selection are ", parents)
+		print("parents returned by selection are ", parents)
 		return parents
 
 
@@ -128,7 +128,7 @@ class SNPGeneticAlgoGPU:
 		# delete half of the population
 		self.pop = self.pop[:(int(len(self.pop)/2))]
 
-		#print("parent 2 is ", parents[1])
+		print("parent 2 is ", parents[1])
 		#rand_rule = random.randint(0,total_fitness)		
 		#mutate_rand = random.randint()
 		#rand_changed_to = random.randint()
@@ -136,15 +136,19 @@ class SNPGeneticAlgoGPU:
 		i = 0
 		while True:
 			cross_counter = 0
-			
+			print("majestic length of parents is ", len(parents))
 			crossover_indexes = crossover_gpu_defined(len(parents), parents, self.pop)
 			#crossover_indexes = get_param(crossover_indexes, population_size)
 			size_tuple = 4
 
 			for j in range(0, len(crossover_indexes)):
-				parent1 = self.pop[int(crossover_indexes[j][0])]
-				parent2 = self.pop[int(crossover_indexes[j][1])]
+				index1 = int(crossover_indexes[j][0])
+				index2 = int(crossover_indexes[j][1])
+				print("index 1 is ", index1, " and index 2 is ", index2)
+				parent1 = self.pop[index1]
+				parent2 = self.pop[index2]
 				rule1 = int(crossover_indexes[j][2])
+				
 				print("rule 1 is ", rule1)
 				rule2 = int(crossover_indexes[j][3])
 
