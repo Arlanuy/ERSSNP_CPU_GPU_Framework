@@ -21,8 +21,21 @@ def lc_substring(X, Y, m, n):
                 LCSuff[i][j] = 0
     return result
 
-# Time complexity: O(mxn)
+# Time complexity: O(3^m) naive approach
 def edit_distance(str1, str2, m, n): 
+    if m == 0:
+        return n
+
+    if n == 0:
+        return m
+
+    if str1[m - 1] == str2[n - 1]:
+        return edit_distance(str1, str2, m - 1, n - 1)
+
+    return 1 + min(edit_distance(str1, str2, m, n - 1), edit_distance(str1, str2, m - 1, n), edit_distance(str1, str2, m - 1, n - 1))
+
+# Time complexity: O(mxn) #insert point 1, delete point 1, replace point 0 or 1
+def edit_distance3(str1, str2, m, n): 
     # Create a table to store results of subproblems 
     dp = [[0 for x in range(n+1)] for x in range(m+1)] 
   
@@ -54,14 +67,15 @@ def edit_distance(str1, str2, m, n):
   
     return dp[m][n]
 
-# Time complexity: O(mxn)
+# Time complexity: O(mxn) #insert point 1, delete point 0, replace point 0 or 1
 def edit_distance2(str1, str2, m, n): 
+    print("str 1 is ", str1, "str2 is ", str2, " ",m, " ", n)
     # Create a table to store results of subproblems 
     dp = [[0 for x in range(n+1)] for x in range(m+1)] 
   
     # Fill d[][] in bottom up manner 
-    for i in range(m+1): 
-        for j in range(n+1): 
+    for i in range(0, m+1): 
+        for j in range(0, n+1): 
   
             # If first string is empty, only option is to 
             # insert all characters of second string 
@@ -74,18 +88,19 @@ def edit_distance2(str1, str2, m, n):
                 dp[i][j] = i    # Min. operations = i 
   
             # If last characters are same, ignore last char 
-            # and recur for remaining string 
+            # and recur for remaining string  (delt = 1)
             
             # If last character are different, consider all 
-            # possibilities and find minimum 
+            # possibilities and find minimum (delt = 0)
             else: 
                 delt = 1
-                if str1[i-1] != str2[j-1]: 
+                if str1[i - 1] != str2[j - 1]: 
                     delt = 0 
                 dp[i][j] = min(dp[i][j-1] + 1,        # Insert 
-                                   dp[i-1][j] + 1,        # Remove 
+                                   dp[i-1][j],        # Remove 
                                    dp[i-1][j-1] + delt)      # Replace 
   
+    #print("dp is ", dp)
     return dp[m][n]
 
 # Time complexity: O(n) where n is the number of different characters

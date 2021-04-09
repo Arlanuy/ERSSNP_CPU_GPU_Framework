@@ -342,7 +342,7 @@ class RSSNPSystem:
         for input_neuron in self.in_spiketrain:
             if max_input_bits < len(input_neuron['input']):
                 max_input_bits = len(input_neuron['input'])
-        
+        #print("max input bits is ", max_input_bits)
         self.initializeSynapseDict()
         
         from_input_state = False
@@ -377,7 +377,8 @@ class RSSNPSystem:
                     unexploredStates.append(nextSystemState)
             step += 1
            
-        return self.out_spiketrain
+        return self.out_spiketrain[0:max_input_bits]
+        #return self.out_spiketrain
 
     def randomize(self, mutation_rate=2):
         """

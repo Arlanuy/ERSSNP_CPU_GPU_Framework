@@ -104,6 +104,7 @@ class SNPGeneticAlgo:
         parents = self.selection(selection_func)
         # delete half of the population
         self.pop = self.pop[:(int(len(self.pop)/2))]
+        print("parents are ", parents)
 
         i = 0
         while True:

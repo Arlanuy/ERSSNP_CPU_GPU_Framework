@@ -39,7 +39,7 @@ def assign_fitness(generated, actual, function):
     elif function == 1:
         result = lc_substring(string_format(generated), string_format(actual), len(generated), len(actual))
     elif function == 2:
-        result = edit_distance(string_format(generated), string_format(actual), len(generated), len(actual))
+        result = edit_distance2(string_format(generated), string_format(actual), len(generated), len(actual))
     #print("result ", result)
     return result
 
@@ -142,7 +142,7 @@ class SNPGeneticAlgo:
         population_size = len(self.pop)
         # Get only parents
         parents = self.selection(selection_func)
-        
+        print("parents are ", parents)
         # delete half of the population
         self.pop = self.pop[:(int(len(self.pop)/2))]
         #print("parent 2 is ", parents[1])
@@ -230,7 +230,9 @@ class SNPGeneticAlgo:
             chromosome['out_pairs'].append((chromosome['system'].main((config, chromosome['system'].ruleStatus), maxSteps), pair['output']))
             value = int(assign_fitness(chromosome['system'].out_spiketrain, pair['output'], function))
             #print("add value is ", value)
+            #print(" len pair is ", len(pair['output']))
             chromosome['fitness'] += (value/len(pair['output']))*100
+            #print("actual value is ", (value/len(pair['output']))*100)
         chromosome['fitness'] = int(chromosome['fitness']/len(self.inout_pairs))
 
         # print(chromosome)

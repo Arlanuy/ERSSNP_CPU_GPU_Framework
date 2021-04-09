@@ -218,7 +218,7 @@ def GPUeditDistDP(output_dataset, output_spike_train, max_row_width, max_col_wid
                         int* LCSuff_row_decrem = &LCSuff[(z*len_dataset*col_width*len_dataset*row_width) + (j*len_dataset*row_width + (i-1)*row_width + i-1)];
                         int* LCSuff_both_decrem = &LCSuff[(z*len_dataset*col_width*len_dataset*row_width) + ((j-1)*len_dataset*row_width + (i-1)*row_width + i-1)];
                         //printf(" gpu %d %d %d with %d and %d compared\\n", * LCSuff_col_decrem, *LCSuff_row_decrem, * LCSuff_both_decrem, dataset_gpu[z * row_width + (i-1)], output_gpu[z * col_width + (j-1)]);
-                        *LCSuff_base = min1(min1(*LCSuff_col_decrem + 1, *LCSuff_row_decrem + 1), *LCSuff_both_decrem + delt);
+                        *LCSuff_base = min1(min1(*LCSuff_col_decrem + 1, *LCSuff_row_decrem), *LCSuff_both_decrem + delt);
                         max_val = LCSuff_base;
                         __syncthreads();
                     }
