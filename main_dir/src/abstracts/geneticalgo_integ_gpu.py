@@ -1,6 +1,8 @@
 from src.abstracts.rssnp import *
 from src.abstracts.gpu_fitness import *
 from src.abstracts.gpu_crossover import *
+import pycuda.autoinit
+import pycuda.gpuarray as gpuarray
 
 import yaml, numpy, random
 max_numpy_arraylen = 32
@@ -53,6 +55,11 @@ def get_param(array,limit):             #limit - number of params to get array-t
         # f.write(str(param)+ '\n')
 
     return param
+
+def getrandom(n):
+	np_list = numpy.random.randn(n,2).astype('int32')
+	a_gpu = gpuarray.to_gpu(np_list)
+	return a_gpu
 
 
 class SNPGeneticAlgoGPU:	
@@ -128,7 +135,7 @@ class SNPGeneticAlgoGPU:
 		# delete half of the population
 		self.pop = self.pop[:(int(len(self.pop)/2))]
 
-		print("parent 2 is ", parents[1])
+		print("parents are ", parents)
 		#rand_rule = random.randint(0,total_fitness)		
 		#mutate_rand = random.randint()
 		#rand_changed_to = random.randint()
@@ -137,21 +144,27 @@ class SNPGeneticAlgoGPU:
 		while True:
 			cross_counter = 0
 			print("majestic length of parents is ", len(parents))
-			crossover_indexes = crossover_gpu_defined(len(parents), parents, self.pop)
-			#crossover_indexes = get_param(crossover_indexes, population_size)
 			size_tuple = 4
+			num_crosses = len(parents)
+			random_rule_parents = getrandom(num_crosses)
+			crossover_indexes = crossover_gpu_defined(len(parents), parents, self.pop, random_rule_parents)
+			#crossover_indexes = get_param(crossover_indexes, population_size)
+			
+			
 
-			for j in range(0, len(crossover_indexes)):
+			print("num crosses is ", num_crosses, " random parent 1 is ", random_rule_parents[0], " while 2 is ", random_rule_parents[1])
+
+			for j in range(0, num_crosses):
 				index1 = int(crossover_indexes[j][0])
 				index2 = int(crossover_indexes[j][1])
-				print("index 1 is ", index1, " and index 2 is ", index2)
+				print("index 1 is ", index1, " and index 2 is ", index2, " at j ", j)
 				parent1 = self.pop[index1]
 				parent2 = self.pop[index2]
-				rule1 = int(crossover_indexes[j][2])
+				rule1 = int(crossover_indexes[j][2]) 
 				
-				print("rule 1 is ", rule1)
+				
 				rule2 = int(crossover_indexes[j][3])
-
+				print("rule 1 is ", rule1, " while rule 2 is ", rule2, " at j ", j)
 				 # Choose random rule to swap
 				
 				backup1 = deepcopy(parent1)
@@ -280,10 +293,12 @@ class SNPGeneticAlgoGPU:
 				input_length = (bitstring_length - single_length)/single_length
 				chromosome['system'].in_spiketrain = []
 				for index in range(len(chromosome['system'].inputs)):
+					
 					chromosome['system'].in_spiketrain.append({
 	                    'index': chromosome['system'].inputs[index],
 	                    'input': [int(x) for x in list(dataset[z][inout_pairs_view[z][0][0][index]:inout_pairs_view[z][single_length - 1][0][index]])]
 	                })
+					print("added at index ", index, " is ", chromosome['system'].in_spiketrain[index])
 					#print("chrom in spike ", chromosome['system'].in_spiketrain)
 				chromosome['system'].out_spiketrain = []
 				config = deepcopy(chromosome['system'].configuration_init)
@@ -301,7 +316,8 @@ class SNPGeneticAlgoGPU:
 			
 				n = numpy.asarray(m[0], dtype=numpy.int32)
 				#numpy.lib.pad(n, ((0,0),(0,max_spike_size - len(m[0]))), 'constant', constant_values=(0))
-				print("n shape is ", n.shape, " compared to ", max_spike_size - len(m[0]))
+				#print("inputs are ", chromosome['system'].in_spiketrain[line_index])
+				print("line index is ", line_index, "n is ", n, "n shape is ", n.shape, " compared to ", max_spike_size - len(m[0]))
 				#numpy.concatenate((n,np.zeros((n.shape[0], max_spike_size - len(m[0])))), axis=0)
 				#numpy.hstack([n,np.zeros([n.shape[0], max_spike_size - len(m[0])])])
 				output_rssnp_lengths[line_index] = len(n)
@@ -357,9 +373,9 @@ class SNPGeneticAlgoGPU:
 				#print("config is ", config)
 				chromosome['out_pairs'].append((chromosome['system'].main((config, chromosome['system'].ruleStatus), maxSteps), output_dataset))
 				value = self.assign_fitness(chromosome['out_pairs'][z][1], chromosome['out_pairs'][z][0], fitness_func, len_dataset)
-				print("dataset len is ", dataset_len, " while dividend is ", value, " with result of ", value/dataset_len)
+				#print("dataset len is ", dataset_len, " while dividend is ", value, " with result of ", value/dataset_len)
 				chromosome['fitness'] += (value/dataset_len) * 100
-				print("fitness now is ", chromosome['fitness'], " at z: ", z)
+				#print("fitness now is ", chromosome['fitness'], " at z: ", z)
 			chromosome['fitness'] = int(chromosome['fitness']/len_dataset)
 
 	def use_population(self, count, last_gen_chromosomes):
