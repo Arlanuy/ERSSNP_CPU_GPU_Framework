@@ -2,7 +2,7 @@ from src.abstracts.rssnp import *
 from src.abstracts.gpu_fitness import *
 from src.abstracts.gpu_crossover import *
 import pycuda.autoinit
-import pycuda.gpuarray as gpuarray
+
 
 import yaml, numpy, random
 max_numpy_arraylen = 32
@@ -56,10 +56,8 @@ def get_param(array,limit):             #limit - number of params to get array-t
 
     return param
 
-def getrandom(n):
-	np_list = numpy.random.randn(n,2).astype('int32')
-	a_gpu = gpuarray.to_gpu(np_list)
-	return a_gpu
+
+
 
 
 class SNPGeneticAlgoGPU:	
@@ -145,26 +143,23 @@ class SNPGeneticAlgoGPU:
 			cross_counter = 0
 			print("majestic length of parents is ", len(parents))
 			size_tuple = 4
-			num_crosses = len(parents)
-			random_rule_parents = getrandom(num_crosses)
-			crossover_indexes = crossover_gpu_defined(len(parents), parents, self.pop, random_rule_parents)
+
+			crossover_indexes = crossover_gpu_defined(len(parents), parents, self.pop)
 			#crossover_indexes = get_param(crossover_indexes, population_size)
 			
-			
+			num_crosses = len(parents)
 
-			print("num crosses is ", num_crosses, " random parent 1 is ", random_rule_parents[0], " while 2 is ", random_rule_parents[1])
+			print("num crosses is ", num_crosses)#, " random parent 1 is ", random_rule_parents[0], " while 2 is ", random_rule_parents[1])
 
-			for j in range(0, num_crosses):
-				index1 = int(crossover_indexes[j][0])
-				index2 = int(crossover_indexes[j][1])
-				print("index 1 is ", index1, " and index 2 is ", index2, " at j ", j)
-				parent1 = self.pop[index1]
-				parent2 = self.pop[index2]
-				rule1 = int(crossover_indexes[j][2]) 
-				
-				
-				rule2 = int(crossover_indexes[j][3])
-				print("rule 1 is ", rule1, " while rule 2 is ", rule2, " at j ", j)
+			while True:
+				parent1 = deepcopy(parents[i % len(parents)])  # best parent
+				parent2 = deepcopy(parents[(i + 1) % len(parents)]) # 2nd best
+
+				rule1 = int(crossover_indexes[i % len(parents)]) 
+
+
+				rule2 = int(crossover_indexes[(i + 1) % len(parents) + len(parents)])
+				print("rule 1 is ", rule1, " while rule 2 is ", rule2)
 				 # Choose random rule to swap
 				
 				backup1 = deepcopy(parent1)

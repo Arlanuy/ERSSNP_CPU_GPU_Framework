@@ -9,6 +9,31 @@ import random
 
 from gpu_struct import GPUStruct
 from pycuda.compiler import SourceModule
+import pycuda.gpuarray as gpuarray
+
+def getrandom(parents):
+    n = len(parents)
+    np_list = np.zeros(n, dtype=np.int32) 
+    #np_list = numpy.random.randn(n,2).astype('int32')
+    for z in range(n):
+        maxi = len(parents[z]['system'].rule)
+        np_list[z] = maxi
+    #a_gpu = gpuarray.to_gpu(np_list)
+    a_gpu = cuda.mem_alloc(np_list.size * np_list.dtype.itemsize)
+    cuda.memcpy_htod(a_gpu, np_list)
+    return a_gpu
+
+def getrandom2(parents):
+    n = len(parents)
+    np_list = [[0 for x in range(n)] for y in range(2)] 
+    #np_list = numpy.random.randn(n,2).astype('int32')
+    for z in range(n):
+        mini = 0
+        maxi = len(parents[z].rule)
+        np_list[z][0] = numpy.random.randint(mini, maxi)
+        np_list[z][1] = numpy.random.randint(mini, maxi)
+    a_gpu = gpuarray.to_gpu(np_list)
+    return a_gpu
 
 
 mod = SourceModule("""
@@ -60,7 +85,7 @@ mod = SourceModule("""
         t->delay[idy]  = temp_delay;
     }
     //1d grid of 2d blocks of size 4 x 4 blocks in a grid and 20 threads in both x and y dimension 
-    __global__ void get_every_poss_of_ruleswap(int* res, int* random_rules) {
+    __global__ void get_every_poss_of_ruleswap2(int* res, int* random_rules) {
         int tidx = (blockIdx.x * blockDim.x * blockDim.y) + (threadIdx.y * blockDim.x) + threadIdx.x;
         int size_tuple = 4;
 
@@ -79,20 +104,50 @@ mod = SourceModule("""
 
     }
 
+    //1d grid of 2d blocks of size 4 x 4 blocks in a grid and 20 threads in both x and y dimension  int tidz = threadIdx.z + blockIdx.z * blockDim.z;
+    __global__ void get_every_poss_of_ruleswap(int* random_rules_limit, int* random_gpu) {
+        int tidx = threadIdx.x + blockIdx.x * blockDim.x;;
+        int tidy = threadIdx.y + blockIdx.y * blockDim.y;
+        
+        //int id = (blockIdx.x * blockDim.x * blockDim.y) + (threadIdx.y * blockDim.x) + threadIdx.x;
+
+
+        //printf("gpu: x = %d, y = %d", tidx, tidy);
+
+        if (blockIdx.x != blockIdx.y) {
+            //printf("block: x = %d, block y = %d", blockIdx.x, blockIdx.y); 
+            if (threadIdx.x < random_rules_limit[blockIdx.x]) {
+                random_gpu[blockIdx.x] = threadIdx.x;
+            }
+
+            if (threadIdx.y < random_rules_limit[blockIdx.y]) {
+                random_gpu[blockDim.x + blockIdx.y] = threadIdx.y;
+            }
+
+        }
+       
+
+    }
+
+
     """)
 
-def crossover_gpu_defined(parents_size, parents, prev_offspring, random_rules):
+def crossover_gpu_defined(parents_size, parents, prev_offspring):
     max_rules = 20
     print("num parents is ", parents_size, " while max rules is ", max_rules)
-    res = np.zeros((parents_size * parents_size, max_rules * max_rules),dtype=np.int32)
-    res_gpu = cuda.mem_alloc(res.size * res.dtype.itemsize)
-    cuda.memcpy_htod(res_gpu, res)
+    random_init_list = np.zeros(parents_size*2,dtype=np.int32)
+    #random_gpu = gpuarray.to_gpu(random_init_list) 
+    random_rule_parents_limit = getrandom(parents)
+    #res = np.zeros((parents_size * parents_size, max_rules * max_rules),dtype=np.int32)
+    random_gpu = cuda.mem_alloc(random_init_list.size * random_init_list.dtype.itemsize)
+    cuda.memcpy_htod(random_gpu, random_init_list)
     cross = mod.get_function("get_every_poss_of_ruleswap")
-    cross(res_gpu, random_rules, block=(max_rules, max_rules,1), grid=(parents_size, parents_size,1))
-    cuda.memcpy_dtoh(res, res_gpu)
+    cross(random_rule_parents_limit, random_gpu, block=(max_rules, max_rules,1), grid=(parents_size, parents_size,1))
+    cuda.memcpy_dtoh(random_init_list, random_gpu)
+    #cuda.memcpy_dtoh(res, res_gpu)
     
-    print("res in crossover is ", res)
-    return res
+    print("res in crossover is ", random_init_list)
+    return random_init_list
 
 def get_every_poss(size_rssnp):
     list_poss = []
