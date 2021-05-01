@@ -146,7 +146,7 @@ def crossover_gpu_defined(parents_size, len_orig_parents, num_crosses, prev_offs
     #res = np.zeros((parents_size * parents_size, max_rules * max_rules),dtype=np.int32)
     #random_gpu = cuda.mem_alloc(random_init_list.size * random_init_list.dtype.itemsize)
     #cuda.memcpy_htod(random_gpu, random_init_list)
-    random_fin_list = getrandom(parents_size, num_crosses, np.random.randint(1), random_rule_parents_limit)
+    random_fin_list = getrandom(parents_size, num_crosses, np.random.randint(123456789), random_rule_parents_limit)
     #cross = mod.get_function("get_every_poss_of_ruleswap")
     #cross(random_rule_parents_limit, random_gpu, block=(max_rules, max_rules,1), grid=(parents_size, parents_size,1))
     
