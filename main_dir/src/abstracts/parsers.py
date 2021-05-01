@@ -16,7 +16,7 @@ def spike_train_parser(filename, input_list):
     try:
         file = open(filename, 'r')
     except(Exception):
-        print("File not found!")
+        print("File not found !")
         exit()
     try:
         inout_pairs = []

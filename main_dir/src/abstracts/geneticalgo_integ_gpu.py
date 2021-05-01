@@ -130,9 +130,10 @@ class SNPGeneticAlgoGPU:
 		population_size = len(self.pop)
 		# Get only parents
 		parents = self.selection(selection_func)
+		len_orig_parents = len(self.pop)
 		# delete half of the population
 		self.pop = self.pop[:(int(len(self.pop)/2))]
-
+		
 		print("parents are ", parents)
 		#rand_rule = random.randint(0,total_fitness)		
 		#mutate_rand = random.randint()
@@ -144,27 +145,30 @@ class SNPGeneticAlgoGPU:
 			print("majestic length of parents is ", len(parents))
 			size_tuple = 4
 
-			crossover_indexes = crossover_gpu_defined(len(parents), parents, self.pop)
+			#crossover_indexes = crossover_gpu_defined(len(parents), parents, self.pop)
 			#crossover_indexes = get_param(crossover_indexes, population_size)
 			
-			num_crosses = len(parents)
+			num_crosses = len(parents) * 4
 
 			print("num crosses is ", num_crosses)#, " random parent 1 is ", random_rule_parents[0], " while 2 is ", random_rule_parents[1])
-
+			
 			while True:
+				
 				parent1 = deepcopy(parents[i % len(parents)])  # best parent
 				parent2 = deepcopy(parents[(i + 1) % len(parents)]) # 2nd best
-
+				crossover_indexes = crossover_gpu_defined(len(parents), len_orig_parents, num_crosses, self.pop)
 				rule1 = int(crossover_indexes[i % len(parents)]) 
 
 
 				rule2 = int(crossover_indexes[(i + 1) % len(parents) + len(parents)])
-				print("rule 1 is ", rule1, " while rule 2 is ", rule2)
+
+				print("rule 1 is ", rule1, " while rule 2 is ", rule2, " while parent 1 is ", i % len(parents), " and parent2 is ", (i + 1) % len(parents))
 				 # Choose random rule to swap
 				
 				backup1 = deepcopy(parent1)
 				backup2 = deepcopy(parent2)
 				# Swap rules
+				print("len of parent 1 is ", len(parent1['system'].rule), " while len of parent 2 is ", len(parent2['system'].rule))
 				parent1['system'].rule[rule1], parent2['system'].rule[rule2] = parent2['system'].rule[rule2], parent1['system'].rule[rule1]
 				# Mutate
 				parent1['system'].randomize(mutation_rate)
@@ -174,11 +178,11 @@ class SNPGeneticAlgoGPU:
 					parent1['system'].out_spiketrain = []
 					parent2['system'].out_spiketrain = []
 					self.pop.extend([parent1,parent2])
-					print("passed first")
+					print("passed first valid", " while parent 1 is ", i % len(parents), " and parent2 is ", (i + 1) % len(parents))
 					if len(self.pop) > population_size:
 						while len(self.pop) > population_size:
 							self.pop = self.pop[:-1]
-						return
+					break
 				elif cross_counter < 10:
 				    print("Mutation failed")
 				    cross_counter += 1

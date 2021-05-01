@@ -2,6 +2,9 @@ from src.experimenter_uncommented import gaframework, gaframework_gpu
 from src.abstracts.norssnp_integ import set_bounds, set_values
 from src.RSSNP_list import *
 import yaml, os
+import src.experimenter_uncommented
+import src.abstracts.norssnp_integ 
+import src.RSSNP_list
 
 def conf_load(filename):
     with open(filename, 'r') as stream:

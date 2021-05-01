@@ -8,7 +8,7 @@ from pycuda.gpuarray import GPUArray as pg
 
 from pycuda import gpuarray
 
-#Source whn in Stackoverflow with question how to properly copy a gpuarray (longstanding bug)
+#Source in Stackoverflow with question how to properly copy a gpuarray (longstanding bug)
 def gpuarray_copy(array: gpuarray.GPUArray):
     array_copy = array.copy()
     array_copy.strides = array.strides
@@ -90,7 +90,6 @@ def GPUlcs(output_dataset, output_spike_train, len_dataset):
     #print (lcs(a[1], b)) 
 
     #return res[0]  
-
 def GPULCSubStr(output_dataset, output_spike_train, len_dataset): 
 
     mod = SourceModule("""
