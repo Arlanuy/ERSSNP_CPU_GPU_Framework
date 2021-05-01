@@ -407,7 +407,9 @@ class SNPGeneticAlgoGPU:
 		print(" run-gen ", run_start, generation_start)
 		self.use_population(ga_params['runs'][run_start]['population_size'], ga_params['runs'][run_start]['generations'][generation_start]['rssnp_chromosomes'] )
 		
-		whole_run_best_fitness = 0
+		# to record only the best of the added runs use this, instead of below
+		#whole_run_best_fitness = 0
+		whole_run_best_fitness = ga_params['runs'][run_index]['max_fitness_in_run']
 
 		for generation in range(start, start + generations + ga_params['gens_pending']):
 			print("gen baby gen " + str(generation))

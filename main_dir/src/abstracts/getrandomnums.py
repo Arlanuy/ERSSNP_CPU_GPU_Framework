@@ -63,5 +63,13 @@ def getrandom(N, num_crosses, random_seed, max_limit):
     #max_lim = max_limit
     fill_func(gdata, gdata_int, np.int32(N), max_lim, min_lim, block=(num_crosses,1,1), grid=(1,1,1))
     return gdata_int
+#different seed yields different random set as commented below
 
-print(getrandom(10, 20, 1234, np.array([10, 10, 10, 10, 10, 10, 10, 10, 10, 10])))
+# random_num = np.random.randint(100)
+# random_num2 = np.random.randint(100)
+# random_num3 = np.random.randint(100)
+
+# print("random num is ", random_num, " ", random_num2, " ", random_num3)
+# print(getrandom(10, 20, random_num, np.array([10, 10, 10, 10, 10, 10, 10, 10, 10, 10])))
+# print(getrandom(10, 20, random_num2, np.array([10, 10, 10, 10, 10, 10, 10, 10, 10, 10])))
+# print(getrandom(10, 20, random_num3, np.array([10, 10, 10, 10, 10, 10, 10, 10, 10, 10])))
