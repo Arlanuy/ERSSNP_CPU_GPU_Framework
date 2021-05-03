@@ -25,20 +25,7 @@ def getrandommax(parents, len_orig_parents):
     #a_gpu = gpuarray.to_gpu(np_list)
     #a_gpu = cuda.mem_alloc(np_list.size * np_list.dtype.itemsize)
     #cuda.memcpy_htod(a_gpu, np_list)
-    return a_gpu
-
-def getrandom2(parents):
-    n = len(parents)
-    np_list = [[0 for x in range(n)] for y in range(2)] 
-    #np_list = numpy.random.randn(n,2).astype('int32')
-    for z in range(n):
-        mini = 0
-        maxi = len(parents[z].rule)
-        np_list[z][0] = numpy.random.randint(mini, maxi)
-        np_list[z][1] = numpy.random.randint(mini, maxi)
-    a_gpu = gpuarray.to_gpu(np_list)
-    return a_gpu
-
+    #return a_gpu
 
 mod = SourceModule("""
     struct Rule{
@@ -136,12 +123,12 @@ mod = SourceModule("""
 
     """)
 
-def crossover_gpu_defined(parents_size, len_orig_parents, num_crosses, prev_offspring):
+def crossover_gpu_defined(parents_size, len_orig_parents, num_crosses, prev_offspring, random_rule_parents_limit):
     max_rules = 20
     print("num parents is ", parents_size, " while max rules is ", max_rules, " while len original parents is ", len_orig_parents)
     random_init_list = np.zeros(num_crosses,dtype=np.int32)
     #random_gpu = gpuarray.to_gpu(random_init_list) 
-    random_rule_parents_limit = getrandommax(prev_offspring, len_orig_parents)
+    
 
     #res = np.zeros((parents_size * parents_size, max_rules * max_rules),dtype=np.int32)
     #random_gpu = cuda.mem_alloc(random_init_list.size * random_init_list.dtype.itemsize)

@@ -7,6 +7,8 @@ import pycuda.autoinit
 import yaml, numpy, random
 max_numpy_arraylen = 32
 
+
+
 def conf_load(filename):
     with open(filename, 'r') as stream:
         try:
@@ -56,7 +58,17 @@ def get_param(array,limit):             #limit - number of params to get array-t
 
     return param
 
-
+def getrandommax(parents, len_orig_parents):
+    
+    np_list = np.zeros(len_orig_parents, dtype=np.int32) 
+    #np_list = numpy.random.randn(n,2).astype('int32')
+    for z in range(len_orig_parents):
+        if z < len(parents):
+            maxi = len(parents[z]['system'].rule) - 1
+            np_list[z] = maxi
+        else:
+            np_list[z] = -1    
+    return np_list
 
 
 
@@ -151,12 +163,12 @@ class SNPGeneticAlgoGPU:
 			num_crosses = len(parents) * 4
 
 			print("num crosses is ", num_crosses)#, " random parent 1 is ", random_rule_parents[0], " while 2 is ", random_rule_parents[1])
-			
+			random_rule_parents_limit = getrandommax(self.pop, len_orig_parents)
 			while True:
 				
 				parent1 = deepcopy(parents[i % len(parents)])  # best parent
 				parent2 = deepcopy(parents[(i + 1) % len(parents)]) # 2nd best
-				crossover_indexes = crossover_gpu_defined(len(parents), len_orig_parents, num_crosses, self.pop)
+				crossover_indexes = crossover_gpu_defined(len(parents), len_orig_parents, num_crosses, self.pop, random_rule_parents_limit)
 				rule1 = int(crossover_indexes[i % len(parents)]) 
 
 
@@ -173,7 +185,7 @@ class SNPGeneticAlgoGPU:
 				# Mutate
 				parent1['system'].randomize(mutation_rate)
 				parent2['system'].randomize(mutation_rate)
-
+				
 				if parent1['system'].isValid() and parent2['system'].isValid():
 					parent1['system'].out_spiketrain = []
 					parent2['system'].out_spiketrain = []
@@ -182,6 +194,7 @@ class SNPGeneticAlgoGPU:
 					if len(self.pop) > population_size:
 						while len(self.pop) > population_size:
 							self.pop = self.pop[:-1]
+					random_rule_parents_limit = getrandommax(self.pop, len_orig_parents)
 					break
 				elif cross_counter < 10:
 				    print("Mutation failed")
@@ -195,7 +208,9 @@ class SNPGeneticAlgoGPU:
 				    parent1['system'].out_spiketrain = []
 				    parent2['system'].out_spiketrain = []
 				    self.pop.extend([parent1,parent2])
+				    random_rule_parents_limit = getrandommax(self.pop, len_orig_parents)
 				    break
+
 
 			print("comparing", len(self.pop), population_size)
 			if len(self.pop) == population_size and not i == 0:
