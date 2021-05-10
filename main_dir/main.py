@@ -75,7 +75,7 @@ def program_main():
 	if  menu_choice == 1:
 		print("Given the choices of logic gates (1) AND, (2) OR, (3) NOT, (4) ADD, (5) SUB")
 		answer = int(input("What kind of system would you like to evolve: "))
-		print("Given the choices of version of the systems to evolve (1) minimal, (2) adversarial, (3) extra rules, (4) random, (5) user-defined")
+		print("Given the choices of version of the systems to evolve (1) minimal, (2) adversarial, (3) extra rules, (4) user-defined")
 		type_answer = int(input("What kind of system would you like to evolve: "))
 		save_directory = os.path.join(home, "load_directory")
 		#save_directory = input("Which directory would you like to save (.yaml) the evolutionary process: ")
@@ -170,13 +170,15 @@ def program_main():
 			ga_params['test_cases_path'] = sub_path
 
 		if type_answer == 4:
-			system = set_bounds(ga_params, runs)
+		 	system = set_values(ga_params, runs)
+		 	if system == None:
+		 		print("Rssnp given is invalid")
+		 		exit()
 
-		if type_answer == 5:
-			system = set_values(ga_params, runs)
-			if system == None:
-				print("Rssnp given is invalid")
-				exit()
+		# random RSSNP option
+		#if type_answer == 5:
+			#system = set_bounds(ga_params, runs)
+
 
 		conf_save(savefile_name, ga_params)
 		if system == None or test_cases_path == None:

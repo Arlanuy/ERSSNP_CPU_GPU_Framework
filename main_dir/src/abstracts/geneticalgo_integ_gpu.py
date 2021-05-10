@@ -1,7 +1,7 @@
 from src.abstracts.rssnp import *
 from src.abstracts.gpu_fitness import *
 from src.abstracts.gpu_crossover import *
-import pycuda.autoinit
+from src.abstracts.gpu_selection import *
 
 
 import yaml, numpy, random
@@ -58,17 +58,7 @@ def get_param(array,limit):             #limit - number of params to get array-t
 
     return param
 
-def getrandommax(parents, len_orig_parents):
-    
-    np_list = np.zeros(len_orig_parents, dtype=np.int32) 
-    #np_list = numpy.random.randn(n,2).astype('int32')
-    for z in range(len_orig_parents):
-        if z < len(parents):
-            maxi = len(parents[z]['system'].rule) - 1
-            np_list[z] = maxi
-        else:
-            np_list[z] = -1    
-    return np_list
+
 
 
 
@@ -93,6 +83,10 @@ class SNPGeneticAlgoGPU:
 	    # print(result)
 	    return result
 
+	#def selection_helper(self, previous_offsprings, parents, random_fraction_lim):
+
+	
+
 
 
 	def selection(self, selection_func):
@@ -103,10 +97,16 @@ class SNPGeneticAlgoGPU:
 		elif selection_func == 1:
 		    # Get random 50%
 		    total_fitness = 0
+		    total_fitness_list = []
 		    for chrom in self.pop:
-		        total_fitness += chrom['fitness']
+		        #total_fitness += chrom['fitness']
+		        total_fitness_list.append(chrom['fitness'])
+		        #tf_gpu_list = gpuarray.to_gpu(total_fitness_list)
+		        tf_sum = adder(total_fitness_list, len(total_fitness_list))
+		        total_fitness = tf.sum
 
 		    if total_fitness != 0:
+		    	#self.selection_helper(self.pop, parents, int(len(self.pop)/2))
 		        i = 0
 		        while len(parents) != int(len(self.pop)/2):
 		            if random.randint(0,total_fitness) <= self.pop[-i]['fitness'] and not (self.pop[-i] in parents):    # chance to become parent is fitness/total fitness
@@ -122,9 +122,10 @@ class SNPGeneticAlgoGPU:
 		    parents = self.pop[:int(len(self.pop)/4)]
 		    for chrom in self.pop:
 		        if chrom not in parents:
-		            total_fitness += chrom['fitness']
+		        	total_fitness += chrom['fitness']
 
 		    if total_fitness != 0:
+		    	#self.selection_helper(self.pop, parents, int(len(self.pop)/4))
 		        i = 0
 		        while len(parents) != int(len(self.pop)/4):
 		            if random.randint(0,total_fitness) <= self.pop[-i]['fitness'] and not (self.pop[-i] in parents):    # chance to become parent is fitness/total fitness
