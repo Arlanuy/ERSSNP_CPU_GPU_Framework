@@ -21,4 +21,5 @@ six==1.16.0
 toml==0.10.2
 typed-ast==1.4.3
 pyyaml==5.4.1
-pycuda==2021.1
+pycuda==2018.1.1
+ctypes==1.0.2
