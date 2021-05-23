@@ -91,19 +91,20 @@ class SNPGeneticAlgoGPU:
 
 	def selection(self, selection_func):
 		parents = []
+		total_fitness_list = []
 		if selection_func == 0:
 		    # Get top 50%
 		    parents = self.pop[:int(len(self.pop)/2)]
 		elif selection_func == 1:
 		    # Get random 50%
 		    total_fitness = 0
-		    total_fitness_list = []
+		    
 		    for chrom in self.pop:
 		        #total_fitness += chrom['fitness']
 		        total_fitness_list.append(chrom['fitness'])
 		        #tf_gpu_list = gpuarray.to_gpu(total_fitness_list)
-		        tf_sum = adder(total_fitness_list, len(total_fitness_list))
-		        total_fitness = tf.sum
+		    total_fitness = init_tf_adder(total_fitness_list, len(total_fitness_list))
+		    
 
 		    if total_fitness != 0:
 		    	#self.selection_helper(self.pop, parents, int(len(self.pop)/2))
@@ -120,9 +121,10 @@ class SNPGeneticAlgoGPU:
 		    total_fitness = 0
 
 		    parents = self.pop[:int(len(self.pop)/4)]
-		    for chrom in self.pop:
-		        if chrom not in parents:
-		        	total_fitness += chrom['fitness']
+		    for chrom in self.pop[int(len(self.pop)/4):]:
+		    	total_fitness_list.append(chrom['fitness'])
+		        #total_fitness += chrom['fitness']
+		    total_fitness = init_tf_adder(total_fitness_list, len(total_fitness_list))
 
 		    if total_fitness != 0:
 		    	#self.selection_helper(self.pop, parents, int(len(self.pop)/4))
