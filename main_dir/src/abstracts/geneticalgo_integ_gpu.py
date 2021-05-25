@@ -427,7 +427,7 @@ class SNPGeneticAlgoGPU:
 		
 		# to record only the best of the added runs use this, instead of below
 		#whole_run_best_fitness = 0
-		whole_run_best_fitness = ga_params['runs'][run_index]['max_fitness_in_run']
+		whole_run_best_fitness = ga_params['max_fitness_in_runs']
 
 		for generation in range(start, start + generations + ga_params['gens_pending']):
 			print("gen baby gen " + str(generation))
