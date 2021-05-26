@@ -123,7 +123,7 @@ class SNPGeneticAlgo:
 
             if total_fitness != 0:
                 i = 0
-                while len(parents) != int(len(self.pop)/4):
+                while len(parents) != int(len(self.pop)/2):
                     if random.randint(0,total_fitness) <= self.pop[-i]['fitness'] and not (self.pop[-i] in parents):    # chance to become parent is fitness/total fitness
                         parents.insert(0,self.pop[-i])
                     i = (i + 1) % len(self.pop)

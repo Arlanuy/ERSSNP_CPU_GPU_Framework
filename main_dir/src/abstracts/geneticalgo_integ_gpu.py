@@ -129,7 +129,7 @@ class SNPGeneticAlgoGPU:
 		    if total_fitness != 0:
 		    	#self.selection_helper(self.pop, parents, int(len(self.pop)/4))
 		        i = 0
-		        while len(parents) != int(len(self.pop)/4):
+		        while len(parents) != int(len(self.pop)/2):
 		            if random.randint(0,total_fitness) <= self.pop[-i]['fitness'] and not (self.pop[-i] in parents):    # chance to become parent is fitness/total fitness
 		                parents.insert(0,self.pop[-i])
 		            i = (i + 1) % len(self.pop)
@@ -175,8 +175,8 @@ class SNPGeneticAlgoGPU:
 				rule1 = int(crossover_indexes[i % len(parents)]) 
 
 
-				rule2 = int(crossover_indexes[(i + 1) % len(parents) + len(parents)])
-
+				rule2 = int(crossover_indexes[(i + 1) % len(parents)])
+				print("i is ", i, "and len parents is ", len(parents))
 				print("rule 1 is ", rule1, " while rule 2 is ", rule2, " while parent 1 is ", i % len(parents), " and parent2 is ", (i + 1) % len(parents))
 				 # Choose random rule to swap
 				
@@ -184,6 +184,9 @@ class SNPGeneticAlgoGPU:
 				backup2 = deepcopy(parent2)
 				# Swap rules
 				print("len of parent 1 is ", len(parent1['system'].rule), " while len of parent 2 is ", len(parent2['system'].rule))
+
+				rule1 %= len(parent1['system'].rule)
+				rule2 %= len(parent2['system'].rule)
 				parent1['system'].rule[rule1], parent2['system'].rule[rule2] = parent2['system'].rule[rule2], parent1['system'].rule[rule1]
 				# Mutate
 				parent1['system'].randomize(mutation_rate)

@@ -18,6 +18,7 @@ def getrandommax(parents, len_orig_parents):
     for z in range(len_orig_parents):
         if z < len(parents):
             maxi = len(parents[z]['system'].rule) - 1
+            print("maxi is ", maxi)
             np_list[z] = maxi
         else:
             np_list[z] = -1    
@@ -28,8 +29,7 @@ def getrandommax(parents, len_orig_parents):
     #return a_gpu
 
 def crossover_gpu_defined(parents_size, len_orig_parents, num_crosses, prev_offspring, random_rule_parents_limit):
-    max_rules = 20
-    print("num parents is ", parents_size, " while max rules is ", max_rules, " while len original parents is ", len_orig_parents)
+    print("num parents is ", parents_size,"while len original parents is ", len_orig_parents)
     random_init_list = np.zeros(num_crosses,dtype=np.int32)
     #random_gpu = gpuarray.to_gpu(random_init_list) 
     
@@ -46,6 +46,7 @@ def crossover_gpu_defined(parents_size, len_orig_parents, num_crosses, prev_offs
     #print("res in crossover is ", random_init_list)
     print("random limit is ", random_rule_parents_limit)
     print("random_fin is ", random_init_list)
+    print("real random_fin is ", random_fin_list)
     return random_init_list
 
 
