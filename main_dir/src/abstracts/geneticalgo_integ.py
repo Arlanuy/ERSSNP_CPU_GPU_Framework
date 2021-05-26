@@ -93,6 +93,7 @@ class SNPGeneticAlgo:
 
 
     def selection(self, selection_func):
+        
         parents = []
         if selection_func == 0:
             # Get top 50%
@@ -131,7 +132,7 @@ class SNPGeneticAlgo:
                 parents = self.pop[:int(len(self.pop)/2)]
             print("chose this selection 2")
         #print("parents returned by selection are ", parents)
-                
+        
         return parents
 
     def crossover(self, mutation_rate, selection_func):
