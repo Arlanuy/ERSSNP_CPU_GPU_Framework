@@ -158,13 +158,13 @@ def GPULCSubStr(output_dataset, output_spike_train, len_dataset):
     drv.memcpy_dtoh(res, res_gpu)
 
 
-    print ("input 1 ", a)
-    print ("input 2 ", b)
+    #print ("input 1 ", a)
+    #print ("input 2 ", b)
 
     #print(LCSuff)
     
     #print("cpu res substr ", LCS(a, b, len(a), len(b)))
-    print("res substr", res)
+    #print("res substr", res)
     return res[0] 
 
 

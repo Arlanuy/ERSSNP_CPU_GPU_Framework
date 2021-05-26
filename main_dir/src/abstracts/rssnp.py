@@ -377,8 +377,8 @@ class RSSNPSystem:
                     unexploredStates.append(nextSystemState)
             step += 1
            
-        return self.out_spiketrain[0:max_input_bits]
-        #return self.out_spiketrain
+        #return self.out_spiketrain[0:max_input_bits]
+        return self.out_spiketrain
 
     def randomize(self, mutation_rate=2):
         """
