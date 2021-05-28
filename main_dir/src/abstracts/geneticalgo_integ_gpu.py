@@ -4,7 +4,8 @@ from src.abstracts.gpu_crossover import *
 from src.abstracts.gpu_selection import *
 
 
-import yaml, numpy, random
+import yaml, numpy, random, os, time
+timer_out_gpu = open(os.getcwd()+ "\\2gpuaddaddextra22out.txt", "w+")
 max_numpy_arraylen = 32
 
 
@@ -31,6 +32,8 @@ def class_to_yaml(ga_params_rssnp, rssnp):
 
 def based_init(a,N):
 	b = numpy.zeros((a.shape[0] + N))
+	if b.shape[0] < a.shape[0]:
+		b = numpy.zeros((a.shape[0] + N) * 3)
 	b[0:a.shape[0]] = a
 	return b
 
@@ -90,6 +93,7 @@ class SNPGeneticAlgoGPU:
 
 
 	def selection(self, selection_func):
+		
 		parents = []
 		total_fitness_list = []
 		if selection_func == 0:
@@ -101,10 +105,13 @@ class SNPGeneticAlgoGPU:
 		    
 		    for chrom in self.pop:
 		        #total_fitness += chrom['fitness']
-		        total_fitness_list.append(chrom['fitness'])
+			     total_fitness_list.append(chrom['fitness'])
 		        #tf_gpu_list = gpuarray.to_gpu(total_fitness_list)
+			
+		    start = time.perf_counter()
 		    total_fitness = init_tf_adder(total_fitness_list, len(total_fitness_list))
-		    
+		    finish = time.perf_counter()
+		    timer_out_gpu.write("Selection GPU time is "+ str(finish - start)+ "\n")
 
 		    if total_fitness != 0:
 		    	#self.selection_helper(self.pop, parents, int(len(self.pop)/2))
@@ -115,7 +122,7 @@ class SNPGeneticAlgoGPU:
 		            i = (i + 1) % len(self.pop)
 		    else:
 		        parents = self.pop[:int(len(self.pop)/4)]
-		    print("chose this selection 1")
+		    #print("chose this selection 1")
 		elif selection_func == 2:
 		    # Get random 25% and top 25%
 		    total_fitness = 0
@@ -124,7 +131,10 @@ class SNPGeneticAlgoGPU:
 		    for chrom in self.pop[int(len(self.pop)/4):]:
 		    	total_fitness_list.append(chrom['fitness'])
 		        #total_fitness += chrom['fitness']
+		    start = time.perf_counter()
 		    total_fitness = init_tf_adder(total_fitness_list, len(total_fitness_list))
+		    finish = time.perf_counter()
+		    timer_out_gpu.write("Selection GPU time is "+ str(finish - start)+ "\n")
 
 		    if total_fitness != 0:
 		    	#self.selection_helper(self.pop, parents, int(len(self.pop)/4))
@@ -135,13 +145,15 @@ class SNPGeneticAlgoGPU:
 		            i = (i + 1) % len(self.pop)
 		    else:
 		        parents = self.pop[:int(len(self.pop)/2)]
-		    print("chose this selection 2")
-		print("parents returned by selection are ", parents)
+		    #print("chose this selection 2")
+		#print("parents returned by selection are ", parents)
+		
 		return parents
 
 
 
 	def crossover(self, mutation_rate, selection_func):
+		
 		population_size = len(self.pop)
 		# Get only parents
 		parents = self.selection(selection_func)
@@ -149,7 +161,7 @@ class SNPGeneticAlgoGPU:
 		# delete half of the population
 		self.pop = self.pop[:(int(len(self.pop)/2))]
 		
-		print("parents are ", parents)
+		#print("parents are ", parents)
 		#rand_rule = random.randint(0,total_fitness)		
 		#mutate_rand = random.randint()
 		#rand_changed_to = random.randint()
@@ -157,37 +169,41 @@ class SNPGeneticAlgoGPU:
 		i = 0
 		while True:
 			cross_counter = 0
-			print("majestic length of parents is ", len(parents))
-			size_tuple = 4
+			#print("majestic length of parents is ", len(parents))
+
 
 			#crossover_indexes = crossover_gpu_defined(len(parents), parents, self.pop)
 			#crossover_indexes = get_param(crossover_indexes, population_size)
 			
 			num_crosses = len(parents) * 4
 
-			print("num crosses is ", num_crosses)#, " random parent 1 is ", random_rule_parents[0], " while 2 is ", random_rule_parents[1])
+			#print("num crosses is ", num_crosses)#, " random parent 1 is ", random_rule_parents[0], " while 2 is ", random_rule_parents[1])
 			random_rule_parents_limit = getrandommax(self.pop, len_orig_parents)
 			while True:
 				
 				parent1 = deepcopy(parents[i % len(parents)])  # best parent
 				parent2 = deepcopy(parents[(i + 1) % len(parents)]) # 2nd best
-				crossover_indexes = crossover_gpu_defined(len(parents), len_orig_parents, num_crosses, self.pop, random_rule_parents_limit)
-				rule1 = int(crossover_indexes[i % len(parents)]) 
-
-
-				rule2 = int(crossover_indexes[(i + 1) % len(parents)])
-				print("i is ", i, "and len parents is ", len(parents))
-				print("rule 1 is ", rule1, " while rule 2 is ", rule2, " while parent 1 is ", i % len(parents), " and parent2 is ", (i + 1) % len(parents))
+				
+				#print("i is ", i, "and len parents is ", len(parents))
+				#print("rule 1 is ", rule1, " while rule 2 is ", rule2, " while parent 1 is ", i % len(parents), " and parent2 is ", (i + 1) % len(parents))
 				 # Choose random rule to swap
 				
 				backup1 = deepcopy(parent1)
 				backup2 = deepcopy(parent2)
 				# Swap rules
-				print("len of parent 1 is ", len(parent1['system'].rule), " while len of parent 2 is ", len(parent2['system'].rule))
-
+				#print("len of parent 1 is ", len(parent1['system'].rule), " while len of parent 2 is ", len(parent2['system'].rule))
+				
+				
+				start = time.perf_counter()
+				crossover_indexes = crossover_gpu_defined(len(parents), len_orig_parents, num_crosses, self.pop, random_rule_parents_limit)
+				rule1 = int(crossover_indexes[i % len(parents)]) 
+				rule2 = int(crossover_indexes[(i + 1) % len(parents)])
 				rule1 %= len(parent1['system'].rule)
 				rule2 %= len(parent2['system'].rule)
 				parent1['system'].rule[rule1], parent2['system'].rule[rule2] = parent2['system'].rule[rule2], parent1['system'].rule[rule1]
+				finish = time.perf_counter()
+				timer_out_gpu.write("Crossover GPU time is "+ str(finish - start)+ "\n")
+
 				# Mutate
 				parent1['system'].randomize(mutation_rate)
 				parent2['system'].randomize(mutation_rate)
@@ -196,7 +212,7 @@ class SNPGeneticAlgoGPU:
 					parent1['system'].out_spiketrain = []
 					parent2['system'].out_spiketrain = []
 					self.pop.extend([parent1,parent2])
-					print("passed first valid", " while parent 1 is ", i % len(parents), " and parent2 is ", (i + 1) % len(parents))
+					#print("passed first valid", " while parent 1 is ", i % len(parents), " and parent2 is ", (i + 1) % len(parents))
 					if len(self.pop) > population_size:
 						while len(self.pop) > population_size:
 							self.pop = self.pop[:-1]
@@ -218,11 +234,12 @@ class SNPGeneticAlgoGPU:
 				    break
 
 
-			print("comparing", len(self.pop), population_size)
+			#print("comparing", len(self.pop), population_size)
 			if len(self.pop) == population_size and not i == 0:
 				return
 
 			i += 1
+		
 
 		
 
@@ -248,7 +265,7 @@ class SNPGeneticAlgoGPU:
 		input = open(filename, 'r')
 		for line in input:
 		    numbers = line.strip('\n').split(',')
-		    print("numbers is ", numbers)
+		    #print("numbers is ", numbers)
 		    spike_index = 0
 		    for number in numbers[-1]:
 		        dataset[line_index][spike_index] = int(number)
@@ -285,10 +302,12 @@ class SNPGeneticAlgoGPU:
 
 
 	def evaluate(self, chromosome, ga_params, fitness_func, selection_func):
+		
 		inout_pairs_view = []
 		row_width = 0
 		col_width = 0
 		dataset = self.dataset_arrange(ga_params['test_cases_path'])
+
 		if fitness_func == 2:
 			test_case_file = open(ga_params['test_cases_path'], 'r')
 			len_dataset = len(list(test_case_file))
@@ -318,7 +337,7 @@ class SNPGeneticAlgoGPU:
 	                    'index': chromosome['system'].inputs[index],
 	                    'input': [int(x) for x in list(dataset[z][inout_pairs_view[z][0][0][index]:inout_pairs_view[z][single_length - 1][0][index]])]
 	                })
-					print("added at index ", index, " is ", chromosome['system'].in_spiketrain[index])
+					#print("added at index ", index, " is ", chromosome['system'].in_spiketrain[index])
 					#print("chrom in spike ", chromosome['system'].in_spiketrain)
 				chromosome['system'].out_spiketrain = []
 				config = deepcopy(chromosome['system'].configuration_init)
@@ -331,18 +350,18 @@ class SNPGeneticAlgoGPU:
 			output_rssnp_numpy = numpy.zeros(shape=(int(len_dataset/max_numpy_arraylen) + 1, max_numpy_arraylen, max_spike_size), dtype=numpy.int32)
 			
 			n = None
-			print("the length of out_pairs is ", len(list(chromosome['out_pairs'])))
+			#print("the length of out_pairs is ", len(list(chromosome['out_pairs'])))
 			for m in list(chromosome['out_pairs']):
 			
 				n = numpy.asarray(m[0], dtype=numpy.int32)
 				#numpy.lib.pad(n, ((0,0),(0,max_spike_size - len(m[0]))), 'constant', constant_values=(0))
 				#print("inputs are ", chromosome['system'].in_spiketrain[line_index])
-				print("line index is ", line_index, "n is ", n, "n shape is ", n.shape, " compared to ", max_spike_size - len(m[0]))
+				#print("line index is ", line_index, "n is ", n, "n shape is ", n.shape, " compared to ", max_spike_size - len(m[0]))
 				#numpy.concatenate((n,np.zeros((n.shape[0], max_spike_size - len(m[0])))), axis=0)
 				#numpy.hstack([n,np.zeros([n.shape[0], max_spike_size - len(m[0])])])
 				output_rssnp_lengths[line_index] = len(n)
 				n = based_init(n, max_spike_size - len(m[0]))
-				print("numpy n is ", n)
+				#print("numpy n is ", n)
 				for index_value in range(max_spike_size):
 					output_rssnp_numpy[int(line_index/max_numpy_arraylen)][int(line_index%max_numpy_arraylen)][index_value] = n[index_value]
 
@@ -352,13 +371,14 @@ class SNPGeneticAlgoGPU:
 				# 	print("shapes of orn and n respectively are ", output_rssnp_numpy.shape, n.shape)
 				# 	numpy.stack((output_rssnp_numpy, n), axis=1)
 				line_index += 1
-			print("orn is ", output_rssnp_numpy)
+			#print("orn is ", output_rssnp_numpy)
 
 
 			#print("chromosome out pairs is ", chromosome['out_pairs'])
-			print("EXITED with ", output_rssnp_lengths, " and ", output_dataset_lengths)
+			#print("EXITED with ", output_rssnp_lengths, " and ", output_dataset_lengths)
+			
 			chromosome['fitness'] = int(self.assign_fitness(dataset2, output_rssnp_numpy, fitness_func, len_dataset, row_width, col_width, output_dataset_lengths, output_rssnp_lengths)/len(dataset))
-		
+			
 		else:
 			len_dataset = len(dataset)	
 			for z in range(0, len_dataset):
@@ -392,11 +412,14 @@ class SNPGeneticAlgoGPU:
 				config = deepcopy(chromosome['system'].configuration_init)
 				#print("config is ", config)
 				chromosome['out_pairs'].append((chromosome['system'].main((config, chromosome['system'].ruleStatus), maxSteps), output_dataset))
+				
 				value = self.assign_fitness(chromosome['out_pairs'][z][1], chromosome['out_pairs'][z][0], fitness_func, len_dataset)
+				
 				#print("dataset len is ", dataset_len, " while dividend is ", value, " with result of ", value/dataset_len)
 				chromosome['fitness'] += (value/dataset_len) * 100
 				#print("fitness now is ", chromosome['fitness'], " at z: ", z)
 			chromosome['fitness'] = int(chromosome['fitness']/len_dataset)
+		
 
 	def use_population(self, count, last_gen_chromosomes):
         # Flush population and insert the original RSSNP
@@ -492,8 +515,5 @@ class SNPGeneticAlgoGPU:
 		print("whole run fitness is " + str(whole_run_best_fitness))
 		conf_save(filename, ga_params)
 		print("went here")
-
-		
-
-
+		timer_out_gpu.close()
 		return whole_run_best_fitness
