@@ -5,7 +5,8 @@ import random
 from .fitness import *
 from .grapher import draw
 from .rssnp import assign_rssnp
-import yaml
+import yaml, time
+timer_out_cpu = open(os.getcwd()+ "\\2cpuaddextra22out.txt", "w+")
 
 def conf_load(filename):
     with open(filename, 'r') as stream:
@@ -101,8 +102,11 @@ class SNPGeneticAlgo:
         elif selection_func == 1:
             # Get random 25%
             total_fitness = 0
+            start = time.perf_counter()
             for chrom in self.pop:
                 total_fitness += chrom['fitness']
+            finish = time.perf_counter()
+            timer_out_cpu.write("Selection CPU time is " + str(finish - start) + "\n")
 
             if total_fitness != 0:
                 i = 0
@@ -112,15 +116,19 @@ class SNPGeneticAlgo:
                     i = (i + 1) % len(self.pop)
             else:
                 parents = self.pop[:int(len(self.pop)/4)]
-            print("chose this selection 1")
+            #print("chose this selection 1")
         elif selection_func == 2:
             # Get random 25% and top 25%
             total_fitness = 0
 
             parents = self.pop[:int(len(self.pop)/4)]
+            start = time.perf_counter()
             for chrom in self.pop:
                 if chrom not in parents:
                     total_fitness += chrom['fitness']
+            finish = time.perf_counter()
+            timer_out_cpu.write("Selection CPU time is " + str(finish - start) + "\n")
+
 
             if total_fitness != 0:
                 i = 0
@@ -130,43 +138,44 @@ class SNPGeneticAlgo:
                     i = (i + 1) % len(self.pop)
             else:
                 parents = self.pop[:int(len(self.pop)/2)]
-            print("chose this selection 2")
+            #print("chose this selection 2")
         #print("parents returned by selection are ", parents)
-        
         return parents
 
     def crossover(self, mutation_rate, selection_func):
         '''
         Performs crossover of 2 parents over the population to create a new population
         '''
-
+        
         population_size = len(self.pop)
         # Get only parents
         parents = self.selection(selection_func)
-        print("parents are ", parents)
+        #print("parents are ", parents)
         # delete half of the population
         self.pop = self.pop[:(int(len(self.pop)/2))]
         #print("parent 2 is ", parents[1])
         i = 0
         while True:
             cross_counter = 0
-            print("passed outer loop here")
+            #print("passed outer loop here")
 
             while True:
                 # Get parents
-                print("passed inner loop here")
+                #print("passed inner loop here")
                 parent1 = deepcopy(parents[i % len(parents)])  # best parent
                 parent2 = deepcopy(parents[(i + 1) % len(parents)]) # 2nd best
                 #print("parent 1 is ", parent1)
                 #print("parent 2 is ", parent2)
                 # Choose random rule to swap
-                index1 = random.randint(0, parent1['system'].m - 1)
-                index2 = random.randint(0, parent2['system'].m - 1)
-
                 backup1 = deepcopy(parent1)
                 backup2 = deepcopy(parent2)
+                start = time.perf_counter()
+                index1 = random.randint(0, parent1['system'].m - 1)
+                index2 = random.randint(0, parent2['system'].m - 1)
                 # Swap rules
                 parent1['system'].rule[index1], parent2['system'].rule[index2] = parent2['system'].rule[index2], parent1['system'].rule[index1]
+                finish = time.perf_counter()
+                timer_out_cpu.write("Crossover CPU time is "+ str(finish - start) + "\n")
                 # Mutate
                 parent1['system'].randomize(mutation_rate)
                 parent2['system'].randomize(mutation_rate)
@@ -196,12 +205,13 @@ class SNPGeneticAlgo:
                     self.pop.extend([parent1,parent2])
                     break
 
-            print("comparing", len(self.pop), population_size)
+            #print("comparing", len(self.pop), population_size)
             if len(self.pop) == population_size and not i == 0:
                 return
 
             i += 1
-        print("finished crossover here")
+        #print("finished crossover here")
+
 
     def evaluate(self, chromosome, function):
         '''
@@ -211,6 +221,7 @@ class SNPGeneticAlgo:
         1: Longest Common Subsequence
         2: Hamming Distance (must be same length)
         '''
+        
         chromosome['out_pairs'] = []
         chromosome['fitness'] = 0
 
@@ -229,13 +240,16 @@ class SNPGeneticAlgo:
             
             # simulate the rssnp
             chromosome['out_pairs'].append((chromosome['system'].main((config, chromosome['system'].ruleStatus), maxSteps), pair['output']))
+            
             value = int(assign_fitness(chromosome['system'].out_spiketrain, pair['output'], function))
+            
             #print("add value is ", value)
             #print(" len pair is ", len(pair['output']))
             chromosome['fitness'] += (value/len(pair['output']))*100
             #print("actual value is ", (value/len(pair['output']))*100)
         chromosome['fitness'] = int(chromosome['fitness']/len(self.inout_pairs))
-
+        
+        
         # print(chromosome)
 
 
@@ -321,6 +335,7 @@ class SNPGeneticAlgo:
         print("whole run fitness is ", str(whole_run_best_fitness), " at index ", run_index)
         conf_save(filename, ga_params)
         print("went here")
+        timer_out_cpu.close()
         return whole_run_best_fitness
 
             

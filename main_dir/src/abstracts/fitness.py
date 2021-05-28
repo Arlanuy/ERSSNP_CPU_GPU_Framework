@@ -1,3 +1,6 @@
+import os, time
+timer_out_cpu = open(os.getcwd()+ "\\cpuaddextra22out.txt", "w+")
+
 # Time complexity = O(mxn)
 def lc_substring(X, Y, m, n):
     # LCSuff is the table with zero  
@@ -7,7 +10,7 @@ def lc_substring(X, Y, m, n):
     # To store the length of  
     # longest common substring 
     result = 0 
-  
+    start = time.perf_counter()
     # Following steps to build 
     # LCSuff[m+1][n+1] in bottom up fashion 
     for i in range(m + 1): 
@@ -19,6 +22,8 @@ def lc_substring(X, Y, m, n):
                 result = max(result, LCSuff[i][j]) 
             else: 
                 LCSuff[i][j] = 0
+    finish = time.perf_counter()
+    timer_out_cpu.write("Evaluate CPU time is "+ str(finish - start)+ "\n")
     return result
 
 # Time complexity: O(3^m) naive approach
@@ -69,10 +74,10 @@ def edit_distance3(str1, str2, m, n):
 
 # Time complexity: O(mxn) #insert point 1, delete point 0, replace point 0 or 1
 def edit_distance2(str1, str2, m, n): 
-    print("str 1 is ", str1, "str2 is ", str2, " ",m, " ", n)
+    #print("str 1 is ", str1, "str2 is ", str2, " ",m, " ", n)
     # Create a table to store results of subproblems 
     dp = [[0 for x in range(n+1)] for x in range(m+1)] 
-  
+    start = time.perf_counter()
     # Fill d[][] in bottom up manner 
     for i in range(0, m+1): 
         for j in range(0, n+1): 
@@ -101,6 +106,8 @@ def edit_distance2(str1, str2, m, n):
                                    dp[i-1][j-1] + delt)      # Replace 
   
     #print("dp is ", dp)
+    finish = time.perf_counter()
+    timer_out_cpu.write("Evaluate CPU time is "+ str(finish - start)+ "\n")
     return dp[m][n]
 
 # Time complexity: O(n) where n is the number of different characters
@@ -118,10 +125,11 @@ def lc_subsequence(X , Y):
   
     # declaring the array for storing the dp values 
     L = [[None]*(n+1) for i in range(m+1)] 
-  
+    start = time.perf_counter()
     """Following steps build L[m+1][n+1] in bottom up fashion 
     Note: L[i][j] contains length of LCS of X[0..i-1] 
     and Y[0..j-1]"""
+    start = time.perf_counter()
     for i in range(m+1): 
         for j in range(n+1): 
             if i == 0 or j == 0 : 
@@ -132,4 +140,6 @@ def lc_subsequence(X , Y):
                 L[i][j] = max(L[i-1][j] , L[i][j-1]) 
   
     # L[m][n] contains the length of LCS of X[0..n-1] & Y[0..m-1] 
+    finish = time.perf_counter()
+    timer_out_cpu.write("Evaluate CPU time is "+ str(finish - start)+ "\n")
     return L[m][n]

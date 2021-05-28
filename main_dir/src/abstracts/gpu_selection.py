@@ -7,11 +7,11 @@ MAXTHREADSIZE = 32
 
 def assurepowtwo(divider):
     if divider & (divider - 1) == 0:
-        print("divider is assured")
+        #print("divider is assured")
         return divider
     else:
         powertwo = math.ceil(math.exp(math.log(2) * math.ceil(math.log(divider, 2))))
-        print("powertwo is ", powertwo)
+        #print("powertwo is ", powertwo)
         return powertwo
 
 
@@ -24,7 +24,7 @@ def adder(total_fitness_list, len_tf_gpu_list, blockSize):
                 if (blockSize >= 16) sdata[tid] += sdata[tid + 8];
                 if (blockSize >= 8) sdata[tid] += sdata[tid + 4];
                 if (blockSize >= 4) sdata[tid] += sdata[tid + 2];
-                if (blockSize >= 2) {sdata[tid] += sdata[tid + 1]; printf("new sdata is %d while adjacent is %d at tid %d", sdata[tid], sdata[tid + 1], tid);}
+                if (blockSize >= 2) sdata[tid] += sdata[tid + 1]; 
         }
         
         __global__ void sum(int *g_idata, int *g_odata, unsigned int blockSize)
@@ -38,9 +38,7 @@ def adder(total_fitness_list, len_tf_gpu_list, blockSize):
 
             while (i < blockSize) 
             {
-                printf("i is %d at %d\\n", i, tid); 
-                sdata[tid] += g_idata[i] + g_idata[i+blockSize];
-                printf("sdata:tid is %d with addition of %d and %d\\n", sdata[tid], g_idata[i], g_idata[i+blockSize]);  
+                sdata[tid] += g_idata[i] + g_idata[i+blockSize];  
                 i += gridSize; 
             }
 
@@ -53,22 +51,12 @@ def adder(total_fitness_list, len_tf_gpu_list, blockSize):
 
             if (tid < 32) 
             {
-                printf("sdata tid value is %d at tid %d\\n", sdata[tid], tid); 
                 warpReduce(sdata, tid, blockSize);
             }
             __syncthreads();
             
             if (tid == 0) {
-                if (blockIdx.x == 0) {
-                    printf("blockidx is 0\\n");
-                    printf("\\n g_odata are %d and sdata are %d\\n", g_odata[blockIdx.x], sdata[0]);
-                }
-                if (blockIdx.x == 1) {
-                    printf("blockidx is 1\\n");
-                    printf("\\n g_odata are %d and sdata are %d\\n", g_odata[blockIdx.x], sdata[0]);
-                }
                 g_odata[blockIdx.x] = sdata[0]; 
-                printf("godata is %d from sdata %d at block %d\\n", g_odata[blockIdx.x], sdata[0], blockIdx.x); 
             }
 
             
@@ -76,17 +64,17 @@ def adder(total_fitness_list, len_tf_gpu_list, blockSize):
 
         }
     """)
-    print("output is ", total_fitness_list)
+    #print("output is ", total_fitness_list)
     
     sum_func = mod.get_function("sum")
     tf_gpu_list = drv.mem_alloc(total_fitness_list.size * total_fitness_list.dtype.itemsize)
     drv.memcpy_htod(tf_gpu_list , total_fitness_list)
     thread_num = int(numpy.ceil(len_tf_gpu_list/blockSize))
-    print("thred num is ", thread_num)
+    #print("thred num is ", thread_num)
     tf_gpu_list_output = numpy.zeros((thread_num + 1), dtype=numpy.int32)
     tf_gpu_list_out = drv.mem_alloc(tf_gpu_list_output.size * tf_gpu_list_output.dtype.itemsize)
 
-    print("lengths are ", len(total_fitness_list), " and out is ", len(tf_gpu_list_output))
+    #print("lengths are ", len(total_fitness_list), " and out is ", len(tf_gpu_list_output))
     sum_func(tf_gpu_list, tf_gpu_list_out, numpy.int32(blockSize), block=(blockSize,1,1),grid=(thread_num,1,1), shared = blockSize * thread_num * total_fitness_list.dtype.itemsize)
     
 
@@ -99,9 +87,9 @@ def init_tf_adder(tf_gpu_list, len_result):
     blockSize = assurepowtwo(divider)
     result = numpy.zeros(blockSize * 2, dtype=int)
     result [:len_result] = tf_gpu_list
-    print("result is ", result, " and tf shape is ", len_result) 
+    #print("result is ", result, " and tf shape is ", len_result) 
     tf_sum = adder(result, len_result, blockSize)
-    print("tf sum is ", tf_sum)
+    #print("tf sum is ", tf_sum)
     return tf_sum[0]
 
 

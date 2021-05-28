@@ -1,12 +1,12 @@
 import pycuda.autoinit
 import pycuda.driver as drv
-import numpy
-import math
+import numpy, math, os, time
 
 from pycuda.compiler import SourceModule
 from pycuda.gpuarray import GPUArray as pg
 
 from pycuda import gpuarray
+timer_out_gpu = open(os.getcwd()+ "\\gpuaddextra22out.txt", "w+")
 
 #Source in Stackoverflow with question how to properly copy a gpuarray (longstanding bug)
 def gpuarray_copy(array: gpuarray.GPUArray):
@@ -56,7 +56,7 @@ def GPUlcs(output_dataset, output_spike_train, len_dataset):
 
     """)
     LCSQ = mod.get_function("lc_subsequence")
-    
+
     #a = numpy.array(test,dtype=numpy.int32) #row the width
     #b = numpy.array([0,0,0,1],dtype=numpy.int32) #col
     a = numpy.array(output_spike_train,dtype=numpy.int32)
@@ -78,8 +78,10 @@ def GPUlcs(output_dataset, output_spike_train, len_dataset):
     root_num = math.ceil(math.sqrt(len_dataset))
     thread_num = root_num % 1024
     grid_num = math.ceil(root_num / 1024)
-
+    start = time.perf_counter()
     LCSQ(a_gpu,b_gpu,res_gpu,LCSuff_gpu, numpy.int32(a.size+1),numpy.int32(b.size+1), block=(thread_num,1,1),grid=(thread_num,1,1))
+    finish = time.perf_counter()
+    timer_out_gpu.write("Evaluate GPU time is "+ str(finish - start)+ "\n")
     drv.memcpy_dtoh(res, res_gpu)
     drv.memcpy_dtoh(LCSuff, LCSuff_gpu)
     #print(LCSuff)
@@ -152,8 +154,10 @@ def GPULCSubStr(output_dataset, output_spike_train, len_dataset):
     root_num = math.ceil(math.sqrt(len_dataset))
     thread_num = root_num % 1024
     grid_num = math.ceil(root_num / 1024)
-
+    start = time.perf_counter()
     LCS(a_gpu,b_gpu,res_gpu,LCSuff_gpu, numpy.int32(a.size+1),numpy.int32(b.size+1), block=(thread_num,1,1),grid=(thread_num,1,1))
+    finish = time.perf_counter()
+    timer_out_gpu.write("Evaluate GPU time is "+ str(finish - start)+ "\n")
     drv.memcpy_dtoh(LCSuff, LCSuff_gpu)
     drv.memcpy_dtoh(res, res_gpu)
 
@@ -234,19 +238,19 @@ def GPUeditDistDP(output_dataset, output_spike_train, max_row_width, max_col_wid
 
     """)
     ED = mod.get_function("edit_distDP")
-    print("legendary shape is ", output_spike_train.shape, " with content ", output_dataset)
+    #print("legendary shape is ", output_spike_train.shape, " with content ", output_dataset)
     a = numpy.ndarray(shape= output_dataset.shape, buffer =  output_dataset, dtype=numpy.int32) 
     b = numpy.ndarray(shape= output_spike_train.shape, buffer =  output_spike_train, dtype=numpy.int32) 
     #a = numpy.array(output_dataset, dtype=numpy.int32)
     #b = numpy.array(output_spike_train, dtype=numpy.int32)
-    print("a strides and at index 0", a.strides, a[0].strides)
-    print("b strides", b.strides)
+    #print("a strides and at index 0", a.strides, a[0].strides)
+    #print("b strides", b.strides)
 
-    print("a size is ", a.size, " while b size is ", b.size)
+    #print("a size is ", a.size, " while b size is ", b.size)
 
 
     LCSuff = numpy.zeros((len_dataset, a.size+1,b.size+1),dtype=numpy.int32)
-    print("LCSuff shape is ", LCSuff.shape)
+    #print("LCSuff shape is ", LCSuff.shape)
     row_width = numpy.int32(max_row_width)
     col_width = numpy.int32(max_col_width)
     result_mat = numpy.zeros((len_dataset),dtype=numpy.int32)
@@ -265,7 +269,7 @@ def GPUeditDistDP(output_dataset, output_spike_train, max_row_width, max_col_wid
     a_gpu = drv.mem_alloc(a.size * a.dtype.itemsize)
     b_gpu = drv.mem_alloc(b.size * b.dtype.itemsize)
     result_mat_gpu = drv.mem_alloc(result_mat.size * result_mat.dtype.itemsize)
-    print("LCSuff size is ", LCSuff.size)
+    #print("LCSuff size is ", LCSuff.size)
     LCSuff_gpu = drv.mem_alloc(LCSuff.size * LCSuff.dtype.itemsize)
   
     #func(drv.In(a), drv.InOut(e), np.int32(N), block=block_size, grid=grid_size)
@@ -285,16 +289,17 @@ def GPUeditDistDP(output_dataset, output_spike_train, max_row_width, max_col_wid
     root_num = math.ceil(math.sqrt(len_dataset))
     thread_num = root_num % 1024
     grid_num = math.ceil(root_num / 1024)
-
+    start = time.perf_counter()
     ED(result_mat_gpu, a_gpu,b_gpu, numpy.int32(row_width), numpy.int32(col_width), numpy.int32(len_dataset), LCSuff_gpu, c_gpu, d_gpu, block=(thread_num,1,1),grid=(thread_num,1,1))
-
+    finish = time.perf_counter()
+    timer_out_gpu.write("Evaluate GPU time is "+ str(finish - start)+ "\n")
   
     drv.memcpy_dtoh(d, d_gpu)
     drv.memcpy_dtoh(c, c_gpu)
     drv.memcpy_dtoh(result_mat, result_mat_gpu)
     drv.memcpy_dtoh(LCSuff, LCSuff_gpu)
-    print("result mat is ", result_mat)
-    print("FINALLY 2 entered with values ", c, " and ", d)
+    #print("result mat is ", result_mat)
+    #print("FINALLY 2 entered with values ", c, " and ", d)
    
     sum = 0
     for index in range(len(result_mat)):
@@ -373,14 +378,14 @@ def GPUeditDistDP2(output_dataset, output_spike_train):
     drv.memcpy_htod(res_gpu, res)
 
     for j in range(b.size+1):
-        print("at index ", j)
+        #print("at index ", j)
         ED(numpy.int32(j),a_gpu,b_gpu,LCSuff_gpu,numpy.int32(a.size+1),numpy.int32(b.size+1) , block=(10,10,1),grid=(1,1,1))
 
 
     drv.memcpy_dtoh(LCSuff, LCSuff_gpu)
     drv.memcpy_dtoh(res, res_gpu)
     #print(LCSuff)
-    print(LCSuff[a.size][b.size])
+    #print(LCSuff[a.size][b.size])
     #print(res)
     #print("res editdist", res)
     #print("CPU", editDistDP(a, b, len(a), len(b))) 
