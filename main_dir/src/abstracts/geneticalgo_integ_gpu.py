@@ -5,7 +5,7 @@ from src.abstracts.gpu_selection import *
 
 
 import yaml, numpy, random, os, time
-timer_out_gpu = open(os.getcwd()+ "\\2gpuaddaddextra22out.txt", "w+")
+timer_out_gpu = open(os.getcwd()+ "\\2gpuaddextra22out.txt", "w+")
 max_numpy_arraylen = 32
 
 
@@ -31,9 +31,8 @@ def class_to_yaml(ga_params_rssnp, rssnp):
     ga_params_rssnp['output_neuron'] = rssnp['system'].outputs
 
 def based_init(a,N):
-	b = numpy.zeros((a.shape[0] + N))
-	if b.shape[0] < a.shape[0]:
-		b = numpy.zeros((a.shape[0] + N) * 3)
+	b = numpy.zeros(a.shape[0] + N)
+	#print("b shape is ", b.shape[0], " while a shape is ", a.shape[0], "while n is ", N, "\n" )
 	b[0:a.shape[0]] = a
 	return b
 
@@ -360,7 +359,7 @@ class SNPGeneticAlgoGPU:
 				#numpy.concatenate((n,np.zeros((n.shape[0], max_spike_size - len(m[0])))), axis=0)
 				#numpy.hstack([n,np.zeros([n.shape[0], max_spike_size - len(m[0])])])
 				output_rssnp_lengths[line_index] = len(n)
-				n = based_init(n, max_spike_size - len(m[0]))
+				n = based_init(n, abs(max_spike_size - len(m[0])))
 				#print("numpy n is ", n)
 				for index_value in range(max_spike_size):
 					output_rssnp_numpy[int(line_index/max_numpy_arraylen)][int(line_index%max_numpy_arraylen)][index_value] = n[index_value]
