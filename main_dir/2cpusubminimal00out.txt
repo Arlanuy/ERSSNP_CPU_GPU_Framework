@@ -1,0 +1,7 @@
+Selection CPU time is 4.9000000004184585e-06
+Crossover CPU time is 1.160000000055561e-05
+Crossover CPU time is 1.3100000000321188e-05
+Crossover CPU time is 1.4000000000180535e-05
+Selection CPU time is 4.799999999249849e-06
+Crossover CPU time is 1.2699999999199463e-05
+Crossover CPU time is 1.2200000000461841e-05
