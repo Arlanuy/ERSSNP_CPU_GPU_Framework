@@ -1,9 +1,0 @@
-Crossover GPU time is 3.613065600000027
-Crossover GPU time is 1.2618093999999473
-Crossover GPU time is 1.2058575999999448
-Crossover GPU time is 1.5297027000001435
-Crossover GPU time is 1.4523142000002736
-Crossover GPU time is 1.6932034000001295
-Crossover GPU time is 1.451368900000034
-Crossover GPU time is 1.5307653999998365
-Crossover GPU time is 1.4729769000000488

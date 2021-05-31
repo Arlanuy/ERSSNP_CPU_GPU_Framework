@@ -6,7 +6,7 @@ from .fitness import *
 from .grapher import draw
 from .rssnp import assign_rssnp
 import yaml, time
-timer_out_cpu = open(os.getcwd()+ "\\2cpuaddextra22out.txt", "w+")
+
 
 def conf_load(filename):
     with open(filename, 'r') as stream:
@@ -122,12 +122,11 @@ class SNPGeneticAlgo:
             total_fitness = 0
 
             parents = self.pop[:int(len(self.pop)/4)]
-            start = time.perf_counter()
+            
             for chrom in self.pop:
                 if chrom not in parents:
                     total_fitness += chrom['fitness']
-            finish = time.perf_counter()
-            timer_out_cpu.write("Selection CPU time is " + str(finish - start) + "\n")
+            
 
 
             if total_fitness != 0:
@@ -169,13 +168,12 @@ class SNPGeneticAlgo:
                 # Choose random rule to swap
                 backup1 = deepcopy(parent1)
                 backup2 = deepcopy(parent2)
-                start = time.perf_counter()
+                
                 index1 = random.randint(0, parent1['system'].m - 1)
                 index2 = random.randint(0, parent2['system'].m - 1)
                 # Swap rules
                 parent1['system'].rule[index1], parent2['system'].rule[index2] = parent2['system'].rule[index2], parent1['system'].rule[index1]
-                finish = time.perf_counter()
-                timer_out_cpu.write("Crossover CPU time is "+ str(finish - start) + "\n")
+                
                 # Mutate
                 parent1['system'].randomize(mutation_rate)
                 parent2['system'].randomize(mutation_rate)
@@ -335,7 +333,6 @@ class SNPGeneticAlgo:
         print("whole run fitness is ", str(whole_run_best_fitness), " at index ", run_index)
         conf_save(filename, ga_params)
         print("went here")
-        timer_out_cpu.close()
         return whole_run_best_fitness
 
             
