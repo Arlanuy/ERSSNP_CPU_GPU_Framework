@@ -6,7 +6,7 @@ from pycuda.compiler import SourceModule
 from pycuda.gpuarray import GPUArray as pg
 
 from pycuda import gpuarray
-timer_out_gpu = open(os.getcwd()+ "\\gpuaddextra22out.txt", "w+")
+
 
 #Source in Stackoverflow with question how to properly copy a gpuarray (longstanding bug)
 def gpuarray_copy(array: gpuarray.GPUArray):
@@ -78,10 +78,9 @@ def GPUlcs(output_dataset, output_spike_train, len_dataset):
     root_num = math.ceil(math.sqrt(len_dataset))
     thread_num = root_num % 1024
     grid_num = math.ceil(root_num / 1024)
-    start = time.perf_counter()
+
     LCSQ(a_gpu,b_gpu,res_gpu,LCSuff_gpu, numpy.int32(a.size+1),numpy.int32(b.size+1), block=(thread_num,1,1),grid=(thread_num,1,1))
-    finish = time.perf_counter()
-    timer_out_gpu.write("Evaluate GPU time is "+ str(finish - start)+ "\n")
+
     drv.memcpy_dtoh(res, res_gpu)
     drv.memcpy_dtoh(LCSuff, LCSuff_gpu)
     #print(LCSuff)
@@ -154,10 +153,9 @@ def GPULCSubStr(output_dataset, output_spike_train, len_dataset):
     root_num = math.ceil(math.sqrt(len_dataset))
     thread_num = root_num % 1024
     grid_num = math.ceil(root_num / 1024)
-    start = time.perf_counter()
+
     LCS(a_gpu,b_gpu,res_gpu,LCSuff_gpu, numpy.int32(a.size+1),numpy.int32(b.size+1), block=(thread_num,1,1),grid=(thread_num,1,1))
-    finish = time.perf_counter()
-    timer_out_gpu.write("Evaluate GPU time is "+ str(finish - start)+ "\n")
+
     drv.memcpy_dtoh(LCSuff, LCSuff_gpu)
     drv.memcpy_dtoh(res, res_gpu)
 
@@ -289,10 +287,9 @@ def GPUeditDistDP(output_dataset, output_spike_train, max_row_width, max_col_wid
     root_num = math.ceil(math.sqrt(len_dataset))
     thread_num = root_num % 1024
     grid_num = math.ceil(root_num / 1024)
-    start = time.perf_counter()
+
     ED(result_mat_gpu, a_gpu,b_gpu, numpy.int32(row_width), numpy.int32(col_width), numpy.int32(len_dataset), LCSuff_gpu, c_gpu, d_gpu, block=(thread_num,1,1),grid=(thread_num,1,1))
-    finish = time.perf_counter()
-    timer_out_gpu.write("Evaluate GPU time is "+ str(finish - start)+ "\n")
+
   
     drv.memcpy_dtoh(d, d_gpu)
     drv.memcpy_dtoh(c, c_gpu)

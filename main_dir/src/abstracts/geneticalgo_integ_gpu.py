@@ -5,7 +5,7 @@ from src.abstracts.gpu_selection import *
 
 
 import yaml, numpy, random, os, time
-timer_out_gpu = open(os.getcwd()+ "\\2gpuaddextra22out.txt", "w+")
+
 max_numpy_arraylen = 32
 
 
@@ -107,10 +107,8 @@ class SNPGeneticAlgoGPU:
 			     total_fitness_list.append(chrom['fitness'])
 		        #tf_gpu_list = gpuarray.to_gpu(total_fitness_list)
 			
-		    start = time.perf_counter()
 		    total_fitness = init_tf_adder(total_fitness_list, len(total_fitness_list))
-		    finish = time.perf_counter()
-		    timer_out_gpu.write("Selection GPU time is "+ str(finish - start)+ "\n")
+
 
 		    if total_fitness != 0:
 		    	#self.selection_helper(self.pop, parents, int(len(self.pop)/2))
@@ -130,10 +128,8 @@ class SNPGeneticAlgoGPU:
 		    for chrom in self.pop[int(len(self.pop)/4):]:
 		    	total_fitness_list.append(chrom['fitness'])
 		        #total_fitness += chrom['fitness']
-		    start = time.perf_counter()
+
 		    total_fitness = init_tf_adder(total_fitness_list, len(total_fitness_list))
-		    finish = time.perf_counter()
-		    timer_out_gpu.write("Selection GPU time is "+ str(finish - start)+ "\n")
 
 		    if total_fitness != 0:
 		    	#self.selection_helper(self.pop, parents, int(len(self.pop)/4))
@@ -193,15 +189,13 @@ class SNPGeneticAlgoGPU:
 				#print("len of parent 1 is ", len(parent1['system'].rule), " while len of parent 2 is ", len(parent2['system'].rule))
 				
 				
-				start = time.perf_counter()
+				
 				crossover_indexes = crossover_gpu_defined(len(parents), len_orig_parents, num_crosses, self.pop, random_rule_parents_limit)
 				rule1 = int(crossover_indexes[i % len(parents)]) 
 				rule2 = int(crossover_indexes[(i + 1) % len(parents)])
 				rule1 %= len(parent1['system'].rule)
 				rule2 %= len(parent2['system'].rule)
 				parent1['system'].rule[rule1], parent2['system'].rule[rule2] = parent2['system'].rule[rule2], parent1['system'].rule[rule1]
-				finish = time.perf_counter()
-				timer_out_gpu.write("Crossover GPU time is "+ str(finish - start)+ "\n")
 
 				# Mutate
 				parent1['system'].randomize(mutation_rate)
@@ -514,5 +508,4 @@ class SNPGeneticAlgoGPU:
 		print("whole run fitness is " + str(whole_run_best_fitness))
 		conf_save(filename, ga_params)
 		print("went here")
-		timer_out_gpu.close()
 		return whole_run_best_fitness

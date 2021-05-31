@@ -1,6 +1,0 @@
-Selection GPU time is 0.003225899999996784
-Crossover GPU time is 3.7680723
-Crossover GPU time is 1.2045774999999992
-Selection GPU time is 0.003037100000000237
-Crossover GPU time is 1.2113039999999984
-Crossover GPU time is 1.2218858000000097
