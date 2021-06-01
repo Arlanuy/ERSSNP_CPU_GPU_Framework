@@ -2,8 +2,20 @@ import pycuda.autoinit
 import pycuda.driver as drv
 from pycuda.compiler import SourceModule
 from pycuda import gpuarray
-import numpy, math
+import numpy, math, os, time
+
+
 MAXTHREADSIZE = 32
+
+def timer_write(ga_name, start, finish):
+    timer_out_cpu = open(os.getcwd()+ "\\timer_directory\\moregpuandminimal00outreal.txt", "a+")
+    timer_out_cpu.write(ga_name + " GPU time is " + str(finish - start) + "\n")
+    timer_out_cpu.close()
+
+def timer_write2(ga_name, start, finish):
+    timer_out_cpu = open(os.getcwd()+ "\\timer_directory\\more2gpuandminimal00outreal.txt", "a+")
+    timer_out_cpu.write(ga_name + " GPU time is " + str(start.time_till(finish)*1e-3) + "\n")
+    timer_out_cpu.close()
 
 def assurepowtwo(divider):
     if divider & (divider - 1) == 0:
@@ -60,8 +72,6 @@ def adder(total_fitness_list, len_tf_gpu_list, blockSize):
             }
 
             
-
-
         }
     """)
     #print("output is ", total_fitness_list)
@@ -73,11 +83,18 @@ def adder(total_fitness_list, len_tf_gpu_list, blockSize):
     #print("thred num is ", thread_num)
     tf_gpu_list_output = numpy.zeros((thread_num + 1), dtype=numpy.int32)
     tf_gpu_list_out = drv.mem_alloc(tf_gpu_list_output.size * tf_gpu_list_output.dtype.itemsize)
-
+    start2 = drv.Event()
+    finish2 = drv.Event()
+    start2.record()
+    start2.synchronize() 
+    start = time.perf_counter()
     #print("lengths are ", len(total_fitness_list), " and out is ", len(tf_gpu_list_output))
     sum_func(tf_gpu_list, tf_gpu_list_out, numpy.int32(blockSize), block=(blockSize,1,1),grid=(thread_num,1,1), shared = blockSize * thread_num * total_fitness_list.dtype.itemsize)
-    
-
+    finish = time.perf_counter()
+    finish2.record()
+    finish2.synchronize()
+    timer_write("Selection", start, finish)
+    timer_write2("Selection", start2, finish2)  
     drv.memcpy_dtoh(tf_gpu_list_output, tf_gpu_list_out)
     return tf_gpu_list_output
 
@@ -87,8 +104,10 @@ def init_tf_adder(tf_gpu_list, len_result):
     blockSize = assurepowtwo(divider)
     result = numpy.zeros(blockSize * 2, dtype=int)
     result [:len_result] = tf_gpu_list
-    #print("result is ", result, " and tf shape is ", len_result) 
+    #print("result is ", result, " and tf shape is ", len_result)
+    
     tf_sum = adder(result, len_result, blockSize)
+
     #print("tf sum is ", tf_sum)
     return tf_sum[0]
 

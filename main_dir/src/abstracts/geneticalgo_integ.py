@@ -7,6 +7,10 @@ from .grapher import draw
 from .rssnp import assign_rssnp
 import yaml, time
 
+def timer_write(ga_name, start, finish):
+    timer_out_cpu = open(os.getcwd()+ "\\timer_directory\\morecpuandminimal00outreal.txt", "a+")
+    timer_out_cpu.write(ga_name + " CPU time is " + str(finish - start) + "\n")
+    timer_out_cpu.close()
 
 def conf_load(filename):
     with open(filename, 'r') as stream:
@@ -102,11 +106,12 @@ class SNPGeneticAlgo:
         elif selection_func == 1:
             # Get random 25%
             total_fitness = 0
+
             start = time.perf_counter()
             for chrom in self.pop:
                 total_fitness += chrom['fitness']
             finish = time.perf_counter()
-            timer_out_cpu.write("Selection CPU time is " + str(finish - start) + "\n")
+            timer_write("Selection", start, finish)
 
             if total_fitness != 0:
                 i = 0
@@ -123,11 +128,12 @@ class SNPGeneticAlgo:
 
             parents = self.pop[:int(len(self.pop)/4)]
             
+            start = time.perf_counter()
             for chrom in self.pop:
                 if chrom not in parents:
                     total_fitness += chrom['fitness']
-            
-
+            finish = time.perf_counter()
+            timer_write("Selection", start, finish)
 
             if total_fitness != 0:
                 i = 0
@@ -168,12 +174,13 @@ class SNPGeneticAlgo:
                 # Choose random rule to swap
                 backup1 = deepcopy(parent1)
                 backup2 = deepcopy(parent2)
-                
+                start = time.perf_counter()
                 index1 = random.randint(0, parent1['system'].m - 1)
                 index2 = random.randint(0, parent2['system'].m - 1)
                 # Swap rules
                 parent1['system'].rule[index1], parent2['system'].rule[index2] = parent2['system'].rule[index2], parent1['system'].rule[index1]
-                
+                finish = time.perf_counter()
+                timer_write("Crossover", start, finish)
                 # Mutate
                 parent1['system'].randomize(mutation_rate)
                 parent2['system'].randomize(mutation_rate)
@@ -333,6 +340,7 @@ class SNPGeneticAlgo:
         print("whole run fitness is ", str(whole_run_best_fitness), " at index ", run_index)
         conf_save(filename, ga_params)
         print("went here")
+        
         return whole_run_best_fitness
 
             

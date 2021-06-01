@@ -7,6 +7,15 @@ from pycuda.gpuarray import GPUArray as pg
 
 from pycuda import gpuarray
 
+def timer_write(ga_name, start, finish):
+    timer_out_cpu = open(os.getcwd()+ "\\timer_directory\\moregpuandminimal00outreal.txt", "a+")
+    timer_out_cpu.write(ga_name + " GPU time is " + str(finish - start) + "\n")
+    timer_out_cpu.close()
+
+def timer_write2(ga_name, start, finish):
+    timer_out_cpu = open(os.getcwd()+ "\\timer_directory\\more2gpuandminimal00outreal.txt", "a+")
+    timer_out_cpu.write(ga_name + " GPU time is " + str(start.time_till(finish)*1e-3) + "\n")
+    timer_out_cpu.close()
 
 #Source in Stackoverflow with question how to properly copy a gpuarray (longstanding bug)
 def gpuarray_copy(array: gpuarray.GPUArray):
@@ -78,9 +87,18 @@ def GPUlcs(output_dataset, output_spike_train, len_dataset):
     root_num = math.ceil(math.sqrt(len_dataset))
     thread_num = root_num % 1024
     grid_num = math.ceil(root_num / 1024)
-
+    start2 = drv.Event()
+    finish2 = drv.Event()
+    start2.record()
+    start2.synchronize()
+    start = time.perf_counter()
     LCSQ(a_gpu,b_gpu,res_gpu,LCSuff_gpu, numpy.int32(a.size+1),numpy.int32(b.size+1), block=(thread_num,1,1),grid=(thread_num,1,1))
-
+    finish = time.perf_counter()
+    finish2.record()
+    finish2.synchronize()
+    timer_write("Evaluate", start, finish)
+    timer_write2("Evaluate", start2, finish2)
+    
     drv.memcpy_dtoh(res, res_gpu)
     drv.memcpy_dtoh(LCSuff, LCSuff_gpu)
     #print(LCSuff)
@@ -153,9 +171,17 @@ def GPULCSubStr(output_dataset, output_spike_train, len_dataset):
     root_num = math.ceil(math.sqrt(len_dataset))
     thread_num = root_num % 1024
     grid_num = math.ceil(root_num / 1024)
-
+    start2 = drv.Event()
+    finish2 = drv.Event()
+    start2.record()
+    start2.synchronize()
+    start = time.perf_counter()
     LCS(a_gpu,b_gpu,res_gpu,LCSuff_gpu, numpy.int32(a.size+1),numpy.int32(b.size+1), block=(thread_num,1,1),grid=(thread_num,1,1))
-
+    finish = time.perf_counter()
+    finish2.record()
+    finish2.synchronize()
+    timer_write("Evaluate", start, finish)
+    timer_write2("Evaluate", start2, finish2)
     drv.memcpy_dtoh(LCSuff, LCSuff_gpu)
     drv.memcpy_dtoh(res, res_gpu)
 
@@ -287,10 +313,17 @@ def GPUeditDistDP(output_dataset, output_spike_train, max_row_width, max_col_wid
     root_num = math.ceil(math.sqrt(len_dataset))
     thread_num = root_num % 1024
     grid_num = math.ceil(root_num / 1024)
-
+    start2 = drv.Event()
+    finish2 = drv.Event()
+    start2.record()
+    start2.synchronize()
+    start = time.perf_counter()
     ED(result_mat_gpu, a_gpu,b_gpu, numpy.int32(row_width), numpy.int32(col_width), numpy.int32(len_dataset), LCSuff_gpu, c_gpu, d_gpu, block=(thread_num,1,1),grid=(thread_num,1,1))
-
-  
+    finish = time.perf_counter()
+    finish2.record()
+    finish2.synchronize()
+    timer_write("Evaluate", start, finish)
+    timer_write2("Evaluate", start2, finish2)
     drv.memcpy_dtoh(d, d_gpu)
     drv.memcpy_dtoh(c, c_gpu)
     drv.memcpy_dtoh(result_mat, result_mat_gpu)
