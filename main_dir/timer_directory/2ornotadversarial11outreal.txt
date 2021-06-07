@@ -1,0 +1,2 @@
+Selection GPU time is 0.0012391359806060791
+Selection GPU time is 0.0011082240343093872

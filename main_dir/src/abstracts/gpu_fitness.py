@@ -8,12 +8,12 @@ from pycuda.gpuarray import GPUArray as pg
 from pycuda import gpuarray
 
 def timer_write(ga_name, start, finish):
-    timer_out_cpu = open(os.getcwd()+ "\\timer_directory\\gpuorminimal00outreal.txt", "a+")
+    timer_out_cpu = open(os.getcwd()+ "\\timer_directory\\gpunotadversarial11outreal.txt", "a+")
     timer_out_cpu.write(ga_name + " GPU time is " + str(finish - start) + "\n")
     timer_out_cpu.close()
 
 def timer_write2(ga_name, start, finish):
-    timer_out_cpu = open(os.getcwd()+ "\\timer_directory\\2gpuorminimal00outreal.txt", "a+")
+    timer_out_cpu = open(os.getcwd()+ "\\timer_directory\\2gpunotadversarial11outreal.txt", "a+")
     timer_out_cpu.write(ga_name + " GPU time is " + str(start.time_till(finish)*1e-3) + "\n")
     timer_out_cpu.close()
 
