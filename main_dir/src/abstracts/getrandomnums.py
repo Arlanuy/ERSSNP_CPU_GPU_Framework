@@ -7,12 +7,12 @@ from pycuda import gpuarray
 import os, time
 
 def timer_write(ga_name, start, finish):
-    timer_out_cpu = open(os.getcwd()+ "\\timer_directory\\gpusubadversarial11outreal.txt", "a+")
+    timer_out_cpu = open(os.getcwd()+ "\\timer_directory\\gpusubextra22outreal.txt", "a+")
     timer_out_cpu.write(ga_name + " GPU time is " + str(finish - start) + "\n")
     timer_out_cpu.close()
 
 def timer_write2(ga_name, start, finish):
-    timer_out_cpu = open(os.getcwd()+ "\\timer_directory\\2gpusubadversarial11outreal.txt", "a+")
+    timer_out_cpu = open(os.getcwd()+ "\\timer_directory\\2gpusubextra22outreal.txt", "a+")
     timer_out_cpu.write(ga_name + " GPU time is " + str(start.time_till(finish)*1e-3) + "\n")
     timer_out_cpu.close()
 
