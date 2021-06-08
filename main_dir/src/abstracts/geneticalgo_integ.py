@@ -8,7 +8,7 @@ from .rssnp import assign_rssnp
 import yaml, time
 
 def timer_write(ga_name, start, finish):
-    timer_out_cpu = open(os.getcwd()+ "\\timer_directory\\cpunotadversarial11outreal.txt", "a+")
+    timer_out_cpu = open(os.getcwd()+ "\\timer_directory\\cpuaddadversarial11outreal.txt", "a+")
     timer_out_cpu.write(ga_name + " CPU time is " + str(finish - start) + "\n")
     timer_out_cpu.close()
 
