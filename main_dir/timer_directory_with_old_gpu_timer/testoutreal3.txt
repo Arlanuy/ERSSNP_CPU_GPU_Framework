@@ -1,0 +1,1 @@
+Selection GPU time is GpuTimer: secs = 1.0751999914646148e-05

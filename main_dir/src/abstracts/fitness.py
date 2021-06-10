@@ -3,9 +3,8 @@ import os, time
 def timer_write(ga_name, start, finish):
     timer_out_cpu = open(os.getcwd()+ "\\timer_directory\\cpusubextra22outreal.txt", "a+")
     timer_out_cpu.write(ga_name + " CPU time is " + str(finish - start) + "\n")
-    timer_out_cpu.close()
-
 # Time complexity = O(mxn)
+
 def lc_substring(X, Y, m, n):
     # LCSuff is the table with zero  
     # value initially in each cell 
