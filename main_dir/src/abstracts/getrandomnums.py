@@ -4,17 +4,8 @@ import pycuda.autoinit
 import pycuda.driver as drv
 from pycuda.compiler import SourceModule
 from pycuda import gpuarray
-import os, time
-
-def timer_write(ga_name, start, finish):
-    timer_out_cpu = open(os.getcwd()+ "\\timer_directory\\gpusubextra22outreal.txt", "a+")
-    timer_out_cpu.write(ga_name + " GPU time is " + str(finish - start) + "\n")
-    timer_out_cpu.close()
-
-def timer_write2(ga_name, start, finish):
-    timer_out_cpu = open(os.getcwd()+ "\\timer_directory\\2gpusubextra22outreal.txt", "a+")
-    timer_out_cpu.write(ga_name + " GPU time is " + str(start.time_till(finish)*1e-3) + "\n")
-    timer_out_cpu.close()
+import os
+from src.abstracts.gpu_timer import *
 
 def getrandom(N, num_crosses, random_seed, max_limit):
 
@@ -72,17 +63,11 @@ def getrandom(N, num_crosses, random_seed, max_limit):
     min_lim = gdata_int #same minimum limit of all zeros
     max_lim = gpuarray.to_gpu(max_limit)
     #max_lim = max_limit
-    start2 = drv.Event()
-    finish2 = drv.Event()
-    start2.record()
-    start2.synchronize()
-    start = time.perf_counter()
+    timer_gpu = GpuTimer()
+    timer_gpu.tic()
     fill_func(gdata, gdata_int, np.int32(N), max_lim, min_lim, block=(num_crosses,1,1), grid=(1,1,1))
-    finish = time.perf_counter()
-    finish2.record()
-    finish2.synchronize()
-    timer_write("Crossover", start, finish)
-    timer_write2("Crossover", start2, finish2)
+    timer_gpu.toc()
+    timer_write("Crossover", timer_gpu.time())
     return gdata_int
 #different seed yields different random set as commented below
 
