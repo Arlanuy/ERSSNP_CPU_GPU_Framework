@@ -2,7 +2,7 @@ import pycuda.driver as drv
 import os
 
 def timer_write(ga_name, exec_time):
-    timer_out_cpu = open(os.getcwd()+ "\\timer_directory\\gpuandminimal00outreal.txt", "a+")
+    timer_out_cpu = open(os.getcwd()+ "\\timer_directory\\gpuandadversarial11outreal.txt", "a+")
     timer_out_cpu.write(ga_name + " GPU time is " + str(exec_time) + "\n")
     timer_out_cpu.close()
 
