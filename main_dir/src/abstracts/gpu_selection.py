@@ -97,9 +97,6 @@ def init_tf_adder(tf_gpu_list, len_result):
     #print("tf sum is ", tf_sum)
     return tf_sum[0]
 
-tf_gpu_list = numpy.array([1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15])
-tf_sum = init_tf_adder(tf_gpu_list, 31)  
-print(tf_sum)
 
 
 
