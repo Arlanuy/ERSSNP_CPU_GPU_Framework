@@ -52,7 +52,7 @@ def continue_create_empty_yaml(savefile_name):
 
 
 def prompt_make_newsavefile(ga_params, loadfile_name, load_directory):
-	newfile_choice = input("Would you like to use another savefile or use the existing savefile (Y/N): ")
+	newfile_choice = input("Would you like to use another savefile (Y) or use the existing savefile (N) (Y/N): ")
 
 	newfile_choice = True if newfile_choice == 'Y' else False
 
