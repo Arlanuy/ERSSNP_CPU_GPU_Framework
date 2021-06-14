@@ -36,24 +36,28 @@ time_reader_sub_adversarial_gpu = open(os.getcwd()+ "\\timer_directory\\gpusubad
 time_reader_sub_extra_gpu = open(os.getcwd()+ "\\timer_directory\\gpusubextra22outreal.txt", "r")
 
 time_input_files = [time_reader_and_minimal, time_reader_and_minimal_gpu, time_reader_and_adversarial, time_reader_and_adversarial_gpu, time_reader_and_extra, time_reader_and_extra_gpu, time_reader_or_minimal, time_reader_or_minimal_gpu, time_reader_or_adversarial, time_reader_or_adversarial_gpu, time_reader_or_extra, time_reader_or_extra_gpu, time_reader_not_minimal, time_reader_not_minimal_gpu, time_reader_not_adversarial, time_reader_not_adversarial_gpu, time_reader_not_extra, time_reader_not_extra_gpu, time_reader_add_minimal, time_reader_add_minimal_gpu, time_reader_add_adversarial, time_reader_add_adversarial_gpu, time_reader_add_extra, time_reader_add_extra_gpu, time_reader_sub_minimal, time_reader_sub_minimal_gpu, time_reader_sub_adversarial, time_reader_sub_adversarial_gpu, time_reader_sub_extra, time_reader_sub_extra_gpu]
-def atof(s):
-    s,_,_=s.partition(' ')
-    while s:
-        try:
-            return float(s)
-        except:
-            s=s[:-1]
-    return 0.0
+
+format_string = compile('GpuTimer: secs = {0}')
+def atof(s, gpu_format):
+	while s:
+		try:
+			return float(s)
+		except:
+			s=s[:-1]
+	return 0.0
 
 index_file = 0
 for time_reader in time_input_files:
 	selection_time = 0
 	evaluate_time = 0
 	crossover_time = 0
+	gpu_format = False
 	if index_file % 2 == 0:
 		timer_adder_out.write("CPU ")
+		
 	else:
 		timer_adder_out.write("GPU ")
+		gpu_format = True
 
 	if int(index_file / 6) == 0:
 		timer_adder_out.write("AND ")
@@ -72,17 +76,24 @@ for time_reader in time_input_files:
 		timer_adder_out.write("Adversarial \n")
 	elif index_file % 6 == 4 or index_file % 6 == 5:
 		timer_adder_out.write("Extra \n") 
-		
+	loop_index = 0
 	for line in time_reader:
 		array = line.split(' ')
+		print("time is ", array[4:], " at loop_index ", loop_index, " and index file ", index_file)
+		topass = None
+		if gpu_format == True:
+			topass = array[7]
+		else:
+			topass = array[4]
 		if array[0] == "Selection":
-			selection_time += atof(array[4])
+			selection_time += atof(topass, gpu_format)
 		elif array[0] == "Crossover":
-			crossover_time += atof(array[4])
+			crossover_time += atof(topass, gpu_format)
 		elif array[0] == "Evaluate":
-			evaluate_time += atof(array[4])
+			evaluate_time += atof(topass, gpu_format)
+		loop_index += 1
 	timer_adder_out.write("selection time is " + str(selection_time) + " crossover is " + str(crossover_time) + " evaluate is " + str(evaluate_time) + "\n")
-	
+	timer_adder_out.write("Total time is " + str(selection_time + crossover_time + evaluate_time) + "\n")
 	index_file += 1
 	time_reader.close()
 	
