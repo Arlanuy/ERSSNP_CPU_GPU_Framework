@@ -1,5 +1,5 @@
 gen_total: 2
-generation_index_continue: 0,0
+generation_index_continue: 0,1
 gens_pending: 0
 goal_fitness: 101
 max_fitness_in_runs: 43
@@ -28,7 +28,7 @@ runs:
         rssnp_chromosomes:
           0:
             chrom_fitness: 12
-            init_config: &id131
+            init_config:
             - 0
             - 0
             - 0
@@ -40,7 +40,7 @@ runs:
             - 0
             - 0
             - 0
-            input_neurons: &id132
+            input_neurons:
             - 0
             - 1
             neurons: 11
@@ -74,7 +74,7 @@ runs:
             - -1
             - -1
             - -1
-            rules: &id133
+            rules:
             - - 0
               - 2
               - &id001
@@ -262,7 +262,7 @@ runs:
             synapses: 18
           1:
             chrom_fitness: 15
-            init_config: &id134
+            init_config:
             - 0
             - 0
             - 0
@@ -274,7 +274,7 @@ runs:
             - 0
             - 0
             - 0
-            input_neurons: &id135
+            input_neurons:
             - 0
             - 1
             neurons: 11
@@ -300,7 +300,7 @@ runs:
             - -1
             - -1
             - -1
-            rules: &id136
+            rules:
             - - 0
               - 2
               - *id001
@@ -606,7 +606,7 @@ runs:
             synapses: 18
           3:
             chrom_fitness: 10
-            init_config: &id137
+            init_config:
             - 0
             - 0
             - 0
@@ -618,7 +618,7 @@ runs:
             - 0
             - 0
             - 0
-            input_neurons: &id138
+            input_neurons:
             - 0
             - 1
             neurons: 11
@@ -646,7 +646,7 @@ runs:
             - -1
             - -1
             - -1
-            rules: &id139
+            rules:
             - - 0
               - 2
               - *id001
@@ -1335,7 +1335,7 @@ runs:
             synapses: 18
           7:
             chrom_fitness: 12
-            init_config: &id140
+            init_config:
             - 0
             - 0
             - 0
@@ -1347,7 +1347,7 @@ runs:
             - 0
             - 0
             - 0
-            input_neurons: &id141
+            input_neurons:
             - 0
             - 1
             neurons: 11
@@ -1372,7 +1372,7 @@ runs:
             - -1
             - -1
             - -1
-            rules: &id142
+            rules:
             - - 0
               - 2
               - *id001
@@ -1495,7 +1495,7 @@ runs:
             synapses: 18
           8:
             chrom_fitness: 11
-            init_config: &id143
+            init_config:
             - 0
             - 0
             - 0
@@ -1507,7 +1507,7 @@ runs:
             - 0
             - 0
             - 0
-            input_neurons: &id144
+            input_neurons:
             - 0
             - 1
             neurons: 11
@@ -1534,7 +1534,7 @@ runs:
             - -1
             - -1
             - -1
-            rules: &id145
+            rules:
             - - 0
               - 2
               - *id001
@@ -1668,7 +1668,7 @@ runs:
             synapses: 18
           9:
             chrom_fitness: 8
-            init_config: &id146
+            init_config:
             - 0
             - 0
             - 0
@@ -1680,7 +1680,7 @@ runs:
             - 0
             - 0
             - 0
-            input_neurons: &id147
+            input_neurons:
             - 0
             - 1
             neurons: 11
@@ -1708,7 +1708,7 @@ runs:
             - -1
             - -1
             - -1
-            rules: &id148
+            rules:
             - - 0
               - 2
               - *id001
@@ -2362,7 +2362,7 @@ runs:
             synapses: 18
           13:
             chrom_fitness: 8
-            init_config: &id149
+            init_config:
             - 0
             - 0
             - 0
@@ -2374,7 +2374,7 @@ runs:
             - 0
             - 0
             - 0
-            input_neurons: &id150
+            input_neurons:
             - 0
             - 1
             neurons: 11
@@ -2402,7 +2402,7 @@ runs:
             - -1
             - -1
             - -1
-            rules: &id151
+            rules:
             - - 0
               - 2
               - *id001
@@ -2545,7 +2545,7 @@ runs:
             synapses: 18
           14:
             chrom_fitness: 9
-            init_config: &id152
+            init_config:
             - 0
             - 0
             - 0
@@ -2557,7 +2557,7 @@ runs:
             - 0
             - 0
             - 0
-            input_neurons: &id153
+            input_neurons:
             - 0
             - 1
             neurons: 11
@@ -2584,7 +2584,7 @@ runs:
             - -1
             - -1
             - -1
-            rules: &id154
+            rules:
             - - 0
               - 2
               - *id001
@@ -2899,7 +2899,7 @@ runs:
             synapses: 18
           16:
             chrom_fitness: 8
-            init_config: &id155
+            init_config:
             - 0
             - 0
             - 0
@@ -2911,7 +2911,7 @@ runs:
             - 0
             - 0
             - 0
-            input_neurons: &id156
+            input_neurons:
             - 0
             - 1
             neurons: 11
@@ -2940,7 +2940,7 @@ runs:
             - -1
             - -1
             - -1
-            rules: &id157
+            rules:
             - - 0
               - 2
               - *id001
@@ -4126,7 +4126,7 @@ runs:
             synapses: 18
           23:
             chrom_fitness: 10
-            init_config: &id158
+            init_config:
             - 0
             - 0
             - 0
@@ -4138,7 +4138,7 @@ runs:
             - 0
             - 0
             - 0
-            input_neurons: &id159
+            input_neurons:
             - 0
             - 1
             neurons: 11
@@ -4165,7 +4165,7 @@ runs:
             - -1
             - -1
             - -1
-            rules: &id160
+            rules:
             - - 0
               - 2
               - *id001
@@ -4301,7 +4301,7 @@ runs:
             synapses: 18
           24:
             chrom_fitness: 13
-            init_config: &id161
+            init_config:
             - 0
             - 0
             - 0
@@ -4313,7 +4313,7 @@ runs:
             - 0
             - 0
             - 0
-            input_neurons: &id162
+            input_neurons:
             - 0
             - 1
             neurons: 11
@@ -4339,7 +4339,7 @@ runs:
             - -1
             - -1
             - -1
-            rules: &id163
+            rules:
             - - 0
               - 2
               - *id001
@@ -4473,7 +4473,7 @@ runs:
             synapses: 18
           25:
             chrom_fitness: 11
-            init_config: &id164
+            init_config:
             - 0
             - 0
             - 0
@@ -4485,7 +4485,7 @@ runs:
             - 0
             - 0
             - 0
-            input_neurons: &id165
+            input_neurons:
             - 0
             - 1
             neurons: 11
@@ -4514,7 +4514,7 @@ runs:
             - -1
             - -1
             - -1
-            rules: &id166
+            rules:
             - - 0
               - 2
               - *id001
@@ -4664,7 +4664,7 @@ runs:
             synapses: 18
           26:
             chrom_fitness: 11
-            init_config: &id167
+            init_config:
             - 0
             - 0
             - 0
@@ -4676,7 +4676,7 @@ runs:
             - 0
             - 0
             - 0
-            input_neurons: &id168
+            input_neurons:
             - 0
             - 1
             neurons: 11
@@ -4705,7 +4705,7 @@ runs:
             - -1
             - -1
             - -1
-            rules: &id169
+            rules:
             - - 0
               - 2
               - *id001
@@ -4852,7 +4852,7 @@ runs:
             synapses: 18
           27:
             chrom_fitness: 8
-            init_config: &id170
+            init_config:
             - 0
             - 0
             - 0
@@ -4864,7 +4864,7 @@ runs:
             - 0
             - 0
             - 0
-            input_neurons: &id171
+            input_neurons:
             - 0
             - 1
             neurons: 11
@@ -4895,7 +4895,7 @@ runs:
             - -1
             - -1
             - -1
-            rules: &id172
+            rules:
             - - 0
               - 2
               - *id001
@@ -5223,7 +5223,7 @@ runs:
             synapses: 18
           29:
             chrom_fitness: 12
-            init_config: &id173
+            init_config:
             - 0
             - 0
             - 0
@@ -5235,7 +5235,7 @@ runs:
             - 0
             - 0
             - 0
-            input_neurons: &id174
+            input_neurons:
             - 0
             - 1
             neurons: 11
@@ -5260,7 +5260,7 @@ runs:
             - -1
             - -1
             - -1
-            rules: &id175
+            rules:
             - - 0
               - 2
               - *id001
@@ -5550,7 +5550,7 @@ runs:
             synapses: 18
           31:
             chrom_fitness: 9
-            init_config: &id176
+            init_config:
             - 0
             - 0
             - 0
@@ -5562,7 +5562,7 @@ runs:
             - 0
             - 0
             - 0
-            input_neurons: &id177
+            input_neurons:
             - 0
             - 1
             neurons: 11
@@ -5591,7 +5591,7 @@ runs:
             - -1
             - -1
             - -1
-            rules: &id178
+            rules:
             - - 0
               - 2
               - *id001
@@ -5741,7 +5741,7 @@ runs:
             synapses: 18
           32:
             chrom_fitness: 14
-            init_config: &id179
+            init_config:
             - 0
             - 0
             - 0
@@ -5753,7 +5753,7 @@ runs:
             - 0
             - 0
             - 0
-            input_neurons: &id180
+            input_neurons:
             - 0
             - 1
             neurons: 11
@@ -5780,7 +5780,7 @@ runs:
             - -1
             - -1
             - -1
-            rules: &id181
+            rules:
             - - 0
               - 2
               - *id001
@@ -6117,7 +6117,7 @@ runs:
             synapses: 18
           34:
             chrom_fitness: 14
-            init_config: &id182
+            init_config:
             - 0
             - 0
             - 0
@@ -6129,7 +6129,7 @@ runs:
             - 0
             - 0
             - 0
-            input_neurons: &id183
+            input_neurons:
             - 0
             - 1
             neurons: 11
@@ -6156,7 +6156,7 @@ runs:
             - -1
             - -1
             - -1
-            rules: &id184
+            rules:
             - - 0
               - 2
               - *id001
@@ -6707,7 +6707,7 @@ runs:
             synapses: 18
           37:
             chrom_fitness: 8
-            init_config: &id185
+            init_config:
             - 0
             - 0
             - 0
@@ -6719,7 +6719,7 @@ runs:
             - 0
             - 0
             - 0
-            input_neurons: &id186
+            input_neurons:
             - 0
             - 1
             neurons: 11
@@ -6746,7 +6746,7 @@ runs:
             - -1
             - -1
             - -1
-            rules: &id187
+            rules:
             - - 0
               - 2
               - *id001
@@ -7027,7 +7027,7 @@ runs:
             synapses: 18
           39:
             chrom_fitness: 9
-            init_config: &id188
+            init_config:
             - 0
             - 0
             - 0
@@ -7039,7 +7039,7 @@ runs:
             - 0
             - 0
             - 0
-            input_neurons: &id189
+            input_neurons:
             - 0
             - 1
             neurons: 11
@@ -7068,7 +7068,7 @@ runs:
             - -1
             - -1
             - -1
-            rules: &id190
+            rules:
             - - 0
               - 2
               - *id001
@@ -7840,7 +7840,7 @@ runs:
             synapses: 18
           20:
             chrom_fitness: 13
-            init_config:
+            init_config: &id131
             - 0
             - 0
             - 0
@@ -7852,7 +7852,7 @@ runs:
             - 0
             - 0
             - 0
-            input_neurons:
+            input_neurons: &id132
             - 0
             - 1
             neurons: 11
@@ -7877,7 +7877,7 @@ runs:
             - -1
             - -1
             - -1
-            rules:
+            rules: &id133
             - - 0
               - 2
               - *id001
@@ -7995,7 +7995,7 @@ runs:
             synapses: 18
           21:
             chrom_fitness: 43
-            init_config:
+            init_config: &id134
             - 0
             - 0
             - 0
@@ -8007,7 +8007,7 @@ runs:
             - 0
             - 0
             - 0
-            input_neurons:
+            input_neurons: &id135
             - 0
             - 1
             neurons: 11
@@ -8036,7 +8036,7 @@ runs:
             - -1
             - -1
             - -1
-            rules:
+            rules: &id136
             - - 0
               - 2
               - *id001
@@ -8178,7 +8178,7 @@ runs:
             synapses: 18
           22:
             chrom_fitness: 41
-            init_config:
+            init_config: &id137
             - 0
             - 0
             - 0
@@ -8190,7 +8190,7 @@ runs:
             - 0
             - 0
             - 0
-            input_neurons:
+            input_neurons: &id138
             - 0
             - 1
             neurons: 11
@@ -8221,7 +8221,7 @@ runs:
             - -1
             - -1
             - -1
-            rules:
+            rules: &id139
             - - 0
               - 2
               - *id001
@@ -8375,7 +8375,7 @@ runs:
             synapses: 18
           23:
             chrom_fitness: 33
-            init_config:
+            init_config: &id140
             - 0
             - 0
             - 0
@@ -8387,7 +8387,7 @@ runs:
             - 0
             - 0
             - 0
-            input_neurons:
+            input_neurons: &id141
             - 0
             - 1
             neurons: 11
@@ -8412,7 +8412,7 @@ runs:
             - -1
             - -1
             - -1
-            rules:
+            rules: &id142
             - - 0
               - 2
               - *id001
@@ -8530,7 +8530,7 @@ runs:
             synapses: 18
           24:
             chrom_fitness: 43
-            init_config:
+            init_config: &id143
             - 0
             - 0
             - 0
@@ -8542,7 +8542,7 @@ runs:
             - 0
             - 0
             - 0
-            input_neurons:
+            input_neurons: &id144
             - 0
             - 1
             neurons: 11
@@ -8567,7 +8567,7 @@ runs:
             - -1
             - -1
             - -1
-            rules:
+            rules: &id145
             - - 0
               - 2
               - *id001
@@ -8685,7 +8685,7 @@ runs:
             synapses: 18
           25:
             chrom_fitness: 43
-            init_config:
+            init_config: &id146
             - 0
             - 0
             - 0
@@ -8697,7 +8697,7 @@ runs:
             - 0
             - 0
             - 0
-            input_neurons:
+            input_neurons: &id147
             - 0
             - 1
             neurons: 11
@@ -8719,7 +8719,7 @@ runs:
             - -1
             - -1
             - -1
-            rules:
+            rules: &id148
             - - 0
               - 2
               - *id001
@@ -8819,7 +8819,7 @@ runs:
             synapses: 18
           26:
             chrom_fitness: 43
-            init_config:
+            init_config: &id149
             - 0
             - 0
             - 0
@@ -8831,7 +8831,7 @@ runs:
             - 0
             - 0
             - 0
-            input_neurons:
+            input_neurons: &id150
             - 0
             - 1
             neurons: 11
@@ -8853,7 +8853,7 @@ runs:
             - -1
             - -1
             - -1
-            rules:
+            rules: &id151
             - - 0
               - 2
               - *id001
@@ -8953,7 +8953,7 @@ runs:
             synapses: 18
           27:
             chrom_fitness: 8
-            init_config:
+            init_config: &id152
             - 0
             - 0
             - 0
@@ -8965,7 +8965,7 @@ runs:
             - 0
             - 0
             - 0
-            input_neurons:
+            input_neurons: &id153
             - 0
             - 1
             neurons: 11
@@ -8991,7 +8991,7 @@ runs:
             - -1
             - -1
             - -1
-            rules:
+            rules: &id154
             - - 0
               - 2
               - *id001
@@ -9115,7 +9115,7 @@ runs:
             synapses: 18
           28:
             chrom_fitness: 11
-            init_config:
+            init_config: &id155
             - 0
             - 0
             - 0
@@ -9127,7 +9127,7 @@ runs:
             - 0
             - 0
             - 0
-            input_neurons:
+            input_neurons: &id156
             - 0
             - 1
             neurons: 11
@@ -9153,7 +9153,7 @@ runs:
             - -1
             - -1
             - -1
-            rules:
+            rules: &id157
             - - 0
               - 2
               - *id001
@@ -9277,7 +9277,7 @@ runs:
             synapses: 18
           29:
             chrom_fitness: 43
-            init_config:
+            init_config: &id158
             - 0
             - 0
             - 0
@@ -9289,7 +9289,7 @@ runs:
             - 0
             - 0
             - 0
-            input_neurons:
+            input_neurons: &id159
             - 0
             - 1
             neurons: 11
@@ -9316,7 +9316,7 @@ runs:
             - -1
             - -1
             - -1
-            rules:
+            rules: &id160
             - - 0
               - 2
               - *id001
@@ -9447,7 +9447,7 @@ runs:
             synapses: 18
           30:
             chrom_fitness: 43
-            init_config:
+            init_config: &id161
             - 0
             - 0
             - 0
@@ -9459,7 +9459,7 @@ runs:
             - 0
             - 0
             - 0
-            input_neurons:
+            input_neurons: &id162
             - 0
             - 1
             neurons: 11
@@ -9488,7 +9488,7 @@ runs:
             - -1
             - -1
             - -1
-            rules:
+            rules: &id163
             - - 0
               - 2
               - *id001
@@ -9631,7 +9631,7 @@ runs:
             synapses: 18
           31:
             chrom_fitness: 8
-            init_config:
+            init_config: &id164
             - 0
             - 0
             - 0
@@ -9643,7 +9643,7 @@ runs:
             - 0
             - 0
             - 0
-            input_neurons:
+            input_neurons: &id165
             - 0
             - 1
             neurons: 11
@@ -9671,7 +9671,7 @@ runs:
             - -1
             - -1
             - -1
-            rules:
+            rules: &id166
             - - 0
               - 2
               - *id001
@@ -9807,7 +9807,7 @@ runs:
             synapses: 18
           32:
             chrom_fitness: 8
-            init_config:
+            init_config: &id167
             - 0
             - 0
             - 0
@@ -9819,7 +9819,7 @@ runs:
             - 0
             - 0
             - 0
-            input_neurons:
+            input_neurons: &id168
             - 0
             - 1
             neurons: 11
@@ -9846,7 +9846,7 @@ runs:
             - -1
             - -1
             - -1
-            rules:
+            rules: &id169
             - - 0
               - 2
               - *id001
@@ -9976,7 +9976,7 @@ runs:
             synapses: 18
           33:
             chrom_fitness: 31
-            init_config:
+            init_config: &id170
             - 0
             - 0
             - 0
@@ -9988,7 +9988,7 @@ runs:
             - 0
             - 0
             - 0
-            input_neurons:
+            input_neurons: &id171
             - 0
             - 1
             neurons: 11
@@ -10013,7 +10013,7 @@ runs:
             - -1
             - -1
             - -1
-            rules:
+            rules: &id172
             - - 0
               - 2
               - *id001
@@ -10132,7 +10132,7 @@ runs:
             synapses: 18
           34:
             chrom_fitness: 31
-            init_config:
+            init_config: &id173
             - 0
             - 0
             - 0
@@ -10144,7 +10144,7 @@ runs:
             - 0
             - 0
             - 0
-            input_neurons:
+            input_neurons: &id174
             - 0
             - 1
             neurons: 11
@@ -10170,7 +10170,7 @@ runs:
             - -1
             - -1
             - -1
-            rules:
+            rules: &id175
             - - 0
               - 2
               - *id001
@@ -10294,7 +10294,7 @@ runs:
             synapses: 18
           35:
             chrom_fitness: 15
-            init_config:
+            init_config: &id176
             - 0
             - 0
             - 0
@@ -10306,7 +10306,7 @@ runs:
             - 0
             - 0
             - 0
-            input_neurons:
+            input_neurons: &id177
             - 0
             - 1
             neurons: 11
@@ -10331,7 +10331,7 @@ runs:
             - -1
             - -1
             - -1
-            rules:
+            rules: &id178
             - - 0
               - 2
               - *id001
@@ -10449,7 +10449,7 @@ runs:
             synapses: 18
           36:
             chrom_fitness: 34
-            init_config:
+            init_config: &id179
             - 0
             - 0
             - 0
@@ -10461,7 +10461,7 @@ runs:
             - 0
             - 0
             - 0
-            input_neurons:
+            input_neurons: &id180
             - 0
             - 1
             neurons: 11
@@ -10485,7 +10485,7 @@ runs:
             - -1
             - -1
             - -1
-            rules:
+            rules: &id181
             - - 0
               - 2
               - *id001
@@ -10597,7 +10597,7 @@ runs:
             synapses: 18
           37:
             chrom_fitness: 40
-            init_config:
+            init_config: &id182
             - 0
             - 0
             - 0
@@ -10609,7 +10609,7 @@ runs:
             - 0
             - 0
             - 0
-            input_neurons:
+            input_neurons: &id183
             - 0
             - 1
             neurons: 11
@@ -10635,7 +10635,7 @@ runs:
             - -1
             - -1
             - -1
-            rules:
+            rules: &id184
             - - 0
               - 2
               - *id001
@@ -10759,7 +10759,7 @@ runs:
             synapses: 18
           38:
             chrom_fitness: 40
-            init_config:
+            init_config: &id185
             - 0
             - 0
             - 0
@@ -10771,7 +10771,7 @@ runs:
             - 0
             - 0
             - 0
-            input_neurons:
+            input_neurons: &id186
             - 0
             - 1
             neurons: 11
@@ -10796,7 +10796,7 @@ runs:
             - -1
             - -1
             - -1
-            rules:
+            rules: &id187
             - - 0
               - 2
               - *id001
@@ -10914,7 +10914,7 @@ runs:
             synapses: 18
           39:
             chrom_fitness: 43
-            init_config:
+            init_config: &id188
             - 0
             - 0
             - 0
@@ -10926,7 +10926,7 @@ runs:
             - 0
             - 0
             - 0
-            input_neurons:
+            input_neurons: &id189
             - 0
             - 1
             neurons: 11
@@ -10952,7 +10952,7 @@ runs:
             - -1
             - -1
             - -1
-            rules:
+            rules: &id190
             - - 0
               - 2
               - *id001
@@ -11083,76 +11083,10 @@ runs:
     generations:
       0:
         best_chromosome_indexes:
-        - 37
-        best_fitness_result: 29
+        - 15
+        best_fitness_result: 28
         rssnp_chromosomes:
           0:
-            chrom_fitness: 24
-            init_config: *id131
-            input_neurons: *id132
-            neurons: 11
-            output_neuron: 10
-            rule_status:
-            - -1
-            - -1
-            - -1
-            - -1
-            - -1
-            - -1
-            - -1
-            - -1
-            - -1
-            - -1
-            - -1
-            - -1
-            - -1
-            - -1
-            - -1
-            - -1
-            - -1
-            - -1
-            - -1
-            - -1
-            - -1
-            - -1
-            - -1
-            - -1
-            - -1
-            - -1
-            - -1
-            - -1
-            rules: *id133
-            synapses: 18
-          1:
-            chrom_fitness: 23
-            init_config: *id134
-            input_neurons: *id135
-            neurons: 11
-            output_neuron: 10
-            rule_status:
-            - -1
-            - -1
-            - -1
-            - -1
-            - -1
-            - -1
-            - -1
-            - -1
-            - -1
-            - -1
-            - -1
-            - -1
-            - -1
-            - -1
-            - -1
-            - -1
-            - -1
-            - -1
-            - -1
-            - -1
-            rules: *id136
-            synapses: 18
-          2:
             chrom_fitness: 26
             init_config: *id009
             input_neurons: *id010
@@ -11181,67 +11115,7 @@ runs:
             - -1
             rules: *id011
             synapses: 18
-          3:
-            chrom_fitness: 26
-            init_config: *id137
-            input_neurons: *id138
-            neurons: 11
-            output_neuron: 10
-            rule_status:
-            - -1
-            - -1
-            - -1
-            - -1
-            - -1
-            - -1
-            - -1
-            - -1
-            - -1
-            - -1
-            - -1
-            - -1
-            - -1
-            - -1
-            - -1
-            - -1
-            - -1
-            - -1
-            - -1
-            - -1
-            - -1
-            - -1
-            rules: *id139
-            synapses: 18
-          4:
-            chrom_fitness: 24
-            init_config: *id048
-            input_neurons: *id049
-            neurons: 11
-            output_neuron: 10
-            rule_status:
-            - -1
-            - -1
-            - -1
-            - -1
-            - -1
-            - -1
-            - -1
-            - -1
-            - -1
-            - -1
-            - -1
-            - -1
-            - -1
-            - -1
-            - -1
-            - -1
-            - -1
-            - -1
-            - -1
-            - -1
-            rules: *id050
-            synapses: 18
-          5:
+          1:
             chrom_fitness: 26
             init_config: *id012
             input_neurons: *id013
@@ -11271,7 +11145,7 @@ runs:
             - -1
             rules: *id014
             synapses: 18
-          6:
+          2:
             chrom_fitness: 26
             init_config: *id015
             input_neurons: *id016
@@ -11304,125 +11178,7 @@ runs:
             - -1
             rules: *id017
             synapses: 18
-          7:
-            chrom_fitness: 23
-            init_config: *id140
-            input_neurons: *id141
-            neurons: 11
-            output_neuron: 10
-            rule_status:
-            - -1
-            - -1
-            - -1
-            - -1
-            - -1
-            - -1
-            - -1
-            - -1
-            - -1
-            - -1
-            - -1
-            - -1
-            - -1
-            - -1
-            - -1
-            - -1
-            - -1
-            - -1
-            - -1
-            rules: *id142
-            synapses: 18
-          8:
-            chrom_fitness: 24
-            init_config: *id143
-            input_neurons: *id144
-            neurons: 11
-            output_neuron: 10
-            rule_status:
-            - -1
-            - -1
-            - -1
-            - -1
-            - -1
-            - -1
-            - -1
-            - -1
-            - -1
-            - -1
-            - -1
-            - -1
-            - -1
-            - -1
-            - -1
-            - -1
-            - -1
-            - -1
-            - -1
-            - -1
-            - -1
-            rules: *id145
-            synapses: 18
-          9:
-            chrom_fitness: 25
-            init_config: *id146
-            input_neurons: *id147
-            neurons: 11
-            output_neuron: 10
-            rule_status:
-            - -1
-            - -1
-            - -1
-            - -1
-            - -1
-            - -1
-            - -1
-            - -1
-            - -1
-            - -1
-            - -1
-            - -1
-            - -1
-            - -1
-            - -1
-            - -1
-            - -1
-            - -1
-            - -1
-            - -1
-            - -1
-            - -1
-            rules: *id148
-            synapses: 18
-          10:
-            chrom_fitness: 26
-            init_config: *id066
-            input_neurons: *id067
-            neurons: 11
-            output_neuron: 10
-            rule_status:
-            - -1
-            - -1
-            - -1
-            - -1
-            - -1
-            - -1
-            - -1
-            - -1
-            - -1
-            - -1
-            - -1
-            - -1
-            - -1
-            - -1
-            - -1
-            - -1
-            - -1
-            - -1
-            - -1
-            - -1
-            rules: *id068
-            synapses: 18
-          11:
+          3:
             chrom_fitness: 26
             init_config: *id018
             input_neurons: *id019
@@ -11449,7 +11205,7 @@ runs:
             - -1
             rules: *id020
             synapses: 18
-          12:
+          4:
             chrom_fitness: 26
             init_config: *id021
             input_neurons: *id022
@@ -11480,68 +11236,7 @@ runs:
             - -1
             rules: *id023
             synapses: 18
-          13:
-            chrom_fitness: 26
-            init_config: *id149
-            input_neurons: *id150
-            neurons: 11
-            output_neuron: 10
-            rule_status:
-            - -1
-            - -1
-            - -1
-            - -1
-            - -1
-            - -1
-            - -1
-            - -1
-            - -1
-            - -1
-            - -1
-            - -1
-            - -1
-            - -1
-            - -1
-            - -1
-            - -1
-            - -1
-            - -1
-            - -1
-            - -1
-            - -1
-            rules: *id151
-            synapses: 18
-          14:
-            chrom_fitness: 28
-            init_config: *id152
-            input_neurons: *id153
-            neurons: 11
-            output_neuron: 10
-            rule_status:
-            - -1
-            - -1
-            - -1
-            - -1
-            - -1
-            - -1
-            - -1
-            - -1
-            - -1
-            - -1
-            - -1
-            - -1
-            - -1
-            - -1
-            - -1
-            - -1
-            - -1
-            - -1
-            - -1
-            - -1
-            - -1
-            rules: *id154
-            synapses: 18
-          15:
+          5:
             chrom_fitness: 26
             init_config: *id024
             input_neurons: *id025
@@ -11571,69 +11266,7 @@ runs:
             - -1
             rules: *id026
             synapses: 18
-          16:
-            chrom_fitness: 25
-            init_config: *id155
-            input_neurons: *id156
-            neurons: 11
-            output_neuron: 10
-            rule_status:
-            - -1
-            - -1
-            - -1
-            - -1
-            - -1
-            - -1
-            - -1
-            - -1
-            - -1
-            - -1
-            - -1
-            - -1
-            - -1
-            - -1
-            - -1
-            - -1
-            - -1
-            - -1
-            - -1
-            - -1
-            - -1
-            - -1
-            - -1
-            rules: *id157
-            synapses: 18
-          17:
-            chrom_fitness: 26
-            init_config: *id054
-            input_neurons: *id055
-            neurons: 11
-            output_neuron: 10
-            rule_status:
-            - -1
-            - -1
-            - -1
-            - -1
-            - -1
-            - -1
-            - -1
-            - -1
-            - -1
-            - -1
-            - -1
-            - -1
-            - -1
-            - -1
-            - -1
-            - -1
-            - -1
-            - -1
-            - -1
-            - -1
-            - -1
-            rules: *id056
-            synapses: 18
-          18:
+          6:
             chrom_fitness: 26
             init_config: *id027
             input_neurons: *id028
@@ -11661,36 +11294,7 @@ runs:
             - -1
             rules: *id029
             synapses: 18
-          19:
-            chrom_fitness: 26
-            init_config: *id051
-            input_neurons: *id052
-            neurons: 11
-            output_neuron: 10
-            rule_status:
-            - -1
-            - -1
-            - -1
-            - -1
-            - -1
-            - -1
-            - -1
-            - -1
-            - -1
-            - -1
-            - -1
-            - -1
-            - -1
-            - -1
-            - -1
-            - -1
-            - -1
-            - -1
-            - -1
-            - -1
-            rules: *id053
-            synapses: 18
-          20:
+          7:
             chrom_fitness: 26
             init_config: *id030
             input_neurons: *id031
@@ -11720,36 +11324,7 @@ runs:
             - -1
             rules: *id032
             synapses: 18
-          21:
-            chrom_fitness: 25
-            init_config: *id057
-            input_neurons: *id058
-            neurons: 11
-            output_neuron: 10
-            rule_status:
-            - -1
-            - -1
-            - -1
-            - -1
-            - -1
-            - -1
-            - -1
-            - -1
-            - -1
-            - -1
-            - -1
-            - -1
-            - -1
-            - -1
-            - -1
-            - -1
-            - -1
-            - -1
-            - -1
-            - -1
-            rules: *id059
-            synapses: 18
-          22:
+          8:
             chrom_fitness: 26
             init_config: *id033
             input_neurons: *id034
@@ -11779,164 +11354,7 @@ runs:
             - -1
             rules: *id035
             synapses: 18
-          23:
-            chrom_fitness: 27
-            init_config: *id158
-            input_neurons: *id159
-            neurons: 11
-            output_neuron: 10
-            rule_status:
-            - -1
-            - -1
-            - -1
-            - -1
-            - -1
-            - -1
-            - -1
-            - -1
-            - -1
-            - -1
-            - -1
-            - -1
-            - -1
-            - -1
-            - -1
-            - -1
-            - -1
-            - -1
-            - -1
-            - -1
-            - -1
-            rules: *id160
-            synapses: 18
-          24:
-            chrom_fitness: 28
-            init_config: *id161
-            input_neurons: *id162
-            neurons: 11
-            output_neuron: 10
-            rule_status:
-            - -1
-            - -1
-            - -1
-            - -1
-            - -1
-            - -1
-            - -1
-            - -1
-            - -1
-            - -1
-            - -1
-            - -1
-            - -1
-            - -1
-            - -1
-            - -1
-            - -1
-            - -1
-            - -1
-            - -1
-            rules: *id163
-            synapses: 18
-          25:
-            chrom_fitness: 25
-            init_config: *id164
-            input_neurons: *id165
-            neurons: 11
-            output_neuron: 10
-            rule_status:
-            - -1
-            - -1
-            - -1
-            - -1
-            - -1
-            - -1
-            - -1
-            - -1
-            - -1
-            - -1
-            - -1
-            - -1
-            - -1
-            - -1
-            - -1
-            - -1
-            - -1
-            - -1
-            - -1
-            - -1
-            - -1
-            - -1
-            - -1
-            rules: *id166
-            synapses: 18
-          26:
-            chrom_fitness: 23
-            init_config: *id167
-            input_neurons: *id168
-            neurons: 11
-            output_neuron: 10
-            rule_status:
-            - -1
-            - -1
-            - -1
-            - -1
-            - -1
-            - -1
-            - -1
-            - -1
-            - -1
-            - -1
-            - -1
-            - -1
-            - -1
-            - -1
-            - -1
-            - -1
-            - -1
-            - -1
-            - -1
-            - -1
-            - -1
-            - -1
-            - -1
-            rules: *id169
-            synapses: 18
-          27:
-            chrom_fitness: 26
-            init_config: *id170
-            input_neurons: *id171
-            neurons: 11
-            output_neuron: 10
-            rule_status:
-            - -1
-            - -1
-            - -1
-            - -1
-            - -1
-            - -1
-            - -1
-            - -1
-            - -1
-            - -1
-            - -1
-            - -1
-            - -1
-            - -1
-            - -1
-            - -1
-            - -1
-            - -1
-            - -1
-            - -1
-            - -1
-            - -1
-            - -1
-            - -1
-            - -1
-            rules: *id172
-            synapses: 18
-          28:
+          9:
             chrom_fitness: 26
             init_config: *id036
             input_neurons: *id037
@@ -11965,189 +11383,7 @@ runs:
             - -1
             rules: *id038
             synapses: 18
-          29:
-            chrom_fitness: 22
-            init_config: *id173
-            input_neurons: *id174
-            neurons: 11
-            output_neuron: 10
-            rule_status:
-            - -1
-            - -1
-            - -1
-            - -1
-            - -1
-            - -1
-            - -1
-            - -1
-            - -1
-            - -1
-            - -1
-            - -1
-            - -1
-            - -1
-            - -1
-            - -1
-            - -1
-            - -1
-            - -1
-            rules: *id175
-            synapses: 18
-          30:
-            chrom_fitness: 26
-            init_config: *id060
-            input_neurons: *id061
-            neurons: 11
-            output_neuron: 10
-            rule_status:
-            - -1
-            - -1
-            - -1
-            - -1
-            - -1
-            - -1
-            - -1
-            - -1
-            - -1
-            - -1
-            - -1
-            - -1
-            - -1
-            - -1
-            - -1
-            - -1
-            - -1
-            - -1
-            - -1
-            - -1
-            rules: *id062
-            synapses: 18
-          31:
-            chrom_fitness: 27
-            init_config: *id176
-            input_neurons: *id177
-            neurons: 11
-            output_neuron: 10
-            rule_status:
-            - -1
-            - -1
-            - -1
-            - -1
-            - -1
-            - -1
-            - -1
-            - -1
-            - -1
-            - -1
-            - -1
-            - -1
-            - -1
-            - -1
-            - -1
-            - -1
-            - -1
-            - -1
-            - -1
-            - -1
-            - -1
-            - -1
-            - -1
-            rules: *id178
-            synapses: 18
-          32:
-            chrom_fitness: 27
-            init_config: *id179
-            input_neurons: *id180
-            neurons: 11
-            output_neuron: 10
-            rule_status:
-            - -1
-            - -1
-            - -1
-            - -1
-            - -1
-            - -1
-            - -1
-            - -1
-            - -1
-            - -1
-            - -1
-            - -1
-            - -1
-            - -1
-            - -1
-            - -1
-            - -1
-            - -1
-            - -1
-            - -1
-            - -1
-            rules: *id181
-            synapses: 18
-          33:
-            chrom_fitness: 23
-            init_config: *id063
-            input_neurons: *id064
-            neurons: 11
-            output_neuron: 10
-            rule_status:
-            - -1
-            - -1
-            - -1
-            - -1
-            - -1
-            - -1
-            - -1
-            - -1
-            - -1
-            - -1
-            - -1
-            - -1
-            - -1
-            - -1
-            - -1
-            - -1
-            - -1
-            - -1
-            - -1
-            - -1
-            - -1
-            - -1
-            - -1
-            - -1
-            rules: *id065
-            synapses: 18
-          34:
-            chrom_fitness: 27
-            init_config: *id182
-            input_neurons: *id183
-            neurons: 11
-            output_neuron: 10
-            rule_status:
-            - -1
-            - -1
-            - -1
-            - -1
-            - -1
-            - -1
-            - -1
-            - -1
-            - -1
-            - -1
-            - -1
-            - -1
-            - -1
-            - -1
-            - -1
-            - -1
-            - -1
-            - -1
-            - -1
-            - -1
-            - -1
-            rules: *id184
-            synapses: 18
-          35:
+          10:
             chrom_fitness: 26
             init_config: *id039
             input_neurons: *id040
@@ -12181,7 +11417,7 @@ runs:
             - -1
             rules: *id041
             synapses: 18
-          36:
+          11:
             chrom_fitness: 26
             init_config: *id042
             input_neurons: *id043
@@ -12213,37 +11449,7 @@ runs:
             - -1
             rules: *id044
             synapses: 18
-          37:
-            chrom_fitness: 29
-            init_config: *id185
-            input_neurons: *id186
-            neurons: 11
-            output_neuron: 10
-            rule_status:
-            - -1
-            - -1
-            - -1
-            - -1
-            - -1
-            - -1
-            - -1
-            - -1
-            - -1
-            - -1
-            - -1
-            - -1
-            - -1
-            - -1
-            - -1
-            - -1
-            - -1
-            - -1
-            - -1
-            - -1
-            - -1
-            rules: *id187
-            synapses: 18
-          38:
+          12:
             chrom_fitness: 26
             init_config: *id045
             input_neurons: *id046
@@ -12269,10 +11475,10 @@ runs:
             - -1
             rules: *id047
             synapses: 18
-          39:
-            chrom_fitness: 23
-            init_config: *id188
-            input_neurons: *id189
+          13:
+            chrom_fitness: 24
+            init_config: *id048
+            input_neurons: *id049
             neurons: 11
             output_neuron: 10
             rule_status:
@@ -12296,231 +11502,12 @@ runs:
             - -1
             - -1
             - -1
-            - -1
-            - -1
-            - -1
-            rules: *id190
+            rules: *id050
             synapses: 18
-      1:
-        best_chromosome_indexes:
-        - 0
-        best_fitness_result: 29
-        rssnp_chromosomes:
-          0:
-            chrom_fitness: 29
-            init_config: *id185
-            input_neurons: *id186
-            neurons: 11
-            output_neuron: 10
-            rule_status:
-            - -1
-            - -1
-            - -1
-            - -1
-            - -1
-            - -1
-            - -1
-            - -1
-            - -1
-            - -1
-            - -1
-            - -1
-            - -1
-            - -1
-            - -1
-            - -1
-            - -1
-            - -1
-            - -1
-            - -1
-            - -1
-            rules: *id187
-            synapses: 18
-          1:
-            chrom_fitness: 28
-            init_config: *id152
-            input_neurons: *id153
-            neurons: 11
-            output_neuron: 10
-            rule_status:
-            - -1
-            - -1
-            - -1
-            - -1
-            - -1
-            - -1
-            - -1
-            - -1
-            - -1
-            - -1
-            - -1
-            - -1
-            - -1
-            - -1
-            - -1
-            - -1
-            - -1
-            - -1
-            - -1
-            - -1
-            - -1
-            rules: *id154
-            synapses: 18
-          2:
-            chrom_fitness: 28
-            init_config: *id161
-            input_neurons: *id162
-            neurons: 11
-            output_neuron: 10
-            rule_status:
-            - -1
-            - -1
-            - -1
-            - -1
-            - -1
-            - -1
-            - -1
-            - -1
-            - -1
-            - -1
-            - -1
-            - -1
-            - -1
-            - -1
-            - -1
-            - -1
-            - -1
-            - -1
-            - -1
-            - -1
-            rules: *id163
-            synapses: 18
-          3:
-            chrom_fitness: 27
-            init_config: *id158
-            input_neurons: *id159
-            neurons: 11
-            output_neuron: 10
-            rule_status:
-            - -1
-            - -1
-            - -1
-            - -1
-            - -1
-            - -1
-            - -1
-            - -1
-            - -1
-            - -1
-            - -1
-            - -1
-            - -1
-            - -1
-            - -1
-            - -1
-            - -1
-            - -1
-            - -1
-            - -1
-            - -1
-            rules: *id160
-            synapses: 18
-          4:
-            chrom_fitness: 27
-            init_config: *id176
-            input_neurons: *id177
-            neurons: 11
-            output_neuron: 10
-            rule_status:
-            - -1
-            - -1
-            - -1
-            - -1
-            - -1
-            - -1
-            - -1
-            - -1
-            - -1
-            - -1
-            - -1
-            - -1
-            - -1
-            - -1
-            - -1
-            - -1
-            - -1
-            - -1
-            - -1
-            - -1
-            - -1
-            - -1
-            - -1
-            rules: *id178
-            synapses: 18
-          5:
-            chrom_fitness: 27
-            init_config: *id179
-            input_neurons: *id180
-            neurons: 11
-            output_neuron: 10
-            rule_status:
-            - -1
-            - -1
-            - -1
-            - -1
-            - -1
-            - -1
-            - -1
-            - -1
-            - -1
-            - -1
-            - -1
-            - -1
-            - -1
-            - -1
-            - -1
-            - -1
-            - -1
-            - -1
-            - -1
-            - -1
-            - -1
-            rules: *id181
-            synapses: 18
-          6:
-            chrom_fitness: 27
-            init_config: *id182
-            input_neurons: *id183
-            neurons: 11
-            output_neuron: 10
-            rule_status:
-            - -1
-            - -1
-            - -1
-            - -1
-            - -1
-            - -1
-            - -1
-            - -1
-            - -1
-            - -1
-            - -1
-            - -1
-            - -1
-            - -1
-            - -1
-            - -1
-            - -1
-            - -1
-            - -1
-            - -1
-            - -1
-            rules: *id184
-            synapses: 18
-          7:
+          14:
             chrom_fitness: 26
-            init_config: *id009
-            input_neurons: *id010
+            init_config: *id051
+            input_neurons: *id052
             neurons: 11
             output_neuron: 10
             rule_status:
@@ -12544,9 +11531,219 @@ runs:
             - -1
             - -1
             - -1
-            rules: *id011
+            rules: *id053
             synapses: 18
-          8:
+          15:
+            chrom_fitness: 28
+            init_config: *id054
+            input_neurons: *id055
+            neurons: 11
+            output_neuron: 10
+            rule_status:
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            rules: *id056
+            synapses: 18
+          16:
+            chrom_fitness: 26
+            init_config: *id057
+            input_neurons: *id058
+            neurons: 11
+            output_neuron: 10
+            rule_status:
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            rules: *id059
+            synapses: 18
+          17:
+            chrom_fitness: 26
+            init_config: *id060
+            input_neurons: *id061
+            neurons: 11
+            output_neuron: 10
+            rule_status:
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            rules: *id062
+            synapses: 18
+          18:
+            chrom_fitness: 25
+            init_config: *id063
+            input_neurons: *id064
+            neurons: 11
+            output_neuron: 10
+            rule_status:
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            rules: *id065
+            synapses: 18
+          19:
+            chrom_fitness: 25
+            init_config: *id066
+            input_neurons: *id067
+            neurons: 11
+            output_neuron: 10
+            rule_status:
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            rules: *id068
+            synapses: 18
+          20:
+            chrom_fitness: 25
+            init_config: *id131
+            input_neurons: *id132
+            neurons: 11
+            output_neuron: 10
+            rule_status:
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            rules: *id133
+            synapses: 18
+          21:
+            chrom_fitness: 26
+            init_config: *id134
+            input_neurons: *id135
+            neurons: 11
+            output_neuron: 10
+            rule_status:
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            rules: *id136
+            synapses: 18
+          22:
             chrom_fitness: 26
             init_config: *id137
             input_neurons: *id138
@@ -12575,9 +11772,562 @@ runs:
             - -1
             - -1
             - -1
+            - -1
+            - -1
+            - -1
             rules: *id139
             synapses: 18
-          9:
+          23:
+            chrom_fitness: 26
+            init_config: *id140
+            input_neurons: *id141
+            neurons: 11
+            output_neuron: 10
+            rule_status:
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            rules: *id142
+            synapses: 18
+          24:
+            chrom_fitness: 26
+            init_config: *id143
+            input_neurons: *id144
+            neurons: 11
+            output_neuron: 10
+            rule_status:
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            rules: *id145
+            synapses: 18
+          25:
+            chrom_fitness: 26
+            init_config: *id146
+            input_neurons: *id147
+            neurons: 11
+            output_neuron: 10
+            rule_status:
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            rules: *id148
+            synapses: 18
+          26:
+            chrom_fitness: 26
+            init_config: *id149
+            input_neurons: *id150
+            neurons: 11
+            output_neuron: 10
+            rule_status:
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            rules: *id151
+            synapses: 18
+          27:
+            chrom_fitness: 25
+            init_config: *id152
+            input_neurons: *id153
+            neurons: 11
+            output_neuron: 10
+            rule_status:
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            rules: *id154
+            synapses: 18
+          28:
+            chrom_fitness: 26
+            init_config: *id155
+            input_neurons: *id156
+            neurons: 11
+            output_neuron: 10
+            rule_status:
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            rules: *id157
+            synapses: 18
+          29:
+            chrom_fitness: 26
+            init_config: *id158
+            input_neurons: *id159
+            neurons: 11
+            output_neuron: 10
+            rule_status:
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            rules: *id160
+            synapses: 18
+          30:
+            chrom_fitness: 26
+            init_config: *id161
+            input_neurons: *id162
+            neurons: 11
+            output_neuron: 10
+            rule_status:
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            rules: *id163
+            synapses: 18
+          31:
+            chrom_fitness: 26
+            init_config: *id164
+            input_neurons: *id165
+            neurons: 11
+            output_neuron: 10
+            rule_status:
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            rules: *id166
+            synapses: 18
+          32:
+            chrom_fitness: 24
+            init_config: *id167
+            input_neurons: *id168
+            neurons: 11
+            output_neuron: 10
+            rule_status:
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            rules: *id169
+            synapses: 18
+          33:
+            chrom_fitness: 26
+            init_config: *id170
+            input_neurons: *id171
+            neurons: 11
+            output_neuron: 10
+            rule_status:
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            rules: *id172
+            synapses: 18
+          34:
+            chrom_fitness: 26
+            init_config: *id173
+            input_neurons: *id174
+            neurons: 11
+            output_neuron: 10
+            rule_status:
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            rules: *id175
+            synapses: 18
+          35:
+            chrom_fitness: 25
+            init_config: *id176
+            input_neurons: *id177
+            neurons: 11
+            output_neuron: 10
+            rule_status:
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            rules: *id178
+            synapses: 18
+          36:
+            chrom_fitness: 26
+            init_config: *id179
+            input_neurons: *id180
+            neurons: 11
+            output_neuron: 10
+            rule_status:
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            rules: *id181
+            synapses: 18
+          37:
+            chrom_fitness: 24
+            init_config: *id182
+            input_neurons: *id183
+            neurons: 11
+            output_neuron: 10
+            rule_status:
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            rules: *id184
+            synapses: 18
+          38:
+            chrom_fitness: 24
+            init_config: *id185
+            input_neurons: *id186
+            neurons: 11
+            output_neuron: 10
+            rule_status:
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            rules: *id187
+            synapses: 18
+          39:
+            chrom_fitness: 26
+            init_config: *id188
+            input_neurons: *id189
+            neurons: 11
+            output_neuron: 10
+            rule_status:
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            rules: *id190
+            synapses: 18
+      1:
+        best_chromosome_indexes:
+        - 0
+        - 39
+        best_fitness_result: 28
+        rssnp_chromosomes:
+          0:
+            chrom_fitness: 28
+            init_config: *id054
+            input_neurons: *id055
+            neurons: 11
+            output_neuron: 10
+            rule_status:
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            rules: *id056
+            synapses: 18
+          1:
+            chrom_fitness: 26
+            init_config: *id009
+            input_neurons: *id010
+            neurons: 11
+            output_neuron: 10
+            rule_status:
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            rules: *id011
+            synapses: 18
+          2:
             chrom_fitness: 26
             init_config: *id012
             input_neurons: *id013
@@ -12607,7 +12357,7 @@ runs:
             - -1
             rules: *id014
             synapses: 18
-          10:
+          3:
             chrom_fitness: 26
             init_config: *id015
             input_neurons: *id016
@@ -12640,36 +12390,7 @@ runs:
             - -1
             rules: *id017
             synapses: 18
-          11:
-            chrom_fitness: 26
-            init_config: *id066
-            input_neurons: *id067
-            neurons: 11
-            output_neuron: 10
-            rule_status:
-            - -1
-            - -1
-            - -1
-            - -1
-            - -1
-            - -1
-            - -1
-            - -1
-            - -1
-            - -1
-            - -1
-            - -1
-            - -1
-            - -1
-            - -1
-            - -1
-            - -1
-            - -1
-            - -1
-            - -1
-            rules: *id068
-            synapses: 18
-          12:
+          4:
             chrom_fitness: 26
             init_config: *id018
             input_neurons: *id019
@@ -12696,7 +12417,7 @@ runs:
             - -1
             rules: *id020
             synapses: 18
-          13:
+          5:
             chrom_fitness: 26
             init_config: *id021
             input_neurons: *id022
@@ -12727,38 +12448,7 @@ runs:
             - -1
             rules: *id023
             synapses: 18
-          14:
-            chrom_fitness: 26
-            init_config: *id149
-            input_neurons: *id150
-            neurons: 11
-            output_neuron: 10
-            rule_status:
-            - -1
-            - -1
-            - -1
-            - -1
-            - -1
-            - -1
-            - -1
-            - -1
-            - -1
-            - -1
-            - -1
-            - -1
-            - -1
-            - -1
-            - -1
-            - -1
-            - -1
-            - -1
-            - -1
-            - -1
-            - -1
-            - -1
-            rules: *id151
-            synapses: 18
-          15:
+          6:
             chrom_fitness: 26
             init_config: *id024
             input_neurons: *id025
@@ -12788,37 +12478,7 @@ runs:
             - -1
             rules: *id026
             synapses: 18
-          16:
-            chrom_fitness: 26
-            init_config: *id054
-            input_neurons: *id055
-            neurons: 11
-            output_neuron: 10
-            rule_status:
-            - -1
-            - -1
-            - -1
-            - -1
-            - -1
-            - -1
-            - -1
-            - -1
-            - -1
-            - -1
-            - -1
-            - -1
-            - -1
-            - -1
-            - -1
-            - -1
-            - -1
-            - -1
-            - -1
-            - -1
-            - -1
-            rules: *id056
-            synapses: 18
-          17:
+          7:
             chrom_fitness: 26
             init_config: *id027
             input_neurons: *id028
@@ -12846,36 +12506,7 @@ runs:
             - -1
             rules: *id029
             synapses: 18
-          18:
-            chrom_fitness: 26
-            init_config: *id051
-            input_neurons: *id052
-            neurons: 11
-            output_neuron: 10
-            rule_status:
-            - -1
-            - -1
-            - -1
-            - -1
-            - -1
-            - -1
-            - -1
-            - -1
-            - -1
-            - -1
-            - -1
-            - -1
-            - -1
-            - -1
-            - -1
-            - -1
-            - -1
-            - -1
-            - -1
-            - -1
-            rules: *id053
-            synapses: 18
-          19:
+          8:
             chrom_fitness: 26
             init_config: *id030
             input_neurons: *id031
@@ -12905,8 +12536,340 @@ runs:
             - -1
             rules: *id032
             synapses: 18
+          9:
+            chrom_fitness: 26
+            init_config: *id033
+            input_neurons: *id034
+            neurons: 11
+            output_neuron: 10
+            rule_status:
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            rules: *id035
+            synapses: 18
+          10:
+            chrom_fitness: 26
+            init_config: *id036
+            input_neurons: *id037
+            neurons: 11
+            output_neuron: 10
+            rule_status:
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            rules: *id038
+            synapses: 18
+          11:
+            chrom_fitness: 26
+            init_config: *id039
+            input_neurons: *id040
+            neurons: 11
+            output_neuron: 10
+            rule_status:
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            rules: *id041
+            synapses: 18
+          12:
+            chrom_fitness: 26
+            init_config: *id042
+            input_neurons: *id043
+            neurons: 11
+            output_neuron: 10
+            rule_status:
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            rules: *id044
+            synapses: 18
+          13:
+            chrom_fitness: 26
+            init_config: *id045
+            input_neurons: *id046
+            neurons: 11
+            output_neuron: 10
+            rule_status:
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            rules: *id047
+            synapses: 18
+          14:
+            chrom_fitness: 26
+            init_config: *id051
+            input_neurons: *id052
+            neurons: 11
+            output_neuron: 10
+            rule_status:
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            rules: *id053
+            synapses: 18
+          15:
+            chrom_fitness: 26
+            init_config: *id057
+            input_neurons: *id058
+            neurons: 11
+            output_neuron: 10
+            rule_status:
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            rules: *id059
+            synapses: 18
+          16:
+            chrom_fitness: 26
+            init_config: *id060
+            input_neurons: *id061
+            neurons: 11
+            output_neuron: 10
+            rule_status:
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            rules: *id062
+            synapses: 18
+          17:
+            chrom_fitness: 26
+            init_config: *id134
+            input_neurons: *id135
+            neurons: 11
+            output_neuron: 10
+            rule_status:
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            rules: *id136
+            synapses: 18
+          18:
+            chrom_fitness: 26
+            init_config: *id137
+            input_neurons: *id138
+            neurons: 11
+            output_neuron: 10
+            rule_status:
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            rules: *id139
+            synapses: 18
+          19:
+            chrom_fitness: 26
+            init_config: *id140
+            input_neurons: *id141
+            neurons: 11
+            output_neuron: 10
+            rule_status:
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            rules: *id142
+            synapses: 18
           20:
-            chrom_fitness: 22
+            chrom_fitness: 24
             init_config:
             - 0
             - 0
@@ -12925,9 +12888,6 @@ runs:
             neurons: 11
             output_neuron: 10
             rule_status:
-            - -1
-            - -1
-            - -1
             - -1
             - -1
             - -1
@@ -12974,46 +12934,37 @@ runs:
               - 1
               - 1
               - 0
-            - - 9
-              - 10
-              - &id193
-                - 2
-                - 0
+            - - 1
+              - 5
+              - *id191
               - 1
               - 1
               - 0
             - - 2
-              - 10
+              - 9
               - - 1
                 - 0
               - 1
               - 1
               - 0
-            - - 3
-              - 9
+            - - 4
+              - 8
               - *id191
               - 1
-              - 0
-              - 0
-            - - 4
-              - 5
-              - - 1
-                - 0
-              - 1
               - 1
               - 0
             - - 4
-              - 9
-              - - 1
-                - 0
-              - 1
-              - 1
-              - 0
-            - - 5
-              - 9
-              - - 3
-                - 0
               - 2
+              - - 1
+                - 0
+              - 1
+              - 0
+              - 0
+            - - 1
+              - 9
+              - - 1
+                - 0
+              - 1
               - 1
               - 0
             - - 6
@@ -13021,7 +12972,7 @@ runs:
               - - 1
                 - 0
               - 1
-              - 0
+              - 1
               - 0
             - - 7
               - 8
@@ -13030,21 +12981,7 @@ runs:
               - 1
               - 0
               - 0
-            - - 7
-              - 3
-              - - 1
-                - 0
-              - 1
-              - 1
-              - 0
             - - 8
-              - 6
-              - - 1
-                - 0
-              - 1
-              - 1
-              - 0
-            - - 5
               - 7
               - - 1
                 - 0
@@ -13053,9 +12990,17 @@ runs:
               - 0
             - - 9
               - 10
-              - *id191
+              - - 4
+                - 0
+              - 4
               - 1
               - 0
+            - - 9
+              - 10
+              - - 2
+                - 0
+              - 1
+              - 1
               - 0
             - - 9
               - 10
@@ -13063,13 +13008,6 @@ runs:
                 - 0
               - 2
               - 0
-              - 0
-            - - 9
-              - 10
-              - - 4
-                - 0
-              - 4
-              - 1
               - 0
             - - 9
               - 10
@@ -13101,7 +13039,7 @@ runs:
               - 0
             synapses: 18
           21:
-            chrom_fitness: 23
+            chrom_fitness: 26
             init_config:
             - 0
             - 0
@@ -13120,9 +13058,6 @@ runs:
             neurons: 11
             output_neuron: 10
             rule_status:
-            - -1
-            - -1
-            - -1
             - -1
             - -1
             - -1
@@ -13177,25 +13112,12 @@ runs:
               - 0
             - - 3
               - 9
-              - *id193
-              - 2
-              - 2
-              - 0
-            - - 3
-              - 9
               - *id192
               - 1
               - 1
               - 0
             - - 4
               - 5
-              - - 1
-                - 0
-              - 1
-              - 1
-              - 0
-            - - 4
-              - 9
               - - 1
                 - 0
               - 1
@@ -13203,43 +13125,40 @@ runs:
               - 0
             - - 5
               - 9
-              - *id192
-              - 1
+              - - 1
+                - 0
               - 1
               - 0
-            - - 4
-              - 5
+              - 0
+            - - 5
+              - 9
               - - 2
                 - 0
               - 2
-              - 2
+              - 1
               - 0
             - - 5
               - 9
-              - - 3
+              - &id193
+                - 3
                 - 0
-              - 2
+              - 1
               - 1
               - 0
-            - - 6
-              - 7
+            - - 3
+              - 5
+              - - 1
+                - 0
+              - 1
+              - 0
+              - 0
+            - - 7
+              - 2
               - - 1
                 - 0
               - 1
               - 1
               - 0
-            - - 7
-              - 8
-              - *id192
-              - 1
-              - 1
-              - 0
-            - - 8
-              - 6
-              - *id192
-              - 1
-              - 1
-              - 0
             - - 9
               - 10
               - *id192
@@ -13248,17 +13167,16 @@ runs:
               - 0
             - - 9
               - 10
-              - - 3
+              - - 2
                 - 0
+              - 1
+              - 1
+              - 0
+            - - 9
+              - 10
+              - *id193
               - 2
               - 0
-              - 0
-            - - 9
-              - 10
-              - - 4
-                - 0
-              - 4
-              - 1
               - 0
             - - 9
               - 10
@@ -13290,7 +13208,7 @@ runs:
               - 0
             synapses: 18
           22:
-            chrom_fitness: 23
+            chrom_fitness: 26
             init_config:
             - 0
             - 0
@@ -13309,8 +13227,6 @@ runs:
             neurons: 11
             output_neuron: 10
             rule_status:
-            - -1
-            - -1
             - -1
             - -1
             - -1
@@ -13366,27 +13282,12 @@ runs:
               - 0
             - - 3
               - 9
-              - &id195
-                - 2
-                - 0
-              - 2
-              - 2
-              - 0
-            - - 3
-              - 9
               - *id194
               - 1
               - 1
               - 0
             - - 4
               - 5
-              - - 1
-                - 0
-              - 1
-              - 1
-              - 0
-            - - 4
-              - 9
               - - 1
                 - 0
               - 1
@@ -13394,40 +13295,37 @@ runs:
               - 0
             - - 5
               - 9
-              - *id194
-              - 1
+              - - 1
+                - 0
               - 1
               - 0
-            - - 4
-              - 5
+              - 0
+            - - 5
+              - 9
               - - 2
                 - 0
               - 2
-              - 2
+              - 1
               - 0
             - - 5
               - 9
-              - - 3
+              - &id195
+                - 3
                 - 0
-              - 2
+              - 1
               - 1
               - 0
-            - - 6
-              - 7
+            - - 3
+              - 5
               - - 1
                 - 0
               - 1
-              - 1
+              - 0
               - 0
             - - 7
-              - 8
-              - *id194
-              - 1
-              - 1
-              - 0
-            - - 8
-              - 6
-              - *id194
+              - 2
+              - - 1
+                - 0
               - 1
               - 1
               - 0
@@ -13436,26 +13334,33 @@ runs:
               - *id194
               - 1
               - 0
+              - 0
+            - - 9
+              - 10
+              - - 2
+                - 0
+              - 1
+              - 1
               - 0
             - - 9
               - 10
               - *id195
-              - 1
-              - 1
-              - 0
-            - - 9
-              - 10
-              - - 3
-                - 0
               - 2
               - 0
               - 0
+            - - 4
+              - 9
+              - - 1
+                - 0
+              - 1
+              - 0
+              - 0
             - - 9
               - 10
-              - - 4
+              - - 5
                 - 0
-              - 4
-              - 1
+              - 5
+              - 0
               - 0
             - - 9
               - 10
@@ -13480,7 +13385,7 @@ runs:
               - 0
             synapses: 18
           23:
-            chrom_fitness: 24
+            chrom_fitness: 26
             init_config:
             - 0
             - 0
@@ -13499,6 +13404,9 @@ runs:
             neurons: 11
             output_neuron: 10
             rule_status:
+            - -1
+            - -1
+            - -1
             - -1
             - -1
             - -1
@@ -13551,12 +13459,52 @@ runs:
               - 1
               - 1
               - 0
-            - - 3
+            - - 2
+              - 3
+              - *id196
+              - 1
               - 0
+              - 0
+            - - 0
+              - 9
               - - 2
                 - 0
               - 2
               - 2
+              - 0
+            - - 3
+              - 7
+              - *id196
+              - 1
+              - 0
+              - 0
+            - - 9
+              - 10
+              - - 4
+                - 0
+              - 4
+              - 1
+              - 0
+            - - 5
+              - 9
+              - - 2
+                - 0
+              - 1
+              - 1
+              - 0
+            - - 5
+              - 9
+              - - 1
+                - 0
+              - 1
+              - 1
+              - 0
+            - - 6
+              - 7
+              - - 1
+                - 0
+              - 1
+              - 0
               - 0
             - - 3
               - 5
@@ -13564,23 +13512,8 @@ runs:
               - 1
               - 1
               - 0
-            - - 4
-              - 9
-              - - 1
-                - 0
-              - 1
-              - 0
-              - 0
-            - - 5
-              - 4
-              - &id197
-                - 3
-                - 0
-              - 1
-              - 1
-              - 0
-            - - 6
-              - 10
+            - - 1
+              - 8
               - - 1
                 - 0
               - 1
@@ -13590,7 +13523,34 @@ runs:
               - 9
               - *id196
               - 1
+              - 0
+              - 0
+            - - 8
+              - 7
+              - - 1
+                - 0
               - 1
+              - 1
+              - 0
+            - - 9
+              - 10
+              - *id196
+              - 1
+              - 0
+              - 0
+            - - 9
+              - 10
+              - - 2
+                - 0
+              - 1
+              - 1
+              - 0
+            - - 9
+              - 10
+              - - 3
+                - 0
+              - 2
+              - 0
               - 0
             - - 9
               - 10
@@ -13601,7 +13561,165 @@ runs:
               - 0
             - - 9
               - 10
-              - *id196
+              - - 6
+                - 0
+              - 5
+              - 1
+              - 0
+            - - 9
+              - 10
+              - - 8
+                - 0
+              - 8
+              - 0
+              - 0
+            synapses: 18
+          24:
+            chrom_fitness: 26
+            init_config:
+            - 0
+            - 0
+            - 0
+            - 0
+            - 0
+            - 0
+            - 1
+            - 0
+            - 0
+            - 0
+            - 0
+            input_neurons:
+            - 0
+            - 1
+            neurons: 11
+            output_neuron: 10
+            rule_status:
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            rules:
+            - - 0
+              - 2
+              - &id197
+                - 1
+                - 0
+              - 1
+              - 1
+              - 0
+            - - 0
+              - 4
+              - *id197
+              - 1
+              - 1
+              - 0
+            - - 1
+              - 3
+              - *id197
+              - 1
+              - 1
+              - 0
+            - - 1
+              - 5
+              - *id197
+              - 1
+              - 1
+              - 0
+            - - 2
+              - 3
+              - - 1
+                - 0
+              - 1
+              - 0
+              - 0
+            - - 0
+              - 9
+              - - 2
+                - 0
+              - 2
+              - 2
+              - 0
+            - - 3
+              - 7
+              - *id197
+              - 1
+              - 0
+              - 0
+            - - 4
+              - 9
+              - - 1
+                - 0
+              - 1
+              - 0
+              - 0
+            - - 5
+              - 9
+              - - 2
+                - 0
+              - 1
+              - 1
+              - 0
+            - - 5
+              - 9
+              - - 1
+                - 0
+              - 1
+              - 1
+              - 0
+            - - 6
+              - 7
+              - - 1
+                - 0
+              - 1
+              - 0
+              - 0
+            - - 3
+              - 5
+              - *id197
+              - 1
+              - 1
+              - 0
+            - - 1
+              - 8
+              - - 1
+                - 0
+              - 1
+              - 1
+              - 0
+            - - 7
+              - 9
+              - *id197
+              - 1
+              - 0
+              - 0
+            - - 8
+              - 7
+              - - 1
+                - 0
+              - 1
+              - 1
+              - 0
+            - - 9
+              - 10
+              - *id197
               - 1
               - 0
               - 0
@@ -13614,7 +13732,8 @@ runs:
               - 0
             - - 9
               - 10
-              - *id197
+              - - 3
+                - 0
               - 2
               - 0
               - 0
@@ -13627,16 +13746,16 @@ runs:
               - 0
             - - 9
               - 10
-              - - 6
+              - - 5
                 - 0
               - 5
-              - 1
+              - 0
               - 0
             - - 9
               - 10
-              - - 7
+              - - 6
                 - 0
-              - 7
+              - 5
               - 1
               - 0
             - - 9
@@ -13647,8 +13766,8 @@ runs:
               - 0
               - 0
             synapses: 18
-          24:
-            chrom_fitness: 24
+          25:
+            chrom_fitness: 26
             init_config:
             - 0
             - 0
@@ -13656,7 +13775,7 @@ runs:
             - 0
             - 0
             - 0
-            - 1
+            - 0
             - 0
             - 0
             - 0
@@ -13688,25 +13807,19 @@ runs:
             - -1
             rules:
             - - 0
-              - 2
+              - 3
+              - *id197
+              - 1
+              - 1
+              - 0
+            - - 0
+              - 4
               - &id198
                 - 1
                 - 0
               - 1
               - 1
               - 0
-            - - 0
-              - 3
-              - *id198
-              - 1
-              - 1
-              - 0
-            - - 0
-              - 4
-              - *id198
-              - 1
-              - 1
-              - 0
             - - 1
               - 3
               - *id198
@@ -13720,19 +13833,19 @@ runs:
               - 1
               - 0
             - - 3
-              - 0
-              - - 2
-                - 0
-              - 2
-              - 2
-              - 0
-            - - 3
-              - 5
+              - 9
               - *id198
               - 1
               - 1
               - 0
             - - 4
+              - 5
+              - - 1
+                - 0
+              - 1
+              - 1
+              - 0
+            - - 5
               - 9
               - - 1
                 - 0
@@ -13740,28 +13853,29 @@ runs:
               - 0
               - 0
             - - 5
-              - 4
+              - 9
+              - - 2
+                - 0
+              - 2
+              - 1
+              - 0
+            - - 5
+              - 9
               - &id199
                 - 3
                 - 0
               - 1
               - 1
               - 0
-            - - 6
-              - 10
+            - - 3
+              - 5
               - - 1
                 - 0
               - 1
-              - 1
               - 0
-            - - 7
-              - 9
-              - *id198
-              - 1
-              - 1
               - 0
-            - - 8
-              - 6
+            - - 2
+              - 1
               - - 1
                 - 0
               - 1
@@ -13788,10 +13902,10 @@ runs:
               - 0
             - - 9
               - 10
-              - - 8
+              - - 4
                 - 0
-              - 8
-              - 0
+              - 4
+              - 1
               - 0
             - - 9
               - 10
@@ -13814,8 +13928,14 @@ runs:
               - 7
               - 1
               - 0
+            - - 7
+              - 8
+              - *id198
+              - 1
+              - 1
+              - 0
             synapses: 18
-          25:
+          26:
             chrom_fitness: 26
             init_config:
             - 0
@@ -13824,7 +13944,7 @@ runs:
             - 0
             - 0
             - 0
-            - 1
+            - 0
             - 0
             - 0
             - 0
@@ -13835,6 +13955,8 @@ runs:
             neurons: 11
             output_neuron: 10
             rule_status:
+            - -1
+            - -1
             - -1
             - -1
             - -1
@@ -13888,41 +14010,51 @@ runs:
               - 0
             - - 3
               - 9
-              - - 1
-                - 0
+              - *id200
               - 1
-              - 0
+              - 1
               - 0
             - - 4
-              - 9
+              - 5
               - - 1
                 - 0
               - 1
-              - 0
+              - 1
               - 0
             - - 5
               - 9
               - - 1
                 - 0
               - 1
-              - 1
               - 0
-            - - 6
-              - 8
-              - *id200
-              - 1
-              - 1
               - 0
             - - 8
-              - 3
-              - - 1
+              - 10
+              - &id202
+                - 1
                 - 0
               - 1
               - 1
               - 0
-            - - 7
+            - - 5
               - 9
-              - *id200
+              - &id201
+                - 3
+                - 0
+              - 1
+              - 1
+              - 0
+            - - 3
+              - 5
+              - - 1
+                - 0
+              - 1
+              - 0
+              - 0
+            - - 7
+              - 2
+              - - 1
+                - 0
               - 1
               - 1
               - 0
@@ -13941,8 +14073,7 @@ runs:
               - 0
             - - 9
               - 10
-              - - 3
-                - 0
+              - *id201
               - 2
               - 0
               - 0
@@ -13974,8 +14105,14 @@ runs:
               - 7
               - 1
               - 0
+            - - 7
+              - 8
+              - *id200
+              - 1
+              - 1
+              - 0
             synapses: 18
-          26:
+          27:
             chrom_fitness: 26
             init_config:
             - 0
@@ -14011,87 +14148,75 @@ runs:
             - -1
             - -1
             - -1
-            - -1
-            - -1
             rules:
             - - 0
               - 2
-              - &id201
-                - 1
-                - 0
+              - *id202
               - 1
               - 1
               - 0
             - - 0
               - 3
-              - *id201
+              - *id202
               - 1
               - 1
               - 0
             - - 0
               - 4
-              - *id201
+              - *id202
               - 1
               - 1
               - 0
             - - 1
               - 3
-              - *id201
+              - *id202
               - 1
               - 1
               - 0
             - - 1
               - 5
-              - *id201
+              - *id202
               - 1
               - 1
               - 0
             - - 3
               - 9
-              - - 1
+              - - 2
                 - 0
               - 1
-              - 0
+              - 1
               - 0
             - - 4
-              - 9
+              - 5
               - - 1
                 - 0
               - 1
+              - 1
               - 0
+            - - 0
+              - 9
+              - &id203
+                - 2
+                - 0
+              - 2
+              - 2
               - 0
             - - 5
               - 9
-              - - 1
-                - 0
-              - 1
-              - 1
-              - 0
-            - - 6
-              - 8
-              - *id201
-              - 1
-              - 1
-              - 0
-            - - 8
-              - 3
-              - - 1
-                - 0
-              - 1
-              - 1
-              - 0
-            - - 9
-              - 10
-              - &id202
-                - 1
-                - 0
-              - 1
-              - 0
-              - 0
-            - - 9
-              - 10
               - - 2
                 - 0
+              - 2
+              - 1
+              - 0
+            - - 9
+              - 10
+              - *id202
+              - 1
+              - 0
+              - 0
+            - - 9
+              - 10
+              - *id203
               - 1
               - 1
               - 0
@@ -14101,13 +14226,6 @@ runs:
                 - 0
               - 2
               - 0
-              - 0
-            - - 9
-              - 10
-              - - 4
-                - 0
-              - 4
-              - 1
               - 0
             - - 9
               - 10
@@ -14138,7 +14256,153 @@ runs:
               - 0
               - 0
             synapses: 18
-          27:
+          28:
+            chrom_fitness: 26
+            init_config:
+            - 0
+            - 0
+            - 0
+            - 0
+            - 0
+            - 0
+            - 1
+            - 0
+            - 0
+            - 0
+            - 0
+            input_neurons:
+            - 0
+            - 1
+            neurons: 11
+            output_neuron: 10
+            rule_status:
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            rules:
+            - - 0
+              - 2
+              - &id204
+                - 1
+                - 0
+              - 1
+              - 1
+              - 0
+            - - 0
+              - 3
+              - *id204
+              - 1
+              - 1
+              - 0
+            - - 0
+              - 4
+              - *id204
+              - 1
+              - 1
+              - 0
+            - - 1
+              - 3
+              - *id204
+              - 1
+              - 1
+              - 0
+            - - 1
+              - 5
+              - *id204
+              - 1
+              - 1
+              - 0
+            - - 3
+              - 9
+              - - 2
+                - 0
+              - 1
+              - 1
+              - 0
+            - - 4
+              - 5
+              - - 1
+                - 0
+              - 1
+              - 1
+              - 0
+            - - 0
+              - 9
+              - &id205
+                - 2
+                - 0
+              - 2
+              - 2
+              - 0
+            - - 8
+              - 10
+              - *id204
+              - 1
+              - 1
+              - 0
+            - - 9
+              - 10
+              - *id204
+              - 1
+              - 0
+              - 0
+            - - 9
+              - 10
+              - *id205
+              - 1
+              - 1
+              - 0
+            - - 9
+              - 10
+              - - 3
+                - 0
+              - 2
+              - 0
+              - 0
+            - - 9
+              - 10
+              - - 5
+                - 0
+              - 5
+              - 0
+              - 0
+            - - 7
+              - 9
+              - &id206
+                - 1
+                - 0
+              - 1
+              - 1
+              - 0
+            - - 9
+              - 10
+              - - 7
+                - 0
+              - 7
+              - 1
+              - 0
+            - - 9
+              - 10
+              - - 8
+                - 0
+              - 8
+              - 0
+              - 0
+            synapses: 18
+          29:
             chrom_fitness: 24
             init_config:
             - 0
@@ -14177,165 +14441,71 @@ runs:
             - -1
             - -1
             - -1
-            - -1
-            - -1
-            - -1
-            - -1
-            - -1
-            - -1
-            - -1
-            - -1
             rules:
             - - 0
               - 2
-              - *id202
+              - *id206
               - 1
               - 1
               - 0
             - - 0
               - 3
-              - *id202
+              - *id206
               - 1
               - 1
               - 0
             - - 0
               - 4
-              - *id202
+              - *id206
               - 1
               - 1
               - 0
             - - 1
               - 3
-              - *id202
+              - *id206
               - 1
               - 1
               - 0
             - - 1
               - 5
-              - *id202
-              - 1
-              - 1
-              - 0
-            - - 2
-              - 9
-              - *id202
+              - *id206
               - 1
               - 1
               - 0
             - - 3
-              - 9
+              - 0
               - - 2
                 - 0
               - 2
               - 2
               - 0
             - - 3
-              - 9
-              - *id202
-              - 1
-              - 1
-              - 0
-            - - 4
               - 5
-              - *id202
+              - *id206
               - 1
               - 1
               - 0
             - - 4
               - 9
-              - *id202
-              - 1
-              - 1
-              - 0
-            - - 5
-              - 9
-              - *id202
-              - 1
-              - 1
-              - 0
-            - - 5
-              - 9
-              - &id203
-                - 2
+              - - 1
                 - 0
-              - 2
-              - 2
+              - 1
+              - 0
               - 0
             - - 5
-              - 9
-              - &id204
+              - 4
+              - &id207
                 - 3
                 - 0
-              - 2
-              - 1
-              - 0
-            - - 6
-              - 7
-              - *id202
               - 1
               - 1
               - 0
             - - 6
-              - 8
-              - *id202
-              - 1
-              - 1
-              - 0
-            - - 7
-              - 5
-              - *id202
-              - 1
-              - 1
-              - 0
-            - - 7
-              - 8
-              - *id202
-              - 1
-              - 1
-              - 0
-            - - 7
-              - 9
-              - *id202
-              - 1
-              - 1
-              - 0
-            - - 8
-              - 6
-              - *id202
-              - 1
-              - 1
-              - 0
-            - - 8
-              - 7
-              - *id202
-              - 1
-              - 1
-              - 0
-            - - 9
               - 10
-              - *id203
-              - 1
-              - 1
-              - 0
-            - - 9
-              - 10
-              - *id204
-              - 2
-              - 0
-              - 0
-            - - 9
-              - 10
-              - - 4
+              - - 1
                 - 0
-              - 4
               - 1
-              - 0
-            - - 9
-              - 10
-              - - 5
-                - 0
-              - 5
-              - 0
+              - 1
               - 0
             - - 9
               - 10
@@ -14344,200 +14514,23 @@ runs:
               - 5
               - 1
               - 0
-            - - 9
-              - 10
-              - - 7
-                - 0
-              - 7
-              - 1
-              - 0
-            - - 9
-              - 10
-              - - 8
-                - 0
-              - 8
-              - 0
-              - 0
-            synapses: 18
-          28:
-            chrom_fitness: 23
-            init_config:
-            - 0
-            - 0
-            - 0
-            - 0
-            - 0
-            - 0
-            - 1
-            - 0
-            - 0
-            - 0
-            - 0
-            input_neurons:
-            - 0
-            - 1
-            neurons: 11
-            output_neuron: 10
-            rule_status:
-            - -1
-            - -1
-            - -1
-            - -1
-            - -1
-            - -1
-            - -1
-            - -1
-            - -1
-            - -1
-            - -1
-            - -1
-            - -1
-            - -1
-            - -1
-            - -1
-            - -1
-            - -1
-            - -1
-            - -1
-            - -1
-            - -1
-            - -1
-            - -1
-            - -1
-            - -1
-            - -1
-            rules:
-            - - 0
-              - 2
-              - &id205
-                - 1
-                - 0
-              - 1
-              - 1
-              - 0
-            - - 0
-              - 3
-              - *id205
-              - 1
-              - 1
-              - 0
-            - - 0
-              - 4
-              - *id205
-              - 1
-              - 1
-              - 0
-            - - 1
-              - 3
-              - *id205
-              - 1
-              - 1
-              - 0
-            - - 1
-              - 5
-              - *id205
-              - 1
-              - 1
-              - 0
-            - - 2
-              - 9
-              - - 1
-                - 0
-              - 1
-              - 1
-              - 0
-            - - 3
-              - 9
-              - &id206
-                - 2
-                - 0
-              - 2
-              - 2
-              - 0
-            - - 3
-              - 9
-              - *id205
-              - 1
-              - 1
-              - 0
-            - - 4
-              - 5
-              - *id205
-              - 1
-              - 1
-              - 0
-            - - 4
-              - 9
-              - *id205
-              - 1
-              - 1
-              - 0
-            - - 5
-              - 9
-              - *id205
-              - 1
-              - 1
-              - 0
-            - - 5
-              - 9
-              - *id206
-              - 2
-              - 2
-              - 0
-            - - 5
-              - 9
-              - &id207
-                - 3
-                - 0
-              - 2
-              - 1
-              - 0
-            - - 6
-              - 7
-              - *id205
-              - 1
-              - 1
-              - 0
-            - - 7
-              - 8
-              - - 1
-                - 0
-              - 1
-              - 1
-              - 0
-            - - 7
-              - 5
-              - *id205
-              - 1
-              - 1
-              - 0
-            - - 7
-              - 9
-              - *id205
-              - 1
-              - 1
-              - 0
             - - 8
               - 6
-              - *id205
+              - - 1
+                - 0
               - 1
               - 1
-              - 0
-            - - 8
-              - 7
-              - *id205
-              - 1
-              - 1
-              - 0
-            - - 9
-              - 10
-              - *id205
-              - 1
-              - 0
               - 0
             - - 9
               - 10
               - *id206
+              - 1
+              - 0
+              - 0
+            - - 9
+              - 10
+              - - 2
+                - 0
               - 1
               - 1
               - 0
@@ -14563,13 +14556,6 @@ runs:
               - 0
             - - 9
               - 10
-              - - 6
-                - 0
-              - 5
-              - 1
-              - 0
-            - - 9
-              - 10
               - - 7
                 - 0
               - 7
@@ -14583,8 +14569,8 @@ runs:
               - 0
               - 0
             synapses: 18
-          29:
-            chrom_fitness: 26
+          30:
+            chrom_fitness: 24
             init_config:
             - 0
             - 0
@@ -14592,7 +14578,7 @@ runs:
             - 0
             - 0
             - 0
-            - 0
+            - 1
             - 0
             - 0
             - 0
@@ -14603,7 +14589,6 @@ runs:
             neurons: 11
             output_neuron: 10
             rule_status:
-            - -1
             - -1
             - -1
             - -1
@@ -14657,49 +14642,48 @@ runs:
               - 1
               - 0
             - - 3
-              - 6
-              - - 1
+              - 0
+              - - 2
                 - 0
+              - 2
+              - 2
+              - 0
+            - - 3
+              - 5
+              - *id208
               - 1
               - 1
               - 0
             - - 4
-              - 5
-              - - 1
-                - 0
-              - 1
-              - 1
-              - 0
-            - - 5
               - 9
               - - 1
                 - 0
               - 1
-              - 1
+              - 0
               - 0
             - - 5
-              - 2
-              - - 3
-                - 0
-              - 2
-              - 1
-              - 0
-            - - 6
-              - 8
-              - - 1
+              - 4
+              - &id209
+                - 3
                 - 0
               - 1
               - 1
               - 0
             - - 6
-              - 9
+              - 10
               - - 1
                 - 0
+              - 1
+              - 1
+              - 0
+            - - 7
+              - 9
+              - *id208
               - 1
               - 1
               - 0
             - - 8
-              - 4
+              - 6
               - - 1
                 - 0
               - 1
@@ -14720,195 +14704,9 @@ runs:
               - 0
             - - 9
               - 10
-              - - 3
-                - 0
+              - *id209
               - 2
               - 0
-              - 0
-            - - 9
-              - 10
-              - - 4
-                - 0
-              - 4
-              - 1
-              - 0
-            - - 9
-              - 10
-              - - 5
-                - 0
-              - 5
-              - 0
-              - 0
-            - - 9
-              - 10
-              - - 6
-                - 0
-              - 5
-              - 1
-              - 0
-            - - 9
-              - 10
-              - - 7
-                - 0
-              - 7
-              - 1
-              - 0
-            - - 9
-              - 10
-              - - 8
-                - 0
-              - 8
-              - 0
-              - 0
-            synapses: 18
-          30:
-            chrom_fitness: 26
-            init_config:
-            - 0
-            - 0
-            - 0
-            - 0
-            - 0
-            - 0
-            - 0
-            - 0
-            - 0
-            - 0
-            - 0
-            input_neurons:
-            - 0
-            - 1
-            neurons: 11
-            output_neuron: 10
-            rule_status:
-            - -1
-            - -1
-            - -1
-            - -1
-            - -1
-            - -1
-            - -1
-            - -1
-            - -1
-            - -1
-            - -1
-            - -1
-            - -1
-            - -1
-            - -1
-            - -1
-            - -1
-            - -1
-            - -1
-            - -1
-            rules:
-            - - 0
-              - 2
-              - &id209
-                - 1
-                - 0
-              - 1
-              - 1
-              - 0
-            - - 0
-              - 3
-              - *id209
-              - 1
-              - 1
-              - 0
-            - - 0
-              - 4
-              - *id209
-              - 1
-              - 1
-              - 0
-            - - 1
-              - 3
-              - *id209
-              - 1
-              - 1
-              - 0
-            - - 1
-              - 5
-              - *id209
-              - 1
-              - 1
-              - 0
-            - - 3
-              - 6
-              - - 1
-                - 0
-              - 1
-              - 1
-              - 0
-            - - 4
-              - 5
-              - - 1
-                - 0
-              - 1
-              - 1
-              - 0
-            - - 5
-              - 9
-              - - 1
-                - 0
-              - 1
-              - 1
-              - 0
-            - - 5
-              - 2
-              - - 3
-                - 0
-              - 2
-              - 1
-              - 0
-            - - 6
-              - 8
-              - - 1
-                - 0
-              - 1
-              - 1
-              - 0
-            - - 7
-              - 8
-              - - 1
-                - 0
-              - 1
-              - 1
-              - 0
-            - - 6
-              - 9
-              - - 1
-                - 0
-              - 1
-              - 1
-              - 0
-            - - 8
-              - 4
-              - - 1
-                - 0
-              - 1
-              - 1
-              - 0
-            - - 9
-              - 10
-              - *id209
-              - 1
-              - 0
-              - 0
-            - - 9
-              - 10
-              - - 3
-                - 0
-              - 2
-              - 0
-              - 0
-            - - 9
-              - 10
-              - - 4
-                - 0
-              - 4
-              - 1
               - 0
             - - 9
               - 10
@@ -14940,7 +14738,7 @@ runs:
               - 0
             synapses: 18
           31:
-            chrom_fitness: 24
+            chrom_fitness: 26
             init_config:
             - 0
             - 0
@@ -14977,19 +14775,20 @@ runs:
             - -1
             - -1
             - -1
+            - -1
+            - -1
             rules:
-            - - 9
-              - 10
-              - - 2
+            - - 0
+              - 2
+              - &id210
+                - 1
                 - 0
               - 1
               - 1
               - 0
             - - 0
               - 3
-              - &id210
-                - 1
-                - 0
+              - *id210
               - 1
               - 1
               - 0
@@ -15011,12 +14810,40 @@ runs:
               - 1
               - 1
               - 0
-            - - 3
-              - 9
+            - - 5
+              - 2
               - - 1
                 - 0
               - 1
               - 1
+              - 0
+            - - 5
+              - 9
+              - - 2
+                - 0
+              - 1
+              - 1
+              - 0
+            - - 3
+              - 1
+              - - 1
+                - 0
+              - 1
+              - 0
+              - 0
+            - - 9
+              - 10
+              - - 4
+                - 0
+              - 4
+              - 1
+              - 0
+            - - 6
+              - 9
+              - - 1
+                - 0
+              - 1
+              - 0
               - 0
             - - 5
               - 9
@@ -15026,36 +14853,31 @@ runs:
               - 1
               - 0
             - - 4
-              - 5
-              - *id210
-              - 1
-              - 0
-              - 0
-            - - 7
-              - 9
-              - - 1
-                - 0
-              - 1
-              - 1
-              - 0
-            - - 7
               - 8
               - *id210
               - 1
               - 1
+              - 0
+            - - 5
+              - 8
+              - - 1
+                - 0
+              - 1
+              - 0
               - 0
             - - 8
               - 6
               - - 1
                 - 0
               - 1
-              - 1
+              - 0
               - 0
             - - 9
               - 10
-              - *id210
+              - - 2
+                - 0
               - 1
-              - 0
+              - 1
               - 0
             - - 9
               - 10
@@ -15063,13 +14885,6 @@ runs:
                 - 0
               - 2
               - 0
-              - 0
-            - - 9
-              - 10
-              - - 4
-                - 0
-              - 4
-              - 1
               - 0
             - - 9
               - 10
@@ -15101,7 +14916,7 @@ runs:
               - 0
             synapses: 18
           32:
-            chrom_fitness: 23
+            chrom_fitness: 26
             init_config:
             - 0
             - 0
@@ -15148,10 +14963,11 @@ runs:
               - 1
               - 1
               - 0
-            - - 0
-              - 3
-              - *id211
-              - 1
+            - - 9
+              - 10
+              - - 6
+                - 0
+              - 5
               - 1
               - 0
             - - 0
@@ -15172,12 +14988,33 @@ runs:
               - 1
               - 1
               - 0
-            - - 3
-              - 9
+            - - 5
+              - 2
               - - 1
                 - 0
               - 1
               - 1
+              - 0
+            - - 3
+              - 1
+              - - 1
+                - 0
+              - 1
+              - 0
+              - 0
+            - - 9
+              - 10
+              - - 4
+                - 0
+              - 4
+              - 1
+              - 0
+            - - 6
+              - 9
+              - - 1
+                - 0
+              - 1
+              - 0
               - 0
             - - 5
               - 9
@@ -15187,37 +15024,24 @@ runs:
               - 1
               - 0
             - - 4
-              - 5
-              - *id211
-              - 1
-              - 0
-              - 0
-            - - 4
-              - 9
-              - - 1
-                - 0
-              - 1
-              - 1
-              - 0
-            - - 7
-              - 9
-              - - 1
-                - 0
-              - 1
-              - 1
-              - 0
-            - - 7
               - 8
               - *id211
               - 1
               - 1
+              - 0
+            - - 5
+              - 8
+              - - 1
+                - 0
+              - 1
+              - 0
               - 0
             - - 8
               - 6
               - - 1
                 - 0
               - 1
-              - 1
+              - 0
               - 0
             - - 9
               - 10
@@ -15241,17 +15065,10 @@ runs:
               - 0
             - - 9
               - 10
-              - - 4
-                - 0
-              - 4
-              - 1
-              - 0
-            - - 9
-              - 10
-              - - 6
+              - - 5
                 - 0
               - 5
-              - 1
+              - 0
               - 0
             - - 9
               - 10
@@ -15269,7 +15086,7 @@ runs:
               - 0
             synapses: 18
           33:
-            chrom_fitness: 23
+            chrom_fitness: 26
             init_config:
             - 0
             - 0
@@ -15304,9 +15121,6 @@ runs:
             - -1
             - -1
             - -1
-            - -1
-            - -1
-            - -1
             rules:
             - - 0
               - 2
@@ -15322,12 +15136,11 @@ runs:
               - 1
               - 1
               - 0
-            - - 9
-              - 10
-              - - 5
-                - 0
-              - 5
-              - 0
+            - - 0
+              - 4
+              - *id212
+              - 1
+              - 1
               - 0
             - - 1
               - 3
@@ -15341,64 +15154,43 @@ runs:
               - 1
               - 1
               - 0
-            - - 2
+            - - 3
               - 9
-              - - 1
-                - 0
-              - 1
-              - 1
-              - 0
-            - - 4
-              - 8
-              - *id212
-              - 1
-              - 1
-              - 0
-            - - 4
-              - 2
-              - - 1
-                - 0
-              - 1
-              - 0
-              - 0
-            - - 1
-              - 9
-              - - 1
-                - 0
-              - 1
-              - 1
-              - 0
-            - - 6
-              - 7
-              - - 1
-                - 0
-              - 1
-              - 1
-              - 0
-            - - 7
-              - 8
-              - - 1
-                - 0
-              - 1
-              - 0
-              - 0
-            - - 8
-              - 7
-              - - 1
-                - 0
-              - 1
-              - 1
-              - 0
-            - - 9
-              - 10
-              - *id212
-              - 1
-              - 0
-              - 0
-            - - 9
-              - 10
               - - 2
                 - 0
+              - 1
+              - 1
+              - 0
+            - - 4
+              - 5
+              - - 1
+                - 0
+              - 1
+              - 1
+              - 0
+            - - 0
+              - 9
+              - &id213
+                - 2
+                - 0
+              - 2
+              - 2
+              - 0
+            - - 8
+              - 10
+              - *id212
+              - 1
+              - 1
+              - 0
+            - - 9
+              - 10
+              - *id212
+              - 1
+              - 0
+              - 0
+            - - 9
+              - 10
+              - *id213
               - 1
               - 1
               - 0
@@ -15418,10 +15210,10 @@ runs:
               - 0
             - - 9
               - 10
-              - - 6
+              - - 5
                 - 0
               - 5
-              - 1
+              - 0
               - 0
             - - 9
               - 10
@@ -15474,187 +15266,6 @@ runs:
             - -1
             - -1
             - -1
-            - -1
-            - -1
-            - -1
-            - -1
-            rules:
-            - - 0
-              - 2
-              - &id213
-                - 1
-                - 0
-              - 1
-              - 1
-              - 0
-            - - 0
-              - 3
-              - *id213
-              - 1
-              - 1
-              - 0
-            - - 0
-              - 4
-              - *id213
-              - 1
-              - 1
-              - 0
-            - - 1
-              - 3
-              - *id213
-              - 1
-              - 1
-              - 0
-            - - 1
-              - 5
-              - *id213
-              - 1
-              - 1
-              - 0
-            - - 2
-              - 9
-              - - 1
-                - 0
-              - 1
-              - 1
-              - 0
-            - - 4
-              - 8
-              - *id213
-              - 1
-              - 1
-              - 0
-            - - 4
-              - 2
-              - - 1
-                - 0
-              - 1
-              - 0
-              - 0
-            - - 1
-              - 9
-              - - 1
-                - 0
-              - 1
-              - 1
-              - 0
-            - - 6
-              - 7
-              - - 1
-                - 0
-              - 1
-              - 1
-              - 0
-            - - 7
-              - 8
-              - - 1
-                - 0
-              - 1
-              - 0
-              - 0
-            - - 8
-              - 7
-              - - 1
-                - 0
-              - 1
-              - 1
-              - 0
-            - - 9
-              - 10
-              - *id213
-              - 1
-              - 0
-              - 0
-            - - 9
-              - 10
-              - - 2
-                - 0
-              - 1
-              - 1
-              - 0
-            - - 9
-              - 10
-              - - 3
-                - 0
-              - 2
-              - 0
-              - 0
-            - - 9
-              - 10
-              - - 4
-                - 0
-              - 4
-              - 1
-              - 0
-            - - 9
-              - 10
-              - - 5
-                - 0
-              - 5
-              - 0
-              - 0
-            - - 9
-              - 10
-              - - 6
-                - 0
-              - 5
-              - 1
-              - 0
-            - - 9
-              - 10
-              - - 7
-                - 0
-              - 7
-              - 1
-              - 0
-            - - 9
-              - 10
-              - - 8
-                - 0
-              - 8
-              - 0
-              - 0
-            synapses: 18
-          35:
-            chrom_fitness: 26
-            init_config:
-            - 0
-            - 0
-            - 0
-            - 0
-            - 0
-            - 0
-            - 1
-            - 0
-            - 0
-            - 0
-            - 0
-            input_neurons:
-            - 0
-            - 1
-            neurons: 11
-            output_neuron: 10
-            rule_status:
-            - -1
-            - -1
-            - -1
-            - -1
-            - -1
-            - -1
-            - -1
-            - -1
-            - -1
-            - -1
-            - -1
-            - -1
-            - -1
-            - -1
-            - -1
-            - -1
-            - -1
-            - -1
-            - -1
-            - -1
             rules:
             - - 0
               - 2
@@ -15688,48 +15299,30 @@ runs:
               - 1
               - 1
               - 0
-            - - 0
-              - 9
-              - - 1
-                - 0
-              - 1
-              - 0
-              - 0
-            - - 1
-              - 9
-              - - 2
-                - 0
-              - 2
-              - 2
-              - 0
             - - 3
               - 9
-              - *id214
-              - 1
-              - 1
-              - 0
-            - - 5
-              - 10
               - - 2
                 - 0
               - 1
+              - 1
               - 0
-              - 0
-            - - 6
-              - 7
+            - - 4
+              - 5
               - - 1
                 - 0
               - 1
-              - 0
-              - 0
-            - - 7
-              - 8
-              - *id214
               - 1
               - 0
+            - - 0
+              - 9
+              - &id215
+                - 2
+                - 0
+              - 2
+              - 2
               - 0
             - - 8
-              - 7
+              - 10
               - *id214
               - 1
               - 1
@@ -15742,8 +15335,7 @@ runs:
               - 0
             - - 9
               - 10
-              - - 2
-                - 0
+              - *id215
               - 1
               - 1
               - 0
@@ -15777,20 +15369,13 @@ runs:
               - 0
             - - 9
               - 10
-              - - 7
-                - 0
-              - 7
-              - 1
-              - 0
-            - - 9
-              - 10
               - - 8
                 - 0
               - 8
               - 0
               - 0
             synapses: 18
-          36:
+          35:
             chrom_fitness: 26
             init_config:
             - 0
@@ -15811,172 +15396,6 @@ runs:
             output_neuron: 10
             rule_status:
             - -1
-            - -1
-            - -1
-            - -1
-            - -1
-            - -1
-            - -1
-            - -1
-            - -1
-            - -1
-            - -1
-            - -1
-            - -1
-            - -1
-            - -1
-            - -1
-            - -1
-            - -1
-            - -1
-            rules:
-            - - 0
-              - 2
-              - &id215
-                - 1
-                - 0
-              - 1
-              - 1
-              - 0
-            - - 0
-              - 3
-              - *id215
-              - 1
-              - 1
-              - 0
-            - - 0
-              - 4
-              - *id215
-              - 1
-              - 1
-              - 0
-            - - 1
-              - 3
-              - *id215
-              - 1
-              - 1
-              - 0
-            - - 1
-              - 5
-              - *id215
-              - 1
-              - 1
-              - 0
-            - - 0
-              - 9
-              - - 1
-                - 0
-              - 1
-              - 0
-              - 0
-            - - 1
-              - 9
-              - - 2
-                - 0
-              - 2
-              - 2
-              - 0
-            - - 3
-              - 9
-              - *id215
-              - 1
-              - 1
-              - 0
-            - - 5
-              - 10
-              - - 2
-                - 0
-              - 1
-              - 0
-              - 0
-            - - 9
-              - 10
-              - - 2
-                - 0
-              - 1
-              - 1
-              - 0
-            - - 7
-              - 8
-              - *id215
-              - 1
-              - 0
-              - 0
-            - - 8
-              - 7
-              - *id215
-              - 1
-              - 1
-              - 0
-            - - 9
-              - 10
-              - *id215
-              - 1
-              - 0
-              - 0
-            - - 9
-              - 10
-              - - 3
-                - 0
-              - 2
-              - 0
-              - 0
-            - - 9
-              - 10
-              - - 4
-                - 0
-              - 4
-              - 1
-              - 0
-            - - 9
-              - 10
-              - - 5
-                - 0
-              - 5
-              - 0
-              - 0
-            - - 9
-              - 10
-              - - 6
-                - 0
-              - 5
-              - 1
-              - 0
-            - - 9
-              - 10
-              - - 7
-                - 0
-              - 7
-              - 1
-              - 0
-            - - 9
-              - 10
-              - - 8
-                - 0
-              - 8
-              - 0
-              - 0
-            synapses: 18
-          37:
-            chrom_fitness: 24
-            init_config:
-            - 0
-            - 0
-            - 0
-            - 0
-            - 0
-            - 0
-            - 1
-            - 0
-            - 0
-            - 0
-            - 0
-            input_neurons:
-            - 0
-            - 1
-            neurons: 11
-            output_neuron: 10
-            rule_status:
             - -1
             - -1
             - -1
@@ -16031,52 +15450,67 @@ runs:
               - 1
               - 1
               - 0
-            - - 2
-              - 7
-              - *id216
+            - - 5
+              - 2
+              - - 1
+                - 0
+              - 1
               - 1
               - 0
-              - 0
-            - - 3
+            - - 5
               - 9
               - - 2
                 - 0
-              - 2
-              - 2
+              - 1
+              - 1
               - 0
             - - 3
+              - 1
+              - - 1
+                - 0
+              - 1
+              - 0
+              - 0
+            - - 4
               - 5
-              - *id216
+              - - 1
+                - 0
+              - 1
+              - 1
+              - 0
+            - - 2
+              - 5
+              - - 1
+                - 0
+              - 1
+              - 0
+              - 0
+            - - 5
+              - 9
+              - - 1
+                - 0
               - 1
               - 1
               - 0
             - - 4
-              - 9
-              - - 1
-                - 0
-              - 1
-              - 1
-              - 0
-            - - 5
-              - 9
+              - 8
               - *id216
               - 1
               - 1
               - 0
             - - 5
-              - 9
-              - &id217
-                - 3
-                - 0
-              - 2
-              - 1
-              - 0
-            - - 7
-              - 5
+              - 8
               - - 1
                 - 0
               - 1
+              - 0
+              - 0
+            - - 8
+              - 6
+              - - 1
+                - 0
               - 1
+              - 0
               - 0
             - - 8
               - 7
@@ -16091,16 +15525,204 @@ runs:
               - 1
               - 0
               - 0
-            - - 6
+            - - 9
+              - 10
+              - - 2
+                - 0
+              - 1
+              - 1
+              - 0
+            - - 9
+              - 10
+              - - 3
+                - 0
+              - 2
+              - 0
+              - 0
+            - - 9
+              - 10
+              - - 4
+                - 0
+              - 4
+              - 1
+              - 0
+            - - 9
+              - 10
+              - - 7
+                - 0
               - 7
+              - 1
+              - 0
+            - - 9
+              - 10
+              - - 6
+                - 0
+              - 5
+              - 1
+              - 0
+            - - 9
+              - 10
+              - - 8
+                - 0
+              - 8
+              - 0
+              - 0
+            synapses: 18
+          36:
+            chrom_fitness: 26
+            init_config:
+            - 0
+            - 0
+            - 0
+            - 0
+            - 0
+            - 0
+            - 1
+            - 0
+            - 0
+            - 0
+            - 0
+            input_neurons:
+            - 0
+            - 1
+            neurons: 11
+            output_neuron: 10
+            rule_status:
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            rules:
+            - - 0
+              - 2
+              - &id217
+                - 1
+                - 0
+              - 1
+              - 1
+              - 0
+            - - 0
+              - 3
+              - *id217
+              - 1
+              - 1
+              - 0
+            - - 0
+              - 4
+              - *id217
+              - 1
+              - 1
+              - 0
+            - - 1
+              - 3
+              - *id217
+              - 1
+              - 1
+              - 0
+            - - 1
+              - 5
+              - *id217
+              - 1
+              - 1
+              - 0
+            - - 5
+              - 2
+              - - 1
+                - 0
+              - 1
+              - 1
+              - 0
+            - - 5
+              - 9
+              - - 2
+                - 0
+              - 1
+              - 1
+              - 0
+            - - 3
+              - 1
               - - 1
                 - 0
               - 1
               - 0
               - 0
+            - - 4
+              - 5
+              - - 1
+                - 0
+              - 1
+              - 1
+              - 0
+            - - 2
+              - 5
+              - - 1
+                - 0
+              - 1
+              - 0
+              - 0
+            - - 5
+              - 9
+              - - 1
+                - 0
+              - 1
+              - 1
+              - 0
+            - - 4
+              - 8
+              - *id217
+              - 1
+              - 1
+              - 0
+            - - 5
+              - 8
+              - - 1
+                - 0
+              - 1
+              - 0
+              - 0
+            - - 8
+              - 6
+              - - 1
+                - 0
+              - 1
+              - 0
+              - 0
+            - - 8
+              - 7
+              - - 1
+                - 0
+              - 1
+              - 1
+              - 0
             - - 9
               - 10
-              - *id217
+              - - 2
+                - 0
+              - 1
+              - 1
+              - 0
+            - - 9
+              - 10
+              - - 3
+                - 0
               - 2
               - 0
               - 0
@@ -16140,8 +15762,8 @@ runs:
               - 0
               - 0
             synapses: 18
-          38:
-            chrom_fitness: 24
+          37:
+            chrom_fitness: 26
             init_config:
             - 0
             - 0
@@ -16149,7 +15771,175 @@ runs:
             - 0
             - 0
             - 0
+            - 0
+            - 0
+            - 0
+            - 0
+            - 0
+            input_neurons:
+            - 0
             - 1
+            neurons: 11
+            output_neuron: 10
+            rule_status:
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            - -1
+            rules:
+            - - 9
+              - 10
+              - *id217
+              - 1
+              - 0
+              - 0
+            - - 0
+              - 3
+              - &id218
+                - 1
+                - 0
+              - 1
+              - 1
+              - 0
+            - - 0
+              - 4
+              - *id218
+              - 1
+              - 1
+              - 0
+            - - 1
+              - 3
+              - *id218
+              - 1
+              - 1
+              - 0
+            - - 1
+              - 5
+              - *id218
+              - 1
+              - 1
+              - 0
+            - - 3
+              - 4
+              - - 2
+                - 0
+              - 2
+              - 2
+              - 0
+            - - 6
+              - 5
+              - *id218
+              - 1
+              - 1
+              - 0
+            - - 4
+              - 9
+              - - 1
+                - 0
+              - 1
+              - 1
+              - 0
+            - - 5
+              - 3
+              - - 1
+                - 0
+              - 1
+              - 0
+              - 0
+            - - 7
+              - 5
+              - - 1
+                - 0
+              - 1
+              - 1
+              - 0
+            - - 7
+              - 8
+              - *id218
+              - 1
+              - 1
+              - 0
+            - - 9
+              - 6
+              - - 1
+                - 0
+              - 1
+              - 1
+              - 0
+            - - 9
+              - 10
+              - - 2
+                - 0
+              - 1
+              - 1
+              - 0
+            - - 9
+              - 10
+              - - 3
+                - 0
+              - 2
+              - 0
+              - 0
+            - - 9
+              - 10
+              - - 4
+                - 0
+              - 4
+              - 1
+              - 0
+            - - 9
+              - 10
+              - - 5
+                - 0
+              - 5
+              - 0
+              - 0
+            - - 9
+              - 10
+              - - 6
+                - 0
+              - 5
+              - 1
+              - 0
+            - - 3
+              - 5
+              - *id218
+              - 1
+              - 1
+              - 0
+            - - 9
+              - 10
+              - - 8
+                - 0
+              - 8
+              - 0
+              - 0
+            synapses: 18
+          38:
+            chrom_fitness: 26
+            init_config:
+            - 0
+            - 0
+            - 0
+            - 0
+            - 0
+            - 0
+            - 0
             - 0
             - 0
             - 0
@@ -16182,7 +15972,7 @@ runs:
             rules:
             - - 0
               - 2
-              - &id218
+              - &id219
                 - 1
                 - 0
               - 1
@@ -16190,61 +15980,54 @@ runs:
               - 0
             - - 0
               - 3
-              - *id218
+              - *id219
               - 1
               - 1
               - 0
             - - 0
               - 4
-              - *id218
+              - *id219
               - 1
               - 1
               - 0
             - - 1
               - 3
-              - *id218
+              - *id219
               - 1
               - 1
               - 0
             - - 1
               - 5
-              - *id218
+              - *id219
               - 1
               - 1
-              - 0
-            - - 2
-              - 7
-              - *id218
-              - 1
-              - 0
               - 0
             - - 3
-              - 9
+              - 4
               - - 2
                 - 0
               - 2
               - 2
               - 0
-            - - 3
+            - - 6
               - 5
-              - *id218
+              - *id219
               - 1
               - 1
               - 0
-            - - 9
-              - 10
-              - - 7
+            - - 4
+              - 9
+              - - 1
                 - 0
-              - 7
+              - 1
               - 1
               - 0
             - - 5
-              - 9
-              - &id219
-                - 3
+              - 3
+              - - 1
                 - 0
-              - 2
               - 1
+              - 0
               - 0
             - - 7
               - 5
@@ -16253,8 +16036,14 @@ runs:
               - 1
               - 1
               - 0
-            - - 8
-              - 7
+            - - 7
+              - 8
+              - *id219
+              - 1
+              - 1
+              - 0
+            - - 9
+              - 6
               - - 1
                 - 0
               - 1
@@ -16262,7 +16051,7 @@ runs:
               - 0
             - - 9
               - 10
-              - *id218
+              - *id219
               - 1
               - 0
               - 0
@@ -16275,16 +16064,10 @@ runs:
               - 0
             - - 9
               - 10
-              - *id219
+              - - 3
+                - 0
               - 2
               - 0
-              - 0
-            - - 9
-              - 10
-              - - 4
-                - 0
-              - 4
-              - 1
               - 0
             - - 9
               - 10
@@ -16300,6 +16083,12 @@ runs:
               - 5
               - 1
               - 0
+            - - 3
+              - 5
+              - *id219
+              - 1
+              - 1
+              - 0
             - - 9
               - 10
               - - 8
@@ -16309,7 +16098,7 @@ runs:
               - 0
             synapses: 18
           39:
-            chrom_fitness: 24
+            chrom_fitness: 28
             init_config:
             - 0
             - 0
@@ -16317,7 +16106,7 @@ runs:
             - 0
             - 0
             - 0
-            - 1
+            - 0
             - 0
             - 0
             - 0
@@ -16328,7 +16117,6 @@ runs:
             neurons: 11
             output_neuron: 10
             rule_status:
-            - -1
             - -1
             - -1
             - -1
@@ -16382,59 +16170,61 @@ runs:
               - 1
               - 1
               - 0
-            - - 8
-              - 9
-              - - 1
-                - 0
-              - 1
-              - 1
-              - 0
             - - 3
-              - 2
-              - *id220
-              - 1
-              - 1
-              - 0
-            - - 2
-              - 9
-              - - 1
-                - 0
-              - 1
-              - 1
-              - 0
-            - - 5
-              - 9
-              - - 1
-                - 0
-              - 1
-              - 1
-              - 0
-            - - 5
-              - 9
-              - - 3
-                - 0
-              - 2
-              - 1
-              - 0
-            - - 6
-              - 10
-              - - 1
-                - 0
-              - 1
-              - 1
-              - 0
-            - - 1
               - 6
               - - 1
                 - 0
               - 1
               - 1
               - 0
-            - - 8
-              - 0
-              - *id220
+            - - 4
+              - 5
+              - - 1
+                - 0
+              - 1
               - 1
               - 0
+            - - 5
+              - 9
+              - - 1
+                - 0
+              - 1
+              - 1
+              - 0
+            - - 5
+              - 2
+              - - 3
+                - 0
+              - 2
+              - 1
+              - 0
+            - - 6
+              - 8
+              - - 1
+                - 0
+              - 1
+              - 1
+              - 0
+            - - 7
+              - 8
+              - - 1
+                - 0
+              - 1
+              - 1
+              - 0
+            - - 6
+              - 9
+              - - 1
+                - 0
+              - 1
+              - 1
+              - 0
+            - - 8
+              - 4
+              - - 1
+                - 0
+              - 1
+              - 1
               - 0
             - - 9
               - 10
@@ -16465,23 +16255,16 @@ runs:
               - 0
             - - 9
               - 10
-              - - 5
-                - 0
-              - 5
-              - 0
-              - 0
-            - - 9
-              - 10
               - - 6
                 - 0
               - 5
               - 1
               - 0
-            - - 4
-              - 9
-              - - 1
+            - - 9
+              - 10
+              - - 7
                 - 0
-              - 1
+              - 7
               - 1
               - 0
             - - 9
