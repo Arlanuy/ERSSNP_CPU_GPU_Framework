@@ -86,7 +86,7 @@ def program_main():
 		generations = int(input("How many generation would you like to do (min of 1): "))
 		population_size = int(input("How many RSSNP should be in the population? "))
 		mutation_rate = int((input("How likely should it mutate in percentage? "))) * 100
-		print("Of the Parent Selection methods:\n 0. **Top 50% of the population**\n1. **25% of the population based on fitness**\n2. **Top 25% + 25% of the population based on fitness**")
+		print("Of the Parent Selection methods:\n 0. **Top 50% of the population**\n1. **50% of the population based on random**\n2. **Top 25% + 25% of the population based on fitness**")
 		selection_func = int(input("Which would you use?"))
 		print("Of the Fitness Selection methods:\n 0. Longest Common Subsequence\n1. Longest Common Substring\n2. Edit Distance Method")
 		fitness_func = int(input("Which would you use?"))
