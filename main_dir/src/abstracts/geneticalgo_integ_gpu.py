@@ -305,7 +305,7 @@ class SNPGeneticAlgoGPU:
 			test_case_file = open(ga_params['test_cases_path'], 'r')
 			len_dataset = len(list(test_case_file))
 			dataset2, row_width, col_width = self.dataset_arrange3(len_dataset, ga_params['test_cases_path'])
-			output_dataset_lengths = numpy.zeros(len_dataset)
+			output_dataset_lengths = numpy.zeros(len_dataset, dtype = numpy.int32)
 			for z in range(0, len_dataset):
 				bitstring_length = len(dataset[z])
 				single_length = int(bitstring_length / 3)
@@ -318,6 +318,7 @@ class SNPGeneticAlgoGPU:
 				#print("datasub input 2 ", dataset[z][inout_pairs_view[z][0][0][1]:inout_pairs_view[z][single_length - 1][0][1]])
 				#print("minuend ", len(dataset[z]), " subtrahend ", inout_pairs_view[z][0][0][-1], "datasub output", dataset[z][inout_pairs_view[z][0][0][-1]:inout_pairs_view[z][single_length - 1][0][-1]])
 				output_dataset_lengths[z] = len(dataset[z]) - inout_pairs_view[z][0][0][2]
+				#print("dataset lengths is ", output_dataset_lengths[z], " at z ", z)
 				maxSteps = 3 * output_dataset_lengths[z]  
 				#print("maxsteps ", maxSteps)
 				output_dataset = dataset[z][inout_pairs_view[z][0][0][2]:inout_pairs_view[z][single_length - 1][0][2]] 	
@@ -338,7 +339,7 @@ class SNPGeneticAlgoGPU:
 				chromosome['out_pairs'].append((chromosome['system'].main((config, chromosome['system'].ruleStatus), maxSteps), output_dataset))
 			
 			line_index = 0
-			output_rssnp_lengths = numpy.zeros(len(list(chromosome['out_pairs'])))
+			output_rssnp_lengths = numpy.zeros(len(list(chromosome['out_pairs'])), dtype = numpy.int32)
 			max_spike_size = 20
 			output_rssnp_numpy = numpy.zeros(shape=(int(len_dataset/max_numpy_arraylen) + 1, max_numpy_arraylen, max_spike_size), dtype=numpy.int32)
 			
@@ -353,6 +354,7 @@ class SNPGeneticAlgoGPU:
 				#numpy.concatenate((n,np.zeros((n.shape[0], max_spike_size - len(m[0])))), axis=0)
 				#numpy.hstack([n,np.zeros([n.shape[0], max_spike_size - len(m[0])])])
 				output_rssnp_lengths[line_index] = len(n)
+				#print("out rssnp lengths is ", len(n), " at m ", m)
 				n = based_init(n, abs(max_spike_size - len(m[0])))
 				#print("numpy n is ", n)
 				for index_value in range(max_spike_size):
