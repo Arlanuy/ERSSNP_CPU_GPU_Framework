@@ -195,8 +195,8 @@ def GPUeditDistDP(output_dataset, output_spike_train, max_row_width, max_col_wid
            //printf("on thread %d i constrained by %d j constrained by %d", z, output_rssnp_lengths[z], output_dataset_lengths[z]);
            //printf("with content %d", result_mat_gpu[z]);
            //printf("row width is %d col width is %d", row_width, col_width);
-           int j_constraint = 8;//output_dataset_lengths[z];
-           int i_constraint = 9;//output_rssnp_lengths[z];
+           int j_constraint = output_dataset_lengths[z];
+           int i_constraint = output_rssnp_lengths[z];
            int* max_val = 0;
            for (int j = 0; j < j_constraint; j++) {
                 
@@ -217,7 +217,7 @@ def GPUeditDistDP(output_dataset, output_spike_train, max_row_width, max_col_wid
 
                     else{
                         int delt = 1;
-                        if (dataset_gpu[z * row_width + (i-1)] == output_gpu[z * col_width + (j-1)]) {  
+                        if (dataset_gpu[z * row_width + (j-1)] != output_gpu[z * col_width + (i-1)]) {  
                             delt = 0;
                         }
                         int* LCSuff_col_decrem = &LCSuff[(z*len_dataset*col_width*len_dataset*row_width) + ((j-1)*len_dataset*row_width + i*row_width + i)];
@@ -261,12 +261,12 @@ def GPUeditDistDP(output_dataset, output_spike_train, max_row_width, max_col_wid
 
         #print("LCSuff line is ", LCSuff[z][0])
     #print("LCSuff orig is ", LCSuff)
-
+    print("output dataset lengths is ", output_dataset_lengths)
+    print("output rssnp lengths is ", output_rssnp_lengths)
     #c = numpy.ndarray(shape= output_dataset_lengths.shape, buffer =  output_dataset_lengths, dtype=numpy.int32) 
     #d = numpy.ndarray(shape= output_rssnp_lengths.shape, buffer =  output_rssnp_lengths, dtype=numpy.int32) 
-    c = pg.get(output_dataset_lengths)
-    d = pg.get(output_rssnp_lengths)
-
+    #c = pg.get(output_dataset_lengths)
+    #d = pg.get(output_rssnp_lengths)
     #print("c and d are magically ", c, " and ",  d, " with type ", type(c))
     #inout_pairs_view_gpu = drv.mem_alloc(inout_pairs_view.size * inout_pairs_view.dtype.itemsize)
     a_gpu = drv.mem_alloc(a.size * a.dtype.itemsize)
@@ -278,16 +278,16 @@ def GPUeditDistDP(output_dataset, output_spike_train, max_row_width, max_col_wid
     #func(drv.In(a), drv.InOut(e), np.int32(N), block=block_size, grid=grid_size)
     #c_gpu = drv.mem_alloc(c.size * c.dtype.itemsize)
     #d_gpu = drv.mem_alloc(d.size * d.dtype.itemsize)
-    c_gpu = drv.mem_alloc(c.nbytes)
-    d_gpu = drv.mem_alloc(d.nbytes)
-    #c_gpu = gpuarray.to_gpu(output_dataset_lengths)
-    #d_gpu = gpuarray.to_gpu(output_rssnp_lengths)
+    #c_gpu = drv.mem_alloc(c.nbytes)
+    #d_gpu = drv.mem_alloc(d.nbytes)
+    c_gpu = gpuarray.to_gpu(output_dataset_lengths.astype(numpy.int32))
+    d_gpu = gpuarray.to_gpu(output_rssnp_lengths.astype(numpy.int32))
 
     drv.memcpy_htod(a_gpu, a)
     drv.memcpy_htod(b_gpu, b)
     drv.memcpy_htod(LCSuff_gpu, LCSuff)
-    drv.memcpy_htod(c_gpu, c)
-    drv.memcpy_htod(d_gpu, d)
+    #drv.memcpy_htod(c_gpu, c)
+    #drv.memcpy_htod(d_gpu, d)
     #print("FINALLY entered with values ", c, " and ", d)
     root_num = math.ceil(math.sqrt(len_dataset))
     thread_num = root_num % 1024
@@ -297,8 +297,8 @@ def GPUeditDistDP(output_dataset, output_spike_train, max_row_width, max_col_wid
     ED(result_mat_gpu, a_gpu,b_gpu, numpy.int32(row_width), numpy.int32(col_width), numpy.int32(len_dataset), LCSuff_gpu, c_gpu, d_gpu, block=(thread_num,1,1),grid=(thread_num,1,1))
     timer_gpu.toc()
     timer_write("Evaluate", timer_gpu.time())
-    drv.memcpy_dtoh(d, d_gpu)
-    drv.memcpy_dtoh(c, c_gpu)
+    #drv.memcpy_dtoh(d, d_gpu)
+    #drv.memcpy_dtoh(c, c_gpu)
     drv.memcpy_dtoh(result_mat, result_mat_gpu)
     drv.memcpy_dtoh(LCSuff, LCSuff_gpu)
     #print("result mat is ", result_mat)
