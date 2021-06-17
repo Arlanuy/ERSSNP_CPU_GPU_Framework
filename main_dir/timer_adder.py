@@ -37,7 +37,6 @@ time_reader_sub_extra_gpu = open(os.getcwd()+ "\\timer_directory\\gpusubextra22o
 
 time_input_files = [time_reader_and_minimal, time_reader_and_minimal_gpu, time_reader_and_adversarial, time_reader_and_adversarial_gpu, time_reader_and_extra, time_reader_and_extra_gpu, time_reader_or_minimal, time_reader_or_minimal_gpu, time_reader_or_adversarial, time_reader_or_adversarial_gpu, time_reader_or_extra, time_reader_or_extra_gpu, time_reader_not_minimal, time_reader_not_minimal_gpu, time_reader_not_adversarial, time_reader_not_adversarial_gpu, time_reader_not_extra, time_reader_not_extra_gpu, time_reader_add_minimal, time_reader_add_minimal_gpu, time_reader_add_adversarial, time_reader_add_adversarial_gpu, time_reader_add_extra, time_reader_add_extra_gpu, time_reader_sub_minimal, time_reader_sub_minimal_gpu, time_reader_sub_adversarial, time_reader_sub_adversarial_gpu, time_reader_sub_extra, time_reader_sub_extra_gpu]
 
-format_string = compile('GpuTimer: secs = {0}')
 def atof(s, gpu_format):
 	while s:
 		try:

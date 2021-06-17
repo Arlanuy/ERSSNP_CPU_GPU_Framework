@@ -2,7 +2,7 @@ from src.abstracts.rssnp import *
 from src.abstracts.gpu_fitness import *
 from src.abstracts.gpu_crossover import *
 from src.abstracts.gpu_selection import *
-
+from src.abstracts.gpu_timer import timer_write_run
 
 import yaml, numpy, random, os, time
 
@@ -99,7 +99,7 @@ class SNPGeneticAlgoGPU:
 		    # Get top 50%
 		    parents = self.pop[:int(len(self.pop)/2)]
 		elif selection_func == 1:
-		    # Get random 50%
+		    # Get random 25%
 		    total_fitness = 0
 		    
 		    for chrom in self.pop:
@@ -113,7 +113,7 @@ class SNPGeneticAlgoGPU:
 		    if total_fitness != 0:
 		    	#self.selection_helper(self.pop, parents, int(len(self.pop)/2))
 		        i = 0
-		        while len(parents) != int(len(self.pop)/2):
+		        while len(parents) != int(len(self.pop)/4):
 		            if random.randint(0,total_fitness) <= self.pop[-i]['fitness'] and not (self.pop[-i] in parents):    # chance to become parent is fitness/total fitness
 		                parents.insert(0,self.pop[-i])
 		            i = (i + 1) % len(self.pop)
@@ -438,7 +438,7 @@ class SNPGeneticAlgoGPU:
 		ga_params = conf_load(filename)
 		    
 		start = 0
-
+		timer_write_run(run_index)
 		print("Continuing using the run,generation number ", ga_params['generation_index_continue'])
 		run_gen_array = ga_params['generation_index_continue'].split(',')
 		run_start = int(run_gen_array[0])

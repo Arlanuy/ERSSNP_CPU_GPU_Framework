@@ -261,8 +261,8 @@ def GPUeditDistDP(output_dataset, output_spike_train, max_row_width, max_col_wid
 
         #print("LCSuff line is ", LCSuff[z][0])
     #print("LCSuff orig is ", LCSuff)
-    print("output dataset lengths is ", output_dataset_lengths)
-    print("output rssnp lengths is ", output_rssnp_lengths)
+    #print("output dataset lengths is ", output_dataset_lengths)
+    #print("output rssnp lengths is ", output_rssnp_lengths)
     #c = numpy.ndarray(shape= output_dataset_lengths.shape, buffer =  output_dataset_lengths, dtype=numpy.int32) 
     #d = numpy.ndarray(shape= output_rssnp_lengths.shape, buffer =  output_rssnp_lengths, dtype=numpy.int32) 
     #c = pg.get(output_dataset_lengths)
