@@ -248,7 +248,7 @@ def setup_sample():
         # execute_experiment(dir, not1_rssnp, not1_ga, not1_gaeval, stats, "Not1")
         # execute_experiment(dir, not2_rssnp, not2_ga, not2_gaeval, stats, "Not2")
         # execute_experiment(dir, not3_rssnp, not3_ga, not3_gaeval, stats, "Not3")
-        execute_experiment(dir, add1_rssnp, add1_ga, add1_gaeval, stats, "Add1")
+        #execute_experiment(dir, add1_rssnp, add1_ga, add1_gaeval, stats, "Add1")
         # execute_experiment(dir, add2_rssnp, add2_ga, add2_gaeval, stats, "Add2")
         # execute_experiment(dir, add3_rssnp, add3_ga, add3_gaeval, stats, "Add3")
         # execute_experiment(dir, sub1_rssnp, sub1_ga, sub1_gaeval, stats, "Sub1")
