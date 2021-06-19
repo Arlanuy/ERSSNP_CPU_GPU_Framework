@@ -31,7 +31,7 @@ def GPUlcs(output_dataset, output_spike_train, len_dataset):
     __global__ void lc_subsequence(int *X,int *Y,int *res, int *LCSuff,int row_width,int col_width){
        int j = blockIdx.x * blockDim.x + threadIdx.x;
        if (j < col_width){
-            for (int i = 1; i < row_width; i++) {
+            for (int i = 0; i < row_width; i++) {
                 if (i == 0 || j == 0){
                     LCSuff[i*col_width+j] = 0;
                     __syncthreads();
@@ -80,6 +80,7 @@ def GPUlcs(output_dataset, output_spike_train, len_dataset):
     grid_num = math.ceil(root_num / 1024)
     timer_gpu = GpuTimer()
     timer_gpu.tic()
+
     LCSQ(a_gpu,b_gpu,res_gpu,LCSuff_gpu, numpy.int32(a.size+1),numpy.int32(b.size+1), block=(thread_num,1,1),grid=(thread_num,1,1))
     timer_gpu.toc()
     timer_write("Evaluate", timer_gpu.time())
@@ -195,8 +196,10 @@ def GPUeditDistDP(output_dataset, output_spike_train, max_row_width, max_col_wid
            //printf("on thread %d i constrained by %d j constrained by %d", z, output_rssnp_lengths[z], output_dataset_lengths[z]);
            //printf("with content %d", result_mat_gpu[z]);
            //printf("row width is %d col width is %d", row_width, col_width);
-           int j_constraint = output_dataset_lengths[z];
-           int i_constraint = output_rssnp_lengths[z];
+           int i_constraint = output_dataset_lengths[z];
+           int j_constraint = output_rssnp_lengths[z];
+           float delete_point = i_constraint * float(1.0f/j_constraint);
+           //printf("with j constraint as %d and i cons as %d delete point is %f", j_constraint, i_constraint, delete_point);
            int* max_val = 0;
            for (int j = 0; j < j_constraint; j++) {
                 
@@ -216,15 +219,15 @@ def GPUeditDistDP(output_dataset, output_spike_train, max_row_width, max_col_wid
                     }
 
                     else{
-                        int delt = 1;
-                        if (dataset_gpu[z * row_width + (j-1)] != output_gpu[z * col_width + (i-1)]) {  
-                            delt = 0;
+                        int delt = 0;
+                        if (dataset_gpu[z * row_width + (i-1)] != output_gpu[z * col_width + (j-1)]) {  
+                            delt = delete_point;
                         }
-                        int* LCSuff_col_decrem = &LCSuff[(z*len_dataset*col_width*len_dataset*row_width) + ((j-1)*len_dataset*row_width + i*row_width + i)];
-                        int* LCSuff_row_decrem = &LCSuff[(z*len_dataset*col_width*len_dataset*row_width) + (j*len_dataset*row_width + (i-1)*row_width + i-1)];
+                        int* LCSuff_row_decrem = &LCSuff[(z*len_dataset*col_width*len_dataset*row_width) + ((j-1)*len_dataset*row_width + i*row_width + i)];
+                        int* LCSuff_col_decrem = &LCSuff[(z*len_dataset*col_width*len_dataset*row_width) + (j*len_dataset*row_width + (i-1)*row_width + i-1)];
                         int* LCSuff_both_decrem = &LCSuff[(z*len_dataset*col_width*len_dataset*row_width) + ((j-1)*len_dataset*row_width + (i-1)*row_width + i-1)];
                         //printf(" gpu %d %d %d with %d and %d compared\\n", * LCSuff_col_decrem, *LCSuff_row_decrem, * LCSuff_both_decrem, dataset_gpu[z * row_width + (i-1)], output_gpu[z * col_width + (j-1)]);
-                        *LCSuff_base = min1(min1(*LCSuff_col_decrem + 1, *LCSuff_row_decrem), *LCSuff_both_decrem + delt);
+                        *LCSuff_base = min1(min1(*LCSuff_col_decrem + delete_point, *LCSuff_row_decrem + delete_point), *LCSuff_both_decrem + delt);
                         max_val = LCSuff_base;
                         __syncthreads();
                     }
@@ -303,8 +306,8 @@ def GPUeditDistDP(output_dataset, output_spike_train, max_row_width, max_col_wid
     drv.memcpy_dtoh(LCSuff, LCSuff_gpu)
     #print("result mat is ", result_mat)
     #print("FINALLY 2 entered with values ", c, " and ", d)
-   
+    maxlen = max(len(output_dataset), len(output_spike_train))       
     sum = 0
     for index in range(len(result_mat)):
-        sum += (result_mat[index]/output_dataset_lengths[index]) * 100
+        sum += (maxlen - result_mat[index])/maxlen * 100
     return sum

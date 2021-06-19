@@ -8,12 +8,12 @@ from .rssnp import assign_rssnp
 import yaml, time
 
 def timer_write(ga_name, start, finish):
-    timer_out_cpu = open(os.getcwd()+ "\\timer_directory\\morecpuandadversarial22outreal.txt", "a+")
+    timer_out_cpu = open(os.getcwd()+ "\\timer_directory\\cpuandminimal00outreal.txt", "a+")
     timer_out_cpu.write(ga_name + " CPU time is " + str(finish - start) + "\n")
     timer_out_cpu.close()
 
 def timer_write_run(run_index):
-    timer_out_cpu = open(os.getcwd()+ "\\timer_directory\\morecpuandadversarial22outreal.txt", "a+")
+    timer_out_cpu = open(os.getcwd()+ "\\timer_directory\\cpuandminimal00outreal.txt", "a+")
     timer_out_cpu.write(" Run index is " + str(run_index) + "\n")
     timer_out_cpu.close()
 
@@ -47,9 +47,10 @@ def assign_fitness(generated, actual, function):
     if function == 0:
         result = lc_subsequence(string_format(generated), string_format(actual))      
     elif function == 1:
-        result = lc_substring(string_format(generated), string_format(actual), len(generated), len(actual))
+        result = lc_substring(string_format(generated), string_format(actual))
     elif function == 2:
-        result = edit_distance2(string_format(generated), string_format(actual), len(generated), len(actual))
+        result = edit_distance2(string_format(generated), string_format(actual))
+        #result = edit_distance2(string_format(generated), string_format(actual), len(generated), len(actual))
     #print("result ", result)
     return result
 
@@ -149,7 +150,7 @@ class SNPGeneticAlgo:
             else:
                 parents = self.pop[:int(len(self.pop)/2)]
             #print("chose this selection 2")
-        #print("parents returned by selection are ", parents)
+        print("parents returned by selection are ", len(parents))
         return parents
 
     def crossover(self, mutation_rate, selection_func):
@@ -195,7 +196,7 @@ class SNPGeneticAlgo:
                     parent1['system'].out_spiketrain = []
                     parent2['system'].out_spiketrain = []
                     self.pop.extend([parent1,parent2])
-                    print("passed first")
+                    #print("passed first")
                     if len(self.pop) > population_size:
                         while len(self.pop) > population_size:
                             self.pop = self.pop[:-1]
@@ -229,7 +230,7 @@ class SNPGeneticAlgo:
         Function legend:
         0: Longest Common Substring
         1: Longest Common Subsequence
-        2: Hamming Distance (must be same length)
+        2: Edit distance
         '''
         
         chromosome['out_pairs'] = []
@@ -250,12 +251,19 @@ class SNPGeneticAlgo:
             
             # simulate the rssnp
             chromosome['out_pairs'].append((chromosome['system'].main((config, chromosome['system'].ruleStatus), maxSteps), pair['output']))
+            maxlen = max(len(chromosome['system'].out_spiketrain), len(pair['output']))
+            minlen = min(len(chromosome['system'].out_spiketrain), len(pair['output']))
+            #value = += int(assign_fitness(chromosome['system'].out_spiketrain, pair['output'], function))
+            if function == 2:
+                #print("First string is ", chromosome['system'].out_spiketrain, " Second string is ", pair['output'])
+                #print("first is ", len(chromosome['system'].out_spiketrain), " second is ", int(assign_fitness(chromosome['system'].out_spiketrain, pair['output'], function)))
+                chromosome['fitness'] +=  (maxlen - assign_fitness(chromosome['system'].out_spiketrain, pair['output'], function))/maxlen * 100
             
-            value = int(assign_fitness(chromosome['system'].out_spiketrain, pair['output'], function))
-            
+            else:
+                chromosome['fitness'] += int(assign_fitness(chromosome['system'].out_spiketrain, pair['output'], function)/minlen*100)
             #print("add value is ", value)
             #print(" len pair is ", len(pair['output']))
-            chromosome['fitness'] += (value/len(pair['output']))*100
+            #chromosome['fitness'] += (value/len(pair['output']))*100
             #print("actual value is ", (value/len(pair['output']))*100)
         chromosome['fitness'] = int(chromosome['fitness']/len(self.inout_pairs))
         

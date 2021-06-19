@@ -73,7 +73,8 @@ class SNPGeneticAlgoGPU:
 	    #print("output_dataset ", output_dataset, " ost ", output_spike_train)
 	    
 	    if function == 0:
-	    	result = GPUlcs(output_dataset, output_spike_train, len_dataset)        
+	    	result = GPUlcs(output_dataset, output_spike_train, len_dataset)
+
 	    	#pass
 	    elif function == 1:
 	        result = GPULCSubStr(output_dataset, output_spike_train, len_dataset)
@@ -300,7 +301,7 @@ class SNPGeneticAlgoGPU:
 		row_width = 0
 		col_width = 0
 		dataset = self.dataset_arrange(ga_params['test_cases_path'])
-
+		chromosome['fitness'] = 0
 		if fitness_func == 2:
 			test_case_file = open(ga_params['test_cases_path'], 'r')
 			len_dataset = len(list(test_case_file))
@@ -375,6 +376,7 @@ class SNPGeneticAlgoGPU:
 			chromosome['fitness'] = int(self.assign_fitness(dataset2, output_rssnp_numpy, fitness_func, len_dataset, row_width, col_width, output_dataset_lengths, output_rssnp_lengths)/len(dataset))
 			
 		else:
+
 			len_dataset = len(dataset)	
 			for z in range(0, len_dataset):
 				bitstring_length = len(dataset[z])
@@ -408,13 +410,15 @@ class SNPGeneticAlgoGPU:
 				#print("config is ", config)
 				chromosome['out_pairs'].append((chromosome['system'].main((config, chromosome['system'].ruleStatus), maxSteps), output_dataset))
 				
-				value = self.assign_fitness(chromosome['out_pairs'][z][1], chromosome['out_pairs'][z][0], fitness_func, len_dataset)
-				
+				#value = self.assign_fitness(chromosome['out_pairs'][z][1], chromosome['out_pairs'][z][0], fitness_func, len_dataset)
+				minlen = min(len(chromosome['out_pairs'][z][1]), len(chromosome['out_pairs'][z][0]))
 				#print("dataset len is ", dataset_len, " while dividend is ", value, " with result of ", value/dataset_len)
-				chromosome['fitness'] += (value/dataset_len) * 100
+				
+				chromosome['fitness'] += int(self.assign_fitness(chromosome['out_pairs'][z][1], chromosome['out_pairs'][z][0], fitness_func, len_dataset)/minlen*100)
+				#chromosome['fitness'] += (value/dataset_len) * 100
 				#print("fitness now is ", chromosome['fitness'], " at z: ", z)
 			chromosome['fitness'] = int(chromosome['fitness']/len_dataset)
-		
+			
 
 	def use_population(self, count, last_gen_chromosomes):
         # Flush population and insert the original RSSNP
@@ -473,7 +477,6 @@ class SNPGeneticAlgoGPU:
 				#print("len of inout", self.inout_pairs)
 				chrom['out_pairs'] = []
 				self.evaluate(chrom, ga_params, fitness_func, selection_func)
-
 
 				result_fitness = chrom['fitness']
 				ga_params['runs'][run_index]['generations'][generation]['rssnp_chromosomes'][chrom_index]['chrom_fitness'] = result_fitness
