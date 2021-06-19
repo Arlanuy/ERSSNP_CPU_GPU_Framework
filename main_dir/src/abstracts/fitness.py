@@ -1,15 +1,17 @@
 import os, time
 
 def timer_write(ga_name, start, finish):
-    timer_out_cpu = open(os.getcwd()+ "\\timer_directory\\morecpuandadversarial22outreal.txt", "a+")
+    timer_out_cpu = open(os.getcwd()+ "\\timer_directory\\cpuandminimal00outreal.txt", "a+")
     timer_out_cpu.write(ga_name + " CPU time is " + str(finish - start) + "\n")
 # Time complexity = O(mxn)
 
-def lc_substring(X, Y, m, n):
+def lc_substring(X, Y):
     # LCSuff is the table with zero  
-    # value initially in each cell 
+    # value initially in each cell
+    m = len(X) 
+    n = len(Y)  
     LCSuff = [[0 for k in range(n+1)] for l in range(m+1)] 
-      
+
     # To store the length of  
     # longest common substring 
     result = 0 
@@ -75,12 +77,16 @@ def edit_distance3(str1, str2, m, n):
   
     return dp[m][n]
 
-# Time complexity: O(mxn) #insert point 1, delete point 0, replace point 0 or 1
-def edit_distance2(str1, str2, m, n): 
+# Time complexity: O(mxn) #insert point 1, delete point more forgiving of min_len_str/max_len_str, replace point 0 or 1
+def edit_distance2(str1, str2): 
     #print("str 1 is ", str1, "str2 is ", str2, " ",m, " ", n)
     # Create a table to store results of subproblems 
-    dp = [[0 for x in range(n+1)] for x in range(m+1)] 
+    m = len(str1) 
+    n = len(str2)
+    dp = [[0 for x in range(n+1)] for x in range(m+1)]
+ 
     start = time.perf_counter()
+    delete_point =  n/m
     # Fill d[][] in bottom up manner 
     for i in range(0, m+1): 
         for j in range(0, n+1): 
@@ -101,16 +107,17 @@ def edit_distance2(str1, str2, m, n):
             # If last character are different, consider all 
             # possibilities and find minimum (delt = 0)
             else: 
-                delt = 1
+                delt = 0
                 if str1[i - 1] != str2[j - 1]: 
-                    delt = 0 
-                dp[i][j] = min(dp[i][j-1] + 1,        # Insert 
-                                   dp[i-1][j],        # Remove 
+                    delt = delete_point 
+                dp[i][j] = min(dp[i][j-1] + delete_point,        # Insert 
+                                   dp[i-1][j] + delete_point,        # Remove 
                                    dp[i-1][j-1] + delt)      # Replace 
   
     #print("dp is ", dp)
     finish = time.perf_counter()
     timer_write("Evaluate", start, finish)
+
     return dp[m][n]
 
 # Time complexity: O(n) where n is the number of different characters
@@ -123,9 +130,9 @@ def hamming_distance(s1, s2):
 # Time complexity: O(nm) where n and m is the length of the two strings
 def lc_subsequence(X , Y): 
     # find the length of the strings 
+
     m = len(X) 
-    n = len(Y) 
-  
+    n = len(Y)
     # declaring the array for storing the dp values 
     L = [[None]*(n+1) for i in range(m+1)] 
     start = time.perf_counter()
