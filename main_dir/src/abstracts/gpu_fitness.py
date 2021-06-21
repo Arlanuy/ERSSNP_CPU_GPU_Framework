@@ -28,7 +28,7 @@ def GPUlcs(output_dataset, output_spike_train, len_dataset):
         }
     }
 
-    __global__ void lc_subsequence(int *X,int *Y,int *res, int *LCSuff,int row_width,int col_width){
+    __global__ void lc_subsequence(int *X,int *Y, int *LCSuff,int row_width,int col_width){
        int j = blockIdx.x * blockDim.x + threadIdx.x;
        if (j < col_width){
             for (int i = 0; i < row_width; i++) {
@@ -39,8 +39,6 @@ def GPUlcs(output_dataset, output_spike_train, len_dataset):
                 else if (X[i-1] == Y[j-1]) {  
                     LCSuff[i*col_width+j] = LCSuff[((i-1)*col_width)+j-1] + 1;
                     __syncthreads();
-                    //printf("compare %d %d\\n",res[0],LCSuff[i*col_width+j]);
-                    //printf("res %d %d %d\\n",res[0],i,j);
                     
                 } 
                 else{
@@ -61,19 +59,18 @@ def GPUlcs(output_dataset, output_spike_train, len_dataset):
     #b = numpy.array([0,0,0,1],dtype=numpy.int32) #col
     a = numpy.array(output_spike_train,dtype=numpy.int32)
     b = numpy.array(output_dataset,dtype=numpy.int32)
-    res = numpy.array([0],dtype=numpy.int32)
     LCSuff = numpy.zeros((a.size+1,b.size+1),dtype=numpy.int32)
 
 
     a_gpu = drv.mem_alloc(a.size * a.dtype.itemsize)
     b_gpu = drv.mem_alloc(b.size * b.dtype.itemsize)
     LCSuff_gpu = drv.mem_alloc(LCSuff.size * LCSuff.dtype.itemsize)
-    res_gpu = drv.mem_alloc(res.size * res.dtype.itemsize)
+
 
     drv.memcpy_htod(a_gpu, a)
     drv.memcpy_htod(b_gpu, b)
     drv.memcpy_htod(LCSuff_gpu, LCSuff)
-    drv.memcpy_htod(res_gpu, res)
+
 
     root_num = math.ceil(math.sqrt(len_dataset))
     thread_num = root_num % 1024
@@ -81,20 +78,14 @@ def GPUlcs(output_dataset, output_spike_train, len_dataset):
     timer_gpu = GpuTimer()
     timer_gpu.tic()
 
-    LCSQ(a_gpu,b_gpu,res_gpu,LCSuff_gpu, numpy.int32(a.size+1),numpy.int32(b.size+1), block=(thread_num,1,1),grid=(thread_num,1,1))
+    LCSQ(a_gpu,b_gpu,LCSuff_gpu, numpy.int32(a.size+1),numpy.int32(b.size+1), block=(thread_num,1,1),grid=(thread_num,1,1))
     timer_gpu.toc()
     timer_write("Evaluate", timer_gpu.time())
     
-    drv.memcpy_dtoh(res, res_gpu)
     drv.memcpy_dtoh(LCSuff, LCSuff_gpu)
-    #print(LCSuff)
-    #print(LCSuff[a[1].size][b.size])
+
     return LCSuff[a.size][b.size]
-    #print("res lcs", res)
 
-    #print (lcs(a[1], b)) 
-
-    #return res[0]  
 def GPULCSubStr(output_dataset, output_spike_train, len_dataset): 
 
     mod = SourceModule("""
