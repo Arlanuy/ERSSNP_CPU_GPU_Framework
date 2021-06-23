@@ -8,12 +8,12 @@ from .rssnp import assign_rssnp
 import yaml, time
 
 def timer_write(ga_name, start, finish):
-    timer_out_cpu = open(os.getcwd()+ "\\timer_directory\\cputestoutreal.txt", "a+")
+    timer_out_cpu = open(os.getcwd()+ "\\timer_directory\\cpusubadversarial11outreal.txt", "a+")
     timer_out_cpu.write(ga_name + " CPU time is " + str(finish - start) + "\n")
     timer_out_cpu.close()
 
 def timer_write_run(run_index):
-    timer_out_cpu = open(os.getcwd()+ "\\timer_directory\\cputestoutreal.txt", "a+")
+    timer_out_cpu = open(os.getcwd()+ "\\timer_directory\\cpusubadversarial11outreal.txt", "a+")
     timer_out_cpu.write(" Run index is " + str(run_index) + "\n")
     timer_out_cpu.close()
 
@@ -254,14 +254,14 @@ class SNPGeneticAlgo:
             chromosome['out_pairs'].append((chromosome['system'].main((config, chromosome['system'].ruleStatus), maxSteps), pair['output']))
             maxlen = len(chromosome['system'].out_spiketrain)
             total_output_lengths += maxlen
-            minlen = min(len(chromosome['system'].out_spiketrain), len(pair['output']))
+            minlen = len(pair['output'])
             #value = += int(assign_fitness(chromosome['system'].out_spiketrain, pair['output'], function))
             if function == 2:
                 #print("First string is ", chromosome['system'].out_spiketrain, " Second string is ", pair['output'])
                 #print("first is ", len(chromosome['system'].out_spiketrain), " second is ", int(assign_fitness(chromosome['system'].out_spiketrain, pair['output'], function)))
                 value = assign_fitness(chromosome['system'].out_spiketrain, pair['output'], function)
-                #print("maxlen value is ", maxlen, " while minus value is ", value)
-                chromosome['fitness'] +=  int((maxlen - value)/maxlen * len(self.inout_pairs))
+                #print("maxlen value is ", maxlen, " while minus value is ", value, " and minlen is ", minlen)
+                chromosome['fitness'] +=  (maxlen - value)/minlen
             
             else:
                 chromosome['fitness'] += assign_fitness(chromosome['system'].out_spiketrain, pair['output'], function)/minlen*100
@@ -269,16 +269,11 @@ class SNPGeneticAlgo:
             #print(" len pair is ", len(pair['output']))
             #chromosome['fitness'] += (value/len(pair['output']))*100
             #print("actual value is ", (value/len(pair['output']))*100)
-        print("how many is ", len(self.inout_pairs))
-        print("sum in cpu is ", chromosome['fitness'])
-        print("total dataset is ", total_dataset_lengths, " and total output is ", total_output_lengths)
+        #print("how many is ", len(self.inout_pairs))
+        #print("sum in cpu is ", chromosome['fitness'])
+        #print("total dataset is ", total_dataset_lengths, " and total output is ", total_output_lengths)
         if function == 2:
-            delete_point = (1-(total_dataset_lengths/total_output_lengths)) * len(self.inout_pairs)
-            maxlen = total_output_lengths/len(self.inout_pairs)
-            print("maxlen is ", maxlen, " and delete point is ", delete_point)
-            delete_point_total = (maxlen - delete_point)/maxlen * len(self.inout_pairs)
-            print("delete point total is ", delete_point_total)
-            chromosome['fitness'] = int(chromosome['fitness']/len(self.inout_pairs))# + delete_point_total)
+            chromosome['fitness'] = int(chromosome['fitness'])
         else:
             chromosome['fitness'] = int(chromosome['fitness']/len(self.inout_pairs))
         

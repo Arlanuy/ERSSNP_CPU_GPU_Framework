@@ -214,7 +214,7 @@ def GPUeditDistDP0(output_dataset, output_spike_train, max_row_width, max_col_wi
                         int* LCSuff_row_decrem = &LCSuff[(z*len_dataset*col_width*len_dataset*row_width) + ((j-1)*len_dataset*row_width + i*row_width + i)];
                         int* LCSuff_col_decrem = &LCSuff[(z*len_dataset*col_width*len_dataset*row_width) + (j*len_dataset*row_width + (i-1)*row_width + i-1)];
                         int* LCSuff_both_decrem = &LCSuff[(z*len_dataset*col_width*len_dataset*row_width) + ((j-1)*len_dataset*row_width + (i-1)*row_width + i-1)];
-                        printf(" gpu %d %d %d with %d and %d compared\\n", * LCSuff_col_decrem, *LCSuff_row_decrem, * LCSuff_both_decrem, dataset_gpu[z * row_width + (i-1)], output_gpu[z * col_width + (j-1)]);
+                        //printf(" gpu %d %d %d with %d and %d compared\\n", * LCSuff_col_decrem, *LCSuff_row_decrem, * LCSuff_both_decrem, dataset_gpu[z * row_width + (i-1)], output_gpu[z * col_width + (j-1)]);
                         *LCSuff_base = min1(min1(*LCSuff_col_decrem + delete_point, *LCSuff_row_decrem + delete_point), *LCSuff_both_decrem + delt);
 
                         __syncthreads();
@@ -293,17 +293,18 @@ def GPUeditDistDP0(output_dataset, output_spike_train, max_row_width, max_col_wi
     sum_result = 0
     for index in range(len(result_mat)):
         maxlen = output_rssnp_lengths[index]
-        print("maxlen is ", maxlen)  
-        print("result mat is ", result_mat[index])
-        sum_result += (maxlen - result_mat[index])/maxlen * 100
-    print("sum is ", sum_result)
+        minlen = output_dataset_lengths[index]
+        #print("maxlen is ", maxlen)  
+        #print("result mat is ", result_mat[index])
+        sum_result += (maxlen - result_mat[index])/minlen#(maxlen * len_dataset * (minlen/maxlen))
+    #print("sum is ", sum_result)
     return sum_result
 
 
 def GPUeditDistDP(output_dataset, output_spike_train, max_row_width, max_col_width, len_dataset, output_dataset_lengths, output_rssnp_lengths):
     mod = SourceModule("""
     #include <stdlib.h>
-    __device__ int min1(int a,int b){
+    __device__ int min1(float a,float b){
         if(a<b){
             return a;
         }
@@ -311,7 +312,7 @@ def GPUeditDistDP(output_dataset, output_spike_train, max_row_width, max_col_wid
             return b;
         }
     }
-    __global__ void edit_distDP(float* result_mat_gpu, int *dataset_gpu, int *output_gpu, int row_width, int col_width, int len_dataset, float *LCSuff, int *output_dataset_lengths, int *output_rssnp_lengths){
+    __global__ void edit_distDP(float* result_mat_gpu, int *dataset_gpu, int *output_gpu, int row_width, int col_width, int len_dataset, float *LCSuff, int *output_dataset_lengths, int *output_rssnp_lengths, float* float_holder){
        int z = threadIdx.x + blockDim.x * blockIdx.x;
        if (z < len_dataset) {
            //int max_val = 0;
@@ -326,29 +327,49 @@ def GPUeditDistDP(output_dataset, output_spike_train, max_row_width, max_col_wid
                 
                 for (int i = 0; i <  i_constraint + 1; i++){
                     //printf("computed value is %d", (z*len_dataset*col_width*len_dataset*row_width) + (j*len_dataset*row_width + i*row_width + i));
-                    float* LCSuff_base = &LCSuff[(z*len_dataset*col_width*len_dataset*row_width) + (j*len_dataset*row_width + i*row_width + i)];
+                    float* LCSuff_base = (float*)&LCSuff[(z*len_dataset*col_width*len_dataset*row_width) + (j*len_dataset*row_width + i*row_width + i)];
                     __syncthreads();
                     if (i == 0){
-                        *LCSuff_base = j;
-                        //printf("A %d B %d LC %d\\n", i,j,*LCSuff_base);          
+                        atomicAdd(LCSuff_base, float(1.0f*j));
                         __syncthreads();
+                        //printf("A %d B %d LC %f\\n", i,j,*LCSuff_base);          
+                        
                     }
                     else if (j == 0){
-                        *LCSuff_base = i;
-                        //printf("A %d B %d LC %d\\n", i,j,*LCSuff_base);
+                        atomicAdd(LCSuff_base, float(1.0f*i));
                         __syncthreads();
+                        //printf("A %d B %d LC %f\\n", i,j,*LCSuff_base);
+                        
                     }
                     else{
-                        int delt = 0;
+                        float delt = 0;
                         if (dataset_gpu[z * row_width + (i-1)] != output_gpu[z * col_width + (j-1)]) {  
                             delt = delete_point;
                         }
-                        float* LCSuff_row_decrem = &LCSuff[(z*len_dataset*col_width*len_dataset*row_width) + ((j-1)*len_dataset*row_width + i*row_width + i)];
-                        float* LCSuff_col_decrem = &LCSuff[(z*len_dataset*col_width*len_dataset*row_width) + (j*len_dataset*row_width + (i-1)*row_width + i-1)];
-                        float* LCSuff_both_decrem = &LCSuff[(z*len_dataset*col_width*len_dataset*row_width) + ((j-1)*len_dataset*row_width + (i-1)*row_width + i-1)];
+                        __syncthreads();
+                        float* LCSuff_row_decrem = (float*)&LCSuff[(z*len_dataset*col_width*len_dataset*row_width) + ((j-1)*len_dataset*row_width + i*row_width + i)];
+                        __syncthreads();
+                        float* LCSuff_col_decrem = (float*)&LCSuff[(z*len_dataset*col_width*len_dataset*row_width) + (j*len_dataset*row_width + (i-1)*row_width + i-1)];
+                        __syncthreads();
+                        float* LCSuff_both_decrem = (float*)&LCSuff[(z*len_dataset*col_width*len_dataset*row_width) + ((j-1)*len_dataset*row_width + (i-1)*row_width + i-1)];
+                        __syncthreads();
                         printf(" gpu %f %f %f with %d and %d compared\\n", * LCSuff_col_decrem, *LCSuff_row_decrem, * LCSuff_both_decrem, dataset_gpu[z * row_width + (i-1)], output_gpu[z * col_width + (j-1)]);
-                        *LCSuff_base = min1(min1(*LCSuff_col_decrem + delete_point, *LCSuff_row_decrem + delete_point), *LCSuff_both_decrem + delt);
-
+                        float_holder[0] = 0;
+                        __syncthreads();
+                        atomicAdd((float*)&float_holder[0], *LCSuff_col_decrem);
+                        atomicAdd((float*)&float_holder[0], delete_point);
+                        __syncthreads();
+                        float_holder[1] = 0;
+                        __syncthreads();
+                        atomicAdd((float*)&float_holder[1], *LCSuff_row_decrem);
+                        atomicAdd((float*)&float_holder[1], delete_point);
+                        __syncthreads();
+                        float_holder[2] = 0;
+                        __syncthreads();
+                        atomicAdd((float*)&float_holder[2], *LCSuff_both_decrem);
+                        atomicAdd((float*)&float_holder[2], delt);
+                        __syncthreads();
+                        *LCSuff_base = min1(min1(float_holder[0], float_holder[1]), float_holder[2]);
                         __syncthreads();
                     }
                        
@@ -388,8 +409,12 @@ def GPUeditDistDP(output_dataset, output_spike_train, max_row_width, max_col_wid
     #d = pg.get(output_rssnp_lengths)
     #print("c and d are magically ", c, " and ",  d, " with type ", type(c))
     #inout_pairs_view_gpu = drv.mem_alloc(inout_pairs_view.size * inout_pairs_view.dtype.itemsize)
+    float_holder = numpy.zeros((3), dtype=numpy.float32)
+    #float_holder_b = numpy.zeros((1), dtype=numpy.float32)
+    #float_holder_c = numpy.zeros((1), dtype=numpy.float32)
     a_gpu = drv.mem_alloc(a.size * a.dtype.itemsize)
     b_gpu = drv.mem_alloc(b.size * b.dtype.itemsize)
+
     #result_mat_gpu = drv.mem_alloc(result_mat.size * result_mat.dtype.itemsize)
     #print("LCSuff size is ", LCSuff.size)
     #LCSuff_gpu = drv.mem_alloc(LCSuff.size * LCSuff.dtype.itemsize)
@@ -399,6 +424,9 @@ def GPUeditDistDP(output_dataset, output_spike_train, max_row_width, max_col_wid
     #d_gpu = drv.mem_alloc(d.size * d.dtype.itemsize)
     #c_gpu = drv.mem_alloc(c.nbytes)
     #d_gpu = drv.mem_alloc(d.nbytes)
+    float_holder_gpu = gpuarray.to_gpu(float_holder.astype(numpy.float32))
+    #float_holder_b_gpu = gpuarray.to_gpu(float_holder_b.astype(numpy.float32))
+    #float_holder_c_gpu = gpuarray.to_gpu(float_holder_c.astype(numpy.float32))
     c_gpu = gpuarray.to_gpu(output_dataset_lengths.astype(numpy.int32))
     d_gpu = gpuarray.to_gpu(output_rssnp_lengths.astype(numpy.int32))
     LCSuff_gpu = gpuarray.to_gpu(LCSuff.astype(numpy.float32))
@@ -412,11 +440,11 @@ def GPUeditDistDP(output_dataset, output_spike_train, max_row_width, max_col_wid
     root_num = math.ceil(math.sqrt(len_dataset))
     thread_num = root_num % 1024
     grid_num = math.ceil(root_num / 1024)
-    timer_gpu = GpuTimer()
-    timer_gpu.tic()
-    ED(result_mat_gpu, a_gpu,b_gpu, numpy.int32(row_width), numpy.int32(col_width), numpy.int32(len_dataset), LCSuff_gpu, c_gpu, d_gpu, block=(thread_num,1,1),grid=(thread_num,1,1))
-    timer_gpu.toc()
-    timer_write("Evaluate", timer_gpu.time())
+    #timer_gpu = GpuTimer()
+    #timer_gpu.tic()
+    ED(result_mat_gpu, a_gpu,b_gpu, numpy.int32(row_width), numpy.int32(col_width), numpy.int32(len_dataset), LCSuff_gpu, c_gpu, d_gpu, float_holder_gpu,  block=(thread_num,1,1),grid=(thread_num,1,1))
+    #timer_gpu.toc()
+    #timer_write("Evaluate", timer_gpu.time())
     #drv.memcpy_dtoh(d, d_gpu)
     #drv.memcpy_dtoh(c, c_gpu)
     #drv.memcpy_dtoh(result_mat, result_mat_gpu)

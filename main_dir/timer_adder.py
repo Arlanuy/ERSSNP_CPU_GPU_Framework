@@ -78,8 +78,10 @@ for time_reader in time_input_files:
 	loop_index = 0
 	for line in time_reader:
 		array = line.split(' ')
-		print("time is ", array[4:], " at loop_index ", loop_index, " and index file ", index_file)
+		#print("time is ", array[4:], " at loop_index ", loop_index, " and index file ", index_file)
 		topass = None
+		if array[0] == "Run":
+			print("passed here")
 		if gpu_format == True:
 			topass = array[7]
 		else:

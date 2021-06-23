@@ -1,7 +1,7 @@
 import os, time
 
 def timer_write(ga_name, start, finish):
-    timer_out_cpu = open(os.getcwd()+ "\\timer_directory\\cputestsoutreal.txt", "a+")
+    timer_out_cpu = open(os.getcwd()+ "\\timer_directory\\cpusubadversarial11outreal.txt", "a+")
     timer_out_cpu.write(ga_name + " CPU time is " + str(finish - start) + "\n")
 # Time complexity = O(mxn)
 
@@ -86,7 +86,7 @@ def edit_distance2(str1, str2):
     dp = [[0 for x in range(n+1)] for x in range(m+1)]
  
     start = time.perf_counter()
-    delete_point =  n/m
+    delete_point =  1
     #print("delete point is ", n/m)
     # Fill d[][] in bottom up manner 
     for i in range(0, m+1): 
