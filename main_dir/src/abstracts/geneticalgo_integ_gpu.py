@@ -80,7 +80,7 @@ class SNPGeneticAlgoGPU:
 	        result = GPULCSubStr(output_dataset, output_spike_train, len_dataset)
 	    	#pass
 	    elif function == 2:
-	    	result = GPUeditDistDP(output_dataset, output_spike_train, max_row_width, max_col_width, len_dataset, output_dataset_lengths, output_rssnp_lengths)
+	    	result = GPUeditDistDP0(output_dataset, output_spike_train, max_row_width, max_col_width, len_dataset, output_dataset_lengths, output_rssnp_lengths)
 	    	#pass
 
 	    # print(result)
@@ -376,11 +376,8 @@ class SNPGeneticAlgoGPU:
 
 			#print("chromosome out pairs is ", chromosome['out_pairs'])
 			#print("EXITED with ", output_rssnp_lengths, " and ", output_dataset_lengths)
-			delete_point = (1-(total_dataset_lengths/total_output_lengths)) * len_output
-			maxlen = total_output_lengths/len_output
-			delete_point_total = (maxlen - delete_point)/maxlen * len_output
-			print("delete point is ", delete_point_total)
-			chromosome['fitness'] = int(self.assign_fitness(dataset2, output_rssnp_numpy, fitness_func, len_dataset, row_width, col_width, output_dataset_lengths, output_rssnp_lengths)/len(dataset)) #+ delete_point_total
+
+			chromosome['fitness'] = int(self.assign_fitness(dataset2, output_rssnp_numpy, fitness_func, len_dataset, row_width, col_width, output_dataset_lengths, output_rssnp_lengths)) #+ delete_point_total
 			
 		else:
 
