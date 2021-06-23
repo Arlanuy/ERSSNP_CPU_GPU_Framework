@@ -307,6 +307,7 @@ class SNPGeneticAlgoGPU:
 			len_dataset = len(list(test_case_file))
 			dataset2, row_width, col_width = self.dataset_arrange3(len_dataset, ga_params['test_cases_path'])
 			output_dataset_lengths = numpy.zeros(len_dataset, dtype = numpy.int32)
+			total_dataset_lengths = 0
 			for z in range(0, len_dataset):
 				bitstring_length = len(dataset[z])
 				single_length = int(bitstring_length / 3)
@@ -319,6 +320,7 @@ class SNPGeneticAlgoGPU:
 				#print("datasub input 2 ", dataset[z][inout_pairs_view[z][0][0][1]:inout_pairs_view[z][single_length - 1][0][1]])
 				#print("minuend ", len(dataset[z]), " subtrahend ", inout_pairs_view[z][0][0][-1], "datasub output", dataset[z][inout_pairs_view[z][0][0][-1]:inout_pairs_view[z][single_length - 1][0][-1]])
 				output_dataset_lengths[z] = len(dataset[z]) - inout_pairs_view[z][0][0][2]
+				total_dataset_lengths += output_dataset_lengths[z]
 				#print("dataset lengths is ", output_dataset_lengths[z], " at z ", z)
 				maxSteps = 3 * output_dataset_lengths[z]  
 				#print("maxsteps ", maxSteps)
@@ -343,9 +345,10 @@ class SNPGeneticAlgoGPU:
 			output_rssnp_lengths = numpy.zeros(len(list(chromosome['out_pairs'])), dtype = numpy.int32)
 			max_spike_size = 20
 			output_rssnp_numpy = numpy.zeros(shape=(int(len_dataset/max_numpy_arraylen) + 1, max_numpy_arraylen, max_spike_size), dtype=numpy.int32)
-			
+			total_output_lengths = 0
 			n = None
 			#print("the length of out_pairs is ", len(list(chromosome['out_pairs'])))
+			len_output = len(list(chromosome['out_pairs']))
 			for m in list(chromosome['out_pairs']):
 			
 				n = numpy.asarray(m[0], dtype=numpy.int32)
@@ -355,6 +358,7 @@ class SNPGeneticAlgoGPU:
 				#numpy.concatenate((n,np.zeros((n.shape[0], max_spike_size - len(m[0])))), axis=0)
 				#numpy.hstack([n,np.zeros([n.shape[0], max_spike_size - len(m[0])])])
 				output_rssnp_lengths[line_index] = len(n)
+				total_output_lengths += output_rssnp_lengths[line_index]
 				#print("out rssnp lengths is ", len(n), " at m ", m)
 				n = based_init(n, abs(max_spike_size - len(m[0])))
 				#print("numpy n is ", n)
@@ -372,8 +376,11 @@ class SNPGeneticAlgoGPU:
 
 			#print("chromosome out pairs is ", chromosome['out_pairs'])
 			#print("EXITED with ", output_rssnp_lengths, " and ", output_dataset_lengths)
-			
-			chromosome['fitness'] = int(self.assign_fitness(dataset2, output_rssnp_numpy, fitness_func, len_dataset, row_width, col_width, output_dataset_lengths, output_rssnp_lengths)/len(dataset))
+			delete_point = (1-(total_dataset_lengths/total_output_lengths)) * len_output
+			maxlen = total_output_lengths/len_output
+			delete_point_total = (maxlen - delete_point)/maxlen * len_output
+			print("delete point is ", delete_point_total)
+			chromosome['fitness'] = int(self.assign_fitness(dataset2, output_rssnp_numpy, fitness_func, len_dataset, row_width, col_width, output_dataset_lengths, output_rssnp_lengths)/len(dataset)) #+ delete_point_total
 			
 		else:
 

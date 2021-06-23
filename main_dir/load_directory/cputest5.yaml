@@ -1,0 +1,36 @@
+gen_total: 2
+gens_pending: 0
+goal_fitness: 101
+populations_pending: 0
+run_total: 1
+runs:
+  0:
+    fitness_function: 2
+    generations:
+      0:
+        rssnp_chromosomes:
+          0: {}
+          1: {}
+          2: {}
+          3: {}
+          4: {}
+          5: {}
+          6: {}
+          7: {}
+      1:
+        rssnp_chromosomes:
+          0: {}
+          1: {}
+          2: {}
+          3: {}
+          4: {}
+          5: {}
+          6: {}
+          7: {}
+    max_fitness_in_run: 0
+    mutation_rate: 100
+    population_size: 8
+    selection_func: 2
+runs_pending: 0
+test_cases_path: C:\Users\Matrix\Documents\ERSSNP_CPU_GPU_Framework\main_dir\test
+  cases\and_test_cases.txt
