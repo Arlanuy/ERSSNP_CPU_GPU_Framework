@@ -1,5 +1,5 @@
 import os
-timer_adder_out = open(os.getcwd()+ "\\timeadderout.txt", "w+")
+timer_adder_out = open(os.getcwd()+ "\\timeadderoutreal.txt", "w+")
 
 #with alternating index
 
@@ -46,11 +46,21 @@ def atof(s, gpu_format):
 	return 0.0
 
 index_file = 0
+num_runs = 5
+
 for time_reader in time_input_files:
+	selection_array = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+	evaluate_array = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+	crossover_array = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
 	selection_time = 0
 	evaluate_time = 0
 	crossover_time = 0
+	avg_selection_time = 0
+	avg_evaluate_time = 0
+	avg_crossover_time = 0
+	avg_total_time = 0
 	gpu_format = False
+
 	if index_file % 2 == 0:
 		timer_adder_out.write("CPU ")
 		
@@ -76,25 +86,44 @@ for time_reader in time_input_files:
 	elif index_file % 6 == 4 or index_file % 6 == 5:
 		timer_adder_out.write("Extra \n") 
 	loop_index = 0
+	index_reader = -1
 	for line in time_reader:
 		array = line.split(' ')
-		#print("time is ", array[4:], " at loop_index ", loop_index, " and index file ", index_file)
+		print("time is ", array[4:], " at loop_index ", loop_index, " and index file ", index_file)
 		topass = None
 		if array[0] == "Run":
-			print("passed here")
-		if gpu_format == True:
-			topass = array[7]
+			print("passed here at run ", array[3])
+			index_reader = int(array[3])
+			print("index reader is ", index_reader)
 		else:
-			topass = array[4]
-		if array[0] == "Selection":
-			selection_time += atof(topass, gpu_format)
-		elif array[0] == "Crossover":
-			crossover_time += atof(topass, gpu_format)
-		elif array[0] == "Evaluate":
-			evaluate_time += atof(topass, gpu_format)
+			if gpu_format == True:
+				topass = array[7]
+				#print("topass at 7 is ", topass)
+			else:
+				topass = array[4]
+				#print("topass at 4 is ", topass)
+			if array[0] == "Selection":
+				selection_time += atof(topass, gpu_format)
+				selection_array[index_reader] += selection_time
+			elif array[0] == "Crossover":
+				crossover_time += atof(topass, gpu_format)
+				crossover_array[index_reader] += crossover_time
+			elif array[0] == "Evaluate":
+				evaluate_time += atof(topass, gpu_format)
+				evaluate_array[index_reader] += evaluate_time
+		
 		loop_index += 1
-	timer_adder_out.write("selection time is " + str(selection_time) + " crossover is " + str(crossover_time) + " evaluate is " + str(evaluate_time) + "\n")
-	timer_adder_out.write("Total time is " + str(selection_time + crossover_time + evaluate_time) + "\n")
+	print("selection array is ", (selection_array))
+	print("crossover array is ", (crossover_array))
+	print("evaluate array is ", (evaluate_array))
+	avg_selection_time = sum(selection_array)/num_runs
+	avg_crossover_time = sum(crossover_array)/num_runs
+	print("sum eval is ", sum(evaluate_array))
+	avg_evaluate_time = sum(evaluate_array)/num_runs
+	avg_total_time = avg_selection_time + avg_crossover_time + avg_evaluate_time
+	print("written avg evaluate time is ", avg_evaluate_time )
+	timer_adder_out.write("selection time is " + str(avg_selection_time) + " crossover is " + str(avg_crossover_time) + " evaluate is " + str(avg_evaluate_time) + "\n")
+	timer_adder_out.write("Total time is " + str(avg_total_time) + "\n")
 	index_file += 1
 	time_reader.close()
 	

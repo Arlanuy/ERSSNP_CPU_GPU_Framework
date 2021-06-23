@@ -1,4 +1,4 @@
- Run index is 0
+Run index is 0
 Evaluate CPU time is 0.00019759999999990896
 Evaluate CPU time is 8.809999999925822e-05
 Evaluate CPU time is 0.0001356999999977404
@@ -4012,7 +4012,7 @@ Evaluate CPU time is 0.00018829999999070424
 Evaluate CPU time is 0.00027609999999356205
 Crossover CPU time is 1.720000000204891e-05
 Crossover CPU time is 1.699999999971169e-05
- Run index is 1
+Run index is 1
 Evaluate CPU time is 6.229999999618485e-05
 Evaluate CPU time is 7.779999999968368e-05
 Evaluate CPU time is 6.86999999999216e-05
@@ -8024,7 +8024,7 @@ Evaluate CPU time is 0.0006496000000026925
 Evaluate CPU time is 0.00043539999998643
 Crossover CPU time is 1.810000000546097e-05
 Crossover CPU time is 2.419999998437561e-05
- Run index is 2
+Run index is 2
 Evaluate CPU time is 6.210000000805849e-05
 Evaluate CPU time is 9.149999999635838e-05
 Evaluate CPU time is 0.00013839999999731845
@@ -12038,7 +12038,7 @@ Evaluate CPU time is 0.00035499999995636244
 Evaluate CPU time is 0.0001745000000141772
 Crossover CPU time is 2.4000000053092663e-05
 Crossover CPU time is 1.579999997147752e-05
- Run index is 3
+Run index is 3
 Evaluate CPU time is 0.00019459999998616695
 Evaluate CPU time is 3.2400000009147334e-05
 Evaluate CPU time is 7.060000001501976e-05
@@ -16065,7 +16065,7 @@ Crossover CPU time is 2.0099999971989746e-05
 Crossover CPU time is 5.509999999731008e-05
 Crossover CPU time is 2.779999999802385e-05
 Crossover CPU time is 2.1899999978813867e-05
- Run index is 4
+Run index is 4
 Evaluate CPU time is 0.00021499999996876795
 Evaluate CPU time is 9.829999999055872e-05
 Evaluate CPU time is 0.00019349999996620681
