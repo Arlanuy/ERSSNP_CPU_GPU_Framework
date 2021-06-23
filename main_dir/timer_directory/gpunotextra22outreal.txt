@@ -1,4 +1,4 @@
- Run index is 5
+Run index is 5
 Evaluate GPU time is GpuTimer: secs = 0.0004387519955635071
 Evaluate GPU time is GpuTimer: secs = 9.15519967675209e-05
 Evaluate GPU time is GpuTimer: secs = 8.620800077915192e-05
@@ -63,7 +63,7 @@ Crossover GPU time is GpuTimer: secs = 9.344000369310379e-06
 Crossover GPU time is GpuTimer: secs = 8.86400043964386e-06
 Crossover GPU time is GpuTimer: secs = 9.151999838650227e-06
 Crossover GPU time is GpuTimer: secs = 9.855999611318112e-06
- Run index is 6
+Run index is 6
 Evaluate GPU time is GpuTimer: secs = 0.0004366720020771027
 Evaluate GPU time is GpuTimer: secs = 9.116800129413605e-05
 Evaluate GPU time is GpuTimer: secs = 8.489599823951722e-05
@@ -122,7 +122,7 @@ Evaluate GPU time is GpuTimer: secs = 9.07839983701706e-05
 Selection GPU time is GpuTimer: secs = 1.1296000331640243e-05
 Crossover GPU time is GpuTimer: secs = 9.535999968647956e-06
 Crossover GPU time is GpuTimer: secs = 1.0015999898314476e-05
- Run index is 7
+Run index is 7
 Evaluate GPU time is GpuTimer: secs = 0.00043744000792503355
 Evaluate GPU time is GpuTimer: secs = 9.145600348711014e-05
 Evaluate GPU time is GpuTimer: secs = 8.515200018882751e-05
@@ -181,7 +181,7 @@ Selection GPU time is GpuTimer: secs = 1.1455999687314034e-05
 Crossover GPU time is GpuTimer: secs = 1.0015999898314476e-05
 Crossover GPU time is GpuTimer: secs = 9.056000038981438e-06
 Crossover GPU time is GpuTimer: secs = 9.056000038981438e-06
- Run index is 8
+Run index is 8
 Evaluate GPU time is GpuTimer: secs = 0.0004387840032577515
 Evaluate GPU time is GpuTimer: secs = 9.244800359010696e-05
 Evaluate GPU time is GpuTimer: secs = 8.521600067615509e-05
@@ -238,7 +238,7 @@ Selection GPU time is GpuTimer: secs = 1.1552000418305397e-05
 Crossover GPU time is GpuTimer: secs = 9.920000098645687e-06
 Crossover GPU time is GpuTimer: secs = 9.983999654650688e-06
 Crossover GPU time is GpuTimer: secs = 8.895999751985073e-06
- Run index is 9
+Run index is 9
 Evaluate GPU time is GpuTimer: secs = 0.00043680000305175784
 Evaluate GPU time is GpuTimer: secs = 9.139200299978256e-05
 Evaluate GPU time is GpuTimer: secs = 8.432000130414962e-05

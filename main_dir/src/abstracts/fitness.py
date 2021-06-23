@@ -1,7 +1,7 @@
 import os, time
 
 def timer_write(ga_name, start, finish):
-    timer_out_cpu = open(os.getcwd()+ "\\timer_directory\\cpusubadversarial11outreal.txt", "a+")
+    timer_out_cpu = open(os.getcwd()+ "\\timer_directory\\cpuorextra22outreal.txt", "a+")
     timer_out_cpu.write(ga_name + " CPU time is " + str(finish - start) + "\n")
 # Time complexity = O(mxn)
 
