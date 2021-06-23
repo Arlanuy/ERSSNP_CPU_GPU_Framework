@@ -8,12 +8,12 @@ from .rssnp import assign_rssnp
 import yaml, time
 
 def timer_write(ga_name, start, finish):
-    timer_out_cpu = open(os.getcwd()+ "\\timer_directory\\cpuoradversarial11outreal.txt", "a+")
+    timer_out_cpu = open(os.getcwd()+ "\\timer_directory\\cputestoutreal.txt", "a+")
     timer_out_cpu.write(ga_name + " CPU time is " + str(finish - start) + "\n")
     timer_out_cpu.close()
 
 def timer_write_run(run_index):
-    timer_out_cpu = open(os.getcwd()+ "\\timer_directory\\cpuoradversarial11outreal.txt", "a+")
+    timer_out_cpu = open(os.getcwd()+ "\\timer_directory\\cputestoutreal.txt", "a+")
     timer_out_cpu.write(" Run index is " + str(run_index) + "\n")
     timer_out_cpu.close()
 
@@ -237,11 +237,12 @@ class SNPGeneticAlgo:
         chromosome['fitness'] = 0
 
         # Compute for the total output bits
-        total_length = 0
+        total_dataset_lengths = 0
         for spike_train in self.inout_pairs:
-            total_length += len(spike_train['output'])
+            total_dataset_lengths += len(spike_train['output'])
 
         #chromosome['system'] = {}
+        total_output_lengths = 0
         for pair in self.inout_pairs:
             maxSteps = 3*len(pair['output'])
             chromosome['system'].in_spiketrain = pair['inputs']
@@ -251,21 +252,35 @@ class SNPGeneticAlgo:
             
             # simulate the rssnp
             chromosome['out_pairs'].append((chromosome['system'].main((config, chromosome['system'].ruleStatus), maxSteps), pair['output']))
-            maxlen = max(len(chromosome['system'].out_spiketrain), len(pair['output']))
+            maxlen = len(chromosome['system'].out_spiketrain)
+            total_output_lengths += maxlen
             minlen = min(len(chromosome['system'].out_spiketrain), len(pair['output']))
             #value = += int(assign_fitness(chromosome['system'].out_spiketrain, pair['output'], function))
             if function == 2:
                 #print("First string is ", chromosome['system'].out_spiketrain, " Second string is ", pair['output'])
                 #print("first is ", len(chromosome['system'].out_spiketrain), " second is ", int(assign_fitness(chromosome['system'].out_spiketrain, pair['output'], function)))
-                chromosome['fitness'] +=  (maxlen - assign_fitness(chromosome['system'].out_spiketrain, pair['output'], function))/maxlen * 100
+                value = assign_fitness(chromosome['system'].out_spiketrain, pair['output'], function)
+                #print("maxlen value is ", maxlen, " while minus value is ", value)
+                chromosome['fitness'] +=  int((maxlen - value)/maxlen * len(self.inout_pairs))
             
             else:
-                chromosome['fitness'] += int(assign_fitness(chromosome['system'].out_spiketrain, pair['output'], function)/minlen*100)
+                chromosome['fitness'] += assign_fitness(chromosome['system'].out_spiketrain, pair['output'], function)/minlen*100
             #print("add value is ", value)
             #print(" len pair is ", len(pair['output']))
             #chromosome['fitness'] += (value/len(pair['output']))*100
             #print("actual value is ", (value/len(pair['output']))*100)
-        chromosome['fitness'] = int(chromosome['fitness']/len(self.inout_pairs))
+        print("how many is ", len(self.inout_pairs))
+        print("sum in cpu is ", chromosome['fitness'])
+        print("total dataset is ", total_dataset_lengths, " and total output is ", total_output_lengths)
+        if function == 2:
+            delete_point = (1-(total_dataset_lengths/total_output_lengths)) * len(self.inout_pairs)
+            maxlen = total_output_lengths/len(self.inout_pairs)
+            print("maxlen is ", maxlen, " and delete point is ", delete_point)
+            delete_point_total = (maxlen - delete_point)/maxlen * len(self.inout_pairs)
+            print("delete point total is ", delete_point_total)
+            chromosome['fitness'] = int(chromosome['fitness']/len(self.inout_pairs))# + delete_point_total)
+        else:
+            chromosome['fitness'] = int(chromosome['fitness']/len(self.inout_pairs))
         
         
         # print(chromosome)
