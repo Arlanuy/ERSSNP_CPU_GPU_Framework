@@ -1,0 +1,37 @@
+yaml_reader_and_minimal = open(os.getcwd()+ "\\load_directory\\cpuandminimal00.yaml", "r")
+yaml_reader_and_adversarial = open(os.getcwd()+ "\\load_directory\\cpuandadversarial11.yaml", "r")
+yaml_reader_and_extra = open(os.getcwd()+ "\\load_directory\\cpuandextra22.yaml", "r")
+yaml_reader_or_minimal = open(os.getcwd()+ "\\load_directory\\cpuorminimal00.yaml", "r")
+yaml_reader_or_adversarial = open(os.getcwd()+ "\\load_directory\\cpuoradversarial11.yaml", "r")
+yaml_reader_or_extra = open(os.getcwd()+ "\\load_directory\\cpuorextra22.yaml", "r")
+yaml_reader_not_minimal = open(os.getcwd()+ "\\load_directory\\cpunotminimal00.yaml", "r")
+yaml_reader_not_adversarial = open(os.getcwd()+ "\\load_directory\\cpunotadversarial11.yaml", "r")
+yaml_reader_not_extra = open(os.getcwd()+ "\\load_directory\\cpunotextra22.yaml", "r")
+yaml_reader_add_minimal = open(os.getcwd()+ "\\load_directory\\cpuaddminimal00.yaml", "r")
+yaml_reader_add_adversarial = open(os.getcwd()+ "\\load_directory\\cpuaddadversarial11.yaml", "r")
+yaml_reader_add_extra = open(os.getcwd()+ "\\load_directory\\cpuaddextra22.yaml", "r")
+yaml_reader_sub_minimal = open(os.getcwd()+ "\\load_directory\\cpusubminimal00.yaml", "r")
+yaml_reader_sub_adversarial = open(os.getcwd()+ "\\load_directory\\cpusubadversarial11.yaml", "r")
+yaml_reader_sub_extra = open(os.getcwd()+ "\\load_directory\\cpusubextra22.yaml", "r")
+
+yaml_reader_and_minimal_gpu = open(os.getcwd()+ "\\load_directory\\gpuandminimal00.yaml", "r")
+yaml_reader_and_adversarial_gpu = open(os.getcwd()+ "\\load_directory\\gpuandadversarial11.yaml", "r")
+yaml_reader_and_extra_gpu = open(os.getcwd()+ "\\load_directory\\gpuandextra22.yaml", "r")
+yaml_reader_or_minimal_gpu = open(os.getcwd()+ "\\load_directory\\gpuorminimal00.yaml", "r")
+yaml_reader_or_adversarial_gpu = open(os.getcwd()+ "\\load_directory\\gpuoradversarial11.yaml", "r")
+yaml_reader_or_extra_gpu = open(os.getcwd()+ "\\load_directory\\gpuorextra22.yaml", "r")
+yaml_reader_not_minimal_gpu = open(os.getcwd()+ "\\load_directory\\gpunotminimal00.yaml", "r")
+yaml_reader_not_adversarial_gpu = open(os.getcwd()+ "\\load_directory\\gpunotadversarial11.yaml", "r")
+yaml_reader_not_extra_gpu = open(os.getcwd()+ "\\load_directory\\gpunotextra22.yaml", "r")
+yaml_reader_add_minimal_gpu = open(os.getcwd()+ "\\load_directory\\gpuaddminimal00.yaml", "r")
+yaml_reader_add_adversarial_gpu = open(os.getcwd()+ "\\load_directory\\gpuaddadversarial11.yaml", "r")
+yaml_reader_add_extra_gpu = open(os.getcwd()+ "\\load_directory\\gpuaddextra22.yaml", "r")
+yaml_reader_sub_minimal_gpu = open(os.getcwd()+ "\\load_directory\\gpusubminimal00.yaml", "r")
+yaml_reader_sub_adversarial_gpu = open(os.getcwd()+ "\\load_directory\\gpusubadversarial11.yaml", "r")
+yaml_reader_sub_extra_gpu = open(os.getcwd()+ "\\load_directory\\gpusubextra22.yaml", "r")
+
+yaml_input_files = [yaml_reader_and_minimal, yaml_reader_and_minimal_gpu, yaml_reader_and_adversarial, yaml_reader_and_adversarial_gpu, yaml_reader_and_extra, yaml_reader_and_extra_gpu, yaml_reader_or_minimal, yaml_reader_or_minimal_gpu, yaml_reader_or_adversarial, yaml_reader_or_adversarial_gpu, yaml_reader_or_extra, yaml_reader_or_extra_gpu, yaml_reader_not_minimal, yaml_reader_not_minimal_gpu, yaml_reader_not_adversarial, yaml_reader_not_adversarial_gpu, yaml_reader_not_extra, yaml_reader_not_extra_gpu, yaml_reader_add_minimal, yaml_reader_add_minimal_gpu, yaml_reader_add_adversarial, yaml_reader_add_adversarial_gpu, yaml_reader_add_extra, yaml_reader_add_extra_gpu, yaml_reader_sub_minimal, yaml_reader_sub_minimal_gpu, yaml_reader_sub_adversarial, yaml_reader_sub_adversarial_gpu, yaml_reader_sub_extra, yaml_reader_sub_extra_gpu]
+
+index_file = 0
+for yaml_reader in yaml_input_files:
+	print("at index file ", index_file)

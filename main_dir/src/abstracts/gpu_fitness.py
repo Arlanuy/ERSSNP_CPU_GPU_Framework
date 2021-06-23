@@ -188,7 +188,7 @@ def GPUeditDistDP0(output_dataset, output_spike_train, max_row_width, max_col_wi
            //printf("row width is %d col width is %d", row_width, col_width);
            int i_constraint = output_dataset_lengths[z];
            int j_constraint = output_rssnp_lengths[z];
-           int delete_point = 1;//i_constraint * float(1.0f/j_constraint);
+           int delete_point = 1;
            //printf("with j constraint as %d and i cons as %d delete point is %f", j_constraint, i_constraint, delete_point);
            for (int j = 0; j < j_constraint + 1; j++) {
                 
@@ -321,7 +321,7 @@ def GPUeditDistDP(output_dataset, output_spike_train, max_row_width, max_col_wid
            //printf("row width is %d col width is %d", row_width, col_width);
            int i_constraint = output_dataset_lengths[z];
            int j_constraint = output_rssnp_lengths[z];
-           float delete_point = 1;//i_constraint * float(1.0f/j_constraint);
+           float delete_point = i_constraint * float(1.0f/j_constraint);
            //printf("with j constraint as %d and i cons as %d delete point is %f", j_constraint, i_constraint, delete_point);
            for (int j = 0; j < j_constraint + 1; j++) {
                 
