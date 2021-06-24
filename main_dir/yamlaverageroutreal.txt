@@ -134,3 +134,17 @@ CPU SUB Adversarial
 Avg len of rules: 22.755
 Avg fitness: 60.260000000000005
 GPU SUB Adversarial 
+
+ Highest fitness among runs and generations: 77
+Avg len of rules: 22.65
+Avg fitness: 65.67
+CPU SUB Extra 
+
+ Highest fitness among runs and generations: 100
+Avg len of rules: 21.105
+Avg fitness: 87.82000000000001
+GPU SUB Extra 
+
+ Highest fitness among runs and generations: 100
+Avg len of rules: 21.425
+Avg fitness: 86.11500000000001
