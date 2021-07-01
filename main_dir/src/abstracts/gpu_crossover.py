@@ -1,13 +1,9 @@
-#!/usr/bin/env python
-#-*- coding:utf-8 -*-
-
 import numpy as np
 import pycuda.driver as cuda
 import pycuda.tools as tools
 import pycuda.autoinit
 import random
 from src.abstracts.getrandomnums import getrandom
-from gpu_struct import GPUStruct
 from pycuda.compiler import SourceModule
 import pycuda.gpuarray as gpuarray
 

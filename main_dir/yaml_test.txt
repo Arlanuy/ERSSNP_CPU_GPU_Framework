@@ -1,0 +1,5 @@
+CPU AND Minimal 
+
+ Highest fitness among runs and generations: 100
+Avg len of rules: 4.0
+Avg fitness: 100.0
