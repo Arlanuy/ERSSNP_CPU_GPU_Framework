@@ -1,41 +1,49 @@
 import os
-timer_adder_out = open(os.getcwd()+ "\\timeadderoutreal.txt", "w+")
+timer_adder_out = open(os.getcwd()+ "\\time_test", "w+")
+
+tutorial_time = True
+
+if tutorial_time == True:
+	num_runs = 1
+	timer_test = open(os.getcwd()+ "\\timer_directory\\test_cpu", "r")
+	time_input_files = [timer_test]
 
 #with alternating index
+else:
+	num_runs = 5
+	time_reader_and_minimal = open(os.getcwd()+ "\\timer_directory\\cpuandminimal00outreal.txt", "r")
+	time_reader_and_adversarial = open(os.getcwd()+ "\\timer_directory\\cpuandadversarial11outreal.txt", "r")
+	time_reader_and_extra = open(os.getcwd()+ "\\timer_directory\\cpuandextra22outreal.txt", "r")
+	time_reader_or_minimal = open(os.getcwd()+ "\\timer_directory\\cpuorminimal00outreal.txt", "r")
+	time_reader_or_adversarial = open(os.getcwd()+ "\\timer_directory\\cpuoradversarial11outreal.txt", "r")
+	time_reader_or_extra = open(os.getcwd()+ "\\timer_directory\\cpuorextra22outreal.txt", "r")
+	time_reader_not_minimal = open(os.getcwd()+ "\\timer_directory\\cpunotminimal00outreal.txt", "r")
+	time_reader_not_adversarial = open(os.getcwd()+ "\\timer_directory\\cpunotadversarial11outreal.txt", "r")
+	time_reader_not_extra = open(os.getcwd()+ "\\timer_directory\\cpunotextra22outreal.txt", "r")
+	time_reader_add_minimal = open(os.getcwd()+ "\\timer_directory\\cpuaddminimal00outreal.txt", "r")
+	time_reader_add_adversarial = open(os.getcwd()+ "\\timer_directory\\cpuaddadversarial11outreal.txt", "r")
+	time_reader_add_extra = open(os.getcwd()+ "\\timer_directory\\cpuaddextra22outreal.txt", "r")
+	time_reader_sub_minimal = open(os.getcwd()+ "\\timer_directory\\cpusubminimal00outreal.txt", "r")
+	time_reader_sub_adversarial = open(os.getcwd()+ "\\timer_directory\\cpusubadversarial11outreal.txt", "r")
+	time_reader_sub_extra = open(os.getcwd()+ "\\timer_directory\\cpusubextra22outreal.txt", "r")
 
-time_reader_and_minimal = open(os.getcwd()+ "\\timer_directory\\cpuandminimal00outreal.txt", "r")
-time_reader_and_adversarial = open(os.getcwd()+ "\\timer_directory\\cpuandadversarial11outreal.txt", "r")
-time_reader_and_extra = open(os.getcwd()+ "\\timer_directory\\cpuandextra22outreal.txt", "r")
-time_reader_or_minimal = open(os.getcwd()+ "\\timer_directory\\cpuorminimal00outreal.txt", "r")
-time_reader_or_adversarial = open(os.getcwd()+ "\\timer_directory\\cpuoradversarial11outreal.txt", "r")
-time_reader_or_extra = open(os.getcwd()+ "\\timer_directory\\cpuorextra22outreal.txt", "r")
-time_reader_not_minimal = open(os.getcwd()+ "\\timer_directory\\cpunotminimal00outreal.txt", "r")
-time_reader_not_adversarial = open(os.getcwd()+ "\\timer_directory\\cpunotadversarial11outreal.txt", "r")
-time_reader_not_extra = open(os.getcwd()+ "\\timer_directory\\cpunotextra22outreal.txt", "r")
-time_reader_add_minimal = open(os.getcwd()+ "\\timer_directory\\cpuaddminimal00outreal.txt", "r")
-time_reader_add_adversarial = open(os.getcwd()+ "\\timer_directory\\cpuaddadversarial11outreal.txt", "r")
-time_reader_add_extra = open(os.getcwd()+ "\\timer_directory\\cpuaddextra22outreal.txt", "r")
-time_reader_sub_minimal = open(os.getcwd()+ "\\timer_directory\\cpusubminimal00outreal.txt", "r")
-time_reader_sub_adversarial = open(os.getcwd()+ "\\timer_directory\\cpusubadversarial11outreal.txt", "r")
-time_reader_sub_extra = open(os.getcwd()+ "\\timer_directory\\cpusubextra22outreal.txt", "r")
-
-time_reader_and_minimal_gpu = open(os.getcwd()+ "\\timer_directory\\gpuandminimal00outreal.txt", "r")
-time_reader_and_adversarial_gpu = open(os.getcwd()+ "\\timer_directory\\gpuandadversarial11outreal.txt", "r")
-time_reader_and_extra_gpu = open(os.getcwd()+ "\\timer_directory\\gpuandextra22outreal.txt", "r")
-time_reader_or_minimal_gpu = open(os.getcwd()+ "\\timer_directory\\gpuorminimal00outreal.txt", "r")
-time_reader_or_adversarial_gpu = open(os.getcwd()+ "\\timer_directory\\gpuoradversarial11outreal.txt", "r")
-time_reader_or_extra_gpu = open(os.getcwd()+ "\\timer_directory\\gpuorextra22outreal.txt", "r")
-time_reader_not_minimal_gpu = open(os.getcwd()+ "\\timer_directory\\gpunotminimal00outreal.txt", "r")
-time_reader_not_adversarial_gpu = open(os.getcwd()+ "\\timer_directory\\gpunotadversarial11outreal.txt", "r")
-time_reader_not_extra_gpu = open(os.getcwd()+ "\\timer_directory\\gpunotextra22outreal.txt", "r")
-time_reader_add_minimal_gpu = open(os.getcwd()+ "\\timer_directory\\gpuaddminimal00outreal.txt", "r")
-time_reader_add_adversarial_gpu = open(os.getcwd()+ "\\timer_directory\\gpuaddadversarial11outreal.txt", "r")
-time_reader_add_extra_gpu = open(os.getcwd()+ "\\timer_directory\\gpuaddextra22outreal.txt", "r")
-time_reader_sub_minimal_gpu = open(os.getcwd()+ "\\timer_directory\\gpusubminimal00outreal.txt", "r")
-time_reader_sub_adversarial_gpu = open(os.getcwd()+ "\\timer_directory\\gpusubadversarial11outreal.txt", "r")
-time_reader_sub_extra_gpu = open(os.getcwd()+ "\\timer_directory\\gpusubextra22outreal.txt", "r")
-
-time_input_files = [time_reader_and_minimal, time_reader_and_minimal_gpu, time_reader_and_adversarial, time_reader_and_adversarial_gpu, time_reader_and_extra, time_reader_and_extra_gpu, time_reader_or_minimal, time_reader_or_minimal_gpu, time_reader_or_adversarial, time_reader_or_adversarial_gpu, time_reader_or_extra, time_reader_or_extra_gpu, time_reader_not_minimal, time_reader_not_minimal_gpu, time_reader_not_adversarial, time_reader_not_adversarial_gpu, time_reader_not_extra, time_reader_not_extra_gpu, time_reader_add_minimal, time_reader_add_minimal_gpu, time_reader_add_adversarial, time_reader_add_adversarial_gpu, time_reader_add_extra, time_reader_add_extra_gpu, time_reader_sub_minimal, time_reader_sub_minimal_gpu, time_reader_sub_adversarial, time_reader_sub_adversarial_gpu, time_reader_sub_extra, time_reader_sub_extra_gpu]
+	time_reader_and_minimal_gpu = open(os.getcwd()+ "\\timer_directory\\gpuandminimal00outreal.txt", "r")
+	time_reader_and_adversarial_gpu = open(os.getcwd()+ "\\timer_directory\\gpuandadversarial11outreal.txt", "r")
+	time_reader_and_extra_gpu = open(os.getcwd()+ "\\timer_directory\\gpuandextra22outreal.txt", "r")
+	time_reader_or_minimal_gpu = open(os.getcwd()+ "\\timer_directory\\gpuorminimal00outreal.txt", "r")
+	time_reader_or_adversarial_gpu = open(os.getcwd()+ "\\timer_directory\\gpuoradversarial11outreal.txt", "r")
+	time_reader_or_extra_gpu = open(os.getcwd()+ "\\timer_directory\\gpuorextra22outreal.txt", "r")
+	time_reader_not_minimal_gpu = open(os.getcwd()+ "\\timer_directory\\gpunotminimal00outreal.txt", "r")
+	time_reader_not_adversarial_gpu = open(os.getcwd()+ "\\timer_directory\\gpunotadversarial11outreal.txt", "r")
+	time_reader_not_extra_gpu = open(os.getcwd()+ "\\timer_directory\\gpunotextra22outreal.txt", "r")
+	time_reader_add_minimal_gpu = open(os.getcwd()+ "\\timer_directory\\gpuaddminimal00outreal.txt", "r")
+	time_reader_add_adversarial_gpu = open(os.getcwd()+ "\\timer_directory\\gpuaddadversarial11outreal.txt", "r")
+	time_reader_add_extra_gpu = open(os.getcwd()+ "\\timer_directory\\gpuaddextra22outreal.txt", "r")
+	time_reader_sub_minimal_gpu = open(os.getcwd()+ "\\timer_directory\\gpusubminimal00outreal.txt", "r")
+	time_reader_sub_adversarial_gpu = open(os.getcwd()+ "\\timer_directory\\gpusubadversarial11outreal.txt", "r")
+	time_reader_sub_extra_gpu = open(os.getcwd()+ "\\timer_directory\\gpusubextra22outreal.txt", "r")
+	
+	time_input_files = [time_reader_and_minimal, time_reader_and_minimal_gpu, time_reader_and_adversarial, time_reader_and_adversarial_gpu, time_reader_and_extra, time_reader_and_extra_gpu, time_reader_or_minimal, time_reader_or_minimal_gpu, time_reader_or_adversarial, time_reader_or_adversarial_gpu, time_reader_or_extra, time_reader_or_extra_gpu, time_reader_not_minimal, time_reader_not_minimal_gpu, time_reader_not_adversarial, time_reader_not_adversarial_gpu, time_reader_not_extra, time_reader_not_extra_gpu, time_reader_add_minimal, time_reader_add_minimal_gpu, time_reader_add_adversarial, time_reader_add_adversarial_gpu, time_reader_add_extra, time_reader_add_extra_gpu, time_reader_sub_minimal, time_reader_sub_minimal_gpu, time_reader_sub_adversarial, time_reader_sub_adversarial_gpu, time_reader_sub_extra, time_reader_sub_extra_gpu]
 
 def atof(s, gpu_format):
 	while s:
@@ -46,7 +54,7 @@ def atof(s, gpu_format):
 	return 0.0
 
 index_file = 0
-num_runs = 5
+
 
 for time_reader in time_input_files:
 	selection_array = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
@@ -89,12 +97,9 @@ for time_reader in time_input_files:
 	index_reader = -1
 	for line in time_reader:
 		array = line.split(' ')
-		print("time is ", array[4:], " at loop_index ", loop_index, " and index file ", index_file)
 		topass = None
 		if array[0] == "Run":
-			print("passed here at run ", array[3])
 			index_reader = int(array[3])
-			print("index reader is ", index_reader)
 		else:
 			if gpu_format == True:
 				topass = array[7]

@@ -1,10 +1,8 @@
-import os, time
+import time
 
-def timer_write(ga_name, start, finish):
-    timer_out_cpu = open(os.getcwd()+ "\\timer_directory\\cpuorextra22outreal.txt", "a+")
-    timer_out_cpu.write(ga_name + " CPU time is " + str(finish - start) + "\n")
+from src.abstracts.cpu_timer import *
+
 # Time complexity = O(mxn)
-
 def lc_substring(X, Y):
     # LCSuff is the table with zero  
     # value initially in each cell

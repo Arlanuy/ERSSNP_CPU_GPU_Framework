@@ -1,28 +1,29 @@
-2
-
-1 for CPU or 2 for GPU execution choice
-testandextra1.yaml
-
-when u want to increase the runs/generation/population
-1
-
-2
-2
-4
-Y
-testandextra1new.yaml
-
-when u want to have a maximum fitness goal
-2
-2
-99 or 100 for perfect but hard if not possible
-Y
-testandextra1new.yaml
+2-Load an evolutionary process from a configuration file
+test.yaml - name of the loadfile
+2-1 for CPU or 2 for GPU execution choice
 
 
+	when u want to increase the runs/generation/population:
+	1
 
-when you just want to maintain current number of generations and population_size
-3
-Y
-testandextra1new.yaml
+	2
+	2
+	4
+	Y
+	testandextra1new.yaml
+
+	when u want to have a maximum fitness goal (goes to 100 generations as limit if the goal is never reached):
+	2
+	2
+	99 or 100 for perfect but hard if not possible
+	Y
+	testandextra1new.yaml
+
+
+
+	when you just want to maintain current number of generations and population_size (this will go here in default if you choose GPU for the 3rd query):
+	1-runs we like to add
+	0,1-denotes the first run (index 0) and the second generation (index 1) as the initial parents of the zeroth generation of this additional run
+	Y - if you would like to use another savefile
+	test_gpu.yaml
 
