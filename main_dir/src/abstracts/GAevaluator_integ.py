@@ -17,9 +17,6 @@ class SNPGeneticAlgoEval:
     max_fitness  = 0
     no_of_gen = 0
     no_of_run = 0
-    # list_of_runs = []    
-    # file_name = None
-    # ga_params = None
     #path name is now loadfile_name
     def run(self, genetic_algo, system, size, function, runs, generations, mutation_rate, path_name, selection_func, start_new = True, start_from_gen = False):
         max_fitness_in_run = 0
@@ -36,7 +33,7 @@ class SNPGeneticAlgoEval:
             start = self.ga_params['run_total']
             middle = 0
         for run in range(start, start + middle + self.ga_params['runs_pending']):
-            print("run run baby # " + str(run))
+            print("Run index # " + str(run))
             # Perform a single run of the GA framework
             run_fitness = genetic_algo.simulate(system, size, function, generations, mutation_rate, path_name, run, selection_func, start_from_gen)            
             if  run_fitness > max_fitness_in_run:
@@ -60,7 +57,6 @@ class SNPGeneticAlgoEval:
         # Iterate through all runs
         for run in range(self.no_of_run):
             # Get highest fitness for that run
-            #fitness = int(re.search('\'fitness\': (.*), \'out', run[-1]).group(1))
             fitness = self.ga_params['runs'][run]['max_fitness_in_run']
             # Increase number of optimal run if highest fitness is greater than the optimal fitness
             if fitness >= self.opt_fitness: no_of_opt_run += 1
@@ -74,7 +70,6 @@ class SNPGeneticAlgoEval:
         run_index = 0
         for run in range(self.no_of_run):
             # Get highest fitness for that run
-            #fitness = int(re.search('\'fitness\': (.*), \'out', run[-1]).group(1))
             fitness = self.ga_params['runs'][run]['max_fitness_in_run']
             run_index += 1
             # Add highest fitness to the sum of fitness for all runs
@@ -93,7 +88,6 @@ class SNPGeneticAlgoEval:
             # Iterate through every generation of a run
             for gen in range(self.no_of_gen):
                 # Get fitness of the generation
-                #fitness = int(re.search('\'fitness\': (.*), \'out', gen).group(1))
                 fitness = self.ga_params['runs'][run]['max_fitness_in_run']
                 # If the fitness is greater than the previous gen's fitness, increase number of leap for that run
                 if fitness > prev_fitness: leaps += 1
@@ -101,7 +95,6 @@ class SNPGeneticAlgoEval:
             
             # Get summation of the average no of leaps of all runs
             evol_leap += (leaps / self.no_of_gen)
-            print("evol leap is " + str(evol_leap))
-        print('no of run is ' + str(self.no_of_run))
-        # Return summatoon of the average no of leaps of all runs
+ 
+        # Return summation of the average no of leaps of all runs
         return evol_leap / self.no_of_run

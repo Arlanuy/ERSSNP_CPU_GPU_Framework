@@ -85,7 +85,6 @@ def edit_distance2(str1, str2):
  
     start = time.perf_counter()
     delete_point =  1
-    #print("delete point is ", n/m)
     # Fill d[][] in bottom up manner 
     for i in range(0, m+1): 
         for j in range(0, n+1): 
@@ -109,13 +108,10 @@ def edit_distance2(str1, str2):
                 delt = 0
                 if str1[i - 1] != str2[j - 1]: 
                     delt = delete_point 
-                #print("sample is ", dp[i][j-1] + delete_point)
-                #print(" cpu ", str(dp[i][j-1]) , "-", str(dp[i-1][j]), "-", str(dp[i-1][j-1]), "and ", str1[i - 1] ,  "-" , str2[j - 1], "compared\\n")
                 dp[i][j] = min(dp[i][j-1] + delete_point,        # Insert 
                                    dp[i-1][j] + delete_point,        # Remove 
                                    dp[i-1][j-1] + delt)      # Replace 
   
-    #print("dp is ", dp)
     finish = time.perf_counter()
     timer_write("Evaluate", start, finish)
 

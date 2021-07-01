@@ -23,8 +23,7 @@ class SNPGeneticAlgoEval:
             genetic_algo.simulate(system, size, function, generations, mutation_rate, path_name, run, selection_func)
             self.updateRuns(path_name, run)
 
-        # print("Likelihood of Evolution Leap: ", self.likelihoodOfEvolLeap(), file=open(path_name + "/Run" + str(run) + "/run.txt","a"))
-        # print("Likelihood of Optimality: ", self.likelihoodOfOptimality(), file=open(path_name + "/Run" + str(run) + "/run.txt","a"))
+        
         print("Average Fitness Value: ", self.avgFitnessValue(), file=open(path_name + "/Run" + str(run) + "/run.txt","a"))
 
     def likelihoodOfOptimality(self):
@@ -85,6 +84,5 @@ class SNPGeneticAlgoEval:
                 # Get the highest fitness of every generation
                 if line.startswith("0"):
                     array.append(line[2:])
-                    #print("fitness is " + line[2:])
         
         self.list_of_runs.append(array)

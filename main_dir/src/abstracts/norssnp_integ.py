@@ -163,21 +163,6 @@ def set_values(ga_eval, runs):
 
     
 
-and_rssnp_minimal = {
-    'neurons': 4,
-    'synapses': 3,
-    'rules': [
-        [0, 2, (1, 0), 1, 1, 0],
-        [1, 2, (1, 0), 1, 1, 0],
-        [2, 3, (2, 0), 2, 1, 0],
-        [2, 3, (1, 0), 1, 0, 0], 
-    ],
-    'init_config': [0, 0, 0, 0],
-    'rule_status': [-1 for x in range(4)],
-    'input_neurons': [0, 1],
-    'output_neuron': 3
-}
-
 
     
 

@@ -7,6 +7,8 @@ from pycuda import gpuarray
 import os
 from src.abstracts.gpu_timer import *
 
+#performs the pooling of random numbers using CURAND
+
 def getrandom(N, num_crosses, random_seed, max_limit):
 
     code = """
@@ -62,7 +64,6 @@ def getrandom(N, num_crosses, random_seed, max_limit):
     gdata = gpuarray.zeros(num_crosses, dtype=np.float32)
     min_lim = gdata_int #same minimum limit of all zeros
     max_lim = gpuarray.to_gpu(max_limit)
-    #max_lim = max_limit
     timer_gpu = GpuTimer()
     timer_gpu.tic()
     fill_func(gdata, gdata_int, np.int32(N), max_lim, min_lim, block=(num_crosses,1,1), grid=(1,1,1))

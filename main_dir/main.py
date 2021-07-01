@@ -61,7 +61,7 @@ def prompt_make_newsavefile(ga_params, loadfile_name, load_directory):
 	if newfile_choice == True:
 		newloadfile_name = os.path.join(load_directory, input("What is the name of the new savefile: "))
 		conf_save(newloadfile_name, ga_params)
-		#print(ga_params)
+
 
 	else:
 		conf_save(loadfile_name, ga_params)
@@ -78,9 +78,7 @@ def program_main():
 		print("Given the choices of version of the systems to evolve (1) minimal, (2) adversarial, (3) extra rules, (4) user-defined")
 		type_answer = int(input("What kind of system would you like to evolve: "))
 		save_directory = os.path.join(home, "load_directory")
-		#save_directory = input("Which directory would you like to save (.yaml) the evolutionary process: ")
-		#if not os.path.exists(save_directory):
-		  #  os.makedirs(save_directory)
+
 		savefile_name = os.path.join(save_directory, input("What will be the name of this savefile: ") + ".yaml")
 		runs = int(input("How many runs would you like to do (min of 1): "))
 		generations = int(input("How many generation would you like to do (min of 1): "))
@@ -190,7 +188,7 @@ def program_main():
 
 	if int(menu_choice) == 2:
 		load_directory = os.path.join(home, "load_directory")
-		#load_directory = input("Which load directory would you like to load (.yaml) an evolutionary process from: ")
+		
 		loadfile_name = os.path.join(load_directory, input("What is the name of this loadfile (append a yaml extension) : "))
 		ga_params = conf_load(loadfile_name)
 		print("Load function starting")
@@ -214,7 +212,7 @@ def program_main():
 				
 			elif sub_choice == 2:
 				print("Notice that the evolutionary process wont stop till a chromosome reached the desired goal fitness\n")
-				print("Or till you exit the program itself (make sure its after a run in a GA) and the autosave will record only up to the point of termination\n")
+				print("Or till you reach the maximum limit of 100 generations or exit the program itself (make sure its after a run in a GA) and the autosave will record only up to the point of termination\n")
 				add_goal_fitness = int(input("What is the desired goal fitness: (minimum of 50 and maximum of 100): "))
 				#101 denotes an unending condition no matter how many runs or generations are reported
 				ga_params['runs_pending'] = 101
@@ -251,7 +249,6 @@ def program_main():
 			#for subchoice 3, rssnp string is used only in order to acquire the input neuron indexes for spike_train_parser function
 			rssnp_string = ga_params['runs'][0]['generations'][0]['rssnp_chromosomes'][0]
 			
-			print("rssnp string is " + str(rssnp_string))
 			gaframework(rssnp_string, ga_params['test_cases_path'] , newloadfile_name, start_new, start_from_a_gen)
 			ga_params = conf_load(newloadfile_name)
 			ga_params['run_total'] += ga_params['runs_pending']
@@ -284,7 +281,7 @@ def program_main():
 				ga_params['runs'][run]['fitness_function'] = ga_params['runs'][0]['fitness_function']
 			print("rewriting to 2", newloadfile_name)
 			conf_save(newloadfile_name, ga_params)
-			#rssnp_string = ga_params['runs'][0]['generations'][0]['rssnp_chromosomes'][0]
+
 			gaframework_gpu(newloadfile_name)
 			ga_params = conf_load(newloadfile_name)
 			ga_params['run_total'] += ga_params['runs_pending']
@@ -296,19 +293,6 @@ def program_main():
 			print("rewriting to 3", newloadfile_name)
 			conf_save(newloadfile_name, ga_params)
 
-# ga_params = {
-#     'population_size': 12,
-#     'mutation_rate': 100,
-#     'fitness_function': 0,
-#     'generations': 50,
-#     'runs': 1,
-#     'selection_func': 1
-# }
-# home = os.getcwd()
-# path = os.path.join(home, "test_cases", "sub_test_cases.txt")
-# print(path)
-# path_to_inputoutput_spike_trains = path
 
-# gaframework(sub_rssnp_extra_rules, path_to_inputoutput_spike_trains, ga_params)
 
 program_main()
