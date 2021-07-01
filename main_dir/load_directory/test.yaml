@@ -196,8 +196,6 @@ runs:
         best_chromosome_indexes:
         - 0
         - 1
-        - 2
-        - 3
         best_fitness_result: 100
         rssnp_chromosomes:
           0:
@@ -227,7 +225,7 @@ runs:
             rules: *id008
             synapses: 3
           2:
-            chrom_fitness: 100
+            chrom_fitness: 53
             init_config:
             - 0
             - 0
@@ -239,7 +237,6 @@ runs:
             neurons: 4
             output_neuron: 3
             rule_status:
-            - -1
             - -1
             - -1
             - -1
@@ -261,16 +258,10 @@ runs:
               - *id002
               - 2
               - 1
-              - 0
-            - - 2
-              - 3
-              - *id001
-              - 1
-              - 0
               - 0
             synapses: 3
           3:
-            chrom_fitness: 100
+            chrom_fitness: 54
             init_config:
             - 0
             - 0
@@ -285,7 +276,6 @@ runs:
             - -1
             - -1
             - -1
-            - -1
             rules:
             - - 0
               - 2
@@ -297,12 +287,6 @@ runs:
               - 2
               - *id001
               - 1
-              - 1
-              - 0
-            - - 2
-              - 3
-              - *id002
-              - 2
               - 1
               - 0
             - - 2

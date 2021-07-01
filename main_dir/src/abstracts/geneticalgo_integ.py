@@ -32,17 +32,15 @@ def class_to_yaml(ga_params_rssnp, rssnp):
 def string_format(bitstring):
     return str(bitstring)[1:-1].translate(dict.fromkeys(map(ord, ', '), None))
 
+#assign the fitness from the three evaluate functions
 def assign_fitness(generated, actual, function):
     result = 0
-    #print("generated ", string_format(generated), "actual ", string_format(actual))
     if function == 0:
         result = lc_subsequence(string_format(generated), string_format(actual))      
     elif function == 1:
         result = lc_substring(string_format(generated), string_format(actual))
     elif function == 2:
         result = edit_distance2(string_format(generated), string_format(actual))
-        #result = edit_distance2(string_format(generated), string_format(actual), len(generated), len(actual))
-    #print("result ", result)
     return result
 
 class SNPGeneticAlgo:
@@ -77,7 +75,6 @@ class SNPGeneticAlgo:
 
     def use_population(self, count, last_gen_chromosomes):
         # Flush population and insert the original RSSNP
-        #self.pop = [{'system': initsystem, 'fitness': 0, 'out_pairs': []}]
         self.pop = []
         for chromosome in range(0, count):
             # Create a network from previous generation.
@@ -140,7 +137,6 @@ class SNPGeneticAlgo:
                     i = (i + 1) % len(self.pop)
             else:
                 parents = self.pop[:int(len(self.pop)/2)]
-            #print("chose this selection 2")
         print("parents returned by selection are ", len(parents))
         return parents
 
@@ -152,22 +148,21 @@ class SNPGeneticAlgo:
         population_size = len(self.pop)
         # Get only parents
         parents = self.selection(selection_func)
-        #print("parents are ", parents)
+
         # delete half of the population
         self.pop = self.pop[:(int(len(self.pop)/2))]
-        #print("parent 2 is ", parents[1])
+
         i = 0
         while True:
             cross_counter = 0
-            #print("passed outer loop here")
+
 
             while True:
                 # Get parents
-                #print("passed inner loop here")
+
                 parent1 = deepcopy(parents[i % len(parents)])  # best parent
                 parent2 = deepcopy(parents[(i + 1) % len(parents)]) # 2nd best
-                #print("parent 1 is ", parent1)
-                #print("parent 2 is ", parent2)
+
                 # Choose random rule to swap
                 backup1 = deepcopy(parent1)
                 backup2 = deepcopy(parent2)
@@ -187,7 +182,7 @@ class SNPGeneticAlgo:
                     parent1['system'].out_spiketrain = []
                     parent2['system'].out_spiketrain = []
                     self.pop.extend([parent1,parent2])
-                    #print("passed first")
+
                     if len(self.pop) > population_size:
                         while len(self.pop) > population_size:
                             self.pop = self.pop[:-1]
@@ -207,12 +202,12 @@ class SNPGeneticAlgo:
                     self.pop.extend([parent1,parent2])
                     break
 
-            #print("comparing", len(self.pop), population_size)
+
             if len(self.pop) == population_size and not i == 0:
                 return
 
             i += 1
-        #print("finished crossover here")
+
 
 
     def evaluate(self, chromosome, function):
@@ -237,7 +232,7 @@ class SNPGeneticAlgo:
         for pair in self.inout_pairs:
             maxSteps = 3*len(pair['output'])
             chromosome['system'].in_spiketrain = pair['inputs']
-            # print(chromosome['system'].in_spiketrain)
+
             chromosome['system'].out_spiketrain = []
             config = deepcopy(chromosome['system'].configuration_init)
             
@@ -246,30 +241,24 @@ class SNPGeneticAlgo:
             maxlen = len(chromosome['system'].out_spiketrain)
             total_output_lengths += maxlen
             minlen = len(pair['output'])
-            #value = += int(assign_fitness(chromosome['system'].out_spiketrain, pair['output'], function))
+
             if function == 2:
-                #print("First string is ", chromosome['system'].out_spiketrain, " Second string is ", pair['output'])
-                #print("first is ", len(chromosome['system'].out_spiketrain), " second is ", int(assign_fitness(chromosome['system'].out_spiketrain, pair['output'], function)))
+
+
                 value = assign_fitness(chromosome['system'].out_spiketrain, pair['output'], function)
-                #print("maxlen value is ", maxlen, " while minus value is ", value, " and minlen is ", minlen)
+
                 chromosome['fitness'] +=  (maxlen - value)/minlen
             
             else:
                 chromosome['fitness'] += assign_fitness(chromosome['system'].out_spiketrain, pair['output'], function)/minlen*100
-            #print("add value is ", value)
-            #print(" len pair is ", len(pair['output']))
-            #chromosome['fitness'] += (value/len(pair['output']))*100
-            #print("actual value is ", (value/len(pair['output']))*100)
-        #print("how many is ", len(self.inout_pairs))
-        #print("sum in cpu is ", chromosome['fitness'])
-        #print("total dataset is ", total_dataset_lengths, " and total output is ", total_output_lengths)
+
         if function == 2:
             chromosome['fitness'] = int(chromosome['fitness'])
         else:
             chromosome['fitness'] = int(chromosome['fitness']/len(self.inout_pairs))
         
         
-        # print(chromosome)
+
 
 
     def simulate(self, system, size, function, generations, mutation_rate, path_name, run_index, selection_func, start_from_gen = False):
@@ -287,7 +276,7 @@ class SNPGeneticAlgo:
             copy_sys = deepcopy(system)
             self.create_population(size, copy_sys)
             
-
+        #Continue the population from a certaint point in the loadfile
         else:
             print("Continuing using the run,generation number ", ga_params['generation_index_continue'])
             run_gen_array = ga_params['generation_index_continue'].split(',')
@@ -299,13 +288,8 @@ class SNPGeneticAlgo:
         whole_run_best_fitness = 0
         current_gen = None
         for generation in range(start, start + generations + ga_params['gens_pending']):
-            print("gen baby gen " + str(generation))
             print("run index is " + str(run_index) + " gen index is " + str(generation))
             current_gen = ga_params["runs"][run_index]["generations"][generation]
-            # # Create folder
-            # folder = path_name + "/" + "Run" + str(run_index) + "/" + "Generation" + str(generation) + "/"
-            # if not os.path.exists(folder):
-            #     os.makedirs(folder)           
 
             print("Evaluating Gen "+str(generation)+"...")
             
@@ -314,7 +298,7 @@ class SNPGeneticAlgo:
             max_fitness = 0
             chromosome_indexes = []
             for chrom in self.pop:
-                #print("Chromosome:",i)
+
 
                 self.evaluate(chrom, function)
                 
@@ -328,7 +312,7 @@ class SNPGeneticAlgo:
                         chromosome_indexes = []
                         chromosome_indexes.append(chrom_index)
                     max_fitness = result_fitness 
-                #current_gen['rssnp_chromosomes'][i] = chrom['system']
+
                 ga_params_chrom = ga_params['runs'][run_index]['generations'][generation]['rssnp_chromosomes'][chrom_index]
                 class_to_yaml(ga_params_chrom, chrom)
                 chrom_index += 1
@@ -339,10 +323,10 @@ class SNPGeneticAlgo:
             if current_gen['best_fitness_result'] > whole_run_best_fitness:
                 whole_run_best_fitness = max_fitness
 
-            print("fitness got is " + str(current_gen['best_fitness_result']))
+            print("best fitness got among generation is " + str(current_gen['best_fitness_result']))
             current_gen['best_chromosome_indexes'] = chromosome_indexes
             print("best chromosome indexes are  " + str(current_gen['best_chromosome_indexes']))
-            #print("ga_params at gen " + str(generation) + " is " + str(ga_params))
+
             conf_save(filename, ga_params)
             # Sort population acc. to fitness level
             self.pop = sorted(self.pop, key=lambda k: k['fitness'], reverse=True)
@@ -350,11 +334,13 @@ class SNPGeneticAlgo:
             # Crossover and mutation
             print("Crossover:",generation)
             self.crossover(mutation_rate, selection_func)
+            if whole_run_best_fitness >= ga_params["goal_fitness"]:
+                break
 
         ga_params['runs'][run_index]['max_fitness_in_run'] = whole_run_best_fitness
-        print("whole run fitness is ", str(whole_run_best_fitness), " at index ", run_index)
+        print("best fitness got among runs is ", str(whole_run_best_fitness), " at index ", run_index)
         conf_save(filename, ga_params)
-        print("went here")
+
         
         return whole_run_best_fitness
 

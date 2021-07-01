@@ -1,20 +1,18 @@
 2-Load an evolutionary process from a configuration file
 test.yaml - name of the loadfile
-2-1 for CPU or 2 for GPU execution choice
+2-1 for CPU or 2 for GPU execution choice (Query 3)
 
-
+If you choose 1 above instead for Query 3
 	when u want to increase the runs/generation/population:
-	1
-
-	2
-	2
-	4
-	Y
-	testandextra1new.yaml
+	1-Would you either increase (1) runs/generations/population_size
+	1 - runs you would like to add
+	2 - generations you would like to add
+	4 - individuals in the population you would like to add
+	Y - to use another savefile
+	test2.yaml
 
 	when u want to have a maximum fitness goal (goes to 100 generations as limit if the goal is never reached):
-	2
-	2
+	2-Would you either increase (2) a goal fitness of any chromosome in the evolutionary process:
 	99 or 100 for perfect but hard if not possible
 	Y
 	testandextra1new.yaml
