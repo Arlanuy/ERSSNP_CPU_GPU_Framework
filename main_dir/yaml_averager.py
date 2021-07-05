@@ -1,7 +1,7 @@
 import yaml, os
 yaml_averager_out = open(os.getcwd()+ "\\yaml_test.txt", "w+")
 
-tutorial_time = True
+tutorial_time = False
 
 if tutorial_time == True:
 	numruns = 1

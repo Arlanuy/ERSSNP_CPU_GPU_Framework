@@ -1,6 +1,6 @@
 import os
 
-name = "cpuandminimal00outreal.txt"
+name = "test_cpu.txt"
 
 def timer_write(ga_name, start, finish):
     timer_out_cpu = open(os.getcwd()+ "\\timer_directory\\" + name, "a+")

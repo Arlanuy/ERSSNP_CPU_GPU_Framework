@@ -25,9 +25,9 @@ Avg len of rules: 5.529999999999999
 Avg fitness: 95.185
 GPU AND Extra 
 
- Highest fitness among runs and generations: 82
-Avg len of rules: 5.095
-Avg fitness: 79.44
+ Highest fitness among runs and generations: 83
+Avg len of rules: 5.08
+Avg fitness: 77.77000000000001
 CPU OR Minimal 
 
  Highest fitness among runs and generations: 100
@@ -55,9 +55,9 @@ Avg len of rules: 5.57
 Avg fitness: 90.15
 GPU OR Extra 
 
- Highest fitness among runs and generations: 51
-Avg len of rules: 5.4799999999999995
-Avg fitness: 49.54
+ Highest fitness among runs and generations: 69
+Avg len of rules: 5.35
+Avg fitness: 64.46000000000001
 CPU NOT Minimal 
 
  Highest fitness among runs and generations: 100
@@ -85,9 +85,9 @@ Avg len of rules: 5.5649999999999995
 Avg fitness: 68.23
 GPU NOT Extra 
 
- Highest fitness among runs and generations: 77
-Avg len of rules: 5.404999999999999
-Avg fitness: 69.87500000000001
+ Highest fitness among runs and generations: 94
+Avg len of rules: 5.3
+Avg fitness: 70.67999999999999
 CPU ADD Minimal 
 
  Highest fitness among runs and generations: 100
@@ -115,9 +115,9 @@ Avg len of rules: 6.514999999999999
 Avg fitness: 92.14
 GPU ADD Extra 
 
- Highest fitness among runs and generations: 58
-Avg len of rules: 6.3149999999999995
-Avg fitness: 56.010000000000005
+ Highest fitness among runs and generations: 76
+Avg len of rules: 6.464999999999999
+Avg fitness: 71.77000000000001
 CPU SUB Minimal 
 
  Highest fitness among runs and generations: 100
@@ -145,6 +145,6 @@ Avg len of rules: 21.105
 Avg fitness: 87.82000000000001
 GPU SUB Extra 
 
- Highest fitness among runs and generations: 100
-Avg len of rules: 21.425
-Avg fitness: 86.11500000000001
+ Highest fitness among runs and generations: 97
+Avg len of rules: 20.955000000000002
+Avg fitness: 85.28999999999999
