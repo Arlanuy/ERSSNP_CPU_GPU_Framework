@@ -258,7 +258,6 @@ class SNPGeneticAlgoGPU:
 		dataset = numpy.zeros(shape=(int(dataset_size/max_numpy_arraylen) + 1, max_numpy_arraylen, max_spike_size), dtype=numpy.int32)
 		line_index = 0
 		max_row_width = 0
-		max_col_width = 0
 		input = open(filename, 'r')
 		for line in input:
 		    numbers = line.strip('\n').split(',')
@@ -269,10 +268,8 @@ class SNPGeneticAlgoGPU:
 		        spike_index += 1
 		    if max_row_width < spike_index:
 		        max_row_width = spike_index
-		    if max_col_width < spike_index:
-		        max_col_width = spike_index
 		    line_index += 1
-		return numpy.array(dataset), max_row_width, max_col_width
+		return numpy.array(dataset), max_row_width
 
 
 
@@ -280,13 +277,12 @@ class SNPGeneticAlgoGPU:
 		
 		inout_pairs_view = []
 		row_width = 0
-		col_width = 0
 		dataset = self.dataset_arrange(ga_params['test_cases_path'])
 		chromosome['fitness'] = 0
 		if fitness_func == 2:
 			test_case_file = open(ga_params['test_cases_path'], 'r')
 			len_dataset = len(list(test_case_file))
-			dataset2, row_width, col_width = self.dataset_arrange3(len_dataset, ga_params['test_cases_path'])
+			dataset2, row_width = self.dataset_arrange3(len_dataset, ga_params['test_cases_path'])
 			output_dataset_lengths = numpy.zeros(len_dataset, dtype = numpy.int32)
 			total_dataset_lengths = 0
 			for z in range(0, len_dataset):
@@ -326,6 +322,7 @@ class SNPGeneticAlgoGPU:
 			n = None
 
 			len_output = len(list(chromosome['out_pairs']))
+			col_width = 0
 			for m in list(chromosome['out_pairs']):
 			
 				n = numpy.asarray(m[0], dtype=numpy.int32)
@@ -335,9 +332,13 @@ class SNPGeneticAlgoGPU:
 
 				n = based_init(n, abs(max_spike_size - len(m[0])))
 
+				
+				spike_for_out = 0
 				for index_value in range(max_spike_size):
 					output_rssnp_numpy[int(line_index/max_numpy_arraylen)][int(line_index%max_numpy_arraylen)][index_value] = n[index_value]
-
+					spike_for_out += 1
+				if spike_for_out > col_width:
+					col_width = spike_for_out
 
 				line_index += 1
 
