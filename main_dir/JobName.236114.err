@@ -1,2 +1,0 @@
-/var/spool/slurm/job236114/slurm_script: line 23: syntax error near unexpected token `newline'
-/var/spool/slurm/job236114/slurm_script: line 23: `module load <module> '

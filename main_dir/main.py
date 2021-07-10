@@ -59,7 +59,7 @@ def prompt_make_newsavefile(ga_params, loadfile_name, load_directory):
 	newloadfile_name = None
 
 	if newfile_choice == True:
-		newloadfile_name = "cpuandextra22.yaml"
+		newloadfile_name = sys.argv[5]
 		conf_save(newloadfile_name, ga_params)
 
 
@@ -70,23 +70,25 @@ def prompt_make_newsavefile(ga_params, loadfile_name, load_directory):
 
 def program_main(argv):
 	print("Menu\n Enter a number of your choice: (1) Create a new evolutionary process w/ autosave\n (2) Load an evolutionary process from a configuration file: ")
-	menu_choice = argv[0]
+	menu_choice = int(argv[1])
+	print("menu choice is ", menu_choice)
 	home = os.getcwd()
 	if  menu_choice == 1:
 		print("Given the choices of logic gates (1) AND, (2) OR, (3) NOT, (4) ADD, (5) SUB")
-		answer = argv[1]
+		answer = int(argv[2])
 		print("Given the choices of version of the systems to evolve (1) minimal, (2) adversarial, (3) extra rules, (4) user-defined")
-		type_answer = argv[2]
+		type_answer = int(argv[3])
 		save_directory = os.path.join(home, "load_directory")
 
-		savefile_name = os.path.join(save_directory, input("What will be the name of this savefile: ") + ".yaml")
-		runs = argv[3]
-		generations = argv[4]
-		population_size = argv[5]
-		mutation_rate = argv[6]
-		selection_func = argv[7]
+		savefile_name = os.path.join(save_directory, argv[10])
+		runs = int(argv[4])
+		generations = int(argv[5])
+		population_size = int(argv[6])
+		mutation_rate = int(argv[7])
+		print("Of the Parent Selection methods:\n 0. **Top 50% of the population**\n1. **25% of the population based on random**\n2. **Top 25% + 25% of the population based on fitness**")
+		selection_func = int(argv[8])
 		print("Of the Fitness Selection methods:\n 0. Longest Common Subsequence\n1. Longest Common Substring\n2. Edit Distance Method")
-		fitness_func = argv[8]
+		fitness_func = int(argv[9])
 
 		ga_params = create_empty_yaml(runs, generations, population_size, savefile_name)
 		ga_params['runs_pending'] = 0
@@ -188,11 +190,11 @@ def program_main(argv):
 	if int(menu_choice) == 2:
 		load_directory = os.path.join(home, "load_directory")
 		
-		loadfile_name = os.path.join(load_directory, "gpuandminimal00.yaml")
+		loadfile_name = os.path.join(load_directory, argv[4])
 		ga_params = conf_load(loadfile_name)
 		print("Load function starting")
 
-		execution_choice = int(argv[0])
+		execution_choice = int(argv[2])
 		start_from_a_gen = False
 		ga_params['goal_fitness'] = 101
 		if execution_choice == 1:
@@ -200,7 +202,7 @@ def program_main(argv):
 			#get the information from console
 			print("Menu: Would you either increase (1) runs/generations/population_size or (2) a goal fitness of any chromosome in the evolutionary process: or (3) just maintain the current number of generation/population_size but extend runs further using an initial population from any generation number ")
 			print("Note that for this program the GPU can also do option 3 but not the others ")
-			sub_choice = argv[1]
+			sub_choice = argv[2]
 			if sub_choice == 1:
 				add_runs = int(input("How many runs would you like to add (minimum of 1 and maximum of 100): "))
 				add_gens = int(input("How many generations would you like to add (minimum of 0 and maximum of 100): "))
@@ -220,7 +222,7 @@ def program_main(argv):
 				ga_params['goal_fitness'] = add_goal_fitness
 			elif sub_choice == 3:					
 				print("Maintaining current number of generation and population_size")
-				add_runs = argv[2]
+				add_runs = int(argv[3])
 				ga_params['gens_pending'] = 0
 				ga_params['populations_pending'] = 0
 				ga_params['runs_pending'] = add_runs
@@ -262,11 +264,11 @@ def program_main(argv):
 			print("Running GA in GPU: ")
 			
 			print("Maintaining current number of generation and population_size")
-			add_runs = int(input("How many runs would you like to add (minimum of 1 and maximum of 100): "))	
+			add_runs = int(argv[3])	
 			ga_params['gens_pending'] = 0
 			ga_params['populations_pending'] = 0
 			ga_params['runs_pending'] = add_runs
-			ga_params['generation_index_continue'] = input("Which run and generation would you like to use as the starting parents of the succeeding runs (separate by comma)? ")
+			ga_params['generation_index_continue'] = "0,0"
 			newloadfile_name =  prompt_make_newsavefile(ga_params, loadfile_name, load_directory)
 			print("rewriting to 1", newloadfile_name)
 			continue_create_empty_yaml(newloadfile_name)
