@@ -1,0 +1,38 @@
+>> anaconda-3-5.3.1 has been loaded.
+>> python-3.8.2 has been loaded.
+>> cuda-10.1_cudnn-7.6.5 has been loaded.
+Traceback (most recent call last):
+  File "src/abstracts/gpu_selection.py", line 6, in <module>
+    from src.abstracts.gpu_timer import *
+ModuleNotFoundError: No module named 'src'
+srun: error: saliksik-gpu-06: task 0: Exited with exit code 1
+Traceback (most recent call last):
+  File "src/abstracts/gpu_selection.py", line 6, in <module>
+    from src.abstracts.gpu_timer import *
+ModuleNotFoundError: No module named 'src'
+Traceback (most recent call last):
+  File "src/abstracts/gpu_selection.py", line 6, in <module>
+    from src.abstracts.gpu_timer import *
+ModuleNotFoundError: No module named 'src'
+Traceback (most recent call last):
+  File "src/abstracts/gpu_selection.py", line 6, in <module>
+    from src.abstracts.gpu_timer import *
+ModuleNotFoundError: No module named 'src'
+Traceback (most recent call last):
+  File "src/abstracts/gpu_selection.py", line 6, in <module>
+    from src.abstracts.gpu_timer import *
+ModuleNotFoundError: No module named 'src'
+Traceback (most recent call last):
+  File "src/abstracts/gpu_selection.py", line 6, in <module>
+    from src.abstracts.gpu_timer import *
+ModuleNotFoundError: No module named 'src'
+Traceback (most recent call last):
+  File "src/abstracts/gpu_selection.py", line 6, in <module>
+    from src.abstracts.gpu_timer import *
+ModuleNotFoundError: No module named 'src'
+Traceback (most recent call last):
+  File "src/abstracts/gpu_selection.py", line 6, in <module>
+    from src.abstracts.gpu_timer import *
+ModuleNotFoundError: No module named 'src'
+srun: error: saliksik-gpu-06: tasks 1-2,4-7: Exited with exit code 1
+srun: error: saliksik-gpu-06: task 3: Exited with exit code 1

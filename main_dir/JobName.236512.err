@@ -1,0 +1,45 @@
+>> anaconda-3-5.3.1 has been loaded.
+>> python-3.8.2 has been loaded.
+>> cuda-10.1_cudnn-7.6.5 has been loaded.
+/opt/hpcc/CPU/anaconda/3-5.3.1/bin/python: No module named pip3
+/opt/hpcc/CPU/anaconda/3-5.3.1/bin/python: No module named pip3
+/opt/hpcc/CPU/anaconda/3-5.3.1/bin/python: No module named pip3
+/opt/hpcc/CPU/anaconda/3-5.3.1/bin/python: No module named pip3
+/opt/hpcc/CPU/anaconda/3-5.3.1/bin/python: No module named pip3
+/opt/hpcc/CPU/anaconda/3-5.3.1/bin/python: No module named pip3
+/opt/hpcc/CPU/anaconda/3-5.3.1/bin/python: No module named pip3
+/opt/hpcc/CPU/anaconda/3-5.3.1/bin/python: No module named pip3
+srun: error: saliksik-cpu-21: tasks 0-7: Exited with exit code 1
+Traceback (most recent call last):
+  File "src/abstracts/gpu_selection.py", line 1, in <module>
+    import pycuda.autoinit
+ModuleNotFoundError: No module named 'pycuda'
+Traceback (most recent call last):
+  File "src/abstracts/gpu_selection.py", line 1, in <module>
+    import pycuda.autoinit
+ModuleNotFoundError: No module named 'pycuda'
+Traceback (most recent call last):
+  File "src/abstracts/gpu_selection.py", line 1, in <module>
+    import pycuda.autoinit
+ModuleNotFoundError: No module named 'pycuda'
+Traceback (most recent call last):
+  File "src/abstracts/gpu_selection.py", line 1, in <module>
+    import pycuda.autoinit
+ModuleNotFoundError: No module named 'pycuda'
+Traceback (most recent call last):
+  File "src/abstracts/gpu_selection.py", line 1, in <module>
+    import pycuda.autoinit
+ModuleNotFoundError: No module named 'pycuda'
+Traceback (most recent call last):
+  File "src/abstracts/gpu_selection.py", line 1, in <module>
+    import pycuda.autoinit
+ModuleNotFoundError: No module named 'pycuda'
+Traceback (most recent call last):
+  File "src/abstracts/gpu_selection.py", line 1, in <module>
+    import pycuda.autoinit
+ModuleNotFoundError: No module named 'pycuda'
+Traceback (most recent call last):
+  File "src/abstracts/gpu_selection.py", line 1, in <module>
+    import pycuda.autoinit
+ModuleNotFoundError: No module named 'pycuda'
+srun: error: saliksik-cpu-21: tasks 0-7: Exited with exit code 1

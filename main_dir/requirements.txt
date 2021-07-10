@@ -7,7 +7,7 @@ graphviz==0.10.1
 greenery==3.1
 isort==4.3.4
 kiwisolver==1.0.1
-lazy-object-proxy==1.3.1
+lazy-object-proxy==1.4.0
 matplotlib==3.0.0
 mccabe==0.6.1
 mpmath==1.1.0
@@ -19,7 +19,7 @@ python-dateutil==2.7.3
 pytz==2018.5
 six==1.11.0
 toml==0.9.6
-typed-ast==1.3.1
+typed-ast==1.4.0
 wrapt==1.12.1
 pyyaml==5.4.1
 pycuda==2019.1.2

@@ -1,7 +1,7 @@
 import pycuda.driver as drv
 import os
 
-name = "test_gpu.txt"
+name = "gpuandminimal00outreal.txt"
 
 def timer_write(ga_name, exec_time):
     timer_out_gpu = open(os.getcwd()+ "\\timer_directory\\" + name, "a+")

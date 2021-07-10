@@ -1,0 +1,154 @@
+>> anaconda-3-5.3.1 has been loaded.
+>> python-3.8.2 has been loaded.
+>> cuda-10.1_cudnn-7.6.5 has been loaded.
+WARNING: pip is being invoked by an old script wrapper. This will fail in a future version of pip.
+Please see https://github.com/pypa/pip/issues/5599 for advice on fixing the underlying issue.
+To avoid this problem you can invoke Python with '-m pip' instead of running pip directly.
+WARNING: pip is being invoked by an old script wrapper. This will fail in a future version of pip.
+Please see https://github.com/pypa/pip/issues/5599 for advice on fixing the underlying issue.
+To avoid this problem you can invoke Python with '-m pip' instead of running pip directly.
+WARNING: pip is being invoked by an old script wrapper. This will fail in a future version of pip.
+Please see https://github.com/pypa/pip/issues/5599 for advice on fixing the underlying issue.
+To avoid this problem you can invoke Python with '-m pip' instead of running pip directly.
+WARNING: pip is being invoked by an old script wrapper. This will fail in a future version of pip.
+Please see https://github.com/pypa/pip/issues/5599 for advice on fixing the underlying issue.
+To avoid this problem you can invoke Python with '-m pip' instead of running pip directly.
+WARNING: pip is being invoked by an old script wrapper. This will fail in a future version of pip.
+Please see https://github.com/pypa/pip/issues/5599 for advice on fixing the underlying issue.
+To avoid this problem you can invoke Python with '-m pip' instead of running pip directly.
+WARNING: pip is being invoked by an old script wrapper. This will fail in a future version of pip.
+Please see https://github.com/pypa/pip/issues/5599 for advice on fixing the underlying issue.
+To avoid this problem you can invoke Python with '-m pip' instead of running pip directly.
+WARNING: pip is being invoked by an old script wrapper. This will fail in a future version of pip.
+Please see https://github.com/pypa/pip/issues/5599 for advice on fixing the underlying issue.
+To avoid this problem you can invoke Python with '-m pip' instead of running pip directly.
+WARNING: pip is being invoked by an old script wrapper. This will fail in a future version of pip.
+Please see https://github.com/pypa/pip/issues/5599 for advice on fixing the underlying issue.
+To avoid this problem you can invoke Python with '-m pip' instead of running pip directly.
+WARNING: Skipping page https://pypi.org/simple/click/ because the GET request got Content-Type: .The only supported Content-Type is text/html
+ERROR: Could not find a version that satisfies the requirement click==6.7 (from versions: none)
+ERROR: No matching distribution found for click==6.7
+srun: error: saliksik-cpu-21: task 7: Exited with exit code 1
+WARNING: Skipping page https://pypi.org/simple/cycler/ because the GET request got Content-Type: .The only supported Content-Type is text/html
+ERROR: Could not find a version that satisfies the requirement cycler==0.10.0 (from versions: none)
+ERROR: No matching distribution found for cycler==0.10.0
+srun: error: saliksik-cpu-21: task 5: Exited with exit code 1
+WARNING: Skipping page https://pypi.org/simple/greenery/ because the GET request got Content-Type: .The only supported Content-Type is text/html
+ERROR: Could not find a version that satisfies the requirement greenery==3.1 (from versions: none)
+ERROR: No matching distribution found for greenery==3.1
+WARNING: Skipping page https://pypi.org/simple/greenery/ because the GET request got Content-Type: .The only supported Content-Type is text/html
+ERROR: Could not find a version that satisfies the requirement greenery==3.1 (from versions: none)
+ERROR: No matching distribution found for greenery==3.1
+srun: error: saliksik-cpu-21: tasks 0,4: Exited with exit code 1
+    ERROR: Command errored out with exit status 1:
+     command: /opt/hpcc/CPU/python/3.8.2/bin/python3.8 -c 'import io, os, sys, setuptools, tokenize; sys.argv[0] = '"'"'/var/tmp/pip-install-okurldvn/greenery_40f4339ffbe041ba8e99fc294df2710b/setup.py'"'"'; __file__='"'"'/var/tmp/pip-install-okurldvn/greenery_40f4339ffbe041ba8e99fc294df2710b/setup.py'"'"';f = getattr(tokenize, '"'"'open'"'"', open)(__file__) if os.path.exists(__file__) else io.StringIO('"'"'from setuptools import setup; setup()'"'"');code = f.read().replace('"'"'\r\n'"'"', '"'"'\n'"'"');f.close();exec(compile(code, __file__, '"'"'exec'"'"'))' egg_info --egg-base /var/tmp/pip-pip-egg-info-1r3mixes
+         cwd: /var/tmp/pip-install-okurldvn/greenery_40f4339ffbe041ba8e99fc294df2710b/
+    Complete output (11 lines):
+    Traceback (most recent call last):
+      File "<string>", line 1, in <module>
+      File "/opt/hpcc/CPU/python/3.8.2/lib/python3.8/site-packages/setuptools/__init__.py", line 20, in <module>
+        from setuptools.dist import Distribution, Feature
+      File "/opt/hpcc/CPU/python/3.8.2/lib/python3.8/site-packages/setuptools/dist.py", line 35, in <module>
+        from setuptools import windows_support
+      File "/opt/hpcc/CPU/python/3.8.2/lib/python3.8/site-packages/setuptools/windows_support.py", line 2, in <module>
+        import ctypes
+      File "/opt/hpcc/CPU/python/3.8.2/lib/python3.8/ctypes/__init__.py", line 7, in <module>
+        from _ctypes import Union, Structure, Array
+    ModuleNotFoundError: No module named '_ctypes'
+    ----------------------------------------
+WARNING: Discarding https://files.pythonhosted.org/packages/82/69/2c2a77e7034650954e54144ea2b88ec8742a81ac69fbe84da319e0e9112c/greenery-3.1.zip#sha256=e2d98192187bc27caa218ae59d5e34a779ec538ecd3ec839c469f36686421a7e (from https://pypi.org/simple/greenery/). Command errored out with exit status 1: python setup.py egg_info Check the logs for full command output.
+ERROR: Could not find a version that satisfies the requirement greenery==3.1 (from versions: 1.0, 1.1, 2.0, 2.1, 3.0, 3.1, 3.2, 3.3.1, 3.3.2)
+ERROR: No matching distribution found for greenery==3.1
+    ERROR: Command errored out with exit status 1:
+     command: /opt/hpcc/CPU/python/3.8.2/bin/python3.8 -c 'import io, os, sys, setuptools, tokenize; sys.argv[0] = '"'"'/var/tmp/pip-install-5ewme6gw/greenery_265d2557afec4e0eaf56ddf779782716/setup.py'"'"'; __file__='"'"'/var/tmp/pip-install-5ewme6gw/greenery_265d2557afec4e0eaf56ddf779782716/setup.py'"'"';f = getattr(tokenize, '"'"'open'"'"', open)(__file__) if os.path.exists(__file__) else io.StringIO('"'"'from setuptools import setup; setup()'"'"');code = f.read().replace('"'"'\r\n'"'"', '"'"'\n'"'"');f.close();exec(compile(code, __file__, '"'"'exec'"'"'))' egg_info --egg-base /var/tmp/pip-pip-egg-info-ryf45q17
+         cwd: /var/tmp/pip-install-5ewme6gw/greenery_265d2557afec4e0eaf56ddf779782716/
+    Complete output (11 lines):
+    Traceback (most recent call last):
+      File "<string>", line 1, in <module>
+      File "/opt/hpcc/CPU/python/3.8.2/lib/python3.8/site-packages/setuptools/__init__.py", line 20, in <module>
+        from setuptools.dist import Distribution, Feature
+      File "/opt/hpcc/CPU/python/3.8.2/lib/python3.8/site-packages/setuptools/dist.py", line 35, in <module>
+        from setuptools import windows_support
+      File "/opt/hpcc/CPU/python/3.8.2/lib/python3.8/site-packages/setuptools/windows_support.py", line 2, in <module>
+        import ctypes
+      File "/opt/hpcc/CPU/python/3.8.2/lib/python3.8/ctypes/__init__.py", line 7, in <module>
+        from _ctypes import Union, Structure, Array
+    ModuleNotFoundError: No module named '_ctypes'
+    ----------------------------------------
+WARNING: Discarding https://files.pythonhosted.org/packages/82/69/2c2a77e7034650954e54144ea2b88ec8742a81ac69fbe84da319e0e9112c/greenery-3.1.zip#sha256=e2d98192187bc27caa218ae59d5e34a779ec538ecd3ec839c469f36686421a7e (from https://pypi.org/simple/greenery/). Command errored out with exit status 1: python setup.py egg_info Check the logs for full command output.
+ERROR: Could not find a version that satisfies the requirement greenery==3.1 (from versions: 1.0, 1.1, 2.0, 2.1, 3.0, 3.1, 3.2, 3.3.1, 3.3.2)
+ERROR: No matching distribution found for greenery==3.1
+srun: error: saliksik-cpu-21: tasks 1-2: Exited with exit code 1
+    ERROR: Command errored out with exit status 1:
+     command: /opt/hpcc/CPU/python/3.8.2/bin/python3.8 -c 'import io, os, sys, setuptools, tokenize; sys.argv[0] = '"'"'/var/tmp/pip-install-7b5wbdn_/greenery_2111eef5e5024079877f22e5f9014ad1/setup.py'"'"'; __file__='"'"'/var/tmp/pip-install-7b5wbdn_/greenery_2111eef5e5024079877f22e5f9014ad1/setup.py'"'"';f = getattr(tokenize, '"'"'open'"'"', open)(__file__) if os.path.exists(__file__) else io.StringIO('"'"'from setuptools import setup; setup()'"'"');code = f.read().replace('"'"'\r\n'"'"', '"'"'\n'"'"');f.close();exec(compile(code, __file__, '"'"'exec'"'"'))' egg_info --egg-base /var/tmp/pip-pip-egg-info-hsj_2nla
+         cwd: /var/tmp/pip-install-7b5wbdn_/greenery_2111eef5e5024079877f22e5f9014ad1/
+    Complete output (11 lines):
+    Traceback (most recent call last):
+      File "<string>", line 1, in <module>
+      File "/opt/hpcc/CPU/python/3.8.2/lib/python3.8/site-packages/setuptools/__init__.py", line 20, in <module>
+        from setuptools.dist import Distribution, Feature
+      File "/opt/hpcc/CPU/python/3.8.2/lib/python3.8/site-packages/setuptools/dist.py", line 35, in <module>
+        from setuptools import windows_support
+      File "/opt/hpcc/CPU/python/3.8.2/lib/python3.8/site-packages/setuptools/windows_support.py", line 2, in <module>
+        import ctypes
+      File "/opt/hpcc/CPU/python/3.8.2/lib/python3.8/ctypes/__init__.py", line 7, in <module>
+        from _ctypes import Union, Structure, Array
+    ModuleNotFoundError: No module named '_ctypes'
+    ----------------------------------------
+WARNING: Discarding https://files.pythonhosted.org/packages/82/69/2c2a77e7034650954e54144ea2b88ec8742a81ac69fbe84da319e0e9112c/greenery-3.1.zip#sha256=e2d98192187bc27caa218ae59d5e34a779ec538ecd3ec839c469f36686421a7e (from https://pypi.org/simple/greenery/). Command errored out with exit status 1: python setup.py egg_info Check the logs for full command output.
+ERROR: Could not find a version that satisfies the requirement greenery==3.1 (from versions: 1.0, 1.1, 2.0, 2.1, 3.0, 3.1, 3.2, 3.3.1, 3.3.2)
+ERROR: No matching distribution found for greenery==3.1
+    ERROR: Command errored out with exit status 1:
+     command: /opt/hpcc/CPU/python/3.8.2/bin/python3.8 -c 'import io, os, sys, setuptools, tokenize; sys.argv[0] = '"'"'/var/tmp/pip-install-3lvrqlhx/greenery_e45879e0ffbb44b7a2b405c7ad75ece0/setup.py'"'"'; __file__='"'"'/var/tmp/pip-install-3lvrqlhx/greenery_e45879e0ffbb44b7a2b405c7ad75ece0/setup.py'"'"';f = getattr(tokenize, '"'"'open'"'"', open)(__file__) if os.path.exists(__file__) else io.StringIO('"'"'from setuptools import setup; setup()'"'"');code = f.read().replace('"'"'\r\n'"'"', '"'"'\n'"'"');f.close();exec(compile(code, __file__, '"'"'exec'"'"'))' egg_info --egg-base /var/tmp/pip-pip-egg-info-fhftzxmz
+         cwd: /var/tmp/pip-install-3lvrqlhx/greenery_e45879e0ffbb44b7a2b405c7ad75ece0/
+    Complete output (11 lines):
+    Traceback (most recent call last):
+      File "<string>", line 1, in <module>
+      File "/opt/hpcc/CPU/python/3.8.2/lib/python3.8/site-packages/setuptools/__init__.py", line 20, in <module>
+        from setuptools.dist import Distribution, Feature
+      File "/opt/hpcc/CPU/python/3.8.2/lib/python3.8/site-packages/setuptools/dist.py", line 35, in <module>
+        from setuptools import windows_support
+      File "/opt/hpcc/CPU/python/3.8.2/lib/python3.8/site-packages/setuptools/windows_support.py", line 2, in <module>
+        import ctypes
+      File "/opt/hpcc/CPU/python/3.8.2/lib/python3.8/ctypes/__init__.py", line 7, in <module>
+        from _ctypes import Union, Structure, Array
+    ModuleNotFoundError: No module named '_ctypes'
+    ----------------------------------------
+WARNING: Discarding https://files.pythonhosted.org/packages/82/69/2c2a77e7034650954e54144ea2b88ec8742a81ac69fbe84da319e0e9112c/greenery-3.1.zip#sha256=e2d98192187bc27caa218ae59d5e34a779ec538ecd3ec839c469f36686421a7e (from https://pypi.org/simple/greenery/). Command errored out with exit status 1: python setup.py egg_info Check the logs for full command output.
+ERROR: Could not find a version that satisfies the requirement greenery==3.1 (from versions: 1.0, 1.1, 2.0, 2.1, 3.0, 3.1, 3.2, 3.3.1, 3.3.2)
+ERROR: No matching distribution found for greenery==3.1
+srun: error: saliksik-cpu-21: tasks 3,6: Exited with exit code 1
+Traceback (most recent call last):
+  File "src/abstracts/gpu_selection.py", line 1, in <module>
+    import pycuda.autoinit
+ModuleNotFoundError: No module named 'pycuda'
+srun: error: saliksik-cpu-21: task 0: Exited with exit code 1
+Traceback (most recent call last):
+  File "src/abstracts/gpu_selection.py", line 1, in <module>
+    import pycuda.autoinit
+ModuleNotFoundError: No module named 'pycuda'
+Traceback (most recent call last):
+  File "src/abstracts/gpu_selection.py", line 1, in <module>
+    import pycuda.autoinit
+ModuleNotFoundError: No module named 'pycuda'
+Traceback (most recent call last):
+  File "src/abstracts/gpu_selection.py", line 1, in <module>
+    import pycuda.autoinit
+ModuleNotFoundError: No module named 'pycuda'
+Traceback (most recent call last):
+  File "src/abstracts/gpu_selection.py", line 1, in <module>
+    import pycuda.autoinit
+ModuleNotFoundError: No module named 'pycuda'
+Traceback (most recent call last):
+  File "src/abstracts/gpu_selection.py", line 1, in <module>
+    import pycuda.autoinit
+ModuleNotFoundError: No module named 'pycuda'
+Traceback (most recent call last):
+  File "src/abstracts/gpu_selection.py", line 1, in <module>
+    import pycuda.autoinit
+ModuleNotFoundError: No module named 'pycuda'
+Traceback (most recent call last):
+  File "src/abstracts/gpu_selection.py", line 1, in <module>
+    import pycuda.autoinit
+ModuleNotFoundError: No module named 'pycuda'
+srun: error: saliksik-cpu-21: tasks 1-7: Exited with exit code 1

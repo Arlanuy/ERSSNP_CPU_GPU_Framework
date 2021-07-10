@@ -1,0 +1,5 @@
+SLURM_JOBID=236509
+SLURM_JOB_NODELIST=saliksik-cpu-21
+SLURM_NNODES=1
+SLURMTMPDIR=
+working directory=/scratch1/scratch2/arlan.uy/ERSSNP_CPU_GPU_Framework/main_dir

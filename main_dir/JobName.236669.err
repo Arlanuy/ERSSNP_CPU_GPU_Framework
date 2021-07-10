@@ -1,0 +1,70 @@
+>> anaconda-3-5.3.1 has been loaded.
+>> python-3.8.2 has been loaded.
+>> cuda-10.1_cudnn-7.6.5 has been loaded.
+WARNING: Skipping page https://pypi.org/simple/pip/ because the GET request got Content-Type: .The only supported Content-Type is text/html
+Traceback (most recent call last):
+  File "main.py", line 299, in <module>
+    main()
+  File "main.py", line 297, in main
+    program_main(sys.argv)
+  File "main.py", line 188, in program_main
+    if int(menu_choice) == 2:
+ValueError: invalid literal for int() with base 10: 'main.py'
+Traceback (most recent call last):
+  File "main.py", line 299, in <module>
+    main()
+  File "main.py", line 297, in main
+    program_main(sys.argv)
+  File "main.py", line 188, in program_main
+    if int(menu_choice) == 2:
+ValueError: invalid literal for int() with base 10: 'main.py'
+Traceback (most recent call last):
+  File "main.py", line 299, in <module>
+    main()
+  File "main.py", line 297, in main
+    program_main(sys.argv)
+  File "main.py", line 188, in program_main
+    if int(menu_choice) == 2:
+ValueError: invalid literal for int() with base 10: 'main.py'
+Traceback (most recent call last):
+  File "main.py", line 299, in <module>
+    main()
+  File "main.py", line 297, in main
+    program_main(sys.argv)
+  File "main.py", line 188, in program_main
+    if int(menu_choice) == 2:
+ValueError: invalid literal for int() with base 10: 'main.py'
+Traceback (most recent call last):
+  File "main.py", line 299, in <module>
+    main()
+  File "main.py", line 297, in main
+    program_main(sys.argv)
+  File "main.py", line 188, in program_main
+    if int(menu_choice) == 2:
+ValueError: invalid literal for int() with base 10: 'main.py'
+Traceback (most recent call last):
+  File "main.py", line 299, in <module>
+    main()
+  File "main.py", line 297, in main
+    program_main(sys.argv)
+  File "main.py", line 188, in program_main
+    if int(menu_choice) == 2:
+ValueError: invalid literal for int() with base 10: 'main.py'
+Traceback (most recent call last):
+  File "main.py", line 299, in <module>
+    main()
+  File "main.py", line 297, in main
+    program_main(sys.argv)
+  File "main.py", line 188, in program_main
+    if int(menu_choice) == 2:
+ValueError: invalid literal for int() with base 10: 'main.py'
+Traceback (most recent call last):
+  File "main.py", line 299, in <module>
+    main()
+  File "main.py", line 297, in main
+    program_main(sys.argv)
+  File "main.py", line 188, in program_main
+    if int(menu_choice) == 2:
+ValueError: invalid literal for int() with base 10: 'main.py'
+srun: error: saliksik-gpu-01: tasks 0-1,3-7: Exited with exit code 1
+srun: error: saliksik-gpu-01: task 2: Exited with exit code 1

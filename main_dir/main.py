@@ -1,7 +1,7 @@
 from src.experimenter_uncommented import gaframework, gaframework_gpu
 from src.abstracts.norssnp_integ import set_bounds, set_values
 from src.RSSNP_list import *
-import yaml, os
+import yaml, os, sys
 import src.experimenter_uncommented
 import src.abstracts.norssnp_integ
 import src.RSSNP_list
@@ -52,14 +52,14 @@ def continue_create_empty_yaml(savefile_name):
 
 
 def prompt_make_newsavefile(ga_params, loadfile_name, load_directory):
-	newfile_choice = input("Would you like to use another savefile (Y) or use the existing savefile (N) (Y/N): ")
+	newfile_choice = 'Y'
 
 	newfile_choice = True if newfile_choice == 'Y' else False
 
 	newloadfile_name = None
 
 	if newfile_choice == True:
-		newloadfile_name = os.path.join(load_directory, input("What is the name of the new savefile: "))
+		newloadfile_name = "cpuandextra22.yaml"
 		conf_save(newloadfile_name, ga_params)
 
 
@@ -68,26 +68,25 @@ def prompt_make_newsavefile(ga_params, loadfile_name, load_directory):
 		newloadfile_name = loadfile_name
 	return newloadfile_name
 
-def program_main():
+def program_main(argv):
 	print("Menu\n Enter a number of your choice: (1) Create a new evolutionary process w/ autosave\n (2) Load an evolutionary process from a configuration file: ")
-	menu_choice = int(input("What would you like to do in this program: "))
+	menu_choice = argv[0]
 	home = os.getcwd()
 	if  menu_choice == 1:
 		print("Given the choices of logic gates (1) AND, (2) OR, (3) NOT, (4) ADD, (5) SUB")
-		answer = int(input("What kind of system would you like to evolve: "))
+		answer = argv[1]
 		print("Given the choices of version of the systems to evolve (1) minimal, (2) adversarial, (3) extra rules, (4) user-defined")
-		type_answer = int(input("What kind of system would you like to evolve: "))
+		type_answer = argv[2]
 		save_directory = os.path.join(home, "load_directory")
 
 		savefile_name = os.path.join(save_directory, input("What will be the name of this savefile: ") + ".yaml")
-		runs = int(input("How many runs would you like to do (min of 1): "))
-		generations = int(input("How many generation would you like to do (min of 1): "))
-		population_size = int(input("How many RSSNP should be in the population? "))
-		mutation_rate = int((input("How likely should it mutate in percentage? "))) * 100
-		print("Of the Parent Selection methods:\n 0. **Top 50% of the population**\n1. **25% of the population based on random**\n2. **Top 25% + 25% of the population based on fitness**")
-		selection_func = int(input("Which would you use?"))
+		runs = argv[3]
+		generations = argv[4]
+		population_size = argv[5]
+		mutation_rate = argv[6]
+		selection_func = argv[7]
 		print("Of the Fitness Selection methods:\n 0. Longest Common Subsequence\n1. Longest Common Substring\n2. Edit Distance Method")
-		fitness_func = int(input("Which would you use?"))
+		fitness_func = argv[8]
 
 		ga_params = create_empty_yaml(runs, generations, population_size, savefile_name)
 		ga_params['runs_pending'] = 0
@@ -189,11 +188,11 @@ def program_main():
 	if int(menu_choice) == 2:
 		load_directory = os.path.join(home, "load_directory")
 		
-		loadfile_name = os.path.join(load_directory, input("What is the name of this loadfile (append a yaml extension) : "))
+		loadfile_name = os.path.join(load_directory, "gpuandminimal00.yaml")
 		ga_params = conf_load(loadfile_name)
 		print("Load function starting")
 
-		execution_choice = int(input("Where do you want your experiment to be executed (1) CPU or (2) GPU: "))
+		execution_choice = int(argv[0])
 		start_from_a_gen = False
 		ga_params['goal_fitness'] = 101
 		if execution_choice == 1:
@@ -201,7 +200,7 @@ def program_main():
 			#get the information from console
 			print("Menu: Would you either increase (1) runs/generations/population_size or (2) a goal fitness of any chromosome in the evolutionary process: or (3) just maintain the current number of generation/population_size but extend runs further using an initial population from any generation number ")
 			print("Note that for this program the GPU can also do option 3 but not the others ")
-			sub_choice = int(input())
+			sub_choice = argv[1]
 			if sub_choice == 1:
 				add_runs = int(input("How many runs would you like to add (minimum of 1 and maximum of 100): "))
 				add_gens = int(input("How many generations would you like to add (minimum of 0 and maximum of 100): "))
@@ -221,11 +220,11 @@ def program_main():
 				ga_params['goal_fitness'] = add_goal_fitness
 			elif sub_choice == 3:					
 				print("Maintaining current number of generation and population_size")
-				add_runs = int(input("How many runs would you like to add (minimum of 1 and maximum of 100): "))
+				add_runs = argv[2]
 				ga_params['gens_pending'] = 0
 				ga_params['populations_pending'] = 0
 				ga_params['runs_pending'] = add_runs
-				ga_params['generation_index_continue'] = input("Which run and generation would you like to use as the starting parents of the succeeding runs (separate by comma)? ")
+				ga_params['generation_index_continue'] = "0,0"
 				start_from_a_gen = True
 
 			
@@ -294,5 +293,7 @@ def program_main():
 			conf_save(newloadfile_name, ga_params)
 
 
+def main():
+	program_main(sys.argv)
 
-program_main()
+main()

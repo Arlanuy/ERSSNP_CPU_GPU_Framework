@@ -1,0 +1,115 @@
+SLURM_JOBID=236510
+SLURM_JOB_NODELIST=saliksik-cpu-21
+SLURM_NNODES=1
+SLURMTMPDIR=
+working directory=/scratch1/scratch2/arlan.uy/ERSSNP_CPU_GPU_Framework/main_dir
+Defaulting to user installation because normal site-packages is not writeable
+Defaulting to user installation because normal site-packages is not writeable
+Defaulting to user installation because normal site-packages is not writeable
+Defaulting to user installation because normal site-packages is not writeable
+Defaulting to user installation because normal site-packages is not writeable
+Defaulting to user installation because normal site-packages is not writeable
+Defaulting to user installation because normal site-packages is not writeable
+Defaulting to user installation because normal site-packages is not writeable
+Collecting appdirs==1.4.3
+Collecting appdirs==1.4.3
+Collecting appdirs==1.4.3
+Collecting appdirs==1.4.3
+Collecting appdirs==1.4.3
+  Using cached appdirs-1.4.3-py2.py3-none-any.whl (12 kB)
+  Using cached appdirs-1.4.3-py2.py3-none-any.whl (12 kB)
+  Using cached appdirs-1.4.3-py2.py3-none-any.whl (12 kB)
+  Using cached appdirs-1.4.3-py2.py3-none-any.whl (12 kB)
+  Using cached appdirs-1.4.3-py2.py3-none-any.whl (12 kB)
+Collecting appdirs==1.4.3
+  Using cached appdirs-1.4.3-py2.py3-none-any.whl (12 kB)
+Collecting appdirs==1.4.3
+  Using cached appdirs-1.4.3-py2.py3-none-any.whl (12 kB)
+Collecting appdirs==1.4.3
+  Using cached appdirs-1.4.3-py2.py3-none-any.whl (12 kB)
+Collecting astroid==2.5.6
+Collecting astroid==2.5.6
+Collecting astroid==2.5.6
+Collecting astroid==2.5.6
+Collecting astroid==2.5.6
+Collecting astroid==2.5.6
+  Using cached astroid-2.5.6-py3-none-any.whl (219 kB)
+  Using cached astroid-2.5.6-py3-none-any.whl (219 kB)
+  Using cached astroid-2.5.6-py3-none-any.whl (219 kB)
+  Using cached astroid-2.5.6-py3-none-any.whl (219 kB)
+  Using cached astroid-2.5.6-py3-none-any.whl (219 kB)
+  Using cached astroid-2.5.6-py3-none-any.whl (219 kB)
+Collecting astroid==2.5.6
+  Using cached astroid-2.5.6-py3-none-any.whl (219 kB)
+Collecting astroid==2.5.6
+  Using cached astroid-2.5.6-py3-none-any.whl (219 kB)
+Collecting attrs==18.2.0
+Collecting attrs==18.2.0
+Collecting attrs==18.2.0
+  Using cached attrs-18.2.0-py2.py3-none-any.whl (34 kB)
+  Using cached attrs-18.2.0-py2.py3-none-any.whl (34 kB)
+  Using cached attrs-18.2.0-py2.py3-none-any.whl (34 kB)
+Collecting attrs==18.2.0
+Collecting attrs==18.2.0
+Collecting attrs==18.2.0
+  Using cached attrs-18.2.0-py2.py3-none-any.whl (34 kB)
+  Using cached attrs-18.2.0-py2.py3-none-any.whl (34 kB)
+  Using cached attrs-18.2.0-py2.py3-none-any.whl (34 kB)
+Collecting attrs==18.2.0
+  Using cached attrs-18.2.0-py2.py3-none-any.whl (34 kB)
+Collecting click==6.7
+Collecting click==6.7
+Collecting click==6.7
+  Using cached click-6.7-py2.py3-none-any.whl (71 kB)
+  Using cached click-6.7-py2.py3-none-any.whl (71 kB)
+  Using cached click-6.7-py2.py3-none-any.whl (71 kB)
+Collecting click==6.7
+  Using cached click-6.7-py2.py3-none-any.whl (71 kB)
+Collecting click==6.7
+  Using cached click-6.7-py2.py3-none-any.whl (71 kB)
+Collecting click==6.7
+  Using cached click-6.7-py2.py3-none-any.whl (71 kB)
+Collecting click==6.7
+  Using cached click-6.7-py2.py3-none-any.whl (71 kB)
+Collecting cycler==0.10.0
+Collecting cycler==0.10.0
+Collecting cycler==0.10.0
+Collecting cycler==0.10.0
+Collecting cycler==0.10.0
+  Using cached cycler-0.10.0-py2.py3-none-any.whl (6.5 kB)
+Collecting cycler==0.10.0
+  Using cached cycler-0.10.0-py2.py3-none-any.whl (6.5 kB)
+  Using cached cycler-0.10.0-py2.py3-none-any.whl (6.5 kB)
+  Using cached cycler-0.10.0-py2.py3-none-any.whl (6.5 kB)
+  Using cached cycler-0.10.0-py2.py3-none-any.whl (6.5 kB)
+  Using cached cycler-0.10.0-py2.py3-none-any.whl (6.5 kB)
+Collecting cycler==0.10.0
+  Using cached cycler-0.10.0-py2.py3-none-any.whl (6.5 kB)
+Collecting graphviz==0.10.1
+Collecting graphviz==0.10.1
+Collecting graphviz==0.10.1
+Collecting graphviz==0.10.1
+  Using cached graphviz-0.10.1-py2.py3-none-any.whl (16 kB)
+  Using cached graphviz-0.10.1-py2.py3-none-any.whl (16 kB)
+  Using cached graphviz-0.10.1-py2.py3-none-any.whl (16 kB)
+  Using cached graphviz-0.10.1-py2.py3-none-any.whl (16 kB)
+Collecting graphviz==0.10.1
+Collecting graphviz==0.10.1
+  Using cached graphviz-0.10.1-py2.py3-none-any.whl (16 kB)
+  Using cached graphviz-0.10.1-py2.py3-none-any.whl (16 kB)
+Collecting graphviz==0.10.1
+  Using cached graphviz-0.10.1-py2.py3-none-any.whl (16 kB)
+Collecting greenery==3.1
+Collecting greenery==3.1
+  Using cached greenery-3.1.zip (40 kB)
+  Using cached greenery-3.1.zip (40 kB)
+Collecting greenery==3.1
+  Using cached greenery-3.1.zip (40 kB)
+Collecting greenery==3.1
+  Using cached greenery-3.1.zip (40 kB)
+Collecting greenery==3.1
+  Using cached greenery-3.1.zip (40 kB)
+Collecting greenery==3.1
+  Using cached greenery-3.1.zip (40 kB)
+Collecting greenery==3.1
+  Using cached greenery-3.1.zip (40 kB)

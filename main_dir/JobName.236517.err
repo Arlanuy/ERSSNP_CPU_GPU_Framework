@@ -1,0 +1,52 @@
+>> anaconda-3-5.3.1 has been loaded.
+>> python-3.8.2 has been loaded.
+>> cuda-10.1_cudnn-7.6.5 has been loaded.
+Traceback (most recent call last):
+  File "src/abstracts/gpu_selection.py", line 1, in <module>
+    import pycuda.autoinit
+  File "/home/arlan.uy/.local/lib/python3.7/site-packages/pycuda/autoinit.py", line 5, in <module>
+    cuda.init()
+pycuda._driver.Error: cuInit failed: unknown error
+Traceback (most recent call last):
+  File "src/abstracts/gpu_selection.py", line 1, in <module>
+    import pycuda.autoinit
+  File "/home/arlan.uy/.local/lib/python3.7/site-packages/pycuda/autoinit.py", line 5, in <module>
+    cuda.init()
+pycuda._driver.Error: cuInit failed: unknown error
+Traceback (most recent call last):
+  File "src/abstracts/gpu_selection.py", line 1, in <module>
+    import pycuda.autoinit
+  File "/home/arlan.uy/.local/lib/python3.7/site-packages/pycuda/autoinit.py", line 5, in <module>
+    cuda.init()
+pycuda._driver.Error: cuInit failed: unknown error
+Traceback (most recent call last):
+  File "src/abstracts/gpu_selection.py", line 1, in <module>
+    import pycuda.autoinit
+  File "/home/arlan.uy/.local/lib/python3.7/site-packages/pycuda/autoinit.py", line 5, in <module>
+    cuda.init()
+pycuda._driver.Error: cuInit failed: unknown error
+Traceback (most recent call last):
+  File "src/abstracts/gpu_selection.py", line 1, in <module>
+    import pycuda.autoinit
+  File "/home/arlan.uy/.local/lib/python3.7/site-packages/pycuda/autoinit.py", line 5, in <module>
+    cuda.init()
+pycuda._driver.Error: cuInit failed: unknown error
+Traceback (most recent call last):
+  File "src/abstracts/gpu_selection.py", line 1, in <module>
+    import pycuda.autoinit
+  File "/home/arlan.uy/.local/lib/python3.7/site-packages/pycuda/autoinit.py", line 5, in <module>
+    cuda.init()
+pycuda._driver.Error: cuInit failed: unknown error
+Traceback (most recent call last):
+  File "src/abstracts/gpu_selection.py", line 1, in <module>
+    import pycuda.autoinit
+  File "/home/arlan.uy/.local/lib/python3.7/site-packages/pycuda/autoinit.py", line 5, in <module>
+    cuda.init()
+pycuda._driver.Error: cuInit failed: unknown error
+Traceback (most recent call last):
+  File "src/abstracts/gpu_selection.py", line 1, in <module>
+    import pycuda.autoinit
+  File "/home/arlan.uy/.local/lib/python3.7/site-packages/pycuda/autoinit.py", line 5, in <module>
+    cuda.init()
+pycuda._driver.Error: cuInit failed: unknown error
+srun: error: saliksik-cpu-21: tasks 0-7: Exited with exit code 1
