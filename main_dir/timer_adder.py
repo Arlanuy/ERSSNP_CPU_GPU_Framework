@@ -1,7 +1,7 @@
 import os
 timer_adder_out = open(os.getcwd()+ "\\time_test", "w+")
 
-tutorial_time = False
+tutorial_time = True
 
 if tutorial_time == True:
 	num_runs = 1
