@@ -1,7 +1,7 @@
 import os, yaml
 
 filename = os.path.join(os.getcwd(), 'timer_directory')
-filename = os.path.join(filename, "cpuandminimal00outreal.yaml")
+filename = os.path.join(filename, "test.yaml")
 
 timer_params = {}
 timer_params['run_indexes'] = {}

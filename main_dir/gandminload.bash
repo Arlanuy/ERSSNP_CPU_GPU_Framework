@@ -7,10 +7,10 @@
 #SBATCH --nodes=1 
 #SBATCH --ntasks-per-node=8 
 #SBATCH --mem=24G 
-#SBATCH --job-name=”JobName” 
-#SBATCH --output=JobName.%J.out 
+#SBATCH --job-name=”gandminload” 
+#SBATCH --output=gandminload.%J.out 
 
-#SBATCH --error=JobName.%J.err 
+#SBATCH --error=gandminload.%J.err 
 #SBATCH --mail-type=ALL
 #SBATCH --requeue 
  
