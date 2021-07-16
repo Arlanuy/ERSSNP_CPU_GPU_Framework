@@ -1,16 +1,15 @@
 #!/bin/bash 
 #SBATCH --partition=gpu
-#SBATCH --gres=gpu:2
+#SBATCH --nodes=2
+#SBATCH --gres=gpu:1
 #SBATCH --qos=12c-1h_2gpu
-#SBATCH --gpus=1  
-#SBATCH --nodes=1 
-#SBATCH --cpus-per-task=1
+#SBATCH --gpus=1
 #SBATCH --ntasks-per-node=12
-#SBATCH --mem=24G 
-#SBATCH --job-name=”gandminload2” 
-#SBATCH --output=gandminload2.%J.out 
+#SBATCH --mem=12G 
+#SBATCH --job-name=”gandminload” 
+#SBATCH --output=gandminload.%J.out 
 
-#SBATCH --error=gandminload2.%J.err 
+#SBATCH --error=gandminload.%J.err 
 #SBATCH --mail-type=ALL
 #SBATCH --requeue 
  
