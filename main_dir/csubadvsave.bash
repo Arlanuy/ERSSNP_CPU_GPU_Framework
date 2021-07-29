@@ -31,4 +31,4 @@ ulimit -s unlimited
 # MAIN 
 srun python -m pip install --user --upgrade pip
 srun python -m pip install --user -r requirements.txt
-srun python main.py 1 5 2 10 12 40 1 1 1 cpusubadversarial11.yaml
+srun python main.py 1 5 2 5 12 40 1 1 1 cpusubadversarial11.yaml cpusubadversarial11outreal.yaml

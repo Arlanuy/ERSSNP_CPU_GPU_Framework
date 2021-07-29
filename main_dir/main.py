@@ -61,7 +61,7 @@ def prompt_make_newsavefile(ga_params, loadfile_name, load_directory):
 	if newfile_choice == True:
 		home = os.getcwd()
 		save_directory = os.path.join(home, "load_directory")
-		newloadfile_name = os.path.join(save_directory, sys.argv[4])
+		newloadfile_name = os.path.join(save_directory, sys.argv[5])
 		conf_save(newloadfile_name, ga_params)
 
 

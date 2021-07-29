@@ -31,4 +31,4 @@ ulimit -s unlimited
 # MAIN 
 srun python -m pip install --user --upgrade pip
 srun python -m pip install --user -r requirements.txt
-srun python main.py 1 3 2 10 12 40 1 1 1 cpunotadversarial11.yaml
+srun python main.py 1 3 2 5 12 40 1 1 1 cpunotadversarial11.yaml cpunotadversarial11outreal.yaml

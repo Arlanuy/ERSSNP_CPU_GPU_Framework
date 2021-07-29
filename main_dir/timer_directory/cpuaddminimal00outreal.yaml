@@ -1,0 +1,21 @@
+run_indexes:
+  0:
+    Crossover: 0.001611229032278061
+    Evaluate: 1.8523867167532444
+    Selection: 0
+  1:
+    Crossover: 0.0020156502723693848
+    Evaluate: 1.8447968736290932
+    Selection: 0
+  2:
+    Crossover: 0.0015322118997573853
+    Evaluate: 1.8474136255681515
+    Selection: 0
+  3:
+    Crossover: 0.0018945187330245972
+    Evaluate: 1.8430947624146938
+    Selection: 0
+  4:
+    Crossover: 0.0016136914491653442
+    Evaluate: 1.846460711210966
+    Selection: 0

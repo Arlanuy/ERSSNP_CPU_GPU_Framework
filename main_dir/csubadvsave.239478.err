@@ -1,0 +1,244 @@
+>> anaconda-3-5.3.1 has been loaded.
+>> python-3.8.2 has been loaded.
+>> cuda-10.1_cudnn-7.6.5 has been loaded.
+WARNING: Value for scheme.headers does not match. Please report this to <https://github.com/pypa/pip/issues/10151>
+distutils: /home/arlan.uy/.local/include/python3.7m/UNKNOWN
+sysconfig: /home/arlan.uy/.local/include/python3.7/UNKNOWN
+WARNING: Additional context:
+user = True
+home = None
+root = None
+prefix = None
+WARNING: Value for scheme.headers does not match. Please report this to <https://github.com/pypa/pip/issues/10151>
+distutils: /home/arlan.uy/.local/include/python3.7m/UNKNOWN
+sysconfig: /home/arlan.uy/.local/include/python3.7/UNKNOWN
+WARNING: Value for scheme.headers does not match. Please report this to <https://github.com/pypa/pip/issues/10151>
+distutils: /home/arlan.uy/.local/include/python3.7m/UNKNOWN
+sysconfig: /home/arlan.uy/.local/include/python3.7/UNKNOWN
+WARNING: Additional context:
+user = True
+home = None
+root = None
+prefix = None
+WARNING: Value for scheme.headers does not match. Please report this to <https://github.com/pypa/pip/issues/10151>
+distutils: /home/arlan.uy/.local/include/python3.7m/UNKNOWN
+sysconfig: /home/arlan.uy/.local/include/python3.7/UNKNOWN
+WARNING: Value for scheme.headers does not match. Please report this to <https://github.com/pypa/pip/issues/10151>
+distutils: /home/arlan.uy/.local/include/python3.7m/UNKNOWN
+sysconfig: /home/arlan.uy/.local/include/python3.7/UNKNOWN
+WARNING: Additional context:
+user = True
+home = None
+root = None
+prefix = None
+WARNING: Additional context:
+user = True
+home = None
+root = None
+prefix = None
+WARNING: Value for scheme.headers does not match. Please report this to <https://github.com/pypa/pip/issues/10151>
+distutils: /home/arlan.uy/.local/include/python3.7m/UNKNOWN
+sysconfig: /home/arlan.uy/.local/include/python3.7/UNKNOWN
+WARNING: Value for scheme.headers does not match. Please report this to <https://github.com/pypa/pip/issues/10151>
+distutils: /home/arlan.uy/.local/include/python3.7m/UNKNOWN
+sysconfig: /home/arlan.uy/.local/include/python3.7/UNKNOWN
+WARNING: Additional context:
+user = True
+home = None
+root = None
+prefix = None
+WARNING: Additional context:
+user = True
+home = None
+root = None
+prefix = None
+WARNING: Additional context:
+user = True
+home = None
+root = None
+prefix = None
+WARNING: Value for scheme.headers does not match. Please report this to <https://github.com/pypa/pip/issues/10151>
+distutils: /home/arlan.uy/.local/include/python3.7m/UNKNOWN
+sysconfig: /home/arlan.uy/.local/include/python3.7/UNKNOWN
+WARNING: Additional context:
+user = True
+home = None
+root = None
+prefix = None
+WARNING: Value for scheme.headers does not match. Please report this to <https://github.com/pypa/pip/issues/10151>
+distutils: /home/arlan.uy/.local/include/python3.7m/UNKNOWN
+sysconfig: /home/arlan.uy/.local/include/python3.7/UNKNOWN
+WARNING: Value for scheme.headers does not match. Please report this to <https://github.com/pypa/pip/issues/10151>
+distutils: /home/arlan.uy/.local/include/python3.7m/UNKNOWN
+sysconfig: /home/arlan.uy/.local/include/python3.7/UNKNOWN
+WARNING: Value for scheme.headers does not match. Please report this to <https://github.com/pypa/pip/issues/10151>
+distutils: /home/arlan.uy/.local/include/python3.7m/UNKNOWN
+sysconfig: /home/arlan.uy/.local/include/python3.7/UNKNOWN
+WARNING: Value for scheme.headers does not match. Please report this to <https://github.com/pypa/pip/issues/10151>
+distutils: /home/arlan.uy/.local/include/python3.7m/UNKNOWN
+sysconfig: /home/arlan.uy/.local/include/python3.7/UNKNOWN
+WARNING: Additional context:
+user = True
+home = None
+root = None
+prefix = None
+WARNING: Value for scheme.headers does not match. Please report this to <https://github.com/pypa/pip/issues/10151>
+distutils: /home/arlan.uy/.local/include/python3.7m/UNKNOWN
+sysconfig: /home/arlan.uy/.local/include/python3.7/UNKNOWN
+WARNING: Additional context:
+user = True
+home = None
+root = None
+prefix = None
+WARNING: Additional context:
+user = True
+home = None
+root = None
+prefix = None
+WARNING: Additional context:
+user = True
+home = None
+root = None
+prefix = None
+WARNING: Value for scheme.headers does not match. Please report this to <https://github.com/pypa/pip/issues/10151>
+distutils: /home/arlan.uy/.local/include/python3.7m/UNKNOWN
+sysconfig: /home/arlan.uy/.local/include/python3.7/UNKNOWN
+WARNING: Additional context:
+user = True
+home = None
+root = None
+prefix = None
+WARNING: Additional context:
+user = True
+home = None
+root = None
+prefix = None
+WARNING: Value for scheme.headers does not match. Please report this to <https://github.com/pypa/pip/issues/10151>
+distutils: /home/arlan.uy/.local/include/python3.7m/UNKNOWN
+sysconfig: /home/arlan.uy/.local/include/python3.7/UNKNOWN
+WARNING: Value for scheme.headers does not match. Please report this to <https://github.com/pypa/pip/issues/10151>
+distutils: /home/arlan.uy/.local/include/python3.7m/UNKNOWN
+sysconfig: /home/arlan.uy/.local/include/python3.7/UNKNOWN
+WARNING: Additional context:
+user = True
+home = None
+root = None
+prefix = None
+WARNING: Additional context:
+user = True
+home = None
+root = None
+prefix = None
+Traceback (most recent call last):
+  File "main.py", line 1, in <module>
+    from src.experimenter_uncommented import gaframework, gaframework_gpu
+  File "/scratch1/scratch2/arlan.uy/ERSSNP_CPU_GPU_Framework/main_dir/src/experimenter_uncommented.py", line 10, in <module>
+    from src.abstracts.geneticalgo_integ_gpu import SNPGeneticAlgoGPU
+  File "/scratch1/scratch2/arlan.uy/ERSSNP_CPU_GPU_Framework/main_dir/src/abstracts/geneticalgo_integ_gpu.py", line 2, in <module>
+    from src.abstracts.gpu_fitness import *
+  File "/scratch1/scratch2/arlan.uy/ERSSNP_CPU_GPU_Framework/main_dir/src/abstracts/gpu_fitness.py", line 1, in <module>
+    import pycuda.autoinit
+  File "/home/arlan.uy/.local/lib/python3.7/site-packages/pycuda/autoinit.py", line 9, in <module>
+    context = make_default_context()
+  File "/home/arlan.uy/.local/lib/python3.7/site-packages/pycuda/tools.py", line 204, in make_default_context
+    "on any of the %d detected devices" % ndevices)
+RuntimeError: make_default_context() wasn't able to create a context on any of the 1 detected devices
+Traceback (most recent call last):
+  File "main.py", line 1, in <module>
+    from src.experimenter_uncommented import gaframework, gaframework_gpu
+  File "/scratch1/scratch2/arlan.uy/ERSSNP_CPU_GPU_Framework/main_dir/src/experimenter_uncommented.py", line 10, in <module>
+    from src.abstracts.geneticalgo_integ_gpu import SNPGeneticAlgoGPU
+  File "/scratch1/scratch2/arlan.uy/ERSSNP_CPU_GPU_Framework/main_dir/src/abstracts/geneticalgo_integ_gpu.py", line 2, in <module>
+    from src.abstracts.gpu_fitness import *
+  File "/scratch1/scratch2/arlan.uy/ERSSNP_CPU_GPU_Framework/main_dir/src/abstracts/gpu_fitness.py", line 1, in <module>
+    import pycuda.autoinit
+  File "/home/arlan.uy/.local/lib/python3.7/site-packages/pycuda/autoinit.py", line 9, in <module>
+    context = make_default_context()
+  File "/home/arlan.uy/.local/lib/python3.7/site-packages/pycuda/tools.py", line 204, in make_default_context
+    "on any of the %d detected devices" % ndevices)
+RuntimeError: make_default_context() wasn't able to create a context on any of the 1 detected devices
+Traceback (most recent call last):
+  File "main.py", line 1, in <module>
+    from src.experimenter_uncommented import gaframework, gaframework_gpu
+  File "/scratch1/scratch2/arlan.uy/ERSSNP_CPU_GPU_Framework/main_dir/src/experimenter_uncommented.py", line 10, in <module>
+    from src.abstracts.geneticalgo_integ_gpu import SNPGeneticAlgoGPU
+  File "/scratch1/scratch2/arlan.uy/ERSSNP_CPU_GPU_Framework/main_dir/src/abstracts/geneticalgo_integ_gpu.py", line 2, in <module>
+    from src.abstracts.gpu_fitness import *
+  File "/scratch1/scratch2/arlan.uy/ERSSNP_CPU_GPU_Framework/main_dir/src/abstracts/gpu_fitness.py", line 1, in <module>
+    import pycuda.autoinit
+  File "/home/arlan.uy/.local/lib/python3.7/site-packages/pycuda/autoinit.py", line 9, in <module>
+    context = make_default_context()
+  File "/home/arlan.uy/.local/lib/python3.7/site-packages/pycuda/tools.py", line 204, in make_default_context
+    "on any of the %d detected devices" % ndevices)
+RuntimeError: make_default_context() wasn't able to create a context on any of the 1 detected devices
+Traceback (most recent call last):
+  File "main.py", line 1, in <module>
+    from src.experimenter_uncommented import gaframework, gaframework_gpu
+  File "/scratch1/scratch2/arlan.uy/ERSSNP_CPU_GPU_Framework/main_dir/src/experimenter_uncommented.py", line 10, in <module>
+    from src.abstracts.geneticalgo_integ_gpu import SNPGeneticAlgoGPU
+  File "/scratch1/scratch2/arlan.uy/ERSSNP_CPU_GPU_Framework/main_dir/src/abstracts/geneticalgo_integ_gpu.py", line 2, in <module>
+    from src.abstracts.gpu_fitness import *
+  File "/scratch1/scratch2/arlan.uy/ERSSNP_CPU_GPU_Framework/main_dir/src/abstracts/gpu_fitness.py", line 1, in <module>
+    import pycuda.autoinit
+  File "/home/arlan.uy/.local/lib/python3.7/site-packages/pycuda/autoinit.py", line 9, in <module>
+    context = make_default_context()
+  File "/home/arlan.uy/.local/lib/python3.7/site-packages/pycuda/tools.py", line 204, in make_default_context
+    "on any of the %d detected devices" % ndevices)
+RuntimeError: make_default_context() wasn't able to create a context on any of the 1 detected devices
+Traceback (most recent call last):
+  File "main.py", line 1, in <module>
+    from src.experimenter_uncommented import gaframework, gaframework_gpu
+  File "/scratch1/scratch2/arlan.uy/ERSSNP_CPU_GPU_Framework/main_dir/src/experimenter_uncommented.py", line 10, in <module>
+    from src.abstracts.geneticalgo_integ_gpu import SNPGeneticAlgoGPU
+  File "/scratch1/scratch2/arlan.uy/ERSSNP_CPU_GPU_Framework/main_dir/src/abstracts/geneticalgo_integ_gpu.py", line 2, in <module>
+    from src.abstracts.gpu_fitness import *
+  File "/scratch1/scratch2/arlan.uy/ERSSNP_CPU_GPU_Framework/main_dir/src/abstracts/gpu_fitness.py", line 1, in <module>
+    import pycuda.autoinit
+  File "/home/arlan.uy/.local/lib/python3.7/site-packages/pycuda/autoinit.py", line 9, in <module>
+    context = make_default_context()
+  File "/home/arlan.uy/.local/lib/python3.7/site-packages/pycuda/tools.py", line 204, in make_default_context
+    "on any of the %d detected devices" % ndevices)
+RuntimeError: make_default_context() wasn't able to create a context on any of the 1 detected devices
+Traceback (most recent call last):
+  File "main.py", line 1, in <module>
+    from src.experimenter_uncommented import gaframework, gaframework_gpu
+  File "/scratch1/scratch2/arlan.uy/ERSSNP_CPU_GPU_Framework/main_dir/src/experimenter_uncommented.py", line 10, in <module>
+    from src.abstracts.geneticalgo_integ_gpu import SNPGeneticAlgoGPU
+  File "/scratch1/scratch2/arlan.uy/ERSSNP_CPU_GPU_Framework/main_dir/src/abstracts/geneticalgo_integ_gpu.py", line 2, in <module>
+    from src.abstracts.gpu_fitness import *
+  File "/scratch1/scratch2/arlan.uy/ERSSNP_CPU_GPU_Framework/main_dir/src/abstracts/gpu_fitness.py", line 1, in <module>
+    import pycuda.autoinit
+  File "/home/arlan.uy/.local/lib/python3.7/site-packages/pycuda/autoinit.py", line 9, in <module>
+    context = make_default_context()
+  File "/home/arlan.uy/.local/lib/python3.7/site-packages/pycuda/tools.py", line 204, in make_default_context
+    "on any of the %d detected devices" % ndevices)
+RuntimeError: make_default_context() wasn't able to create a context on any of the 1 detected devices
+Traceback (most recent call last):
+  File "main.py", line 1, in <module>
+    from src.experimenter_uncommented import gaframework, gaframework_gpu
+  File "/scratch1/scratch2/arlan.uy/ERSSNP_CPU_GPU_Framework/main_dir/src/experimenter_uncommented.py", line 10, in <module>
+    from src.abstracts.geneticalgo_integ_gpu import SNPGeneticAlgoGPU
+  File "/scratch1/scratch2/arlan.uy/ERSSNP_CPU_GPU_Framework/main_dir/src/abstracts/geneticalgo_integ_gpu.py", line 2, in <module>
+    from src.abstracts.gpu_fitness import *
+  File "/scratch1/scratch2/arlan.uy/ERSSNP_CPU_GPU_Framework/main_dir/src/abstracts/gpu_fitness.py", line 1, in <module>
+    import pycuda.autoinit
+  File "/home/arlan.uy/.local/lib/python3.7/site-packages/pycuda/autoinit.py", line 9, in <module>
+    context = make_default_context()
+  File "/home/arlan.uy/.local/lib/python3.7/site-packages/pycuda/tools.py", line 204, in make_default_context
+    "on any of the %d detected devices" % ndevices)
+RuntimeError: make_default_context() wasn't able to create a context on any of the 1 detected devices
+Traceback (most recent call last):
+  File "main.py", line 1, in <module>
+    from src.experimenter_uncommented import gaframework, gaframework_gpu
+  File "/scratch1/scratch2/arlan.uy/ERSSNP_CPU_GPU_Framework/main_dir/src/experimenter_uncommented.py", line 10, in <module>
+    from src.abstracts.geneticalgo_integ_gpu import SNPGeneticAlgoGPU
+  File "/scratch1/scratch2/arlan.uy/ERSSNP_CPU_GPU_Framework/main_dir/src/abstracts/geneticalgo_integ_gpu.py", line 2, in <module>
+    from src.abstracts.gpu_fitness import *
+  File "/scratch1/scratch2/arlan.uy/ERSSNP_CPU_GPU_Framework/main_dir/src/abstracts/gpu_fitness.py", line 1, in <module>
+    import pycuda.autoinit
+  File "/home/arlan.uy/.local/lib/python3.7/site-packages/pycuda/autoinit.py", line 9, in <module>
+    context = make_default_context()
+  File "/home/arlan.uy/.local/lib/python3.7/site-packages/pycuda/tools.py", line 204, in make_default_context
+    "on any of the %d detected devices" % ndevices)
+RuntimeError: make_default_context() wasn't able to create a context on any of the 1 detected devices
+srun: error: saliksik-gpu-01: tasks 0-7: Exited with exit code 1

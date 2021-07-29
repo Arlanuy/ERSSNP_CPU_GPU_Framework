@@ -31,4 +31,4 @@ ulimit -s unlimited
 # MAIN 
 srun python -m pip install --user --upgrade pip
 srun python -m pip install --user -r requirements.txt
-srun python main.py 1 3 3 10 12 40 1 2 2 cpunotextra22.yaml
+srun python main.py 1 3 3 5 12 40 1 2 2 cpunotextra22.yaml cpunotextra22outreal.yaml

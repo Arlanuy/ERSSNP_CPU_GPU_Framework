@@ -31,4 +31,4 @@ ulimit -s unlimited
 # MAIN 
 srun python -m pip install --user --upgrade pip
 srun python -m pip install --user -r requirements.txt
-srun python main.py 1 1 1 10 12 40 1 0 0 cpuandminimal00.yaml
+srun python main.py 1 1 1 5 12 40 1 0 0 cpuandminimal00.yaml cpuandminimal00outreal.yaml

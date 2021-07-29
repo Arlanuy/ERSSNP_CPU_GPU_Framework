@@ -1,12 +1,13 @@
 #!/bin/bash 
 #SBATCH --partition=gpu
+#SBATCH --nodes=1
 #SBATCH --gres=gpu:1
 #SBATCH --qos=12c-1h_2gpu
 #SBATCH --gpus=1
-  
-#SBATCH --nodes=1 
-#SBATCH --ntasks-per-node=8 
-#SBATCH --mem=24G 
+#SBATCH --hint=compute_bound
+#SBATCH --ntasks-per-node=12
+#SBATCH --overcommit
+#SBATCH --mem=12G 
 #SBATCH --job-name=”gandminload” 
 #SBATCH --output=gandminload.%J.out 
 
@@ -31,4 +32,4 @@ ulimit -s unlimited
 # MAIN 
 srun python -m pip install --user --upgrade pip
 srun python -m pip install --user -r requirements.txt
-srun python main.py 2 2 10 cpuandminimal00.yaml gpuandminimal00.yaml
+srun python main.py 2 2 5 cpuandminimal00.yaml gpuandminimal00.yaml gpuandminimal00outreal.yaml

@@ -1,8 +1,17 @@
 import pycuda.driver as drv
-import os, yaml
+import os, yaml,sys
 
 filename = os.path.join(os.getcwd(), 'timer_directory')
-filename = os.path.join(filename, "gpuandminimal00outreal.yaml")
+filename = os.path.join(filename, sys.argv[6])
+
+def conf_load(filename):
+    with open(filename, 'r') as stream:
+        try:
+            timer_params = yaml.safe_load(stream)
+        except yaml.YAMLError as exc:
+            print(exc)
+    return timer_params
+
 timer_params = {}
 timer_params['run_indexes'] = {}
 
@@ -14,14 +23,6 @@ if not os.path.exists(filename):
     conf_save(filename, timer_params)
 
 run_index_state = 0
-
-def conf_load(filename):
-    with open(filename, 'r') as stream:
-        try:
-            timer_params = yaml.safe_load(stream)
-        except yaml.YAMLError as exc:
-            print(exc)
-    return timer_params
 
 
 def timer_write(ga_name, exec_time):

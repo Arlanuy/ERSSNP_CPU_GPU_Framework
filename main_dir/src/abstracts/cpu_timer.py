@@ -1,7 +1,7 @@
-import os, yaml
+import os, yaml, sys
 
 filename = os.path.join(os.getcwd(), 'timer_directory')
-filename = os.path.join(filename, "test.yaml")
+filename = os.path.join(filename, sys.argv[11])
 
 timer_params = {}
 timer_params['run_indexes'] = {}

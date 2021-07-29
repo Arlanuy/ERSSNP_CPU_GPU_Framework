@@ -1,0 +1,4152 @@
+SLURM_JOBID=239406
+SLURM_JOB_NODELIST=saliksik-gpu-06
+SLURM_NNODES=1
+SLURMTMPDIR=
+working directory=/scratch1/scratch2/arlan.uy/ERSSNP_CPU_GPU_Framework/main_dir
+Requirement already satisfied: pip in /home/arlan.uy/.local/lib/python3.7/site-packages (21.2.1)
+Requirement already satisfied: pip in /home/arlan.uy/.local/lib/python3.7/site-packages (21.2.1)
+Requirement already satisfied: pip in /home/arlan.uy/.local/lib/python3.7/site-packages (21.2.1)
+Requirement already satisfied: pip in /home/arlan.uy/.local/lib/python3.7/site-packages (21.2.1)
+Requirement already satisfied: pip in /home/arlan.uy/.local/lib/python3.7/site-packages (21.2.1)
+Requirement already satisfied: pip in /home/arlan.uy/.local/lib/python3.7/site-packages (21.2.1)
+Requirement already satisfied: pip in /home/arlan.uy/.local/lib/python3.7/site-packages (21.2.1)
+Requirement already satisfied: pip in /home/arlan.uy/.local/lib/python3.7/site-packages (21.2.1)
+Requirement already satisfied: pip in /home/arlan.uy/.local/lib/python3.7/site-packages (21.2.1)
+Requirement already satisfied: pip in /home/arlan.uy/.local/lib/python3.7/site-packages (21.2.1)
+Requirement already satisfied: pip in /home/arlan.uy/.local/lib/python3.7/site-packages (21.2.1)
+Requirement already satisfied: pip in /home/arlan.uy/.local/lib/python3.7/site-packages (21.2.1)
+Requirement already satisfied: appdirs==1.4.3 in /share/hpcc/CPU/anaconda/3-5.3.1/lib/python3.7/site-packages (from -r requirements.txt (line 1)) (1.4.3)
+Requirement already satisfied: appdirs==1.4.3 in /share/hpcc/CPU/anaconda/3-5.3.1/lib/python3.7/site-packages (from -r requirements.txt (line 1)) (1.4.3)
+Requirement already satisfied: astroid==2.5.6 in /home/arlan.uy/.local/lib/python3.7/site-packages (from -r requirements.txt (line 2)) (2.5.6)
+Requirement already satisfied: astroid==2.5.6 in /home/arlan.uy/.local/lib/python3.7/site-packages (from -r requirements.txt (line 2)) (2.5.6)
+Requirement already satisfied: appdirs==1.4.3 in /share/hpcc/CPU/anaconda/3-5.3.1/lib/python3.7/site-packages (from -r requirements.txt (line 1)) (1.4.3)
+Requirement already satisfied: attrs==18.2.0 in /share/hpcc/CPU/anaconda/3-5.3.1/lib/python3.7/site-packages (from -r requirements.txt (line 3)) (18.2.0)
+Requirement already satisfied: attrs==18.2.0 in /share/hpcc/CPU/anaconda/3-5.3.1/lib/python3.7/site-packages (from -r requirements.txt (line 3)) (18.2.0)
+Requirement already satisfied: appdirs==1.4.3 in /share/hpcc/CPU/anaconda/3-5.3.1/lib/python3.7/site-packages (from -r requirements.txt (line 1)) (1.4.3)
+Requirement already satisfied: astroid==2.5.6 in /home/arlan.uy/.local/lib/python3.7/site-packages (from -r requirements.txt (line 2)) (2.5.6)
+Requirement already satisfied: click==6.7 in /share/hpcc/CPU/anaconda/3-5.3.1/lib/python3.7/site-packages (from -r requirements.txt (line 4)) (6.7)
+Requirement already satisfied: cycler==0.10.0 in /share/hpcc/CPU/anaconda/3-5.3.1/lib/python3.7/site-packages (from -r requirements.txt (line 5)) (0.10.0)
+Requirement already satisfied: astroid==2.5.6 in /home/arlan.uy/.local/lib/python3.7/site-packages (from -r requirements.txt (line 2)) (2.5.6)
+Requirement already satisfied: attrs==18.2.0 in /share/hpcc/CPU/anaconda/3-5.3.1/lib/python3.7/site-packages (from -r requirements.txt (line 3)) (18.2.0)
+Requirement already satisfied: graphviz==0.10.1 in /home/arlan.uy/.local/lib/python3.7/site-packages (from -r requirements.txt (line 6)) (0.10.1)
+Requirement already satisfied: attrs==18.2.0 in /share/hpcc/CPU/anaconda/3-5.3.1/lib/python3.7/site-packages (from -r requirements.txt (line 3)) (18.2.0)
+Requirement already satisfied: click==6.7 in /share/hpcc/CPU/anaconda/3-5.3.1/lib/python3.7/site-packages (from -r requirements.txt (line 4)) (6.7)
+Requirement already satisfied: greenery==3.1 in /home/arlan.uy/.local/lib/python3.7/site-packages (from -r requirements.txt (line 7)) (3.1)
+Requirement already satisfied: cycler==0.10.0 in /share/hpcc/CPU/anaconda/3-5.3.1/lib/python3.7/site-packages (from -r requirements.txt (line 5)) (0.10.0)
+Requirement already satisfied: isort==4.3.4 in /share/hpcc/CPU/anaconda/3-5.3.1/lib/python3.7/site-packages (from -r requirements.txt (line 8)) (4.3.4)
+Requirement already satisfied: graphviz==0.10.1 in /home/arlan.uy/.local/lib/python3.7/site-packages (from -r requirements.txt (line 6)) (0.10.1)
+Requirement already satisfied: kiwisolver==1.0.1 in /share/hpcc/CPU/anaconda/3-5.3.1/lib/python3.7/site-packages (from -r requirements.txt (line 9)) (1.0.1)
+Requirement already satisfied: greenery==3.1 in /home/arlan.uy/.local/lib/python3.7/site-packages (from -r requirements.txt (line 7)) (3.1)
+Requirement already satisfied: lazy-object-proxy==1.4.0 in /home/arlan.uy/.local/lib/python3.7/site-packages (from -r requirements.txt (line 10)) (1.4.0)
+Requirement already satisfied: appdirs==1.4.3 in /share/hpcc/CPU/anaconda/3-5.3.1/lib/python3.7/site-packages (from -r requirements.txt (line 1)) (1.4.3)
+Requirement already satisfied: isort==4.3.4 in /share/hpcc/CPU/anaconda/3-5.3.1/lib/python3.7/site-packages (from -r requirements.txt (line 8)) (4.3.4)
+Requirement already satisfied: matplotlib==3.0.0 in /home/arlan.uy/.local/lib/python3.7/site-packages (from -r requirements.txt (line 11)) (3.0.0)
+Requirement already satisfied: kiwisolver==1.0.1 in /share/hpcc/CPU/anaconda/3-5.3.1/lib/python3.7/site-packages (from -r requirements.txt (line 9)) (1.0.1)
+Requirement already satisfied: mccabe==0.6.1 in /share/hpcc/CPU/anaconda/3-5.3.1/lib/python3.7/site-packages (from -r requirements.txt (line 12)) (0.6.1)
+Requirement already satisfied: astroid==2.5.6 in /home/arlan.uy/.local/lib/python3.7/site-packages (from -r requirements.txt (line 2)) (2.5.6)
+Requirement already satisfied: lazy-object-proxy==1.4.0 in /home/arlan.uy/.local/lib/python3.7/site-packages (from -r requirements.txt (line 10)) (1.4.0)
+Requirement already satisfied: mpmath==1.1.0 in /home/arlan.uy/.local/lib/python3.7/site-packages (from -r requirements.txt (line 13)) (1.1.0)
+Requirement already satisfied: click==6.7 in /share/hpcc/CPU/anaconda/3-5.3.1/lib/python3.7/site-packages (from -r requirements.txt (line 4)) (6.7)
+Requirement already satisfied: matplotlib==3.0.0 in /home/arlan.uy/.local/lib/python3.7/site-packages (from -r requirements.txt (line 11)) (3.0.0)
+Requirement already satisfied: appdirs==1.4.3 in /share/hpcc/CPU/anaconda/3-5.3.1/lib/python3.7/site-packages (from -r requirements.txt (line 1)) (1.4.3)
+Requirement already satisfied: numpy==1.15.1 in /share/hpcc/CPU/anaconda/3-5.3.1/lib/python3.7/site-packages (from -r requirements.txt (line 14)) (1.15.1)
+Requirement already satisfied: mccabe==0.6.1 in /share/hpcc/CPU/anaconda/3-5.3.1/lib/python3.7/site-packages (from -r requirements.txt (line 12)) (0.6.1)
+Requirement already satisfied: pandas==0.23.4 in /share/hpcc/CPU/anaconda/3-5.3.1/lib/python3.7/site-packages (from -r requirements.txt (line 15)) (0.23.4)
+Requirement already satisfied: cycler==0.10.0 in /share/hpcc/CPU/anaconda/3-5.3.1/lib/python3.7/site-packages (from -r requirements.txt (line 5)) (0.10.0)
+Requirement already satisfied: astroid==2.5.6 in /home/arlan.uy/.local/lib/python3.7/site-packages (from -r requirements.txt (line 2)) (2.5.6)
+Requirement already satisfied: mpmath==1.1.0 in /home/arlan.uy/.local/lib/python3.7/site-packages (from -r requirements.txt (line 13)) (1.1.0)
+Requirement already satisfied: pylint==2.3.1 in /home/arlan.uy/.local/lib/python3.7/site-packages (from -r requirements.txt (line 16)) (2.3.1)
+Requirement already satisfied: graphviz==0.10.1 in /home/arlan.uy/.local/lib/python3.7/site-packages (from -r requirements.txt (line 6)) (0.10.1)
+Requirement already satisfied: numpy==1.15.1 in /share/hpcc/CPU/anaconda/3-5.3.1/lib/python3.7/site-packages (from -r requirements.txt (line 14)) (1.15.1)
+Requirement already satisfied: pyparsing==2.2.2 in /home/arlan.uy/.local/lib/python3.7/site-packages (from -r requirements.txt (line 17)) (2.2.2)
+Requirement already satisfied: greenery==3.1 in /home/arlan.uy/.local/lib/python3.7/site-packages (from -r requirements.txt (line 7)) (3.1)
+Requirement already satisfied: python-dateutil==2.7.3 in /share/hpcc/CPU/anaconda/3-5.3.1/lib/python3.7/site-packages (from -r requirements.txt (line 18)) (2.7.3)
+Requirement already satisfied: pandas==0.23.4 in /share/hpcc/CPU/anaconda/3-5.3.1/lib/python3.7/site-packages (from -r requirements.txt (line 15)) (0.23.4)
+Requirement already satisfied: pytz==2018.5 in /share/hpcc/CPU/anaconda/3-5.3.1/lib/python3.7/site-packages (from -r requirements.txt (line 19)) (2018.5)
+Requirement already satisfied: pylint==2.3.1 in /home/arlan.uy/.local/lib/python3.7/site-packages (from -r requirements.txt (line 16)) (2.3.1)
+Requirement already satisfied: attrs==18.2.0 in /share/hpcc/CPU/anaconda/3-5.3.1/lib/python3.7/site-packages (from -r requirements.txt (line 3)) (18.2.0)
+Requirement already satisfied: six==1.11.0 in /share/hpcc/CPU/anaconda/3-5.3.1/lib/python3.7/site-packages (from -r requirements.txt (line 20)) (1.11.0)
+Requirement already satisfied: pyparsing==2.2.2 in /home/arlan.uy/.local/lib/python3.7/site-packages (from -r requirements.txt (line 17)) (2.2.2)
+Requirement already satisfied: click==6.7 in /share/hpcc/CPU/anaconda/3-5.3.1/lib/python3.7/site-packages (from -r requirements.txt (line 4)) (6.7)
+Requirement already satisfied: appdirs==1.4.3 in /share/hpcc/CPU/anaconda/3-5.3.1/lib/python3.7/site-packages (from -r requirements.txt (line 1)) (1.4.3)
+Requirement already satisfied: python-dateutil==2.7.3 in /share/hpcc/CPU/anaconda/3-5.3.1/lib/python3.7/site-packages (from -r requirements.txt (line 18)) (2.7.3)
+Requirement already satisfied: toml==0.9.6 in /home/arlan.uy/.local/lib/python3.7/site-packages (from -r requirements.txt (line 21)) (0.9.6)
+Requirement already satisfied: cycler==0.10.0 in /share/hpcc/CPU/anaconda/3-5.3.1/lib/python3.7/site-packages (from -r requirements.txt (line 5)) (0.10.0)
+Requirement already satisfied: astroid==2.5.6 in /home/arlan.uy/.local/lib/python3.7/site-packages (from -r requirements.txt (line 2)) (2.5.6)
+Requirement already satisfied: typed-ast==1.4.0 in /home/arlan.uy/.local/lib/python3.7/site-packages (from -r requirements.txt (line 22)) (1.4.0)
+Requirement already satisfied: pytz==2018.5 in /share/hpcc/CPU/anaconda/3-5.3.1/lib/python3.7/site-packages (from -r requirements.txt (line 19)) (2018.5)
+Requirement already satisfied: graphviz==0.10.1 in /home/arlan.uy/.local/lib/python3.7/site-packages (from -r requirements.txt (line 6)) (0.10.1)
+Requirement already satisfied: click==6.7 in /share/hpcc/CPU/anaconda/3-5.3.1/lib/python3.7/site-packages (from -r requirements.txt (line 4)) (6.7)
+Requirement already satisfied: six==1.11.0 in /share/hpcc/CPU/anaconda/3-5.3.1/lib/python3.7/site-packages (from -r requirements.txt (line 20)) (1.11.0)
+Requirement already satisfied: cycler==0.10.0 in /share/hpcc/CPU/anaconda/3-5.3.1/lib/python3.7/site-packages (from -r requirements.txt (line 5)) (0.10.0)
+Requirement already satisfied: wrapt==1.12.1 in /home/arlan.uy/.local/lib/python3.7/site-packages (from -r requirements.txt (line 23)) (1.12.1)
+Requirement already satisfied: pyyaml==5.4.1 in /home/arlan.uy/.local/lib/python3.7/site-packages (from -r requirements.txt (line 24)) (5.4.1)
+Requirement already satisfied: graphviz==0.10.1 in /home/arlan.uy/.local/lib/python3.7/site-packages (from -r requirements.txt (line 6)) (0.10.1)
+Requirement already satisfied: toml==0.9.6 in /home/arlan.uy/.local/lib/python3.7/site-packages (from -r requirements.txt (line 21)) (0.9.6)
+Requirement already satisfied: isort==4.3.4 in /share/hpcc/CPU/anaconda/3-5.3.1/lib/python3.7/site-packages (from -r requirements.txt (line 8)) (4.3.4)
+Requirement already satisfied: greenery==3.1 in /home/arlan.uy/.local/lib/python3.7/site-packages (from -r requirements.txt (line 7)) (3.1)
+Requirement already satisfied: typed-ast==1.4.0 in /home/arlan.uy/.local/lib/python3.7/site-packages (from -r requirements.txt (line 22)) (1.4.0)
+Requirement already satisfied: isort==4.3.4 in /share/hpcc/CPU/anaconda/3-5.3.1/lib/python3.7/site-packages (from -r requirements.txt (line 8)) (4.3.4)
+Requirement already satisfied: pycuda==2019.1.2 in /home/arlan.uy/.local/lib/python3.7/site-packages (from -r requirements.txt (line 25)) (2019.1.2)
+Requirement already satisfied: kiwisolver==1.0.1 in /share/hpcc/CPU/anaconda/3-5.3.1/lib/python3.7/site-packages (from -r requirements.txt (line 9)) (1.0.1)
+Requirement already satisfied: kiwisolver==1.0.1 in /share/hpcc/CPU/anaconda/3-5.3.1/lib/python3.7/site-packages (from -r requirements.txt (line 9)) (1.0.1)
+Requirement already satisfied: attrs==18.2.0 in /share/hpcc/CPU/anaconda/3-5.3.1/lib/python3.7/site-packages (from -r requirements.txt (line 3)) (18.2.0)
+Requirement already satisfied: lazy-object-proxy==1.4.0 in /home/arlan.uy/.local/lib/python3.7/site-packages (from -r requirements.txt (line 10)) (1.4.0)
+Requirement already satisfied: greenery==3.1 in /home/arlan.uy/.local/lib/python3.7/site-packages (from -r requirements.txt (line 7)) (3.1)
+Requirement already satisfied: click==6.7 in /share/hpcc/CPU/anaconda/3-5.3.1/lib/python3.7/site-packages (from -r requirements.txt (line 4)) (6.7)
+Requirement already satisfied: matplotlib==3.0.0 in /home/arlan.uy/.local/lib/python3.7/site-packages (from -r requirements.txt (line 11)) (3.0.0)
+Requirement already satisfied: isort==4.3.4 in /share/hpcc/CPU/anaconda/3-5.3.1/lib/python3.7/site-packages (from -r requirements.txt (line 8)) (4.3.4)
+Requirement already satisfied: cycler==0.10.0 in /share/hpcc/CPU/anaconda/3-5.3.1/lib/python3.7/site-packages (from -r requirements.txt (line 5)) (0.10.0)
+Requirement already satisfied: graphviz==0.10.1 in /home/arlan.uy/.local/lib/python3.7/site-packages (from -r requirements.txt (line 6)) (0.10.1)
+Requirement already satisfied: kiwisolver==1.0.1 in /share/hpcc/CPU/anaconda/3-5.3.1/lib/python3.7/site-packages (from -r requirements.txt (line 9)) (1.0.1)
+Requirement already satisfied: mccabe==0.6.1 in /share/hpcc/CPU/anaconda/3-5.3.1/lib/python3.7/site-packages (from -r requirements.txt (line 12)) (0.6.1)
+Requirement already satisfied: greenery==3.1 in /home/arlan.uy/.local/lib/python3.7/site-packages (from -r requirements.txt (line 7)) (3.1)
+Requirement already satisfied: lazy-object-proxy==1.4.0 in /home/arlan.uy/.local/lib/python3.7/site-packages (from -r requirements.txt (line 10)) (1.4.0)
+Requirement already satisfied: mpmath==1.1.0 in /home/arlan.uy/.local/lib/python3.7/site-packages (from -r requirements.txt (line 13)) (1.1.0)
+Requirement already satisfied: isort==4.3.4 in /share/hpcc/CPU/anaconda/3-5.3.1/lib/python3.7/site-packages (from -r requirements.txt (line 8)) (4.3.4)
+Requirement already satisfied: matplotlib==3.0.0 in /home/arlan.uy/.local/lib/python3.7/site-packages (from -r requirements.txt (line 11)) (3.0.0)
+Requirement already satisfied: appdirs==1.4.3 in /share/hpcc/CPU/anaconda/3-5.3.1/lib/python3.7/site-packages (from -r requirements.txt (line 1)) (1.4.3)
+Requirement already satisfied: kiwisolver==1.0.1 in /share/hpcc/CPU/anaconda/3-5.3.1/lib/python3.7/site-packages (from -r requirements.txt (line 9)) (1.0.1)
+Requirement already satisfied: attrs==18.2.0 in /share/hpcc/CPU/anaconda/3-5.3.1/lib/python3.7/site-packages (from -r requirements.txt (line 3)) (18.2.0)
+Requirement already satisfied: mccabe==0.6.1 in /share/hpcc/CPU/anaconda/3-5.3.1/lib/python3.7/site-packages (from -r requirements.txt (line 12)) (0.6.1)
+Requirement already satisfied: numpy==1.15.1 in /share/hpcc/CPU/anaconda/3-5.3.1/lib/python3.7/site-packages (from -r requirements.txt (line 14)) (1.15.1)
+Requirement already satisfied: astroid==2.5.6 in /home/arlan.uy/.local/lib/python3.7/site-packages (from -r requirements.txt (line 2)) (2.5.6)
+Requirement already satisfied: mpmath==1.1.0 in /home/arlan.uy/.local/lib/python3.7/site-packages (from -r requirements.txt (line 13)) (1.1.0)
+Requirement already satisfied: click==6.7 in /share/hpcc/CPU/anaconda/3-5.3.1/lib/python3.7/site-packages (from -r requirements.txt (line 4)) (6.7)
+Requirement already satisfied: attrs==18.2.0 in /share/hpcc/CPU/anaconda/3-5.3.1/lib/python3.7/site-packages (from -r requirements.txt (line 3)) (18.2.0)
+Requirement already satisfied: pandas==0.23.4 in /share/hpcc/CPU/anaconda/3-5.3.1/lib/python3.7/site-packages (from -r requirements.txt (line 15)) (0.23.4)
+Requirement already satisfied: cycler==0.10.0 in /share/hpcc/CPU/anaconda/3-5.3.1/lib/python3.7/site-packages (from -r requirements.txt (line 5)) (0.10.0)
+Requirement already satisfied: numpy==1.15.1 in /share/hpcc/CPU/anaconda/3-5.3.1/lib/python3.7/site-packages (from -r requirements.txt (line 14)) (1.15.1)
+Requirement already satisfied: click==6.7 in /share/hpcc/CPU/anaconda/3-5.3.1/lib/python3.7/site-packages (from -r requirements.txt (line 4)) (6.7)
+Requirement already satisfied: graphviz==0.10.1 in /home/arlan.uy/.local/lib/python3.7/site-packages (from -r requirements.txt (line 6)) (0.10.1)
+Requirement already satisfied: pandas==0.23.4 in /share/hpcc/CPU/anaconda/3-5.3.1/lib/python3.7/site-packages (from -r requirements.txt (line 15)) (0.23.4)
+Requirement already satisfied: pylint==2.3.1 in /home/arlan.uy/.local/lib/python3.7/site-packages (from -r requirements.txt (line 16)) (2.3.1)
+Requirement already satisfied: cycler==0.10.0 in /share/hpcc/CPU/anaconda/3-5.3.1/lib/python3.7/site-packages (from -r requirements.txt (line 5)) (0.10.0)
+Requirement already satisfied: greenery==3.1 in /home/arlan.uy/.local/lib/python3.7/site-packages (from -r requirements.txt (line 7)) (3.1)
+Requirement already satisfied: pylint==2.3.1 in /home/arlan.uy/.local/lib/python3.7/site-packages (from -r requirements.txt (line 16)) (2.3.1)
+Requirement already satisfied: wrapt==1.12.1 in /home/arlan.uy/.local/lib/python3.7/site-packages (from -r requirements.txt (line 23)) (1.12.1)
+Requirement already satisfied: isort==4.3.4 in /share/hpcc/CPU/anaconda/3-5.3.1/lib/python3.7/site-packages (from -r requirements.txt (line 8)) (4.3.4)
+Requirement already satisfied: pyparsing==2.2.2 in /home/arlan.uy/.local/lib/python3.7/site-packages (from -r requirements.txt (line 17)) (2.2.2)
+Requirement already satisfied: pyparsing==2.2.2 in /home/arlan.uy/.local/lib/python3.7/site-packages (from -r requirements.txt (line 17)) (2.2.2)
+Requirement already satisfied: pyyaml==5.4.1 in /home/arlan.uy/.local/lib/python3.7/site-packages (from -r requirements.txt (line 24)) (5.4.1)
+Requirement already satisfied: kiwisolver==1.0.1 in /share/hpcc/CPU/anaconda/3-5.3.1/lib/python3.7/site-packages (from -r requirements.txt (line 9)) (1.0.1)
+Requirement already satisfied: lazy-object-proxy==1.4.0 in /home/arlan.uy/.local/lib/python3.7/site-packages (from -r requirements.txt (line 10)) (1.4.0)
+Requirement already satisfied: python-dateutil==2.7.3 in /share/hpcc/CPU/anaconda/3-5.3.1/lib/python3.7/site-packages (from -r requirements.txt (line 18)) (2.7.3)
+Requirement already satisfied: pycuda==2019.1.2 in /home/arlan.uy/.local/lib/python3.7/site-packages (from -r requirements.txt (line 25)) (2019.1.2)
+Requirement already satisfied: matplotlib==3.0.0 in /home/arlan.uy/.local/lib/python3.7/site-packages (from -r requirements.txt (line 11)) (3.0.0)
+Requirement already satisfied: pytz==2018.5 in /share/hpcc/CPU/anaconda/3-5.3.1/lib/python3.7/site-packages (from -r requirements.txt (line 19)) (2018.5)
+Requirement already satisfied: python-dateutil==2.7.3 in /share/hpcc/CPU/anaconda/3-5.3.1/lib/python3.7/site-packages (from -r requirements.txt (line 18)) (2.7.3)
+Requirement already satisfied: graphviz==0.10.1 in /home/arlan.uy/.local/lib/python3.7/site-packages (from -r requirements.txt (line 6)) (0.10.1)
+Requirement already satisfied: mccabe==0.6.1 in /share/hpcc/CPU/anaconda/3-5.3.1/lib/python3.7/site-packages (from -r requirements.txt (line 12)) (0.6.1)
+Requirement already satisfied: greenery==3.1 in /home/arlan.uy/.local/lib/python3.7/site-packages (from -r requirements.txt (line 7)) (3.1)
+Requirement already satisfied: mpmath==1.1.0 in /home/arlan.uy/.local/lib/python3.7/site-packages (from -r requirements.txt (line 13)) (1.1.0)
+Requirement already satisfied: pytz==2018.5 in /share/hpcc/CPU/anaconda/3-5.3.1/lib/python3.7/site-packages (from -r requirements.txt (line 19)) (2018.5)
+Requirement already satisfied: isort==4.3.4 in /share/hpcc/CPU/anaconda/3-5.3.1/lib/python3.7/site-packages (from -r requirements.txt (line 8)) (4.3.4)
+Requirement already satisfied: numpy==1.15.1 in /share/hpcc/CPU/anaconda/3-5.3.1/lib/python3.7/site-packages (from -r requirements.txt (line 14)) (1.15.1)
+Requirement already satisfied: six==1.11.0 in /share/hpcc/CPU/anaconda/3-5.3.1/lib/python3.7/site-packages (from -r requirements.txt (line 20)) (1.11.0)
+Requirement already satisfied: kiwisolver==1.0.1 in /share/hpcc/CPU/anaconda/3-5.3.1/lib/python3.7/site-packages (from -r requirements.txt (line 9)) (1.0.1)
+Requirement already satisfied: pandas==0.23.4 in /share/hpcc/CPU/anaconda/3-5.3.1/lib/python3.7/site-packages (from -r requirements.txt (line 15)) (0.23.4)
+Requirement already satisfied: lazy-object-proxy==1.4.0 in /home/arlan.uy/.local/lib/python3.7/site-packages (from -r requirements.txt (line 10)) (1.4.0)
+Requirement already satisfied: pylint==2.3.1 in /home/arlan.uy/.local/lib/python3.7/site-packages (from -r requirements.txt (line 16)) (2.3.1)
+Requirement already satisfied: toml==0.9.6 in /home/arlan.uy/.local/lib/python3.7/site-packages (from -r requirements.txt (line 21)) (0.9.6)
+Requirement already satisfied: matplotlib==3.0.0 in /home/arlan.uy/.local/lib/python3.7/site-packages (from -r requirements.txt (line 11)) (3.0.0)
+Requirement already satisfied: pyparsing==2.2.2 in /home/arlan.uy/.local/lib/python3.7/site-packages (from -r requirements.txt (line 17)) (2.2.2)
+Requirement already satisfied: typed-ast==1.4.0 in /home/arlan.uy/.local/lib/python3.7/site-packages (from -r requirements.txt (line 22)) (1.4.0)
+Requirement already satisfied: mccabe==0.6.1 in /share/hpcc/CPU/anaconda/3-5.3.1/lib/python3.7/site-packages (from -r requirements.txt (line 12)) (0.6.1)
+Requirement already satisfied: python-dateutil==2.7.3 in /share/hpcc/CPU/anaconda/3-5.3.1/lib/python3.7/site-packages (from -r requirements.txt (line 18)) (2.7.3)
+Requirement already satisfied: pytz==2018.5 in /share/hpcc/CPU/anaconda/3-5.3.1/lib/python3.7/site-packages (from -r requirements.txt (line 19)) (2018.5)
+Requirement already satisfied: wrapt==1.12.1 in /home/arlan.uy/.local/lib/python3.7/site-packages (from -r requirements.txt (line 23)) (1.12.1)
+Requirement already satisfied: lazy-object-proxy==1.4.0 in /home/arlan.uy/.local/lib/python3.7/site-packages (from -r requirements.txt (line 10)) (1.4.0)
+Requirement already satisfied: six==1.11.0 in /share/hpcc/CPU/anaconda/3-5.3.1/lib/python3.7/site-packages (from -r requirements.txt (line 20)) (1.11.0)
+Requirement already satisfied: pyyaml==5.4.1 in /home/arlan.uy/.local/lib/python3.7/site-packages (from -r requirements.txt (line 24)) (5.4.1)
+Requirement already satisfied: matplotlib==3.0.0 in /home/arlan.uy/.local/lib/python3.7/site-packages (from -r requirements.txt (line 11)) (3.0.0)
+Requirement already satisfied: mccabe==0.6.1 in /share/hpcc/CPU/anaconda/3-5.3.1/lib/python3.7/site-packages (from -r requirements.txt (line 12)) (0.6.1)
+Requirement already satisfied: mpmath==1.1.0 in /home/arlan.uy/.local/lib/python3.7/site-packages (from -r requirements.txt (line 13)) (1.1.0)
+Requirement already satisfied: toml==0.9.6 in /home/arlan.uy/.local/lib/python3.7/site-packages (from -r requirements.txt (line 21)) (0.9.6)
+Requirement already satisfied: pycuda==2019.1.2 in /home/arlan.uy/.local/lib/python3.7/site-packages (from -r requirements.txt (line 25)) (2019.1.2)
+Requirement already satisfied: numpy==1.15.1 in /share/hpcc/CPU/anaconda/3-5.3.1/lib/python3.7/site-packages (from -r requirements.txt (line 14)) (1.15.1)
+Requirement already satisfied: typed-ast==1.4.0 in /home/arlan.uy/.local/lib/python3.7/site-packages (from -r requirements.txt (line 22)) (1.4.0)
+Requirement already satisfied: pandas==0.23.4 in /share/hpcc/CPU/anaconda/3-5.3.1/lib/python3.7/site-packages (from -r requirements.txt (line 15)) (0.23.4)
+Requirement already satisfied: lazy-object-proxy==1.4.0 in /home/arlan.uy/.local/lib/python3.7/site-packages (from -r requirements.txt (line 10)) (1.4.0)
+Requirement already satisfied: pylint==2.3.1 in /home/arlan.uy/.local/lib/python3.7/site-packages (from -r requirements.txt (line 16)) (2.3.1)
+Requirement already satisfied: pyparsing==2.2.2 in /home/arlan.uy/.local/lib/python3.7/site-packages (from -r requirements.txt (line 17)) (2.2.2)
+Requirement already satisfied: python-dateutil==2.7.3 in /share/hpcc/CPU/anaconda/3-5.3.1/lib/python3.7/site-packages (from -r requirements.txt (line 18)) (2.7.3)
+Requirement already satisfied: mpmath==1.1.0 in /home/arlan.uy/.local/lib/python3.7/site-packages (from -r requirements.txt (line 13)) (1.1.0)
+Requirement already satisfied: matplotlib==3.0.0 in /home/arlan.uy/.local/lib/python3.7/site-packages (from -r requirements.txt (line 11)) (3.0.0)
+Requirement already satisfied: six==1.11.0 in /share/hpcc/CPU/anaconda/3-5.3.1/lib/python3.7/site-packages (from -r requirements.txt (line 20)) (1.11.0)
+Requirement already satisfied: numpy==1.15.1 in /share/hpcc/CPU/anaconda/3-5.3.1/lib/python3.7/site-packages (from -r requirements.txt (line 14)) (1.15.1)
+Requirement already satisfied: toml==0.9.6 in /home/arlan.uy/.local/lib/python3.7/site-packages (from -r requirements.txt (line 21)) (0.9.6)
+Requirement already satisfied: pandas==0.23.4 in /share/hpcc/CPU/anaconda/3-5.3.1/lib/python3.7/site-packages (from -r requirements.txt (line 15)) (0.23.4)
+Requirement already satisfied: mccabe==0.6.1 in /share/hpcc/CPU/anaconda/3-5.3.1/lib/python3.7/site-packages (from -r requirements.txt (line 12)) (0.6.1)
+Requirement already satisfied: typed-ast==1.4.0 in /home/arlan.uy/.local/lib/python3.7/site-packages (from -r requirements.txt (line 22)) (1.4.0)
+Requirement already satisfied: pylint==2.3.1 in /home/arlan.uy/.local/lib/python3.7/site-packages (from -r requirements.txt (line 16)) (2.3.1)
+Requirement already satisfied: wrapt==1.12.1 in /home/arlan.uy/.local/lib/python3.7/site-packages (from -r requirements.txt (line 23)) (1.12.1)
+Requirement already satisfied: pyparsing==2.2.2 in /home/arlan.uy/.local/lib/python3.7/site-packages (from -r requirements.txt (line 17)) (2.2.2)
+Requirement already satisfied: python-dateutil==2.7.3 in /share/hpcc/CPU/anaconda/3-5.3.1/lib/python3.7/site-packages (from -r requirements.txt (line 18)) (2.7.3)
+Requirement already satisfied: pyyaml==5.4.1 in /home/arlan.uy/.local/lib/python3.7/site-packages (from -r requirements.txt (line 24)) (5.4.1)
+Requirement already satisfied: pycuda==2019.1.2 in /home/arlan.uy/.local/lib/python3.7/site-packages (from -r requirements.txt (line 25)) (2019.1.2)
+Requirement already satisfied: pytz==2018.5 in /share/hpcc/CPU/anaconda/3-5.3.1/lib/python3.7/site-packages (from -r requirements.txt (line 19)) (2018.5)
+Requirement already satisfied: pytz==2018.5 in /share/hpcc/CPU/anaconda/3-5.3.1/lib/python3.7/site-packages (from -r requirements.txt (line 19)) (2018.5)
+Requirement already satisfied: six==1.11.0 in /share/hpcc/CPU/anaconda/3-5.3.1/lib/python3.7/site-packages (from -r requirements.txt (line 20)) (1.11.0)
+Requirement already satisfied: six==1.11.0 in /share/hpcc/CPU/anaconda/3-5.3.1/lib/python3.7/site-packages (from -r requirements.txt (line 20)) (1.11.0)
+Requirement already satisfied: toml==0.9.6 in /home/arlan.uy/.local/lib/python3.7/site-packages (from -r requirements.txt (line 21)) (0.9.6)
+Requirement already satisfied: appdirs==1.4.3 in /share/hpcc/CPU/anaconda/3-5.3.1/lib/python3.7/site-packages (from -r requirements.txt (line 1)) (1.4.3)
+Requirement already satisfied: toml==0.9.6 in /home/arlan.uy/.local/lib/python3.7/site-packages (from -r requirements.txt (line 21)) (0.9.6)
+Requirement already satisfied: typed-ast==1.4.0 in /home/arlan.uy/.local/lib/python3.7/site-packages (from -r requirements.txt (line 22)) (1.4.0)
+Requirement already satisfied: wrapt==1.12.1 in /home/arlan.uy/.local/lib/python3.7/site-packages (from -r requirements.txt (line 23)) (1.12.1)
+Requirement already satisfied: pyyaml==5.4.1 in /home/arlan.uy/.local/lib/python3.7/site-packages (from -r requirements.txt (line 24)) (5.4.1)
+Requirement already satisfied: pycuda==2019.1.2 in /home/arlan.uy/.local/lib/python3.7/site-packages (from -r requirements.txt (line 25)) (2019.1.2)
+Requirement already satisfied: typed-ast==1.4.0 in /home/arlan.uy/.local/lib/python3.7/site-packages (from -r requirements.txt (line 22)) (1.4.0)
+Requirement already satisfied: wrapt==1.12.1 in /home/arlan.uy/.local/lib/python3.7/site-packages (from -r requirements.txt (line 23)) (1.12.1)
+Requirement already satisfied: pyyaml==5.4.1 in /home/arlan.uy/.local/lib/python3.7/site-packages (from -r requirements.txt (line 24)) (5.4.1)
+Requirement already satisfied: appdirs==1.4.3 in /share/hpcc/CPU/anaconda/3-5.3.1/lib/python3.7/site-packages (from -r requirements.txt (line 1)) (1.4.3)
+Requirement already satisfied: appdirs==1.4.3 in /share/hpcc/CPU/anaconda/3-5.3.1/lib/python3.7/site-packages (from -r requirements.txt (line 1)) (1.4.3)
+Requirement already satisfied: astroid==2.5.6 in /home/arlan.uy/.local/lib/python3.7/site-packages (from -r requirements.txt (line 2)) (2.5.6)
+Requirement already satisfied: pycuda==2019.1.2 in /home/arlan.uy/.local/lib/python3.7/site-packages (from -r requirements.txt (line 25)) (2019.1.2)
+Requirement already satisfied: attrs==18.2.0 in /share/hpcc/CPU/anaconda/3-5.3.1/lib/python3.7/site-packages (from -r requirements.txt (line 3)) (18.2.0)
+Requirement already satisfied: click==6.7 in /share/hpcc/CPU/anaconda/3-5.3.1/lib/python3.7/site-packages (from -r requirements.txt (line 4)) (6.7)
+Requirement already satisfied: cycler==0.10.0 in /share/hpcc/CPU/anaconda/3-5.3.1/lib/python3.7/site-packages (from -r requirements.txt (line 5)) (0.10.0)
+Requirement already satisfied: astroid==2.5.6 in /home/arlan.uy/.local/lib/python3.7/site-packages (from -r requirements.txt (line 2)) (2.5.6)
+Requirement already satisfied: appdirs==1.4.3 in /share/hpcc/CPU/anaconda/3-5.3.1/lib/python3.7/site-packages (from -r requirements.txt (line 1)) (1.4.3)
+Requirement already satisfied: attrs==18.2.0 in /share/hpcc/CPU/anaconda/3-5.3.1/lib/python3.7/site-packages (from -r requirements.txt (line 3)) (18.2.0)
+Requirement already satisfied: click==6.7 in /share/hpcc/CPU/anaconda/3-5.3.1/lib/python3.7/site-packages (from -r requirements.txt (line 4)) (6.7)
+Requirement already satisfied: astroid==2.5.6 in /home/arlan.uy/.local/lib/python3.7/site-packages (from -r requirements.txt (line 2)) (2.5.6)
+Requirement already satisfied: cycler==0.10.0 in /share/hpcc/CPU/anaconda/3-5.3.1/lib/python3.7/site-packages (from -r requirements.txt (line 5)) (0.10.0)
+Requirement already satisfied: attrs==18.2.0 in /share/hpcc/CPU/anaconda/3-5.3.1/lib/python3.7/site-packages (from -r requirements.txt (line 3)) (18.2.0)
+Requirement already satisfied: graphviz==0.10.1 in /home/arlan.uy/.local/lib/python3.7/site-packages (from -r requirements.txt (line 6)) (0.10.1)
+Requirement already satisfied: greenery==3.1 in /home/arlan.uy/.local/lib/python3.7/site-packages (from -r requirements.txt (line 7)) (3.1)
+Requirement already satisfied: isort==4.3.4 in /share/hpcc/CPU/anaconda/3-5.3.1/lib/python3.7/site-packages (from -r requirements.txt (line 8)) (4.3.4)
+Requirement already satisfied: astroid==2.5.6 in /home/arlan.uy/.local/lib/python3.7/site-packages (from -r requirements.txt (line 2)) (2.5.6)
+Requirement already satisfied: kiwisolver==1.0.1 in /share/hpcc/CPU/anaconda/3-5.3.1/lib/python3.7/site-packages (from -r requirements.txt (line 9)) (1.0.1)
+Requirement already satisfied: attrs==18.2.0 in /share/hpcc/CPU/anaconda/3-5.3.1/lib/python3.7/site-packages (from -r requirements.txt (line 3)) (18.2.0)
+Requirement already satisfied: lazy-object-proxy==1.4.0 in /home/arlan.uy/.local/lib/python3.7/site-packages (from -r requirements.txt (line 10)) (1.4.0)
+Requirement already satisfied: click==6.7 in /share/hpcc/CPU/anaconda/3-5.3.1/lib/python3.7/site-packages (from -r requirements.txt (line 4)) (6.7)
+Requirement already satisfied: wrapt==1.12.1 in /home/arlan.uy/.local/lib/python3.7/site-packages (from -r requirements.txt (line 23)) (1.12.1)
+Requirement already satisfied: cycler==0.10.0 in /share/hpcc/CPU/anaconda/3-5.3.1/lib/python3.7/site-packages (from -r requirements.txt (line 5)) (0.10.0)
+Requirement already satisfied: pyyaml==5.4.1 in /home/arlan.uy/.local/lib/python3.7/site-packages (from -r requirements.txt (line 24)) (5.4.1)
+Requirement already satisfied: graphviz==0.10.1 in /home/arlan.uy/.local/lib/python3.7/site-packages (from -r requirements.txt (line 6)) (0.10.1)
+Requirement already satisfied: pycuda==2019.1.2 in /home/arlan.uy/.local/lib/python3.7/site-packages (from -r requirements.txt (line 25)) (2019.1.2)
+Requirement already satisfied: mpmath==1.1.0 in /home/arlan.uy/.local/lib/python3.7/site-packages (from -r requirements.txt (line 13)) (1.1.0)
+Requirement already satisfied: greenery==3.1 in /home/arlan.uy/.local/lib/python3.7/site-packages (from -r requirements.txt (line 7)) (3.1)
+Requirement already satisfied: graphviz==0.10.1 in /home/arlan.uy/.local/lib/python3.7/site-packages (from -r requirements.txt (line 6)) (0.10.1)
+Requirement already satisfied: numpy==1.15.1 in /share/hpcc/CPU/anaconda/3-5.3.1/lib/python3.7/site-packages (from -r requirements.txt (line 14)) (1.15.1)
+Requirement already satisfied: click==6.7 in /share/hpcc/CPU/anaconda/3-5.3.1/lib/python3.7/site-packages (from -r requirements.txt (line 4)) (6.7)
+Requirement already satisfied: greenery==3.1 in /home/arlan.uy/.local/lib/python3.7/site-packages (from -r requirements.txt (line 7)) (3.1)
+Requirement already satisfied: pandas==0.23.4 in /share/hpcc/CPU/anaconda/3-5.3.1/lib/python3.7/site-packages (from -r requirements.txt (line 15)) (0.23.4)
+Requirement already satisfied: cycler==0.10.0 in /share/hpcc/CPU/anaconda/3-5.3.1/lib/python3.7/site-packages (from -r requirements.txt (line 5)) (0.10.0)
+Requirement already satisfied: isort==4.3.4 in /share/hpcc/CPU/anaconda/3-5.3.1/lib/python3.7/site-packages (from -r requirements.txt (line 8)) (4.3.4)
+Requirement already satisfied: pylint==2.3.1 in /home/arlan.uy/.local/lib/python3.7/site-packages (from -r requirements.txt (line 16)) (2.3.1)
+Requirement already satisfied: kiwisolver==1.0.1 in /share/hpcc/CPU/anaconda/3-5.3.1/lib/python3.7/site-packages (from -r requirements.txt (line 9)) (1.0.1)
+Requirement already satisfied: pyparsing==2.2.2 in /home/arlan.uy/.local/lib/python3.7/site-packages (from -r requirements.txt (line 17)) (2.2.2)
+Requirement already satisfied: graphviz==0.10.1 in /home/arlan.uy/.local/lib/python3.7/site-packages (from -r requirements.txt (line 6)) (0.10.1)
+Requirement already satisfied: lazy-object-proxy==1.4.0 in /home/arlan.uy/.local/lib/python3.7/site-packages (from -r requirements.txt (line 10)) (1.4.0)
+Requirement already satisfied: python-dateutil==2.7.3 in /share/hpcc/CPU/anaconda/3-5.3.1/lib/python3.7/site-packages (from -r requirements.txt (line 18)) (2.7.3)
+Requirement already satisfied: greenery==3.1 in /home/arlan.uy/.local/lib/python3.7/site-packages (from -r requirements.txt (line 7)) (3.1)
+Requirement already satisfied: matplotlib==3.0.0 in /home/arlan.uy/.local/lib/python3.7/site-packages (from -r requirements.txt (line 11)) (3.0.0)
+Requirement already satisfied: pytz==2018.5 in /share/hpcc/CPU/anaconda/3-5.3.1/lib/python3.7/site-packages (from -r requirements.txt (line 19)) (2018.5)
+Requirement already satisfied: isort==4.3.4 in /share/hpcc/CPU/anaconda/3-5.3.1/lib/python3.7/site-packages (from -r requirements.txt (line 8)) (4.3.4)
+Requirement already satisfied: kiwisolver==1.0.1 in /share/hpcc/CPU/anaconda/3-5.3.1/lib/python3.7/site-packages (from -r requirements.txt (line 9)) (1.0.1)
+Requirement already satisfied: lazy-object-proxy==1.4.0 in /home/arlan.uy/.local/lib/python3.7/site-packages (from -r requirements.txt (line 10)) (1.4.0)
+Requirement already satisfied: isort==4.3.4 in /share/hpcc/CPU/anaconda/3-5.3.1/lib/python3.7/site-packages (from -r requirements.txt (line 8)) (4.3.4)
+Requirement already satisfied: kiwisolver==1.0.1 in /share/hpcc/CPU/anaconda/3-5.3.1/lib/python3.7/site-packages (from -r requirements.txt (line 9)) (1.0.1)
+Requirement already satisfied: lazy-object-proxy==1.4.0 in /home/arlan.uy/.local/lib/python3.7/site-packages (from -r requirements.txt (line 10)) (1.4.0)
+Requirement already satisfied: matplotlib==3.0.0 in /home/arlan.uy/.local/lib/python3.7/site-packages (from -r requirements.txt (line 11)) (3.0.0)
+Requirement already satisfied: mccabe==0.6.1 in /share/hpcc/CPU/anaconda/3-5.3.1/lib/python3.7/site-packages (from -r requirements.txt (line 12)) (0.6.1)
+Requirement already satisfied: mpmath==1.1.0 in /home/arlan.uy/.local/lib/python3.7/site-packages (from -r requirements.txt (line 13)) (1.1.0)
+Requirement already satisfied: numpy==1.15.1 in /share/hpcc/CPU/anaconda/3-5.3.1/lib/python3.7/site-packages (from -r requirements.txt (line 14)) (1.15.1)
+Requirement already satisfied: matplotlib==3.0.0 in /home/arlan.uy/.local/lib/python3.7/site-packages (from -r requirements.txt (line 11)) (3.0.0)
+Requirement already satisfied: matplotlib==3.0.0 in /home/arlan.uy/.local/lib/python3.7/site-packages (from -r requirements.txt (line 11)) (3.0.0)
+Requirement already satisfied: mccabe==0.6.1 in /share/hpcc/CPU/anaconda/3-5.3.1/lib/python3.7/site-packages (from -r requirements.txt (line 12)) (0.6.1)
+Requirement already satisfied: mpmath==1.1.0 in /home/arlan.uy/.local/lib/python3.7/site-packages (from -r requirements.txt (line 13)) (1.1.0)
+Requirement already satisfied: six==1.11.0 in /share/hpcc/CPU/anaconda/3-5.3.1/lib/python3.7/site-packages (from -r requirements.txt (line 20)) (1.11.0)
+Requirement already satisfied: toml==0.9.6 in /home/arlan.uy/.local/lib/python3.7/site-packages (from -r requirements.txt (line 21)) (0.9.6)
+Requirement already satisfied: numpy==1.15.1 in /share/hpcc/CPU/anaconda/3-5.3.1/lib/python3.7/site-packages (from -r requirements.txt (line 14)) (1.15.1)
+Requirement already satisfied: typed-ast==1.4.0 in /home/arlan.uy/.local/lib/python3.7/site-packages (from -r requirements.txt (line 22)) (1.4.0)
+Requirement already satisfied: pandas==0.23.4 in /share/hpcc/CPU/anaconda/3-5.3.1/lib/python3.7/site-packages (from -r requirements.txt (line 15)) (0.23.4)
+Requirement already satisfied: wrapt==1.12.1 in /home/arlan.uy/.local/lib/python3.7/site-packages (from -r requirements.txt (line 23)) (1.12.1)
+Requirement already satisfied: pylint==2.3.1 in /home/arlan.uy/.local/lib/python3.7/site-packages (from -r requirements.txt (line 16)) (2.3.1)
+Requirement already satisfied: pyyaml==5.4.1 in /home/arlan.uy/.local/lib/python3.7/site-packages (from -r requirements.txt (line 24)) (5.4.1)
+Requirement already satisfied: pyparsing==2.2.2 in /home/arlan.uy/.local/lib/python3.7/site-packages (from -r requirements.txt (line 17)) (2.2.2)
+Requirement already satisfied: pycuda==2019.1.2 in /home/arlan.uy/.local/lib/python3.7/site-packages (from -r requirements.txt (line 25)) (2019.1.2)
+Requirement already satisfied: mccabe==0.6.1 in /share/hpcc/CPU/anaconda/3-5.3.1/lib/python3.7/site-packages (from -r requirements.txt (line 12)) (0.6.1)
+Requirement already satisfied: pandas==0.23.4 in /share/hpcc/CPU/anaconda/3-5.3.1/lib/python3.7/site-packages (from -r requirements.txt (line 15)) (0.23.4)
+Requirement already satisfied: mpmath==1.1.0 in /home/arlan.uy/.local/lib/python3.7/site-packages (from -r requirements.txt (line 13)) (1.1.0)
+Requirement already satisfied: pylint==2.3.1 in /home/arlan.uy/.local/lib/python3.7/site-packages (from -r requirements.txt (line 16)) (2.3.1)
+Requirement already satisfied: numpy==1.15.1 in /share/hpcc/CPU/anaconda/3-5.3.1/lib/python3.7/site-packages (from -r requirements.txt (line 14)) (1.15.1)
+Requirement already satisfied: pyparsing==2.2.2 in /home/arlan.uy/.local/lib/python3.7/site-packages (from -r requirements.txt (line 17)) (2.2.2)
+Requirement already satisfied: pandas==0.23.4 in /share/hpcc/CPU/anaconda/3-5.3.1/lib/python3.7/site-packages (from -r requirements.txt (line 15)) (0.23.4)
+Requirement already satisfied: pylint==2.3.1 in /home/arlan.uy/.local/lib/python3.7/site-packages (from -r requirements.txt (line 16)) (2.3.1)
+Requirement already satisfied: python-dateutil==2.7.3 in /share/hpcc/CPU/anaconda/3-5.3.1/lib/python3.7/site-packages (from -r requirements.txt (line 18)) (2.7.3)
+Requirement already satisfied: pyparsing==2.2.2 in /home/arlan.uy/.local/lib/python3.7/site-packages (from -r requirements.txt (line 17)) (2.2.2)
+Requirement already satisfied: pytz==2018.5 in /share/hpcc/CPU/anaconda/3-5.3.1/lib/python3.7/site-packages (from -r requirements.txt (line 19)) (2018.5)
+Requirement already satisfied: python-dateutil==2.7.3 in /share/hpcc/CPU/anaconda/3-5.3.1/lib/python3.7/site-packages (from -r requirements.txt (line 18)) (2.7.3)
+Requirement already satisfied: six==1.11.0 in /share/hpcc/CPU/anaconda/3-5.3.1/lib/python3.7/site-packages (from -r requirements.txt (line 20)) (1.11.0)
+Requirement already satisfied: pytz==2018.5 in /share/hpcc/CPU/anaconda/3-5.3.1/lib/python3.7/site-packages (from -r requirements.txt (line 19)) (2018.5)
+Requirement already satisfied: mccabe==0.6.1 in /share/hpcc/CPU/anaconda/3-5.3.1/lib/python3.7/site-packages (from -r requirements.txt (line 12)) (0.6.1)
+Requirement already satisfied: mpmath==1.1.0 in /home/arlan.uy/.local/lib/python3.7/site-packages (from -r requirements.txt (line 13)) (1.1.0)
+Requirement already satisfied: python-dateutil==2.7.3 in /share/hpcc/CPU/anaconda/3-5.3.1/lib/python3.7/site-packages (from -r requirements.txt (line 18)) (2.7.3)
+Requirement already satisfied: numpy==1.15.1 in /share/hpcc/CPU/anaconda/3-5.3.1/lib/python3.7/site-packages (from -r requirements.txt (line 14)) (1.15.1)
+Requirement already satisfied: pytz==2018.5 in /share/hpcc/CPU/anaconda/3-5.3.1/lib/python3.7/site-packages (from -r requirements.txt (line 19)) (2018.5)
+Requirement already satisfied: pandas==0.23.4 in /share/hpcc/CPU/anaconda/3-5.3.1/lib/python3.7/site-packages (from -r requirements.txt (line 15)) (0.23.4)
+Requirement already satisfied: six==1.11.0 in /share/hpcc/CPU/anaconda/3-5.3.1/lib/python3.7/site-packages (from -r requirements.txt (line 20)) (1.11.0)
+Requirement already satisfied: pylint==2.3.1 in /home/arlan.uy/.local/lib/python3.7/site-packages (from -r requirements.txt (line 16)) (2.3.1)
+Requirement already satisfied: pyparsing==2.2.2 in /home/arlan.uy/.local/lib/python3.7/site-packages (from -r requirements.txt (line 17)) (2.2.2)
+Requirement already satisfied: toml==0.9.6 in /home/arlan.uy/.local/lib/python3.7/site-packages (from -r requirements.txt (line 21)) (0.9.6)
+Requirement already satisfied: setuptools in /share/hpcc/CPU/anaconda/3-5.3.1/lib/python3.7/site-packages (from kiwisolver==1.0.1->-r requirements.txt (line 9)) (40.2.0)
+Requirement already satisfied: python-dateutil==2.7.3 in /share/hpcc/CPU/anaconda/3-5.3.1/lib/python3.7/site-packages (from -r requirements.txt (line 18)) (2.7.3)
+Requirement already satisfied: typed-ast==1.4.0 in /home/arlan.uy/.local/lib/python3.7/site-packages (from -r requirements.txt (line 22)) (1.4.0)
+Requirement already satisfied: pytz==2018.5 in /share/hpcc/CPU/anaconda/3-5.3.1/lib/python3.7/site-packages (from -r requirements.txt (line 19)) (2018.5)
+Requirement already satisfied: six==1.11.0 in /share/hpcc/CPU/anaconda/3-5.3.1/lib/python3.7/site-packages (from -r requirements.txt (line 20)) (1.11.0)
+Requirement already satisfied: wrapt==1.12.1 in /home/arlan.uy/.local/lib/python3.7/site-packages (from -r requirements.txt (line 23)) (1.12.1)
+Requirement already satisfied: toml==0.9.6 in /home/arlan.uy/.local/lib/python3.7/site-packages (from -r requirements.txt (line 21)) (0.9.6)
+Requirement already satisfied: typed-ast==1.4.0 in /home/arlan.uy/.local/lib/python3.7/site-packages (from -r requirements.txt (line 22)) (1.4.0)
+Requirement already satisfied: wrapt==1.12.1 in /home/arlan.uy/.local/lib/python3.7/site-packages (from -r requirements.txt (line 23)) (1.12.1)
+Requirement already satisfied: pyyaml==5.4.1 in /home/arlan.uy/.local/lib/python3.7/site-packages (from -r requirements.txt (line 24)) (5.4.1)
+Requirement already satisfied: pycuda==2019.1.2 in /home/arlan.uy/.local/lib/python3.7/site-packages (from -r requirements.txt (line 25)) (2019.1.2)
+Requirement already satisfied: pyyaml==5.4.1 in /home/arlan.uy/.local/lib/python3.7/site-packages (from -r requirements.txt (line 24)) (5.4.1)
+Requirement already satisfied: pycuda==2019.1.2 in /home/arlan.uy/.local/lib/python3.7/site-packages (from -r requirements.txt (line 25)) (2019.1.2)
+Requirement already satisfied: six==1.11.0 in /share/hpcc/CPU/anaconda/3-5.3.1/lib/python3.7/site-packages (from -r requirements.txt (line 20)) (1.11.0)
+Requirement already satisfied: toml==0.9.6 in /home/arlan.uy/.local/lib/python3.7/site-packages (from -r requirements.txt (line 21)) (0.9.6)
+Requirement already satisfied: typed-ast==1.4.0 in /home/arlan.uy/.local/lib/python3.7/site-packages (from -r requirements.txt (line 22)) (1.4.0)
+Requirement already satisfied: wrapt==1.12.1 in /home/arlan.uy/.local/lib/python3.7/site-packages (from -r requirements.txt (line 23)) (1.12.1)
+Requirement already satisfied: pyyaml==5.4.1 in /home/arlan.uy/.local/lib/python3.7/site-packages (from -r requirements.txt (line 24)) (5.4.1)
+Requirement already satisfied: pycuda==2019.1.2 in /home/arlan.uy/.local/lib/python3.7/site-packages (from -r requirements.txt (line 25)) (2019.1.2)
+Requirement already satisfied: toml==0.9.6 in /home/arlan.uy/.local/lib/python3.7/site-packages (from -r requirements.txt (line 21)) (0.9.6)
+Requirement already satisfied: typed-ast==1.4.0 in /home/arlan.uy/.local/lib/python3.7/site-packages (from -r requirements.txt (line 22)) (1.4.0)
+Requirement already satisfied: wrapt==1.12.1 in /home/arlan.uy/.local/lib/python3.7/site-packages (from -r requirements.txt (line 23)) (1.12.1)
+Requirement already satisfied: pyyaml==5.4.1 in /home/arlan.uy/.local/lib/python3.7/site-packages (from -r requirements.txt (line 24)) (5.4.1)
+Requirement already satisfied: pycuda==2019.1.2 in /home/arlan.uy/.local/lib/python3.7/site-packages (from -r requirements.txt (line 25)) (2019.1.2)
+Requirement already satisfied: setuptools in /share/hpcc/CPU/anaconda/3-5.3.1/lib/python3.7/site-packages (from kiwisolver==1.0.1->-r requirements.txt (line 9)) (40.2.0)
+Requirement already satisfied: setuptools in /share/hpcc/CPU/anaconda/3-5.3.1/lib/python3.7/site-packages (from kiwisolver==1.0.1->-r requirements.txt (line 9)) (40.2.0)
+Requirement already satisfied: setuptools in /share/hpcc/CPU/anaconda/3-5.3.1/lib/python3.7/site-packages (from kiwisolver==1.0.1->-r requirements.txt (line 9)) (40.2.0)
+Requirement already satisfied: setuptools in /share/hpcc/CPU/anaconda/3-5.3.1/lib/python3.7/site-packages (from kiwisolver==1.0.1->-r requirements.txt (line 9)) (40.2.0)
+Requirement already satisfied: setuptools in /share/hpcc/CPU/anaconda/3-5.3.1/lib/python3.7/site-packages (from kiwisolver==1.0.1->-r requirements.txt (line 9)) (40.2.0)
+Requirement already satisfied: setuptools in /share/hpcc/CPU/anaconda/3-5.3.1/lib/python3.7/site-packages (from kiwisolver==1.0.1->-r requirements.txt (line 9)) (40.2.0)
+Requirement already satisfied: setuptools in /share/hpcc/CPU/anaconda/3-5.3.1/lib/python3.7/site-packages (from kiwisolver==1.0.1->-r requirements.txt (line 9)) (40.2.0)
+Requirement already satisfied: setuptools in /share/hpcc/CPU/anaconda/3-5.3.1/lib/python3.7/site-packages (from kiwisolver==1.0.1->-r requirements.txt (line 9)) (40.2.0)
+Requirement already satisfied: setuptools in /share/hpcc/CPU/anaconda/3-5.3.1/lib/python3.7/site-packages (from kiwisolver==1.0.1->-r requirements.txt (line 9)) (40.2.0)
+Requirement already satisfied: setuptools in /share/hpcc/CPU/anaconda/3-5.3.1/lib/python3.7/site-packages (from kiwisolver==1.0.1->-r requirements.txt (line 9)) (40.2.0)
+Requirement already satisfied: setuptools in /share/hpcc/CPU/anaconda/3-5.3.1/lib/python3.7/site-packages (from kiwisolver==1.0.1->-r requirements.txt (line 9)) (40.2.0)
+Requirement already satisfied: mako in /home/arlan.uy/.local/lib/python3.7/site-packages (from pycuda==2019.1.2->-r requirements.txt (line 25)) (1.1.4)
+Requirement already satisfied: decorator>=3.2.0 in /share/hpcc/CPU/anaconda/3-5.3.1/lib/python3.7/site-packages (from pycuda==2019.1.2->-r requirements.txt (line 25)) (4.3.0)
+Requirement already satisfied: pytools>=2011.2 in /home/arlan.uy/.local/lib/python3.7/site-packages (from pycuda==2019.1.2->-r requirements.txt (line 25)) (2021.2.7)
+Requirement already satisfied: decorator>=3.2.0 in /share/hpcc/CPU/anaconda/3-5.3.1/lib/python3.7/site-packages (from pycuda==2019.1.2->-r requirements.txt (line 25)) (4.3.0)
+Requirement already satisfied: mako in /home/arlan.uy/.local/lib/python3.7/site-packages (from pycuda==2019.1.2->-r requirements.txt (line 25)) (1.1.4)
+Requirement already satisfied: pytools>=2011.2 in /home/arlan.uy/.local/lib/python3.7/site-packages (from pycuda==2019.1.2->-r requirements.txt (line 25)) (2021.2.7)
+Requirement already satisfied: pytools>=2011.2 in /home/arlan.uy/.local/lib/python3.7/site-packages (from pycuda==2019.1.2->-r requirements.txt (line 25)) (2021.2.7)
+Requirement already satisfied: mako in /home/arlan.uy/.local/lib/python3.7/site-packages (from pycuda==2019.1.2->-r requirements.txt (line 25)) (1.1.4)
+Requirement already satisfied: decorator>=3.2.0 in /share/hpcc/CPU/anaconda/3-5.3.1/lib/python3.7/site-packages (from pycuda==2019.1.2->-r requirements.txt (line 25)) (4.3.0)
+Requirement already satisfied: pytools>=2011.2 in /home/arlan.uy/.local/lib/python3.7/site-packages (from pycuda==2019.1.2->-r requirements.txt (line 25)) (2021.2.7)
+Requirement already satisfied: decorator>=3.2.0 in /share/hpcc/CPU/anaconda/3-5.3.1/lib/python3.7/site-packages (from pycuda==2019.1.2->-r requirements.txt (line 25)) (4.3.0)
+Requirement already satisfied: mako in /home/arlan.uy/.local/lib/python3.7/site-packages (from pycuda==2019.1.2->-r requirements.txt (line 25)) (1.1.4)
+Requirement already satisfied: decorator>=3.2.0 in /share/hpcc/CPU/anaconda/3-5.3.1/lib/python3.7/site-packages (from pycuda==2019.1.2->-r requirements.txt (line 25)) (4.3.0)
+Requirement already satisfied: pytools>=2011.2 in /home/arlan.uy/.local/lib/python3.7/site-packages (from pycuda==2019.1.2->-r requirements.txt (line 25)) (2021.2.7)
+Requirement already satisfied: pytools>=2011.2 in /home/arlan.uy/.local/lib/python3.7/site-packages (from pycuda==2019.1.2->-r requirements.txt (line 25)) (2021.2.7)
+Requirement already satisfied: MarkupSafe>=0.9.2 in /share/hpcc/CPU/anaconda/3-5.3.1/lib/python3.7/site-packages (from mako->pycuda==2019.1.2->-r requirements.txt (line 25)) (1.0)
+Requirement already satisfied: decorator>=3.2.0 in /share/hpcc/CPU/anaconda/3-5.3.1/lib/python3.7/site-packages (from pycuda==2019.1.2->-r requirements.txt (line 25)) (4.3.0)
+Requirement already satisfied: mako in /home/arlan.uy/.local/lib/python3.7/site-packages (from pycuda==2019.1.2->-r requirements.txt (line 25)) (1.1.4)
+Requirement already satisfied: mako in /home/arlan.uy/.local/lib/python3.7/site-packages (from pycuda==2019.1.2->-r requirements.txt (line 25)) (1.1.4)
+Requirement already satisfied: decorator>=3.2.0 in /share/hpcc/CPU/anaconda/3-5.3.1/lib/python3.7/site-packages (from pycuda==2019.1.2->-r requirements.txt (line 25)) (4.3.0)
+Requirement already satisfied: mako in /home/arlan.uy/.local/lib/python3.7/site-packages (from pycuda==2019.1.2->-r requirements.txt (line 25)) (1.1.4)
+Requirement already satisfied: MarkupSafe>=0.9.2 in /share/hpcc/CPU/anaconda/3-5.3.1/lib/python3.7/site-packages (from mako->pycuda==2019.1.2->-r requirements.txt (line 25)) (1.0)
+Requirement already satisfied: MarkupSafe>=0.9.2 in /share/hpcc/CPU/anaconda/3-5.3.1/lib/python3.7/site-packages (from mako->pycuda==2019.1.2->-r requirements.txt (line 25)) (1.0)
+Requirement already satisfied: mako in /home/arlan.uy/.local/lib/python3.7/site-packages (from pycuda==2019.1.2->-r requirements.txt (line 25)) (1.1.4)
+Requirement already satisfied: pytools>=2011.2 in /home/arlan.uy/.local/lib/python3.7/site-packages (from pycuda==2019.1.2->-r requirements.txt (line 25)) (2021.2.7)
+Requirement already satisfied: mako in /home/arlan.uy/.local/lib/python3.7/site-packages (from pycuda==2019.1.2->-r requirements.txt (line 25)) (1.1.4)
+Requirement already satisfied: MarkupSafe>=0.9.2 in /share/hpcc/CPU/anaconda/3-5.3.1/lib/python3.7/site-packages (from mako->pycuda==2019.1.2->-r requirements.txt (line 25)) (1.0)
+Requirement already satisfied: pytools>=2011.2 in /home/arlan.uy/.local/lib/python3.7/site-packages (from pycuda==2019.1.2->-r requirements.txt (line 25)) (2021.2.7)
+Requirement already satisfied: mako in /home/arlan.uy/.local/lib/python3.7/site-packages (from pycuda==2019.1.2->-r requirements.txt (line 25)) (1.1.4)
+Requirement already satisfied: pytools>=2011.2 in /home/arlan.uy/.local/lib/python3.7/site-packages (from pycuda==2019.1.2->-r requirements.txt (line 25)) (2021.2.7)
+Requirement already satisfied: decorator>=3.2.0 in /share/hpcc/CPU/anaconda/3-5.3.1/lib/python3.7/site-packages (from pycuda==2019.1.2->-r requirements.txt (line 25)) (4.3.0)
+Requirement already satisfied: decorator>=3.2.0 in /share/hpcc/CPU/anaconda/3-5.3.1/lib/python3.7/site-packages (from pycuda==2019.1.2->-r requirements.txt (line 25)) (4.3.0)
+Requirement already satisfied: pytools>=2011.2 in /home/arlan.uy/.local/lib/python3.7/site-packages (from pycuda==2019.1.2->-r requirements.txt (line 25)) (2021.2.7)
+Requirement already satisfied: decorator>=3.2.0 in /share/hpcc/CPU/anaconda/3-5.3.1/lib/python3.7/site-packages (from pycuda==2019.1.2->-r requirements.txt (line 25)) (4.3.0)
+Requirement already satisfied: pytools>=2011.2 in /home/arlan.uy/.local/lib/python3.7/site-packages (from pycuda==2019.1.2->-r requirements.txt (line 25)) (2021.2.7)
+Requirement already satisfied: mako in /home/arlan.uy/.local/lib/python3.7/site-packages (from pycuda==2019.1.2->-r requirements.txt (line 25)) (1.1.4)
+Requirement already satisfied: pytools>=2011.2 in /home/arlan.uy/.local/lib/python3.7/site-packages (from pycuda==2019.1.2->-r requirements.txt (line 25)) (2021.2.7)
+Requirement already satisfied: decorator>=3.2.0 in /share/hpcc/CPU/anaconda/3-5.3.1/lib/python3.7/site-packages (from pycuda==2019.1.2->-r requirements.txt (line 25)) (4.3.0)
+Requirement already satisfied: decorator>=3.2.0 in /share/hpcc/CPU/anaconda/3-5.3.1/lib/python3.7/site-packages (from pycuda==2019.1.2->-r requirements.txt (line 25)) (4.3.0)
+Requirement already satisfied: mako in /home/arlan.uy/.local/lib/python3.7/site-packages (from pycuda==2019.1.2->-r requirements.txt (line 25)) (1.1.4)
+Requirement already satisfied: MarkupSafe>=0.9.2 in /share/hpcc/CPU/anaconda/3-5.3.1/lib/python3.7/site-packages (from mako->pycuda==2019.1.2->-r requirements.txt (line 25)) (1.0)
+Requirement already satisfied: MarkupSafe>=0.9.2 in /share/hpcc/CPU/anaconda/3-5.3.1/lib/python3.7/site-packages (from mako->pycuda==2019.1.2->-r requirements.txt (line 25)) (1.0)
+Requirement already satisfied: MarkupSafe>=0.9.2 in /share/hpcc/CPU/anaconda/3-5.3.1/lib/python3.7/site-packages (from mako->pycuda==2019.1.2->-r requirements.txt (line 25)) (1.0)
+Requirement already satisfied: MarkupSafe>=0.9.2 in /share/hpcc/CPU/anaconda/3-5.3.1/lib/python3.7/site-packages (from mako->pycuda==2019.1.2->-r requirements.txt (line 25)) (1.0)
+Requirement already satisfied: MarkupSafe>=0.9.2 in /share/hpcc/CPU/anaconda/3-5.3.1/lib/python3.7/site-packages (from mako->pycuda==2019.1.2->-r requirements.txt (line 25)) (1.0)
+Requirement already satisfied: MarkupSafe>=0.9.2 in /share/hpcc/CPU/anaconda/3-5.3.1/lib/python3.7/site-packages (from mako->pycuda==2019.1.2->-r requirements.txt (line 25)) (1.0)
+Requirement already satisfied: MarkupSafe>=0.9.2 in /share/hpcc/CPU/anaconda/3-5.3.1/lib/python3.7/site-packages (from mako->pycuda==2019.1.2->-r requirements.txt (line 25)) (1.0)
+Requirement already satisfied: MarkupSafe>=0.9.2 in /share/hpcc/CPU/anaconda/3-5.3.1/lib/python3.7/site-packages (from mako->pycuda==2019.1.2->-r requirements.txt (line 25)) (1.0)
+Menu
+ Enter a number of your choice: (1) Create a new evolutionary process w/ autosave
+ (2) Load an evolutionary process from a configuration file: 
+menu choice is  2
+Load function starting
+Running GA in GPU: 
+Maintaining current number of generation and population_size
+rewriting to 1 /scratch1/scratch2/arlan.uy/ERSSNP_CPU_GPU_Framework/main_dir/load_directory/gpuandextra22.yaml
+Menu
+ Enter a number of your choice: (1) Create a new evolutionary process w/ autosave
+ (2) Load an evolutionary process from a configuration file: 
+menu choice is  2
+Load function starting
+Running GA in GPU: 
+Maintaining current number of generation and population_size
+rewriting to 1 /scratch1/scratch2/arlan.uy/ERSSNP_CPU_GPU_Framework/main_dir/load_directory/gpuandextra22.yaml
+Menu
+ Enter a number of your choice: (1) Create a new evolutionary process w/ autosave
+ (2) Load an evolutionary process from a configuration file: 
+menu choice is  2
+Load function starting
+Running GA in GPU: 
+Maintaining current number of generation and population_size
+rewriting to 1 /scratch1/scratch2/arlan.uy/ERSSNP_CPU_GPU_Framework/main_dir/load_directory/gpuandextra22.yaml
+Menu
+ Enter a number of your choice: (1) Create a new evolutionary process w/ autosave
+ (2) Load an evolutionary process from a configuration file: 
+menu choice is  2
+Load function starting
+Running GA in GPU: 
+Maintaining current number of generation and population_size
+rewriting to 1 /scratch1/scratch2/arlan.uy/ERSSNP_CPU_GPU_Framework/main_dir/load_directory/gpuandextra22.yaml
+Menu
+ Enter a number of your choice: (1) Create a new evolutionary process w/ autosave
+ (2) Load an evolutionary process from a configuration file: 
+menu choice is  2
+Load function starting
+Running GA in GPU: 
+Maintaining current number of generation and population_size
+rewriting to 1 /scratch1/scratch2/arlan.uy/ERSSNP_CPU_GPU_Framework/main_dir/load_directory/gpuandextra22.yaml
+Menu
+ Enter a number of your choice: (1) Create a new evolutionary process w/ autosave
+ (2) Load an evolutionary process from a configuration file: 
+menu choice is  2
+Load function starting
+Running GA in GPU: 
+Maintaining current number of generation and population_size
+rewriting to 1 /scratch1/scratch2/arlan.uy/ERSSNP_CPU_GPU_Framework/main_dir/load_directory/gpuandextra22.yaml
+rewriting to 2 /scratch1/scratch2/arlan.uy/ERSSNP_CPU_GPU_Framework/main_dir/load_directory/gpuandextra22.yaml
+entering to 1 /scratch1/scratch2/arlan.uy/ERSSNP_CPU_GPU_Framework/main_dir/load_directory/gpuandextra22.yaml
+Now executing experiment involving /scratch1/scratch2/arlan.uy/ERSSNP_CPU_GPU_Framework/main_dir/load_directory/gpuandextra22.yaml
+Run index # 5
+initialized at run  5
+Continuing using the run,generation number  0,0
+run index is 5 gen index is 0
+Evaluating Gen 0...
+result fitness is 75
+result fitness is 75
+result fitness is 75
+result fitness is 75
+result fitness is 75
+result fitness is 75
+result fitness is 75
+result fitness is 75
+result fitness is 75
+result fitness is 75
+result fitness is 75
+result fitness is 75
+result fitness is 75
+result fitness is 75
+result fitness is 75
+result fitness is 75
+result fitness is 75
+result fitness is 75
+result fitness is 75
+result fitness is 75
+result fitness is 75
+result fitness is 75
+result fitness is 75
+result fitness is 75
+result fitness is 75
+result fitness is 75
+result fitness is 75
+result fitness is 75
+result fitness is 75
+result fitness is 75
+result fitness is 75
+result fitness is 75
+result fitness is 75
+result fitness is 75
+result fitness is 75
+Menu
+ Enter a number of your choice: (1) Create a new evolutionary process w/ autosave
+ (2) Load an evolutionary process from a configuration file: 
+menu choice is  2
+Load function starting
+Running GA in GPU: 
+Maintaining current number of generation and population_size
+rewriting to 1 /scratch1/scratch2/arlan.uy/ERSSNP_CPU_GPU_Framework/main_dir/load_directory/gpuandextra22.yaml
+rewriting to 2 /scratch1/scratch2/arlan.uy/ERSSNP_CPU_GPU_Framework/main_dir/load_directory/gpuandextra22.yaml
+entering to 1 /scratch1/scratch2/arlan.uy/ERSSNP_CPU_GPU_Framework/main_dir/load_directory/gpuandextra22.yaml
+Now executing experiment involving /scratch1/scratch2/arlan.uy/ERSSNP_CPU_GPU_Framework/main_dir/load_directory/gpuandextra22.yaml
+Run index # 5
+initialized at run  5
+Continuing using the run,generation number  0,0
+run index is 5 gen index is 0
+Evaluating Gen 0...
+result fitness is 75
+result fitness is 75
+result fitness is 75
+result fitness is 75
+result fitness is 75
+result fitness is 75
+result fitness is 75
+result fitness is 75
+result fitness is 75
+result fitness is 75
+result fitness is 75
+result fitness is 75
+result fitness is 75
+result fitness is 75
+result fitness is 75
+result fitness is 75
+result fitness is 75
+result fitness is 75
+result fitness is 75
+result fitness is 75
+result fitness is 75
+result fitness is 75
+result fitness is 75
+result fitness is 75
+result fitness is 75
+result fitness is 75
+result fitness is 75
+result fitness is 75
+result fitness is 75
+result fitness is 75
+result fitness is 75
+result fitness is 75
+result fitness is 75
+result fitness is 75
+result fitness is 75
+result fitness is 75
+Menu
+ Enter a number of your choice: (1) Create a new evolutionary process w/ autosave
+ (2) Load an evolutionary process from a configuration file: 
+menu choice is  2
+Load function starting
+Running GA in GPU: 
+Maintaining current number of generation and population_size
+rewriting to 1 /scratch1/scratch2/arlan.uy/ERSSNP_CPU_GPU_Framework/main_dir/load_directory/gpuandextra22.yaml
+rewriting to 2 /scratch1/scratch2/arlan.uy/ERSSNP_CPU_GPU_Framework/main_dir/load_directory/gpuandextra22.yaml
+entering to 1 /scratch1/scratch2/arlan.uy/ERSSNP_CPU_GPU_Framework/main_dir/load_directory/gpuandextra22.yaml
+Now executing experiment involving /scratch1/scratch2/arlan.uy/ERSSNP_CPU_GPU_Framework/main_dir/load_directory/gpuandextra22.yaml
+Run index # 5
+initialized at run  5
+Continuing using the run,generation number  0,0
+run index is 5 gen index is 0
+Evaluating Gen 0...
+result fitness is 75
+result fitness is 75
+result fitness is 75
+result fitness is 75
+result fitness is 75
+result fitness is 75
+result fitness is 75
+result fitness is 75
+result fitness is 75
+result fitness is 75
+result fitness is 75
+result fitness is 75
+result fitness is 75
+result fitness is 75
+result fitness is 75
+result fitness is 75
+result fitness is 75
+result fitness is 75
+result fitness is 75
+result fitness is 75
+result fitness is 75
+result fitness is 75
+result fitness is 75
+result fitness is 75
+result fitness is 75
+result fitness is 75
+result fitness is 75
+result fitness is 75
+result fitness is 75
+result fitness is 75
+result fitness is 75
+result fitness is 75
+result fitness is 75
+result fitness is 75
+result fitness is 75
+result fitness is 75
+result fitness is 75
+result fitness is 75
+result fitness is 75
+result fitness is 75
+best fitness got among generations is 75
+best chromosome indexes are  [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39]
+Crossover: 0
+Menu
+ Enter a number of your choice: (1) Create a new evolutionary process w/ autosave
+ (2) Load an evolutionary process from a configuration file: 
+menu choice is  2
+Load function starting
+Running GA in GPU: 
+Maintaining current number of generation and population_size
+rewriting to 1 /scratch1/scratch2/arlan.uy/ERSSNP_CPU_GPU_Framework/main_dir/load_directory/gpuandextra22.yaml
+rewriting to 2 /scratch1/scratch2/arlan.uy/ERSSNP_CPU_GPU_Framework/main_dir/load_directory/gpuandextra22.yaml
+entering to 1 /scratch1/scratch2/arlan.uy/ERSSNP_CPU_GPU_Framework/main_dir/load_directory/gpuandextra22.yaml
+Now executing experiment involving /scratch1/scratch2/arlan.uy/ERSSNP_CPU_GPU_Framework/main_dir/load_directory/gpuandextra22.yaml
+Run index # 5
+initialized at run  5
+Continuing using the run,generation number  0,0
+run index is 5 gen index is 0
+Evaluating Gen 0...
+result fitness is 75
+result fitness is 75
+result fitness is 75
+result fitness is 75
+result fitness is 75
+result fitness is 75
+result fitness is 75
+result fitness is 75
+result fitness is 75
+result fitness is 75
+result fitness is 75
+result fitness is 75
+result fitness is 75
+result fitness is 75
+result fitness is 75
+result fitness is 75
+result fitness is 75
+result fitness is 75
+result fitness is 75
+result fitness is 75
+result fitness is 75
+result fitness is 75
+result fitness is 75
+result fitness is 75
+result fitness is 75
+result fitness is 75
+result fitness is 75
+result fitness is 75
+result fitness is 75
+result fitness is 75
+result fitness is 75
+result fitness is 75
+result fitness is 75
+result fitness is 75
+result fitness is 75
+result fitness is 75
+result fitness is 75
+result fitness is 75
+result fitness is 75
+result fitness is 75
+best fitness got among generations is 75
+best chromosome indexes are  [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39]
+Crossover: 0
+Menu
+ Enter a number of your choice: (1) Create a new evolutionary process w/ autosave
+ (2) Load an evolutionary process from a configuration file: 
+menu choice is  2
+Load function starting
+Running GA in GPU: 
+Maintaining current number of generation and population_size
+rewriting to 1 /scratch1/scratch2/arlan.uy/ERSSNP_CPU_GPU_Framework/main_dir/load_directory/gpuandextra22.yaml
+rewriting to 2 /scratch1/scratch2/arlan.uy/ERSSNP_CPU_GPU_Framework/main_dir/load_directory/gpuandextra22.yaml
+entering to 1 /scratch1/scratch2/arlan.uy/ERSSNP_CPU_GPU_Framework/main_dir/load_directory/gpuandextra22.yaml
+Now executing experiment involving /scratch1/scratch2/arlan.uy/ERSSNP_CPU_GPU_Framework/main_dir/load_directory/gpuandextra22.yaml
+Run index # 5
+initialized at run  5
+Continuing using the run,generation number  0,0
+run index is 5 gen index is 0
+Evaluating Gen 0...
+result fitness is 75
+result fitness is 75
+result fitness is 75
+result fitness is 75
+result fitness is 75
+result fitness is 75
+result fitness is 75
+result fitness is 75
+result fitness is 75
+result fitness is 75
+result fitness is 75
+result fitness is 75
+result fitness is 75
+result fitness is 75
+result fitness is 75
+result fitness is 75
+result fitness is 75
+result fitness is 75
+result fitness is 75
+result fitness is 75
+result fitness is 75
+result fitness is 75
+result fitness is 75
+result fitness is 75
+result fitness is 75
+result fitness is 75
+result fitness is 75
+result fitness is 75
+result fitness is 75
+result fitness is 75
+result fitness is 75
+result fitness is 75
+result fitness is 75
+result fitness is 75
+result fitness is 75
+result fitness is 75
+result fitness is 75
+result fitness is 75
+result fitness is 75
+result fitness is 75
+best fitness got among generations is 75
+best chromosome indexes are  [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39]
+Crossover: 0
+Menu
+ Enter a number of your choice: (1) Create a new evolutionary process w/ autosave
+ (2) Load an evolutionary process from a configuration file: 
+menu choice is  2
+Load function starting
+Running GA in GPU: 
+Maintaining current number of generation and population_size
+rewriting to 1 /scratch1/scratch2/arlan.uy/ERSSNP_CPU_GPU_Framework/main_dir/load_directory/gpuandextra22.yaml
+rewriting to 2 /scratch1/scratch2/arlan.uy/ERSSNP_CPU_GPU_Framework/main_dir/load_directory/gpuandextra22.yaml
+entering to 1 /scratch1/scratch2/arlan.uy/ERSSNP_CPU_GPU_Framework/main_dir/load_directory/gpuandextra22.yaml
+Now executing experiment involving /scratch1/scratch2/arlan.uy/ERSSNP_CPU_GPU_Framework/main_dir/load_directory/gpuandextra22.yaml
+Run index # 5
+initialized at run  5
+Continuing using the run,generation number  0,0
+run index is 5 gen index is 0
+Evaluating Gen 0...
+result fitness is 75
+result fitness is 75
+result fitness is 75
+result fitness is 75
+result fitness is 75
+result fitness is 75
+result fitness is 75
+result fitness is 75
+result fitness is 75
+result fitness is 75
+result fitness is 75
+result fitness is 75
+result fitness is 75
+result fitness is 75
+result fitness is 75
+result fitness is 75
+result fitness is 75
+result fitness is 75
+result fitness is 75
+result fitness is 75
+result fitness is 75
+result fitness is 75
+result fitness is 75
+result fitness is 75
+result fitness is 75
+result fitness is 75
+result fitness is 75
+result fitness is 75
+result fitness is 75
+result fitness is 75
+result fitness is 75
+result fitness is 75
+result fitness is 75
+result fitness is 75
+result fitness is 75
+result fitness is 75
+result fitness is 75
+result fitness is 75
+result fitness is 75
+result fitness is 75
+best fitness got among generations is 75
+best chromosome indexes are  [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39]
+Crossover: 0
+run index is 5 gen index is 1
+Evaluating Gen 1...
+result fitness is 75
+result fitness is 75
+result fitness is 75
+result fitness is 75
+result fitness is 75
+result fitness is 75
+result fitness is 75
+result fitness is 75
+result fitness is 75
+result fitness is 75
+result fitness is 75
+result fitness is 75
+result fitness is 75
+result fitness is 75
+result fitness is 75
+result fitness is 75
+result fitness is 75
+result fitness is 75
+result fitness is 75
+result fitness is 75
+result fitness is 78
+result fitness is 80
+result fitness is 75
+result fitness is 75
+result fitness is 75
+result fitness is 75
+result fitness is 75
+result fitness is 80
+result fitness is 75
+result fitness is 75
+result fitness is 78
+result fitness is 80
+result fitness is 75
+result fitness is 75
+result fitness is 75
+result fitness is 78
+result fitness is 78
+result fitness is 75
+result fitness is 80
+result fitness is 78
+best fitness got among generations is 80
+best chromosome indexes are  [21, 27, 31, 38]
+Crossover: 1
+run index is 5 gen index is 2
+Evaluating Gen 2...
+result fitness is 80
+result fitness is 80
+result fitness is 80
+result fitness is 80
+result fitness is 78
+result fitness is 78
+result fitness is 78
+result fitness is 78
+result fitness is 78
+result fitness is 75
+result fitness is 75
+result fitness is 75
+result fitness is 75
+result fitness is 75
+result fitness is 75
+result fitness is 75
+result fitness is 75
+result fitness is 75
+result fitness is 75
+result fitness is 75
+result fitness is 80
+result fitness is 80
+result fitness is 75
+result fitness is 75
+result fitness is 75
+result fitness is 75
+result fitness is 75
+result fitness is 75
+result fitness is 80
+result fitness is 78
+result fitness is 78
+result fitness is 75
+result fitness is 75
+result fitness is 80
+result fitness is 75
+result fitness is 75
+result fitness is 75
+result fitness is 75
+result fitness is 79
+result fitness is 80
+best fitness got among generations is 80
+best chromosome indexes are  [0, 1, 2, 3, 20, 21, 28, 33, 39]
+Crossover: 2
+run index is 5 gen index is 3
+Evaluating Gen 3...
+result fitness is 80
+result fitness is 80
+result fitness is 80
+result fitness is 80
+result fitness is 80
+result fitness is 80
+result fitness is 80
+result fitness is 80
+result fitness is 80
+result fitness is 79
+result fitness is 78
+result fitness is 78
+result fitness is 78
+result fitness is 78
+result fitness is 78
+result fitness is 78
+result fitness is 78
+result fitness is 75
+result fitness is 75
+result fitness is 75
+result fitness is 80
+result fitness is 75
+result fitness is 75
+result fitness is 75
+result fitness is 75
+result fitness is 75
+result fitness is 80
+result fitness is 80
+result fitness is 80
+result fitness is 75
+result fitness is 80
+result fitness is 75
+result fitness is 80
+result fitness is 78
+result fitness is 78
+result fitness is 78
+result fitness is 80
+result fitness is 78
+result fitness is 80
+result fitness is 80
+best fitness got among generations is 80
+best chromosome indexes are  [0, 1, 2, 3, 4, 5, 6, 7, 8, 20, 26, 27, 28, 30, 32, 36, 38, 39]
+Crossover: 3
+run index is 5 gen index is 4
+Evaluating Gen 4...
+result fitness is 80
+result fitness is 80
+result fitness is 80
+result fitness is 80
+result fitness is 80
+result fitness is 80
+result fitness is 80
+result fitness is 80
+result fitness is 80
+result fitness is 80
+result fitness is 80
+result fitness is 80
+result fitness is 80
+result fitness is 80
+result fitness is 80
+result fitness is 80
+result fitness is 80
+result fitness is 80
+result fitness is 79
+result fitness is 78
+result fitness is 75
+result fitness is 78
+result fitness is 78
+result fitness is 78
+result fitness is 80
+result fitness is 78
+result fitness is 80
+result fitness is 75
+result fitness is 78
+result fitness is 80
+result fitness is 78
+result fitness is 81
+Menu
+ Enter a number of your choice: (1) Create a new evolutionary process w/ autosave
+ (2) Load an evolutionary process from a configuration file: 
+menu choice is  2
+Load function starting
+Running GA in GPU: 
+Maintaining current number of generation and population_size
+rewriting to 1 /scratch1/scratch2/arlan.uy/ERSSNP_CPU_GPU_Framework/main_dir/load_directory/gpuandextra22.yaml
+rewriting to 2 /scratch1/scratch2/arlan.uy/ERSSNP_CPU_GPU_Framework/main_dir/load_directory/gpuandextra22.yaml
+entering to 1 /scratch1/scratch2/arlan.uy/ERSSNP_CPU_GPU_Framework/main_dir/load_directory/gpuandextra22.yaml
+Now executing experiment involving /scratch1/scratch2/arlan.uy/ERSSNP_CPU_GPU_Framework/main_dir/load_directory/gpuandextra22.yaml
+Run index # 5
+initialized at run  5
+Continuing using the run,generation number  0,0
+run index is 5 gen index is 0
+Evaluating Gen 0...
+result fitness is 75
+result fitness is 75
+result fitness is 75
+result fitness is 75
+result fitness is 75
+result fitness is 75
+result fitness is 75
+result fitness is 75
+result fitness is 75
+result fitness is 75
+result fitness is 75
+result fitness is 75
+result fitness is 75
+result fitness is 75
+result fitness is 75
+result fitness is 75
+result fitness is 75
+result fitness is 75
+result fitness is 75
+result fitness is 75
+result fitness is 75
+result fitness is 75
+result fitness is 75
+result fitness is 75
+result fitness is 75
+result fitness is 75
+result fitness is 75
+result fitness is 75
+result fitness is 75
+result fitness is 75
+result fitness is 75
+result fitness is 75
+result fitness is 75
+result fitness is 75
+result fitness is 75
+result fitness is 75
+result fitness is 75
+result fitness is 75
+result fitness is 75
+result fitness is 75
+best fitness got among generations is 75
+best chromosome indexes are  [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39]
+Crossover: 0
+run index is 5 gen index is 1
+Evaluating Gen 1...
+result fitness is 75
+result fitness is 75
+result fitness is 75
+result fitness is 75
+result fitness is 75
+result fitness is 75
+result fitness is 75
+result fitness is 75
+result fitness is 75
+result fitness is 75
+result fitness is 75
+result fitness is 75
+result fitness is 75
+result fitness is 75
+result fitness is 75
+result fitness is 75
+result fitness is 75
+result fitness is 75
+result fitness is 75
+result fitness is 75
+result fitness is 78
+result fitness is 75
+result fitness is 75
+result fitness is 75
+result fitness is 80
+result fitness is 79
+result fitness is 79
+result fitness is 78
+result fitness is 75
+result fitness is 75
+result fitness is 80
+result fitness is 75
+result fitness is 80
+result fitness is 79
+result fitness is 78
+result fitness is 79
+result fitness is 79
+result fitness is 80
+result fitness is 80
+result fitness is 80
+best fitness got among generations is 80
+best chromosome indexes are  [24, 30, 32, 37, 38, 39]
+Crossover: 1
+Mutation failed
+run index is 5 gen index is 2
+Evaluating Gen 2...
+result fitness is 80
+result fitness is 80
+result fitness is 80
+result fitness is 80
+result fitness is 80
+result fitness is 80
+result fitness is 79
+result fitness is 79
+result fitness is 79
+result fitness is 79
+result fitness is 79
+result fitness is 78
+result fitness is 78
+result fitness is 78
+result fitness is 75
+result fitness is 75
+result fitness is 75
+result fitness is 75
+result fitness is 75
+result fitness is 75
+result fitness is 75
+result fitness is 78
+result fitness is 78
+result fitness is 75
+result fitness is 80
+result fitness is 75
+result fitness is 78
+result fitness is 80
+result fitness is 75
+result fitness is 75
+result fitness is 75
+result fitness is 75
+result fitness is 78
+result fitness is 79
+result fitness is 82
+result fitness is 75
+result fitness is 75
+result fitness is 75
+result fitness is 75
+result fitness is 80
+best fitness got among generations is 82
+best chromosome indexes are  [34]
+Crossover: 2
+Mutation failed
+Mutation failed
+Mutation failed
+Mutation failed
+run index is 5 gen index is 3
+Evaluating Gen 3...
+result fitness is 81
+result fitness is 80
+result fitness is 80
+result fitness is 80
+result fitness is 80
+result fitness is 80
+result fitness is 80
+result fitness is 80
+result fitness is 80
+result fitness is 80
+result fitness is 79
+result fitness is 79
+result fitness is 79
+result fitness is 79
+result fitness is 79
+result fitness is 79
+result fitness is 78
+result fitness is 78
+result fitness is 78
+result fitness is 78
+result fitness is 80
+result fitness is 78
+result fitness is 78
+result fitness is 79
+result fitness is 78
+result fitness is 79
+result fitness is 79
+result fitness is 78
+result fitness is 75
+result fitness is 75
+result fitness is 80
+result fitness is 75
+result fitness is 80
+result fitness is 78
+result fitness is 80
+result fitness is 79
+result fitness is 79
+result fitness is 78
+result fitness is 78
+result fitness is 79
+best fitness got among generations is 81
+best chromosome indexes are  [0]
+Crossover: 3
+Mutation failed
+Mutation failed
+Mutation failed
+Mutation failed
+Mutation failed
+run index is 5 gen index is 4
+Evaluating Gen 4...
+result fitness is 81
+result fitness is 80
+result fitness is 80
+result fitness is 80
+result fitness is 80
+result fitness is 80
+result fitness is 80
+result fitness is 80
+result fitness is 80
+result fitness is 80
+result fitness is 80
+result fitness is 80
+result fitness is 80
+result fitness is 80
+result fitness is 79
+result fitness is 79
+result fitness is 79
+result fitness is 79
+result fitness is 79
+result fitness is 79
+result fitness is 78
+result fitness is 75
+result fitness is 75
+result fitness is 78
+result fitness is 78
+result fitness is 78
+result fitness is 80
+result fitness is 78
+result fitness is 79
+result fitness is 78
+result fitness is 78
+result fitness is 79
+result fitness is 79
+result fitness is 78
+result fitness is 79
+result fitness is 79
+result fitness is 79
+result fitness is 78
+result fitness is 78
+result fitness is 81
+best fitness got among generations is 81
+best chromosome indexes are  [0, 39]
+Crossover: 4
+Mutation failed
+Mutation failed
+Mutation failed
+run index is 5 gen index is 5
+Evaluating Gen 5...
+result fitness is 81
+result fitness is 81
+result fitness is 80
+result fitness is 80
+result fitness is 80
+result fitness is 80
+result fitness is 80
+result fitness is 80
+result fitness is 80
+result fitness is 80
+result fitness is 80
+result fitness is 80
+result fitness is 80
+result fitness is 80
+result fitness is 80
+result fitness is 80
+result fitness is 79
+result fitness is 79
+result fitness is 79
+result fitness is 79
+result fitness is 78
+result fitness is 78
+result fitness is 78
+result fitness is 79
+result fitness is 75
+result fitness is 81
+result fitness is 75
+result fitness is 81
+result fitness is 81
+result fitness is 79
+result fitness is 79
+result fitness is 78
+result fitness is 78
+result fitness is 80
+result fitness is 81
+result fitness is 80
+result fitness is 81
+result fitness is 82
+result fitness is 82
+result fitness is 81
+best fitness got among generations is 82
+best chromosome indexes are  [37, 38]
+Crossover: 5
+Mutation failed
+Mutation failed
+Mutation failed
+Mutation failed
+Mutation failed
+Mutation failed
+Mutation failed
+Mutation failed
+run index is 5 gen index is 6
+Evaluating Gen 6...
+result fitness is 81
+result fitness is 81
+result fitness is 81
+result fitness is 81
+result fitness is 81
+result fitness is 81
+result fitness is 81
+result fitness is 81
+result fitness is 81
+result fitness is 81
+result fitness is 80
+result fitness is 80
+result fitness is 80
+result fitness is 80
+result fitness is 80
+result fitness is 80
+result fitness is 80
+result fitness is 80
+result fitness is 80
+result fitness is 80
+result fitness is 75
+result fitness is 80
+result fitness is 80
+result fitness is 80
+result fitness is 80
+result fitness is 81
+result fitness is 82
+result fitness is 78
+result fitness is 78
+result fitness is 80
+result fitness is 80
+result fitness is 78
+result fitness is 79
+result fitness is 78
+result fitness is 79
+result fitness is 81
+result fitness is 81
+result fitness is 75
+result fitness is 80
+result fitness is 81
+best fitness got among generations is 82
+best chromosome indexes are  [26]
+Crossover: 6
+Mutation failed
+Mutation failed
+Mutation failed
+Mutation failed
+Mutation failed
+Mutation failed
+Mutation failed
+Mutation failed
+Mutation failed
+run index is 5 gen index is 7
+Evaluating Gen 7...
+result fitness is 81
+result fitness is 81
+result fitness is 81
+result fitness is 81
+result fitness is 81
+result fitness is 81
+result fitness is 81
+result fitness is 81
+result fitness is 81
+result fitness is 81
+result fitness is 81
+result fitness is 81
+result fitness is 81
+result fitness is 81
+result fitness is 81
+result fitness is 80
+result fitness is 80
+result fitness is 80
+result fitness is 80
+result fitness is 80
+result fitness is 81
+result fitness is 78
+result fitness is 78
+result fitness is 75
+result fitness is 75
+result fitness is 80
+result fitness is 80
+result fitness is 79
+result fitness is 81
+result fitness is 80
+result fitness is 80
+result fitness is 80
+result fitness is 80
+result fitness is 78
+result fitness is 78
+result fitness is 81
+result fitness is 83
+result fitness is 78
+result fitness is 80
+result fitness is 81
+best fitness got among generations is 83
+best chromosome indexes are  [36]
+Crossover: 7
+Mutation failed
+Mutation failed
+Mutation failed
+Mutation failed
+Mutation failed
+Mutation failed
+Mutation failed
+Mutation failed
+Mutation failed
+Mutation failed
+Mutation failed
+Mutation failed
+run index is 5 gen index is 8
+Evaluating Gen 8...
+result fitness is 83
+result fitness is 81
+result fitness is 81
+result fitness is 81
+result fitness is 81
+result fitness is 81
+result fitness is 81
+result fitness is 81
+result fitness is 81
+result fitness is 81
+result fitness is 81
+result fitness is 81
+result fitness is 81
+result fitness is 81
+result fitness is 81
+result fitness is 81
+result fitness is 81
+result fitness is 81
+result fitness is 81
+result fitness is 81
+result fitness is 83
+result fitness is 81
+result fitness is 81
+result fitness is 80
+result fitness is 80
+result fitness is 80
+result fitness is 81
+result fitness is 80
+result fitness is 80
+result fitness is 75
+result fitness is 80
+result fitness is 75
+result fitness is 78
+result fitness is 81
+result fitness is 78
+result fitness is 81
+result fitness is 78
+result fitness is 78
+result fitness is 78
+result fitness is 83
+best fitness got among generations is 83
+best chromosome indexes are  [0, 20, 39]
+Crossover: 8
+Mutation failed
+Mutation failed
+Mutation failed
+Mutation failed
+Mutation failed
+Mutation failed
+Mutation failed
+Mutation failed
+Mutation failed
+Mutation failed
+Mutation failed
+Mutation failed
+Mutation failed
+Mutation failed
+run index is 5 gen index is 9
+Evaluating Gen 9...
+result fitness is 83
+result fitness is 83
+result fitness is 83
+result fitness is 81
+result fitness is 81
+result fitness is 81
+result fitness is 81
+result fitness is 81
+result fitness is 81
+result fitness is 81
+result fitness is 81
+result fitness is 81
+result fitness is 81
+result fitness is 81
+result fitness is 81
+result fitness is 81
+result fitness is 81
+result fitness is 81
+result fitness is 81
+result fitness is 81
+result fitness is 82
+result fitness is 83
+result fitness is 81
+result fitness is 80
+result fitness is 80
+result fitness is 80
+result fitness is 80
+result fitness is 80
+result fitness is 78
+result fitness is 83
+result fitness is 78
+result fitness is 80
+result fitness is 80
+result fitness is 81
+result fitness is 81
+result fitness is 83
+result fitness is 81
+result fitness is 78
+result fitness is 81
+result fitness is 78
+best fitness got among generations is 83
+best chromosome indexes are  [0, 1, 2, 21, 29, 35]
+Crossover: 9
+Mutation failed
+Mutation failed
+Mutation failed
+Mutation failed
+Mutation failed
+Mutation failed
+Mutation failed
+Mutation failed
+Mutation failed
+Mutation failed
+Mutation failed
+Mutation failed
+Mutation failed
+Mutation failed
+Mutation failed
+Mutation failed
+Mutation failed
+Mutation failed
+Mutation failed
+Mutation failed
+Mutation failed
+Mutation failed
+run index is 5 gen index is 10
+Evaluating Gen 10...
+result fitness is 83
+result fitness is 83
+result fitness is 83
+result fitness is 83
+result fitness is 83
+result fitness is 83
+result fitness is 81
+result fitness is 81
+result fitness is 81
+result fitness is 81
+result fitness is 81
+result fitness is 81
+result fitness is 81
+result fitness is 81
+result fitness is 81
+result fitness is 81
+result fitness is 81
+result fitness is 81
+result fitness is 81
+result fitness is 81
+result fitness is 81
+result fitness is 78
+result fitness is 82
+result fitness is 83
+result fitness is 83
+result fitness is 79
+result fitness is 81
+result fitness is 81
+result fitness is 81
+result fitness is 83
+result fitness is 81
+result fitness is 81
+result fitness is 81
+result fitness is 80
+result fitness is 81
+result fitness is 80
+result fitness is 81
+result fitness is 81
+result fitness is 83
+result fitness is 81
+best fitness got among generations is 83
+best chromosome indexes are  [0, 1, 2, 3, 4, 5, 23, 24, 29, 38]
+Crossover: 10
+Mutation failed
+Mutation failed
+Mutation failed
+Mutation failed
+Mutation failed
+Mutation failed
+Mutation failed
+Mutation failed
+Mutation failed
+Mutation failed
+Mutation failed
+Mutation failed
+Mutation failed
+Mutation failed
+Mutation failed
+Mutation failed
+Mutation failed
+run index is 5 gen index is 11
+Evaluating Gen 11...
+result fitness is 83
+result fitness is 83
+result fitness is 83
+result fitness is 83
+result fitness is 83
+result fitness is 83
+result fitness is 83
+result fitness is 83
+result fitness is 83
+result fitness is 83
+result fitness is 81
+result fitness is 81
+result fitness is 81
+result fitness is 81
+result fitness is 81
+result fitness is 81
+result fitness is 81
+result fitness is 81
+result fitness is 81
+result fitness is 81
+result fitness is 81
+result fitness is 83
+result fitness is 81
+result fitness is 81
+result fitness is 83
+result fitness is 79
+result fitness is 81
+result fitness is 81
+result fitness is 81
+result fitness is 78
+result fitness is 80
+result fitness is 81
+result fitness is 81
+result fitness is 81
+result fitness is 81
+result fitness is 81
+result fitness is 79
+result fitness is 81
+result fitness is 81
+result fitness is 81
+best fitness got among generations is 83
+best chromosome indexes are  [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 21, 24]
+Crossover: 11
+Mutation failed
+Mutation failed
+Mutation failed
+Mutation failed
+Mutation failed
+Mutation failed
+Mutation failed
+Mutation failed
+Mutation failed
+Mutation failed
+best fitness got among runs 100
+Run index # 6
+initialized at run  6
+Continuing using the run,generation number  0,0
+run index is 6 gen index is 0
+Evaluating Gen 0...
+result fitness is 75
+result fitness is 75
+result fitness is 75
+result fitness is 75
+result fitness is 75
+result fitness is 75
+result fitness is 75
+result fitness is 75
+result fitness is 75
+result fitness is 75
+result fitness is 75
+result fitness is 75
+result fitness is 75
+result fitness is 75
+result fitness is 75
+result fitness is 75
+result fitness is 75
+result fitness is 75
+result fitness is 75
+result fitness is 75
+result fitness is 75
+result fitness is 75
+result fitness is 75
+result fitness is 75
+result fitness is 75
+result fitness is 75
+result fitness is 75
+result fitness is 75
+result fitness is 75
+result fitness is 75
+result fitness is 75
+result fitness is 75
+result fitness is 75
+result fitness is 75
+result fitness is 75
+result fitness is 75
+result fitness is 75
+result fitness is 75
+result fitness is 75
+result fitness is 75
+best fitness got among generations is 75
+best chromosome indexes are  [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39]
+Crossover: 0
+run index is 6 gen index is 1
+Evaluating Gen 1...
+result fitness is 75
+result fitness is 75
+result fitness is 75
+result fitness is 75
+result fitness is 75
+result fitness is 75
+result fitness is 75
+result fitness is 75
+result fitness is 75
+result fitness is 75
+result fitness is 75
+result fitness is 75
+result fitness is 75
+result fitness is 75
+result fitness is 75
+result fitness is 75
+result fitness is 75
+result fitness is 75
+result fitness is 75
+result fitness is 75
+result fitness is 79
+result fitness is 75
+result fitness is 80
+result fitness is 79
+result fitness is 75
+result fitness is 75
+result fitness is 75
+result fitness is 75
+result fitness is 75
+result fitness is 80
+result fitness is 75
+result fitness is 80
+result fitness is 80
+result fitness is 80
+result fitness is 80
+result fitness is 79
+result fitness is 79
+result fitness is 80
+result fitness is 80
+result fitness is 79
+best fitness got among generations is 80
+best chromosome indexes are  [22, 29, 31, 32, 33, 34, 37, 38]
+Crossover: 1
+run index is 6 gen index is 2
+Evaluating Gen 2...
+result fitness is 80
+result fitness is 80
+result fitness is 80
+result fitness is 80
+result fitness is 80
+result fitness is 80
+result fitness is 80
+result fitness is 80
+result fitness is 79
+result fitness is 79
+result fitness is 79
+result fitness is 79
+result fitness is 79
+result fitness is 75
+result fitness is 75
+result fitness is 75
+result fitness is 75
+result fitness is 75
+result fitness is 75
+result fitness is 75
+result fitness is 75
+result fitness is 75
+result fitness is 75
+result fitness is 75
+result fitness is 80
+result fitness is 80
+result fitness is 75
+result fitness is 75
+result fitness is 75
+result fitness is 79
+result fitness is 75
+result fitness is 78
+result fitness is 78
+result fitness is 80
+result fitness is 80
+result fitness is 82
+result fitness is 79
+result fitness is 80
+result fitness is 78
+result fitness is 81
+best fitness got among generations is 82
+best chromosome indexes are  [35]
+Crossover: 2
+Mutation failed
+Mutation failed
+Mutation failed
+Mutation failed
+run index is 6 gen index is 3
+Evaluating Gen 3...
+result fitness is 81
+result fitness is 81
+result fitness is 80
+result fitness is 80
+result fitness is 80
+result fitness is 80
+result fitness is 80
+result fitness is 80
+result fitness is 80
+result fitness is 80
+result fitness is 80
+result fitness is 80
+result fitness is 80
+result fitness is 80
+result fitness is 80
+result fitness is 79
+result fitness is 79
+result fitness is 79
+result fitness is 79
+result fitness is 79
+result fitness is 75
+result fitness is 80
+result fitness is 80
+result fitness is 82
+result fitness is 79
+result fitness is 80
+result fitness is 75
+result fitness is 75
+result fitness is 75
+result fitness is 80
+result fitness is 80
+result fitness is 82
+result fitness is 82
+result fitness is 79
+result fitness is 75
+result fitness is 79
+result fitness is 79
+result fitness is 80
+result fitness is 75
+result fitness is 82
+best fitness got among generations is 82
+best chromosome indexes are  [23, 31, 32, 39]
+Crossover: 3
+Mutation failed
+Mutation failed
+Mutation failed
+run index is 6 gen index is 4
+Evaluating Gen 4...
+result fitness is 81
+result fitness is 81
+result fitness is 81
+result fitness is 81
+result fitness is 81
+result fitness is 81
+result fitness is 80
+result fitness is 80
+result fitness is 80
+result fitness is 80
+result fitness is 80
+result fitness is 80
+result fitness is 80
+result fitness is 80
+result fitness is 80
+result fitness is 80
+result fitness is 80
+result fitness is 80
+result fitness is 80
+result fitness is 80
+result fitness is 80
+result fitness is 81
+result fitness is 79
+result fitness is 80
+result fitness is 75
+result fitness is 79
+result fitness is 79
+result fitness is 80
+result fitness is 75
+result fitness is 78
+result fitness is 75
+result fitness is 80
+result fitness is 79
+result fitness is 80
+result fitness is 80
+result fitness is 78
+result fitness is 81
+result fitness is 78
+result fitness is 79
+result fitness is 81
+best fitness got among generations is 81
+best chromosome indexes are  [0, 1, 2, 3, 4, 5, 21, 36, 39]
+Crossover: 4
+Mutation failed
+Mutation failed
+Mutation failed
+run index is 6 gen index is 5
+Evaluating Gen 5...
+result fitness is 81
+result fitness is 81
+result fitness is 81
+result fitness is 81
+result fitness is 81
+result fitness is 81
+result fitness is 81
+result fitness is 81
+result fitness is 81
+result fitness is 80
+result fitness is 80
+result fitness is 80
+result fitness is 80
+result fitness is 80
+result fitness is 80
+result fitness is 80
+result fitness is 80
+result fitness is 80
+result fitness is 80
+result fitness is 80
+result fitness is 80
+result fitness is 78
+result fitness is 78
+result fitness is 80
+result fitness is 80
+result fitness is 80
+result fitness is 80
+result fitness is 79
+result fitness is 78
+result fitness is 80
+result fitness is 80
+result fitness is 75
+result fitness is 80
+result fitness is 80
+result fitness is 78
+result fitness is 80
+result fitness is 78
+result fitness is 75
+result fitness is 79
+result fitness is 78
+best fitness got among generations is 81
+best chromosome indexes are  [0, 1, 2, 3, 4, 5, 6, 7, 8]
+Crossover: 5
+Mutation failed
+Mutation failed
+Mutation failed
+Mutation failed
+Mutation failed
+run index is 6 gen index is 6
+Evaluating Gen 6...
+result fitness is 81
+result fitness is 81
+result fitness is 81
+result fitness is 81
+result fitness is 81
+result fitness is 81
+result fitness is 81
+result fitness is 81
+result fitness is 81
+result fitness is 80
+result fitness is 80
+result fitness is 80
+result fitness is 80
+result fitness is 80
+result fitness is 80
+result fitness is 80
+result fitness is 80
+result fitness is 80
+result fitness is 80
+result fitness is 80
+result fitness is 78
+result fitness is 80
+result fitness is 78
+result fitness is 75
+result fitness is 78
+result fitness is 78
+result fitness is 78
+result fitness is 80
+result fitness is 80
+result fitness is 81
+result fitness is 79
+result fitness is 80
+result fitness is 80
+result fitness is 80
+result fitness is 79
+result fitness is 80
+result fitness is 80
+result fitness is 78
+result fitness is 80
+result fitness is 81
+best fitness got among generations is 81
+best chromosome indexes are  [0, 1, 2, 3, 4, 5, 6, 7, 8, 29, 39]
+Crossover: 6
+Mutation failed
+Mutation failed
+Mutation failed
+Mutation failed
+Mutation failed
+Mutation failed
+Mutation failed
+Mutation failed
+Mutation failed
+Mutation failed
+Mutation failed
+run index is 6 gen index is 7
+Evaluating Gen 7...
+result fitness is 81
+result fitness is 81
+result fitness is 81
+result fitness is 81
+result fitness is 81
+result fitness is 81
+result fitness is 81
+result fitness is 81
+result fitness is 81
+result fitness is 81
+result fitness is 81
+result fitness is 80
+result fitness is 80
+result fitness is 80
+result fitness is 80
+result fitness is 80
+result fitness is 80
+result fitness is 80
+result fitness is 80
+result fitness is 80
+result fitness is 78
+result fitness is 80
+result fitness is 80
+result fitness is 80
+result fitness is 80
+result fitness is 80
+result fitness is 83
+result fitness is 78
+result fitness is 81
+result fitness is 80
+result fitness is 80
+result fitness is 78
+result fitness is 75
+result fitness is 80
+result fitness is 81
+result fitness is 78
+result fitness is 80
+result fitness is 80
+result fitness is 83
+result fitness is 78
+best fitness got among generations is 83
+best chromosome indexes are  [26, 38]
+Crossover: 7
+Mutation failed
+Mutation failed
+Mutation failed
+Mutation failed
+Mutation failed
+Mutation failed
+Mutation failed
+Mutation failed
+Mutation failed
+run index is 6 gen index is 8
+Evaluating Gen 8...
+result fitness is 83
+result fitness is 83
+result fitness is 81
+result fitness is 81
+result fitness is 81
+result fitness is 81
+result fitness is 81
+result fitness is 81
+result fitness is 81
+result fitness is 81
+result fitness is 81
+result fitness is 81
+result fitness is 81
+result fitness is 81
+result fitness is 81
+result fitness is 80
+result fitness is 80
+result fitness is 80
+result fitness is 80
+result fitness is 80
+result fitness is 81
+result fitness is 81
+result fitness is 78
+result fitness is 81
+result fitness is 78
+result fitness is 80
+result fitness is 80
+result fitness is 80
+result fitness is 80
+result fitness is 80
+result fitness is 80
+result fitness is 80
+result fitness is 78
+result fitness is 81
+result fitness is 78
+result fitness is 80
+result fitness is 78
+result fitness is 80
+result fitness is 80
+result fitness is 83
+best fitness got among generations is 83
+best chromosome indexes are  [0, 1, 39]
+Crossover: 8
+Mutation failed
+Mutation failed
+Mutation failed
+Mutation failed
+Mutation failed
+Mutation failed
+Mutation failed
+Mutation failed
+Mutation failed
+Mutation failed
+Mutation failed
+Mutation failed
+run index is 6 gen index is 9
+Evaluating Gen 9...
+result fitness is 83
+result fitness is 83
+result fitness is 83
+result fitness is 81
+result fitness is 81
+result fitness is 81
+result fitness is 81
+result fitness is 81
+result fitness is 81
+result fitness is 81
+result fitness is 81
+result fitness is 81
+result fitness is 81
+result fitness is 81
+result fitness is 81
+result fitness is 81
+result fitness is 81
+result fitness is 81
+result fitness is 81
+result fitness is 81
+result fitness is 80
+result fitness is 80
+result fitness is 80
+result fitness is 80
+result fitness is 78
+result fitness is 81
+result fitness is 81
+result fitness is 78
+result fitness is 81
+result fitness is 80
+result fitness is 80
+result fitness is 78
+result fitness is 78
+result fitness is 79
+result fitness is 79
+result fitness is 83
+result fitness is 81
+result fitness is 80
+result fitness is 80
+result fitness is 83
+best fitness got among generations is 83
+best chromosome indexes are  [0, 1, 2, 35, 39]
+Crossover: 9
+Mutation failed
+Mutation failed
+Mutation failed
+Mutation failed
+Mutation failed
+Mutation failed
+Mutation failed
+Mutation failed
+Mutation failed
+Mutation failed
+Mutation failed
+Mutation failed
+run index is 6 gen index is 10
+Evaluating Gen 10...
+result fitness is 83
+result fitness is 83
+result fitness is 83
+result fitness is 83
+result fitness is 83
+result fitness is 81
+result fitness is 81
+result fitness is 81
+result fitness is 81
+result fitness is 81
+result fitness is 81
+result fitness is 81
+result fitness is 81
+result fitness is 81
+result fitness is 81
+result fitness is 81
+result fitness is 81
+result fitness is 81
+result fitness is 81
+result fitness is 81
+result fitness is 80
+result fitness is 80
+result fitness is 80
+result fitness is 81
+result fitness is 83
+result fitness is 75
+result fitness is 75
+result fitness is 83
+result fitness is 81
+result fitness is 79
+result fitness is 79
+result fitness is 81
+result fitness is 83
+result fitness is 80
+result fitness is 80
+result fitness is 81
+result fitness is 80
+result fitness is 81
+result fitness is 80
+result fitness is 83
+best fitness got among generations is 83
+best chromosome indexes are  [0, 1, 2, 3, 4, 24, 27, 32, 39]
+Crossover: 10
+Mutation failed
+Mutation failed
+Mutation failed
+Mutation failed
+Mutation failed
+Mutation failed
+Mutation failed
+Mutation failed
+Mutation failed
+Mutation failed
+Mutation failed
+Mutation failed
+Mutation failed
+Mutation failed
+Mutation failed
+Mutation failed
+Mutation failed
+Mutation failed
+Mutation failed
+run index is 6 gen index is 11
+Evaluating Gen 11...
+result fitness is 83
+result fitness is 83
+result fitness is 83
+result fitness is 83
+result fitness is 83
+result fitness is 83
+result fitness is 83
+result fitness is 83
+result fitness is 83
+result fitness is 81
+result fitness is 81
+result fitness is 81
+result fitness is 81
+result fitness is 81
+result fitness is 81
+result fitness is 81
+result fitness is 81
+result fitness is 81
+result fitness is 81
+result fitness is 81
+result fitness is 79
+result fitness is 81
+result fitness is 81
+result fitness is 81
+result fitness is 79
+result fitness is 80
+result fitness is 80
+result fitness is 81
+result fitness is 81
+result fitness is 81
+result fitness is 83
+result fitness is 79
+result fitness is 81
+result fitness is 81
+result fitness is 83
+result fitness is 79
+result fitness is 81
+result fitness is 81
+result fitness is 83
+result fitness is 81
+best fitness got among generations is 83
+best chromosome indexes are  [0, 1, 2, 3, 4, 5, 6, 7, 8, 30, 34, 38]
+Crossover: 11
+Mutation failed
+Mutation failed
+Mutation failed
+Mutation failed
+Mutation failed
+Mutation failed
+Mutation failed
+Mutation failed
+Mutation failed
+Mutation failed
+Mutation failed
+Mutation failed
+Mutation failed
+best fitness got among runs 100
+Run index # 7
+initialized at run  7
+Continuing using the run,generation number  0,0
+run index is 7 gen index is 0
+Evaluating Gen 0...
+result fitness is 75
+result fitness is 75
+result fitness is 75
+result fitness is 75
+result fitness is 75
+result fitness is 75
+result fitness is 75
+result fitness is 75
+result fitness is 75
+result fitness is 75
+result fitness is 75
+result fitness is 75
+result fitness is 75
+result fitness is 75
+result fitness is 75
+result fitness is 75
+result fitness is 75
+result fitness is 75
+result fitness is 75
+result fitness is 75
+result fitness is 75
+result fitness is 75
+result fitness is 75
+result fitness is 75
+result fitness is 75
+result fitness is 75
+result fitness is 75
+result fitness is 75
+result fitness is 75
+result fitness is 75
+result fitness is 75
+result fitness is 75
+result fitness is 75
+result fitness is 75
+result fitness is 75
+result fitness is 75
+result fitness is 75
+result fitness is 75
+result fitness is 75
+result fitness is 75
+best fitness got among generations is 75
+best chromosome indexes are  [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39]
+Crossover: 0
+run index is 7 gen index is 1
+Evaluating Gen 1...
+result fitness is 75
+result fitness is 75
+result fitness is 75
+result fitness is 75
+result fitness is 75
+result fitness is 75
+result fitness is 75
+result fitness is 75
+result fitness is 75
+result fitness is 75
+result fitness is 75
+result fitness is 75
+result fitness is 75
+result fitness is 75
+result fitness is 75
+result fitness is 75
+result fitness is 75
+result fitness is 75
+result fitness is 75
+result fitness is 75
+result fitness is 75
+result fitness is 80
+result fitness is 80
+result fitness is 80
+result fitness is 75
+result fitness is 75
+result fitness is 78
+result fitness is 79
+result fitness is 75
+result fitness is 75
+result fitness is 79
+result fitness is 75
+result fitness is 75
+result fitness is 80
+result fitness is 75
+result fitness is 75
+result fitness is 75
+result fitness is 79
+result fitness is 80
+result fitness is 75
+best fitness got among generations is 80
+best chromosome indexes are  [21, 22, 23, 33, 38]
+Crossover: 1
+run index is 7 gen index is 2
+Evaluating Gen 2...
+result fitness is 80
+result fitness is 80
+result fitness is 80
+result fitness is 80
+result fitness is 80
+result fitness is 79
+result fitness is 79
+result fitness is 79
+result fitness is 78
+result fitness is 75
+result fitness is 75
+result fitness is 75
+result fitness is 75
+result fitness is 75
+result fitness is 75
+result fitness is 75
+result fitness is 75
+result fitness is 75
+result fitness is 75
+result fitness is 75
+result fitness is 80
+result fitness is 79
+result fitness is 80
+result fitness is 78
+result fitness is 80
+result fitness is 75
+result fitness is 75
+result fitness is 75
+result fitness is 80
+result fitness is 80
+result fitness is 79
+result fitness is 75
+result fitness is 75
+result fitness is 75
+result fitness is 78
+result fitness is 80
+result fitness is 78
+result fitness is 80
+result fitness is 80
+result fitness is 80
+best fitness got among generations is 80
+best chromosome indexes are  [0, 1, 2, 3, 4, 20, 22, 24, 28, 29, 35, 37, 38, 39]
+Crossover: 2
+Mutation failed
+run index is 7 gen index is 3
+Evaluating Gen 3...
+result fitness is 80
+result fitness is 80
+result fitness is 80
+result fitness is 80
+result fitness is 80
+result fitness is 80
+result fitness is 80
+result fitness is 80
+result fitness is 80
+result fitness is 80
+result fitness is 80
+result fitness is 80
+result fitness is 80
+result fitness is 80
+result fitness is 79
+result fitness is 79
+result fitness is 79
+result fitness is 79
+result fitness is 79
+result fitness is 78
+result fitness is 80
+result fitness is 75
+result fitness is 80
+result fitness is 82
+result fitness is 79
+result fitness is 75
+result fitness is 75
+result fitness is 80
+result fitness is 78
+result fitness is 75
+result fitness is 75
+result fitness is 80
+result fitness is 80
+result fitness is 82
+result fitness is 79
+result fitness is 78
+result fitness is 78
+result fitness is 80
+result fitness is 75
+result fitness is 80
+best fitness got among generations is 82
+best chromosome indexes are  [23, 33]
+Crossover: 3
+Mutation failed
+Mutation failed
+Mutation failed
+Mutation failed
+run index is 7 gen index is 4
+Evaluating Gen 4...
+result fitness is 81
+result fitness is 81
+result fitness is 80
+result fitness is 80
+result fitness is 80
+result fitness is 80
+result fitness is 80
+result fitness is 80
+result fitness is 80
+result fitness is 80
+result fitness is 80
+result fitness is 80
+result fitness is 80
+result fitness is 80
+result fitness is 80
+result fitness is 80
+result fitness is 80
+result fitness is 80
+result fitness is 80
+result fitness is 80
+result fitness is 81
+result fitness is 75
+result fitness is 81
+result fitness is 78
+result fitness is 80
+result fitness is 80
+result fitness is 81
+result fitness is 78
+result fitness is 80
+result fitness is 75
+result fitness is 75
+result fitness is 80
+result fitness is 80
+result fitness is 81
+result fitness is 78
+result fitness is 81
+result fitness is 79
+result fitness is 75
+result fitness is 80
+result fitness is 82
+best fitness got among generations is 82
+best chromosome indexes are  [39]
+Crossover: 4
+Mutation failed
+Mutation failed
+Mutation failed
+Mutation failed
+Mutation failed
+Mutation failed
+Mutation failed
+run index is 7 gen index is 5
+Evaluating Gen 5...
+result fitness is 81
+result fitness is 81
+result fitness is 81
+result fitness is 81
+result fitness is 81
+result fitness is 81
+result fitness is 81
+result fitness is 81
+result fitness is 80
+result fitness is 80
+result fitness is 80
+result fitness is 80
+result fitness is 80
+result fitness is 80
+result fitness is 80
+result fitness is 80
+result fitness is 80
+result fitness is 80
+result fitness is 80
+result fitness is 80
+result fitness is 80
+result fitness is 75
+result fitness is 80
+result fitness is 75
+result fitness is 75
+result fitness is 80
+result fitness is 75
+result fitness is 75
+result fitness is 75
+result fitness is 80
+result fitness is 80
+result fitness is 80
+result fitness is 80
+result fitness is 80
+result fitness is 80
+result fitness is 80
+result fitness is 80
+result fitness is 78
+result fitness is 82
+result fitness is 78
+best fitness got among generations is 82
+best chromosome indexes are  [38]
+Crossover: 5
+Mutation failed
+Mutation failed
+Mutation failed
+Mutation failed
+Mutation failed
+Mutation failed
+Mutation failed
+Mutation failed
+Mutation failed
+Mutation failed
+run index is 7 gen index is 6
+Evaluating Gen 6...
+result fitness is 81
+result fitness is 81
+result fitness is 81
+result fitness is 81
+result fitness is 81
+result fitness is 81
+result fitness is 81
+result fitness is 81
+result fitness is 81
+result fitness is 80
+result fitness is 80
+result fitness is 80
+result fitness is 80
+result fitness is 80
+result fitness is 80
+result fitness is 80
+result fitness is 80
+result fitness is 80
+result fitness is 80
+result fitness is 80
+result fitness is 80
+result fitness is 75
+result fitness is 75
+result fitness is 80
+result fitness is 80
+result fitness is 80
+result fitness is 80
+result fitness is 75
+result fitness is 80
+result fitness is 80
+result fitness is 80
+result fitness is 80
+result fitness is 80
+result fitness is 78
+result fitness is 80
+result fitness is 78
+result fitness is 78
+result fitness is 75
+result fitness is 75
+result fitness is 82
+best fitness got among generations is 82
+best chromosome indexes are  [39]
+Crossover: 6
+Mutation failed
+Mutation failed
+Mutation failed
+Mutation failed
+Mutation failed
+Mutation failed
+Mutation failed
+Mutation failed
+Mutation failed
+Mutation failed
+Mutation failed
+Mutation failed
+Mutation failed
+Mutation failed
+Mutation failed
+Mutation failed
+Mutation failed
+Mutation failed
+Stopping crossover -- Copying parents instead
+run index is 7 gen index is 7
+Evaluating Gen 7...
+result fitness is 81
+result fitness is 81
+result fitness is 81
+result fitness is 81
+result fitness is 81
+result fitness is 81
+result fitness is 81
+result fitness is 81
+result fitness is 81
+result fitness is 81
+result fitness is 80
+result fitness is 80
+result fitness is 80
+result fitness is 80
+result fitness is 80
+result fitness is 80
+result fitness is 80
+result fitness is 80
+result fitness is 80
+result fitness is 80
+result fitness is 80
+result fitness is 78
+result fitness is 78
+result fitness is 80
+result fitness is 80
+result fitness is 80
+result fitness is 80
+result fitness is 78
+result fitness is 79
+result fitness is 80
+result fitness is 80
+result fitness is 80
+result fitness is 80
+result fitness is 78
+result fitness is 78
+result fitness is 80
+result fitness is 80
+result fitness is 78
+result fitness is 78
+result fitness is 81
+best fitness got among generations is 81
+best chromosome indexes are  [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 39]
+Crossover: 7
+Mutation failed
+Mutation failed
+Mutation failed
+Mutation failed
+Mutation failed
+Mutation failed
+run index is 7 gen index is 8
+Evaluating Gen 8...
+result fitness is 81
+result fitness is 81
+result fitness is 81
+result fitness is 81
+result fitness is 81
+result fitness is 81
+result fitness is 81
+result fitness is 81
+result fitness is 81
+result fitness is 81
+result fitness is 81
+result fitness is 80
+result fitness is 80
+result fitness is 80
+result fitness is 80
+result fitness is 80
+result fitness is 80
+result fitness is 80
+result fitness is 80
+result fitness is 80
+result fitness is 80
+result fitness is 78
+result fitness is 78
+result fitness is 80
+result fitness is 80
+result fitness is 78
+result fitness is 80
+result fitness is 81
+result fitness is 80
+result fitness is 80
+result fitness is 80
+result fitness is 78
+result fitness is 78
+result fitness is 80
+result fitness is 80
+result fitness is 78
+result fitness is 80
+result fitness is 80
+result fitness is 75
+result fitness is 83
+best fitness got among generations is 83
+best chromosome indexes are  [39]
+Crossover: 8
+Mutation failed
+Mutation failed
+Mutation failed
+Mutation failed
+Mutation failed
+Mutation failed
+Mutation failed
+Mutation failed
+Mutation failed
+Mutation failed
+Mutation failed
+Mutation failed
+Mutation failed
+Mutation failed
+run index is 7 gen index is 9
+Evaluating Gen 9...
+result fitness is 83
+result fitness is 81
+result fitness is 81
+result fitness is 81
+result fitness is 81
+result fitness is 81
+result fitness is 81
+result fitness is 81
+result fitness is 81
+result fitness is 81
+result fitness is 81
+result fitness is 81
+result fitness is 81
+result fitness is 80
+result fitness is 80
+result fitness is 80
+result fitness is 80
+result fitness is 80
+result fitness is 80
+result fitness is 80
+result fitness is 80
+result fitness is 78
+result fitness is 78
+result fitness is 78
+result fitness is 78
+result fitness is 75
+result fitness is 80
+result fitness is 75
+result fitness is 80
+result fitness is 78
+result fitness is 81
+result fitness is 78
+result fitness is 81
+result fitness is 80
+result fitness is 80
+result fitness is 78
+result fitness is 78
+result fitness is 80
+result fitness is 80
+result fitness is 83
+best fitness got among generations is 83
+best chromosome indexes are  [0, 39]
+Crossover: 9
+Mutation failed
+Mutation failed
+Mutation failed
+Mutation failed
+Mutation failed
+Mutation failed
+Mutation failed
+Mutation failed
+Mutation failed
+Mutation failed
+Mutation failed
+Mutation failed
+Mutation failed
+Mutation failed
+Mutation failed
+Mutation failed
+Mutation failed
+Mutation failed
+Mutation failed
+Mutation failed
+run index is 7 gen index is 10
+Evaluating Gen 10...
+result fitness is 83
+result fitness is 83
+result fitness is 81
+result fitness is 81
+result fitness is 81
+result fitness is 81
+result fitness is 81
+result fitness is 81
+result fitness is 81
+result fitness is 81
+result fitness is 81
+result fitness is 81
+result fitness is 81
+result fitness is 81
+result fitness is 81
+result fitness is 81
+result fitness is 80
+result fitness is 80
+result fitness is 80
+result fitness is 80
+result fitness is 78
+result fitness is 83
+result fitness is 81
+result fitness is 78
+result fitness is 78
+result fitness is 80
+result fitness is 80
+result fitness is 78
+result fitness is 78
+result fitness is 78
+result fitness is 78
+result fitness is 78
+result fitness is 78
+result fitness is 80
+result fitness is 80
+result fitness is 78
+result fitness is 78
+result fitness is 80
+result fitness is 75
+result fitness is 83
+best fitness got among generations is 83
+best chromosome indexes are  [0, 1, 21, 39]
+Crossover: 10
+Mutation failed
+Mutation failed
+Mutation failed
+Mutation failed
+Mutation failed
+Mutation failed
+Mutation failed
+Mutation failed
+Mutation failed
+Mutation failed
+Mutation failed
+Mutation failed
+Mutation failed
+Mutation failed
+Mutation failed
+Mutation failed
+run index is 7 gen index is 11
+Evaluating Gen 11...
+result fitness is 83
+result fitness is 83
+result fitness is 83
+result fitness is 83
+result fitness is 81
+result fitness is 81
+result fitness is 81
+result fitness is 81
+result fitness is 81
+result fitness is 81
+result fitness is 81
+result fitness is 81
+result fitness is 81
+result fitness is 81
+result fitness is 81
+result fitness is 81
+result fitness is 81
+result fitness is 81
+result fitness is 81
+result fitness is 80
+result fitness is 81
+result fitness is 83
+result fitness is 83
+result fitness is 78
+result fitness is 78
+result fitness is 83
+result fitness is 81
+result fitness is 81
+result fitness is 81
+result fitness is 80
+result fitness is 80
+result fitness is 78
+result fitness is 78
+result fitness is 81
+result fitness is 78
+result fitness is 78
+result fitness is 78
+result fitness is 78
+result fitness is 78
+result fitness is 83
+best fitness got among generations is 83
+best chromosome indexes are  [0, 1, 2, 3, 21, 22, 25, 39]
+Crossover: 11
+Mutation failed
+Mutation failed
+Mutation failed
+Mutation failed
+Mutation failed
+Mutation failed
+Mutation failed
+best fitness got among runs 100
+Run index # 8
+initialized at run  8
+Continuing using the run,generation number  0,0
+run index is 8 gen index is 0
+Evaluating Gen 0...
+result fitness is 75
+result fitness is 75
+result fitness is 75
+result fitness is 75
+result fitness is 75
+result fitness is 75
+result fitness is 75
+result fitness is 75
+result fitness is 75
+result fitness is 75
+result fitness is 75
+result fitness is 75
+result fitness is 75
+result fitness is 75
+result fitness is 75
+result fitness is 75
+result fitness is 75
+result fitness is 75
+result fitness is 75
+result fitness is 75
+result fitness is 75
+result fitness is 75
+result fitness is 75
+result fitness is 75
+result fitness is 75
+result fitness is 75
+result fitness is 75
+result fitness is 75
+result fitness is 75
+result fitness is 75
+result fitness is 75
+result fitness is 75
+result fitness is 75
+result fitness is 75
+result fitness is 75
+result fitness is 75
+result fitness is 75
+result fitness is 75
+result fitness is 75
+result fitness is 75
+best fitness got among generations is 75
+best chromosome indexes are  [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39]
+Crossover: 0
+run index is 8 gen index is 1
+Evaluating Gen 1...
+result fitness is 75
+result fitness is 75
+result fitness is 75
+result fitness is 75
+result fitness is 75
+result fitness is 75
+result fitness is 75
+result fitness is 75
+result fitness is 75
+result fitness is 75
+result fitness is 75
+result fitness is 75
+result fitness is 75
+result fitness is 75
+result fitness is 75
+result fitness is 75
+result fitness is 75
+result fitness is 75
+result fitness is 75
+result fitness is 75
+result fitness is 80
+result fitness is 80
+result fitness is 75
+result fitness is 75
+result fitness is 75
+result fitness is 78
+result fitness is 80
+result fitness is 78
+result fitness is 80
+result fitness is 80
+result fitness is 80
+result fitness is 80
+result fitness is 75
+result fitness is 75
+result fitness is 80
+result fitness is 78
+result fitness is 80
+result fitness is 79
+result fitness is 75
+result fitness is 80
+best fitness got among generations is 80
+best chromosome indexes are  [20, 21, 26, 28, 29, 30, 31, 34, 36, 39]
+Crossover: 1
+Mutation failed
+run index is 8 gen index is 2
+Evaluating Gen 2...
+result fitness is 80
+result fitness is 80
+result fitness is 80
+result fitness is 80
+result fitness is 80
+result fitness is 80
+result fitness is 80
+result fitness is 80
+result fitness is 80
+result fitness is 80
+result fitness is 79
+result fitness is 78
+result fitness is 78
+result fitness is 78
+result fitness is 75
+result fitness is 75
+result fitness is 75
+result fitness is 75
+result fitness is 75
+result fitness is 75
+result fitness is 80
+result fitness is 78
+result fitness is 80
+result fitness is 78
+result fitness is 80
+result fitness is 80
+result fitness is 78
+result fitness is 75
+result fitness is 75
+result fitness is 75
+result fitness is 75
+result fitness is 75
+result fitness is 75
+result fitness is 75
+result fitness is 75
+result fitness is 78
+result fitness is 78
+result fitness is 80
+result fitness is 75
+result fitness is 80
+best fitness got among generations is 80
+best chromosome indexes are  [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 20, 22, 24, 25, 37, 39]
+Crossover: 2
+Mutation failed
+run index is 8 gen index is 3
+Evaluating Gen 3...
+result fitness is 80
+result fitness is 80
+result fitness is 80
+result fitness is 80
+result fitness is 80
+result fitness is 80
+result fitness is 80
+result fitness is 80
+result fitness is 80
+result fitness is 80
+result fitness is 80
+result fitness is 80
+result fitness is 80
+result fitness is 80
+result fitness is 80
+result fitness is 80
+result fitness is 79
+result fitness is 78
+result fitness is 78
+result fitness is 78
+result fitness is 78
+result fitness is 75
+result fitness is 78
+result fitness is 75
+result fitness is 75
+result fitness is 75
+result fitness is 75
+result fitness is 75
+result fitness is 75
+result fitness is 80
+result fitness is 75
+result fitness is 78
+result fitness is 80
+result fitness is 78
+result fitness is 75
+result fitness is 78
+result fitness is 78
+result fitness is 75
+result fitness is 75
+result fitness is 80
+best fitness got among generations is 80
+best chromosome indexes are  [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 29, 32, 39]
+Crossover: 3
+Mutation failed
+run index is 8 gen index is 4
+Evaluating Gen 4...
+result fitness is 80
+result fitness is 80
+result fitness is 80
+result fitness is 80
+result fitness is 80
+result fitness is 80
+result fitness is 80
+result fitness is 80
+result fitness is 80
+result fitness is 80
+result fitness is 80
+result fitness is 80
+result fitness is 80
+result fitness is 80
+result fitness is 80
+result fitness is 80
+result fitness is 80
+result fitness is 80
+result fitness is 80
+result fitness is 79
+result fitness is 75
+result fitness is 80
+result fitness is 80
+result fitness is 78
+result fitness is 78
+result fitness is 75
+result fitness is 80
+result fitness is 80
+result fitness is 75
+result fitness is 80
+result fitness is 80
+result fitness is 80
+result fitness is 78
+result fitness is 80
+result fitness is 80
+result fitness is 78
+result fitness is 80
+result fitness is 80
+result fitness is 75
+result fitness is 80
+best fitness got among generations is 80
+best chromosome indexes are  [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 21, 22, 26, 27, 29, 30, 31, 33, 34, 36, 37, 39]
+Crossover: 4
+Mutation failed
+Mutation failed
+Mutation failed
+Mutation failed
+Mutation failed
+Mutation failed
+Mutation failed
+run index is 8 gen index is 5
+Evaluating Gen 5...
+result fitness is 80
+result fitness is 80
+result fitness is 80
+result fitness is 80
+result fitness is 80
+result fitness is 80
+result fitness is 80
+result fitness is 80
+result fitness is 80
+result fitness is 80
+result fitness is 80
+result fitness is 80
+result fitness is 80
+result fitness is 80
+result fitness is 80
+result fitness is 80
+result fitness is 80
+result fitness is 80
+result fitness is 80
+result fitness is 80
+result fitness is 80
+result fitness is 75
+result fitness is 75
+result fitness is 80
+result fitness is 80
+result fitness is 78
+result fitness is 78
+result fitness is 80
+result fitness is 82
+result fitness is 80
+result fitness is 78
+result fitness is 81
+result fitness is 80
+result fitness is 78
+result fitness is 78
+result fitness is 81
+result fitness is 80
+result fitness is 83
+result fitness is 80
+result fitness is 80
+best fitness got among generations is 83
+best chromosome indexes are  [37]
+Crossover: 5
+Mutation failed
+Mutation failed
+Mutation failed
+Mutation failed
+Mutation failed
+Mutation failed
+Mutation failed
+Mutation failed
+Mutation failed
+Mutation failed
+Mutation failed
+run index is 8 gen index is 6
+Evaluating Gen 6...
+result fitness is 83
+result fitness is 81
+result fitness is 81
+result fitness is 81
+result fitness is 80
+result fitness is 80
+result fitness is 80
+result fitness is 80
+result fitness is 80
+result fitness is 80
+result fitness is 80
+result fitness is 80
+result fitness is 80
+result fitness is 80
+result fitness is 80
+result fitness is 80
+result fitness is 80
+result fitness is 80
+result fitness is 80
+result fitness is 80
+result fitness is 80
+result fitness is 80
+result fitness is 78
+result fitness is 80
+result fitness is 80
+result fitness is 78
+result fitness is 78
+result fitness is 80
+result fitness is 80
+result fitness is 78
+result fitness is 80
+result fitness is 78
+result fitness is 78
+result fitness is 80
+result fitness is 80
+result fitness is 80
+result fitness is 80
+result fitness is 80
+result fitness is 80
+result fitness is 83
+best fitness got among generations is 83
+best chromosome indexes are  [0, 39]
+Crossover: 6
+Mutation failed
+Mutation failed
+Mutation failed
+Mutation failed
+Mutation failed
+Mutation failed
+Mutation failed
+Mutation failed
+Mutation failed
+Mutation failed
+run index is 8 gen index is 7
+Evaluating Gen 7...
+result fitness is 83
+result fitness is 83
+result fitness is 81
+result fitness is 81
+result fitness is 81
+result fitness is 80
+result fitness is 80
+result fitness is 80
+result fitness is 80
+result fitness is 80
+result fitness is 80
+result fitness is 80
+result fitness is 80
+result fitness is 80
+result fitness is 80
+result fitness is 80
+result fitness is 80
+result fitness is 80
+result fitness is 80
+result fitness is 80
+result fitness is 80
+result fitness is 80
+result fitness is 80
+result fitness is 80
+result fitness is 83
+result fitness is 80
+result fitness is 80
+result fitness is 78
+result fitness is 78
+result fitness is 78
+result fitness is 78
+result fitness is 80
+result fitness is 78
+result fitness is 80
+result fitness is 78
+result fitness is 83
+result fitness is 80
+result fitness is 78
+result fitness is 78
+result fitness is 83
+best fitness got among generations is 83
+best chromosome indexes are  [0, 1, 24, 35, 39]
+Crossover: 7
+Mutation failed
+Mutation failed
+Mutation failed
+Mutation failed
+Mutation failed
+Mutation failed
+Mutation failed
+Mutation failed
+Mutation failed
+Mutation failed
+Mutation failed
+Stopping crossover -- Copying parents instead
+Mutation failed
+Mutation failed
+Mutation failed
+Mutation failed
+Mutation failed
+Mutation failed
+Mutation failed
+Mutation failed
+run index is 8 gen index is 8
+Evaluating Gen 8...
+result fitness is 83
+result fitness is 83
+result fitness is 83
+result fitness is 83
+result fitness is 83
+result fitness is 81
+result fitness is 81
+result fitness is 81
+result fitness is 80
+result fitness is 80
+result fitness is 80
+result fitness is 80
+result fitness is 80
+result fitness is 80
+result fitness is 80
+result fitness is 80
+result fitness is 80
+result fitness is 80
+result fitness is 80
+result fitness is 80
+result fitness is 81
+result fitness is 78
+result fitness is 80
+result fitness is 78
+result fitness is 78
+result fitness is 78
+result fitness is 78
+result fitness is 80
+result fitness is 78
+result fitness is 80
+result fitness is 78
+result fitness is 80
+result fitness is 80
+result fitness is 80
+result fitness is 80
+result fitness is 78
+result fitness is 80
+result fitness is 78
+result fitness is 78
+result fitness is 83
+best fitness got among generations is 83
+best chromosome indexes are  [0, 1, 2, 3, 4, 39]
+Crossover: 8
+Mutation failed
+Mutation failed
+Mutation failed
+Mutation failed
+Mutation failed
+Mutation failed
+run index is 8 gen index is 9
+Evaluating Gen 9...
+result fitness is 83
+result fitness is 83
+result fitness is 83
+result fitness is 83
+result fitness is 83
+result fitness is 83
+result fitness is 81
+result fitness is 81
+result fitness is 81
+result fitness is 81
+result fitness is 80
+result fitness is 80
+result fitness is 80
+result fitness is 80
+result fitness is 80
+result fitness is 80
+result fitness is 80
+result fitness is 80
+result fitness is 80
+result fitness is 80
+result fitness is 78
+result fitness is 78
+result fitness is 78
+result fitness is 80
+result fitness is 80
+result fitness is 80
+result fitness is 80
+result fitness is 78
+result fitness is 78
+result fitness is 80
+result fitness is 78
+result fitness is 80
+result fitness is 75
+result fitness is 78
+result fitness is 78
+result fitness is 80
+result fitness is 80
+result fitness is 78
+result fitness is 78
+result fitness is 83
+best fitness got among generations is 83
+best chromosome indexes are  [0, 1, 2, 3, 4, 5, 39]
+Crossover: 9
+Mutation failed
+Mutation failed
+Mutation failed
+Mutation failed
+Mutation failed
+Mutation failed
+Mutation failed
+Mutation failed
+Mutation failed
+run index is 8 gen index is 10
+Evaluating Gen 10...
+result fitness is 83
+result fitness is 83
+result fitness is 83
+result fitness is 83
+result fitness is 83
+result fitness is 83
+result fitness is 83
+result fitness is 81
+result fitness is 81
+result fitness is 81
+result fitness is 81
+result fitness is 80
+result fitness is 80
+result fitness is 80
+result fitness is 80
+result fitness is 80
+result fitness is 80
+result fitness is 80
+result fitness is 80
+result fitness is 80
+result fitness is 80
+result fitness is 75
+result fitness is 80
+result fitness is 80
+result fitness is 78
+result fitness is 81
+result fitness is 78
+result fitness is 78
+result fitness is 78
+result fitness is 80
+result fitness is 80
+result fitness is 78
+result fitness is 78
+result fitness is 81
+result fitness is 81
+result fitness is 80
+result fitness is 80
+result fitness is 78
+result fitness is 78
+result fitness is 83
+best fitness got among generations is 83
+best chromosome indexes are  [0, 1, 2, 3, 4, 5, 6, 39]
+Crossover: 10
+Mutation failed
+Mutation failed
+Mutation failed
+Mutation failed
+Mutation failed
+Mutation failed
+Mutation failed
+Mutation failed
+Mutation failed
+Mutation failed
+Mutation failed
+Mutation failed
+Mutation failed
+Mutation failed
+Mutation failed
+Mutation failed
+Mutation failed
+Mutation failed
+run index is 8 gen index is 11
+Evaluating Gen 11...
+result fitness is 83
+result fitness is 83
+result fitness is 83
+result fitness is 83
+result fitness is 83
+result fitness is 83
+result fitness is 83
+result fitness is 83
+result fitness is 81
+result fitness is 81
+result fitness is 81
+result fitness is 81
+result fitness is 81
+result fitness is 81
+result fitness is 81
+result fitness is 80
+result fitness is 80
+result fitness is 80
+result fitness is 80
+result fitness is 80
+result fitness is 80
+result fitness is 78
+result fitness is 78
+result fitness is 80
+result fitness is 80
+result fitness is 80
+result fitness is 80
+result fitness is 81
+result fitness is 81
+result fitness is 78
+result fitness is 78
+result fitness is 80
+result fitness is 80
+result fitness is 78
+result fitness is 78
+result fitness is 80
+result fitness is 80
+result fitness is 78
+result fitness is 78
+result fitness is 83
+best fitness got among generations is 83
+best chromosome indexes are  [0, 1, 2, 3, 4, 5, 6, 7, 39]
+Crossover: 11
+Mutation failed
+Mutation failed
+Mutation failed
+Mutation failed
+Mutation failed
+Mutation failed
+Mutation failed
+Mutation failed
+Mutation failed
+Mutation failed
+Mutation failed
+Mutation failed
+Mutation failed
+Mutation failed
+best fitness got among runs 100
+Run index # 9
+initialized at run  9
+Continuing using the run,generation number  0,0
+run index is 9 gen index is 0
+Evaluating Gen 0...
+result fitness is 75
+result fitness is 75
+result fitness is 75
+result fitness is 75
+result fitness is 75
+result fitness is 75
+result fitness is 75
+result fitness is 75
+result fitness is 75
+result fitness is 75
+result fitness is 75
+result fitness is 75
+result fitness is 75
+result fitness is 75
+result fitness is 75
+result fitness is 75
+result fitness is 75
+result fitness is 75
+result fitness is 75
+result fitness is 75
+result fitness is 75
+result fitness is 75
+result fitness is 75
+result fitness is 75
+result fitness is 75
+result fitness is 75
+result fitness is 75
+result fitness is 75
+result fitness is 75
+result fitness is 75
+result fitness is 75
+result fitness is 75
+result fitness is 75
+result fitness is 75
+result fitness is 75
+result fitness is 75
+result fitness is 75
+result fitness is 75
+result fitness is 75
+result fitness is 75
+best fitness got among generations is 75
+best chromosome indexes are  [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39]
+Crossover: 0
+run index is 9 gen index is 1
+Evaluating Gen 1...
+result fitness is 75
+result fitness is 75
+result fitness is 75
+result fitness is 75
+result fitness is 75
+result fitness is 75
+result fitness is 75
+result fitness is 75
+result fitness is 75
+result fitness is 75
+result fitness is 75
+result fitness is 75
+result fitness is 75
+result fitness is 75
+result fitness is 75
+result fitness is 75
+result fitness is 75
+result fitness is 75
+result fitness is 75
+result fitness is 75
+result fitness is 75
+result fitness is 75
+result fitness is 78
+result fitness is 75
+result fitness is 78
+result fitness is 80
+result fitness is 79
+result fitness is 80
+result fitness is 80
+result fitness is 79
+result fitness is 79
+result fitness is 75
+result fitness is 80
+result fitness is 75
+result fitness is 75
+result fitness is 75
+result fitness is 80
+result fitness is 78
+result fitness is 75
+result fitness is 78
+best fitness got among generations is 80
+best chromosome indexes are  [25, 27, 28, 32, 36]
+Crossover: 1
+Mutation failed
+run index is 9 gen index is 2
+Evaluating Gen 2...
+result fitness is 80
+result fitness is 80
+result fitness is 80
+result fitness is 80
+result fitness is 80
+result fitness is 79
+result fitness is 79
+result fitness is 79
+result fitness is 78
+result fitness is 78
+result fitness is 78
+result fitness is 78
+result fitness is 75
+result fitness is 75
+result fitness is 75
+result fitness is 75
+result fitness is 75
+result fitness is 75
+result fitness is 75
+result fitness is 75
+result fitness is 80
+result fitness is 75
+result fitness is 75
+result fitness is 75
+result fitness is 75
+result fitness is 75
+result fitness is 75
+result fitness is 80
+result fitness is 75
+result fitness is 78
+result fitness is 75
+result fitness is 75
+result fitness is 75
+result fitness is 80
+result fitness is 75
+result fitness is 80
+result fitness is 75
+result fitness is 75
+result fitness is 78
+result fitness is 80
+best fitness got among generations is 80
+best chromosome indexes are  [0, 1, 2, 3, 4, 20, 27, 33, 35, 39]
+Crossover: 2
+run index is 9 gen index is 3
+Evaluating Gen 3...
+result fitness is 80
+result fitness is 80
+result fitness is 80
+result fitness is 80
+result fitness is 80
+result fitness is 80
+result fitness is 80
+result fitness is 80
+result fitness is 80
+result fitness is 80
+result fitness is 79
+result fitness is 79
+result fitness is 79
+result fitness is 78
+result fitness is 78
+result fitness is 78
+result fitness is 78
+result fitness is 78
+result fitness is 78
+result fitness is 75
+result fitness is 79
+result fitness is 78
+result fitness is 78
+result fitness is 75
+result fitness is 75
+result fitness is 75
+result fitness is 75
+result fitness is 80
+result fitness is 80
+result fitness is 75
+result fitness is 75
+result fitness is 78
+result fitness is 78
+result fitness is 75
+result fitness is 80
+result fitness is 78
+result fitness is 78
+result fitness is 75
+result fitness is 75
+result fitness is 82
+best fitness got among generations is 82
+best chromosome indexes are  [39]
+Crossover: 3
+Mutation failed
+run index is 9 gen index is 4
+Evaluating Gen 4...
+result fitness is 81
+result fitness is 80
+result fitness is 80
+result fitness is 80
+result fitness is 80
+result fitness is 80
+result fitness is 80
+result fitness is 80
+result fitness is 80
+result fitness is 80
+result fitness is 80
+result fitness is 80
+result fitness is 80
+result fitness is 80
+result fitness is 79
+result fitness is 79
+result fitness is 79
+result fitness is 79
+result fitness is 78
+result fitness is 78
+result fitness is 75
+result fitness is 78
+result fitness is 75
+result fitness is 78
+result fitness is 78
+result fitness is 82
+result fitness is 82
+result fitness is 79
+result fitness is 81
+result fitness is 78
+result fitness is 78
+result fitness is 75
+result fitness is 80
+result fitness is 78
+result fitness is 78
+result fitness is 79
+result fitness is 79
+result fitness is 78
+result fitness is 78
+result fitness is 82
+best fitness got among generations is 82
+best chromosome indexes are  [25, 26, 39]
+Crossover: 4
+Mutation failed
+Mutation failed
+Mutation failed
+Mutation failed
+Mutation failed
+Mutation failed
+Mutation failed
+Mutation failed
+Mutation failed
+run index is 9 gen index is 5
+Evaluating Gen 5...
+result fitness is 81
+result fitness is 81
+result fitness is 81
+result fitness is 81
+result fitness is 81
+result fitness is 80
+result fitness is 80
+result fitness is 80
+result fitness is 80
+result fitness is 80
+result fitness is 80
+result fitness is 80
+result fitness is 80
+result fitness is 80
+result fitness is 80
+result fitness is 80
+result fitness is 80
+result fitness is 80
+result fitness is 80
+result fitness is 79
+result fitness is 78
+result fitness is 81
+result fitness is 78
+result fitness is 80
+result fitness is 75
+result fitness is 82
+result fitness is 81
+result fitness is 78
+result fitness is 78
+result fitness is 82
+result fitness is 80
+result fitness is 80
+result fitness is 78
+result fitness is 82
+result fitness is 80
+result fitness is 78
+result fitness is 78
+result fitness is 75
+result fitness is 78
+result fitness is 83
+best fitness got among generations is 83
+best chromosome indexes are  [39]
+Crossover: 5
+Mutation failed
+Mutation failed
+Mutation failed
+Mutation failed
+Mutation failed
+Mutation failed
+Mutation failed
+Mutation failed
+Mutation failed
+Mutation failed
+Mutation failed
+Mutation failed
+Mutation failed
+run index is 9 gen index is 6
+Evaluating Gen 6...
+result fitness is 83
+result fitness is 81
+result fitness is 81
+result fitness is 81
+result fitness is 81
+result fitness is 81
+result fitness is 81
+result fitness is 81
+result fitness is 81
+result fitness is 81
+result fitness is 81
+result fitness is 80
+result fitness is 80
+result fitness is 80
+result fitness is 80
+result fitness is 80
+result fitness is 80
+result fitness is 80
+result fitness is 80
+result fitness is 80
+result fitness is 80
+result fitness is 80
+result fitness is 75
+result fitness is 78
+result fitness is 78
+result fitness is 75
+result fitness is 75
+result fitness is 78
+result fitness is 78
+result fitness is 80
+result fitness is 83
+result fitness is 75
+result fitness is 79
+result fitness is 78
+result fitness is 78
+result fitness is 75
+result fitness is 80
+result fitness is 78
+result fitness is 78
+result fitness is 83
+best fitness got among generations is 83
+best chromosome indexes are  [0, 30, 39]
+Crossover: 6
+Mutation failed
+Mutation failed
+Mutation failed
+Mutation failed
+Mutation failed
+Mutation failed
+Mutation failed
+Mutation failed
+Mutation failed
+run index is 9 gen index is 7
+Evaluating Gen 7...
+result fitness is 83
+result fitness is 83
+result fitness is 83
+result fitness is 81
+result fitness is 81
+result fitness is 81
+result fitness is 81
+result fitness is 81
+result fitness is 81
+result fitness is 81
+result fitness is 81
+result fitness is 81
+result fitness is 81
+result fitness is 80
+result fitness is 80
+result fitness is 80
+result fitness is 80
+result fitness is 80
+result fitness is 80
+result fitness is 80
+result fitness is 79
+result fitness is 80
+result fitness is 80
+result fitness is 78
+result fitness is 78
+result fitness is 81
+result fitness is 78
+result fitness is 80
+result fitness is 80
+result fitness is 78
+result fitness is 78
+result fitness is 83
+result fitness is 81
+result fitness is 83
+result fitness is 81
+result fitness is 80
+result fitness is 80
+result fitness is 78
+result fitness is 79
+result fitness is 78
+best fitness got among generations is 83
+best chromosome indexes are  [0, 1, 2, 31, 33]
+Crossover: 7
+Mutation failed
+Mutation failed
+Mutation failed
+Mutation failed
+Mutation failed
+Mutation failed
+run index is 9 gen index is 8
+Evaluating Gen 8...
+result fitness is 83
+result fitness is 83
+result fitness is 83
+result fitness is 83
+result fitness is 83
+result fitness is 81
+result fitness is 81
+result fitness is 81
+result fitness is 81
+result fitness is 81
+result fitness is 81
+result fitness is 81
+result fitness is 81
+result fitness is 81
+result fitness is 81
+result fitness is 81
+result fitness is 81
+result fitness is 81
+result fitness is 80
+result fitness is 80
+result fitness is 81
+result fitness is 80
+result fitness is 80
+result fitness is 80
+result fitness is 75
+result fitness is 81
+result fitness is 81
+result fitness is 79
+result fitness is 81
+result fitness is 80
+result fitness is 80
+result fitness is 75
+result fitness is 82
+result fitness is 80
+result fitness is 78
+result fitness is 81
+result fitness is 78
+result fitness is 78
+result fitness is 78
+result fitness is 83
+best fitness got among generations is 83
+best chromosome indexes are  [0, 1, 2, 3, 4, 39]
+Crossover: 8
+Mutation failed
+Mutation failed
+Mutation failed
+Mutation failed
+Mutation failed
+Mutation failed
+Mutation failed
+Mutation failed
+Mutation failed
+Mutation failed
+Mutation failed
+Mutation failed
+run index is 9 gen index is 9
+Evaluating Gen 9...
+result fitness is 83
+result fitness is 83
+result fitness is 83
+result fitness is 83
+result fitness is 83
+result fitness is 83
+result fitness is 81
+result fitness is 81
+result fitness is 81
+result fitness is 81
+result fitness is 81
+result fitness is 81
+result fitness is 81
+result fitness is 81
+result fitness is 81
+result fitness is 81
+result fitness is 81
+result fitness is 81
+result fitness is 81
+result fitness is 81
+result fitness is 80
+result fitness is 78
+result fitness is 78
+result fitness is 75
+result fitness is 79
+result fitness is 80
+result fitness is 80
+result fitness is 80
+result fitness is 78
+result fitness is 81
+result fitness is 81
+result fitness is 78
+result fitness is 83
+result fitness is 79
+result fitness is 83
+result fitness is 75
+result fitness is 80
+result fitness is 80
+result fitness is 80
+result fitness is 83
+best fitness got among generations is 83
+best chromosome indexes are  [0, 1, 2, 3, 4, 5, 32, 34, 39]
+Crossover: 9
+Mutation failed
+Mutation failed
+Mutation failed
+Mutation failed
+Mutation failed
+Mutation failed
+Mutation failed
+Mutation failed
+Mutation failed
+Mutation failed
+Mutation failed
+Mutation failed
+run index is 9 gen index is 10
+Evaluating Gen 10...
+result fitness is 83
+result fitness is 83
+result fitness is 83
+result fitness is 83
+result fitness is 83
+result fitness is 83
+result fitness is 83
+result fitness is 83
+result fitness is 83
+result fitness is 81
+result fitness is 81
+result fitness is 81
+result fitness is 81
+result fitness is 81
+result fitness is 81
+result fitness is 81
+result fitness is 81
+result fitness is 81
+result fitness is 81
+result fitness is 81
+result fitness is 78
+result fitness is 80
+result fitness is 80
+result fitness is 81
+result fitness is 83
+result fitness is 79
+result fitness is 78
+result fitness is 81
+result fitness is 78
+result fitness is 78
+result fitness is 78
+result fitness is 81
+result fitness is 83
+result fitness is 82
+result fitness is 81
+result fitness is 81
+result fitness is 81
+result fitness is 80
+result fitness is 80
+result fitness is 81
+best fitness got among generations is 83
+best chromosome indexes are  [0, 1, 2, 3, 4, 5, 6, 7, 8, 24, 32]
+Crossover: 10
+Mutation failed
+Mutation failed
+Mutation failed
+Mutation failed
+Mutation failed
+Mutation failed
+Mutation failed
+Mutation failed
+Mutation failed
+Mutation failed
+Mutation failed
+Mutation failed
+Mutation failed
+Mutation failed
+Mutation failed
+run index is 9 gen index is 11
+Evaluating Gen 11...
+result fitness is 83
+result fitness is 83
+result fitness is 83
+result fitness is 83
+result fitness is 83
+result fitness is 83
+result fitness is 83
+result fitness is 83
+result fitness is 83
+result fitness is 83
+result fitness is 83
+result fitness is 81
+result fitness is 81
+result fitness is 81
+result fitness is 81
+result fitness is 81
+result fitness is 81
+result fitness is 81
+result fitness is 81
+result fitness is 81
+result fitness is 80
+result fitness is 80
+result fitness is 80
+result fitness is 81
+result fitness is 81
+result fitness is 81
+result fitness is 82
+result fitness is 81
+result fitness is 79
+result fitness is 81
+result fitness is 78
+result fitness is 81
+result fitness is 78
+result fitness is 81
+result fitness is 81
+result fitness is 81
+result fitness is 82
+result fitness is 83
+result fitness is 81
+result fitness is 83
+best fitness got among generations is 83
+best chromosome indexes are  [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 37, 39]
+Crossover: 11
+Mutation failed
+Mutation failed
+Mutation failed
+Mutation failed
+Mutation failed
+Mutation failed
+Mutation failed
+Mutation failed
+Mutation failed
+Mutation failed
+Mutation failed
+Mutation failed
+Mutation failed
+Mutation failed
+Mutation failed
+best fitness got among runs 100
+max fit is 100
+Likelihood of Evolution Leap:  0.08333333333333334
+Likelihood of Optimality:  1.0
+Average Fitness Value:  1.0
+rewriting to 3 /scratch1/scratch2/arlan.uy/ERSSNP_CPU_GPU_Framework/main_dir/load_directory/gpuandextra22.yaml
