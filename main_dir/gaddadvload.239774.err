@@ -1,0 +1,151 @@
+ModuleCmd_Load.c(213):ERROR:105: Unable to locate a modulefile for 'anaconda/3-5.3.1'
+ModuleCmd_Load.c(213):ERROR:105: Unable to locate a modulefile for 'python'
+>> cuda-10.1_cudnn-7.6.5 has been loaded.
+Fatal Python error: initfsencoding: Unable to get the locale encoding
+Traceback (most recent call last):
+  File "/opt/hpcc/CPU/anaconda/3-5.3.1/lib/python3.7/encodings/__init__.py", line 31, in <module>
+Fatal Python error: initfsencoding: Unable to get the locale encoding
+Traceback (most recent call last):
+  File "/opt/hpcc/CPU/anaconda/3-5.3.1/lib/python3.7/encodings/__init__.py", line 31, in <module>
+Fatal Python error: initfsencoding: Unable to get the locale encoding
+Traceback (most recent call last):
+  File "/opt/hpcc/CPU/anaconda/3-5.3.1/lib/python3.7/encodings/__init__.py", line 31, in <module>
+Fatal Python error: initfsencoding: Unable to get the locale encoding
+Traceback (most recent call last):
+  File "/opt/hpcc/CPU/anaconda/3-5.3.1/lib/python3.7/encodings/__init__.py", line 31, in <module>
+Fatal Python error: initfsencoding: Unable to get the locale encoding
+Traceback (most recent call last):
+  File "/opt/hpcc/CPU/anaconda/3-5.3.1/lib/python3.7/encodings/__init__.py", line 31, in <module>
+Fatal Python error: initfsencoding: Unable to get the locale encoding
+Traceback (most recent call last):
+  File "/opt/hpcc/CPU/anaconda/3-5.3.1/lib/python3.7/encodings/__init__.py", line 31, in <module>
+Fatal Python error: initfsencoding: Unable to get the locale encoding
+Traceback (most recent call last):
+  File "/opt/hpcc/CPU/anaconda/3-5.3.1/lib/python3.7/encodings/__init__.py", line 31, in <module>
+ModuleNotFoundError: No module named 'codecs'
+ModuleNotFoundError: No module named 'codecs'
+ModuleNotFoundError: No module named 'codecs'
+ModuleNotFoundError: No module named 'codecs'
+ModuleNotFoundError: No module named 'codecs'
+ModuleNotFoundError: No module named 'codecs'
+ModuleNotFoundError: No module named 'codecs'
+Fatal Python error: initfsencoding: Unable to get the locale encoding
+Traceback (most recent call last):
+  File "/opt/hpcc/CPU/anaconda/3-5.3.1/lib/python3.7/encodings/__init__.py", line 31, in <module>
+Fatal Python error: initfsencoding: Unable to get the locale encoding
+Traceback (most recent call last):
+  File "/opt/hpcc/CPU/anaconda/3-5.3.1/lib/python3.7/encodings/__init__.py", line 31, in <module>
+Fatal Python error: initfsencoding: Unable to get the locale encoding
+Traceback (most recent call last):
+  File "/opt/hpcc/CPU/anaconda/3-5.3.1/lib/python3.7/encodings/__init__.py", line 31, in <module>
+Fatal Python error: initfsencoding: Unable to get the locale encoding
+Traceback (most recent call last):
+  File "/opt/hpcc/CPU/anaconda/3-5.3.1/lib/python3.7/encodings/__init__.py", line 31, in <module>
+Fatal Python error: initfsencoding: Unable to get the locale encoding
+Traceback (most recent call last):
+  File "/opt/hpcc/CPU/anaconda/3-5.3.1/lib/python3.7/encodings/__init__.py", line 31, in <module>
+ModuleNotFoundError: No module named 'codecs'
+ModuleNotFoundError: No module named 'codecs'
+ModuleNotFoundError: No module named 'codecs'
+ModuleNotFoundError: No module named 'codecs'
+ModuleNotFoundError: No module named 'codecs'
+srun: error: saliksik-gpu-04: tasks 0-11: Aborted
+Fatal Python error: initfsencoding: Unable to get the locale encoding
+Traceback (most recent call last):
+  File "/opt/hpcc/CPU/anaconda/3-5.3.1/lib/python3.7/encodings/__init__.py", line 31, in <module>
+ModuleNotFoundError: No module named 'codecs'
+Fatal Python error: initfsencoding: Unable to get the locale encoding
+Traceback (most recent call last):
+  File "/opt/hpcc/CPU/anaconda/3-5.3.1/lib/python3.7/encodings/__init__.py", line 31, in <module>
+ModuleNotFoundError: No module named 'codecs'
+Fatal Python error: initfsencoding: Unable to get the locale encoding
+Traceback (most recent call last):
+  File "/opt/hpcc/CPU/anaconda/3-5.3.1/lib/python3.7/encodings/__init__.py", line 31, in <module>
+Fatal Python error: initfsencoding: Unable to get the locale encoding
+Traceback (most recent call last):
+  File "/opt/hpcc/CPU/anaconda/3-5.3.1/lib/python3.7/encodings/__init__.py", line 31, in <module>
+ModuleNotFoundError: No module named 'codecs'
+ModuleNotFoundError: No module named 'codecs'
+Fatal Python error: initfsencoding: Unable to get the locale encoding
+Traceback (most recent call last):
+  File "/opt/hpcc/CPU/anaconda/3-5.3.1/lib/python3.7/encodings/__init__.py", line 31, in <module>
+Fatal Python error: initfsencoding: Unable to get the locale encoding
+Traceback (most recent call last):
+  File "/opt/hpcc/CPU/anaconda/3-5.3.1/lib/python3.7/encodings/__init__.py", line 31, in <module>
+Fatal Python error: initfsencoding: Unable to get the locale encoding
+Traceback (most recent call last):
+  File "/opt/hpcc/CPU/anaconda/3-5.3.1/lib/python3.7/encodings/__init__.py", line 31, in <module>
+Fatal Python error: initfsencoding: Unable to get the locale encoding
+Traceback (most recent call last):
+  File "/opt/hpcc/CPU/anaconda/3-5.3.1/lib/python3.7/encodings/__init__.py", line 31, in <module>
+Fatal Python error: initfsencoding: Unable to get the locale encoding
+Traceback (most recent call last):
+  File "/opt/hpcc/CPU/anaconda/3-5.3.1/lib/python3.7/encodings/__init__.py", line 31, in <module>
+Fatal Python error: initfsencoding: Unable to get the locale encoding
+Fatal Python error: initfsencoding: Unable to get the locale encoding
+Traceback (most recent call last):
+  File "/opt/hpcc/CPU/anaconda/3-5.3.1/lib/python3.7/encodings/__init__.py", line 31, in <module>
+Traceback (most recent call last):
+Fatal Python error: initfsencoding: Unable to get the locale encoding
+Traceback (most recent call last):
+  File "/opt/hpcc/CPU/anaconda/3-5.3.1/lib/python3.7/encodings/__init__.py", line 31, in <module>
+  File "/opt/hpcc/CPU/anaconda/3-5.3.1/lib/python3.7/encodings/__init__.py", line 31, in <module>
+ModuleNotFoundError: No module named 'codecs'
+ModuleNotFoundError: No module named 'codecs'
+ModuleNotFoundError: No module named 'codecs'
+ModuleNotFoundError: No module named 'codecs'
+ModuleNotFoundError: No module named 'codecs'
+ModuleNotFoundError: No module named 'codecs'
+ModuleNotFoundError: No module named 'codecs'
+ModuleNotFoundError: No module named 'codecs'
+srun: error: saliksik-gpu-04: tasks 0-11: Aborted
+Fatal Python error: initfsencoding: Unable to get the locale encoding
+Traceback (most recent call last):
+  File "/opt/hpcc/CPU/anaconda/3-5.3.1/lib/python3.7/encodings/__init__.py", line 31, in <module>
+Fatal Python error: initfsencoding: Unable to get the locale encoding
+Traceback (most recent call last):
+  File "/opt/hpcc/CPU/anaconda/3-5.3.1/lib/python3.7/encodings/__init__.py", line 31, in <module>
+Fatal Python error: initfsencoding: Unable to get the locale encoding
+Traceback (most recent call last):
+  File "/opt/hpcc/CPU/anaconda/3-5.3.1/lib/python3.7/encodings/__init__.py", line 31, in <module>
+ModuleNotFoundError: No module named 'codecs'
+Fatal Python error: initfsencoding: Unable to get the locale encoding
+Traceback (most recent call last):
+  File "/opt/hpcc/CPU/anaconda/3-5.3.1/lib/python3.7/encodings/__init__.py", line 31, in <module>
+Fatal Python error: initfsencoding: Unable to get the locale encoding
+Traceback (most recent call last):
+  File "/opt/hpcc/CPU/anaconda/3-5.3.1/lib/python3.7/encodings/__init__.py", line 31, in <module>
+Fatal Python error: initfsencoding: Unable to get the locale encoding
+Traceback (most recent call last):
+  File "/opt/hpcc/CPU/anaconda/3-5.3.1/lib/python3.7/encodings/__init__.py", line 31, in <module>
+ModuleNotFoundError: No module named 'codecs'
+Fatal Python error: initfsencoding: Unable to get the locale encoding
+Traceback (most recent call last):
+  File "/opt/hpcc/CPU/anaconda/3-5.3.1/lib/python3.7/encodings/__init__.py", line 31, in <module>
+ModuleNotFoundError: No module named 'codecs'
+ModuleNotFoundError: No module named 'codecs'
+ModuleNotFoundError: No module named 'codecs'
+ModuleNotFoundError: No module named 'codecs'
+ModuleNotFoundError: No module named 'codecs'
+srun: error: saliksik-gpu-04: tasks 0,3-5,7,9,11: Aborted
+Fatal Python error: initfsencoding: Unable to get the locale encoding
+Traceback (most recent call last):
+  File "/opt/hpcc/CPU/anaconda/3-5.3.1/lib/python3.7/encodings/__init__.py", line 31, in <module>
+Fatal Python error: initfsencoding: Unable to get the locale encoding
+Traceback (most recent call last):
+  File "/opt/hpcc/CPU/anaconda/3-5.3.1/lib/python3.7/encodings/__init__.py", line 31, in <module>
+Fatal Python error: initfsencoding: Unable to get the locale encoding
+Traceback (most recent call last):
+  File "/opt/hpcc/CPU/anaconda/3-5.3.1/lib/python3.7/encodings/__init__.py", line 31, in <module>
+Fatal Python error: initfsencoding: Unable to get the locale encoding
+Traceback (most recent call last):
+  File "/opt/hpcc/CPU/anaconda/3-5.3.1/lib/python3.7/encodings/__init__.py", line 31, in <module>
+Fatal Python error: initfsencoding: Unable to get the locale encoding
+Traceback (most recent call last):
+  File "/opt/hpcc/CPU/anaconda/3-5.3.1/lib/python3.7/encodings/__init__.py", line 31, in <module>
+ModuleNotFoundError: No module named 'codecs'
+ModuleNotFoundError: No module named 'codecs'
+ModuleNotFoundError: No module named 'codecs'
+ModuleNotFoundError: No module named 'codecs'
+ModuleNotFoundError: No module named 'codecs'
+srun: error: saliksik-gpu-04: tasks 1-2,6,8,10: Aborted

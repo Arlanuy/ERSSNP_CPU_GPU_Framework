@@ -1,16 +1,8 @@
 import os, yaml, sys
 
-filename = os.path.join(os.getcwd(), 'timer_directory')
-filename = os.path.join(filename, sys.argv[11])
-
-timer_params = {}
-timer_params['run_indexes'] = {}
-
 def conf_save(filename, timer_params):
     with open(filename, 'w+') as out:
         doc = yaml.safe_dump(timer_params, out)
-
-if not os.path.exists(filename):
     conf_save(filename, timer_params)
 
 def conf_load(filename):
@@ -20,6 +12,18 @@ def conf_load(filename):
         except yaml.YAMLError as exc:
             print(exc)
     return timer_params
+
+
+if len(sys.argv) >= 11:
+	filename = os.path.join(os.getcwd(), 'timer_directory')
+	
+	filename = os.path.join(filename, sys.argv[11])
+		
+	timer_params = {}
+	timer_params['run_indexes'] = {}
+	
+	if not os.path.exists(filename):
+	  conf_save(filename, timer_params)
 
 
 run_index_state = 0

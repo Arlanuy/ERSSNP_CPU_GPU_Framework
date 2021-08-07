@@ -1,0 +1,116 @@
+ModuleCmd_Load.c(213):ERROR:105: Unable to locate a modulefile for 'anaconda/3-5.3.1'
+ModuleCmd_Load.c(213):ERROR:105: Unable to locate a modulefile for 'python'
+>> cuda-10.1_cudnn-7.6.5 has been loaded.
+Fatal Python error: initfsencoding: Unable to get the locale encoding
+ModuleNotFoundError: No module named 'encodings'
+
+Current thread 0x00002b404d010ec0 (most recent call first):
+Fatal Python error: initfsencoding: Unable to get the locale encoding
+Fatal Python error: initfsencoding: Unable to get the locale encoding
+ModuleNotFoundError: No module named 'encodings'
+
+Current thread 0x00002b3fd6536ec0 (most recent call first):
+ModuleNotFoundError: No module named 'encodings'
+
+Fatal Python error: initfsencoding: Unable to get the locale encoding
+ModuleNotFoundError: No module named 'encodings'
+
+Current thread 0x00002b26c307fec0 (most recent call first):
+Current thread 0x00002b4b29c8dec0 (most recent call first):
+Fatal Python error: initfsencoding: Unable to get the locale encoding
+ModuleNotFoundError: No module named 'encodings'
+
+Current thread 0x00002b563c3e8ec0 (most recent call first):
+Fatal Python error: initfsencoding: Unable to get the locale encoding
+ModuleNotFoundError: No module named 'encodings'
+
+Current thread 0x00002b21d06a0ec0 (most recent call first):
+Fatal Python error: initfsencoding: Unable to get the locale encoding
+ModuleNotFoundError: No module named 'encodings'
+
+Current thread 0x00002ab9a18f3ec0 (most recent call first):
+Fatal Python error: initfsencoding: Unable to get the locale encoding
+ModuleNotFoundError: No module named 'encodings'
+
+Current thread 0x00002ba7681a8ec0 (most recent call first):
+Fatal Python error: initfsencoding: Unable to get the locale encoding
+ModuleNotFoundError: No module named 'encodings'
+
+Current thread 0x00002b9f177daec0 (most recent call first):
+Fatal Python error: initfsencoding: Unable to get the locale encoding
+ModuleNotFoundError: No module named 'encodings'
+
+Current thread 0x00002b55aff8cec0 (most recent call first):
+Fatal Python error: initfsencoding: Unable to get the locale encoding
+ModuleNotFoundError: No module named 'encodings'
+
+Current thread 0x00002ace48efeec0 (most recent call first):
+Fatal Python error: initfsencoding: Unable to get the locale encoding
+ModuleNotFoundError: No module named 'encodings'
+
+Current thread 0x00002b2263313ec0 (most recent call first):
+srun: error: saliksik-gpu-05: tasks 0-11: Aborted
+/usr/bin/python: No module named pip
+/usr/bin/python: No module named pip
+/usr/bin/python: No module named pip
+/usr/bin/python: No module named pip
+/usr/bin/python: No module named pip
+/usr/bin/python: No module named pip
+srun: error: saliksik-gpu-05: tasks 0-1,4-6,11: Exited with exit code 1
+/usr/bin/python: No module named pip
+/usr/bin/python: No module named pip
+/usr/bin/python: No module named pip
+/usr/bin/python: No module named pip
+/usr/bin/python: No module named pip
+/usr/bin/python: No module named pip
+srun: error: saliksik-gpu-05: tasks 2-3,7-10: Exited with exit code 1
+Traceback (most recent call last):
+  File "main.py", line 1, in <module>
+    from src.experimenter_uncommented import gaframework, gaframework_gpu
+ImportError: No module named src.experimenter_uncommented
+Traceback (most recent call last):
+  File "main.py", line 1, in <module>
+    from src.experimenter_uncommented import gaframework, gaframework_gpu
+ImportError: No module named src.experimenter_uncommented
+Traceback (most recent call last):
+  File "main.py", line 1, in <module>
+    from src.experimenter_uncommented import gaframework, gaframework_gpu
+ImportError: No module named src.experimenter_uncommented
+Traceback (most recent call last):
+  File "main.py", line 1, in <module>
+    from src.experimenter_uncommented import gaframework, gaframework_gpu
+ImportError: No module named src.experimenter_uncommented
+Traceback (most recent call last):
+  File "main.py", line 1, in <module>
+    from src.experimenter_uncommented import gaframework, gaframework_gpu
+ImportError: No module named src.experimenter_uncommented
+Traceback (most recent call last):
+  File "main.py", line 1, in <module>
+    from src.experimenter_uncommented import gaframework, gaframework_gpu
+ImportError: No module named src.experimenter_uncommented
+Traceback (most recent call last):
+  File "main.py", line 1, in <module>
+    from src.experimenter_uncommented import gaframework, gaframework_gpu
+ImportError: No module named src.experimenter_uncommented
+srun: error: saliksik-gpu-05: tasks 0-2,4-5,7,10: Exited with exit code 1
+Traceback (most recent call last):
+  File "main.py", line 1, in <module>
+    from src.experimenter_uncommented import gaframework, gaframework_gpu
+ImportError: No module named src.experimenter_uncommented
+Traceback (most recent call last):
+  File "main.py", line 1, in <module>
+    from src.experimenter_uncommented import gaframework, gaframework_gpu
+ImportError: No module named src.experimenter_uncommented
+Traceback (most recent call last):
+  File "main.py", line 1, in <module>
+    from src.experimenter_uncommented import gaframework, gaframework_gpu
+ImportError: No module named src.experimenter_uncommented
+Traceback (most recent call last):
+  File "main.py", line 1, in <module>
+    from src.experimenter_uncommented import gaframework, gaframework_gpu
+ImportError: No module named src.experimenter_uncommented
+Traceback (most recent call last):
+  File "main.py", line 1, in <module>
+    from src.experimenter_uncommented import gaframework, gaframework_gpu
+ImportError: No module named src.experimenter_uncommented
+srun: error: saliksik-gpu-05: tasks 3,6,8-9,11: Exited with exit code 1
