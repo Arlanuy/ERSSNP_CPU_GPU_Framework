@@ -2235,3 +2235,461 @@ result fitness is 44
 result fitness is 100
 result fitness is 100
 result fitness is 44
+result fitness is 72
+result fitness is 68
+result fitness is 72
+result fitness is 68
+result fitness is 44
+best fitness got among generations is 100
+best chromosome indexes are  [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 28, 29, 32, 33]
+Crossover: 6
+Mutation failed
+Mutation failed
+Mutation failed
+Mutation failed
+Mutation failed
+Mutation failed
+Mutation failed
+Mutation failed
+Mutation failed
+Mutation failed
+run index is 7 gen index is 7
+Evaluating Gen 7...
+result fitness is 100
+result fitness is 100
+result fitness is 100
+result fitness is 100
+result fitness is 100
+result fitness is 100
+result fitness is 100
+result fitness is 100
+result fitness is 100
+result fitness is 100
+result fitness is 100
+result fitness is 100
+result fitness is 100
+result fitness is 100
+result fitness is 100
+result fitness is 100
+result fitness is 100
+result fitness is 100
+result fitness is 100
+result fitness is 100
+result fitness is 68
+result fitness is 44
+result fitness is 100
+result fitness is 100
+result fitness is 100
+result fitness is 100
+result fitness is 44
+result fitness is 72
+result fitness is 100
+result fitness is 100
+result fitness is 100
+result fitness is 100
+result fitness is 44
+result fitness is 72
+result fitness is 68
+result fitness is 72
+result fitness is 44
+result fitness is 72
+result fitness is 100
+result fitness is 100
+best fitness got among generations is 100
+best chromosome indexes are  [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 22, 23, 24, 25, 28, 29, 30, 31, 38, 39]
+Crossover: 7
+Mutation failed
+Mutation failed
+Mutation failed
+Mutation failed
+Mutation failed
+Mutation failed
+Mutation failed
+Mutation failed
+Mutation failed
+Mutation failed
+Mutation failed
+Mutation failed
+run index is 7 gen index is 8
+Evaluating Gen 8...
+result fitness is 100
+result fitness is 100
+result fitness is 100
+result fitness is 100
+result fitness is 100
+result fitness is 100
+result fitness is 100
+result fitness is 100
+result fitness is 100
+result fitness is 100
+result fitness is 100
+result fitness is 100
+result fitness is 100
+result fitness is 100
+result fitness is 100
+result fitness is 100
+result fitness is 100
+result fitness is 100
+result fitness is 100
+result fitness is 100
+result fitness is 100
+result fitness is 100
+result fitness is 100
+result fitness is 100
+result fitness is 68
+result fitness is 44
+result fitness is 100
+result fitness is 100
+result fitness is 44
+result fitness is 72
+result fitness is 100
+result fitness is 100
+result fitness is 100
+result fitness is 100
+result fitness is 100
+result fitness is 100
+result fitness is 100
+result fitness is 100
+result fitness is 44
+result fitness is 72
+best fitness got among generations is 100
+best chromosome indexes are  [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 26, 27, 30, 31, 32, 33, 34, 35, 36, 37]
+Crossover: 8
+Mutation failed
+Mutation failed
+Mutation failed
+Mutation failed
+Mutation failed
+Mutation failed
+Mutation failed
+Mutation failed
+Mutation failed
+Mutation failed
+Mutation failed
+Mutation failed
+Mutation failed
+Mutation failed
+run index is 7 gen index is 9
+Evaluating Gen 9...
+result fitness is 100
+result fitness is 100
+result fitness is 100
+result fitness is 100
+result fitness is 100
+result fitness is 100
+result fitness is 100
+result fitness is 100
+result fitness is 100
+result fitness is 100
+result fitness is 100
+result fitness is 100
+result fitness is 100
+result fitness is 100
+result fitness is 100
+result fitness is 100
+result fitness is 100
+result fitness is 100
+result fitness is 100
+result fitness is 100
+result fitness is 44
+result fitness is 72
+result fitness is 68
+result fitness is 72
+result fitness is 100
+result fitness is 100
+result fitness is 100
+result fitness is 100
+result fitness is 72
+result fitness is 68
+result fitness is 72
+result fitness is 68
+result fitness is 100
+result fitness is 100
+result fitness is 44
+result fitness is 68
+result fitness is 44
+result fitness is 72
+result fitness is 68
+result fitness is 72
+best fitness got among generations is 100
+best chromosome indexes are  [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 24, 25, 26, 27, 32, 33]
+Crossover: 9
+Mutation failed
+Mutation failed
+Mutation failed
+Mutation failed
+Mutation failed
+Mutation failed
+Mutation failed
+Mutation failed
+Mutation failed
+Mutation failed
+Mutation failed
+Mutation failed
+Mutation failed
+Mutation failed
+Mutation failed
+Mutation failed
+Mutation failed
+run index is 7 gen index is 10
+Evaluating Gen 10...
+result fitness is 100
+result fitness is 100
+result fitness is 100
+result fitness is 100
+result fitness is 100
+result fitness is 100
+result fitness is 100
+result fitness is 100
+result fitness is 100
+result fitness is 100
+result fitness is 100
+result fitness is 100
+result fitness is 100
+result fitness is 100
+result fitness is 100
+result fitness is 100
+result fitness is 100
+result fitness is 100
+result fitness is 100
+result fitness is 100
+result fitness is 44
+result fitness is 72
+result fitness is 44
+result fitness is 68
+result fitness is 100
+result fitness is 100
+result fitness is 72
+result fitness is 68
+result fitness is 68
+result fitness is 44
+result fitness is 100
+result fitness is 100
+result fitness is 44
+result fitness is 68
+result fitness is 68
+result fitness is 44
+result fitness is 100
+result fitness is 100
+result fitness is 44
+result fitness is 68
+best fitness got among generations is 100
+best chromosome indexes are  [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 24, 25, 30, 31, 36, 37]
+Crossover: 10
+Mutation failed
+Mutation failed
+Mutation failed
+Mutation failed
+Mutation failed
+Mutation failed
+run index is 7 gen index is 11
+Evaluating Gen 11...
+result fitness is 100
+result fitness is 100
+result fitness is 100
+result fitness is 100
+result fitness is 100
+result fitness is 100
+result fitness is 100
+result fitness is 100
+result fitness is 100
+result fitness is 100
+result fitness is 100
+result fitness is 100
+result fitness is 100
+result fitness is 100
+result fitness is 100
+result fitness is 100
+result fitness is 100
+result fitness is 100
+result fitness is 100
+result fitness is 100
+result fitness is 68
+result fitness is 44
+result fitness is 44
+result fitness is 68
+result fitness is 44
+result fitness is 68
+result fitness is 100
+result fitness is 100
+result fitness is 100
+result fitness is 100
+result fitness is 100
+result fitness is 100
+result fitness is 100
+result fitness is 100
+result fitness is 68
+result fitness is 44
+result fitness is 100
+result fitness is 100
+result fitness is 100
+result fitness is 100
+best fitness got among generations is 100
+best chromosome indexes are  [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 26, 27, 28, 29, 30, 31, 32, 33, 36, 37, 38, 39]
+Crossover: 11
+Mutation failed
+Mutation failed
+Mutation failed
+Mutation failed
+Mutation failed
+Mutation failed
+Mutation failed
+Mutation failed
+Mutation failed
+Mutation failed
+Mutation failed
+Mutation failed
+Mutation failed
+Mutation failed
+Mutation failed
+Mutation failed
+Mutation failed
+best fitness got among runs 100
+Run index # 8
+initialized at run  8
+Continuing using the run,generation number  0,0
+run index is 8 gen index is 0
+Evaluating Gen 0...
+result fitness is 100
+result fitness is 100
+result fitness is 100
+result fitness is 100
+result fitness is 100
+result fitness is 100
+result fitness is 100
+result fitness is 100
+result fitness is 100
+result fitness is 100
+result fitness is 100
+result fitness is 100
+result fitness is 100
+result fitness is 100
+result fitness is 100
+result fitness is 100
+result fitness is 100
+result fitness is 100
+result fitness is 100
+result fitness is 100
+result fitness is 100
+result fitness is 100
+result fitness is 100
+result fitness is 100
+result fitness is 100
+result fitness is 100
+result fitness is 100
+result fitness is 100
+result fitness is 100
+result fitness is 100
+result fitness is 100
+result fitness is 100
+result fitness is 100
+result fitness is 100
+result fitness is 100
+result fitness is 100
+result fitness is 100
+result fitness is 100
+result fitness is 100
+result fitness is 100
+best fitness got among generations is 100
+best chromosome indexes are  [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39]
+Crossover: 0
+Mutation failed
+Mutation failed
+Mutation failed
+Mutation failed
+Mutation failed
+Mutation failed
+Mutation failed
+Mutation failed
+Mutation failed
+Mutation failed
+Mutation failed
+Mutation failed
+Mutation failed
+run index is 8 gen index is 1
+Evaluating Gen 1...
+result fitness is 100
+result fitness is 100
+result fitness is 100
+result fitness is 100
+result fitness is 100
+result fitness is 100
+result fitness is 100
+result fitness is 100
+result fitness is 100
+result fitness is 100
+result fitness is 100
+result fitness is 100
+result fitness is 100
+result fitness is 100
+result fitness is 100
+result fitness is 100
+result fitness is 100
+result fitness is 100
+result fitness is 100
+result fitness is 100
+result fitness is 100
+result fitness is 100
+result fitness is 100
+result fitness is 100
+result fitness is 100
+result fitness is 100
+result fitness is 68
+result fitness is 72
+result fitness is 44
+result fitness is 72
+result fitness is 68
+result fitness is 72
+result fitness is 100
+result fitness is 100
+result fitness is 68
+result fitness is 44
+result fitness is 100
+result fitness is 100
+result fitness is 100
+result fitness is 100
+best fitness got among generations is 100
+best chromosome indexes are  [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 32, 33, 36, 37, 38, 39]
+Crossover: 1
+Mutation failed
+Mutation failed
+Mutation failed
+Mutation failed
+Mutation failed
+Mutation failed
+Mutation failed
+Mutation failed
+Mutation failed
+Mutation failed
+Mutation failed
+Mutation failed
+Mutation failed
+Mutation failed
+Mutation failed
+Mutation failed
+Mutation failed
+Mutation failed
+run index is 8 gen index is 2
+Evaluating Gen 2...
+result fitness is 100
+result fitness is 100
+result fitness is 100
+result fitness is 100
+result fitness is 100
+result fitness is 100
+result fitness is 100
+result fitness is 100
+result fitness is 100
+result fitness is 100
+result fitness is 100
+result fitness is 100
+result fitness is 100
+result fitness is 100
+result fitness is 100
+result fitness is 100
+result fitness is 100
+result fitness is 100
+result fitness is 100
+result fitness is 100
+result fitness is 72
+result fitness is 68

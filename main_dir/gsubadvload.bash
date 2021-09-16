@@ -32,4 +32,4 @@ ulimit -s unlimited
 # MAIN 
 srun python -m pip install --user --upgrade pip
 srun python -m pip install --user -r requirements.txt
-srun python main.py 2 2 5 cpusubadversarial11.yaml gpusubadversarial11.yaml gpusubadversarial11outreal.yaml
+srun python main.py 2 2 2 4gpusubadversarial11.yaml 5gpusubadversarial11.yaml 5gpusubadversarial11outreal.yaml

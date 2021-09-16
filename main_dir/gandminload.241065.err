@@ -1,0 +1,160 @@
+>> anaconda-3-5.3.1 has been loaded.
+>> python-3.8.2 has been loaded.
+>> cuda-10.1_cudnn-7.6.5 has been loaded.
+Traceback (most recent call last):
+  File "main.py", line 303, in <module>
+    main()
+  File "main.py", line 301, in main
+    program_main(sys.argv)
+  File "main.py", line 276, in program_main
+    continue_create_empty_yaml(newloadfile_name)
+  File "main.py", line 39, in continue_create_empty_yaml
+    ga_params = conf_load(savefile_name)
+  File "main.py", line 15, in conf_load
+    return ga_params
+UnboundLocalError: local variable 'ga_params' referenced before assignment
+Traceback (most recent call last):
+  File "main.py", line 303, in <module>
+    main()
+  File "main.py", line 301, in main
+    program_main(sys.argv)
+  File "main.py", line 276, in program_main
+    continue_create_empty_yaml(newloadfile_name)
+  File "main.py", line 39, in continue_create_empty_yaml
+    ga_params = conf_load(savefile_name)
+  File "main.py", line 15, in conf_load
+    return ga_params
+UnboundLocalError: local variable 'ga_params' referenced before assignment
+srun: error: saliksik-gpu-03: tasks 4,8: Exited with exit code 1
+Traceback (most recent call last):
+  File "main.py", line 303, in <module>
+    main()
+  File "main.py", line 301, in main
+    program_main(sys.argv)
+  File "main.py", line 276, in program_main
+    continue_create_empty_yaml(newloadfile_name)
+  File "main.py", line 42, in continue_create_empty_yaml
+    for i in range(run_start, ga_params['run_total'] + ga_params['runs_pending']):
+KeyError: 'runs_pending'
+Traceback (most recent call last):
+  File "main.py", line 303, in <module>
+    main()
+  File "main.py", line 301, in main
+    program_main(sys.argv)
+  File "main.py", line 276, in program_main
+    continue_create_empty_yaml(newloadfile_name)
+  File "main.py", line 42, in continue_create_empty_yaml
+    for i in range(run_start, ga_params['run_total'] + ga_params['runs_pending']):
+KeyError: 'runs_pending'
+Traceback (most recent call last):
+  File "main.py", line 303, in <module>
+    main()
+  File "main.py", line 301, in main
+    program_main(sys.argv)
+  File "main.py", line 276, in program_main
+    continue_create_empty_yaml(newloadfile_name)
+  File "main.py", line 42, in continue_create_empty_yaml
+    for i in range(run_start, ga_params['run_total'] + ga_params['runs_pending']):
+KeyError: 'runs_pending'
+srun: error: saliksik-gpu-03: task 1: Exited with exit code 1
+Traceback (most recent call last):
+  File "main.py", line 303, in <module>
+    main()
+  File "main.py", line 301, in main
+    program_main(sys.argv)
+  File "main.py", line 276, in program_main
+    continue_create_empty_yaml(newloadfile_name)
+  File "main.py", line 42, in continue_create_empty_yaml
+    for i in range(run_start, ga_params['run_total'] + ga_params['runs_pending']):
+KeyError: 'runs_pending'
+Traceback (most recent call last):
+  File "main.py", line 303, in <module>
+    main()
+  File "main.py", line 301, in main
+    program_main(sys.argv)
+  File "main.py", line 276, in program_main
+    continue_create_empty_yaml(newloadfile_name)
+  File "main.py", line 42, in continue_create_empty_yaml
+    for i in range(run_start, ga_params['run_total'] + ga_params['runs_pending']):
+KeyError: 'runs_pending'
+srun: error: saliksik-gpu-03: tasks 3,7,9-10: Exited with exit code 1
+Traceback (most recent call last):
+  File "main.py", line 303, in <module>
+    main()
+  File "main.py", line 301, in main
+    program_main(sys.argv)
+  File "main.py", line 278, in program_main
+    run_total = ga_params['run_total'] + ga_params['runs_pending']
+KeyError: 'runs_pending'
+srun: error: saliksik-gpu-03: task 6: Exited with exit code 1
+Traceback (most recent call last):
+  File "main.py", line 303, in <module>
+    main()
+  File "main.py", line 301, in main
+    program_main(sys.argv)
+  File "main.py", line 278, in program_main
+    run_total = ga_params['run_total'] + ga_params['runs_pending']
+KeyError: 'runs_pending'
+Traceback (most recent call last):
+  File "main.py", line 303, in <module>
+    main()
+  File "main.py", line 301, in main
+    program_main(sys.argv)
+  File "main.py", line 278, in program_main
+    run_total = ga_params['run_total'] + ga_params['runs_pending']
+KeyError: 'runs_pending'
+srun: error: saliksik-gpu-03: tasks 0,11: Exited with exit code 1
+Traceback (most recent call last):
+  File "main.py", line 303, in <module>
+    main()
+  File "main.py", line 301, in main
+    program_main(sys.argv)
+  File "main.py", line 288, in program_main
+    gaframework_gpu(newloadfile_name)
+  File "/scratch1/scratch2/arlan.uy/ERSSNP_CPU_GPU_Framework/main_dir/src/experimenter_uncommented.py", line 34, in gaframework_gpu
+    execute_experiment_gpu(ga, gaeval, ga_params, loadfile_name)
+  File "/scratch1/scratch2/arlan.uy/ERSSNP_CPU_GPU_Framework/main_dir/src/experimenter_uncommented.py", line 63, in execute_experiment_gpu
+    gaeval.run(ga, rssnp, stats_run['population_size'], stats_run['fitness_function'],  gaeval.no_of_run, gaeval.no_of_gen, stats_run['mutation_rate'], loadfile_name, stats_run['selection_func'], start_new, start_from_gen)
+  File "/scratch1/scratch2/arlan.uy/ERSSNP_CPU_GPU_Framework/main_dir/src/abstracts/GAevaluator_integ.py", line 38, in run
+    run_fitness = genetic_algo.simulate(system, size, function, generations, mutation_rate, path_name, run, selection_func, start_from_gen)            
+  File "/scratch1/scratch2/arlan.uy/ERSSNP_CPU_GPU_Framework/main_dir/src/abstracts/geneticalgo_integ_gpu.py", line 438, in simulate
+    self.evaluate(chrom, ga_params, fitness_func, selection_func)
+  File "/scratch1/scratch2/arlan.uy/ERSSNP_CPU_GPU_Framework/main_dir/src/abstracts/geneticalgo_integ_gpu.py", line 382, in evaluate
+    chromosome['fitness'] += int(self.assign_fitness(chromosome['out_pairs'][z][1], chromosome['out_pairs'][z][0], fitness_func, len_dataset)/minlen*100)
+  File "/scratch1/scratch2/arlan.uy/ERSSNP_CPU_GPU_Framework/main_dir/src/abstracts/geneticalgo_integ_gpu.py", line 74, in assign_fitness
+    result = GPUlcs(output_dataset, output_spike_train, len_dataset)
+  File "/scratch1/scratch2/arlan.uy/ERSSNP_CPU_GPU_Framework/main_dir/src/abstracts/gpu_fitness.py", line 76, in GPUlcs
+    timer_write("Evaluate", timer_gpu.time())
+  File "/scratch1/scratch2/arlan.uy/ERSSNP_CPU_GPU_Framework/main_dir/src/abstracts/gpu_timer.py", line 29, in timer_write
+    timer_params = conf_load(filename)
+  File "/scratch1/scratch2/arlan.uy/ERSSNP_CPU_GPU_Framework/main_dir/src/abstracts/gpu_timer.py", line 13, in conf_load
+    return timer_params
+UnboundLocalError: local variable 'timer_params' referenced before assignment
+Traceback (most recent call last):
+  File "main.py", line 303, in <module>
+    main()
+  File "main.py", line 301, in main
+    program_main(sys.argv)
+  File "main.py", line 288, in program_main
+    gaframework_gpu(newloadfile_name)
+  File "/scratch1/scratch2/arlan.uy/ERSSNP_CPU_GPU_Framework/main_dir/src/experimenter_uncommented.py", line 34, in gaframework_gpu
+    execute_experiment_gpu(ga, gaeval, ga_params, loadfile_name)
+  File "/scratch1/scratch2/arlan.uy/ERSSNP_CPU_GPU_Framework/main_dir/src/experimenter_uncommented.py", line 63, in execute_experiment_gpu
+    gaeval.run(ga, rssnp, stats_run['population_size'], stats_run['fitness_function'],  gaeval.no_of_run, gaeval.no_of_gen, stats_run['mutation_rate'], loadfile_name, stats_run['selection_func'], start_new, start_from_gen)
+  File "/scratch1/scratch2/arlan.uy/ERSSNP_CPU_GPU_Framework/main_dir/src/abstracts/GAevaluator_integ.py", line 38, in run
+    run_fitness = genetic_algo.simulate(system, size, function, generations, mutation_rate, path_name, run, selection_func, start_from_gen)            
+  File "/scratch1/scratch2/arlan.uy/ERSSNP_CPU_GPU_Framework/main_dir/src/abstracts/geneticalgo_integ_gpu.py", line 438, in simulate
+    self.evaluate(chrom, ga_params, fitness_func, selection_func)
+  File "/scratch1/scratch2/arlan.uy/ERSSNP_CPU_GPU_Framework/main_dir/src/abstracts/geneticalgo_integ_gpu.py", line 382, in evaluate
+    chromosome['fitness'] += int(self.assign_fitness(chromosome['out_pairs'][z][1], chromosome['out_pairs'][z][0], fitness_func, len_dataset)/minlen*100)
+  File "/scratch1/scratch2/arlan.uy/ERSSNP_CPU_GPU_Framework/main_dir/src/abstracts/geneticalgo_integ_gpu.py", line 74, in assign_fitness
+    result = GPUlcs(output_dataset, output_spike_train, len_dataset)
+  File "/scratch1/scratch2/arlan.uy/ERSSNP_CPU_GPU_Framework/main_dir/src/abstracts/gpu_fitness.py", line 76, in GPUlcs
+    timer_write("Evaluate", timer_gpu.time())
+  File "/scratch1/scratch2/arlan.uy/ERSSNP_CPU_GPU_Framework/main_dir/src/abstracts/gpu_timer.py", line 29, in timer_write
+    timer_params = conf_load(filename)
+  File "/scratch1/scratch2/arlan.uy/ERSSNP_CPU_GPU_Framework/main_dir/src/abstracts/gpu_timer.py", line 13, in conf_load
+    return timer_params
+UnboundLocalError: local variable 'timer_params' referenced before assignment
+srun: error: saliksik-gpu-03: task 5: Exited with exit code 1
+srun: error: saliksik-gpu-03: task 2: Exited with exit code 1

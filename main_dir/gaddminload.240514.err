@@ -114,3 +114,33 @@ Traceback (most recent call last):
 KeyError: 'runs_pending'
 srun: error: saliksik-gpu-03: task 8: Exited with exit code 1
 srun: error: saliksik-gpu-03: tasks 4,7: Exited with exit code 1
+Traceback (most recent call last):
+  File "main.py", line 303, in <module>
+    main()
+  File "main.py", line 301, in main
+    program_main(sys.argv)
+  File "main.py", line 288, in program_main
+    gaframework_gpu(newloadfile_name)
+  File "/scratch1/scratch2/arlan.uy/ERSSNP_CPU_GPU_Framework/main_dir/src/experimenter_uncommented.py", line 34, in gaframework_gpu
+    execute_experiment_gpu(ga, gaeval, ga_params, loadfile_name)
+  File "/scratch1/scratch2/arlan.uy/ERSSNP_CPU_GPU_Framework/main_dir/src/experimenter_uncommented.py", line 63, in execute_experiment_gpu
+    gaeval.run(ga, rssnp, stats_run['population_size'], stats_run['fitness_function'],  gaeval.no_of_run, gaeval.no_of_gen, stats_run['mutation_rate'], loadfile_name, stats_run['selection_func'], start_new, start_from_gen)
+  File "/scratch1/scratch2/arlan.uy/ERSSNP_CPU_GPU_Framework/main_dir/src/abstracts/GAevaluator_integ.py", line 38, in run
+    run_fitness = genetic_algo.simulate(system, size, function, generations, mutation_rate, path_name, run, selection_func, start_from_gen)            
+  File "/scratch1/scratch2/arlan.uy/ERSSNP_CPU_GPU_Framework/main_dir/src/abstracts/geneticalgo_integ_gpu.py", line 438, in simulate
+    self.evaluate(chrom, ga_params, fitness_func, selection_func)
+  File "/scratch1/scratch2/arlan.uy/ERSSNP_CPU_GPU_Framework/main_dir/src/abstracts/geneticalgo_integ_gpu.py", line 382, in evaluate
+    chromosome['fitness'] += int(self.assign_fitness(chromosome['out_pairs'][z][1], chromosome['out_pairs'][z][0], fitness_func, len_dataset)/minlen*100)
+  File "/scratch1/scratch2/arlan.uy/ERSSNP_CPU_GPU_Framework/main_dir/src/abstracts/geneticalgo_integ_gpu.py", line 74, in assign_fitness
+    result = GPUlcs(output_dataset, output_spike_train, len_dataset)
+  File "/scratch1/scratch2/arlan.uy/ERSSNP_CPU_GPU_Framework/main_dir/src/abstracts/gpu_fitness.py", line 49, in GPUlcs
+    """)
+  File "/home/arlan.uy/.local/lib/python3.7/site-packages/pycuda/compiler.py", line 291, in __init__
+  File "/home/arlan.uy/.local/lib/python3.7/site-packages/pycuda/compiler.py", line 254, in compile
+  File "/home/arlan.uy/.local/lib/python3.7/site-packages/pycuda/compiler.py", line 78, in compile_plain
+  File "/home/arlan.uy/.local/lib/python3.7/site-packages/pycuda/compiler.py", line 55, in preprocess_source
+pycuda.driver.CompileError: nvcc preprocessing of /tmp/tmp1_vn994u.cu failed
+[command: nvcc --preprocess -arch sm_61 -I/share/home/arlan.uy/.local/lib/python3.7/site-packages/pycuda/cuda /tmp/tmp1_vn994u.cu --compiler-options -P]
+[stderr:
+b'In file included from <command-line>:0:0:\n/opt/hpcc/GPU_P40/cuda/10.1_cudnn-7.6.5/bin/../targets/x86_64-linux/include/cuda_runtime.h:115:34: fatal error: /share/home/arlan.uy/.local/lib/python3.7/site-packages/pycuda/cuda/crt/common_functions.h: Permission denied\ncompilation terminated.\n']
+srun: error: saliksik-gpu-03: task 10: Bus error

@@ -1,0 +1,493 @@
+SLURM_JOBID=247625
+SLURM_JOB_NODELIST=saliksik-gpu-05
+SLURM_NNODES=1
+SLURMTMPDIR=
+working directory=/scratch1/scratch2/arlan.uy/ERSSNP_CPU_GPU_Framework/main_dir
+Requirement already satisfied: pip in /share/home/arlan.uy/.local/lib/python3.7/site-packages (21.2.4)
+Requirement already satisfied: pip in /share/home/arlan.uy/.local/lib/python3.7/site-packages (21.2.4)
+Requirement already satisfied: pip in /share/home/arlan.uy/.local/lib/python3.7/site-packages (21.2.4)
+Requirement already satisfied: pip in /share/home/arlan.uy/.local/lib/python3.7/site-packages (21.2.4)
+Requirement already satisfied: pip in /share/home/arlan.uy/.local/lib/python3.7/site-packages (21.2.4)
+Requirement already satisfied: pip in /share/home/arlan.uy/.local/lib/python3.7/site-packages (21.2.4)
+Requirement already satisfied: pip in /share/home/arlan.uy/.local/lib/python3.7/site-packages (21.2.4)
+Requirement already satisfied: pip in /share/home/arlan.uy/.local/lib/python3.7/site-packages (21.2.4)
+Requirement already satisfied: pip in /share/home/arlan.uy/.local/lib/python3.7/site-packages (21.2.4)
+Requirement already satisfied: pip in /share/home/arlan.uy/.local/lib/python3.7/site-packages (21.2.4)
+Requirement already satisfied: pip in /share/home/arlan.uy/.local/lib/python3.7/site-packages (21.2.4)
+Requirement already satisfied: pip in /share/home/arlan.uy/.local/lib/python3.7/site-packages (21.2.4)
+Requirement already satisfied: appdirs==1.4.3 in /share/hpcc/CPU/anaconda/3-5.3.1/lib/python3.7/site-packages (from -r requirements.txt (line 1)) (1.4.3)
+Requirement already satisfied: appdirs==1.4.3 in /share/hpcc/CPU/anaconda/3-5.3.1/lib/python3.7/site-packages (from -r requirements.txt (line 1)) (1.4.3)
+Requirement already satisfied: astroid==2.5.6 in /share/home/arlan.uy/.local/lib/python3.7/site-packages (from -r requirements.txt (line 2)) (2.5.6)
+Requirement already satisfied: astroid==2.5.6 in /share/home/arlan.uy/.local/lib/python3.7/site-packages (from -r requirements.txt (line 2)) (2.5.6)
+Requirement already satisfied: attrs==18.2.0 in /share/hpcc/CPU/anaconda/3-5.3.1/lib/python3.7/site-packages (from -r requirements.txt (line 3)) (18.2.0)
+Requirement already satisfied: attrs==18.2.0 in /share/hpcc/CPU/anaconda/3-5.3.1/lib/python3.7/site-packages (from -r requirements.txt (line 3)) (18.2.0)
+Requirement already satisfied: click==6.7 in /share/hpcc/CPU/anaconda/3-5.3.1/lib/python3.7/site-packages (from -r requirements.txt (line 4)) (6.7)
+Requirement already satisfied: click==6.7 in /share/hpcc/CPU/anaconda/3-5.3.1/lib/python3.7/site-packages (from -r requirements.txt (line 4)) (6.7)
+Requirement already satisfied: cycler==0.10.0 in /share/hpcc/CPU/anaconda/3-5.3.1/lib/python3.7/site-packages (from -r requirements.txt (line 5)) (0.10.0)
+Requirement already satisfied: cycler==0.10.0 in /share/hpcc/CPU/anaconda/3-5.3.1/lib/python3.7/site-packages (from -r requirements.txt (line 5)) (0.10.0)
+Requirement already satisfied: graphviz==0.10.1 in /share/home/arlan.uy/.local/lib/python3.7/site-packages (from -r requirements.txt (line 6)) (0.10.1)
+Requirement already satisfied: graphviz==0.10.1 in /share/home/arlan.uy/.local/lib/python3.7/site-packages (from -r requirements.txt (line 6)) (0.10.1)
+Requirement already satisfied: greenery==3.1 in /share/home/arlan.uy/.local/lib/python3.7/site-packages (from -r requirements.txt (line 7)) (3.1)
+Requirement already satisfied: isort==4.3.4 in /share/hpcc/CPU/anaconda/3-5.3.1/lib/python3.7/site-packages (from -r requirements.txt (line 8)) (4.3.4)
+Requirement already satisfied: greenery==3.1 in /share/home/arlan.uy/.local/lib/python3.7/site-packages (from -r requirements.txt (line 7)) (3.1)
+Requirement already satisfied: kiwisolver==1.0.1 in /share/hpcc/CPU/anaconda/3-5.3.1/lib/python3.7/site-packages (from -r requirements.txt (line 9)) (1.0.1)
+Requirement already satisfied: lazy-object-proxy==1.4.0 in /share/home/arlan.uy/.local/lib/python3.7/site-packages (from -r requirements.txt (line 10)) (1.4.0)
+Requirement already satisfied: isort==4.3.4 in /share/hpcc/CPU/anaconda/3-5.3.1/lib/python3.7/site-packages (from -r requirements.txt (line 8)) (4.3.4)
+Requirement already satisfied: kiwisolver==1.0.1 in /share/hpcc/CPU/anaconda/3-5.3.1/lib/python3.7/site-packages (from -r requirements.txt (line 9)) (1.0.1)
+Requirement already satisfied: matplotlib==3.0.0 in /share/home/arlan.uy/.local/lib/python3.7/site-packages (from -r requirements.txt (line 11)) (3.0.0)
+Requirement already satisfied: lazy-object-proxy==1.4.0 in /share/home/arlan.uy/.local/lib/python3.7/site-packages (from -r requirements.txt (line 10)) (1.4.0)
+Requirement already satisfied: mccabe==0.6.1 in /share/hpcc/CPU/anaconda/3-5.3.1/lib/python3.7/site-packages (from -r requirements.txt (line 12)) (0.6.1)
+Requirement already satisfied: matplotlib==3.0.0 in /share/home/arlan.uy/.local/lib/python3.7/site-packages (from -r requirements.txt (line 11)) (3.0.0)
+Requirement already satisfied: mccabe==0.6.1 in /share/hpcc/CPU/anaconda/3-5.3.1/lib/python3.7/site-packages (from -r requirements.txt (line 12)) (0.6.1)
+Requirement already satisfied: mpmath==1.1.0 in /share/home/arlan.uy/.local/lib/python3.7/site-packages (from -r requirements.txt (line 13)) (1.1.0)
+Requirement already satisfied: mpmath==1.1.0 in /share/home/arlan.uy/.local/lib/python3.7/site-packages (from -r requirements.txt (line 13)) (1.1.0)
+Requirement already satisfied: numpy==1.15.1 in /share/hpcc/CPU/anaconda/3-5.3.1/lib/python3.7/site-packages (from -r requirements.txt (line 14)) (1.15.1)
+Requirement already satisfied: numpy==1.15.1 in /share/hpcc/CPU/anaconda/3-5.3.1/lib/python3.7/site-packages (from -r requirements.txt (line 14)) (1.15.1)
+Requirement already satisfied: pandas==0.23.4 in /share/hpcc/CPU/anaconda/3-5.3.1/lib/python3.7/site-packages (from -r requirements.txt (line 15)) (0.23.4)
+Requirement already satisfied: pandas==0.23.4 in /share/hpcc/CPU/anaconda/3-5.3.1/lib/python3.7/site-packages (from -r requirements.txt (line 15)) (0.23.4)
+Requirement already satisfied: pylint==2.3.1 in /share/home/arlan.uy/.local/lib/python3.7/site-packages (from -r requirements.txt (line 16)) (2.3.1)
+Requirement already satisfied: pylint==2.3.1 in /share/home/arlan.uy/.local/lib/python3.7/site-packages (from -r requirements.txt (line 16)) (2.3.1)
+Requirement already satisfied: pyparsing==2.2.2 in /share/home/arlan.uy/.local/lib/python3.7/site-packages (from -r requirements.txt (line 17)) (2.2.2)
+Requirement already satisfied: pyparsing==2.2.2 in /share/home/arlan.uy/.local/lib/python3.7/site-packages (from -r requirements.txt (line 17)) (2.2.2)
+Requirement already satisfied: python-dateutil==2.7.3 in /share/hpcc/CPU/anaconda/3-5.3.1/lib/python3.7/site-packages (from -r requirements.txt (line 18)) (2.7.3)
+Requirement already satisfied: python-dateutil==2.7.3 in /share/hpcc/CPU/anaconda/3-5.3.1/lib/python3.7/site-packages (from -r requirements.txt (line 18)) (2.7.3)
+Requirement already satisfied: pytz==2018.5 in /share/hpcc/CPU/anaconda/3-5.3.1/lib/python3.7/site-packages (from -r requirements.txt (line 19)) (2018.5)
+Requirement already satisfied: six==1.11.0 in /share/hpcc/CPU/anaconda/3-5.3.1/lib/python3.7/site-packages (from -r requirements.txt (line 20)) (1.11.0)
+Requirement already satisfied: pytz==2018.5 in /share/hpcc/CPU/anaconda/3-5.3.1/lib/python3.7/site-packages (from -r requirements.txt (line 19)) (2018.5)
+Requirement already satisfied: toml==0.9.6 in /share/home/arlan.uy/.local/lib/python3.7/site-packages (from -r requirements.txt (line 21)) (0.9.6)
+Requirement already satisfied: six==1.11.0 in /share/hpcc/CPU/anaconda/3-5.3.1/lib/python3.7/site-packages (from -r requirements.txt (line 20)) (1.11.0)
+Requirement already satisfied: typed-ast==1.4.0 in /share/home/arlan.uy/.local/lib/python3.7/site-packages (from -r requirements.txt (line 22)) (1.4.0)
+Requirement already satisfied: toml==0.9.6 in /share/home/arlan.uy/.local/lib/python3.7/site-packages (from -r requirements.txt (line 21)) (0.9.6)
+Requirement already satisfied: wrapt==1.12.1 in /share/home/arlan.uy/.local/lib/python3.7/site-packages (from -r requirements.txt (line 23)) (1.12.1)
+Requirement already satisfied: typed-ast==1.4.0 in /share/home/arlan.uy/.local/lib/python3.7/site-packages (from -r requirements.txt (line 22)) (1.4.0)
+Requirement already satisfied: pyyaml==5.4.1 in /share/home/arlan.uy/.local/lib/python3.7/site-packages (from -r requirements.txt (line 24)) (5.4.1)
+Requirement already satisfied: wrapt==1.12.1 in /share/home/arlan.uy/.local/lib/python3.7/site-packages (from -r requirements.txt (line 23)) (1.12.1)
+Requirement already satisfied: pyyaml==5.4.1 in /share/home/arlan.uy/.local/lib/python3.7/site-packages (from -r requirements.txt (line 24)) (5.4.1)
+Requirement already satisfied: pycuda==2019.1.2 in /share/home/arlan.uy/.local/lib/python3.7/site-packages (from -r requirements.txt (line 25)) (2019.1.2)
+Requirement already satisfied: pycuda==2019.1.2 in /share/home/arlan.uy/.local/lib/python3.7/site-packages (from -r requirements.txt (line 25)) (2019.1.2)
+Requirement already satisfied: appdirs==1.4.3 in /share/hpcc/CPU/anaconda/3-5.3.1/lib/python3.7/site-packages (from -r requirements.txt (line 1)) (1.4.3)
+Requirement already satisfied: astroid==2.5.6 in /share/home/arlan.uy/.local/lib/python3.7/site-packages (from -r requirements.txt (line 2)) (2.5.6)
+Requirement already satisfied: attrs==18.2.0 in /share/hpcc/CPU/anaconda/3-5.3.1/lib/python3.7/site-packages (from -r requirements.txt (line 3)) (18.2.0)
+Requirement already satisfied: click==6.7 in /share/hpcc/CPU/anaconda/3-5.3.1/lib/python3.7/site-packages (from -r requirements.txt (line 4)) (6.7)
+Requirement already satisfied: cycler==0.10.0 in /share/hpcc/CPU/anaconda/3-5.3.1/lib/python3.7/site-packages (from -r requirements.txt (line 5)) (0.10.0)
+Requirement already satisfied: graphviz==0.10.1 in /share/home/arlan.uy/.local/lib/python3.7/site-packages (from -r requirements.txt (line 6)) (0.10.1)
+Requirement already satisfied: greenery==3.1 in /share/home/arlan.uy/.local/lib/python3.7/site-packages (from -r requirements.txt (line 7)) (3.1)
+Requirement already satisfied: isort==4.3.4 in /share/hpcc/CPU/anaconda/3-5.3.1/lib/python3.7/site-packages (from -r requirements.txt (line 8)) (4.3.4)
+Requirement already satisfied: kiwisolver==1.0.1 in /share/hpcc/CPU/anaconda/3-5.3.1/lib/python3.7/site-packages (from -r requirements.txt (line 9)) (1.0.1)
+Requirement already satisfied: lazy-object-proxy==1.4.0 in /share/home/arlan.uy/.local/lib/python3.7/site-packages (from -r requirements.txt (line 10)) (1.4.0)
+Requirement already satisfied: matplotlib==3.0.0 in /share/home/arlan.uy/.local/lib/python3.7/site-packages (from -r requirements.txt (line 11)) (3.0.0)
+Requirement already satisfied: mccabe==0.6.1 in /share/hpcc/CPU/anaconda/3-5.3.1/lib/python3.7/site-packages (from -r requirements.txt (line 12)) (0.6.1)
+Requirement already satisfied: mpmath==1.1.0 in /share/home/arlan.uy/.local/lib/python3.7/site-packages (from -r requirements.txt (line 13)) (1.1.0)
+Requirement already satisfied: numpy==1.15.1 in /share/hpcc/CPU/anaconda/3-5.3.1/lib/python3.7/site-packages (from -r requirements.txt (line 14)) (1.15.1)
+Requirement already satisfied: pandas==0.23.4 in /share/hpcc/CPU/anaconda/3-5.3.1/lib/python3.7/site-packages (from -r requirements.txt (line 15)) (0.23.4)
+Requirement already satisfied: pylint==2.3.1 in /share/home/arlan.uy/.local/lib/python3.7/site-packages (from -r requirements.txt (line 16)) (2.3.1)
+Requirement already satisfied: pyparsing==2.2.2 in /share/home/arlan.uy/.local/lib/python3.7/site-packages (from -r requirements.txt (line 17)) (2.2.2)
+Requirement already satisfied: python-dateutil==2.7.3 in /share/hpcc/CPU/anaconda/3-5.3.1/lib/python3.7/site-packages (from -r requirements.txt (line 18)) (2.7.3)
+Requirement already satisfied: pytz==2018.5 in /share/hpcc/CPU/anaconda/3-5.3.1/lib/python3.7/site-packages (from -r requirements.txt (line 19)) (2018.5)
+Requirement already satisfied: six==1.11.0 in /share/hpcc/CPU/anaconda/3-5.3.1/lib/python3.7/site-packages (from -r requirements.txt (line 20)) (1.11.0)
+Requirement already satisfied: toml==0.9.6 in /share/home/arlan.uy/.local/lib/python3.7/site-packages (from -r requirements.txt (line 21)) (0.9.6)
+Requirement already satisfied: typed-ast==1.4.0 in /share/home/arlan.uy/.local/lib/python3.7/site-packages (from -r requirements.txt (line 22)) (1.4.0)
+Requirement already satisfied: wrapt==1.12.1 in /share/home/arlan.uy/.local/lib/python3.7/site-packages (from -r requirements.txt (line 23)) (1.12.1)
+Requirement already satisfied: pyyaml==5.4.1 in /share/home/arlan.uy/.local/lib/python3.7/site-packages (from -r requirements.txt (line 24)) (5.4.1)
+Requirement already satisfied: pycuda==2019.1.2 in /share/home/arlan.uy/.local/lib/python3.7/site-packages (from -r requirements.txt (line 25)) (2019.1.2)
+Requirement already satisfied: appdirs==1.4.3 in /share/hpcc/CPU/anaconda/3-5.3.1/lib/python3.7/site-packages (from -r requirements.txt (line 1)) (1.4.3)
+Requirement already satisfied: astroid==2.5.6 in /share/home/arlan.uy/.local/lib/python3.7/site-packages (from -r requirements.txt (line 2)) (2.5.6)
+Requirement already satisfied: attrs==18.2.0 in /share/hpcc/CPU/anaconda/3-5.3.1/lib/python3.7/site-packages (from -r requirements.txt (line 3)) (18.2.0)
+Requirement already satisfied: click==6.7 in /share/hpcc/CPU/anaconda/3-5.3.1/lib/python3.7/site-packages (from -r requirements.txt (line 4)) (6.7)
+Requirement already satisfied: cycler==0.10.0 in /share/hpcc/CPU/anaconda/3-5.3.1/lib/python3.7/site-packages (from -r requirements.txt (line 5)) (0.10.0)
+Requirement already satisfied: graphviz==0.10.1 in /share/home/arlan.uy/.local/lib/python3.7/site-packages (from -r requirements.txt (line 6)) (0.10.1)
+Requirement already satisfied: greenery==3.1 in /share/home/arlan.uy/.local/lib/python3.7/site-packages (from -r requirements.txt (line 7)) (3.1)
+Requirement already satisfied: isort==4.3.4 in /share/hpcc/CPU/anaconda/3-5.3.1/lib/python3.7/site-packages (from -r requirements.txt (line 8)) (4.3.4)
+Requirement already satisfied: kiwisolver==1.0.1 in /share/hpcc/CPU/anaconda/3-5.3.1/lib/python3.7/site-packages (from -r requirements.txt (line 9)) (1.0.1)
+Requirement already satisfied: lazy-object-proxy==1.4.0 in /share/home/arlan.uy/.local/lib/python3.7/site-packages (from -r requirements.txt (line 10)) (1.4.0)
+Requirement already satisfied: matplotlib==3.0.0 in /share/home/arlan.uy/.local/lib/python3.7/site-packages (from -r requirements.txt (line 11)) (3.0.0)
+Requirement already satisfied: mccabe==0.6.1 in /share/hpcc/CPU/anaconda/3-5.3.1/lib/python3.7/site-packages (from -r requirements.txt (line 12)) (0.6.1)
+Requirement already satisfied: setuptools in /share/hpcc/CPU/anaconda/3-5.3.1/lib/python3.7/site-packages (from kiwisolver==1.0.1->-r requirements.txt (line 9)) (40.2.0)
+Requirement already satisfied: mpmath==1.1.0 in /share/home/arlan.uy/.local/lib/python3.7/site-packages (from -r requirements.txt (line 13)) (1.1.0)
+Requirement already satisfied: numpy==1.15.1 in /share/hpcc/CPU/anaconda/3-5.3.1/lib/python3.7/site-packages (from -r requirements.txt (line 14)) (1.15.1)
+Requirement already satisfied: setuptools in /share/hpcc/CPU/anaconda/3-5.3.1/lib/python3.7/site-packages (from kiwisolver==1.0.1->-r requirements.txt (line 9)) (40.2.0)
+Requirement already satisfied: pandas==0.23.4 in /share/hpcc/CPU/anaconda/3-5.3.1/lib/python3.7/site-packages (from -r requirements.txt (line 15)) (0.23.4)
+Requirement already satisfied: pylint==2.3.1 in /share/home/arlan.uy/.local/lib/python3.7/site-packages (from -r requirements.txt (line 16)) (2.3.1)
+Requirement already satisfied: pyparsing==2.2.2 in /share/home/arlan.uy/.local/lib/python3.7/site-packages (from -r requirements.txt (line 17)) (2.2.2)
+Requirement already satisfied: setuptools in /share/hpcc/CPU/anaconda/3-5.3.1/lib/python3.7/site-packages (from kiwisolver==1.0.1->-r requirements.txt (line 9)) (40.2.0)
+Requirement already satisfied: python-dateutil==2.7.3 in /share/hpcc/CPU/anaconda/3-5.3.1/lib/python3.7/site-packages (from -r requirements.txt (line 18)) (2.7.3)
+Requirement already satisfied: pytz==2018.5 in /share/hpcc/CPU/anaconda/3-5.3.1/lib/python3.7/site-packages (from -r requirements.txt (line 19)) (2018.5)
+Requirement already satisfied: six==1.11.0 in /share/hpcc/CPU/anaconda/3-5.3.1/lib/python3.7/site-packages (from -r requirements.txt (line 20)) (1.11.0)
+Requirement already satisfied: toml==0.9.6 in /share/home/arlan.uy/.local/lib/python3.7/site-packages (from -r requirements.txt (line 21)) (0.9.6)
+Requirement already satisfied: typed-ast==1.4.0 in /share/home/arlan.uy/.local/lib/python3.7/site-packages (from -r requirements.txt (line 22)) (1.4.0)
+Requirement already satisfied: wrapt==1.12.1 in /share/home/arlan.uy/.local/lib/python3.7/site-packages (from -r requirements.txt (line 23)) (1.12.1)
+Requirement already satisfied: pyyaml==5.4.1 in /share/home/arlan.uy/.local/lib/python3.7/site-packages (from -r requirements.txt (line 24)) (5.4.1)
+Requirement already satisfied: pycuda==2019.1.2 in /share/home/arlan.uy/.local/lib/python3.7/site-packages (from -r requirements.txt (line 25)) (2019.1.2)
+Requirement already satisfied: appdirs==1.4.3 in /share/hpcc/CPU/anaconda/3-5.3.1/lib/python3.7/site-packages (from -r requirements.txt (line 1)) (1.4.3)
+Requirement already satisfied: astroid==2.5.6 in /share/home/arlan.uy/.local/lib/python3.7/site-packages (from -r requirements.txt (line 2)) (2.5.6)
+Requirement already satisfied: attrs==18.2.0 in /share/hpcc/CPU/anaconda/3-5.3.1/lib/python3.7/site-packages (from -r requirements.txt (line 3)) (18.2.0)
+Requirement already satisfied: click==6.7 in /share/hpcc/CPU/anaconda/3-5.3.1/lib/python3.7/site-packages (from -r requirements.txt (line 4)) (6.7)
+Requirement already satisfied: cycler==0.10.0 in /share/hpcc/CPU/anaconda/3-5.3.1/lib/python3.7/site-packages (from -r requirements.txt (line 5)) (0.10.0)
+Requirement already satisfied: graphviz==0.10.1 in /share/home/arlan.uy/.local/lib/python3.7/site-packages (from -r requirements.txt (line 6)) (0.10.1)
+Requirement already satisfied: greenery==3.1 in /share/home/arlan.uy/.local/lib/python3.7/site-packages (from -r requirements.txt (line 7)) (3.1)
+Requirement already satisfied: isort==4.3.4 in /share/hpcc/CPU/anaconda/3-5.3.1/lib/python3.7/site-packages (from -r requirements.txt (line 8)) (4.3.4)
+Requirement already satisfied: kiwisolver==1.0.1 in /share/hpcc/CPU/anaconda/3-5.3.1/lib/python3.7/site-packages (from -r requirements.txt (line 9)) (1.0.1)
+Requirement already satisfied: lazy-object-proxy==1.4.0 in /share/home/arlan.uy/.local/lib/python3.7/site-packages (from -r requirements.txt (line 10)) (1.4.0)
+Requirement already satisfied: matplotlib==3.0.0 in /share/home/arlan.uy/.local/lib/python3.7/site-packages (from -r requirements.txt (line 11)) (3.0.0)
+Requirement already satisfied: mccabe==0.6.1 in /share/hpcc/CPU/anaconda/3-5.3.1/lib/python3.7/site-packages (from -r requirements.txt (line 12)) (0.6.1)
+Requirement already satisfied: mpmath==1.1.0 in /share/home/arlan.uy/.local/lib/python3.7/site-packages (from -r requirements.txt (line 13)) (1.1.0)
+Requirement already satisfied: numpy==1.15.1 in /share/hpcc/CPU/anaconda/3-5.3.1/lib/python3.7/site-packages (from -r requirements.txt (line 14)) (1.15.1)
+Requirement already satisfied: pandas==0.23.4 in /share/hpcc/CPU/anaconda/3-5.3.1/lib/python3.7/site-packages (from -r requirements.txt (line 15)) (0.23.4)
+Requirement already satisfied: pylint==2.3.1 in /share/home/arlan.uy/.local/lib/python3.7/site-packages (from -r requirements.txt (line 16)) (2.3.1)
+Requirement already satisfied: pyparsing==2.2.2 in /share/home/arlan.uy/.local/lib/python3.7/site-packages (from -r requirements.txt (line 17)) (2.2.2)
+Requirement already satisfied: python-dateutil==2.7.3 in /share/hpcc/CPU/anaconda/3-5.3.1/lib/python3.7/site-packages (from -r requirements.txt (line 18)) (2.7.3)
+Requirement already satisfied: pytz==2018.5 in /share/hpcc/CPU/anaconda/3-5.3.1/lib/python3.7/site-packages (from -r requirements.txt (line 19)) (2018.5)
+Requirement already satisfied: six==1.11.0 in /share/hpcc/CPU/anaconda/3-5.3.1/lib/python3.7/site-packages (from -r requirements.txt (line 20)) (1.11.0)
+Requirement already satisfied: toml==0.9.6 in /share/home/arlan.uy/.local/lib/python3.7/site-packages (from -r requirements.txt (line 21)) (0.9.6)
+Requirement already satisfied: typed-ast==1.4.0 in /share/home/arlan.uy/.local/lib/python3.7/site-packages (from -r requirements.txt (line 22)) (1.4.0)
+Requirement already satisfied: wrapt==1.12.1 in /share/home/arlan.uy/.local/lib/python3.7/site-packages (from -r requirements.txt (line 23)) (1.12.1)
+Requirement already satisfied: pyyaml==5.4.1 in /share/home/arlan.uy/.local/lib/python3.7/site-packages (from -r requirements.txt (line 24)) (5.4.1)
+Requirement already satisfied: pycuda==2019.1.2 in /share/home/arlan.uy/.local/lib/python3.7/site-packages (from -r requirements.txt (line 25)) (2019.1.2)
+Requirement already satisfied: setuptools in /share/hpcc/CPU/anaconda/3-5.3.1/lib/python3.7/site-packages (from kiwisolver==1.0.1->-r requirements.txt (line 9)) (40.2.0)
+Requirement already satisfied: appdirs==1.4.3 in /share/hpcc/CPU/anaconda/3-5.3.1/lib/python3.7/site-packages (from -r requirements.txt (line 1)) (1.4.3)
+Requirement already satisfied: astroid==2.5.6 in /share/home/arlan.uy/.local/lib/python3.7/site-packages (from -r requirements.txt (line 2)) (2.5.6)
+Requirement already satisfied: attrs==18.2.0 in /share/hpcc/CPU/anaconda/3-5.3.1/lib/python3.7/site-packages (from -r requirements.txt (line 3)) (18.2.0)
+Requirement already satisfied: click==6.7 in /share/hpcc/CPU/anaconda/3-5.3.1/lib/python3.7/site-packages (from -r requirements.txt (line 4)) (6.7)
+Requirement already satisfied: cycler==0.10.0 in /share/hpcc/CPU/anaconda/3-5.3.1/lib/python3.7/site-packages (from -r requirements.txt (line 5)) (0.10.0)
+Requirement already satisfied: graphviz==0.10.1 in /share/home/arlan.uy/.local/lib/python3.7/site-packages (from -r requirements.txt (line 6)) (0.10.1)
+Requirement already satisfied: greenery==3.1 in /share/home/arlan.uy/.local/lib/python3.7/site-packages (from -r requirements.txt (line 7)) (3.1)
+Requirement already satisfied: isort==4.3.4 in /share/hpcc/CPU/anaconda/3-5.3.1/lib/python3.7/site-packages (from -r requirements.txt (line 8)) (4.3.4)
+Requirement already satisfied: kiwisolver==1.0.1 in /share/hpcc/CPU/anaconda/3-5.3.1/lib/python3.7/site-packages (from -r requirements.txt (line 9)) (1.0.1)
+Requirement already satisfied: lazy-object-proxy==1.4.0 in /share/home/arlan.uy/.local/lib/python3.7/site-packages (from -r requirements.txt (line 10)) (1.4.0)
+Requirement already satisfied: matplotlib==3.0.0 in /share/home/arlan.uy/.local/lib/python3.7/site-packages (from -r requirements.txt (line 11)) (3.0.0)
+Requirement already satisfied: mccabe==0.6.1 in /share/hpcc/CPU/anaconda/3-5.3.1/lib/python3.7/site-packages (from -r requirements.txt (line 12)) (0.6.1)
+Requirement already satisfied: mpmath==1.1.0 in /share/home/arlan.uy/.local/lib/python3.7/site-packages (from -r requirements.txt (line 13)) (1.1.0)
+Requirement already satisfied: appdirs==1.4.3 in /share/hpcc/CPU/anaconda/3-5.3.1/lib/python3.7/site-packages (from -r requirements.txt (line 1)) (1.4.3)
+Requirement already satisfied: astroid==2.5.6 in /share/home/arlan.uy/.local/lib/python3.7/site-packages (from -r requirements.txt (line 2)) (2.5.6)
+Requirement already satisfied: attrs==18.2.0 in /share/hpcc/CPU/anaconda/3-5.3.1/lib/python3.7/site-packages (from -r requirements.txt (line 3)) (18.2.0)
+Requirement already satisfied: appdirs==1.4.3 in /share/hpcc/CPU/anaconda/3-5.3.1/lib/python3.7/site-packages (from -r requirements.txt (line 1)) (1.4.3)
+Requirement already satisfied: astroid==2.5.6 in /share/home/arlan.uy/.local/lib/python3.7/site-packages (from -r requirements.txt (line 2)) (2.5.6)
+Requirement already satisfied: click==6.7 in /share/hpcc/CPU/anaconda/3-5.3.1/lib/python3.7/site-packages (from -r requirements.txt (line 4)) (6.7)
+Requirement already satisfied: cycler==0.10.0 in /share/hpcc/CPU/anaconda/3-5.3.1/lib/python3.7/site-packages (from -r requirements.txt (line 5)) (0.10.0)
+Requirement already satisfied: attrs==18.2.0 in /share/hpcc/CPU/anaconda/3-5.3.1/lib/python3.7/site-packages (from -r requirements.txt (line 3)) (18.2.0)
+Requirement already satisfied: graphviz==0.10.1 in /share/home/arlan.uy/.local/lib/python3.7/site-packages (from -r requirements.txt (line 6)) (0.10.1)
+Requirement already satisfied: click==6.7 in /share/hpcc/CPU/anaconda/3-5.3.1/lib/python3.7/site-packages (from -r requirements.txt (line 4)) (6.7)
+Requirement already satisfied: greenery==3.1 in /share/home/arlan.uy/.local/lib/python3.7/site-packages (from -r requirements.txt (line 7)) (3.1)
+Requirement already satisfied: numpy==1.15.1 in /share/hpcc/CPU/anaconda/3-5.3.1/lib/python3.7/site-packages (from -r requirements.txt (line 14)) (1.15.1)
+Requirement already satisfied: pandas==0.23.4 in /share/hpcc/CPU/anaconda/3-5.3.1/lib/python3.7/site-packages (from -r requirements.txt (line 15)) (0.23.4)
+Requirement already satisfied: pylint==2.3.1 in /share/home/arlan.uy/.local/lib/python3.7/site-packages (from -r requirements.txt (line 16)) (2.3.1)
+Requirement already satisfied: isort==4.3.4 in /share/hpcc/CPU/anaconda/3-5.3.1/lib/python3.7/site-packages (from -r requirements.txt (line 8)) (4.3.4)
+Requirement already satisfied: pyparsing==2.2.2 in /share/home/arlan.uy/.local/lib/python3.7/site-packages (from -r requirements.txt (line 17)) (2.2.2)
+Requirement already satisfied: kiwisolver==1.0.1 in /share/hpcc/CPU/anaconda/3-5.3.1/lib/python3.7/site-packages (from -r requirements.txt (line 9)) (1.0.1)
+Requirement already satisfied: python-dateutil==2.7.3 in /share/hpcc/CPU/anaconda/3-5.3.1/lib/python3.7/site-packages (from -r requirements.txt (line 18)) (2.7.3)
+Requirement already satisfied: lazy-object-proxy==1.4.0 in /share/home/arlan.uy/.local/lib/python3.7/site-packages (from -r requirements.txt (line 10)) (1.4.0)
+Requirement already satisfied: matplotlib==3.0.0 in /share/home/arlan.uy/.local/lib/python3.7/site-packages (from -r requirements.txt (line 11)) (3.0.0)
+Requirement already satisfied: mccabe==0.6.1 in /share/hpcc/CPU/anaconda/3-5.3.1/lib/python3.7/site-packages (from -r requirements.txt (line 12)) (0.6.1)
+Requirement already satisfied: mpmath==1.1.0 in /share/home/arlan.uy/.local/lib/python3.7/site-packages (from -r requirements.txt (line 13)) (1.1.0)
+Requirement already satisfied: numpy==1.15.1 in /share/hpcc/CPU/anaconda/3-5.3.1/lib/python3.7/site-packages (from -r requirements.txt (line 14)) (1.15.1)
+Requirement already satisfied: cycler==0.10.0 in /share/hpcc/CPU/anaconda/3-5.3.1/lib/python3.7/site-packages (from -r requirements.txt (line 5)) (0.10.0)
+Requirement already satisfied: pandas==0.23.4 in /share/hpcc/CPU/anaconda/3-5.3.1/lib/python3.7/site-packages (from -r requirements.txt (line 15)) (0.23.4)
+Requirement already satisfied: graphviz==0.10.1 in /share/home/arlan.uy/.local/lib/python3.7/site-packages (from -r requirements.txt (line 6)) (0.10.1)
+Requirement already satisfied: greenery==3.1 in /share/home/arlan.uy/.local/lib/python3.7/site-packages (from -r requirements.txt (line 7)) (3.1)
+Requirement already satisfied: isort==4.3.4 in /share/hpcc/CPU/anaconda/3-5.3.1/lib/python3.7/site-packages (from -r requirements.txt (line 8)) (4.3.4)
+Requirement already satisfied: kiwisolver==1.0.1 in /share/hpcc/CPU/anaconda/3-5.3.1/lib/python3.7/site-packages (from -r requirements.txt (line 9)) (1.0.1)
+Requirement already satisfied: lazy-object-proxy==1.4.0 in /share/home/arlan.uy/.local/lib/python3.7/site-packages (from -r requirements.txt (line 10)) (1.4.0)
+Requirement already satisfied: appdirs==1.4.3 in /share/hpcc/CPU/anaconda/3-5.3.1/lib/python3.7/site-packages (from -r requirements.txt (line 1)) (1.4.3)
+Requirement already satisfied: astroid==2.5.6 in /share/home/arlan.uy/.local/lib/python3.7/site-packages (from -r requirements.txt (line 2)) (2.5.6)
+Requirement already satisfied: matplotlib==3.0.0 in /share/home/arlan.uy/.local/lib/python3.7/site-packages (from -r requirements.txt (line 11)) (3.0.0)
+Requirement already satisfied: attrs==18.2.0 in /share/hpcc/CPU/anaconda/3-5.3.1/lib/python3.7/site-packages (from -r requirements.txt (line 3)) (18.2.0)
+Requirement already satisfied: mccabe==0.6.1 in /share/hpcc/CPU/anaconda/3-5.3.1/lib/python3.7/site-packages (from -r requirements.txt (line 12)) (0.6.1)
+Requirement already satisfied: mpmath==1.1.0 in /share/home/arlan.uy/.local/lib/python3.7/site-packages (from -r requirements.txt (line 13)) (1.1.0)
+Requirement already satisfied: appdirs==1.4.3 in /share/hpcc/CPU/anaconda/3-5.3.1/lib/python3.7/site-packages (from -r requirements.txt (line 1)) (1.4.3)
+Requirement already satisfied: click==6.7 in /share/hpcc/CPU/anaconda/3-5.3.1/lib/python3.7/site-packages (from -r requirements.txt (line 4)) (6.7)
+Requirement already satisfied: numpy==1.15.1 in /share/hpcc/CPU/anaconda/3-5.3.1/lib/python3.7/site-packages (from -r requirements.txt (line 14)) (1.15.1)
+Requirement already satisfied: astroid==2.5.6 in /share/home/arlan.uy/.local/lib/python3.7/site-packages (from -r requirements.txt (line 2)) (2.5.6)
+Requirement already satisfied: pytz==2018.5 in /share/hpcc/CPU/anaconda/3-5.3.1/lib/python3.7/site-packages (from -r requirements.txt (line 19)) (2018.5)
+Requirement already satisfied: attrs==18.2.0 in /share/hpcc/CPU/anaconda/3-5.3.1/lib/python3.7/site-packages (from -r requirements.txt (line 3)) (18.2.0)
+Requirement already satisfied: six==1.11.0 in /share/hpcc/CPU/anaconda/3-5.3.1/lib/python3.7/site-packages (from -r requirements.txt (line 20)) (1.11.0)
+Requirement already satisfied: pandas==0.23.4 in /share/hpcc/CPU/anaconda/3-5.3.1/lib/python3.7/site-packages (from -r requirements.txt (line 15)) (0.23.4)
+Requirement already satisfied: click==6.7 in /share/hpcc/CPU/anaconda/3-5.3.1/lib/python3.7/site-packages (from -r requirements.txt (line 4)) (6.7)
+Requirement already satisfied: toml==0.9.6 in /share/home/arlan.uy/.local/lib/python3.7/site-packages (from -r requirements.txt (line 21)) (0.9.6)
+Requirement already satisfied: pylint==2.3.1 in /share/home/arlan.uy/.local/lib/python3.7/site-packages (from -r requirements.txt (line 16)) (2.3.1)
+Requirement already satisfied: cycler==0.10.0 in /share/hpcc/CPU/anaconda/3-5.3.1/lib/python3.7/site-packages (from -r requirements.txt (line 5)) (0.10.0)
+Requirement already satisfied: pyparsing==2.2.2 in /share/home/arlan.uy/.local/lib/python3.7/site-packages (from -r requirements.txt (line 17)) (2.2.2)
+Requirement already satisfied: graphviz==0.10.1 in /share/home/arlan.uy/.local/lib/python3.7/site-packages (from -r requirements.txt (line 6)) (0.10.1)
+Requirement already satisfied: setuptools in /share/hpcc/CPU/anaconda/3-5.3.1/lib/python3.7/site-packages (from kiwisolver==1.0.1->-r requirements.txt (line 9)) (40.2.0)
+Requirement already satisfied: greenery==3.1 in /share/home/arlan.uy/.local/lib/python3.7/site-packages (from -r requirements.txt (line 7)) (3.1)
+Requirement already satisfied: isort==4.3.4 in /share/hpcc/CPU/anaconda/3-5.3.1/lib/python3.7/site-packages (from -r requirements.txt (line 8)) (4.3.4)
+Requirement already satisfied: kiwisolver==1.0.1 in /share/hpcc/CPU/anaconda/3-5.3.1/lib/python3.7/site-packages (from -r requirements.txt (line 9)) (1.0.1)
+Requirement already satisfied: lazy-object-proxy==1.4.0 in /share/home/arlan.uy/.local/lib/python3.7/site-packages (from -r requirements.txt (line 10)) (1.4.0)
+Requirement already satisfied: mako in /share/home/arlan.uy/.local/lib/python3.7/site-packages (from pycuda==2019.1.2->-r requirements.txt (line 25)) (1.1.4)
+Requirement already satisfied: matplotlib==3.0.0 in /share/home/arlan.uy/.local/lib/python3.7/site-packages (from -r requirements.txt (line 11)) (3.0.0)
+Requirement already satisfied: decorator>=3.2.0 in /share/hpcc/CPU/anaconda/3-5.3.1/lib/python3.7/site-packages (from pycuda==2019.1.2->-r requirements.txt (line 25)) (4.3.0)
+Requirement already satisfied: python-dateutil==2.7.3 in /share/hpcc/CPU/anaconda/3-5.3.1/lib/python3.7/site-packages (from -r requirements.txt (line 18)) (2.7.3)
+Requirement already satisfied: pytz==2018.5 in /share/hpcc/CPU/anaconda/3-5.3.1/lib/python3.7/site-packages (from -r requirements.txt (line 19)) (2018.5)
+Requirement already satisfied: appdirs==1.4.3 in /share/hpcc/CPU/anaconda/3-5.3.1/lib/python3.7/site-packages (from -r requirements.txt (line 1)) (1.4.3)
+Requirement already satisfied: six==1.11.0 in /share/hpcc/CPU/anaconda/3-5.3.1/lib/python3.7/site-packages (from -r requirements.txt (line 20)) (1.11.0)
+Requirement already satisfied: toml==0.9.6 in /share/home/arlan.uy/.local/lib/python3.7/site-packages (from -r requirements.txt (line 21)) (0.9.6)
+Requirement already satisfied: typed-ast==1.4.0 in /share/home/arlan.uy/.local/lib/python3.7/site-packages (from -r requirements.txt (line 22)) (1.4.0)
+Requirement already satisfied: astroid==2.5.6 in /share/home/arlan.uy/.local/lib/python3.7/site-packages (from -r requirements.txt (line 2)) (2.5.6)
+Requirement already satisfied: wrapt==1.12.1 in /share/home/arlan.uy/.local/lib/python3.7/site-packages (from -r requirements.txt (line 23)) (1.12.1)
+Requirement already satisfied: pyyaml==5.4.1 in /share/home/arlan.uy/.local/lib/python3.7/site-packages (from -r requirements.txt (line 24)) (5.4.1)
+Requirement already satisfied: mccabe==0.6.1 in /share/hpcc/CPU/anaconda/3-5.3.1/lib/python3.7/site-packages (from -r requirements.txt (line 12)) (0.6.1)
+Requirement already satisfied: pytools>=2011.2 in /share/home/arlan.uy/.local/lib/python3.7/site-packages (from pycuda==2019.1.2->-r requirements.txt (line 25)) (2021.2.7)
+Requirement already satisfied: mpmath==1.1.0 in /share/home/arlan.uy/.local/lib/python3.7/site-packages (from -r requirements.txt (line 13)) (1.1.0)
+Requirement already satisfied: numpy==1.15.1 in /share/hpcc/CPU/anaconda/3-5.3.1/lib/python3.7/site-packages (from -r requirements.txt (line 14)) (1.15.1)
+Requirement already satisfied: pandas==0.23.4 in /share/hpcc/CPU/anaconda/3-5.3.1/lib/python3.7/site-packages (from -r requirements.txt (line 15)) (0.23.4)
+Requirement already satisfied: pylint==2.3.1 in /share/home/arlan.uy/.local/lib/python3.7/site-packages (from -r requirements.txt (line 16)) (2.3.1)
+Requirement already satisfied: pylint==2.3.1 in /share/home/arlan.uy/.local/lib/python3.7/site-packages (from -r requirements.txt (line 16)) (2.3.1)
+Requirement already satisfied: pyparsing==2.2.2 in /share/home/arlan.uy/.local/lib/python3.7/site-packages (from -r requirements.txt (line 17)) (2.2.2)
+Requirement already satisfied: pyparsing==2.2.2 in /share/home/arlan.uy/.local/lib/python3.7/site-packages (from -r requirements.txt (line 17)) (2.2.2)
+Requirement already satisfied: appdirs==1.4.3 in /share/hpcc/CPU/anaconda/3-5.3.1/lib/python3.7/site-packages (from -r requirements.txt (line 1)) (1.4.3)
+Requirement already satisfied: python-dateutil==2.7.3 in /share/hpcc/CPU/anaconda/3-5.3.1/lib/python3.7/site-packages (from -r requirements.txt (line 18)) (2.7.3)
+Requirement already satisfied: astroid==2.5.6 in /share/home/arlan.uy/.local/lib/python3.7/site-packages (from -r requirements.txt (line 2)) (2.5.6)
+Requirement already satisfied: pytz==2018.5 in /share/hpcc/CPU/anaconda/3-5.3.1/lib/python3.7/site-packages (from -r requirements.txt (line 19)) (2018.5)
+Requirement already satisfied: python-dateutil==2.7.3 in /share/hpcc/CPU/anaconda/3-5.3.1/lib/python3.7/site-packages (from -r requirements.txt (line 18)) (2.7.3)
+Requirement already satisfied: attrs==18.2.0 in /share/hpcc/CPU/anaconda/3-5.3.1/lib/python3.7/site-packages (from -r requirements.txt (line 3)) (18.2.0)
+Requirement already satisfied: pytools>=2011.2 in /share/home/arlan.uy/.local/lib/python3.7/site-packages (from pycuda==2019.1.2->-r requirements.txt (line 25)) (2021.2.7)
+Requirement already satisfied: decorator>=3.2.0 in /share/hpcc/CPU/anaconda/3-5.3.1/lib/python3.7/site-packages (from pycuda==2019.1.2->-r requirements.txt (line 25)) (4.3.0)
+Requirement already satisfied: click==6.7 in /share/hpcc/CPU/anaconda/3-5.3.1/lib/python3.7/site-packages (from -r requirements.txt (line 4)) (6.7)
+Requirement already satisfied: attrs==18.2.0 in /share/hpcc/CPU/anaconda/3-5.3.1/lib/python3.7/site-packages (from -r requirements.txt (line 3)) (18.2.0)
+Requirement already satisfied: click==6.7 in /share/hpcc/CPU/anaconda/3-5.3.1/lib/python3.7/site-packages (from -r requirements.txt (line 4)) (6.7)
+Requirement already satisfied: cycler==0.10.0 in /share/hpcc/CPU/anaconda/3-5.3.1/lib/python3.7/site-packages (from -r requirements.txt (line 5)) (0.10.0)
+Requirement already satisfied: pytz==2018.5 in /share/hpcc/CPU/anaconda/3-5.3.1/lib/python3.7/site-packages (from -r requirements.txt (line 19)) (2018.5)
+Requirement already satisfied: graphviz==0.10.1 in /share/home/arlan.uy/.local/lib/python3.7/site-packages (from -r requirements.txt (line 6)) (0.10.1)
+Requirement already satisfied: greenery==3.1 in /share/home/arlan.uy/.local/lib/python3.7/site-packages (from -r requirements.txt (line 7)) (3.1)
+Requirement already satisfied: six==1.11.0 in /share/hpcc/CPU/anaconda/3-5.3.1/lib/python3.7/site-packages (from -r requirements.txt (line 20)) (1.11.0)
+Requirement already satisfied: isort==4.3.4 in /share/hpcc/CPU/anaconda/3-5.3.1/lib/python3.7/site-packages (from -r requirements.txt (line 8)) (4.3.4)
+Requirement already satisfied: toml==0.9.6 in /share/home/arlan.uy/.local/lib/python3.7/site-packages (from -r requirements.txt (line 21)) (0.9.6)
+Requirement already satisfied: kiwisolver==1.0.1 in /share/hpcc/CPU/anaconda/3-5.3.1/lib/python3.7/site-packages (from -r requirements.txt (line 9)) (1.0.1)
+Requirement already satisfied: decorator>=3.2.0 in /share/hpcc/CPU/anaconda/3-5.3.1/lib/python3.7/site-packages (from pycuda==2019.1.2->-r requirements.txt (line 25)) (4.3.0)
+Requirement already satisfied: cycler==0.10.0 in /share/hpcc/CPU/anaconda/3-5.3.1/lib/python3.7/site-packages (from -r requirements.txt (line 5)) (0.10.0)
+Requirement already satisfied: typed-ast==1.4.0 in /share/home/arlan.uy/.local/lib/python3.7/site-packages (from -r requirements.txt (line 22)) (1.4.0)
+Requirement already satisfied: six==1.11.0 in /share/hpcc/CPU/anaconda/3-5.3.1/lib/python3.7/site-packages (from -r requirements.txt (line 20)) (1.11.0)
+Requirement already satisfied: pytools>=2011.2 in /share/home/arlan.uy/.local/lib/python3.7/site-packages (from pycuda==2019.1.2->-r requirements.txt (line 25)) (2021.2.7)
+Requirement already satisfied: graphviz==0.10.1 in /share/home/arlan.uy/.local/lib/python3.7/site-packages (from -r requirements.txt (line 6)) (0.10.1)
+Requirement already satisfied: toml==0.9.6 in /share/home/arlan.uy/.local/lib/python3.7/site-packages (from -r requirements.txt (line 21)) (0.9.6)
+Requirement already satisfied: greenery==3.1 in /share/home/arlan.uy/.local/lib/python3.7/site-packages (from -r requirements.txt (line 7)) (3.1)
+Requirement already satisfied: typed-ast==1.4.0 in /share/home/arlan.uy/.local/lib/python3.7/site-packages (from -r requirements.txt (line 22)) (1.4.0)
+Requirement already satisfied: mako in /share/home/arlan.uy/.local/lib/python3.7/site-packages (from pycuda==2019.1.2->-r requirements.txt (line 25)) (1.1.4)
+Requirement already satisfied: isort==4.3.4 in /share/hpcc/CPU/anaconda/3-5.3.1/lib/python3.7/site-packages (from -r requirements.txt (line 8)) (4.3.4)
+Requirement already satisfied: wrapt==1.12.1 in /share/home/arlan.uy/.local/lib/python3.7/site-packages (from -r requirements.txt (line 23)) (1.12.1)
+Requirement already satisfied: kiwisolver==1.0.1 in /share/hpcc/CPU/anaconda/3-5.3.1/lib/python3.7/site-packages (from -r requirements.txt (line 9)) (1.0.1)
+Requirement already satisfied: pyyaml==5.4.1 in /share/home/arlan.uy/.local/lib/python3.7/site-packages (from -r requirements.txt (line 24)) (5.4.1)
+Requirement already satisfied: lazy-object-proxy==1.4.0 in /share/home/arlan.uy/.local/lib/python3.7/site-packages (from -r requirements.txt (line 10)) (1.4.0)
+Requirement already satisfied: pycuda==2019.1.2 in /share/home/arlan.uy/.local/lib/python3.7/site-packages (from -r requirements.txt (line 25)) (2019.1.2)
+Requirement already satisfied: matplotlib==3.0.0 in /share/home/arlan.uy/.local/lib/python3.7/site-packages (from -r requirements.txt (line 11)) (3.0.0)
+Requirement already satisfied: mccabe==0.6.1 in /share/hpcc/CPU/anaconda/3-5.3.1/lib/python3.7/site-packages (from -r requirements.txt (line 12)) (0.6.1)
+Requirement already satisfied: mako in /share/home/arlan.uy/.local/lib/python3.7/site-packages (from pycuda==2019.1.2->-r requirements.txt (line 25)) (1.1.4)
+Requirement already satisfied: typed-ast==1.4.0 in /share/home/arlan.uy/.local/lib/python3.7/site-packages (from -r requirements.txt (line 22)) (1.4.0)
+Requirement already satisfied: wrapt==1.12.1 in /share/home/arlan.uy/.local/lib/python3.7/site-packages (from -r requirements.txt (line 23)) (1.12.1)
+Requirement already satisfied: pycuda==2019.1.2 in /share/home/arlan.uy/.local/lib/python3.7/site-packages (from -r requirements.txt (line 25)) (2019.1.2)
+Requirement already satisfied: pyyaml==5.4.1 in /share/home/arlan.uy/.local/lib/python3.7/site-packages (from -r requirements.txt (line 24)) (5.4.1)
+Requirement already satisfied: wrapt==1.12.1 in /share/home/arlan.uy/.local/lib/python3.7/site-packages (from -r requirements.txt (line 23)) (1.12.1)
+Requirement already satisfied: pycuda==2019.1.2 in /share/home/arlan.uy/.local/lib/python3.7/site-packages (from -r requirements.txt (line 25)) (2019.1.2)
+Requirement already satisfied: pyyaml==5.4.1 in /share/home/arlan.uy/.local/lib/python3.7/site-packages (from -r requirements.txt (line 24)) (5.4.1)
+Requirement already satisfied: cycler==0.10.0 in /share/hpcc/CPU/anaconda/3-5.3.1/lib/python3.7/site-packages (from -r requirements.txt (line 5)) (0.10.0)
+Requirement already satisfied: pycuda==2019.1.2 in /share/home/arlan.uy/.local/lib/python3.7/site-packages (from -r requirements.txt (line 25)) (2019.1.2)
+Requirement already satisfied: graphviz==0.10.1 in /share/home/arlan.uy/.local/lib/python3.7/site-packages (from -r requirements.txt (line 6)) (0.10.1)
+Requirement already satisfied: greenery==3.1 in /share/home/arlan.uy/.local/lib/python3.7/site-packages (from -r requirements.txt (line 7)) (3.1)
+Requirement already satisfied: isort==4.3.4 in /share/hpcc/CPU/anaconda/3-5.3.1/lib/python3.7/site-packages (from -r requirements.txt (line 8)) (4.3.4)
+Requirement already satisfied: kiwisolver==1.0.1 in /share/hpcc/CPU/anaconda/3-5.3.1/lib/python3.7/site-packages (from -r requirements.txt (line 9)) (1.0.1)
+Requirement already satisfied: lazy-object-proxy==1.4.0 in /share/home/arlan.uy/.local/lib/python3.7/site-packages (from -r requirements.txt (line 10)) (1.4.0)
+Requirement already satisfied: mpmath==1.1.0 in /share/home/arlan.uy/.local/lib/python3.7/site-packages (from -r requirements.txt (line 13)) (1.1.0)
+Requirement already satisfied: numpy==1.15.1 in /share/hpcc/CPU/anaconda/3-5.3.1/lib/python3.7/site-packages (from -r requirements.txt (line 14)) (1.15.1)
+Requirement already satisfied: pandas==0.23.4 in /share/hpcc/CPU/anaconda/3-5.3.1/lib/python3.7/site-packages (from -r requirements.txt (line 15)) (0.23.4)
+Requirement already satisfied: pylint==2.3.1 in /share/home/arlan.uy/.local/lib/python3.7/site-packages (from -r requirements.txt (line 16)) (2.3.1)
+Requirement already satisfied: pyparsing==2.2.2 in /share/home/arlan.uy/.local/lib/python3.7/site-packages (from -r requirements.txt (line 17)) (2.2.2)
+Requirement already satisfied: python-dateutil==2.7.3 in /share/hpcc/CPU/anaconda/3-5.3.1/lib/python3.7/site-packages (from -r requirements.txt (line 18)) (2.7.3)
+Requirement already satisfied: lazy-object-proxy==1.4.0 in /share/home/arlan.uy/.local/lib/python3.7/site-packages (from -r requirements.txt (line 10)) (1.4.0)
+Requirement already satisfied: matplotlib==3.0.0 in /share/home/arlan.uy/.local/lib/python3.7/site-packages (from -r requirements.txt (line 11)) (3.0.0)
+Requirement already satisfied: mako in /share/home/arlan.uy/.local/lib/python3.7/site-packages (from pycuda==2019.1.2->-r requirements.txt (line 25)) (1.1.4)
+Requirement already satisfied: mccabe==0.6.1 in /share/hpcc/CPU/anaconda/3-5.3.1/lib/python3.7/site-packages (from -r requirements.txt (line 12)) (0.6.1)
+Requirement already satisfied: decorator>=3.2.0 in /share/hpcc/CPU/anaconda/3-5.3.1/lib/python3.7/site-packages (from pycuda==2019.1.2->-r requirements.txt (line 25)) (4.3.0)
+Requirement already satisfied: mpmath==1.1.0 in /share/home/arlan.uy/.local/lib/python3.7/site-packages (from -r requirements.txt (line 13)) (1.1.0)
+Requirement already satisfied: pytools>=2011.2 in /share/home/arlan.uy/.local/lib/python3.7/site-packages (from pycuda==2019.1.2->-r requirements.txt (line 25)) (2021.2.7)
+Requirement already satisfied: numpy==1.15.1 in /share/hpcc/CPU/anaconda/3-5.3.1/lib/python3.7/site-packages (from -r requirements.txt (line 14)) (1.15.1)
+Requirement already satisfied: MarkupSafe>=0.9.2 in /share/hpcc/CPU/anaconda/3-5.3.1/lib/python3.7/site-packages (from mako->pycuda==2019.1.2->-r requirements.txt (line 25)) (1.0)
+Requirement already satisfied: pandas==0.23.4 in /share/hpcc/CPU/anaconda/3-5.3.1/lib/python3.7/site-packages (from -r requirements.txt (line 15)) (0.23.4)
+Requirement already satisfied: pylint==2.3.1 in /share/home/arlan.uy/.local/lib/python3.7/site-packages (from -r requirements.txt (line 16)) (2.3.1)
+Requirement already satisfied: matplotlib==3.0.0 in /share/home/arlan.uy/.local/lib/python3.7/site-packages (from -r requirements.txt (line 11)) (3.0.0)
+Requirement already satisfied: mccabe==0.6.1 in /share/hpcc/CPU/anaconda/3-5.3.1/lib/python3.7/site-packages (from -r requirements.txt (line 12)) (0.6.1)
+Requirement already satisfied: mpmath==1.1.0 in /share/home/arlan.uy/.local/lib/python3.7/site-packages (from -r requirements.txt (line 13)) (1.1.0)
+Requirement already satisfied: numpy==1.15.1 in /share/hpcc/CPU/anaconda/3-5.3.1/lib/python3.7/site-packages (from -r requirements.txt (line 14)) (1.15.1)
+Requirement already satisfied: pandas==0.23.4 in /share/hpcc/CPU/anaconda/3-5.3.1/lib/python3.7/site-packages (from -r requirements.txt (line 15)) (0.23.4)
+Requirement already satisfied: pylint==2.3.1 in /share/home/arlan.uy/.local/lib/python3.7/site-packages (from -r requirements.txt (line 16)) (2.3.1)
+Requirement already satisfied: pytz==2018.5 in /share/hpcc/CPU/anaconda/3-5.3.1/lib/python3.7/site-packages (from -r requirements.txt (line 19)) (2018.5)
+Requirement already satisfied: six==1.11.0 in /share/hpcc/CPU/anaconda/3-5.3.1/lib/python3.7/site-packages (from -r requirements.txt (line 20)) (1.11.0)
+Requirement already satisfied: toml==0.9.6 in /share/home/arlan.uy/.local/lib/python3.7/site-packages (from -r requirements.txt (line 21)) (0.9.6)
+Requirement already satisfied: typed-ast==1.4.0 in /share/home/arlan.uy/.local/lib/python3.7/site-packages (from -r requirements.txt (line 22)) (1.4.0)
+Requirement already satisfied: wrapt==1.12.1 in /share/home/arlan.uy/.local/lib/python3.7/site-packages (from -r requirements.txt (line 23)) (1.12.1)
+Requirement already satisfied: pyyaml==5.4.1 in /share/home/arlan.uy/.local/lib/python3.7/site-packages (from -r requirements.txt (line 24)) (5.4.1)
+Requirement already satisfied: pycuda==2019.1.2 in /share/home/arlan.uy/.local/lib/python3.7/site-packages (from -r requirements.txt (line 25)) (2019.1.2)
+Requirement already satisfied: pyparsing==2.2.2 in /share/home/arlan.uy/.local/lib/python3.7/site-packages (from -r requirements.txt (line 17)) (2.2.2)
+Requirement already satisfied: python-dateutil==2.7.3 in /share/hpcc/CPU/anaconda/3-5.3.1/lib/python3.7/site-packages (from -r requirements.txt (line 18)) (2.7.3)
+Requirement already satisfied: pytz==2018.5 in /share/hpcc/CPU/anaconda/3-5.3.1/lib/python3.7/site-packages (from -r requirements.txt (line 19)) (2018.5)
+Requirement already satisfied: six==1.11.0 in /share/hpcc/CPU/anaconda/3-5.3.1/lib/python3.7/site-packages (from -r requirements.txt (line 20)) (1.11.0)
+Requirement already satisfied: toml==0.9.6 in /share/home/arlan.uy/.local/lib/python3.7/site-packages (from -r requirements.txt (line 21)) (0.9.6)
+Requirement already satisfied: typed-ast==1.4.0 in /share/home/arlan.uy/.local/lib/python3.7/site-packages (from -r requirements.txt (line 22)) (1.4.0)
+Requirement already satisfied: pyparsing==2.2.2 in /share/home/arlan.uy/.local/lib/python3.7/site-packages (from -r requirements.txt (line 17)) (2.2.2)
+Requirement already satisfied: python-dateutil==2.7.3 in /share/hpcc/CPU/anaconda/3-5.3.1/lib/python3.7/site-packages (from -r requirements.txt (line 18)) (2.7.3)
+Requirement already satisfied: pytz==2018.5 in /share/hpcc/CPU/anaconda/3-5.3.1/lib/python3.7/site-packages (from -r requirements.txt (line 19)) (2018.5)
+Requirement already satisfied: six==1.11.0 in /share/hpcc/CPU/anaconda/3-5.3.1/lib/python3.7/site-packages (from -r requirements.txt (line 20)) (1.11.0)
+Requirement already satisfied: toml==0.9.6 in /share/home/arlan.uy/.local/lib/python3.7/site-packages (from -r requirements.txt (line 21)) (0.9.6)
+Requirement already satisfied: MarkupSafe>=0.9.2 in /share/hpcc/CPU/anaconda/3-5.3.1/lib/python3.7/site-packages (from mako->pycuda==2019.1.2->-r requirements.txt (line 25)) (1.0)
+Requirement already satisfied: typed-ast==1.4.0 in /share/home/arlan.uy/.local/lib/python3.7/site-packages (from -r requirements.txt (line 22)) (1.4.0)
+Requirement already satisfied: wrapt==1.12.1 in /share/home/arlan.uy/.local/lib/python3.7/site-packages (from -r requirements.txt (line 23)) (1.12.1)
+Requirement already satisfied: wrapt==1.12.1 in /share/home/arlan.uy/.local/lib/python3.7/site-packages (from -r requirements.txt (line 23)) (1.12.1)
+Requirement already satisfied: pyyaml==5.4.1 in /share/home/arlan.uy/.local/lib/python3.7/site-packages (from -r requirements.txt (line 24)) (5.4.1)
+Requirement already satisfied: pycuda==2019.1.2 in /share/home/arlan.uy/.local/lib/python3.7/site-packages (from -r requirements.txt (line 25)) (2019.1.2)
+Requirement already satisfied: pyyaml==5.4.1 in /share/home/arlan.uy/.local/lib/python3.7/site-packages (from -r requirements.txt (line 24)) (5.4.1)
+Requirement already satisfied: pycuda==2019.1.2 in /share/home/arlan.uy/.local/lib/python3.7/site-packages (from -r requirements.txt (line 25)) (2019.1.2)
+Requirement already satisfied: MarkupSafe>=0.9.2 in /share/hpcc/CPU/anaconda/3-5.3.1/lib/python3.7/site-packages (from mako->pycuda==2019.1.2->-r requirements.txt (line 25)) (1.0)
+Requirement already satisfied: setuptools in /share/hpcc/CPU/anaconda/3-5.3.1/lib/python3.7/site-packages (from kiwisolver==1.0.1->-r requirements.txt (line 9)) (40.2.0)
+Requirement already satisfied: pytools>=2011.2 in /share/home/arlan.uy/.local/lib/python3.7/site-packages (from pycuda==2019.1.2->-r requirements.txt (line 25)) (2021.2.7)
+Requirement already satisfied: mako in /share/home/arlan.uy/.local/lib/python3.7/site-packages (from pycuda==2019.1.2->-r requirements.txt (line 25)) (1.1.4)
+Requirement already satisfied: decorator>=3.2.0 in /share/hpcc/CPU/anaconda/3-5.3.1/lib/python3.7/site-packages (from pycuda==2019.1.2->-r requirements.txt (line 25)) (4.3.0)
+Requirement already satisfied: MarkupSafe>=0.9.2 in /share/hpcc/CPU/anaconda/3-5.3.1/lib/python3.7/site-packages (from mako->pycuda==2019.1.2->-r requirements.txt (line 25)) (1.0)
+Requirement already satisfied: MarkupSafe>=0.9.2 in /share/hpcc/CPU/anaconda/3-5.3.1/lib/python3.7/site-packages (from mako->pycuda==2019.1.2->-r requirements.txt (line 25)) (1.0)
+Requirement already satisfied: setuptools in /share/hpcc/CPU/anaconda/3-5.3.1/lib/python3.7/site-packages (from kiwisolver==1.0.1->-r requirements.txt (line 9)) (40.2.0)
+Requirement already satisfied: setuptools in /share/hpcc/CPU/anaconda/3-5.3.1/lib/python3.7/site-packages (from kiwisolver==1.0.1->-r requirements.txt (line 9)) (40.2.0)
+Requirement already satisfied: setuptools in /share/hpcc/CPU/anaconda/3-5.3.1/lib/python3.7/site-packages (from kiwisolver==1.0.1->-r requirements.txt (line 9)) (40.2.0)
+Requirement already satisfied: setuptools in /share/hpcc/CPU/anaconda/3-5.3.1/lib/python3.7/site-packages (from kiwisolver==1.0.1->-r requirements.txt (line 9)) (40.2.0)
+Requirement already satisfied: setuptools in /share/hpcc/CPU/anaconda/3-5.3.1/lib/python3.7/site-packages (from kiwisolver==1.0.1->-r requirements.txt (line 9)) (40.2.0)
+Requirement already satisfied: setuptools in /share/hpcc/CPU/anaconda/3-5.3.1/lib/python3.7/site-packages (from kiwisolver==1.0.1->-r requirements.txt (line 9)) (40.2.0)
+Requirement already satisfied: mako in /share/home/arlan.uy/.local/lib/python3.7/site-packages (from pycuda==2019.1.2->-r requirements.txt (line 25)) (1.1.4)
+Requirement already satisfied: pytools>=2011.2 in /share/home/arlan.uy/.local/lib/python3.7/site-packages (from pycuda==2019.1.2->-r requirements.txt (line 25)) (2021.2.7)
+Requirement already satisfied: decorator>=3.2.0 in /share/hpcc/CPU/anaconda/3-5.3.1/lib/python3.7/site-packages (from pycuda==2019.1.2->-r requirements.txt (line 25)) (4.3.0)
+Requirement already satisfied: pytools>=2011.2 in /share/home/arlan.uy/.local/lib/python3.7/site-packages (from pycuda==2019.1.2->-r requirements.txt (line 25)) (2021.2.7)
+Requirement already satisfied: mako in /share/home/arlan.uy/.local/lib/python3.7/site-packages (from pycuda==2019.1.2->-r requirements.txt (line 25)) (1.1.4)
+Requirement already satisfied: decorator>=3.2.0 in /share/hpcc/CPU/anaconda/3-5.3.1/lib/python3.7/site-packages (from pycuda==2019.1.2->-r requirements.txt (line 25)) (4.3.0)
+Requirement already satisfied: MarkupSafe>=0.9.2 in /share/hpcc/CPU/anaconda/3-5.3.1/lib/python3.7/site-packages (from mako->pycuda==2019.1.2->-r requirements.txt (line 25)) (1.0)
+Requirement already satisfied: pytools>=2011.2 in /share/home/arlan.uy/.local/lib/python3.7/site-packages (from pycuda==2019.1.2->-r requirements.txt (line 25)) (2021.2.7)
+Requirement already satisfied: decorator>=3.2.0 in /share/hpcc/CPU/anaconda/3-5.3.1/lib/python3.7/site-packages (from pycuda==2019.1.2->-r requirements.txt (line 25)) (4.3.0)
+Requirement already satisfied: mako in /share/home/arlan.uy/.local/lib/python3.7/site-packages (from pycuda==2019.1.2->-r requirements.txt (line 25)) (1.1.4)
+Requirement already satisfied: mako in /share/home/arlan.uy/.local/lib/python3.7/site-packages (from pycuda==2019.1.2->-r requirements.txt (line 25)) (1.1.4)
+Requirement already satisfied: decorator>=3.2.0 in /share/hpcc/CPU/anaconda/3-5.3.1/lib/python3.7/site-packages (from pycuda==2019.1.2->-r requirements.txt (line 25)) (4.3.0)
+Requirement already satisfied: pytools>=2011.2 in /share/home/arlan.uy/.local/lib/python3.7/site-packages (from pycuda==2019.1.2->-r requirements.txt (line 25)) (2021.2.7)
+Requirement already satisfied: decorator>=3.2.0 in /share/hpcc/CPU/anaconda/3-5.3.1/lib/python3.7/site-packages (from pycuda==2019.1.2->-r requirements.txt (line 25)) (4.3.0)
+Requirement already satisfied: pytools>=2011.2 in /share/home/arlan.uy/.local/lib/python3.7/site-packages (from pycuda==2019.1.2->-r requirements.txt (line 25)) (2021.2.7)
+Requirement already satisfied: mako in /share/home/arlan.uy/.local/lib/python3.7/site-packages (from pycuda==2019.1.2->-r requirements.txt (line 25)) (1.1.4)
+Requirement already satisfied: pytools>=2011.2 in /share/home/arlan.uy/.local/lib/python3.7/site-packages (from pycuda==2019.1.2->-r requirements.txt (line 25)) (2021.2.7)
+Requirement already satisfied: mako in /share/home/arlan.uy/.local/lib/python3.7/site-packages (from pycuda==2019.1.2->-r requirements.txt (line 25)) (1.1.4)
+Requirement already satisfied: decorator>=3.2.0 in /share/hpcc/CPU/anaconda/3-5.3.1/lib/python3.7/site-packages (from pycuda==2019.1.2->-r requirements.txt (line 25)) (4.3.0)
+Requirement already satisfied: MarkupSafe>=0.9.2 in /share/hpcc/CPU/anaconda/3-5.3.1/lib/python3.7/site-packages (from mako->pycuda==2019.1.2->-r requirements.txt (line 25)) (1.0)
+Requirement already satisfied: MarkupSafe>=0.9.2 in /share/hpcc/CPU/anaconda/3-5.3.1/lib/python3.7/site-packages (from mako->pycuda==2019.1.2->-r requirements.txt (line 25)) (1.0)
+Requirement already satisfied: MarkupSafe>=0.9.2 in /share/hpcc/CPU/anaconda/3-5.3.1/lib/python3.7/site-packages (from mako->pycuda==2019.1.2->-r requirements.txt (line 25)) (1.0)
+Requirement already satisfied: MarkupSafe>=0.9.2 in /share/hpcc/CPU/anaconda/3-5.3.1/lib/python3.7/site-packages (from mako->pycuda==2019.1.2->-r requirements.txt (line 25)) (1.0)
+Requirement already satisfied: decorator>=3.2.0 in /share/hpcc/CPU/anaconda/3-5.3.1/lib/python3.7/site-packages (from pycuda==2019.1.2->-r requirements.txt (line 25)) (4.3.0)
+Requirement already satisfied: mako in /share/home/arlan.uy/.local/lib/python3.7/site-packages (from pycuda==2019.1.2->-r requirements.txt (line 25)) (1.1.4)
+Requirement already satisfied: pytools>=2011.2 in /share/home/arlan.uy/.local/lib/python3.7/site-packages (from pycuda==2019.1.2->-r requirements.txt (line 25)) (2021.2.7)
+Requirement already satisfied: MarkupSafe>=0.9.2 in /share/hpcc/CPU/anaconda/3-5.3.1/lib/python3.7/site-packages (from mako->pycuda==2019.1.2->-r requirements.txt (line 25)) (1.0)
+Requirement already satisfied: MarkupSafe>=0.9.2 in /share/hpcc/CPU/anaconda/3-5.3.1/lib/python3.7/site-packages (from mako->pycuda==2019.1.2->-r requirements.txt (line 25)) (1.0)
+Menu
+ Enter a number of your choice: (1) Create a new evolutionary process w/ autosave
+ (2) Load an evolutionary process from a configuration file: 
+menu choice is  2
+Load function starting
+Running GA in GPU: 
+Maintaining current number of generation and population_size
+rewriting to 1 /scratch1/scratch2/arlan.uy/ERSSNP_CPU_GPU_Framework/main_dir/load_directory/gpuoradversarial11.yaml
+Menu
+ Enter a number of your choice: (1) Create a new evolutionary process w/ autosave
+ (2) Load an evolutionary process from a configuration file: 
+menu choice is  2
+Load function starting
+Running GA in GPU: 
+Maintaining current number of generation and population_size
+rewriting to 1 /scratch1/scratch2/arlan.uy/ERSSNP_CPU_GPU_Framework/main_dir/load_directory/gpuoradversarial11.yaml
+Menu
+ Enter a number of your choice: (1) Create a new evolutionary process w/ autosave
+ (2) Load an evolutionary process from a configuration file: 
+menu choice is  2
+Load function starting
+Running GA in GPU: 
+Maintaining current number of generation and population_size
+rewriting to 1 /scratch1/scratch2/arlan.uy/ERSSNP_CPU_GPU_Framework/main_dir/load_directory/gpuoradversarial11.yaml
+Menu
+ Enter a number of your choice: (1) Create a new evolutionary process w/ autosave
+ (2) Load an evolutionary process from a configuration file: 
+menu choice is  2
+Load function starting
+Running GA in GPU: 
+Maintaining current number of generation and population_size
+rewriting to 1 /scratch1/scratch2/arlan.uy/ERSSNP_CPU_GPU_Framework/main_dir/load_directory/gpuoradversarial11.yaml
+Menu
+ Enter a number of your choice: (1) Create a new evolutionary process w/ autosave
+ (2) Load an evolutionary process from a configuration file: 
+menu choice is  2
+Load function starting
+Running GA in GPU: 
+Maintaining current number of generation and population_size
+rewriting to 1 /scratch1/scratch2/arlan.uy/ERSSNP_CPU_GPU_Framework/main_dir/load_directory/gpuoradversarial11.yaml
+Menu
+ Enter a number of your choice: (1) Create a new evolutionary process w/ autosave
+ (2) Load an evolutionary process from a configuration file: 
+menu choice is  2
+Load function starting
+Running GA in GPU: 
+Maintaining current number of generation and population_size
+rewriting to 1 /scratch1/scratch2/arlan.uy/ERSSNP_CPU_GPU_Framework/main_dir/load_directory/gpuoradversarial11.yaml
+Menu
+ Enter a number of your choice: (1) Create a new evolutionary process w/ autosave
+ (2) Load an evolutionary process from a configuration file: 
+menu choice is  2
+Load function starting
+Running GA in GPU: 
+Maintaining current number of generation and population_size
+rewriting to 1 /scratch1/scratch2/arlan.uy/ERSSNP_CPU_GPU_Framework/main_dir/load_directory/gpuoradversarial11.yaml
+while scanning a simple key
+  in "/scratch1/scratch2/arlan.uy/ERSSNP_CPU_GPU_Framework/main_dir/load_directory/gpuoradversarial11.yaml", line 3894, column 11
+could not find expected ':'
+  in "/scratch1/scratch2/arlan.uy/ERSSNP_CPU_GPU_Framework/main_dir/load_directory/gpuoradversarial11.yaml", line 3894, column 12
+Menu
+ Enter a number of your choice: (1) Create a new evolutionary process w/ autosave
+ (2) Load an evolutionary process from a configuration file: 
+menu choice is  2
+Load function starting
+Running GA in GPU: 
+Maintaining current number of generation and population_size
+rewriting to 1 /scratch1/scratch2/arlan.uy/ERSSNP_CPU_GPU_Framework/main_dir/load_directory/gpuoradversarial11.yaml
+while scanning a simple key
+  in "/scratch1/scratch2/arlan.uy/ERSSNP_CPU_GPU_Framework/main_dir/load_directory/gpuoradversarial11.yaml", line 3894, column 11
+could not find expected ':'
+  in "/scratch1/scratch2/arlan.uy/ERSSNP_CPU_GPU_Framework/main_dir/load_directory/gpuoradversarial11.yaml", line 3894, column 12
+Menu
+ Enter a number of your choice: (1) Create a new evolutionary process w/ autosave
+ (2) Load an evolutionary process from a configuration file: 
+menu choice is  2
+Load function starting
+Running GA in GPU: 
+Maintaining current number of generation and population_size
+rewriting to 1 /scratch1/scratch2/arlan.uy/ERSSNP_CPU_GPU_Framework/main_dir/load_directory/gpuoradversarial11.yaml
+Menu
+ Enter a number of your choice: (1) Create a new evolutionary process w/ autosave
+ (2) Load an evolutionary process from a configuration file: 
+menu choice is  2
+Load function starting
+Running GA in GPU: 
+Maintaining current number of generation and population_size
+rewriting to 1 /scratch1/scratch2/arlan.uy/ERSSNP_CPU_GPU_Framework/main_dir/load_directory/gpuoradversarial11.yaml
+Menu
+ Enter a number of your choice: (1) Create a new evolutionary process w/ autosave
+ (2) Load an evolutionary process from a configuration file: 
+menu choice is  2
+Load function starting
+Running GA in GPU: 
+Maintaining current number of generation and population_size
+rewriting to 1 /scratch1/scratch2/arlan.uy/ERSSNP_CPU_GPU_Framework/main_dir/load_directory/gpuoradversarial11.yaml
+rewriting to 2 /scratch1/scratch2/arlan.uy/ERSSNP_CPU_GPU_Framework/main_dir/load_directory/gpuoradversarial11.yaml
+entering to 1 /scratch1/scratch2/arlan.uy/ERSSNP_CPU_GPU_Framework/main_dir/load_directory/gpuoradversarial11.yaml
+Now executing experiment involving /scratch1/scratch2/arlan.uy/ERSSNP_CPU_GPU_Framework/main_dir/load_directory/gpuoradversarial11.yaml
+Run index # 5
+initialized at run  5
+Continuing using the run,generation number  0,0
+Menu
+ Enter a number of your choice: (1) Create a new evolutionary process w/ autosave
+ (2) Load an evolutionary process from a configuration file: 
+menu choice is  2
+Load function starting
+Running GA in GPU: 
+Maintaining current number of generation and population_size
+rewriting to 1 /scratch1/scratch2/arlan.uy/ERSSNP_CPU_GPU_Framework/main_dir/load_directory/gpuoradversarial11.yaml
+rewriting to 2 /scratch1/scratch2/arlan.uy/ERSSNP_CPU_GPU_Framework/main_dir/load_directory/gpuoradversarial11.yaml
+entering to 1 /scratch1/scratch2/arlan.uy/ERSSNP_CPU_GPU_Framework/main_dir/load_directory/gpuoradversarial11.yaml
+Now executing experiment involving /scratch1/scratch2/arlan.uy/ERSSNP_CPU_GPU_Framework/main_dir/load_directory/gpuoradversarial11.yaml
+Run index # 5
+initialized at run  5
+Continuing using the run,generation number  0,0
