@@ -1,5 +1,0 @@
-SLURM_JOBID=239772
-SLURM_JOB_NODELIST=saliksik-gpu-04
-SLURM_NNODES=1
-SLURMTMPDIR=
-working directory=/scratch1/scratch2/arlan.uy/ERSSNP_CPU_GPU_Framework/main_dir
