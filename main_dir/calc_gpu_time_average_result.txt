@@ -1,0 +1,222 @@
+//via intermittent runs computed only by calculator and derived from file time_test.txt. No program was made to create this text this as of the moment due to its complexity.All content here is done manually.
+The formula is (time1 * n1 run + time2 * n2 run) / n1 run + n2 run which shall extend to how many intermittent runs was done
+
+1.) GPU AND Minimal (2 runs)
+selection time is 0.0 crossover is 0.02099827202595772 evaluate is 4.789568044117843
+
+Total time is 4.810566316143801
+
+2.) GPU AND Minimal (3 runs)
+selection time is 0.0 crossover is 0.020207189227143943 evaluate is 4.405509854293727
+
+Total time is 4.425717043520871
+
+Fin.) GPU AND Minimal (5 runs)
+
+selection time is 0.0 crossover is 0.020523622 evaluate is 4.55913313
+
+Total time is 4.579656752
+
+1.) GPU AND Adversarial 
+selection time is 0.0007247487984597682 crossover is 0.017326201735436912 evaluate is 4.891607467755884
+
+Total time is 4.909658418289781
+
+Fin.) GPU AND Adversarial (5 runs)
+selection time is 0.0007247487984597682 crossover is 0.017326201735436912 evaluate is 4.891607467755884
+
+Total time is 4.909658418289781
+
+1.) GPU AND Extra 
+selection time is 0.0007331520043313504 crossover is 0.014768889749795188 evaluate is 0.09190323833823202
+
+Total time is 0.10740528009235856
+
+Fin.) GPU AND Extra (5 runs)
+selection time is 0.0007331520043313504 crossover is 0.014768889749795188 evaluate is 0.09190323833823202
+
+Total time is 0.10740528009235856
+
+1.) GPU OR Minimal (2 runs)
+selection time is 0.0 crossover is 0.021147680046036826 evaluate is 4.75735579807262
+
+Total time is 4.778503478118656
+
+2.) GPU OR Minimal (3 runs)
+selection time is 0.0 crossover is 0.02088179209207495 evaluate is 4.901375687686074
+
+Total time is 4.922257479778149
+
+Fin.) GPU OR Minimal (5 runs)
+
+selection time is 0.0 crossover is 0.020988147 evaluate is 4.843767732
+
+Total time is 4.864755879
+
+1.) GPU OR Extra 
+selection time is 0.0007507775992155075 crossover is 0.015210950484871862 evaluate is 0.10184638720005745
+
+Total time is 0.11780811528414482
+
+Fin.) GPU OR Extra (5 runs)
+selection time is 0.0007507775992155075 crossover is 0.015210950484871862 evaluate is 0.10184638720005745
+
+Total time is 0.11780811528414482
+
+1.) GPU NOT Minimal (4 runs)
+selection time is 0.0 crossover is 0.007907408081926406 evaluate is 4.6878478957248255
+
+Total time is 4.695755303806752
+
+2.) GPU NOT Minimal (1 run)
+selection time is 0.0 crossover is 0.007762496035546063 evaluate is 4.676125123761281
+
+Total time is 4.6838876197968276
+
+Fin.) GPU NOT Minimal (5 runs)
+
+selection time is 0.0 crossover is 0.007878426 evaluate is 4.685503341
+
+Total time is 4.693381767
+
+1.) GPU NOT Adversarial 
+selection time is 0.0007103871993720532 crossover is 0.009584761686623096 evaluate is 6.019057411243232
+
+Total time is 6.029352560129227
+
+Fin.) GPU NOT Adversarial (5 runs)
+selection time is 0.0007103871993720532 crossover is 0.009584761686623096 evaluate is 6.019057411243232
+
+Total time is 6.029352560129227
+
+1.) GPU NOT Extra 
+selection time is 0.0007570688046514988 crossover is 0.013393945720046757 evaluate is 0.08952211197912696
+
+Total time is 0.10367312650382522
+
+Fin.) GPU NOT Extra (5 runs)
+selection time is 0.0007570688046514988 crossover is 0.013393945720046757 evaluate is 0.08952211197912696
+
+Total time is 0.10367312650382522
+
+1.) GPU ADD Minimal (3 runs)
+selection time is 0.0 crossover is 0.017126527911673003 evaluate is 4.867598890074549
+
+Total time is 4.884725417986222
+
+2.) GPU ADD Minimal (2 runs)
+selection time is 0.0 crossover is 0.018029423983767622 evaluate is 4.79400132525673
+
+Total time is 4.812030749240497
+
+Fin.) GPU ADD Minimal (5 runs)
+
+selection time is 0.0 crossover is 0.017487686 evaluate is 4.838159864
+
+Total time is 4.85564755
+
+1.) GPU ADD Extra 
+selection time is 0.0007240191981196403 crossover is 0.009218214437365537 evaluate is 0.09191806721389296
+
+Total time is 0.10186030084937814
+
+Fin.) GPU ADD Extra (5 runs)
+selection time is 0.0007240191981196403 crossover is 0.009218214437365537 evaluate is 0.09191806721389296
+
+Total time is 0.10186030084937814
+
+1.) GPU SUB Minimal ( 1 run)
+selection time is 0.0 crossover is 0.07329929614812135 evaluate is 5.770214471482018
+
+Total time is 5.84351376763014
+
+2.) GPU SUB Minimal (1 run)
+selection time is 0.0 crossover is 0.0746955206431452 evaluate is 5.4302126804665685
+
+Total time is 5.504908201109713
+
+3.) GPU SUB Minimal (1 run)
+selection time is 0.0 crossover is 0.07693558466434504 evaluate is 5.608340046346282
+
+Total time is 5.685275631010627
+
+4.) GPU SUB Minimal (1 run)
+selection time is 0.0 crossover is 0.06652937611564991 evaluate is 5.0850704385563255
+
+Total time is 5.151599814671975
+
+5.) GPU SUB Minimal (1 run)
+selection time is 0.0 crossover is 0.07577340823411939 evaluate is 5.402693187683938
+
+Total time is 5.478466595918057
+
+Fin.) GPU AND Minimal (5 runs)
+
+selection time is 0.0 crossover is 0.073446637 evaluate is 5.459306165
+
+Total time is 5.532752802
+
+1.) GPU SUB Adversarial (1 run)
+selection time is 0.0007677120007574558 crossover is 0.0863194560185073 evaluate is 7.052207842461966
+
+Total time is 7.139295010481231
+
+2.) GPU SUB Adversarial (1 run)
+selection time is 0.0007400639913976192 crossover is 0.08676646389067183 evaluate is 7.045590146221321
+
+Total time is 7.13309667410339
+
+3.) GPU SUB Adversarial (1 run)
+selection time is 0.0007851200066506863 crossover is 0.08614889670535901 evaluate is 7.327934661463082
+
+Total time is 7.414868678175091
+
+4.) GPU SUB Adversarial (1 run)
+selection time is 0.0007144320011138917 crossover is 0.08683360021561383 evaluate is 6.919547232806758
+
+Total time is 7.007095265023486
+
+5.) GPU SUB Adversarial (1 run)
+selection time is 0.0007319360002875329 crossover is 0.08857587258145211 evaluate is 6.9925191727953635
+
+Total time is 7.0818269813771035
+
+Fin.) GPU AND Minimal (5 runs)
+
+selection time is 0.000747853 crossover is 0.086928858 evaluate is 7.067559811
+
+Total time is 7.155236522
+
+1.) GPU SUB Extra (1 run)
+selection time is 0.000677216000854969 crossover is 0.07507324829325095 evaluate is 0.37377004811167724
+
+Total time is 0.44952051240578317
+
+2.) GPU SUB Extra (1 run)
+selection time is 0.0008448320068418979 crossover is 0.08387542481394519 evaluate is 0.41687558369338507
+
+Total time is 0.5015958405141722
+
+3.) GPU SUB Extra (1 run)
+selection time is 0.0006606400050222874 crossover is 0.07247353615611796 evaluate is 0.3508858560621737
+
+Total time is 0.42402003222331397
+
+4.) GPU SUB Extra (1 run)
+selection time is 0.000903967998921871 crossover is 0.07330051233246922 evaluate is 0.6586769569665198
+
+Total time is 0.7328814372979109
+
+5.) GPU SUB Extra (1 run)
+selection time is 0.0006490559987723828 crossover is 0.07662809620797638 evaluate is 0.39607545538246663
+
+Total time is 0.4733526075892154
+
+Fin.) GPU AND Minimal (5 runs)
+
+selection time is 0.000747142 crossover is 0.076270164 evaluate is 0.43925678
+
+Total time is 0.516274086
+
+
+
