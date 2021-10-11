@@ -140,7 +140,7 @@ for yaml_input_files in yaml_input_array:
 					total_fitness = 0
 					#print("run is ", run)
 					for gen in data['runs'][run]['generations']:
-						if not int(index_file / 3) == 4 and (index_file % 3 == 2 or index_file %3 == 0) and gen == 11:
+						if not (int(index_file / 3) == 4 and gen == 11):
 							fitness_array = [0] * 40
 							rules_array = [0] * 40
 							#print("gen is ", gen)
@@ -159,7 +159,7 @@ for yaml_input_files in yaml_input_array:
 					
 					numgens = len(data['runs'][run]['generations'])
 					#to cater for the case that gpusubextraminimal00.yaml and gpusubextra22.yaml only contains 11 generations per run
-					if int(index_file / 3) == 4 and (index_file % 3 == 2 or index_file %3 == 0):
+					if int(index_file / 3) == 4:
 						numgens -= 1
 					avg_len_rules += total_len_rules/numgens
 					avg_fitness += total_fitness/numgens	

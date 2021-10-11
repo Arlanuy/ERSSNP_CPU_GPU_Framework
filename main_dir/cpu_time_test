@@ -1,0 +1,39 @@
+CPU AND Minimal 
+selection time is 0.0 crossover is 0.003916686028242111 evaluate is 3.041297373920679
+Total time is 3.045214059948921
+CPU AND Adversarial 
+selection time is 4.433467984199524e-05 crossover is 0.00150773823261261 evaluate is 2.6644313260912895
+Total time is 2.665983399003744
+CPU AND Extra 
+selection time is 0.00019524097442626953 crossover is 0.001192929595708847 evaluate is 2.6460257202386854
+Total time is 2.6474138908088207
+CPU OR Minimal 
+selection time is 0.0 crossover is 0.002020692080259323 evaluate is 1.6498967029154301
+Total time is 1.6519173949956893
+CPU OR Extra 
+selection time is 0.00018789172172546388 crossover is 0.0010089851915836335 evaluate is 2.675268693268299
+Total time is 2.6764655701816085
+CPU NOT Minimal 
+selection time is 0.0 crossover is 0.0009012766182422638 evaluate is 2.6847821094095705
+Total time is 2.685683386027813
+CPU NOT Adversarial 
+selection time is 4.647895693778992e-05 crossover is 0.0009101569652557373 evaluate is 6.8636681392788885
+Total time is 6.864624775201082
+CPU NOT Extra 
+selection time is 0.00018249452114105225 crossover is 0.0011129878461360932 evaluate is 2.7190404742956162
+Total time is 2.7203359566628933
+CPU ADD Minimal 
+selection time is 0.0 crossover is 0.0017334602773189545 evaluate is 1.8468305379152299
+Total time is 1.8485639981925488
+CPU ADD Extra 
+selection time is 0.00018923059105873107 crossover is 0.0008609846234321594 evaluate is 3.0358212552964687
+Total time is 3.0368714705109596
+CPU SUB Minimal 
+selection time is 0.0 crossover is 0.007749415189027786 evaluate is 3.406829883158207
+Total time is 3.4145792983472347
+CPU SUB Adversarial 
+selection time is 4.477798938751221e-05 crossover is 0.00821007415652275 evaluate is 7.317253518104553
+Total time is 7.325508370250463
+CPU SUB Extra 
+selection time is 0.00018936246633529663 crossover is 0.00787995457649231 evaluate is 11.69158768877387
+Total time is 11.699657005816698

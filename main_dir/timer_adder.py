@@ -1,5 +1,5 @@
 import os
-timer_adder_out = open(os.getcwd()+ "\\time_test", "w+")
+timer_adder_out = open(os.getcwd()+ "\\cpu_time_test", "w+")
 
 tutorial_time = False
 
