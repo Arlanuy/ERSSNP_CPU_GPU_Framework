@@ -1,5 +1,5 @@
 //via intermittent runs computed only by calculator and derived from file time_test.txt. No program was made to create this text this as of the moment due to its complexity.All content here is done manually.
-The formula is (time1 * n1 run + time2 * n2 run) / n1 run + n2 run which shall extend to how many intermittent runs was done
+The formula is (time1 * n1 run + time2 * n2 run) / n1 run + n2 run which shall extend to how many intermittent runs were done
 
 1.) GPU AND Minimal (2 runs)
 selection time is 0.0 crossover is 0.02099827202595772 evaluate is 4.789568044117843
@@ -212,7 +212,7 @@ selection time is 0.0006490559987723828 crossover is 0.07662809620797638 evaluat
 
 Total time is 0.4733526075892154
 
-Fin.) GPU AND Minimal (5 runs)
+Fin.) GPU SUB Extra (5 runs)
 
 selection time is 0.000747142 crossover is 0.076270164 evaluate is 0.43925678
 

@@ -1,0 +1,259 @@
+//via intermittent runs computed only by calculator and derived from file data_test.txt. No program was made to create this text this as of the moment due to its complexity.All content here is done manually.
+The formula is (data1 * n1 run + data2 * n2 run) / n1 run + n2 run which shall extend to how many intermittent runs were done
+
+1.) GPU AND Minimal (2 runs)
+
+ Highest fitness among runs and generations: 100
+Avg len of rules: 3.88125
+Avg fitness: 94.24062500000002
+
+2.) GPU AND Minimal (3 runs)
+
+ Highest fitness among runs and generations: 100
+Avg len of rules: 3.845833333333333
+Avg fitness: 92.52291666666666
+
+Fin.) GPU AND Minimal (5 runs)
+
+ Highest fitness among runs and generations: 100
+Avg len of rules:3.859998
+Avg fitness: 93.21
+
+
+1.) GPU AND Adversarial 
+
+ Highest fitness among runs and generations: 91
+Avg len of rules: 7.148333333333333
+Avg fitness: 77.57124999999999
+
+Fin.) GPU AND Adversarial (5 runs)
+
+ Highest fitness among runs and generations: 91
+Avg len of rules: 7.148333333333333
+Avg fitness: 77.57124999999999
+
+1.) GPU AND Extra 
+
+ Highest fitness among runs and generations: 83
+Avg len of rules: 4.5079166666666675
+Avg fitness: 78.915
+
+Fin.) GPU AND Extra (5 runs)
+
+ Highest fitness among runs and generations: 83
+Avg len of rules: 4.5079166666666675
+Avg fitness: 78.915
+
+1.) GPU OR Minimal (2 runs)
+
+ Highest fitness among runs and generations: 100
+Avg len of rules: 3.8645833333333335
+Avg fitness: 90.58854166666666
+
+2.) GPU OR Minimal (3 runs)
+
+ Highest fitness among runs and generations: 100
+Avg len of rules: 3.858333333333334
+Avg fitness: 90.15416666666668
+
+Fin.) GPU OR Minimal (5 runs)
+
+ Highest fitness among runs and generations: 100
+Avg len of rules: 3.8608312
+Avg fitness: 90.327917
+
+1.) GPU OR Extra 
+
+ Highest fitness among runs and generations: 69
+Avg len of rules: 4.750416666666667
+Avg fitness: 64.72625
+
+Fin.) GPU OR Extra (5 runs)
+
+ Highest fitness among runs and generations: 69
+Avg len of rules: 4.750416666666667
+Avg fitness: 64.72625
+
+1.) GPU NOT Minimal (4 runs)
+
+ Highest fitness among runs and generations: 82
+Avg len of rules: 2.816666666666667
+Avg fitness: 72.17708333333333
+
+2.) GPU NOT Minimal (1 run)
+
+ Highest fitness among runs and generations: 82
+Avg len of rules: 2.75625
+Avg fitness: 71.93124999999999
+
+Fin.) GPU NOT Minimal (5 runs)
+
+ Highest fitness among runs and generations: 82
+Avg len of rules: 2.804586
+Avg fitness: 72.1279164
+
+1.) GPU NOT Adversarial 
+
+ Highest fitness among runs and generations: 94
+Avg len of rules: 7.121666666666667
+Avg fitness: 76.97500000000001
+
+Fin.) GPU NOT Adversarial (5 runs)
+
+ Highest fitness among runs and generations: 94
+Avg len of rules: 7.121666666666667
+Avg fitness: 76.97500000000001
+
+1.) GPU NOT Extra 
+
+ Highest fitness among runs and generations: 91
+Avg len of rules: 4.300833333333333
+Avg fitness: 71.29458333333334
+
+Fin.) GPU NOT Extra (5 runs)
+
+ Highest fitness among runs and generations: 91
+Avg len of rules: 4.300833333333333
+Avg fitness: 71.29458333333334
+
+1.) GPU ADD Minimal (3 runs)
+
+ Highest fitness among runs and generations: 100
+Avg len of rules: 4.7430555555555545
+Avg fitness: 89.82499999999999
+
+2.) GPU ADD Minimal (2 runs)
+
+ Highest fitness among runs and generations: 100
+Avg len of rules: 4.739583333333334
+Avg fitness: 89.90416666666667
+
+Fin.) GPU ADD Minimal (5 runs)
+
+ Highest fitness among runs and generations: 100
+Avg len of rules: 4.7416668
+Avg fitness: 89.8566668
+
+1.) GPU ADD Extra 
+
+ Highest fitness among runs and generations: 76
+Avg len of rules: 6.3025
+Avg fitness: 71.125
+
+Fin.) GPU ADD Extra (5 runs)
+
+ Highest fitness among runs and generations: 76
+Avg len of rules: 6.3025
+Avg fitness: 71.125
+
+1.) GPU SUB Minimal 
+
+ Highest fitness among runs and generations: 99
+Avg len of rules: 17.147727272727273
+Avg fitness: 91.23863636363636
+
+2.) GPU SUB Minimal 
+
+ Highest fitness among runs and generations: 99
+Avg len of rules: 17.147727272727273
+Avg fitness: 91.23863636363636
+
+3.) GPU SUB Minimal 
+
+ Highest fitness among runs and generations: 99
+Avg len of rules: 17.147727272727273
+Avg fitness: 91.23863636363636
+
+4.) GPU SUB Minimal 
+
+ Highest fitness among runs and generations: 99
+Avg len of rules: 17.147727272727273
+Avg fitness: 91.23863636363636
+
+5.) GPU SUB Minimal 
+
+ Highest fitness among runs and generations: 99
+Avg len of rules: 17.147727272727273
+Avg fitness: 91.23863636363636
+
+Fin.) GPU SUB Minimal (5 runs)
+
+ Highest fitness among runs and generations: 99
+Avg len of rules: 17.147727272727273
+Avg fitness:91.23863636363636
+
+1.) GPU SUB Adversarial 
+
+ Highest fitness among runs and generations: 75
+Avg len of rules: 23.972727272727273
+Avg fitness: 66.79318181818181
+
+2.) GPU SUB Adversarial 
+
+ Highest fitness among runs and generations: 75
+Avg len of rules: 23.62272727272727
+Avg fitness: 63.54090909090908
+
+3.) GPU SUB Adversarial 
+
+ Highest fitness among runs and generations: 75
+Avg len of rules: 23.770454545454548
+Avg fitness: 64.94772727272728
+
+4.) GPU SUB Adversarial 
+
+ Highest fitness among runs and generations: 75
+Avg len of rules: 24.40909090909091
+Avg fitness: 67.56818181818183
+
+5.) GPU SUB Adversarial 
+
+ Highest fitness among runs and generations: 75
+Avg len of rules: 23.865909090909096
+Avg fitness: 66.71363636363638
+
+Fin.) GPU SUB Adversarial (5 runs)
+
+ Highest fitness among runs and generations: 75
+Avg len of rules: 23.9281796
+Avg fitness: 65.91272702
+
+1.) GPU SUB Extra 
+
+ Highest fitness among runs and generations: 99
+Avg len of rules: 21.740909090909092
+Avg fitness: 90.31818181818181
+
+2.) GPU SUB Extra 
+
+ Highest fitness among runs and generations: 99
+Avg len of rules: 21.94090909090909
+Avg fitness: 89.91363636363637
+
+3.) GPU SUB Extra 
+
+ Highest fitness among runs and generations: 99
+Avg len of rules: 21.53409090909091
+Avg fitness: 89.65454545454544
+
+4.) GPU SUB Extra 
+
+ Highest fitness among runs and generations: 99
+Avg len of rules: 22.03181818181818
+Avg fitness: 88.00681818181819
+
+5.) GPU SUB Extra 
+
+ Highest fitness among runs and generations: 99
+Avg len of rules: 22.404545454545453
+Avg fitness: 90.17500000000001
+
+Fin.) GPU SUB Extra (5 runs)
+
+ Highest fitness among runs and generations: 99
+Avg len of rules: 21.9304544
+Avg fitness: 89.61363508
+
+
+
+
