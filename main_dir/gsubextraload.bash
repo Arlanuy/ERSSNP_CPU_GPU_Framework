@@ -32,4 +32,4 @@ ulimit -s unlimited
 # MAIN 
 srun python -m pip install --user --upgrade pip
 srun python -m pip install --user -r requirements.txt
-srun python main.py 2 2 5 4gpusubextra22.yaml 5gpusubextra22.yaml 5gpusubextra22outreal.yaml
+srun python main.py 2 2 1 cpusubextra22.yaml gpusubextra22.yaml gpusubextra22outreal.yaml

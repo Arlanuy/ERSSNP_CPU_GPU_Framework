@@ -8,10 +8,10 @@
 #SBATCH --ntasks-per-node=12
 #SBATCH --overcommit
 #SBATCH --mem=12G 
-#SBATCH --job-name=”gsubadvload” 
-#SBATCH --output=gsubadvload.%J.out 
+#SBATCH --job-name=”gsubminload” 
+#SBATCH --output=gsubminload.%J.out 
 
-#SBATCH --error=gsubadvload.%J.err 
+#SBATCH --error=gsubminload.%J.err 
 #SBATCH --mail-type=ALL
 #SBATCH --requeue 
  
@@ -32,4 +32,4 @@ ulimit -s unlimited
 # MAIN 
 srun python -m pip install --user --upgrade pip
 srun python -m pip install --user -r requirements.txt
-srun python main.py 2 2 1 cpusubadversarial11.yaml gpusubadversarial11.yaml gpusubadversarial11outreal.yaml
+srun python main.py 2 2 1 cpusubminimal00.yaml 2gpusubminimal00.yaml 2gpusubminimal00outreal.yaml

@@ -32,4 +32,4 @@ ulimit -s unlimited
 # MAIN 
 srun python -m pip install --user --upgrade pip
 srun python -m pip install --user -r requirements.txt
-srun python main.py 2 2 1 gpunotminimal00.yaml 2gpunotminimal00.yaml 2gpunotminimal00outreal.yaml
+srun python main.py 2 2 4 cpunotminimal00.yaml gpunotminimal00.yaml gpunotminimal00outreal.yaml
